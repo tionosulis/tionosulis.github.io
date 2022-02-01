@@ -76,7 +76,7 @@ main {
   width: 100%;
 }
 .separator {
-  margin-top: 1.5rem;
+  margin-top: 3rem;
   overflow: visible; /* For IE */
   padding: 0;
   border: none;
@@ -218,6 +218,9 @@ code {
   .author-info {
     padding-bottom: 0;
   }
+  .social-link {
+    padding-top: 0;
+  }
 }
 .nav-item {
   display: inline-block;
@@ -269,6 +272,9 @@ code {
 .tmpl-home .postlist-link {
   font-size: 1.3125em; /* 21px /16 */
   font-weight: 700;
+}
+.tmpl-home h1 {
+  padding-bottom: 1.5rem;
 }
 
 /* Tags */
@@ -397,5 +403,5 @@ a[href].read-more:hover {
   color: var(--gray);
 }
 aside {
-  margin-top: 3.5rem;
+  margin-top: 4rem;
 }
