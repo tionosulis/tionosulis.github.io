@@ -76,7 +76,7 @@ main {
   width: 100%;
 }
 .separator {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   overflow: visible; /* For IE */
   padding: 0;
   border: none;
@@ -214,6 +214,9 @@ code {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .author-info {
+    padding-bottom: 0;
   }
 }
 .nav-item {
@@ -394,5 +397,5 @@ a[href].read-more:hover {
   color: var(--gray);
 }
 aside {
-  margin-top: 4rem;
+  margin-top: 3.5rem;
 }
