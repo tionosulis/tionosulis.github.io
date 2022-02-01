@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://tionosulis.github.io/hello-world/</loc>
+    <lastmod>2022-01-09</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tionosulis.github.io/2022/</loc>
+    <lastmod>2022-01-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tionosulis.github.io/about/</loc>
+    <lastmod>2022-02-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tionosulis.github.io/posts/</loc>
+    <lastmod>2022-02-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tionosulis.github.io/</loc>
+    <lastmod>2022-02-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tionosulis.github.io/page-list/</loc>
+    <lastmod>2022-02-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tionosulis.github.io/tags/</loc>
+    <lastmod>2022-02-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tionosulis.github.io/tags/2022/</loc>
+    <lastmod>2022-02-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tionosulis.github.io/tags/hello/</loc>
+    <lastmod>2022-02-01</lastmod>
+  </url>
+</urlset>

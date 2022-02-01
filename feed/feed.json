@@ -1,0 +1,26 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Sulistiono",
+  "language": "en",
+  "home_page_url": "https://tionosulis.github.io",
+  "feed_url": "https://tionosulis.github.io/feed/feed.json",
+  "description": "Sulistiono&#39;s thoughts",
+  "author": {
+    "name": "Sulistiono",
+    "url": "https://tionosulis.github.io/about/"
+  },
+  "items": [{
+      "id": "https://tionosulis.github.io/2022/",
+      "url": "https://tionosulis.github.io/2022/",
+      "title": "Januari 2022",
+      "content_html": "<p>Untuk cita -cita, tujuan dan keinginan, serta harapan dan resolusi yang berbeda. January <strong>2022</strong>, satu doa yang\nsama: <em>&quot;Semoga tahun ini <strong>lebih baik</strong> dari tahun sebelumnya&quot;</em>.</p>\n",
+      "date_published": "2022-01-10T00:00:00Z"
+    },{
+      "id": "https://tionosulis.github.io/hello-world/",
+      "url": "https://tionosulis.github.io/hello-world/",
+      "title": "Hello World!",
+      "content_html": "<p>A test post just to make sure that the site build's right.\nNothing much to say but &quot;Hello!&quot;, and thanks for stopping by.</p>\n",
+      "date_published": "2022-01-09T00:00:00Z"
+    }
+  ]
+}
