@@ -76,7 +76,7 @@ main {
   width: 100%;
 }
 .separator {
-  margin-top: 2em;
+  margin-top: 2.5rem;
   overflow: visible; /* For IE */
   padding: 0;
   border: none;
@@ -215,9 +215,6 @@ code {
     align-items: center;
     justify-content: center;
   }
-  .tmpl-home h1, .tmpl-post h1 {
-    text-align: center;
-  }
 }
 .nav-item {
   display: inline-block;
@@ -331,15 +328,13 @@ a[href].direct-link:focus:visited,
   padding-left: 1em;
 }
 .social-link {
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   flex-shrink: 0;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 .social-link-text {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   text-align: center;
