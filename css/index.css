@@ -214,6 +214,8 @@ code {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .tmpl-home h1, .tmpl-post h1 {
     text-align: center;
   }
 }
@@ -329,7 +331,7 @@ a[href].direct-link:focus:visited,
   padding-left: 1em;
 }
 .social-link {
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 2rem;
   flex-shrink: 0;
   padding-left: 2rem;
@@ -390,12 +392,12 @@ a[href].read-more {
   float: right;
   text-decoration: none;
   border-bottom: 1px dotted var(--gray);
-  margin-top: -0.7rem;
+  margin-top: -0.5rem;
 }
 a[href].read-more:hover {
   border-bottom: 1px dotted var(--darkgray);
   color: var(--gray);
 }
 aside {
-  margin-top: 4.5rem;
+  margin-top: 4rem;
 }
