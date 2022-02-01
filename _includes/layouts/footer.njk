@@ -1,0 +1,12 @@
+<footer>
+  <div class="social-link">
+    <p class="social-link-text">
+      {% if metadata.author.github != "" %}
+        <a href={{ metadata.author.github }}>Github</a> 
+      {% endif %}
+      {% if metadata.author.twitter.username != "" %}
+        &middot; <a href={{ metadata.author.twitter.username }}>Twitter</a>
+      {% endif %}
+    </p>
+  </div>
+</footer>
