@@ -327,7 +327,6 @@ a[href].direct-link:focus:visited,
 .next-prev-post {
   font-weight: bold;
   padding-left: 1em;
-  padding-bottom: 4rem;
 }
 .social-link {
   padding-top: 2rem;
@@ -396,4 +395,7 @@ a[href].read-more {
 a[href].read-more:hover {
   border-bottom: 1px dotted var(--darkgray);
   color: var(--gray);
+}
+aside {
+  margin-top: 4.5rem;
 }
