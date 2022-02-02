@@ -39,7 +39,7 @@ p,
   line-height: 1.6;
 }
 .tmpl-post h1 {
-  font-size: 2.375rem; /* 38px /16 */
+  font-size: 2.125rem; /* 34px /16 */
   font-weight: 800;
 }
 a[href] {
@@ -76,7 +76,7 @@ main {
   width: 100%;
 }
 .separator {
-  margin-top: 3rem;
+  margin-top: 2rem;
   overflow: visible; /* For IE */
   padding: 0;
   border: none;
@@ -215,9 +215,6 @@ code {
     align-items: center;
     justify-content: center;
   }
-  .author-info {
-    padding-bottom: 0;
-  }
   .social-link {
     padding-top: 0;
   }
@@ -274,7 +271,7 @@ code {
   font-weight: 700;
 }
 .tmpl-home h1 {
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 
 /* Tags */
@@ -355,7 +352,6 @@ a[href].direct-link:focus:visited,
 .author-info {
   display: flex;
   padding-top: 0.5rem;
-  padding-bottom: 2rem;
   justify-content: space-between;
   align-items: center;
   border-top: 2px solid var(--darkgray);
@@ -388,7 +384,7 @@ a[href].direct-link:focus:visited,
   flex: 1 1 0%;
 }
 .post-excerpt {
-  padding-bottom: 3.5rem;
+  padding-bottom: 2.875rem;
   color: #4b5563;
 }
 a[href].read-more {
@@ -396,12 +392,13 @@ a[href].read-more {
   float: right;
   text-decoration: none;
   border-bottom: 1px dotted var(--gray);
-  margin-top: -0.5rem;
+  margin-top: -0.9rem;
+  padding-right: 0.5rem;
 }
 a[href].read-more:hover {
   border-bottom: 1px dotted var(--darkgray);
   color: var(--gray);
 }
 aside {
-  margin-top: 4rem;
+  margin-top: 2.5rem;
 }
