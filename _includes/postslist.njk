@@ -10,7 +10,7 @@
   </li>
     {%- if post.data.post_excerpt -%}
   <li class="post-excerpt">{{ post.data.post_excerpt | md | safe }}
-    <p><a href="{{ post.url }}" class="read-more">Read this post &rarr;</a></p>   
+    <a href="{{ post.url }}" class="read-more">Read this post &rarr;</a>   
     {%- endif -%}
   </li>
 {% endfor %}
