@@ -20,13 +20,6 @@ module.exports = function(eleventyConfig) {
     return new CleanCSS({}).minify(code).styles;
   });
 
-  // To create excerpts
-  eleventyConfig.setFrontMatterParsingOptions({
-    excerpt: true,
-    excerpt_separator: '<!-- excerpt -->',
-    excerpt_alias: 'post_excerpt'
-  })
-
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
@@ -38,6 +31,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
   });
+
+  // Add shortcode
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
@@ -76,27 +72,6 @@ module.exports = function(eleventyConfig) {
 
     return filterTagList([...tagSet]);
   });
-
-  // Customize Markdown library and settings:
-  let markdownLibrary = markdownIt({
-    html: true,
-    breaks: false,
-    linkify: true
-  }).use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: "after",
-      class: "direct-link",
-      symbol: "#",
-      level: [1,2,3,4],
-    }),
-    slugify: eleventyConfig.getFilter("slug")
-  });
-  eleventyConfig.setLibrary("md", markdownLibrary);
-
-  eleventyConfig.addFilter("md", function (content = "") {
-    return markdownIt({ html: true }).render(content);
-  });
-
 
   // Override Browsersync defaults (used only with --serve)
   eleventyConfig.setBrowserSyncConfig({

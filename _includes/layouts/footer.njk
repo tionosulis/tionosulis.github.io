@@ -1,12 +1,6 @@
 <footer>
-  <div class="social-link">
-    <p class="social-link-text">
-      {% if metadata.author.github != "" %}
-        <a href={{ metadata.author.github }}>Github</a> 
-      {% endif %}
-      {% if metadata.author.twitter.username != "" %}
-        &middot; <a href={{ metadata.author.twitter.username }}>Twitter</a>
-      {% endif %}
-    </p>
-  </div>
-</footer>
+    <div class="footer__container">
+      <span class="footer__info">&copy; {% year %} {{ metadata.author.name }}<br>
+      &lt;/&gt; Powered by <a href="https://github.com/11ty/eleventy/">11ty</a> & <a href="https://pages.github.com/">Github Pages</a></span> 
+    </div>
+  </footer>

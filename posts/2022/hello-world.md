@@ -5,5 +5,5 @@ date: 2022-01-09
 tags:
 - hello
 ---
-A test post just to make sure that the site build's right.<!-- excerpt --> 
+A test post just to make sure that the site build's right.
 Nothing much to say but "Hello!", and thanks for stopping by.

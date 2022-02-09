@@ -16,29 +16,28 @@
 	</style>
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
-  <!-- Open graph -->
-    <meta property="og:url" content="{{metadata.url}}{{page.url}}">
+    <!-- Open graph -->
+    <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
     <meta property="og:title" content="{{ title or metadata.title }}">
     <meta property="og:description" content="{% if description %}{{ description }} — {% endif %}{% if title %}A post by {{ metadata.author.name }}{% elif metadata.url %}{{ metadata.description }}{% endif %}">
     <meta property="og:type" content="{% if page.url != '/' %}article{% else %}website{% endif %}">
-  <!-- Twitter -->
+    <!-- Twitter -->
     <meta name="twitter:title" content="{{ title or metadata.title }}">
     <meta name="twitter:description" content="{% if description %}{{ description }} — {% endif %}{% if title %}A post by {{ metadata.author.name }}{% elif metadata.url %}{{ metadata.description }}{% endif %}">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="{{ metadata.author.twitter.handle }}">   
-    <meta name="twitter:creator" content="{{ metadata.author.twitter.handle }}">  
-	<!-- favicons -->
+    <meta name="twitter:site" content="{{ metadata.author.twitter.handle }}">
+    <meta name="twitter:creator" content="{{ metadata.author.twitter.handle }}">
+	  <!-- favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/favicon.ico">
-
     {% if ignore %}
       <meta name="robots" content="noindex"/>
-    {% endif %}
-    
+    {% endif -%}
   </head>
+  
   <body>
     <header>
       <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
@@ -50,13 +49,12 @@
       {%- endfor %}
       </ul>
     </header>
-
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+    
+    <main{%- if templateClass %} class="{{ templateClass }}"{% endif -%}>
       {{ content | safe }}
     </main>
 
-    {% include "layouts/footer.njk" %}
-
+  {% include "layouts/footer.njk" %}
     <!-- Current page: {{ page.url | url }} -->
   </body>
 </html>
