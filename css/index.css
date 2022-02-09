@@ -179,8 +179,9 @@ code {
   float: left;
   margin: 1rem 0; /* 16px /16 */
   font-size: 1rem; /* 16px /16 */
+  line-height: 1.6;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 400px) {
   .home {
     width: 100%;
     display: flex;
@@ -203,12 +204,12 @@ code {
   float: left;
   margin-left: 1em;
 }
-@media (min-width: 601px) {
+@media (min-width: 401px) {
   .nav {
     float: right;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 400px) {
   .nav {
     width: 100%;
     display: flex;
@@ -250,11 +251,11 @@ li.postlist-item {
   line-height: 1.8;
   border-bottom: 2px solid var(--lightgray);
   padding-top: 0.5em;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.8em;
 }
 @media only screen and (max-width: 800px) {
   li.postlist-item {
-    margin-bottom: 0;
+    margin-bottom: 0.6em;
   }
 }
 .postlist li a[href] {
@@ -281,9 +282,10 @@ li.postlist-item {
   text-align: center;
   font-weight: 500;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .tmpl-home h1{
     padding-top: 0;
+    text-align: left;
   }
 }
 
@@ -374,6 +376,11 @@ footer {
   padding-top: clamp(0, 3vw, 0.5em);
   margin-bottom: 0.5em;
   text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  .post__title {
+    text-align: left;
+  }
 }
 .tmpl-post .post__meta {
   color: var(--gray);
