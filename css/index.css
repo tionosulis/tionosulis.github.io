@@ -44,9 +44,6 @@ a[href] {
 a[href]:visited {
   color: var(--navy);
 }
-a[href]:hover {
-  color: var(--gray);
-}
 blockquote {
   font-weight: 500;
   color: #111827;
@@ -89,8 +86,8 @@ main {
   content: "§";
   display: inline-block;
   position: relative;
-  top: -0.7em;
-  font-size: 1.5em;
+  top: -0.9em;
+  font-size: 1.2rem;
   padding: 0 0.25em;
   background: white;
 }
@@ -122,7 +119,7 @@ code {
   line-height: 1.5;
 }
 pre {
-  font-size: 0.95em;
+  font-size: 0.93rem;
   line-height: 1.375;
   direction: ltr;
   text-align: left;
@@ -179,18 +176,27 @@ code {
   float: left;
   margin: 1rem 0; /* 16px /16 */
   font-size: 1rem; /* 16px /16 */
-  line-height: 1.6;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 810px) {
+  .home {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (max-width: 340px) {
   .home {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.2em;
+    margin-top: 1.2em;
   }
 }
 .home :link:not(:hover) {
@@ -201,30 +207,33 @@ code {
 .nav {
   padding: 0;
   list-style: none;
-  float: left;
+  float: right;
   margin-left: 1em;
 }
-@media (min-width: 401px) {
+@media only screen and (max-width: 810px) {
   .nav {
-    float: right;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 0.8em;
+    margin-left: 0.5em;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 340px) {
   .nav {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 0.25em;
-    margin-left: 0.5em;
-  }
-  .social-link {
-    padding-top: 0;
+    margin-right: -0.5em;
+    margin-bottom: 0.5em;
   }
 }
 .nav-item {
   display: inline-block;
   margin-right: 1em;
+  margin-bottom: 0;
 }
 .nav-item a[href]:not(:hover) {
   text-decoration: none;
@@ -241,7 +250,6 @@ code {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space:  nowrap;
-  margin-bottom: 1.5em;
 
 }
 li.postlist-item {
@@ -251,12 +259,7 @@ li.postlist-item {
   line-height: 1.8;
   border-bottom: 2px solid var(--lightgray);
   padding-top: 0.5em;
-  margin-bottom: 0.8em;
-}
-@media only screen and (max-width: 800px) {
-  li.postlist-item {
-    margin-bottom: 0.6em;
-  }
+  margin-bottom: 0.2em;
 }
 .postlist li a[href] {
 	text-decoration: none;
@@ -276,15 +279,14 @@ li.postlist-item {
 }
 .tmpl-home h1 {
   padding-top: 0.5em;
-  padding-bottom: clamp(0.5em, 3vw, 1em);
+  padding-bottom: 0.5em;
   font-size: 1.2rem;
   color: gray;
   text-align: center;
   font-weight: 500;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 810px) {
   .tmpl-home h1{
-    padding-top: 0;
     text-align: left;
   }
 }
@@ -348,11 +350,18 @@ a[href].direct-link:focus:visited,
   color: #aaa;
 }
 .next-prev-post {
-  font-weight: 600;
+  color: var(--blue);
   padding-left: 0;
   list-style: none;
   margin: 0 auto;
   text-align: center;
+}
+.next-prev-post a[href] {
+  color: var(--blue);
+  text-decoration: none;
+}
+.next-prev-post a[href]:hover {
+  text-decoration: underline;
 }
 footer {
   margin-top: 4rem;
@@ -375,12 +384,8 @@ footer {
   font-weight: 800;
   padding-top: clamp(0, 3vw, 0.5em);
   margin-bottom: 0.5em;
+  line-height: 1.2;
   text-align: center;
-}
-@media only screen and (max-width: 600px) {
-  .post__title {
-    text-align: left;
-  }
 }
 .tmpl-post .post__meta {
   color: var(--gray);
@@ -391,7 +396,6 @@ footer {
   font-size: 0.9rem;
 }
 h1 {
-  line-height: 1.2;
   font-size: clamp(1.75rem, 3vw, 2.2rem);
   @supports not (font-size: clamp(1.75rem, 3vw, 2.2rem)) {
     font-size: min(max(1.75rem, 3vw), 2.2rem); 
