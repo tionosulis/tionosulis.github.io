@@ -187,17 +187,6 @@ code {
     margin-right: -0.5em;
   }
 }
-@media (min-width: 481px)  {
-  .nav {
-    max-width: 768px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 0.4em;
-    margin-right: -0.5em;
-  }
-}
 .nav-item {
   display: inline-block;
   margin-right: 1em;
