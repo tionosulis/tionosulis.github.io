@@ -14,7 +14,7 @@
 }
 html {
 	font-family:  -apple-system, system-ui, sans-serif;
-	font-size: clamp(1rem, 3vw, 1.1rem);
+	font-size: clamp(1rem, 3vw, 1.2rem);
 	text-rendering: optimizeSpeed;
 	line-height: 1.6;
 	letter-spacing: -0.01rem;
@@ -72,24 +72,9 @@ main {
 	padding-bottom: 2.5rem;
 }
 .separator {
+  color: var(--lightgray); 
   margin-top: 2rem;
-  overflow: visible; /* For IE */
-  padding: 0;
-  border: none;
-  border-top: double var(--gray);
-  color: inherit;
-  text-align: center;
-  width: 100%;
-}
-.separator:after {
-  color: var(--darkgray);
-  content: "§";
-  display: inline-block;
-  position: relative;
-  top: -0.9em;
-  font-size: 1.2rem;
-  padding: 0 0.25em;
-  background: white;
+  margin-bottom: 2rem;
 }
 main :first-child {
   margin-top: 0;
@@ -177,26 +162,14 @@ code {
   margin: 1rem 0; /* 16px /16 */
   font-size: 1rem; /* 16px /16 */
 }
-@media only screen and (max-width: 810px) {
-  .home {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 1.2em;
-    margin-bottom: 0.5em;
-    font-size: 1.4rem;
-  }
-}
-@media only screen and (max-width: 340px) {
+@media (max-width: 480px) {
   .home {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
-    margin-bottom: 0.2em;
-    margin-top: 1.2em;
+    margin-bottom: 0;
+    font-size: 1.4rem;
   }
 }
 .home :link:not(:hover) {
@@ -210,24 +183,25 @@ code {
   float: right;
   margin-left: 1em;
 }
-@media only screen and (max-width: 810px) {
-  .nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 0.8em;
-    margin-left: 0.5em;
-  }
-}
-@media only screen and (max-width: 340px) {
+@media (max-width: 480px)  {
   .nav {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0.4em;
     margin-right: -0.5em;
-    margin-bottom: 0.5em;
+  }
+}
+@media (min-width: 481px)  {
+  .nav {
+    max-width: 768px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 0.4em;
+    margin-right: -0.5em;
   }
 }
 .nav-item {
@@ -259,7 +233,7 @@ li.postlist-item {
   line-height: 1.8;
   border-bottom: 2px solid var(--lightgray);
   padding-top: 0.5em;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.3em;
 }
 .postlist li a[href] {
 	text-decoration: none;
@@ -279,13 +253,12 @@ li.postlist-item {
 }
 .tmpl-home h1 {
   padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: gray;
   text-align: center;
   font-weight: 500;
 }
-@media only screen and (max-width: 810px) {
+@media only screen and (max-width: 768px) {
   .tmpl-home h1{
     text-align: left;
   }
@@ -366,10 +339,6 @@ a[href].direct-link:focus:visited,
 footer {
   margin-top: 4rem;
   margin-bottom: 2rem;  
-}
-.footer__container {
-  margin: 0 auto;
-  width: 100%;
   text-align: center;
 }
 .footer__info, .footer__info a[href] {
