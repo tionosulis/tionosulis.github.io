@@ -80,6 +80,11 @@ header {
   max-width: 62.5em;
   margin: 0 auto;
 }
+@media (max-width: 600px) {
+  header {
+    padding-top: 1rem;
+  }
+}
 header:after {
   content: "";
   display: table;
@@ -218,7 +223,8 @@ li.postlist-item {
   font-weight: bold;
 }
 .tmpl-home h1 {
-  padding-top: 0.5em;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
   font-size: 1.3rem;
   color: gray;
   text-align: center;
@@ -318,7 +324,7 @@ footer {
 .post__title {
   font-size: 2.2rem;
   font-weight: 800;
-  padding-top: 0;
+  padding-top: 1rem;
   margin-bottom: 0.5em;
   line-height: 1.2;
   text-align: center;
