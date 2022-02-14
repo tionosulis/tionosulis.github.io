@@ -80,11 +80,6 @@ header {
   max-width: 62.5em;
   margin: 0 auto;
 }
-@media (max-width: 600px) {
-  header {
-    padding-top: 1rem;
-  }
-}
 header:after {
   content: "";
   display: table;
@@ -233,6 +228,7 @@ li.postlist-item {
 @media (max-width: 600px) {
   .tmpl-home h1 {
     text-align: left;
+    padding-bottom: 0;
   }
 }
 
