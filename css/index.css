@@ -15,10 +15,11 @@
 html,
 body {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   font-family: -apple-system, system-ui, sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
+  max-width: 42em;
 }
 p:last-child {
   margin-bottom: 0;
@@ -58,26 +59,20 @@ blockquote p:last-of-type::after {
   padding-left: 0.1em;
 }
 main {
-  max-width: 37.5em;
-	margin: 0 auto;
-	padding-left: 2rem;
-	padding-right: 2rem;
-	padding-top: 2rem;
-	padding-bottom: 2.5rem;
+	padding: 2rem;
 }
 .separator {
-  color: transparent;
-  border-bottom: 2px solid var(--lightgray);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  color: var(--lightgray);
+  background-color: var(--lightgray);
+  margin-bottom: 1.5rem;
+  height: 2px;
+  border: none;
 }
 main :first-child {
   margin-top: 0;
 }
 header {
-  border-bottom: 1px dashed var(--lightgray);
-  padding: 0 1rem;
-  max-width: 62.5em;
+  padding: 1rem;
   margin: 0 auto;
 }
 header:after {
@@ -101,7 +96,7 @@ code {
   line-height: 1.5;
 }
 pre {
-  font-size: 0.93rem;
+  font-size: 0.9em;
   line-height: 1.375;
   direction: ltr;
   text-align: left;
@@ -154,10 +149,9 @@ code {
 
 /* Header */
 .home {
-  padding: 0 1rem;
-  float: left;
-  margin: 1rem 0; /* 16px /16 */
-  font-size: 1rem; /* 16px /16 */
+  padding: 1rem 1rem 0;
+  margin: 1rem 0;
+  font-size: 1.4rem;
 }
 .home :link:not(:hover) {
   text-decoration: none;
@@ -165,14 +159,16 @@ code {
 
 /* Nav */
 .nav {
-  padding: 0;
   list-style: none;
   float: right;
-  margin-left: 1em;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--lightgray);
+  padding-left: 0;
+  margin-right: 0.5rem;
 }
 .nav-item {
   display: inline-block;
-  margin-right: 1em;
+  margin-right: 0.5rem;
   margin-bottom: 0;
 }
 .nav-item a[href]:not(:hover) {
@@ -199,7 +195,7 @@ li.postlist-item {
   line-height: 1.8;
   border-bottom: 2px solid var(--lightgray);
   padding-top: 0.5em;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.2em;
 }
 .postlist li a[href] {
 	text-decoration: none;
@@ -218,18 +214,9 @@ li.postlist-item {
   font-weight: bold;
 }
 .tmpl-home h1 {
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: gray;
-  text-align: center;
   font-weight: 500;
-}
-@media (max-width: 600px) {
-  .tmpl-home h1 {
-    text-align: left;
-    padding-bottom: 0;
-  }
 }
 
 /* Tags */
@@ -240,10 +227,10 @@ li.postlist-item {
   color: var(--darkgray);
   text-decoration: none;
   line-height: 1.8;
+  padding-right: 1em;
 }
 .post-tag::before {
   content: " # ";
-  margin-left: 1em;
   color: var(--gray);
   padding-right: 0.09em;
 }
@@ -291,47 +278,46 @@ a[href].direct-link:focus:visited,
   color: #aaa;
 }
 .next-prev-post {
-  color: var(--blue);
   padding-left: 0;
   list-style: none;
   margin: 0 auto;
-  text-align: center;
-}
-.next-prev-post a[href] {
-  color: var(--blue);
-  text-decoration: none;
 }
 .next-prev-post a[href]:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: var(--gray);
 }
 footer {
-  margin-top: 4rem;
-  margin-bottom: 2rem;  
-  text-align: center;
-}
-.footer__info, .footer__info a[href] {
-  font-size: 0.8rem;
+  padding-top: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem ;
+  margin-bottom: 2rem;
+  font-size: 0.8rem; 
   color: gray;
-  text-decoration: none;
+}
+.footer__info {
+  text-align: center;
 }
 .footer__info a[href] {
   font-weight: 600;
+  text-decoration: none;
+  color: gray;
 }
 .post__title {
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  padding-top: 1rem;
   margin-bottom: 0.5em;
   line-height: 1.2;
-  text-align: center;
 }
 .tmpl-post .post__meta {
   color: var(--gray);
   font-weight: 600;
-  text-align: center;
   padding-bottom: 0.5em;
   margin-top: -0.5em;
   font-size: 0.9rem;
+}
+.post__meta .postlist-date {
+  color: var(--gray);
+  padding-right: 1em;
 }
 h2, h3 {
   line-height: 1.2;

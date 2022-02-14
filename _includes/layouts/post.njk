@@ -3,7 +3,7 @@ layout: layouts/base.njk
 templateClass: tmpl-post
 ---
 <h1 class="post__title">{{ title }}</h1>
-<div class="post__meta"><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+<div class="post__meta"><time class="postlist-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
 {%- for tag in tags | filterTagList -%}
 {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
 <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
