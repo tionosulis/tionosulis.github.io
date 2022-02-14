@@ -224,6 +224,11 @@ li.postlist-item {
   text-align: center;
   font-weight: 500;
 }
+@media (max-width: 600px) {
+  .tmpl-home h1 {
+    text-align: left;
+  }
+}
 
 /* Tags */
 .post-tag {
