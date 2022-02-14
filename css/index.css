@@ -58,7 +58,7 @@ blockquote p:last-of-type::after {
   padding-left: 0.1em;
 }
 main {
-  max-width: 38em;
+  max-width: 37.5em;
 	margin: 0 auto;
 	padding-left: 2rem;
 	padding-right: 2rem;
@@ -66,7 +66,8 @@ main {
 	padding-bottom: 2.5rem;
 }
 .separator {
-  color: var(--lightgray); 
+  color: transparent;
+  border-bottom: 2px solid var(--lightgray);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -76,6 +77,8 @@ main :first-child {
 header {
   border-bottom: 1px dashed var(--lightgray);
   padding: 0 1rem;
+  max-width: 62.5em;
+  margin: 0 auto;
 }
 header:after {
   content: "";
@@ -156,16 +159,6 @@ code {
   margin: 1rem 0; /* 16px /16 */
   font-size: 1rem; /* 16px /16 */
 }
-@media (max-width: 480px) {
-  .home {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0;
-    font-size: 1.4rem;
-  }
-}
 .home :link:not(:hover) {
   text-decoration: none;
 }
@@ -176,16 +169,6 @@ code {
   list-style: none;
   float: right;
   margin-left: 1em;
-}
-@media (max-width: 480px)  {
-  .nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.4em;
-    margin-right: -0.5em;
-  }
 }
 .nav-item {
   display: inline-block;
@@ -240,11 +223,6 @@ li.postlist-item {
   color: gray;
   text-align: center;
   font-weight: 500;
-}
-@media only screen and (max-width: 768px) {
-  .tmpl-home h1{
-    text-align: left;
-  }
 }
 
 /* Tags */
