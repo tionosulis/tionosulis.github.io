@@ -158,8 +158,8 @@ code {
 }
 .home::first-letter {
   color: #fefefe;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 2rem;
+  font-family: Georgia, serif;
+  font-size: 1.9rem;
   background-color: var(--darkgray);
 }
 
@@ -167,7 +167,7 @@ code {
 .nav {
   list-style: none;
   float: right;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.3rem;
   border-bottom: 2px solid var(--darkgray);
   padding-left: 0;
   margin-right: 0.5rem;
