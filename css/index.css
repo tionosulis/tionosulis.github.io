@@ -62,8 +62,8 @@ main {
 	padding: 2rem;
 }
 .separator {
-  color: var(--lightgray);
-  background-color: var(--lightgray);
+  color: var(--darkgray);
+  background-color: var(--darkgray);
   margin-bottom: 1.5rem;
   height: 2px;
   border: none;
@@ -150,19 +150,25 @@ code {
 /* Header */
 .home {
   padding: 0 1rem;
-  margin: 1rem 0;
+  margin: 1em 0 0;
   font-size: 1.4rem;
 }
 .home :link:not(:hover) {
   text-decoration: none;
+}
+.home::first-letter {
+  color: #fefefe;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  background-color: var(--darkgray);
 }
 
 /* Nav */
 .nav {
   list-style: none;
   float: right;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--lightgray);
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid var(--darkgray);
   padding-left: 0;
   margin-right: 0.5rem;
 }
@@ -186,14 +192,13 @@ code {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space:  nowrap;
-
 }
 li.postlist-item {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   line-height: 1.8;
-  border-bottom: 2px solid var(--lightgray);
+  border-bottom: 2px solid var(--darkgray);
   padding-top: 0.5em;
   margin-bottom: 0.2em;
 }
@@ -215,8 +220,8 @@ li.postlist-item {
 }
 .tmpl-home h1 {
   font-size: 1.2rem;
-  color: gray;
   font-weight: 500;
+  margin-bottom: -0.5rem;
 }
 
 /* Tags */
@@ -231,7 +236,7 @@ li.postlist-item {
 }
 .post-tag::before {
   content: " # ";
-  color: var(--gray);
+  color: #666;
   padding-right: 0.09em;
 }
 a[href].post-tag,
@@ -241,7 +246,7 @@ a[href].post-tag:visited {
 a[href].post-tag:hover,
 a[href].post-tag:focus {
   text-decoration: underline;
-  color: var(--darkgray);
+  color: var(--lightgray);
 }
 .postlist-item > .post-tag {
   align-self: center;
@@ -292,7 +297,6 @@ footer {
   padding-right: 2rem ;
   margin-bottom: 2rem;
   font-size: 0.8rem; 
-  color: gray;
 }
 .footer__info {
   text-align: center;
@@ -300,7 +304,6 @@ footer {
 .footer__info a[href] {
   font-weight: 600;
   text-decoration: none;
-  color: gray;
 }
 .post__title {
   font-size: 1.5rem;
@@ -309,14 +312,14 @@ footer {
   line-height: 1.2;
 }
 .tmpl-post .post__meta {
-  color: var(--gray);
+  color: #666;
   font-weight: 600;
   padding-bottom: 0.5em;
   margin-top: -0.5em;
   font-size: 0.9rem;
 }
 .post__meta .postlist-date {
-  color: var(--gray);
+  color: #666;
   padding-right: 1em;
 }
 h2, h3 {
