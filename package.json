@@ -1,7 +1,7 @@
 {
-  "name": "simpleventy",
-  "version": "1.0.0",
-  "description": "A simple blog template build with Eleventy static site generator",
+  "name": "my_eleventy_blog",
+  "description": "Source code of sulistiono's blog (https://tionosulis.github.io/), build with Eleventy (https://github.com/11ty/eleventy), hosted on Github Pages (https://pages.github.com/).",
+  "private": true,
   "scripts": {
     "build": "eleventy",
     "watch": "eleventy --watch",
