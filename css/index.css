@@ -14,7 +14,6 @@
 }
 html,
 body {
-  padding: 0;
   margin: 0 auto;
   font-family: -apple-system, system-ui, sans-serif;
   color: var(--darkgray);
@@ -64,7 +63,6 @@ main {
 .separator {
   color: var(--darkgray);
   background-color: var(--darkgray);
-  margin-bottom: 1.5rem;
   height: 2px;
   border: none;
 }
@@ -73,7 +71,6 @@ main :first-child {
 }
 header {
   padding: 1rem;
-  margin: 0 auto;
 }
 header:after {
   content: "";
@@ -286,23 +283,20 @@ a[href].direct-link:focus:visited,
 .next-prev-post {
   padding-left: 0;
   list-style: none;
-  margin: 0 auto;
 }
-.next-prev-post a[href]:hover {
+.next-prev-post a:hover {
   text-decoration: none;
   color: var(--gray);
 }
 footer {
-  padding-top: 5rem;
-  padding-left: 2rem;
-  padding-right: 2rem ;
-  margin-bottom: 2rem;
-  font-size: 0.8rem; 
+  padding: 4em 2em;
+  font-size: 80%;
+  text-align: center; 
 }
-.footer__info {
-  text-align: center;
+footer nav {
+  margin-top: -1em;
 }
-.footer__info a[href] {
+footer nav a {
   font-weight: 600;
   text-decoration: none;
 }
