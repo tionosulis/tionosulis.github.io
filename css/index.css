@@ -6,8 +6,8 @@
   --navy: hsl(327, 64%, 5%);
   --blue: #082840;
   --white: #fff;
-  --fs: 1rem;
-  --lh: 1.6;
+  --font-size: 1rem;
+  --line-height: 1.6;
 }
 
 /* Global stylesheet */
@@ -18,20 +18,29 @@ html,
 body {
   padding: 0;
   margin: 0;
+  min-height: 100vh;
   font-family: -apple-system, system-ui, sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
-  font-size: var(--fs);
-  line-height: var(--lh);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  overflow-y: scroll;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 @media (min-width:500px) {
   :root {
-   --fs: 1.04rem;
+    --font-size: 1.04rem;
   }
 }
 @media (min-width:2000px) {
   :root {
-   --fs: 1.3125rem;
+    --font-size: 1.3125rem;
   }
 }
 p:last-child {
