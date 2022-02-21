@@ -14,17 +14,22 @@
 * {
   box-sizing: border-box;
 }
-html,
-body {
-  padding: 0;
+html {
   margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  position: relative;
+  margin: 0 auto;
   min-height: 100vh;
+  max-width: 39.5em;
   font-family: -apple-system, system-ui, sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
   font-size: var(--font-size);
   line-height: var(--line-height);
-  overflow-y: scroll;
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
@@ -35,13 +40,16 @@ body {
 }
 @media (min-width:500px) {
   :root {
-    --font-size: 1.04rem;
+   --font-size: 1.0625rem;
   }
 }
 @media (min-width:2000px) {
   :root {
-    --font-size: 1.3125rem;
+   --font-size: 1.25rem;
   }
+}
+h1, h2, h3 {
+  letter-spacing: -0.02em;
 }
 p:last-child {
   margin-bottom: 0;
@@ -77,15 +85,11 @@ blockquote p:last-of-type::after {
 main {
 	padding: 2rem;
 }
-header, footer, main {
-  max-width: 39.5em;
-  margin: 0 auto;
-}
 main :first-child {
   margin-top: 0;
 }
 header {
-  padding: 0.5em 1em;
+  padding: 0.5em 1rem;
 }
 header:after {
   content: "";
@@ -165,6 +169,7 @@ code {
   margin: 1em 0 0;
   font-size: 1.5rem;
   font-weight: 800;
+  position: relative;
 }
 .home :link:not(:hover) {
   text-decoration: none;
@@ -174,8 +179,8 @@ code {
   font-family: Georgia, serif;
   font-size: 2rem;
   background-color: var(--darkgray);
-  border-bottom: 0.25rem solid #ddd;
-  padding: 0 0.02rem;
+  border-bottom: 0.15em solid #ddd;
+  padding: 0 0.02em;
 }
 
 /* Nav */
@@ -185,7 +190,8 @@ code {
   padding-bottom: 0.3rem;
   border-bottom: 2px solid var(--darkgray);
   padding-left: 0;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 .nav-item {
   display: inline-block;
@@ -304,7 +310,7 @@ a[href].direct-link:focus:visited,
 footer {
   margin-top: -1em;
   padding: 3em 2em;
-  font-size: 80%;
+  font-size: 0.875rem;
   text-align: center; 
 }
 footer nav {
@@ -330,14 +336,15 @@ footer nav a {
   padding-right: 1em;
 }
 h1 {
-  line-height: 1.3;
+  line-height: 1.2;
 }
 h2 {
-  line-height: 1.4;
+  line-height: 1.3;
 }
 h3 {
-  line-height: 1.5;
+  line-height: 1.4;
 }
-iframe {
+iframe, video {
   width: 100%;
+  border: none;
 }
