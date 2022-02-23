@@ -191,7 +191,7 @@ code {
 .nav-item {
   display: inline-block;
   margin-right: 0.5rem;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
 }
 .nav-item a[href]:not(:hover) {
   text-decoration: none;
