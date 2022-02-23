@@ -165,7 +165,7 @@ code {
 
 /* Header */
 .home {
-  margin: 1rem 0;
+  margin: 1em 0 0.5em;
   font-weight: 800;
 }
 .home :link:not(:hover) {
@@ -187,11 +187,11 @@ code {
   padding-bottom: 0.3rem;
   border-bottom: 2px solid var(--darkgray);
   padding-left: 0;
+  margin-bottom: 2.5em;
 }
 .nav-item {
   display: inline-block;
   margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 .nav-item a[href]:not(:hover) {
   text-decoration: none;
@@ -295,7 +295,7 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link:visited {
   color: #aaa;
 }
-.next-prev-post {
+.nextprev-post {
   padding-left: 0;
   list-style: none;
 }
@@ -304,9 +304,8 @@ a[href].direct-link:focus:visited,
   color: var(--gray);
 }
 footer {
-  margin-top: -1em;
-  padding: 3em 2em;
-  font-size: 0.875rem;
+  padding: 2em 2em 3em;
+  font-size: 80%;
   text-align: center; 
 }
 footer nav {
@@ -317,7 +316,7 @@ footer nav a {
   text-decoration: none;
 }
 .post__title {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.8rem;
   font-weight: 800;
 }
 .post__meta {
