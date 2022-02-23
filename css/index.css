@@ -63,6 +63,9 @@ a[href] {
 a[href]:visited {
   color: var(--navy);
 }
+.tmpl-post a:hover, .tmpl-home a:hover {
+  color: var(--gray);
+}
 blockquote {
   font-weight: 500;
   color: #111827;
@@ -149,7 +152,7 @@ code {
   display: none;
 }
 .highlight-line-isdir {
-  color: #b0b0b0;
+  color: var(--gray);
   background-color: #222;
 }
 .highlight-line-active {
@@ -166,17 +169,18 @@ code {
 /* Header */
 .home {
   margin: 1rem 0;
-  font-weight: 800;
+  font-weight: 900;
 }
 .home :link:not(:hover) {
   text-decoration: none;
 }
 .home::first-letter {
+  font-style: italic;
   color: #fefefe;
   font-family: sanserif;
   font-size: 130%;
-  background-color: var(--darkgray);
-  border-bottom: 0.15em solid #ddd;
+  background-color: #000;
+  border-bottom: 0.07em solid #e5e5e5;
   padding: 0 0.02em;
 }
 
@@ -216,19 +220,14 @@ li.postlist-item {
   padding-top: 0.5em;
   margin-bottom: 0.2em;
 }
-.postlist li a[href] {
+.postlist a {
   max-width: 30em;
 	text-decoration: none;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.postlist li a:hover {
-	color: var(--gray);
-}
 .postlist-date {
 	font-size: 0.9rem;
-	color: var(--darkgray);
-	word-spacing: -0.5px;
 }
 .postlist-item-active .postlist-link {
   font-weight: bold;
@@ -255,15 +254,17 @@ a[href].post-tag:visited {
 }
 a[href].post-tag:hover,
 a[href].post-tag:focus {
-  text-decoration: underline;
-  color: var(--lightgray);
+  color: var(--gray);
 }
 .postlist-item > .post-tag {
   align-self: center;
 }
 .tmpl-home a[href].post-tag {
-  color: var(--darkgray);
+  color: goldenrod;
   font-weight: 600;
+}
+.tmpl-home a[href].post-tag:hover {
+  color: var(--gray);
 }
 .tmpl-home h1 {
   font-size: 170%;
@@ -298,10 +299,6 @@ a[href].direct-link:focus:visited,
 .nextprev-post {
   padding-left: 0;
   list-style: none;
-}
-.next-prev-post a:hover {
-  text-decoration: none;
-  color: var(--gray);
 }
 footer {
   padding: 2em 2em 3em;
@@ -338,6 +335,12 @@ h2 {
 }
 h3 {
   line-height: 1.4;
+}
+hr {
+  border: none;
+  height: 2px;
+  color: var(--darkgray);
+  background-color: var(--darkgray);
 }
 iframe, video {
   width: 100%;
