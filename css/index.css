@@ -175,12 +175,11 @@ code {
   text-decoration: none;
 }
 .home::first-letter {
-  font-style: italic;
   color: #fefefe;
   font-family: sanserif;
   font-size: 130%;
   background-color: #000;
-  border-bottom: 0.07em solid #e5e5e5;
+  border-bottom: 0.07em solid #d5d5d5;
   padding: 0 0.02em;
 }
 
