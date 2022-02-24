@@ -1,4 +1,4 @@
-/* Colors */
+/* Colors, font*/
 :root {
   --lightgray: #e0e0e0;
   --gray: #c0c0c0;
@@ -6,6 +6,7 @@
   --navy: hsl(327, 64%, 5%);
   --blue: #082840;
   --white: #fff;
+  --gold: goldenrod;
   --font-size: 1rem;
   --line-height: 1.6;
 }
@@ -63,8 +64,11 @@ a[href] {
 a[href]:visited {
   color: var(--navy);
 }
+.tmpl-post a[href], .tmpl-home a[href] {
+  color: var(--gold);
+}
 .tmpl-post a:hover, .tmpl-home a:hover {
-  color: var(--gray);
+  color: var(--navy);
 }
 blockquote {
   font-weight: 500;
@@ -175,12 +179,9 @@ code {
   text-decoration: none;
 }
 .home::first-letter {
-  color: #fefefe;
   font-family: sanserif;
   font-size: 130%;
-  background-color: #000;
-  border-bottom: 0.07em solid #d5d5d5;
-  padding: 0 0.02em;
+  border-bottom: 0.05em solid var(--gold);
 }
 
 /* Nav */
@@ -230,8 +231,14 @@ li.postlist-item {
 }
 .postlist-item-active .postlist-link {
   font-weight: bold;
+  color: var(--blue);
 }
-
+.tmpl-home .postlist a {
+  color: var(--navy);
+}
+.tmpl-home .postlist a:hover {
+  color: var(--gold);
+}
 /* Tags */
 .post-tag {
   display: inline-flex;
@@ -253,17 +260,17 @@ a[href].post-tag:visited {
 }
 a[href].post-tag:hover,
 a[href].post-tag:focus {
-  color: var(--gray);
+  color: var(--gold);
 }
 .postlist-item > .post-tag {
   align-self: center;
 }
 .tmpl-home a[href].post-tag {
-  color: goldenrod;
+  color: var(--gold);
   font-weight: 600;
 }
 .tmpl-home a[href].post-tag:hover {
-  color: var(--gray);
+  color: var(--navy);
 }
 .tmpl-home h1 {
   font-size: 170%;
@@ -298,6 +305,9 @@ a[href].direct-link:focus:visited,
 .nextprev-post {
   padding-left: 0;
   list-style: none;
+}
+.nextprev-post a {
+  text-decoration: none;
 }
 footer {
   padding: 2em 2em 3em;
@@ -336,10 +346,7 @@ h3 {
   line-height: 1.4;
 }
 hr {
-  border: none;
-  height: 2px;
-  color: var(--darkgray);
-  background-color: var(--darkgray);
+  border-top: 2px solid var(--gray);
 }
 iframe, video {
   width: 100%;
