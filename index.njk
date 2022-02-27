@@ -4,8 +4,13 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
+<div id="about-index" class="about-description">
+  <h1><span class="wave-emoji">👋</span>Hai!</h1>   
+    <p>I am <a href="/about">Sulistiono</a>, and this is another online stack to dump my thoughts and notes to self on just about anything. Mostly about prose, poetry, technology, web, and journey of my favorite coding, planting and art hobbies.</p>
+    <p><a href="https://twitter.com/tionosulis_">Twitter</a> | <a href="https://github.com/tionosulis">Github</a></p>
+    </div>
 {% set maxPosts = collections.posts.length | min(3) %}
-<h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
+<h2>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h2>
 {%- set postslist = collections.posts | head(-3) %}
 {%- set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" -%}
