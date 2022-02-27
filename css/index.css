@@ -72,10 +72,16 @@ a[href] {
 a[href]:visited {
   color: var(--navy);
 }
-.tmpl-post a:hover, .tmpl-home a:hover {
+.tmpl-post a:hover {
   color: var(--gray);
   text-decoration: none;
-  border-bottom: 2px solid red;
+  border-bottom: 0.125em solid red;
+}
+.tmpl-home a:hover,
+.about-description a:hover {
+  color: var(--gray);
+  text-decoration: none;
+  border-bottom: 0.0625em dotted var(--darkgray);
 }
 blockquote {
   font-weight: 500;
@@ -179,8 +185,9 @@ code {
 
 /* Header */
 .home {
-  margin: 1rem 0;
+  margin: 1rem 0 1rem;
   font-weight: 800;
+  font-size: 140%;
 }
 .home :link:not(:hover) {
   text-decoration: none;
@@ -199,10 +206,10 @@ code {
 .nav {
   list-style: none;
   float: right;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.1rem;
   border-bottom: 2px solid var(--darkgray);
   padding-left: 0;
-  margin-bottom: 2.5em;
+  margin-bottom: 4em;
 }
 .nav-item {
   display: inline-block;
@@ -218,7 +225,6 @@ code {
 
 /* Posts list */
 .postlist {
-  list-style: none;
   padding: 0;
   white-space: nowrap;
 }
@@ -227,22 +233,43 @@ li.postlist-item {
   align-items: baseline;
   justify-content: space-between;
   line-height: 1.8;
-  border-bottom: 2px solid var(--darkgray);
-  padding-top: 0.5em;
-  margin-bottom: 0.2em;
+  border-bottom: 1px dotted var(--darkgray);
+  padding: 0.2em 0;
 }
 .postlist a {
-  max-width: 30em;
+  max-width: 26em;
 	text-decoration: none;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 .postlist li a:hover {
-  color: var(gray);
+  color: var(--gray);
   border-bottom: none;
 }
 .postlist-date {
 	font-size: 0.9rem;
+}
+.about-description {
+  padding-bottom: 2.5em;
+}
+.wave-emoji {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: 2;
+  transform-origin: 70% 70%;
+  display: inline-block;
+  animation-delay: 1s;
+  padding-right: 0.3em;
+}
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) } 
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }
+  100% { transform: rotate( 0.0deg) }
 }
 
 /* Tags */
