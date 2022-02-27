@@ -209,7 +209,7 @@ code {
   padding-bottom: 0.1rem;
   border-bottom: 2px solid var(--darkgray);
   padding-left: 0;
-  margin-bottom: 4em;
+  margin-bottom: 2.5em;
 }
 .nav-item {
   display: inline-block;
@@ -250,7 +250,7 @@ li.postlist-item {
 	font-size: 0.9rem;
 }
 .about-description {
-  padding-bottom: 2.5em;
+  padding-bottom: 1em;
 }
 .wave-emoji {
   animation-name: wave-animation;
