@@ -185,7 +185,7 @@ code {
 
 /* Header */
 .home {
-  margin: 1.5rem 0 0.25rem;
+  margin: 2rem 0 1rem;
   font-weight: 800;
   font-size: 150%;
 }
@@ -199,17 +199,16 @@ code {
   font-family: sanserif;
   font-size: 120%;
   border-bottom: 0.09em solid var(--lightgray);
-  vertical-align: -0.01em;
+  vertical-align: -0.025em;
 }
 
 /* Nav */
 .nav {
   list-style: none;
   float: right;
-  padding-bottom: 0.1rem;
   border-bottom: 2px solid var(--darkgray);
   padding-left: 0;
-  margin-bottom: 2.2em;
+  margin-bottom: 2em;
 }
 .nav-item {
   display: inline-block;
@@ -356,6 +355,12 @@ iframe, video {
 .nextprev-post {
   padding-left: 0;
   list-style: none;
+  text-decoration: none;
+}
+hr { 
+  height: 1px;
+  background-color: var(--darkgray);
+  border: none;
 }
 
 /* Footer */
