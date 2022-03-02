@@ -191,7 +191,7 @@ code {
 .home::first-letter {
   font-family: sanserif;
   font-size: 120%;
-  border-bottom: 0.09em solid #000;
+  border-bottom: 0.09em solid var(--lightgray);
   vertical-align: -0.025em;
 }
 
