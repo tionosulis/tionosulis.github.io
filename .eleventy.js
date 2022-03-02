@@ -6,6 +6,7 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const CleanCSS = require("clean-css");
+const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
   // Copy the `img` and `css` folders to the output
@@ -18,6 +19,21 @@ module.exports = function(eleventyConfig) {
   // Minify css via cssmin filter
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles;
+  });
+
+  // Minify html
+  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
+    if( outputPath && outputPath.endsWith(".html") ) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true
+      });
+      return minified;
+    }
+
+    return content;
   });
 
   // Add plugins

@@ -29,6 +29,7 @@
     "markdown-it-anchor": "^8.4.1"
   },
   "dependencies": {
-    "clean-css": "^5.2.4"
+    "clean-css": "^5.2.4",
+    "html-minifier": "^4.0.0"
   }
 }
