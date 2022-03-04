@@ -105,7 +105,7 @@ a[href]:visited {
   color: var(--navy);
 }
 .tmpl-home a, .tmpl-post a:not(.direct-link) {
-  border-bottom: 0.11rem solid var(--darkest);
+  border-bottom: 0.0625rem solid var(--darkest);
 }
 .tmpl-home a:hover, .tmpl-post a:hover {
   color: var(--gray);
@@ -249,7 +249,6 @@ code {
   color: var(--lightgray);
 }
 .nav-item-active a[href] {
-  color: var(--lightgray);
   font-weight: 700;
   text-decoration: none;
 }
