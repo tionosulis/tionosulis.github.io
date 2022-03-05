@@ -7,6 +7,7 @@
     <meta name="author" content="{{ metadata.author.name }}">
     <meta name="description" content="{% if description %}{{ description }} — {% endif %}{% if title %}A post by {{ metadata.author.name }}{% elif metadata.url %}{{ metadata.description }}{% endif %}">
     <link rel="canonical" href={{ metadata.url }}{{ page.url }}>
+    <link rel="preload" href="/fonts/roboto-v29-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     {% set css %}
 		{% include "css/index.css" %}
 		{% include "css/prism-base16-monokai.dark.css" %}
