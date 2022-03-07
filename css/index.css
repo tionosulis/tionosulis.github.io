@@ -8,48 +8,119 @@
   --white: #fff;
   --font-size: 16px;
   --line-height: 1.5;
-  --letter-spacing: -0.03125em;
 }
 
 /* Global stylesheet */
 * {
   box-sizing: border-box;
 }
+
+/* https://github.com/TypeNetwork/Roboto-Flex/blob/main/OFL.txt
+
+Copyright 2017 The Roboto Flex Project Authors (https://github.com/TypeNetwork/Roboto-Flex)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+*/
+
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
+  font-family: 'Roboto Flex';
+  font-weight: 400 900;
+  font-stretch: 25% 151%;
   font-display: swap;
   src: local(''),
-       url('/fonts/roboto-v29-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/roboto-v29-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local(''),
-       url('/fonts/roboto-v29-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/roboto-v29-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local(''),
-       url('/fonts/roboto-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/roboto-v29-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: local(''),
-       url('/fonts/roboto-v29-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/roboto-v29-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/RobotoFlex.woff2') format('woff2 supports variations'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/RobotoFlex.woff2') format('woff2-variations'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 html {
   margin: 0;
@@ -64,11 +135,10 @@ body {
   min-height: 100vh;
   max-width: 37.5em;
   background-color: var(--white);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Flex', sans-serif;
   color: var(--darkgray);
   font-size: var(--font-size);
   line-height: var(--line-height);
-  letter-spacing: var(--letter-spacing);
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
@@ -93,7 +163,6 @@ body {
   }
 }
 h1, h2, h3, h4 {
-  letter-spacing: -0.04em;
   line-height: 1.1;
 }
 p:last-child {
@@ -110,11 +179,11 @@ a[href]:visited {
   color: var(--navy);
 }
 .tmpl-home a, .tmpl-post a:not(.direct-link) {
-  border-bottom: 0.0625em solid var(--darkest);
+  border-bottom: 0.1em solid var(--darkest);
 }
 .tmpl-home a:hover, .tmpl-post a:hover {
   color: var(--gray);
-  border-bottom: 0.125em solid var(--gray);
+  border-bottom: 0.15em solid var(--lightgray);
 }
 blockquote {
   font-weight: 500;
@@ -225,9 +294,8 @@ code {
 /* Header */
 .home {
   padding-top: 0.5rem;
-  font-weight: 900;
+  font-weight: 800;
   font-size: 1.5em;
-  letter-spacing: -0.04em;
 }
 .home::first-letter {
   font-size: 120%;
@@ -244,7 +312,7 @@ code {
 }
 .nav-item {
   display: inline-block;
-  padding: 0 0.25em;
+  padding: 0 0.25em 0.1em;
 }
 .nav-item a[href] {
   text-decoration: underline;
@@ -279,7 +347,6 @@ li.postlist-item {
 	text-overflow: ellipsis;
 }
 .postlist li a:hover {
-  color: var(--gray);
   border-bottom: none;
 }
 .postlist-date {
@@ -335,8 +402,11 @@ a[href].post-tag:focus {
 }
 .tmpl-home h1 {
   font-size: 1.7em;
+  
 }
-
+.tmpl-home h1, .post__title, .home {
+  letter-spacing: -0.01em;
+}
 /* Warning */
 .warning {
   background-color: #ffc;
