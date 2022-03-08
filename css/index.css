@@ -115,7 +115,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 @font-face {
   font-family: 'Roboto Flex';
-  font-weight: 400 900;
+  font-weight: 400 1000;
   font-stretch: 25% 151%;
   font-display: swap;
   src: local(''),
@@ -237,13 +237,13 @@ code {
     "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
     "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
     "Courier New", Courier, monospace;
-  line-height: 1.5;
+  font-size: 0.9em;
+  color: var(--gray);
 }
 pre {
-  font-size: 0.8em;
-  line-height: 1.375;
   direction: ltr;
   text-align: left;
+  overflow: auto;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
@@ -452,11 +452,10 @@ iframe, video {
 }
 .nextprev-post {
   padding-left: 1rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 .nextprev-post a {
   font-weight: normal;
-  border-bottom: 1px solid var(--lightgray);
 }
 hr { 
   border-color:rgba(0,0,0,.12);
