@@ -247,16 +247,17 @@ pre {
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  padding: 1em;
+  padding: 1.5em 1em;
   margin: 0.5em 0;
-  background-color: #f6f6f6;
+  background-color: #f5f5f5;
+  border-radius: .375rem;
 }
 code {
   word-break: break-all;
@@ -278,17 +279,24 @@ code {
 }
 .highlight-line-isdir {
   color: var(--gray);
-  background-color: #222;
+  background-color: #212121;
 }
 .highlight-line-active {
-  background-color: #444;
-  background-color: #4e4e4e;
+  background-color: #e0e0e0;
 }
 .highlight-line-add {
-  background-color: #45844b;
+  background-color: #fefefe;
+}
+.highlight-line-add::before {
+  content: "+";
+  color: #2da44e;
 }
 .highlight-line-remove {
-  background-color: #902f2f;
+  background-color: #eee;
+}
+.highlight-line-remove::before {
+  content: "-";
+  color: #c62828;
 }
 
 /* Header */
