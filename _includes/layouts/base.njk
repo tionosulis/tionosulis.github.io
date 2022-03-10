@@ -11,6 +11,7 @@
     {% set css %}
 		{% include "css/index.css" %}
 		{% include "css/prism-theme.css" %}
+    {% include "css/prism-diff.css" %}
 	  {% endset %}
 	<style>
 	  {{ css | cssmin | safe }}
