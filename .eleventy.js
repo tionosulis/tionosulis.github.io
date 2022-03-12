@@ -43,11 +43,6 @@ module.exports = function(eleventyConfig) {
 
     return content;
   });
-  
-  // Workbox chace
-  eleventyConfig.addPlugin(cache, {
-    /* Options are optional. */
-  });
 
   // Eleventy Plugin Compress
   eleventyConfig.addPlugin(compress, {
@@ -131,6 +126,11 @@ module.exports = function(eleventyConfig) {
     },
     ui: false,
     ghostMode: false
+  });
+
+  // Workbox chace
+  eleventyConfig.addPlugin(cache, {
+    /* Options are optional. */
   });
 
   return {
