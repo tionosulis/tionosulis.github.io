@@ -7,6 +7,8 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const CleanCSS = require("clean-css");
 const htmlmin = require("html-minifier");
+const { cache } = require('eleventy-plugin-workbox');
+const { compress } = require('eleventy-plugin-compress');
 
 module.exports = function(eleventyConfig) {
   // Copy the `img` and `css` folders to the output
@@ -16,7 +18,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("manifest.json");
   eleventyConfig.addPassthroughCopy("favicon.ico");
-  
+
+  // Add plugins
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  eleventyConfig.addPlugin(pluginNavigation);
+
   // Minify css via cssmin filter
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles;
@@ -36,11 +43,16 @@ module.exports = function(eleventyConfig) {
 
     return content;
   });
+  
+  // Workbox chace
+  eleventyConfig.addPlugin(cache, {
+    /* Options are optional. */
+  });
 
-  // Add plugins
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
-  eleventyConfig.addPlugin(pluginNavigation);
+  // Eleventy Plugin Compress
+  eleventyConfig.addPlugin(compress, {
+    /* Optional options. */
+  });
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
