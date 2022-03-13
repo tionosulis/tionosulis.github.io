@@ -7,7 +7,6 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const CleanCSS = require("clean-css");
 const htmlmin = require("html-minifier");
-const { compress } = require('eleventy-plugin-compress');
 
 module.exports = function(eleventyConfig) {
   // Copy the `img` and `css` folders to the output
@@ -41,11 +40,6 @@ module.exports = function(eleventyConfig) {
     }
 
     return content;
-  });
-
-  // Eleventy Plugin Compress
-  eleventyConfig.addPlugin(compress, {
-    /* Optional options. */
   });
 
   eleventyConfig.addFilter("readableDate", dateObj => {
