@@ -278,7 +278,7 @@ code {
 .nav {
   float: right;
   list-style: none;
-  border-bottom: 1px solid rgba(0,0,0,.12);
+  border-bottom: 1px solid var(--darkest);
   padding-left: 0;
   margin-top: 0;
 }
