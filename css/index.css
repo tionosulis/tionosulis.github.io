@@ -271,14 +271,13 @@ code {
 }
 .home::first-letter {
   font-size: 120%;
-  border-bottom: 0.09em solid var(--lightgray);
+  border-bottom: 0.09em solid var(--darkest);
 }
 
 /* Nav */
 .nav {
   float: right;
   list-style: none;
-  border-bottom: 2px solid var(--darkgray);
   padding-left: 0;
   margin-top: 0;
 }
