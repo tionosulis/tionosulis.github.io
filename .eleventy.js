@@ -7,7 +7,6 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const CleanCSS = require("clean-css");
 const htmlmin = require("html-minifier");
-const { cache } = require('eleventy-plugin-workbox');
 const { compress } = require('eleventy-plugin-compress');
 
 module.exports = function(eleventyConfig) {
@@ -126,11 +125,6 @@ module.exports = function(eleventyConfig) {
     },
     ui: false,
     ghostMode: false
-  });
-
-  // Workbox chace
-  eleventyConfig.addPlugin(cache, {
-    /* Options are optional. */
   });
 
   return {
