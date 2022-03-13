@@ -154,7 +154,7 @@ body {
 }
 @media (min-width:1200px) {
   :root {
-   --font-size: 21px;
+   --font-size: 22px;
   }
 }
 @media (min-width:2000px) {
@@ -212,11 +212,11 @@ main :first-child {
 }
 header {
   padding: 0 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 @media (max-width:500px) {
   header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
   }
 }
 header:after {
