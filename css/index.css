@@ -373,11 +373,10 @@ a[href].post-tag:focus {
   padding-right: 0.5em;
 }
 .tmpl-home h1 {
-  font-size: 1.7em;
-  
+  font-size: 1.5em; 
 }
-.tmpl-home h1, .post__title, .home {
-  letter-spacing: -0.01em;
+.tmpl-home h2 {
+  font-size: 1.3em; 
 }
 /* Warning */
 .warning {
