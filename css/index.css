@@ -1,7 +1,7 @@
 /* Colors, font*/
 :root {
-  --lightgray: #c1c7c9;
-  --gray: #898989;
+  --lightgray: #bdbdbd;
+  --gray: #757575;
   --darkgray: #333;
   --navy: #17050F;
   --darkest: #000;
@@ -179,11 +179,11 @@ a[href]:visited {
   color: var(--navy);
 }
 .tmpl-home a, .tmpl-post a:not(.direct-link) {
-  border-bottom: 0.0625em solid var(--darkest);
+  border-bottom: 0.0625em solid var(--lightgray);
 }
 .tmpl-home a:hover, .tmpl-post a:hover {
-  color: var(--gray);
-  border-bottom: 0.125em solid var(--lightgray);
+  color: var(--lightgray);
+  border-bottom: 0.125em solid var(--darkest);
 }
 blockquote {
   font-weight: 500;
@@ -212,7 +212,7 @@ main :first-child {
 }
 header {
   padding: 0 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 4.5rem;
 }
 @media (max-width:500px) {
   header {
@@ -271,14 +271,14 @@ code {
 }
 .home::first-letter {
   font-size: 120%;
-  border-bottom: 0.09em solid var(--darkest);
+  border-bottom: 0.09em solid var(--lightgray);
 }
 
 /* Nav */
 .nav {
   float: right;
   list-style: none;
-  border-bottom: 1px solid var(--darkest);
+  border-bottom: 1px dotted var(--darkgray);
   padding-left: 0;
   margin-top: 0;
 }
@@ -335,7 +335,7 @@ li.postlist-item {
   transform-origin: 70% 70%;
   display: inline-block;
   animation-delay: 1s;
-  padding-right: 0.3em;
+  padding-left: 0.3em;
 }
 @keyframes wave-animation {
     0% { transform: rotate( 0.0deg) }
@@ -424,6 +424,9 @@ iframe, video {
 .nextprev-post {
   padding-left: 1rem;
   font-weight: 600;
+}
+.nextprev-post li {
+  padding-bottom: 0.25em;
 }
 .nextprev-post a {
   font-weight: normal;
