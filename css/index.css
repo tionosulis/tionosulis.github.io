@@ -179,11 +179,11 @@ a[href]:visited {
   color: var(--navy);
 }
 .tmpl-home a, .tmpl-post a:not(.direct-link) {
-  border-bottom: 0.0625em solid var(--darkest);
+  border-bottom: .0625em solid var(--darkest);
 }
 .tmpl-home a:hover, .tmpl-post a:hover {
   color: var(--lightgray);
-  border-bottom: 0.125em solid var(--darkest);
+  border-bottom: .125em solid var(--darkest);
 }
 blockquote {
   font-weight: 500;
@@ -202,7 +202,7 @@ blockquote p:first-of-type::before {
 }
 blockquote p:last-of-type::after {
   content: close-quote;
-  padding-left: 0.1em;
+  padding-left: .1em;
 }
 main {
 	padding: 2rem;
@@ -265,26 +265,26 @@ code {
 
 /* Header */
 .home {
-  padding-top: 0.5rem;
+  padding-top: .5rem;
   font-weight: 800;
   font-size: 1.5em;
 }
 .home::first-letter {
   font-size: 120%;
-  border-bottom: 0.09em solid var(--lightgray);
+  border-bottom: .09em solid var(--lightgray);
 }
 
 /* Nav */
 .nav {
   float: right;
   list-style: none;
-  border-bottom: 1px dotted var(--darkgray);
+  border-bottom: .0625em solid rgba(0,0,0,.12);
   padding-left: 0;
   margin-top: 0;
 }
 .nav-item {
   display: inline-block;
-  padding: 0 0.25em 0.2em;
+  padding: 0 .25em .2em;
 }
 .nav-item a[href] {
   text-decoration: underline;
@@ -310,7 +310,7 @@ li.postlist-item {
   justify-content: space-between;
   line-height: 1.9;
   border-bottom: 1px dotted var(--darkgray);
-  padding: 0.2em 0 0.1em;
+  padding: .2em 0 .1em;
 }
 .postlist a {
   max-width: 25em;
@@ -323,7 +323,7 @@ li.postlist-item {
 }
 .postlist-date {
 	font-size: 0.85em;
-  word-spacing: -0.05em;
+  word-spacing: -.05em;
 }
 .about-description {
   padding-bottom: 1em;
@@ -335,7 +335,7 @@ li.postlist-item {
   transform-origin: 70% 70%;
   display: inline-block;
   animation-delay: 1s;
-  padding-left: 0.3em;
+  padding-left: .3em;
 }
 @keyframes wave-animation {
     0% { transform: rotate( 0.0deg) }
@@ -370,7 +370,7 @@ a[href].post-tag:focus {
 }
 .tmpl-home a[href].post-tag {
   font-weight: 700;
-  padding-right: 0.5em;
+  padding-right: .5em;
 }
 .tmpl-home h1 {
   font-size: 1.5em; 
@@ -381,7 +381,7 @@ a[href].post-tag:focus {
 /* Warning */
 .warning {
   background-color: #ffc;
-  padding: 1em 0.625em; /* 16px 10px /16 */
+  padding: 1em .625em; /* 16px 10px /16 */
 }
 .warning ol:only-child {
   margin: 0;
@@ -390,7 +390,7 @@ a[href].post-tag:focus {
 /* Direct Links / Markdown Headers */
 .direct-link {
   font-style: normal;
-  margin-left: 0.1em;
+  margin-left: .1em;
 }
 a[href].direct-link,
 a[href].direct-link:visited {
@@ -406,16 +406,16 @@ a[href].direct-link:focus:visited,
 
 /* Post */
 .post__title {
-  margin-bottom: 0.4rem;
+  margin-bottom: .4rem;
 }
 .post__meta {
   color: var(--gray);
 }
 .post__meta, .post__meta a {
-  font-size: 0.9em;
+  font-size: .9em;
 }
 .post__meta a {
-  padding-left: 0.5em;
+  padding-left: .5em;
 }
 iframe, video {
   width: 100%;
@@ -426,7 +426,7 @@ iframe, video {
   font-weight: 600;
 }
 .nextprev-post li {
-  padding-bottom: 0.25em;
+  padding-bottom: .25em;
 }
 .nextprev-post a[href] {
   font-weight: normal;
@@ -439,7 +439,7 @@ hr {
 /* Footer */
 footer {
   padding: 2em 2em 3em;
-  font-size: 0.84em;
+  font-size: .84em;
   text-align: center;
 }
 footer p {
