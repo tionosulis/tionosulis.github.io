@@ -27,7 +27,8 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "luxon": "^2.3.1",
     "markdown-it": "^12.3.2",
-    "markdown-it-anchor": "^8.4.1"
+    "markdown-it-anchor": "^8.4.1",
+    "workbox-build": "^6.5.1"
   },
   "dependencies": {
     "clean-css": "^5.2.4",
