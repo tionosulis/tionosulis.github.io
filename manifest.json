@@ -1,6 +1,7 @@
 {
   "name": "Sulistiono",
   "short_name": "Sulis' blog",
+  "description": "Sulistiono's thoughts",
   "icons": [
     {
       "src": "img/favicon/android-chrome-192x192.png",
