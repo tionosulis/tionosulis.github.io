@@ -3,7 +3,7 @@
   "description": "Source code of sulistiono's blog (https://tionosulis.github.io/), build with Eleventy (https://github.com/11ty/eleventy), hosted on Github Pages (https://pages.github.com/).",
   "private": true,
   "scripts": {
-    "build": "npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy && node build-sw.mjs",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "watch": "npx @11ty/eleventy --watch",
     "serve": "npx @11ty/eleventy --serve",
