@@ -8,6 +8,7 @@
     <meta name="description" content="{% if description %}{{ description }} — {% endif %}{% if title %}A post by {{ metadata.author.name }}{% elif metadata.url %}{{ metadata.description }}{% endif %}">
     <link rel="canonical" href={{ metadata.url }}{{ page.url }}>
     <link rel="preload" href="/fonts/RobotoFlex.woff2" as="font" type="font/woff2" crossorigin>
+    <meta name="theme-color" content="#ffffff">
     {% set css %}
 		{% include "css/index.css" %}
 		{% include "css/prism-theme.css" %}
