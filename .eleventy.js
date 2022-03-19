@@ -128,7 +128,7 @@ module.exports = function(eleventyConfig) {
   const buildSW = () => {
     // This will return a Promise
     return workboxBuild.generateSW({
-      globDirectory: '_site',
+      globDirectory: '_site/',
       globPatterns: [
         '**/*.{html,json,js,css,woff2,ico}',
       ],
