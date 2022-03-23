@@ -17,7 +17,7 @@
 		<link href="https://tionosulis.github.io/2022/"/>
 		<updated>2022-01-10T00:00:00Z</updated>
 		<id>https://tionosulis.github.io/2022/</id>
-		<content type="html">&lt;p&gt;Untuk cita -cita, tujuan dan keinginan, serta harapan dan resolusi yang berbeda. Januari &lt;strong&gt;2022&lt;/strong&gt;, satu doa yang sama: &amp;quot;Semoga tahun ini &lt;strong&gt;&lt;em&gt;lebih baik&lt;/em&gt;&lt;/strong&gt; dari tahun sebelumnya&amp;quot;. Yang telah berlalu biarkan dan relakan pergi, sambut yang datang sebagai kesempatan.&lt;/p&gt;
+		<content type="html">&lt;p&gt;Untuk cita-cita, tujuan dan keinginan, serta harapan dan resolusi yang berbeda. Januari &lt;strong&gt;2022&lt;/strong&gt;, satu doa yang sama: &amp;quot;Semoga tahun ini &lt;strong&gt;&lt;em&gt;lebih baik&lt;/em&gt;&lt;/strong&gt; dari tahun sebelumnya&amp;quot;. Yang telah lalu biarkan dan relakan pergi, sambut yang datang sebagai kesempatan.&lt;/p&gt;
 &lt;p&gt;Cuaca mungkin berubah, keadaan mungkin tak lagi sama, pun begitu juga dengan tantangan yang datang. Satu yang tetap sama, pemenang adalah mereka yang mampu melihat bahwa setiap keadaan adalah kesempatan.&lt;/p&gt;
 </content>
 	</entry>
@@ -27,8 +27,9 @@
 		<link href="https://tionosulis.github.io/hello-world/"/>
 		<updated>2022-01-09T00:00:00Z</updated>
 		<id>https://tionosulis.github.io/hello-world/</id>
-		<content type="html">&lt;p&gt;This is a short test post to make sure that this &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy&lt;/a&gt; based site build&#39;s right. Consist of some common typography and code block&#39;s styles test to make sure that the &lt;code&gt;css&lt;/code&gt; rendered correctly. Start by this very common &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, and the &lt;strong&gt;&lt;em&gt;combination&lt;/em&gt;&lt;/strong&gt; of the two typho test.&lt;/p&gt;
-&lt;p&gt;The Next is the code block&#39;s style test wrapped in &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; tag applied to this &lt;a href=&quot;https://tionosulis.github.io/hello-world/#&quot;&gt;Hello World!&lt;/a&gt; test post in order to set its post content &lt;code&gt;&amp;lt;meta&amp;gt;&lt;/code&gt; to &lt;code&gt;&amp;lt;noindex&amp;gt;&lt;/code&gt;, which is simply done by:&lt;/p&gt;
+		<content type="html">&lt;p&gt;This is a short test post to make sure that this &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy&lt;/a&gt; based site build&#39;s is right. Consist of some common typography and code block&#39;s styles test to make sure that the &lt;code&gt;css&lt;/code&gt; rendered correctly.&lt;/p&gt;
+&lt;p&gt;Started by this typical typography test of &lt;strong&gt;bold&lt;/strong&gt; text, &lt;em&gt;italic&lt;/em&gt;, and the combination of &lt;strong&gt;&lt;em&gt;both&lt;/em&gt;&lt;/strong&gt;. Then the code block&#39;s style test wrapped in &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; tag applied to this &lt;a href=&quot;https://tionosulis.github.io/hello-world/#&quot;&gt;Hello World!&lt;/a&gt; test post to set its content &lt;code&gt;&amp;lt;meta&amp;gt;&lt;/code&gt; to &lt;code&gt;&amp;lt;noindex&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here&#39;s the code and the steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Add the below highlighted code block inside &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag to the &lt;code&gt;base.njk&lt;/code&gt; layout&lt;/li&gt;
 &lt;/ol&gt;
@@ -37,7 +38,7 @@
 &lt;li&gt;Add &lt;code&gt;ignore:true&lt;/code&gt; &lt;em&gt;key-value&lt;/em&gt; pairs to the &lt;code&gt;hello-world.md&lt;/code&gt; post&#39;s &lt;code&gt;front-matter&lt;/code&gt; like so&lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre class=&quot;language-diff-yaml&quot;&gt;&lt;code class=&quot;language-diff-yaml&quot;&gt;/* posts/hello-world.md */&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token coord&quot;&gt;---&lt;/span&gt;&lt;br /&gt;title: Hello World!&lt;br /&gt;description: A short hello world! test post&lt;br /&gt;date: 2022-01-09&lt;br /&gt;tags: [hello, eleventy]&lt;br /&gt;&lt;span class=&quot;token inserted-sign inserted language-yaml&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;ignore&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;&lt;br /&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Finally last but not least, there&#39;s nothing much to say here but: &amp;quot;hello!&amp;quot; and thanks for visiting. Hope you enjoy your surf and see you around. 😄&lt;/p&gt;
+&lt;p&gt;Finally, last but not least there&#39;s nothing much to say here but: &amp;quot;hello!&amp;quot; and thanks for visiting. Hope you enjoy your surf and see you around. 😄&lt;/p&gt;
 </content>
 	</entry>
 </feed>
