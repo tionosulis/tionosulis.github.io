@@ -1,14 +1,13 @@
 ---
 title: Hello World!
-description: A short hello world! test post
+description: A short hello world! test post to make sure that the site build's right.
 date: 2022-01-09
-tags:
-- hello
+tags: [hello, eleventy]
 ---
-A test post just to make sure that the site build's right, and some small typography and code block test to make sure that the styles rendered correctly. Start by this very common **bold**, _italic_, and the **_combination_** of the two typho test.
+This is a short test post to make sure that this [Eleventy](https://www.11ty.dev/) based site build's right. Consist of some common typography and code block's styles test to make sure that the `css` rendered correctly. Start by this very common **bold**, _italic_, and the **_combination_** of the two typho test.
 
-And for the next, here's the code block test wrapped in `<pre>` tag to set this [Hello Word](#)'s post content `<meta>` to `noindex`, which is simply done by:  
-1. Placing the below highlighted code block inside `<head>` tag on my `base.njk` 
+The Next is the code block's style test wrapped in `<pre>` tag applied to this [Hello World!](#) test post in order to set its post content `<meta>` to `<noindex>`, which is simply done by:  
+1. Add the below highlighted code block inside `<head>` tag to the `base.njk` layout
 
 ```html/4-6
 <!-- _includes/layouts/base.njk -->
@@ -21,7 +20,7 @@ And for the next, here's the code block test wrapped in `<pre>` tag to set this 
 </head>
 ```
 
-2. Modifying this Hello World post's `front-matter` like so
+2. Add `ignore:true` _key-value_ pairs to the `hello-world.md` post's `front-matter` like so
 
 ```diff-yaml
 /* posts/hello-world.md */
@@ -30,8 +29,8 @@ And for the next, here's the code block test wrapped in `<pre>` tag to set this 
 title: Hello World!
 description: A short hello world! test post
 date: 2022-01-09
-tag: hello
+tags: [hello, eleventy]
 + ignore: true
 ---
 ```
-Finally last but not least, there's nothing much to say here but: "hello!", thanks for visiting, enjoy your surf and see you around.
+Finally last but not least, there's nothing much to say here but: "hello!" and thanks for visiting. Hope you enjoy your surf and see you around. 😄
