@@ -239,6 +239,7 @@ code {
     "Courier New", Courier, monospace;
   font-size: 0.9em;
   color: var(--gray);
+  letter-spacing: -.06em;
 }
 pre {
   direction: ltr;
