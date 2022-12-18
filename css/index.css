@@ -1,10 +1,9 @@
-/* Colors, font*/
+/* Colors*/
 :root {
-  --lightgray: #bbb;
+  --lightgray: #828282;
   --gray: #555;
   --darkgray: #333;
-  --navy: #17050F;
-  --darkest: #000;
+  --dark: #111;
   --white: #fff;
 }
 
@@ -122,21 +121,22 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 }
 html {
   margin: 0;
+  padding: 0;
   overflow-y: scroll;
-  -webkit-text-size-adjust: auto;
+  -webkit-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
-  font-family: "Roboto Flex";
-  color: var(--darkgray);
-  background-color: var(--white);
-  font-size: 16px;
-  line-height: 1.5;
 }
 body {
+  position: relative;
+  margin: 0 auto;
+  min-height: 100vh;
   max-width:-webkit-calc(800px - (30px * 2));
   max-width:calc(800px - (30px * 2));
-  margin-right:auto;
-  margin-left:auto;
-  font-size: 1.094em;
+  background-color: var(--white);
+  font-family: "Roboto Flex";
+  color: var(--darkgray);
+  font-size: 1.063em;
+  line-height: 1.5;
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
@@ -161,24 +161,21 @@ p:last-child {
 img {
   max-width: 100%;
 }
-a[href] {
-  color: var(--darkest);
-  text-decoration: none;
-}
-a[href]:visited {
-  color: var(--navy);
-}
-.tmpl-home a, .tmpl-post a:not(.direct-link) {
-  border-bottom: 1px solid var(--gray);
-}
-.tmpl-home a:hover, .tmpl-post a:hover {
-  color: var(--gray);
-  border-bottom: none;
-}
+a {
+  color:#2a7ae2;
+  text-decoration:none
+ }
+ a:visited {
+  color:#1756a9
+ }
+ a:hover {
+  color: var(--dark);
+  text-decoration:underline
+ }
 blockquote {
   font-weight: 500;
-  color: var(--darkest);
-  border-left: 0.25rem solid var(--darkest);
+  color: var(--dark);
+  border-left: 0.25rem solid var(--dark);
   quotes: "\201C""\201D""\2018""\2019";
   margin-top: 1.6em;
   margin-left: 0;
@@ -247,8 +244,11 @@ code {
   font-weight: 800;
   font-size: 1.6em;
 }
+.home a:hover {
+  text-decoration: none;
+}
 .home::first-letter {
-  border-bottom: .09em solid var(--darkest);
+  border-bottom: .09em solid var(--dark);
 }
 
 /* Nav */
@@ -258,7 +258,7 @@ code {
 }
 .nav-item {
   display: inline-block;
-  padding-left: .5em;
+  padding-left: .6em;
 }
 .nav-item a[href] {
   border-bottom: 1px solid var(--darkgray);
@@ -267,8 +267,12 @@ code {
   border-bottom: none;
 }
 .nav-item-active a[href] {
+  color: var(--dark);
   font-weight: 700;
   border-bottom: none;
+}
+.nav-item-active a[href]:hover {
+  text-decoration: none;
 }
 
 /* Posts list */
@@ -282,7 +286,7 @@ li.postlist-item {
   align-items: baseline;
   justify-content: space-between;
   line-height: 1.9;
-  border-bottom: 1px dotted var(--darkgray);
+  border-bottom: 1px dotted var(--dark);
   padding: .2em 0 .1em;
 }
 .postlist a {
@@ -290,9 +294,6 @@ li.postlist-item {
   border-bottom: none;
 	overflow: hidden;
 	text-overflow: ellipsis;
-}
-.postlist li a:hover {
-  border-bottom: none;
 }
 .postlist-date {
 	font-size: .85em;
@@ -322,27 +323,12 @@ li.postlist-item {
 }
 
 /* Tags */
-.post-tag {
+.post-tags {
   color: var(--darkgray);
 }
 .post-tag::before {
   content: "#";
-  color: var(--gray);
-}
-a[href].post-tag,
-a[href].post-tag:visited {
-  color: inherit;
-  border-bottom: none;
-}
-a[href].post-tag:hover,
-a[href].post-tag:focus {
   color: var(--lightgray);
-}
-.postlist-item > .post-tag {
-  align-self: center;
-}
-.tmpl-home a[href].post-tag {
-  font-weight: 700;
 }
 
 /* Warning */
@@ -354,32 +340,15 @@ a[href].post-tag:focus {
   margin: 0;
 }
 
-/* Direct Links / Markdown Headers */
-.direct-link {
-  font-style: normal;
-  margin-left: .1em;
-}
-a[href].direct-link,
-a[href].direct-link:visited {
-  color: transparent;
-}
-a[href].direct-link:focus,
-a[href].direct-link:focus:visited,
-:hover > a[href].direct-link,
-:hover > a[href].direct-link:visited {
-  color: var(--gray);
-  border-bottom: none;
-}
-
 /* Post */
 .post__title {
   margin-bottom: .25em;
 }
 .post__meta {
-  color: var(--gray);
+  color: var(--lightgray);
 }
 .post__meta, .post__meta a {
-  font-size: .9em;
+  font-size: .95em;
 }
 .post__meta a {
   padding-left: .5em;
@@ -392,12 +361,12 @@ iframe, video {
   padding-left: 1rem;
   font-weight: 600;
 }
-.nextprev-post a[href] {
+.nextprev-post a {
   font-weight: normal;
 }
 hr { 
   margin: 2em 0;
-  border-color:rgba(0,0,0,.12);
+  border-color:rgba(0,0,0,.18);
   border-width:1px 0 0;
 }
 
