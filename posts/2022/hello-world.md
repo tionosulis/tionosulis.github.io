@@ -19,6 +19,7 @@ Here's the code and the steps:
 {%raw%}{% if ignore %}
    <meta name="robots" content="noindex"/>
 {% endif %}{%endraw%}
+...
 </head>
 ```
 
