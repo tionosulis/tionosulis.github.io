@@ -7,11 +7,16 @@
       padding-left: var(--eleventy-code-padding);
       padding-right: var(--eleventy-code-padding);
   }
-  .token.deleted, .highlight-line-active {
-      background-color: hsl(0, 0%, 99%);
+  .highlight-line-active {
+    background-color: hsl(199, 100%, 93%);
+  }
+  .token.deleted  {
+      background-color: hsl(5, 100%, 96%);
+      color: red;
   }
   .token.inserted {
-      background-color: hsl(0, 0%, 93%);
+      background-color: hsl(134, 100%, 95%);
+      color: green;
   }
   
   /* Make the + and - characters unselectable for copy/paste */
@@ -26,7 +31,7 @@
     width: var(--eleventy-code-padding);
     padding-top: 2px;
     padding-bottom: 2px;
-    background-color: rgba(0,0,0,.1);
+    background-color: rgba(175, 132, 132, 0.3);
   }
   
   /* Optional: full-width background color */
