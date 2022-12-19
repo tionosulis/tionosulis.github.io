@@ -213,7 +213,7 @@ code {
     "Courier New", Courier, monospace;
   font-size: .9em;
   letter-spacing: -.06em;
-  color: var(--gray);
+  color: var(--dark);
   background-color: #f7f8f9;
 }
 pre {
@@ -309,7 +309,7 @@ li.postlist-item {
   transform-origin: 70% 70%;
   display: inline-block;
   animation-delay: 1s;
-  padding-left: .3em;
+  padding-left: .2em;
 }
 @keyframes wave-animation {
     0% { transform: rotate( 0.0deg) }
