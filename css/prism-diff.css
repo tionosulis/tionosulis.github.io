@@ -8,15 +8,15 @@
       padding-right: var(--eleventy-code-padding);
   }
   .highlight-line-active {
-    background-color: hsl(199, 100%, 93%);
+    background-color: hsl(240,100%,96.7%);
   }
   .token.deleted  {
-      background-color: hsl(5, 100%, 96%);
+      background-color: hsl(0,100%,93.5%);
       color: red;
   }
   .token.inserted {
-      background-color: hsl(134, 100%, 95%);
-      color: green;
+      background-color: hsl(239.4,100%,96.7%);
+      color:blue;
   }
   
   /* Make the + and - characters unselectable for copy/paste */
@@ -31,7 +31,7 @@
     width: var(--eleventy-code-padding);
     padding-top: 2px;
     padding-bottom: 2px;
-    background-color: rgba(175, 132, 132, 0.3);
+    background-color: rgba(175, 132, 132, 0.2);
   }
   
   /* Optional: full-width background color */
