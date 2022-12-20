@@ -214,7 +214,6 @@ code {
   font-size: .9em;
   letter-spacing: -.06em;
   color: var(--dark);
-  background-color: #f7f8f9;
 }
 pre {
   direction: ltr;
@@ -232,8 +231,10 @@ pre {
   padding: 1.5em 1em;
   margin: 0.5em 0;
   border-radius: .375rem;
+  border: 1px solid #d0d7de;
 }
 code {
+  background-color: #eeeeff;
   word-break: break-all;
   overflow-x: auto;
 }
@@ -267,7 +268,7 @@ code {
   border-bottom: none;
 }
 .nav-item-active a[href] {
-  color: var(--dark);
+  color: #aaa;
   font-weight: 700;
   border-bottom: none;
 }
@@ -361,9 +362,6 @@ iframe, video {
   padding-left: 1rem;
   font-weight: 600;
 }
-.nextprev-post a {
-  font-weight: normal;
-}
 hr { 
   margin: 2em 0;
   border-color:rgba(0,0,0,.18);
@@ -372,7 +370,7 @@ hr {
 
 /* Footer */
 footer {
-  padding: 3em;
+  padding: 4em 2em;
   font-size: .9em;
   text-align: center;
 }
