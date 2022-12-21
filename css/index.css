@@ -139,7 +139,6 @@ body {
   line-height: 1.5;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  word-break: break-word;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
@@ -235,8 +234,6 @@ pre {
 }
 code {
   background-color: #eeeeff;
-  word-break: break-all;
-  overflow-x: auto;
 }
 
 /* Header */

@@ -16,7 +16,7 @@
   }
   .token.inserted {
       background-color: hsl(239.4,100%,96.7%);
-      color:blue;
+      color: green;
   }
   
   /* Make the + and - characters unselectable for copy/paste */
