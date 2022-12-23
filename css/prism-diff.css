@@ -11,11 +11,11 @@
     background-color: hsl(240,100%,96.7%);
   }
   .token.deleted  {
-      background-color: hsl(0,100%,93.5%);
+      background-color: hsl(10,100%,95.7%);
       color: red;
   }
   .token.inserted {
-      background-color: hsl(239.4,100%,96.7%);
+      background-color: hsl(120.4,100%,95.1%);
       color: green;
   }
   
