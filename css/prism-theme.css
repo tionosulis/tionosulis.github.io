@@ -13,6 +13,7 @@
 pre[class*="language-"],
 code[class*="language-"] {
   background-color: #fcfcfc;
+  line-height: 1.3;
 }
 pre[class*="language-"]::selection,
 code[class*="language-"]::selection,
