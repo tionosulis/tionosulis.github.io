@@ -123,10 +123,12 @@ html {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
+  overflow-anchor: none;
+  z-index: 1;
 }
 body {
   position: relative;
-  margin: 0 auto;
+  margin: 30px auto;
   min-height: 100vh;
   max-width:-webkit-calc(800px - (30px * 2));
   max-width:calc(800px - (30px * 2));
@@ -147,8 +149,8 @@ body {
   body {
    max-width:-webkit-calc(800px - (30px));
    max-width:calc(800px - (30px));
-   padding-right:30px;
-   padding-left:30px
+   padding-right: 24px;
+   padding-left: 24px
   }
  }
 h1, h2, h3, h4 {
@@ -190,7 +192,7 @@ blockquote p:last-of-type::after {
   padding-left: .1em;
 }
 header {
-  margin-bottom: 4.5rem;
+  margin-bottom: 4em;
 }
 header:after {
   content: "";
