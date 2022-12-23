@@ -123,8 +123,6 @@ html {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
-  -webkit-text-size-adjust: 100%;
-  text-rendering: optimizeSpeed;
 }
 body {
   position: relative;
@@ -137,6 +135,8 @@ body {
   color: var(--darkgray);
   font-size: 1.063em;
   line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeSpeed;
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-hyphens: auto;
@@ -163,14 +163,14 @@ img {
 a {
   color:#2a7ae2;
   text-decoration:none
- }
+}
  a:visited {
   color:#1756a9
- }
+}
  a:hover {
   color: var(--dark);
   text-decoration:underline
- }
+}
 blockquote {
   font-weight: 500;
   color: var(--dark);
@@ -210,7 +210,7 @@ code {
     "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
     "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
     "Courier New", Courier, monospace;
-  font-size: .9em;
+  font-size: .93em;
   letter-spacing: -.06em;
   color: var(--dark);
 }
@@ -265,7 +265,7 @@ code {
   border-bottom: none;
 }
 .nav-item-active a[href] {
-  color: #aaa;
+  color: #999;
   font-weight: 700;
   border-bottom: none;
 }
@@ -346,7 +346,7 @@ li.postlist-item {
   color: var(--lightgray);
 }
 .post__meta, .post__meta a {
-  font-size: .95em;
+  font-size: .97em;
 }
 .post__meta a {
   padding-left: .5em;
@@ -359,6 +359,9 @@ iframe, video {
   padding-left: 1rem;
   font-weight: 600;
 }
+.nextprev-post a {
+  font-weight: normal;
+}
 hr { 
   margin: 2em 0;
   border-color:rgba(0,0,0,.18);
@@ -368,7 +371,7 @@ hr {
 /* Footer */
 footer {
   padding: 4em 2em;
-  font-size: .9em;
+  font-size: .93em;
   text-align: center;
 }
 footer p {
