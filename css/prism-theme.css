@@ -12,8 +12,8 @@
 */
 pre[class*="language-"],
 code[class*="language-"] {
-  background-color: #fcfcfc;
-  line-height: 1.3;
+  background-color: #fbfbfb;
+  line-height: 1.2;
 }
 pre[class*="language-"]::selection,
 code[class*="language-"]::selection,
