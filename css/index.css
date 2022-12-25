@@ -1,9 +1,8 @@
 /* Colors*/
 :root {
-  --lightgray: #828282;
-  --gray: #555;
-  --darkgray: #2b2b2b;
-  --dark: #111;
+  --lightgray: #8b8b8b;
+  --darkgray: #313233;
+  --dark: #111827;
   --white: #fff;
 }
 
@@ -116,8 +115,6 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
   font-stretch: 25% 151%;
   font-display: swap;
   src: url('/fonts/RobotoFlex.woff2') format('woff2');
-  unicode-range: U+0020-0059, U+005E, U+0061-007A, U+00F3, U+03A4, U+2014,
-        U+2019, U+201C-201D, U+2020-2021, U+2026, U+20AC, U+2190;
 }
 html {
   margin: 0;
@@ -125,7 +122,7 @@ html {
   overflow-y: scroll;
   overflow-anchor: none;
   z-index: 1;
-  background: var(--white);
+  background-color: var(--white);
   font-family: "Roboto Flex";
   font-size: 16px;
   line-height: 1.5;
@@ -157,6 +154,10 @@ body {
  }
 h1, h2, h3, h4 {
   line-height: 1.2;
+  color: var(--dark);
+}
+strong, b {
+  color: var(--dark) ;
 }
 p:last-child {
   margin-bottom: 0;
@@ -220,7 +221,6 @@ code {
     "Courier New", Courier, monospace;
   font-size: .923em;
   letter-spacing: -.06em;
-  color: var(--dark);
 }
 pre {
   direction: ltr;
@@ -241,7 +241,7 @@ pre {
   border: 1px solid #d0d7de;
 }
 code {
-  background-color: #eeeeff;
+  background-color: #f3f3f3;
 }
 
 /* Header */
@@ -273,7 +273,7 @@ code {
   border-bottom: none;
 }
 .nav-item-active a {
-  color: #999;
+  color: var(--lightgray);
   font-weight: 700;
   border-bottom: none;
 }
@@ -303,7 +303,7 @@ li.postlist-item {
 	text-overflow: ellipsis;
 }
 .postlist-date {
-  color: #828282;
+  color: var(--lightgray);
 	font-size: .85em;
   word-spacing: -.05em;
 }
@@ -331,9 +331,6 @@ li.postlist-item {
 }
 
 /* Tags */
-.post-tags {
-  color: var(--darkgray);
-}
 .post-tag::before {
   content: "#";
   color: var(--lightgray);
