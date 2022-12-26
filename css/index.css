@@ -156,7 +156,7 @@ h1, h2, h3, h4 {
   line-height: 1.2;
   color: var(--dark);
 }
-strong, b {
+b, strong {
   color: var(--dark) ;
 }
 p:last-child {
@@ -167,14 +167,14 @@ img {
 }
 a {
   color:#2a7ae2;
-  text-decoration:none
+  text-decoration:none;
 }
  a:visited {
-  color:#1756a9
+  color: #1756a9;
 }
  a:hover {
   color: var(--dark);
-  text-decoration:underline
+  text-decoration:underline;
 }
 ::selection {
   background-color:#3399ff;
@@ -241,12 +241,11 @@ pre {
   border: 1px solid #d0d7de;
 }
 code {
-  background-color: #f3f3f3;
+  background-color: #f2f2f2;
 }
 
 /* Header */
 .home {
-  padding-top: 0 .5em;
   font-weight: 800;
   font-size: 1.6em;
 }
@@ -361,7 +360,8 @@ iframe, video {
 }
 .nextprev-post {
   padding-left: 1em;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--dark);
 }
 .nextprev-post a {
   font-weight: normal;
