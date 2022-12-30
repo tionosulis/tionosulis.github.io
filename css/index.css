@@ -1,8 +1,8 @@
 /* Colors*/
 :root {
   --lightgray: #8f8f8e;
-  --darkgray: #4c4b49;
-  --dark: #1f1e1c;
+  --darkgray: #313233;
+  --dark: #111827;
   --white: #ffffff;
 }
 
@@ -280,7 +280,7 @@ pre > code::after {
   border-bottom: none;
 }
 .nav-item-active a {
-  color: var(--dark);
+  color: var(--lightgray);
   font-weight: 700;
   border-bottom: none;
 }
@@ -305,12 +305,13 @@ li.postlist-item {
 .postlist a {
   max-width: 45%;
   border-bottom: none;
-	overflow: hidden;
+  overflow: hidden;
   white-space: nowrap;
-	text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 .postlist-date {
-	font-size: .85em;
+  color: var(--lightgray)
+  font-size: .85em;
   word-spacing: -.05em;
 }
 .about-description {
@@ -377,7 +378,7 @@ iframe, video {
   font-weight: normal;
 }
 hr { 
-  margin: 3em 0 0;
+  margin: 2.5em 0 0;
   border-color:rgba(0,0,0,.18);
   border-width:1px 0 0;
 }
