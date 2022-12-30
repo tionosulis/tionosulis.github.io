@@ -1,9 +1,9 @@
 /* Colors*/
 :root {
-  --lightgray: #8b8b8b;
-  --darkgray: #313233;
-  --dark: #111827;
-  --white: #fff;
+  --lightgray: #8f8f8e;
+  --darkgray: #4c4b49;
+  --dark: #1f1e1c;
+  --white: #ffffff;
 }
 
 /* Global stylesheet */
@@ -237,13 +237,21 @@ pre {
   hyphens: none;
   padding: 1.5em 1em;
   margin: 0.5em 0;
-  border-radius: .375rem;
-  border: 1px solid #d0d7de;
-}
-code {
+  border-radius: 5px;
   background-color: #f2f2f2;
 }
-
+code::before {
+  content: "`";
+}
+code::after {
+  content: "`";
+}
+pre > code::before {
+  content: none;
+}
+pre > code::after {
+  content: none;
+}
 /* Header */
 .home {
   font-weight: 800;
@@ -272,7 +280,7 @@ code {
   border-bottom: none;
 }
 .nav-item-active a {
-  color: var(--lightgray);
+  color: var(--dark);
   font-weight: 700;
   border-bottom: none;
 }
@@ -302,7 +310,6 @@ li.postlist-item {
 	text-overflow: ellipsis;
 }
 .postlist-date {
-  color: var(--lightgray);
 	font-size: .85em;
   word-spacing: -.05em;
 }
@@ -348,6 +355,9 @@ li.postlist-item {
 .post__title {
   margin-bottom: .25em;
 }
+.post__meta {
+  color: var(--lightgray);
+}
 .post__meta, .post__meta a {
   font-size: .97em;
 }
@@ -367,7 +377,7 @@ iframe, video {
   font-weight: normal;
 }
 hr { 
-  margin: 2em 0;
+  margin: 3em 0 0;
   border-color:rgba(0,0,0,.18);
   border-width:1px 0 0;
 }

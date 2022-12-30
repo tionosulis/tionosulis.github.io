@@ -8,14 +8,14 @@
       padding-right: var(--eleventy-code-padding);
   }
   .highlight-line-active {
-    background-color: hsl(240,100%,96.7%);
+    background-color: hsla(205, 74%, 85%, 0.541);
   }
   .token.deleted  {
-      background-color: hsl(10,100%,95.7%);
+      background-color: hsla(0, 100%, 50%, 0.13);
       color: red;
   }
   .token.inserted {
-      background-color: hsl(120.4,100%,95.1%);
+      background-color: hsla(120, 87%, 51%, 0.185);
       color: green;
   }
   
@@ -31,7 +31,7 @@
     width: var(--eleventy-code-padding);
     padding-top: 2px;
     padding-bottom: 2px;
-    background-color: rgba(175, 132, 132, 0.2);
+    background-color: rgba(175, 132, 132, 0.1);
   }
   
   /* Optional: full-width background color */
