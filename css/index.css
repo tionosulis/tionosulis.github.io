@@ -280,7 +280,7 @@ pre > code::after {
   border-bottom: none;
 }
 .nav-item-active a {
-  color: var(--lightgray);
+  color: var(--dark);
   font-weight: 700;
   border-bottom: none;
 }
@@ -310,7 +310,7 @@ li.postlist-item {
   text-overflow: ellipsis;
 }
 .postlist-date {
-  color: var(--lightgray)
+  color: var(--lightgray);
   font-size: .85em;
   word-spacing: -.05em;
 }
