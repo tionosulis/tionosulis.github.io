@@ -8,15 +8,13 @@
       padding-right: var(--eleventy-code-padding);
   }
   .highlight-line-active {
-    background-color: hsla(205, 74%, 85%, 0.541);
+    background-color: #8b8b8b;
+    color: #ffffff;
+    border-radius: .1em;
   }
-  .token.deleted  {
-      background-color: hsla(0, 100%, 50%, 0.13);
-      color: red;
-  }
-  .token.inserted {
-      background-color: hsla(120, 87%, 51%, 0.185);
-      color: green;
+  .token.deleted, .token.inserted  {
+      color: #0f0f0f;
+      font-weight: 700;
   }
   
   /* Make the + and - characters unselectable for copy/paste */
@@ -31,7 +29,7 @@
     width: var(--eleventy-code-padding);
     padding-top: 2px;
     padding-bottom: 2px;
-    background-color: rgba(175, 132, 132, 0.1);
+    background-color: #fff;
   }
   
   /* Optional: full-width background color */

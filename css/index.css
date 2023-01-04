@@ -1,120 +1,20 @@
 /* Colors*/
 :root {
-  --lightgray: #8f8f8e;
-  --darkgray: #313233;
-  --dark: #111827;
+  --lightgray: #8b8b8b;
+  --gray: #474747;
+  --darkgray: #2b2b2b;
+  --dark: #0f0f0f;
   --white: #ffffff;
 }
-
 /* Global stylesheet */
 * {
   box-sizing: border-box;
 }
-
-/* https://github.com/TypeNetwork/Roboto-Flex/blob/main/OFL.txt
-
-Copyright 2017 The Roboto Flex Project Authors (https://github.com/TypeNetwork/Roboto-Flex)
-
-This Font Software is licensed under the SIL Open Font License, Version 1.1.
-This license is copied below, and is also available with a FAQ at:
-http://scripts.sil.org/OFL
-
-
------------------------------------------------------------
-SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
------------------------------------------------------------
-
-PREAMBLE
-The goals of the Open Font License (OFL) are to stimulate worldwide
-development of collaborative font projects, to support the font creation
-efforts of academic and linguistic communities, and to provide a free and
-open framework in which fonts may be shared and improved in partnership
-with others.
-
-The OFL allows the licensed fonts to be used, studied, modified and
-redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded, 
-redistributed and/or sold with any software provided that any reserved
-names are not used by derivative works. The fonts and derivatives,
-however, cannot be released under any other type of license. The
-requirement for fonts to remain under this license does not apply
-to any document created using the fonts or their derivatives.
-
-DEFINITIONS
-"Font Software" refers to the set of files released by the Copyright
-Holder(s) under this license and clearly marked as such. This may
-include source files, build scripts and documentation.
-
-"Reserved Font Name" refers to any names specified as such after the
-copyright statement(s).
-
-"Original Version" refers to the collection of Font Software components as
-distributed by the Copyright Holder(s).
-
-"Modified Version" refers to any derivative made by adding to, deleting,
-or substituting -- in part or in whole -- any of the components of the
-Original Version, by changing formats or by porting the Font Software to a
-new environment.
-
-"Author" refers to any designer, engineer, programmer, technical
-writer or other person who contributed to the Font Software.
-
-PERMISSION & CONDITIONS
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of the Font Software, to use, study, copy, merge, embed, modify,
-redistribute, and sell modified and unmodified copies of the Font
-Software, subject to the following conditions:
-
-1) Neither the Font Software nor any of its individual components,
-in Original or Modified Versions, may be sold by itself.
-
-2) Original or Modified Versions of the Font Software may be bundled,
-redistributed and/or sold with any software, provided that each copy
-contains the above copyright notice and this license. These can be
-included either as stand-alone text files, human-readable headers or
-in the appropriate machine-readable metadata fields within text or
-binary files as long as those fields can be easily viewed by the user.
-
-3) No Modified Version of the Font Software may use the Reserved Font
-Name(s) unless explicit written permission is granted by the corresponding
-Copyright Holder. This restriction only applies to the primary font name as
-presented to the users.
-
-4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
-Software shall not be used to promote, endorse or advertise any
-Modified Version, except to acknowledge the contribution(s) of the
-Copyright Holder(s) and the Author(s) or with their explicit written
-permission.
-
-5) The Font Software, modified or unmodified, in part or in whole,
-must be distributed entirely under this license, and must not be
-distributed under any other license. The requirement for fonts to
-remain under this license does not apply to any document created
-using the Font Software.
-
-TERMINATION
-This license becomes null and void if any of the above conditions are
-not met.
-
-DISCLAIMER
-THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
-OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
-OTHER DEALINGS IN THE FONT SOFTWARE.
-
-*/
-
 @font-face {
-  font-family: "Roboto Flex";
-  font-weight: 400 1000;
-  font-stretch: 25% 151%;
+  font-family: "Inter";
+  font-weight: 100 900;
   font-display: swap;
-  src: url('/fonts/RobotoFlex.woff2') format('woff2');
+  src: url('/fonts/inter.woff2') format('woff2');
 }
 html {
   margin: 0;
@@ -123,17 +23,18 @@ html {
   overflow-anchor: none;
   z-index: 1;
   background-color: var(--white);
-  font-family: "Roboto Flex";
+  font-family: "Inter";
   font-size: 16px;
   line-height: 1.5;
-  color: var(--darkgray); 
+  letter-spacing: -.04em;
+  color: var(--darkgray);
 }
 body {
   position: relative;
   margin: 30px auto;
   min-height: 100vh;
-  max-width:-webkit-calc(800px - (30px * 2));
-  max-width:calc(800px - (30px * 2));
+  max-width:-webkit-calc(768px - (30px * 2));
+  max-width:calc(768px - (30px * 2));
   font-size: 1.09375rem;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
@@ -143,15 +44,15 @@ body {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (max-width:800px) {
+@media screen and (max-width:768px) {
   body {
-   max-width:-webkit-calc(800px - (30px));
-   max-width:calc(800px - (30px));
-   padding-right: 30px;
-   padding-left: 30px;
-   font-size: 1rem;
-  }
+      max-width:-webkit-calc(768px - (30px));
+      max-width:calc(768px - (30px));
+      padding-right: 30px;
+      padding-left: 30px;
+      font-size: .9375rem;
  }
+}
 h1, h2, h3, h4 {
   line-height: 1.2;
   color: var(--dark);
@@ -166,40 +67,52 @@ img {
   max-width: 100%;
 }
 a {
-  color:#2a7ae2;
-  text-decoration:none;
-}
- a:visited {
-  color: #1756a9;
-}
- a:hover {
   color: var(--dark);
-  text-decoration:underline;
+  text-decoration: none;
+  border-bottom: 1px solid var(--dark);
+}
+a:visited {
+  color: var(--gray);
+}
+a:hover {
+  color: var(--lightgray);
+  border-bottom: 1px solid var(--lightgray);
 }
 ::selection {
-  background-color:#3399ff;
+  background-color: var(--lightgray);
   color: var(--white);
 }
 blockquote {
+  position: relative;
   font-weight: 500;
   color: var(--dark);
-  border-left: 0.25rem solid var(--dark);
-  quotes: "\201C""\201D""\2018""\2019";
+  border-left: 0.25em solid var(--dark);
   margin-top: 1.6em;
   margin-left: 0;
   margin-bottom: 1.6em;
-  padding-left: 1.5em;
+  padding-left: 2.5em;
 }
-blockquote p:first-of-type::before {
-  content: open-quote;
-  padding-right: 0.1em;
+blockquote::before{
+  font-family:Arial;
+  content: "\201C";
+  color: var(--lightgray);
+  font-size: 4.5em;
+  position: absolute;
+  left: .15em;
+  top: -.35em;
 }
-blockquote p:last-of-type::after {
-  content: close-quote;
-  padding-left: .1em;
+blockquote > cite, blockquote > p > cite {
+  display: block;
+  font-size: .9em;
+  line-height: 1.3em;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 1em;
+  letter-spacing: 0;
+  color: var(--dark);
 }
 header {
-  margin-bottom: 4.5em;
+  margin-bottom: 5em;
 }
 header:after {
   content: "";
@@ -209,18 +122,12 @@ header:after {
 table {
   margin: 1em 0;
 }
-table td,
-table th {
+table td, table th {
   padding-right: 1em;
 }
-pre,
-code {
-  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
-    "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
-    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
-    "Courier New", Courier, monospace;
-  font-size: .923em;
-  letter-spacing: -.06em;
+pre, code {
+  font-family: Courier, monospace;
+  font-size: .95em;
 }
 pre {
   direction: ltr;
@@ -238,7 +145,11 @@ pre {
   padding: 1.5em 1em;
   margin: 0.5em 0;
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: var(--darkgray);
+  color: var(--white);
+}
+code {
+  font-weight: 700;
 }
 code::before {
   content: "`";
@@ -246,25 +157,28 @@ code::before {
 code::after {
   content: "`";
 }
+pre> code {
+  font-weight: 400;
+}
 pre > code::before {
   content: none;
 }
 pre > code::after {
   content: none;
 }
+pre[class*="language-"], code[class*="language-"] {
+  background-color: var(--darkgray);
+  font-size: .95em;
+  line-height: 1.2;
+}
 /* Header */
-.home {
-  font-weight: 800;
-  font-size: 1.6em;
+.home a {
+  color:var(--dark);
+  font-size: 1.2em;
 }
 .home a:hover {
   text-decoration: none;
 }
-.home::first-letter {
-  font-size: 1.5em;
-  font-weight: 700;
-}
-
 /* Nav */
 .nav {
   float: right;
@@ -274,7 +188,8 @@ pre > code::after {
   padding-left: .6em;
 }
 .nav-item a {
-  border-bottom: 1px solid var(--darkgray);
+  color: var(--dark);
+  border-bottom: 1px solid var(--dark);
 }
 .nav-item a:hover {
   border-bottom: none;
@@ -287,7 +202,6 @@ pre > code::after {
 .nav-item-active a:hover {
   text-decoration: none;
 }
-
 /* Posts list */
 .postlist {
   padding-left: 0;
@@ -308,6 +222,7 @@ li.postlist-item {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-weight: 700;
 }
 .postlist-date {
   color: var(--lightgray);
@@ -315,55 +230,24 @@ li.postlist-item {
   word-spacing: -.05em;
 }
 .about-description {
-  padding-bottom: 1em;
+  margin-bottom: 2.2em;
 }
-.wave-emoji {
-  animation-name: wave-animation;
-  animation-duration: 2.5s;
-  animation-iteration-count: 2;
-  transform-origin: 70% 70%;
-  display: inline-block;
-  animation-delay: 1s;
-  padding-left: .2em;
-}
-@keyframes wave-animation {
-    0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) } 
-   20% { transform: rotate(-8.0deg) }
-   30% { transform: rotate(14.0deg) }
-   40% { transform: rotate(-4.0deg) }
-   50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }
-  100% { transform: rotate( 0.0deg) }
-}
-
 /* Tags */
 .post-tag::before {
   content: "#";
   color: var(--lightgray);
 }
-
-/* Warning */
-.warning {
-  background-color: #ffc;
-  padding: 1em .625em; /* 16px 10px /16 */
-}
-.warning ol:only-child {
-  margin: 0;
-}
-
 /* Post */
 .post__title {
   margin-bottom: .25em;
 }
-.post__meta {
-  color: var(--lightgray);
-}
 .post__meta, .post__meta a {
-  font-size: .97em;
+  font-size: .95em;
+  color: var(--lightgray);
 }
 .post__meta a {
   padding-left: .5em;
+  border-bottom: none;
 }
 iframe, video {
   width: 100%;
@@ -375,20 +259,24 @@ iframe, video {
   color: var(--dark);
 }
 .nextprev-post a {
-  font-weight: normal;
+  font-weight: 500;
 }
-hr { 
+hr {
   margin: 2.5em 0 0;
-  border-color:rgba(0,0,0,.18);
+  border-color: rgb(156, 156, 156);
   border-width:1px 0 0;
 }
-
 /* Footer */
 footer {
+  color: var(--gray);
   padding: 4em 2em;
-  font-size: .93em;
+  font-size: .9em;
   text-align: center;
 }
 footer p {
   margin-bottom: 0;
+}
+footer a[href] {
+  color: inherit;
+  border-bottom: none;
 }
