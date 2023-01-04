@@ -8,11 +8,10 @@
     <meta name="description" content="{% if description %}{{ description }} — {% endif %}{% if title %}A post by {{ metadata.author.name }}{% elif metadata.url %}{{ metadata.description }}{% endif %}">
     <link rel="canonical" href={{ metadata.url }}{{ page.url }}>
     <link rel="preconnect" href="/" crossorigin>
-    <link rel="preload" href="/fonts/RobotoFlex.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
     <meta name="theme-color" content="#ffffff">
     {% set css %}
 		{% include "css/index.css" %}
-		{% include "css/prism-theme.css" %}
     {% include "css/prism-diff.css" %}
 	  {% endset %}
 	<style>
@@ -44,8 +43,6 @@
   <body>
     <header>
       <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
-
-      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
       <ul class="nav">
       {%- for entry in collections.all | eleventyNavigation %}
         <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
