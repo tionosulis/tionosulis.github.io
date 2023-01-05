@@ -126,8 +126,8 @@ table td, table th {
   padding-right: 1em;
 }
 pre, code {
-  font-family: Courier, monospace;
-  font-size: .95em;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: .97em;
 }
 pre {
   direction: ltr;
@@ -145,8 +145,8 @@ pre {
   padding: 1.5em 1em;
   margin: 0.5em 0;
   border-radius: 5px;
-  background-color: var(--darkgray);
-  color: var(--white);
+  background-color: #272822;
+  color: #d4d4d4;
 }
 code {
   font-weight: 700;
@@ -168,9 +168,16 @@ pre > code::after {
 }
 pre[class*="language-"], code[class*="language-"] {
   background-color: var(--darkgray);
-  font-size: .95em;
+  font-size: .96em;
   line-height: 1.2;
 }
+.token.important,.token.regex,.token.tag {
+  color:#ffffff;
+}
+.token.namespace{
+  opacity:.7
+}
+
 /* Header */
 .home a {
   color:var(--dark);
@@ -253,23 +260,39 @@ iframe, video {
   width: 100%;
   border: none;
 }
-.nextprev-post {
+.end-post {
+  overflow: visible; /* For IE */
+  margin-top: 2.5em;
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+  border-top: medium double var(--darkgray);
+  text-align: center;
+}
+.end-post:after {
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  background: var(--white);
+  color: var(--lightgray);
+}
+ul.nextprev-post {
+  margin-top: 0;
   padding-left: 1em;
   font-weight: 700;
   color: var(--dark);
 }
 .nextprev-post a {
   font-weight: 500;
-}
-hr {
-  margin: 2.5em 0 0;
-  border-color: rgb(156, 156, 156);
-  border-width:1px 0 0;
+  border-bottom: 1px dotted var(--dark);
 }
 /* Footer */
 footer {
   color: var(--gray);
-  padding: 4em 2em;
+  padding: 6em 2em .5em;
   font-size: .9em;
   text-align: center;
 }
