@@ -1,43 +1,37 @@
-/*
- * New diff- syntax
- */
-
- pre[class*="language-diff-"] {
-    --eleventy-code-padding: 1.25em;
-      padding-left: var(--eleventy-code-padding);
-      padding-right: var(--eleventy-code-padding);
-  }
-  .highlight-line-active {
-    background-color: #8b8b8b;
-    color: #ffffff;
-    border-radius: .1em;
-  }
-  .token.deleted, .token.inserted  {
-      color: #0f0f0f;
-      font-weight: 700;
-  }
-  
-  /* Make the + and - characters unselectable for copy/paste */
-  .token.prefix.unchanged,
-  .token.prefix.inserted,
-  .token.prefix.deleted {
-      -webkit-user-select: none;
-      user-select: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--eleventy-code-padding);
-    padding-top: 2px;
-    padding-bottom: 2px;
-    background-color: #fff;
-  }
-  
-  /* Optional: full-width background color */
-  .token.inserted:not(.prefix),
-  .token.deleted:not(.prefix) {
-      display: block;
-      margin-left: calc(-1 * var(--eleventy-code-padding));
-      margin-right: calc(-1 * var(--eleventy-code-padding));
-      text-decoration: none; /* override del, ins, mark defaults */
-      color: inherit; /* override del, ins, mark defaults */
-  }
+/* * New diff- syntax */
+pre[class*="language-diff-"] {
+  --eleventy-code-padding: 1.25em;
+  padding-left: var(--eleventy-code-padding);
+  padding-right: var(--eleventy-code-padding);
+}
+.highlight-line-active {
+  background-color: #7f7f7f;
+  color: #dadedf;
+  border-radius: .1em;
+}
+.token.deleted, .token.inserted {
+  color: #0f0f0f;
+  font-weight: 700;
+}
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged, .token.prefix.inserted, .token.prefix.deleted {
+  -webkit-user-select: none;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--eleventy-code-padding);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #f0f0f0;
+}
+/* Optional: full-width background color */
+.token.inserted:not(.prefix), .token.deleted:not(.prefix) {
+  display: block;
+  margin-left: calc(-1 * var(--eleventy-code-padding));
+  margin-right: calc(-1 * var(--eleventy-code-padding));
+  text-decoration: none;
+ /* override del, ins, mark defaults */
+  color: inherit;
+ /* override del, ins, mark defaults */
+}
