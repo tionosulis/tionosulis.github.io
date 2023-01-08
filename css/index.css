@@ -31,10 +31,10 @@ html {
 }
 body {
   position: relative;
-  margin: 30px auto;
+  margin: 1.875rem auto;
   min-height: 100vh;
-  max-width:-webkit-calc(768px - (30px * 2));
-  max-width:calc(768px - (30px * 2));
+  max-width:-webkit-calc(768px - (1.875rem * 2));
+  max-width:calc(768px - (1.875rem * 2));
   font-size: 1.09375rem;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
@@ -46,10 +46,10 @@ body {
 }
 @media screen and (max-width:768px) {
   body {
-      max-width:-webkit-calc(768px - (30px));
-      max-width:calc(768px - (30px));
-      padding-right: 30px;
-      padding-left: 30px;
+      max-width:-webkit-calc(768px - (1.875rem));
+      max-width:calc(768px - (1.875rem));
+      padding-right: 1.875rem;
+      padding-left: 1.875rem;
       font-size: .9375rem;
  }
 }
@@ -127,7 +127,7 @@ table td, table th {
 }
 pre, code {
   font-family: 'Courier New', Courier, monospace;
-  font-size: .97em;
+  font-size: .98em;
 }
 pre {
   direction: ltr;
@@ -146,7 +146,7 @@ pre {
   margin: 0.5em 0;
   border-radius: 5px;
   background-color: #272822;
-  color: #d4d4d4;
+  color: #f8f8f2;
 }
 code {
   font-weight: 700;
@@ -172,12 +172,23 @@ pre[class*="language-"], code[class*="language-"] {
   line-height: 1.2;
 }
 .token.important,.token.regex,.token.tag {
-  color:#ffffff;
+  color: #ffffff;
 }
-.token.namespace{
-  opacity:.7
+.token.punctuation {
+  color: #b8b8b8;
 }
-
+.token.selector {
+  color: #dadedf;
+}
+.token.property {
+  color: #a2b2c2;
+}
+.token.string {
+  color: #f8f8f2;
+}
+.token.comment {
+  color: #c1c7c9
+}
 /* Header */
 .home a {
   color:var(--dark);
@@ -266,7 +277,7 @@ iframe, video {
   margin-bottom: 0;
   padding: 0;
   border: none;
-  border-top: medium double var(--darkgray);
+  border-top: medium double var(--lightgray);
   text-align: center;
 }
 .end-post:after {
@@ -277,7 +288,7 @@ iframe, video {
   font-size: 1.5em;
   padding: 0 0.25em;
   background: var(--white);
-  color: var(--lightgray);
+  color: var(--dark);
 }
 ul.nextprev-post {
   margin-top: 0;

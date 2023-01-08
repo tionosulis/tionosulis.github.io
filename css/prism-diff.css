@@ -5,7 +5,7 @@ pre[class*="language-diff-"] {
   padding-right: var(--eleventy-code-padding);
 }
 .highlight-line-active {
-  background-color: #7f7f7f;
+  background-color: #636363;
   color: #dadedf;
   border-radius: .1em;
 }
@@ -23,7 +23,7 @@ pre[class*="language-diff-"] {
   width: var(--eleventy-code-padding);
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #f0f0f0;
+  background-color: #f2f3f4;
 }
 /* Optional: full-width background color */
 .token.inserted:not(.prefix), .token.deleted:not(.prefix) {
