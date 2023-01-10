@@ -10,11 +10,11 @@ pre[class*="language-diff-"] {
   border-radius: .1em;
 }
 .token.deleted, .token.inserted {
-  color: #0f0f0f;
+  color: #ffffff;
   font-weight: 700;
 }
 /* Make the + and - characters unselectable for copy/paste */
-.token.prefix.unchanged, .token.prefix.inserted, .token.prefix.deleted {
+.token.prefix.inserted, .token.prefix.deleted {
   -webkit-user-select: none;
   user-select: none;
   display: inline-flex;
@@ -23,7 +23,7 @@ pre[class*="language-diff-"] {
   width: var(--eleventy-code-padding);
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #f2f3f4;
+  background-color: #636363;
 }
 /* Optional: full-width background color */
 .token.inserted:not(.prefix), .token.deleted:not(.prefix) {
