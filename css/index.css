@@ -32,9 +32,10 @@ body {
   position: relative;
   margin: 1.875em auto;
   min-height: 100vh;
-  max-width: -webkit-calc(768px - (1.875em * 2));
-  max-width: calc(768px - (1.875em * 2));
+  max-width: -webkit-calc(43.75rem - (1.5em * 2));
+  max-width: calc(43.75rem - (1.5em * 2));
   font-size: 1.09375rem;
+  letter-spacing: -.025em;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
   overflow-wrap: break-word;
@@ -45,10 +46,10 @@ body {
 }
 @media screen and (max-width:768px) {
   body {
-      max-width: -webkit-calc(768px - (1.875em));
-      max-width: calc(768px - (1.875em));
-      padding-right: 1.875em;
-      padding-left: 1.875em;
+      max-width: -webkit-calc(43.75rem - (1.5em));
+      max-width: calc(43.75rem - (1.5em));
+      padding-right: 1.8em;
+      padding-left: 1.8em;
       font-size: .9375rem;
  }
 }
@@ -293,10 +294,9 @@ iframe, video {
   color: var(--dark);
 }
 ul.nextprev-post {
-  display: block;
   margin-top: 0;
-  padding-left: 1em;
-  font-weight: bold;
+  padding-left: .9em;
+  font-weight: 700;
   color: var(--dark);
 }
 .nextprev-post a {
