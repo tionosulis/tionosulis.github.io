@@ -35,7 +35,7 @@ body {
   max-width: -webkit-calc(43.75rem - (1.5em * 2));
   max-width: calc(43.75rem - (1.5em * 2));
   font-size: 1.09375rem;
-  letter-spacing: -.025em;
+  letter-spacing: -.02em;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
   overflow-wrap: break-word;
@@ -83,33 +83,21 @@ a:hover {
   color: var(--white);
 }
 blockquote {
-  position: relative;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--dark);
-  border-left: 0.25em solid var(--dark);
+  border-left: 0.25em solid var(--lightgray);
   margin-top: 1.6em;
-  margin-left: 0;
+  margin-left: .5em;
   margin-bottom: 1.6em;
-  padding-left: 2.5em;
-}
-blockquote::before{
-  font-family: Arial;
-  content: "\201C";
-  color: var(--lightgray);
-  font-size: 4.5em;
-  position: absolute;
-  left: .15em;
-  top: -.35em;
+  padding-left: 1em;
+  letter-spacing: 0;
 }
 blockquote > cite, blockquote > p > cite {
   display: block;
-  font-size: .9em;
   line-height: 1.3em;
-  font-weight: 700;
-  font-style: italic;
+  font-style: normal;
   margin-top: 1em;
-  letter-spacing: 0;
-  color: var(--dark);
+  color: var(--lightgray);
 }
 header {
   margin-bottom: 5em;
@@ -126,9 +114,8 @@ table td, table th {
   padding-right: 1em;
 }
 pre, code {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1em;
-  letter-spacing: -.01em;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  line-height: 1.5;
 }
 pre {
   direction: ltr;
@@ -137,17 +124,17 @@ pre {
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
   -webkit-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
   padding: 1.5em;
   margin: 0.5em 0;
   border-radius: 5px;
-  background-color: #373d3f;
-  color: #d8e3e7;
+  background-color: var(--dark);
+  color: #cacfd1;
 }
 code {
   font-weight: 700;
@@ -166,29 +153,6 @@ pre > code::before {
 }
 pre > code::after {
   content: none;
-}
-pre[class*="language-"], code[class*="language-"] {
-  background-color: var(--darkgray);
-  font-size: .95em;
-  line-height: 1.2;
-}
-.token.important,.token.regex,.token.tag {
-  color: #ffffff;
-}
-.token.punctuation {
-  color: #dfdfdf;
-}
-.token.selector {
-  color: #d8dada;
-}
-.token.property {
-  color: #acb7ba;
-}
-.token.string {
-  color: #d3d8da;
-}
-.token.comment {
-  color: #aeafaf;
 }
 /* Header */
 .home a {
@@ -280,7 +244,7 @@ iframe, video {
   margin-bottom: 0;
   padding: 0;
   border: none;
-  border-top: medium double var(--lightgray);
+  border-top: medium double #b8b8b8;
   text-align: center;
 }
 .end-post:after {

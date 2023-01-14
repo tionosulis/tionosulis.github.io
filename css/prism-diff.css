@@ -6,12 +6,11 @@ pre[class*="language-diff-"] {
 }
 .highlight-line-active {
   background-color: #636363;
-  color: #dadedf;
+  color: #dcdcdc;
   border-radius: .1em;
 }
 .token.deleted, .token.inserted {
   color: #ffffff;
-  font-weight: 700;
 }
 /* Make the + and - characters unselectable for copy/paste */
 .token.prefix.inserted, .token.prefix.deleted {
@@ -24,6 +23,7 @@ pre[class*="language-diff-"] {
   padding-top: 2px;
   padding-bottom: 2px;
   background-color: #636363;
+  font-weight: 700;
 }
 /* Optional: full-width background color */
 .token.inserted:not(.prefix), .token.deleted:not(.prefix) {
