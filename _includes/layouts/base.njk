@@ -12,6 +12,7 @@
     <meta name="theme-color" content="#ffffff">
     {% set css %}
 		{% include "css/index.css" %}
+    {% include "css/prism-theme.css" %}
     {% include "css/prism-diff.css" %}
 	  {% endset %}
 	<style>
@@ -39,7 +40,7 @@
       <meta name="robots" content="noindex"/>
     {% endif -%}
   </head>
-  
+
   <body>
     <header>
       <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
@@ -49,11 +50,11 @@
       {%- endfor %}
       </ul>
     </header>
-    
+
     <main{%- if templateClass %} class="{{ templateClass }}"{% endif -%}>
       {{ content | safe }}
     </main>
-    
+
     {% include "layouts/footer.njk" %}
 
     <!-- Current page: {{ page.url | url }} -->
