@@ -1,18 +1,6 @@
-/* Generated with http://k88hudson.github.io/syntax-highlighting-theme-generator/www */
-/* http://k88hudson.github.io/react-markdocs */
-/**
- * @author k88hudson
- *
- * Based on prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-/*********************************************************
-* General
-*/
 pre[class*="language-"],
 code[class*="language-"] {
-  color: #b4b6b8;
+  color: black;
   font-size: .95em;
   text-shadow: none;
   direction: ltr;
@@ -39,7 +27,8 @@ pre[class*="language-"] {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
-  background: #272822;
+  background: white;
+  border: 1px solid #dddddd;
 }
 :not(pre) > code[class*="language-"] {
   padding: .1em .3em;
@@ -54,57 +43,41 @@ pre[class*="language-"] {
 .token.comment,
 .token.prolog,
 .token.doctype,
-.token.cdata {
-  color: #929292;
+.token.cdata,
+.token.deleted {
+  color: #c0c0c0;
 }
-.token.punctuation {
-  color: #e6ecec;
-}
+.token.url,
+.token.entity,
 .token.property,
-.token.tag,
-.token.boolean,
+.token.regex,
 .token.number,
+.token.boolean,
 .token.constant,
 .token.symbol,
-.token.deleted {
-  color: #d0d0d0;
-}
-.token.selector,
-.token.attr-name,
+.token.variable,
+.token.title.important,
+.token.list.punctuation,
+.token.attr-value,
 .token.string,
 .token.char,
-.token.builtin,
 .token.inserted {
-  color: #f9f9f9;
+  color: #888888;
 }
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  color: #f8f5f5;
-  background: #636363;
+.token.rule,
+.token.tag,
+.token.selector,
+.token.keyword,
+.token.important,
+.token.bold,
+.token.operator {
+  font-weight: 700;
 }
-.token.atrule,
 .token.attr-value,
-.token.keyword {
-  color: #dddcdc;
-}
-.token.function {
-  color: #b9b9b9;
-}
-.token.regex,
-.token.important,
-.token.variable {
-  color: #f4f5f5;
-}
-.token.important,
-.token.bold {
-  font-weight: bold;
+.token.attr-name,
+.token.code.keyword {
+  font-weight: normal;
 }
 .token.italic {
   font-style: italic;
-}
-.token.entity {
-  cursor: help;
 }

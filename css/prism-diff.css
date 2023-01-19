@@ -5,12 +5,11 @@ pre[class*="language-diff-"] {
   padding-right: var(--eleventy-code-padding);
 }
 .highlight-line-active {
-  background-color: #4f4f4f;
-  color: #ececec;
+  background-color: #f0f0f0;
   border-radius: .1em;
 }
 .token.deleted, .token.inserted {
-  color: #ffffff;
+  color: white;
 }
 /* Make the + and - characters unselectable for copy/paste */
 .token.prefix.inserted, .token.prefix.deleted {
@@ -22,7 +21,7 @@ pre[class*="language-diff-"] {
   width: var(--eleventy-code-padding);
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #636363;
+  background-color: black;
   font-weight: 700;
 }
 /* Optional: full-width background color */
