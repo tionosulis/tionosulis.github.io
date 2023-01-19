@@ -21,7 +21,6 @@ html {
   padding: 0;
   overflow-y: scroll;
   overflow-anchor: none;
-  z-index: 1;
   background-color: var(--white);
   font-family: 'Inter', -apple-system, system-ui, sans-serif;
   line-height: 1.618;
@@ -30,9 +29,11 @@ html {
 body {
   min-height: 100vh;
   width: 100%;
-  max-width: -webkit-calc(41.176em - (1.5em * 2));
-  max-width: calc(41.176em - (1.5em * 2));
+  max-width: -webkit-calc(44.176em - (1.5em * 2));
+  max-width: calc(44.176em - (1.5em * 2));
   margin: 1.875em auto;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   font-size: 1.09375rem;
   letter-spacing: -0.0013em;
   -webkit-text-size-adjust: 100%;
@@ -43,10 +44,10 @@ body {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (max-width: 41.176em) {
+@media screen and (max-width: 44.176em) {
   body {
-    max-width: -webkit-calc(41.176em - (1.5em));
-    max-width: calc(41.176em - (1.5em));
+    max-width: -webkit-calc(44.176em - (1.5em));
+    max-width: calc(44.176em - (1.5em));
     padding-right: 1.8em;
     padding-left: 1.8em;
     font-size: .9375rem;
@@ -72,6 +73,7 @@ p:last-child {
 }
 img {
   max-width: 100%;
+  height: auto;
 }
 a {
   color: var(--dark);
@@ -86,7 +88,7 @@ a:hover {
   border-bottom: 1px solid var(--dark);
 }
 ::selection {
-  background-color: var(--lightgray);
+  background-color: var(--gray);
   color: var(--white);
 }
 blockquote {
@@ -107,7 +109,7 @@ blockquote > cite, blockquote > p > cite {
 header {
   margin-bottom: 6em;
 }
-@media screen and (max-width: 43.75em) {
+@media screen and (max-width: 44.176em) {
   header {
     margin-bottom: 5em;
   }
@@ -143,8 +145,14 @@ pre {
   padding: 1.5em;
   margin: 0.5em 0;
   border-radius: 5px;
-  background-color: #272822;
-  color: #c2c4c5;
+  background-color: var(--white);
+  border: 1px solid #dddddd;
+}
+code {
+  font-weight: 500;
+}
+pre > code {
+  font-weight: normal;
 }
 code::before {
   content: "`";
@@ -158,7 +166,6 @@ pre > code::before {
 pre > code::after {
   content: '';
 }
-
 /* Header */
 .home a {
   color: var(--dark);
@@ -230,7 +237,6 @@ li.postlist-item {
 a.post-tag {
   margin-right: .5em;
 }
-
 /* Post */
 h1.post__title {
   margin-bottom: .25em;
@@ -274,7 +280,6 @@ ul.nextprev-post {
   font-weight: 500;
   border-bottom: 1px dotted;
 }
-
 /* Footer */
 footer {
   color: var(--gray);
