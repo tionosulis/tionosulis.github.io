@@ -26,8 +26,8 @@ Here's the two:
 
 2. `ignore:true` _key-value_ pairs goes to the post's `front-matter`
 
-```diff-yaml
-/* posts/hello-world.md */
+```diff-yml
+# posts/hello-world.md
 
 ---
 title: Hello World!
