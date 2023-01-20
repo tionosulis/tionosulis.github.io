@@ -5,7 +5,7 @@ pre[class*="language-diff-"] {
   padding-right: var(--eleventy-code-padding);
 }
 .highlight-line-active {
-  background-color: #f0f0f0;
+  background-color: #f4f4f4;
   border-radius: .1em;
 }
 .token.deleted, .token.inserted {

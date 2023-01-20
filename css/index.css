@@ -78,14 +78,14 @@ img {
 a {
   color: var(--dark);
   text-decoration: none;
-  border-bottom: 1px solid var(--lightgray);
+  border-bottom: 1px solid var(--dark);
 }
 a:visited {
   color: var(--gray);
 }
 a:hover {
   color: var(--lightgray);
-  border-bottom: 1px solid var(--dark);
+  border-bottom: 1px solid;
 }
 ::selection {
   background-color: var(--gray);
@@ -145,14 +145,8 @@ pre {
   padding: 1.5em;
   margin: 0.5em 0;
   border-radius: 5px;
-  background-color: var(--white);
+  background-color: inherit;
   border: 1px solid #dddddd;
-}
-code {
-  font-weight: 500;
-}
-pre > code {
-  font-weight: normal;
 }
 code::before {
   content: "`";
