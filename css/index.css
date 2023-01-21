@@ -31,7 +31,7 @@ body {
   width: 100%;
   max-width: -webkit-calc(44.176em - (1.5em * 2));
   max-width: calc(44.176em - (1.5em * 2));
-  margin: 1.875em auto;
+  margin: 0 auto;
   padding-left: 1.5em;
   padding-right: 1.5em;
   font-size: 1.09375rem;
@@ -64,8 +64,8 @@ h1,h2 {
 h3 {
   letter-spacing: -0.017em;
 }
-b, strong {
-  color: var(--dark) ;
+strong, b {
+  color: var(--dark);
 }
 p:last-child {
   margin-bottom: 0;
@@ -105,12 +105,12 @@ blockquote > cite, blockquote > p > cite {
   font-style: normal;
   margin-top: 1em;
 }
-header {
-  margin-bottom: 6em;
+main {
+  padding-top: 4em;
 }
 @media screen and (max-width: 44.176em) {
-  header {
-    margin-bottom: 5em;
+  main {
+    padding-top: 3em;
   }
 }
 header:after {
@@ -160,6 +160,11 @@ pre > code::after {
   content: '';
 }
 /* Header */
+.home {
+  padding-top: 1em;
+  float: left;
+  margin-top: auto;
+}
 .home a {
   color: var(--dark);
   font-size: 1.2em;
@@ -171,11 +176,12 @@ pre > code::after {
 /* Nav */
 .nav {
   float: right;
-  margin-top: 0;
+  text-align: right;
+  padding-top: 1.2em;
 }
 .nav-item {
-  display: inline-block;
-  padding-left: .6em;
+  padding-left: .5em;
+  padding-bottom: .1em;
 }
 .nav-item a {
   color: var(--dark);
@@ -186,11 +192,16 @@ pre > code::after {
 }
 .nav-item-active a {
   color: var(--lightgray);
-  font-weight: 700;
   border-bottom: none;
 }
 .nav-item-active a:hover {
   text-decoration: none;
+}
+li.nav-item {
+  color: var(--dark);
+}
+li.nav-item-active {
+  color: var(--lightgray);
 }
 /* Posts list */
 .postlist {
@@ -220,7 +231,7 @@ li.postlist-item {
   word-spacing: -.05em;
 }
 .about-description {
-  margin-bottom: 2.2em;
+  padding-bottom: .7em;
 }
 /* Tags */
 .post-tag::before {
@@ -278,7 +289,7 @@ ul.nextprev-post {
 /* Footer */
 footer {
   color: var(--gray);
-  padding: 6em 2em .5em;
+  padding: 6em 2em 1em;
   font-size: .9em;
   text-align: center;
 }
