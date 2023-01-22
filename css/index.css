@@ -13,7 +13,7 @@
 @font-face {
   font-family: "Inter";
   font-weight: 100 900;
-  font-display: swap;
+  font-display: optional;
   src: url('/fonts/inter.woff2') format('woff2');
 }
 html {
@@ -22,20 +22,20 @@ html {
   overflow-y: scroll;
   overflow-anchor: none;
   background-color: var(--white);
-  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  font-family: 'Inter', -apple-system, system-ui, Roboto, sans-serif;
   line-height: 1.618;
   color: var(--darkgray);
 }
 body {
   min-height: 100vh;
   width: 100%;
-  max-width: -webkit-calc(44.176em - (1.5em * 2));
-  max-width: calc(44.176em - (1.5em * 2));
+  max-width: -webkit-calc(44.5em - (1.5em * 2));
+  max-width: calc(44.5em - (1.5em * 2));
   margin: 0 auto;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  font-size: 1.09375rem;
-  letter-spacing: -0.0013em;
+  padding: 1.5em;
+  font-size: 1.13rem;
+  font-weight: 500;
+  letter-spacing: -0.014em;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
   overflow-wrap: break-word;
@@ -44,13 +44,13 @@ body {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (max-width: 44.176em) {
+@media screen and (max-width: 44.5em) {
   body {
-    max-width: -webkit-calc(44.176em - (1.5em));
-    max-width: calc(44.176em - (1.5em));
+    max-width: -webkit-calc(44.5em - (1.5em));
+    max-width: calc(44.5em - (1.5em));
     padding-right: 1.8em;
     padding-left: 1.8em;
-    font-size: .9375rem;
+    font-size: .94rem;
     letter-spacing: -0.009em;
   }
 }
@@ -106,17 +106,15 @@ blockquote > cite, blockquote > p > cite {
   margin-top: 1em;
 }
 main {
-  padding-top: 4em;
-}
-@media screen and (max-width: 44.176em) {
-  main {
-    padding-top: 3em;
-  }
+  padding-top: 3.5em;
 }
 header:after {
   content: "";
   display: table;
   clear: both;
+}
+header {
+  width: 100%;
 }
 table {
   margin: 1em 0;
@@ -161,14 +159,13 @@ pre > code::after {
 }
 /* Header */
 .home {
-  padding-top: 1em;
   float: left;
+  font-size: 2.3em;
+  font-weight: 500;
   margin-top: auto;
 }
 .home a {
   color: var(--dark);
-  font-size: 1.2em;
-  font-weight: 500;
 }
 .home a:hover {
   text-decoration: none;
@@ -177,15 +174,18 @@ pre > code::after {
 .nav {
   float: right;
   text-align: right;
-  padding-top: 1.2em;
+  margin-top: .1em;
 }
 .nav-item {
-  padding-left: .5em;
-  padding-bottom: .1em;
+  padding-bottom: .2em;
+}
+@media screen and (max-width: 44.176em) {
+  .nav-item {
+    padding-bottom: .5em;
+  }
 }
 .nav-item a {
   color: var(--dark);
-  font-weight: 500;
 }
 .nav-item a:hover {
   border-bottom: none;
@@ -193,12 +193,10 @@ pre > code::after {
 .nav-item-active a {
   color: var(--lightgray);
   border-bottom: none;
+  font-weight: 700;
 }
 .nav-item-active a:hover {
   text-decoration: none;
-}
-li.nav-item {
-  color: var(--dark);
 }
 li.nav-item-active {
   color: var(--lightgray);
@@ -207,15 +205,16 @@ li.nav-item-active {
 .postlist {
   padding-left: 0;
   white-space: nowrap;
-  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 li.postlist-item {
   display: flex;
   align-items: baseline;
   justify-content:space-between;
-  line-height: 1.9;
   border-bottom: 1px dotted var(--dark);
-  padding: .2em 0 .1em;
+  line-height: 2.2em;
 }
 .postlist a {
   max-width: 45%;
@@ -230,8 +229,8 @@ li.postlist-item {
   font-size: .85em;
   word-spacing: -.05em;
 }
-.about-description {
-  padding-bottom: .7em;
+.home-index {
+  padding-bottom: 1em;
 }
 /* Tags */
 .post-tag::before {
@@ -243,9 +242,9 @@ a.post-tag {
 }
 /* Post */
 h1.post__title {
-  font-size: 2.5em;
-  line-height: 1.1;
-  margin-bottom: 0.1em;
+  font-size: 2.4em;
+  line-height: 1;
+  margin-bottom: .2em;
 }
 .post__meta a {
   font-size: .95em;
@@ -259,7 +258,7 @@ iframe, video {
 }
 .end-post {
   overflow: visible; /* For IE */
-  margin-top: 2.5em;
+  margin-top: 1.6em;
   margin-bottom: 0;
   padding: 0;
   border: none;
@@ -270,7 +269,7 @@ iframe, video {
   content: "§";
   display: inline-block;
   position: relative;
-  top: -0.7em;
+  top: -0.8em;
   font-size: 1.5em;
   padding: 0 0.25em;
   background: var(--white);
@@ -283,13 +282,13 @@ ul.nextprev-post {
   color: var(--dark);
 }
 .nextprev-post a {
-  font-weight: 500;
+  font-weight: 600;
   border-bottom: 1px dotted;
 }
 /* Footer */
 footer {
   color: var(--gray);
-  padding: 6em 2em 1em;
+  padding-top: 6em;
   font-size: .9em;
   text-align: center;
 }

@@ -10,7 +10,6 @@ templateClass: tmpl-post
 {%- endfor %}
 </div>
 {{ content | safe }}
-
 {%- if collections.posts %}
 {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
