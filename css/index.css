@@ -1,9 +1,9 @@
 /* Colors*/
 :root {
-  --lightgray: #9199a1;
-  --gray: #6a737c;
-  --darkgray: #232629;
-  --dark: #0c0d0e;
+  --lightgray: #9ca3af;
+  --gray: #4b5563;
+  --darkgray: #313233;
+  --dark: #111827;
   --white: #ffffff;
 }
 /* Global stylesheet */
@@ -22,19 +22,19 @@ html {
   overflow-y: scroll;
   overflow-anchor: none;
   background-color: var(--white);
-  font-family: 'Inter', -apple-system, system-ui, Roboto, sans-serif;
+  font-family: Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   line-height: 1.618;
   color: var(--darkgray);
 }
 body {
   min-height: 100vh;
   width: 100%;
-  max-width: -webkit-calc(44.5em - (1.5em * 2));
-  max-width: calc(44.5em - (1.5em * 2));
+  max-width: -webkit-calc(800px - (30px * 2));
+  max-width: calc(800px - (30px * 2));
   margin: 0 auto;
   padding: 1.5em;
   font-size: 1.13rem;
-  font-weight: 500;
+  font-weight: 450;
   letter-spacing: -0.014em;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
@@ -44,10 +44,10 @@ body {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (max-width: 44.5em) {
+@media screen and (max-width: 800px) {
   body {
-    max-width: -webkit-calc(44.5em - (1.5em));
-    max-width: calc(44.5em - (1.5em));
+    max-width: -webkit-calc(800px - (30px));
+    max-width: calc(800px - (30px));
     padding-right: 1.8em;
     padding-left: 1.8em;
     font-size: .94rem;
@@ -57,6 +57,7 @@ body {
 h1, h2, h3, h4 {
   color: var(--dark);
   line-height: 1.35;
+  font-weight: 650;
 }
 h1,h2 {
   letter-spacing: -0.020em;
@@ -84,15 +85,14 @@ a:visited {
 }
 a:hover {
   color: var(--lightgray);
-  border-bottom: 1px solid;
 }
 ::selection {
   background-color: var(--gray);
   color: var(--white);
 }
 blockquote {
-  font-weight: 300;
-  color: #525960;
+  font-weight: 350;
+  color: #5d6369;
   border-left: 0.25em solid #c8ccd0;
   margin-top: 1.6em;
   margin-left: .5em;
@@ -104,6 +104,9 @@ blockquote > cite, blockquote > p > cite {
   line-height: 1.3em;
   font-style: normal;
   margin-top: 1em;
+}
+blockquote > cite, blockquote > p > cite::before {
+  content: '--';
 }
 main {
   padding-top: 3.5em;
@@ -125,6 +128,7 @@ table td, table th {
 pre, code {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   line-height: 1.5;
+  font-weight: 450;
 }
 pre {
   direction: ltr;
@@ -179,13 +183,14 @@ pre > code::after {
 .nav-item {
   padding-bottom: .2em;
 }
-@media screen and (max-width: 44.176em) {
+@media screen and (max-width: 800px) {
   .nav-item {
     padding-bottom: .5em;
   }
 }
 .nav-item a {
-  color: var(--dark);
+  color: var(--gray);
+  font-weight: 500;
 }
 .nav-item a:hover {
   border-bottom: none;
@@ -193,7 +198,7 @@ pre > code::after {
 .nav-item-active a {
   color: var(--lightgray);
   border-bottom: none;
-  font-weight: 700;
+  font-weight: 450;
 }
 .nav-item-active a:hover {
   text-decoration: none;
@@ -226,7 +231,7 @@ li.postlist-item {
 }
 .postlist-date {
   color: var(--lightgray);
-  font-size: .85em;
+  font-size: .8em;
   word-spacing: -.05em;
 }
 .home-index {
@@ -247,7 +252,7 @@ h1.post__title {
   margin-bottom: .2em;
 }
 .post__meta a {
-  font-size: .95em;
+  font-size: .85em;
   color: var(--lightgray);
   padding-left: .5em;
   border-bottom: none;
@@ -262,7 +267,7 @@ iframe, video {
   margin-bottom: 0;
   padding: 0;
   border: none;
-  border-top: medium double #c8ccd0;
+  border-top: medium double #d7d8da;
   text-align: center;
 }
 .end-post:after {
@@ -273,7 +278,7 @@ iframe, video {
   font-size: 1.5em;
   padding: 0 0.25em;
   background: var(--white);
-  color: var(--dark)
+  color: var(--darkgray);
 }
 ul.nextprev-post {
   margin-top: 0;
@@ -282,12 +287,11 @@ ul.nextprev-post {
   color: var(--dark);
 }
 .nextprev-post a {
-  font-weight: 600;
+  font-weight: 500;
   border-bottom: 1px dotted;
 }
 /* Footer */
 footer {
-  color: var(--gray);
   padding-top: 6em;
   font-size: .9em;
   text-align: center;
@@ -296,7 +300,6 @@ footer p {
   margin-bottom: 0;
 }
 footer a[href] {
-  color: inherit;
   border-bottom: none;
 }
 ol li::marker {

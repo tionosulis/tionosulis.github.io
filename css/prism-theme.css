@@ -76,7 +76,7 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.attr-name,
 .token.code.keyword {
-  font-weight: 500;
+  font-weight: 450;
 }
 .token.italic {
   font-style: italic;
