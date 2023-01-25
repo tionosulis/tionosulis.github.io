@@ -44,19 +44,6 @@ body {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-<<<<<<< HEAD
-=======
-@media screen and (max-width: 45em) {
-  body {
-    max-width: -webkit-calc(45em - (1.875em));
-    max-width: calc(45em - (1.875em));
-    padding-right: 1.8em;
-    padding-left: 1.8em;
-    font-size: calc(16rem / 16);
-    letter-spacing: -0.011em;
-  }
-}
->>>>>>> 3b9b3f6cc787cbe952aae284e1064ace7bfddc03
 h1, h2, h3 {
   color: var(--dark);
   font-weight: 650;
@@ -152,11 +139,7 @@ pre:not([class*="language-"]) {
   hyphens: none;
   padding: 1.5em;
   margin: .5em 0;
-<<<<<<< HEAD
   border-radius: .3em;
-=======
-  border-radius: .25em;
->>>>>>> 3b9b3f6cc787cbe952aae284e1064ace7bfddc03
   background-color: inherit;
   border: 1px solid #dddddd;
 }
