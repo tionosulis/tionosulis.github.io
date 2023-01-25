@@ -29,7 +29,7 @@ tujuan, harapan, dan resolusi yang berbeda.&lt;br /&gt;doa yang sama di 2022:&lt
 		<link href="https://tionosulis.github.io/hello-world/"/>
 		<updated>2022-01-09T00:00:00Z</updated>
 		<id>https://tionosulis.github.io/hello-world/</id>
-		<content type="html">&lt;p&gt;This is a short test post to make sure that this &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy&lt;/a&gt; based site build&#39;s is right. Consist of some common typography and code block&#39;s styles test to make sure that the &lt;code&gt;css&lt;/code&gt; rendered correctly.&lt;/p&gt;
+		<content type="html">&lt;p&gt;This is a short test post to make sure that this &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;eleventy&lt;/a&gt; based site build&#39;s is right. Consist of some common typography and code block&#39;s styles test to make sure that the &lt;code&gt;css&lt;/code&gt; rendered correctly.&lt;/p&gt;
 &lt;p&gt;Started with this very typical typography test of &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, and the combination of &lt;strong&gt;&lt;em&gt;both&lt;/em&gt;&lt;/strong&gt; text. Then the below code block&#39;s styles test wrapped in &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; tag applied to this &lt;a href=&quot;https://tionosulis.github.io/hello-world/#&quot;&gt;Hello World!&lt;/a&gt; test post, which set its content &lt;code&gt;&amp;lt;meta&amp;gt;&lt;/code&gt; to &lt;code&gt;&amp;lt;noindex&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Here&#39;s the two:&lt;/p&gt;
 &lt;ol&gt;

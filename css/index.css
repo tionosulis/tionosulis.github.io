@@ -35,7 +35,7 @@ body {
   padding: 1.5em;
   font-size: calc(19rem / 16);
   font-weight: 450;
-  letter-spacing: -0.014em;
+  letter-spacing: -0.015em;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
   overflow-wrap: break-word;
@@ -48,10 +48,10 @@ body {
   body {
     max-width: -webkit-calc(45em - (1.875em));
     max-width: calc(45em - (1.875em));
-    padding-right: 1.8em;
-    padding-left: 1.8em;
+    padding-right: 1.875em;
+    padding-left: 1.875em;
     font-size: calc(16rem / 16);
-    letter-spacing: -0.009em;
+    letter-spacing: -0.011em;
   }
 }
 h1, h2, h3 {
@@ -153,9 +153,6 @@ pre:not([class*="language-"]) {
   border-radius: 5px;
   background-color: inherit;
   border: 1px solid #dddddd;
-}
-code {
-	word-break: break-all;
 }
 code::before {
   content: "`";
