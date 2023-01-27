@@ -29,11 +29,11 @@ pre[class*="language-"] {
   overflow: auto;
   background: white;
   border: 1px solid #dddddd;
-  border-radius: .3em;
+  border-radius: .5em;
 }
 :not(pre) > code[class*="language-"] {
   padding: .1em .3em;
-  border-radius: .3em;
+  border-radius: .5em;
 }
 /*********************************************************
 * Tokens
