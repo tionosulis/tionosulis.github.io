@@ -281,9 +281,12 @@ ul.nextprev-post {
 }
 /* Footer */
 footer {
+  position: sticky;
+  top: 100vh;
   font-size: .9em;
-  padding-top: 5.5em;
+  line-height: 1.5;
   text-align: center;
+  margin-top: 6.5em;
 }
 footer p {
   margin-bottom: 0;
