@@ -1,9 +1,9 @@
 /* Colors*/
 :root {
-  --lightgray: #999faa;
-  --gray: #4b5563;
-  --darkgray: #232629;
-  --dark: #111827;
+  --lightgray: #a2a9b0;
+  --gray: #4d5358;
+  --darkgray: #21272a;
+  --dark: #121619;
   --white: #ffffff;
 }
 /* Global stylesheet */
@@ -17,6 +17,7 @@
   src: url('/fonts/inter.woff2') format('woff2');
 }
 html {
+  height: 100%;
   margin: 0;
   padding: 0;
   overflow-y: scroll;
@@ -27,8 +28,9 @@ html {
   line-height: clamp(1.618rem, 0.324vw + 1.534rem, 1.793rem);
 }
 body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  width: 100%;
   max-width: -webkit-calc(45em - (1.875em * 2));
   max-width: calc(45em - (1.875em * 2));
   margin: 0 auto;
@@ -106,6 +108,7 @@ blockquote > cite, blockquote > p > cite::before {
 }
 main {
   padding-top: 2.5em;
+  padding-bottom: 5em;
 }
 header:after {
   content: "";
@@ -281,12 +284,9 @@ ul.nextprev-post {
 }
 /* Footer */
 footer {
-  position: sticky;
-  top: 100vh;
   font-size: .9em;
-  line-height: 1.5;
   text-align: center;
-  margin-top: 6.5em;
+  margin-top: auto;
 }
 footer p {
   margin-bottom: 0;
