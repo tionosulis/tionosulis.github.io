@@ -25,7 +25,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
   max-width: -webkit-calc(45em - (1.875em * 2));
   max-width: calc(45em - (1.875em * 2));
   margin: 0 auto;
@@ -277,6 +276,7 @@ ul.nextprev-post {
 /* Footer */
 footer {
   flex-shrink: 0;
+  min-height: -webkit-fill-available;
   padding: 1.5em 0 0;
   font-size: .9em;
   text-align: center;
