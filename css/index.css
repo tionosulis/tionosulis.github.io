@@ -19,6 +19,7 @@
 html {
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeSpeed;
 }
 body {
   display: flex;
@@ -34,7 +35,6 @@ body {
   font-size: clamp(1rem, 0.346vw + 0.91rem, 1.188rem);
   line-height: clamp(1.618rem, 0.433vw + 1.506rem, 1.853rem);
   letter-spacing: -0.011em;
-  text-rendering: optimizeSpeed;
 }
 h1, h2, h3 {
   color: var(--dark);
@@ -99,7 +99,8 @@ blockquote > cite, blockquote > p > cite::before {
   content: '--';
 }
 main {
-  padding: 2.5em 0 3.5em;
+  padding: 2em 0;
+  flex: 1 0 auto;
 }
 header:after {
   content: "";
@@ -271,13 +272,13 @@ ul.nextprev-post {
 .nextprev-post a {
   border-bottom: 1px dotted;
   font-weight: 500;
-  text-align: center;
 }
 /* Footer */
 footer {
+  flex-shrink: 0;
+  padding: 1.5em 0 0;
   font-size: .9em;
   text-align: center;
-  margin-top: auto;
 }
 footer p {
   margin-bottom: 0;
