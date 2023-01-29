@@ -21,7 +21,6 @@ html, body {
   margin: 0 auto;
 }
 body {
-  min-height: 100vh;
   background-color: var(--white);
   color: var(--darkgray);
   max-width: -webkit-calc(45em - (1.875em * 2));
@@ -151,6 +150,7 @@ pre > code::after {
   font-size-adjust: 0.62;
   font-weight: 500;
   margin-top: auto;
+  padding-top: .1em;
 }
 .home a {
   color: var(--dark);
