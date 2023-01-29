@@ -150,7 +150,6 @@ pre > code::after {
   font-size-adjust: 0.62;
   font-weight: 500;
   margin-top: auto;
-  padding-top: .1em;
 }
 .home a {
   color: var(--dark);
