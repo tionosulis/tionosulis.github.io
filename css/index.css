@@ -21,17 +21,24 @@ html, body {
   margin: 0 auto;
 }
 body {
-  background-color: var(--white);
-  color: var(--darkgray);
-  max-width: -webkit-calc(45em - (1.875em * 2));
-  max-width: calc(45em - (1.875em * 2));
-  padding: 1.2em 1.5em 0;
+  display: flex;
+  flex-direction: column;
+  padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
   font-family: Inter, sans-serif;
   font-size: clamp(1rem, 0.346vw + 0.91rem, 1.188rem);
   line-height: 1.618;
+  background-color: var(--white);
+  color: var(--darkgray);
   overflow-y: scroll;
   text-rendering: optimizeSpeed;
   -webkit-text-size-adjust: 100%;
+}
+body > * {
+  --layout-spacing: max(8vh, 2rem);
+  --max-width: 63ch;
+  width: min(100%, var(--max-width));
+  margin-left: auto;
+  margin-right: auto;
 }
 h1, h2, h3 {
   color: var(--dark);
@@ -56,8 +63,18 @@ p:last-child {
   margin-bottom: 0;
 }
 img {
-  max-width: 100%;
-  height: auto;
+  display: block;
+  width: 100%;
+  min-height: 20rem;
+  max-height: 40vh;
+  object-fit: cover;
+  margin: 2rem auto;
+}
+@supports (aspect-ratio: 1) {
+  article img {
+    max-height: unset;
+    aspect-ratio: 3/2;
+  }
 }
 a {
   color: var(--dark);
@@ -70,6 +87,10 @@ a:visited {
 a:hover {
   color: var(--lightgray);
 }
+a:focus {
+  outline: 1px solid currentColor;
+  outline-offset: 0.2em;
+}
 ::selection {
   background-color: var(--darkgray);
   color: var(--white);
@@ -80,23 +101,25 @@ ol li::marker {
 blockquote {
   font-weight: 300;
   color: #6b737a;
-  border-left: 0.25em solid #c8ccd0;
+  border-left: 0.25em solid #b6b6b6;
   margin-top: 1.6em;
   margin-left: .5em;
   margin-bottom: 1.6em;
   padding-left: 1em;
 }
-blockquote > cite, blockquote > p > cite {
+blockquote > cite,
+blockquote > p > cite {
   display: block;
   line-height: 1.3em;
   font-style: normal;
   margin-top: 1em;
 }
-blockquote > cite, blockquote > p > cite::before {
+blockquote > cite,
+blockquote > p > cite::before {
   content: '--';
 }
 main {
-  padding: 2em 0;
+  padding: 2em 0 1em;
 }
 header:after {
   content: "";
@@ -157,6 +180,9 @@ pre > code::after {
 .home a:hover {
   text-decoration: none;
 }
+.home a:focus {
+  outline: none;
+}
 /* Nav */
 .nav {
   float: right;
@@ -205,6 +231,9 @@ li.postlist-item {
   text-overflow: ellipsis;
   font-weight: 700;
 }
+.postlist a:focus {
+  outline: none;
+}
 .postlist-date {
   color: var(--lightgray);
   font-size: .85em;
@@ -240,46 +269,40 @@ iframe, video {
   width: 100%;
   border: none;
 }
-.end-post {
+.end-post-hr {
   overflow: visible; /* For IE */
   margin-top: 1.8em;
   margin-bottom: 0;
-  padding: 0;
   border: none;
-  border-top: .3em solid #d7d8da;
+  border-top: .2em solid #c6c6c6;
   text-align: center;
+  width: 3em
 }
-.end-post:after {
-  content: "§";
-  display: inline-block;
-  position: relative;
-  top: -0.9em;
-  font-size: 1.5em;
-  padding: 0 0.25em;
-  background: var(--white);
-  color: var(--dark);
-}
-ul.nextprev-post {
+ul.next-prev {
   color: var(--dark);
   font-weight: 700;
-  margin-top: 0;
+  margin-top: 2em;
   padding-left: .9em;
 }
-.nextprev-post a {
+.next-prev a {
   border-bottom: 1px dotted;
   font-weight: 500;
 }
 /* Footer */
-footer {
-  position: sticky;
-  top: 100vh;
-  padding: 1em 0 1.2em;
-  font-size: .9em;
+body > footer {
+  margin-top: auto;
+  padding-top: var(--layout-spacing);
+}
+body > footer div {
+  padding-top: .5em;
+  font-size: .895em;
+  color: #767676;
   text-align: center;
 }
 footer p {
-  margin-bottom: 0;
+  margin: 0;
 }
 footer a[href] {
-  border-bottom: none;
+  color: inherit;
+  border-bottom: 0;
 }
