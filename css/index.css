@@ -116,7 +116,7 @@ blockquote > p > cite::before {
   content: '--';
 }
 main {
-  padding: 2.2em 0 1em;
+  padding: 2.6em 0 1em;
 }
 header:after {
   content: "";
@@ -174,6 +174,7 @@ pre > code::after {
 }
 .home a {
   color: var(--dark);
+  font-size: 1.1em;
 }
 .home a:hover {
   text-decoration: none;
@@ -183,12 +184,12 @@ pre > code::after {
 }
 /* Nav */
 .nav {
-  float: right;
-  margin-top: auto;
+  padding-top: 1.6em;
   text-align: right;
 }
 .nav-item {
-  padding-bottom: .35em;
+  display: inline-block;
+  padding-left: .6em;
 }
 .nav-item a {
   color: var(--gray);
@@ -207,12 +208,14 @@ li.nav-item-active {
   color: var(--lightgray);
 }
 /* Posts list */
-.postlist {
-  padding-left: 0;
-  white-space: nowrap;
+.postlist,
+.postlist a {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.postlist {
+  padding-left: 0;
 }
 li.postlist-item {
   display: flex;
@@ -222,11 +225,8 @@ li.postlist-item {
   line-height: 2.2em;
 }
 .postlist a {
-  max-width: 35ch;
+  max-width: 65%;
   border-bottom: none;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   font-weight: 700;
 }
 .postlist a:focus {
@@ -245,7 +245,7 @@ li.postlist-item {
 }
 /* Tags */
 .post-tag::before {
-  content: "@";
+  content: "#";
   color: var(--lightgray);
 }
 a.post-tag {
@@ -270,24 +270,23 @@ iframe, video {
 }
 .end-post-hr {
   overflow: visible; /* For IE */
-  margin-top: 2.5em;
+  margin-top: 2.4em;
   margin-bottom: 0;
   border: none;
   border-top: .16em solid #c6c6c6;
   text-align: center;
   width: 3em;
 }
-.post__pagination {
-  display: flex;
-  justify-content: space-between;
+.links-nextprev {
   color: var(--dark);
   font-weight: 550;
-  margin: 3em -.5em 1em;
+  margin-top: 3em;
+  margin-bottom: 1.6em;
+  padding-left: .9em;
+
 }
-.post__pagination a {
-  border-bottom: 0;
-  padding-left: .5em;
-  padding-right: .5em;
+.links-nextprev a {
+  border-bottom: 1px dotted;
 }
 /* Footer */
 body > footer {
@@ -296,7 +295,7 @@ body > footer {
 }
 body > footer div {
   padding-top: .5em;
-  font-size: .89em;
+  font-size: .9em;
   color: #767676;
   text-align: center;
 }
