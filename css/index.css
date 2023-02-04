@@ -168,13 +168,13 @@ pre > code::after {
 /* Header */
 .home {
   float: left;
-  font-size-adjust: 0.56;
   font-weight: 600;
   margin-top: auto;
 }
 .home a {
   color: var(--dark);
   font-size: 1.1em;
+  font-size-adjust: 0.53;
 }
 .home a:hover {
   text-decoration: none;
@@ -189,7 +189,7 @@ pre > code::after {
 }
 .nav-item {
   display: inline-block;
-  padding-left: .7em;
+  padding-left: .8em;
 }
 .nav-item a {
   color: var(--gray);
@@ -253,7 +253,7 @@ a.post-tag {
 }
 /* Post */
 h1.post__title {
-  font-size: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  font-size: clamp(2.62rem, 1.21vw + 2.31rem, 3.27rem);
   margin-bottom: 0.1em;
 }
 .post__meta a {
