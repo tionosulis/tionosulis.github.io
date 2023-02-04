@@ -23,7 +23,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  padding: 4vh clamp(1rem, 5vw, 3rem) 1rem;
+  padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
   font-family: Mona Sans, sans-serif;
   font-size: clamp(1rem, 0.462vw + 0.88rem, 1.25rem);
   line-height: 1.618;
@@ -116,7 +116,7 @@ blockquote > p > cite::before {
   content: '--';
 }
 main {
-  padding: 2.6em 0 1em;
+  padding: 3em 0 1em;
 }
 header:after {
   content: "";
@@ -168,7 +168,7 @@ pre > code::after {
 /* Header */
 .home {
   float: left;
-  font-size-adjust: 0.5;
+  font-size-adjust: 0.56;
   font-weight: 600;
   margin-top: auto;
 }
@@ -189,7 +189,7 @@ pre > code::after {
 }
 .nav-item {
   display: inline-block;
-  padding-left: .6em;
+  padding-left: .7em;
 }
 .nav-item a {
   color: var(--gray);
@@ -199,7 +199,7 @@ pre > code::after {
 }
 .nav-item-active a {
   color: var(--lightgray);
-  border-bottom: none;
+  border-bottom: 0;
 }
 .nav-item-active a:hover {
   text-decoration: none;
@@ -270,19 +270,18 @@ iframe, video {
 }
 .end-post-hr {
   overflow: visible; /* For IE */
-  margin-top: 2.4em;
-  margin-bottom: 0;
+  margin-top: 2.5em;
   border: none;
   border-top: .16em solid #c6c6c6;
   text-align: center;
-  width: 3em;
+  width: 4em;
 }
 .links-nextprev {
   color: var(--dark);
   font-weight: 550;
   margin-top: 3em;
-  margin-bottom: 1.6em;
-  padding-left: .9em;
+  padding-bottom: 1em;
+  padding-left: .8em;
 
 }
 .links-nextprev a {
