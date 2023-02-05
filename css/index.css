@@ -131,8 +131,9 @@ table td, table th {
 }
 pre, code {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: .96em;
+  font-size: .964em;
   line-height: 1.5;
+  letter-spacing: -0.02em;
 }
 pre:not([class*="language-"]) {
   direction: ltr;
@@ -189,7 +190,7 @@ pre > code::after {
 }
 .nav-item {
   display: inline-block;
-  padding-left: .8em;
+  padding-left: .85em;
 }
 .nav-item a {
   color: var(--gray);
