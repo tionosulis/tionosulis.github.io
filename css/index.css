@@ -278,15 +278,19 @@ iframe, video {
   width: 4em;
 }
 .links-nextprev {
-  color: var(--dark);
   font-weight: 550;
+  text-align: center;
   margin-top: 3em;
-  padding-bottom: 1em;
-  padding-left: .8em;
-
+  padding-bottom: .5em;
 }
 .links-nextprev a {
-  border-bottom: 1px dotted;
+  border-bottom: 0;
+  display: inline-block;
+}
+.links-nextprev span {
+  display: inline-block;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 /* Footer */
 body > footer {
