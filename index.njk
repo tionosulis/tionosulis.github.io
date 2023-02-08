@@ -1,17 +1,11 @@
 ---
 layout: layouts/home.njk
-eleventyNavigation:
-  key: Home
-  order: 1
 ---
-<div id="index" class="home-index">
-  <h1>Hi,...</h1>
-    <p>I am <a href="/about/">Sulistiono</a>, and this is another online stack to dump my thoughts and notes to self on just about anything. Mostly about prose, poetry, web and my coding and planting hobbies.</p>
-    <p><a href="https://twitter.com/tionosulis_">Twitter</a> | <a href="https://github.com/tionosulis">Github</a></p>
-    </div>
+<h1>/blog</h1>
+  <p><strong>tl;dr :</strong> this is another online virtual-stack to dump <a href="/about/">my</a> thoughts and notes to self on just about anything. Hence the entry’s idea and frequency most likely random and inconsistent.</p>
 {% set maxPosts = collections.posts.length | min(3) %}
-<h2>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h2>
+  <h2>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h2>
 {%- set postslist = collections.posts | head(-3) %}
 {%- set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" -%}
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+  <p>More posts can be found in <a href="/posts/">the archive</a>.</p>

@@ -37,4 +37,6 @@ tags: [hello, eleventy]
 +ignore: true
 ---
 ```
-Finally, last but not least there's nothing much to say here but: **"hello!"** and thanks for visiting. Hope you enjoy your surf and see you around. &#128517;
+Finally, last but not least there's nothing much to say here but: _"hello!"_, thanks for visiting and hope you enjoy your surf.
+
+**See you around...**

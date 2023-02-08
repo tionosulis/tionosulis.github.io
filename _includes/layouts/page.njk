@@ -1,0 +1,11 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-page
+---
+<h1 class="title">{{ title }}</h1>
+<div class="post-metadata"><time class="postlist-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></div>
+	<hr class="devider">
+	{{ content | safe }}
+<div class="links-nextprev">
+	<a class="home" href="{{ "/" }}" title="Back to Index">&larr; Index</a>
+</div>
