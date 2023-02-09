@@ -16,7 +16,7 @@ templateClass: tmpl-post
 {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 {%- if nextPost or previousPost %}
 <div class="links-nextprev">
-	{%- if nextPost %}<a class="next" href="{{ nextPost.url }}" title="Next Post"> &lt;&lt</a><span> &middot; </span>{% endif %}
+	{%- if nextPost %}<a class="next" href="{{ nextPost.url }}" title="Next Post"> &lt;&lt;</a><span> &middot; </span>{% endif %}
 	<a class="post-index" href="{{ '/posts/' | url }}" title="Post-Index">Index</a>
 	{%- if previousPost %}<span> &middot; </span><a class="prev" href="{{ previousPost.url }}" title="Previous Post"> &gt;&gt;</a>{% endif %}
 </div>
