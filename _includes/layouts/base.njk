@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="{{ eleventy.generator }}">
     <title>{% if title %}{% if titleOverride %}{{ titleOverride }}{% else %}{% if renderData.title %}{{ renderData.title }}{% else %}{{ title }}{% endif %}{% endif %} ‑ Sulistiono{% else %}Sulistiono{% endif %}</title>
     <meta name="author" content="{{ metadata.author.name }}">
     <meta name="description" content="{% if description %}{{ description }} — {% endif %}{% if title %}A post by {{ metadata.author.name }}{% elif metadata.url %}{{ metadata.description }}{% endif %}">
@@ -46,13 +47,13 @@
       <aside class="logo">
       {% if page.url == '/index.njk' or page.url == '/' %}
 		    {% set prompt = "About the Author" %}
-		    {% set url = '/about' %}
+		    {% set link = '/about' %}
 	    {% else %}
-		    {% set url = '/' %}
+		    {% set link = '/' %}
 		    {% set prompt = "Back to Index" %}
 	    {% endif %}
-      <a href="{{ url }}">
-        <img src="/img/s-logo.png" class="logo-img" aria-label="Sulistiono home" width="180" height="180"></a>
+      <a href="{{ link }}">
+        <img src="/img/s-logo.png" alt="home" width="512" height="512" class="s-logo"></a>
         <span class="logo-prompt">{{ prompt }}</span>
       </aside>
     </header>
