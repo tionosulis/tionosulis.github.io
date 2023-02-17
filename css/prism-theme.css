@@ -27,8 +27,7 @@ pre[class*="language-"] {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
-  background: white;
-  border: 1px solid #dddddd;
+  background: #f6f6f6;
   border-radius: .5em;
 }
 :not(pre) > code[class*="language-"] {
@@ -46,7 +45,7 @@ pre[class*="language-"] {
 .token.doctype,
 .token.cdata,
 .token.deleted {
-  color: #c0c0c0;
+  color: #a6a6a6;
 }
 .token.url,
 .token.entity,
@@ -63,7 +62,7 @@ pre[class*="language-"] {
 .token.string,
 .token.char,
 .token.inserted {
-  color: #888888;
+  color: #808080;
 }
 .token.rule,
 .token.tag,

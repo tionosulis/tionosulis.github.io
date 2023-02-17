@@ -1,8 +1,8 @@
 /* Colors*/
 :root {
   --lightgray: #a2a9b0;
-  --gray: #4d5358;
-  --darkgray: #21272a;
+  --gray: #404040;
+  --darkgray: #1a1a1a;
   --dark: #121619;
   --white: #ffffff;
 }
@@ -79,7 +79,7 @@ a:hover {
 }
 a:focus {
   outline: 1px solid currentColor;
-  outline-offset: 0.2em;
+  outline-offset: .2em;
 }
 ::selection {
   background-color: var(--darkgray);
@@ -109,8 +109,8 @@ blockquote > p > cite::before {
   content: '--';
 }
 main {
-  margin-top: 4em;
-  padding-bottom: 1.8em;
+  margin-top: 4.5em;
+  padding-bottom: 2.5em;
 }
 header:after {
   content: "";
@@ -146,7 +146,7 @@ table td, table th {
 .logo a:hover,
 .logo a:focus {
   background: #444;
-  outline-offset: .01em;
+  outline-offset: .1em;
 }
 .logo a:hover + .logo-prompt,
 .logo a:focus + .logo-prompt {
@@ -207,8 +207,7 @@ pre:not([class*="language-"]) {
   padding: 1.5em;
   margin: .5em 0;
   border-radius: .5em;
-  background-color: inherit;
-  border: 1px solid #dddddd;
+  background-color: #f6f6f6;
 }
 code::before {
   content: "`";
@@ -248,7 +247,6 @@ li.postlist-item {
   outline: none;
 }
 .postlist-item .postlist-date {
-  color: var(--lightgray);
   font-size: .865em;
 }
 /* Homepage */
@@ -256,31 +254,28 @@ li.postlist-item {
   padding-top: .3em;
 }
 /* Tags */
-.post-tag::before {
-  content: "#";
-  color: var(--lightgray);
-  padding-right: .05em;
-}
 .post-tag {
+  display: inline-flex;
+  text-transform: capitalize;
+}
+.tmpl-home .post-tag{
   margin-right: .5em;
-  border-bottom: 0;
 }
 /* Post */
 h1.title {
   font-size: clamp(2.62rem, 1.21vw + 2.31rem, 3.27rem);
   margin-bottom: 0.1em;
   text-align: center;
-  margin-top: auto;
 }
 .post-metadata {
   text-align: center;
-  color: var(--lightgray);
+}
+.post-metadata time {
+  margin-right: 1em;
 }
 .post-metadata a {
-  margin-left: 1em;
+  border-bottom: 0;
   margin-right: 0;
-  border-bottom: none;
-  color: inherit;
 }
 iframe, video {
   width: 100%;
@@ -297,7 +292,7 @@ iframe, video {
 }
 .links-nextprev {
   text-align: center;
-  margin-top: 4.5em;
+  margin-top: 6em;
   padding-bottom: .5em;
 }
 .links-nextprev a {
@@ -329,7 +324,6 @@ body > footer {
 body > footer div {
   padding-top: .5em;
   font-size: .9em;
-  color: var(--gray);
   text-align: center;
 }
 footer p {
