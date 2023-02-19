@@ -290,10 +290,14 @@ iframe, video {
   text-align: center;
   width: 4em;
 }
+.poetry {
+  text-align: center;
+}
 .links-nextprev {
   text-align: center;
   margin-top: 6em;
   padding-bottom: .5em;
+  font-weight: 600;
 }
 .links-nextprev a {
   border-bottom: 0;
@@ -302,7 +306,7 @@ iframe, video {
 .links-nextprev .next,
 .links-nextprev .prev {
   background: var(--dark);
-  padding: .1em .25em;
+  padding: .2em .35em;
   color: var(--white);
   border-radius: 50%;
 }
