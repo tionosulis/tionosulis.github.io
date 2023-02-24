@@ -32,6 +32,11 @@
   </url>
   
   <url>
+    <loc>/robots.txt</loc>
+    <lastmod>2023-02-24</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <lastmod>2023-02-24</lastmod>
   </url>
