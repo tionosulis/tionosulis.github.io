@@ -13,11 +13,8 @@ module.exports = function(eleventyConfig) {
   // Copy the `img` and `css` folders to the output
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("fonts");
-  eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.addPassthroughCopy("manifest.json");
-  eleventyConfig.addPassthroughCopy("favicon.ico");
-  eleventyConfig.addPassthroughCopy("apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy({ "img/*.*" : "/img/" });
+  eleventyConfig.addPassthroughCopy({"img/favicon": "/"});
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
