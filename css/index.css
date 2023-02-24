@@ -35,7 +35,7 @@ body {
 }
 body > * {
   --layout-spacing: max(8vh, 2rem);
-  --max-width: 55ch;
+  --max-width: 56ch;
   width: min(100%, var(--max-width));
   margin-left: auto;
   margin-right: auto;
@@ -138,7 +138,6 @@ table td, table th {
   border-radius: 100%;
   display: inline-block;
   text-align: center;
-  line-height: 2.3;
   border: 5px solid #ffffff;
   box-sizing: border-box;
 }
