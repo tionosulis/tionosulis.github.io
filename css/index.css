@@ -20,6 +20,15 @@ html, body {
   min-height: 100vh;
   margin: 0 auto;
 }
+@media (prefers-color-scheme:dark) {
+  html,
+  p > img {
+    filter: invert(100%) hue-rotate(180deg);
+  }
+  pre {
+    filter: invert(10%) hue-rotate(180deg);
+  }
+}
 body {
   display: flex;
   flex-direction: column;
