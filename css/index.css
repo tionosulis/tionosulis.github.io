@@ -21,12 +21,14 @@ html, body {
   margin: 0 auto;
 }
 @media (prefers-color-scheme:dark) {
-  html,
+  html {
+    filter: invert(92%) hue-rotate(180deg);
+  }
   p > img {
     filter: invert(100%) hue-rotate(180deg);
   }
   pre {
-    filter: invert(10%) hue-rotate(180deg);
+    filter: invert(6%) hue-rotate(180deg);
   }
 }
 body {
@@ -70,9 +72,12 @@ p:last-child {
 }
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
+}
+img:not(.s-logo) {
+  border-radius: 5px;
 }
 a {
   color: var(--dark);
