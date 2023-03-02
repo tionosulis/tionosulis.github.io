@@ -1,4 +1,4 @@
-{
+module.exports = {
   "title": "Sulistiono",
   "type": "website",
   "url": "https://tionosulis.github.io",
@@ -9,10 +9,6 @@
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://tionosulis.github.io/"
-  },
-  "jsonfeed": {
-    "path": "/feed/feed.json",
-    "url": "https://tionosulis.github.io/feed/feed.json"
   },
   "author": {
     "name": "Sulistiono",

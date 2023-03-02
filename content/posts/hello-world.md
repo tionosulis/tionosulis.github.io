@@ -3,7 +3,6 @@ title: Hello World!
 description: A short hello world! test post to make sure that the site build's is right.
 date: 2022-01-09
 tags: [eleventy]
-ignore: true
 ---
 This is a short test post to make sure that this [eleventy](https://www.11ty.dev/) based site build's is right. Consist of some common typography and code block's styles test to make sure that the `css` rendered correctly.
 

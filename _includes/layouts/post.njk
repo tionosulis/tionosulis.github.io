@@ -2,10 +2,15 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
+{%- css %}
+/* Only include the syntax highlighter CSS on blog posts */
+{% include "assets/css/syntax.css" %}
+{% include "assets/css/prism-diff.css" %}
+{%- endcss %}
 <h1 class="title">{{ title }}</h1>
 <div class="post-metadata"><time class="postlist-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
 {%- for tag in tags | filterTagList -%}
-{%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset -%}
 <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}
 {%- endfor %}
 </div>
