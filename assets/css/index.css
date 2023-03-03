@@ -8,13 +8,13 @@
 }
 @media (prefers-color-scheme:dark) {
   :root {
-    --gray-70: #a8a8a8;
-    --gray-90: #e0e0e0;
-    --gray-100: #f0f0f0;
-    --bg-color: #1b1b1b;
+    --gray-70: #8b949e;
+    --gray-90: #c9d1d9;
+    --gray-100: #f1f7f7;
+    --bg-color: #0d1117;
   }
   pre {
-    filter: invert(86%) hue-rotate(180deg);
+    filter: invert(88%) hue-rotate(180deg);
   }
 }
 /* Global stylesheet */
@@ -175,7 +175,7 @@ table td, table th {
   display: inline-block;
 }
 .s-logo {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 50px #ccc;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
