@@ -17,6 +17,9 @@ module.exports = function(eleventyConfig) {
     "./assets/img/favicon/*.*": "/"
 	});
 
+  // App plugins
+	eleventyConfig.addPlugin(require("./eleventy.config.drafts.js"));
+
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
