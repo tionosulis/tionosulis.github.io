@@ -284,6 +284,7 @@ li.postlist-item {
 }
 .tmpl-home .post-tag{
   margin-right: .4em;
+  border-bottom: 0;
 }
 /* Post */
 h1.title {
