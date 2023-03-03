@@ -14,8 +14,7 @@ module.exports = function(eleventyConfig) {
   // Copy the `img` and `css` folders to the output
   eleventyConfig.addPassthroughCopy({
 		"./assets/": "/",
-    "./assets/img/*.*" : "/img/",
-    "./assets/img/favicon/": "/"
+    "./assets/img/favicon/*.*": "/"
 	});
 
   // Add plugins
