@@ -9,12 +9,12 @@
 @media (prefers-color-scheme:dark) {
   :root {
     --gray-70: #8b949e;
-    --gray-90: #c9d1d9;
+    --gray-90: #f0f6fc;
     --gray-100: #f1f7f7;
-    --bg-color: #0d1117;
+    --bg-color: #161b22;
   }
   pre {
-    filter: invert(88%) hue-rotate(180deg);
+    filter: invert(86%) hue-rotate(180deg);
   }
 }
 /* Global stylesheet */
