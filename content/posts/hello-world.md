@@ -5,7 +5,7 @@ date: 2022-01-09
 tags: [eleventy]
 ignore: true
 ---
-This is a short test post to make sure that this [eleventy](https://www.11ty.dev/) based site build's is right. Consist of some common typography and code block's styles test to make sure that the `css` rendered correctly.
+This is a short test post to make sure that this [eleventy](https://www.11ty.dev/) based site is build right. Consist of some common typography and code block's styles test to make sure that the `css` rendered correctly.
 
 Started with this very typical typography test of **bold**, _italic_, and the combination of **_both_** text. Then the below code block's styles test wrapped in `<pre>` tag applied to this [Hello World!](#) test post, which set its content `<meta>` to `<noindex>`.
 
@@ -34,10 +34,10 @@ Here's the two:
 title: Hello World!
 description: A short hello world! test post
 date: 2022-01-09
--tags: [hello, eleventy]
+tags: [hello, eleventy]
 +ignore: true
 ---
 ```
-Finally, last but not least there's nothing much to say here but: _"hello!"_, thanks for visiting and hope you enjoy your surf.
+Finally, last but not least there's nothing much to say here but: thanks for visiting and hope you enjoy your surf.
 
 See you around...
