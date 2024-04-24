@@ -34,10 +34,10 @@ Here's the two:
 title: Hello World!
 description: A short hello world! test post
 date: 2022-01-09
-tags: [hello, eleventy]
+-tags: [hello, eleventy]
 +ignore: true
 ---
 ```
 Finally, last but not least there's nothing much to say here but: _"hello!"_, thanks for visiting and hope you enjoy your surf.
 
-**See you around...**
+See you around...

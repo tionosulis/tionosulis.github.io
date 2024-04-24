@@ -19,10 +19,12 @@ pre[class*="language-diff-"] {
   align-items: center;
   justify-content: center;
   width: var(--eleventy-code-padding);
-  padding-top: 2px;
-  padding-bottom: 2px;
-  background-color: black;
-  font-weight: 700;
+}
+.token.prefix.inserted {
+  background-color: green;
+}
+.token.prefix.deleted {
+  background-color:darkred;
 }
 /* Optional: full-width background color */
 .token.inserted:not(.prefix), .token.deleted:not(.prefix) {

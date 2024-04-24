@@ -4,6 +4,7 @@ module.exports = {
   "url": "https://tionosulis.github.io",
   "language": "en",
   "description": "Sulistiono's thoughts",
+  "logo": "/img/s-logo.svg",
   "feed": {
     "subtitle": "Sulistiono's thoughts",
     "filename": "feed.xml",

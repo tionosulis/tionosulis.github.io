@@ -5,8 +5,6 @@ eleventyNavigation:
   order: 1
 numberOfLatestPostsToShow: 2
 ---
-<h1>/blog</h1>
-  <p><strong>tl;dr :</strong> this is another online virtual-stack to dump <a href="/about/">my</a> thoughts and notes to self on just about anything. Hence the entry’s idea and frequency most likely random and inconsistent.</p>
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 <h2>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h2>
