@@ -263,8 +263,8 @@ li.postlist-item {
   font-size: .865em;
 }
 /* Homepage */
-.tmpl-home h2 {
-  padding-top: .4em;
+.tmpl-home h1, .tmpl-home h2 {
+  padding-top: 1em;
 }
 /* Tags */
 .post-tag {
@@ -275,7 +275,7 @@ li.postlist-item {
 .post-tag::before {
   content: '#';
 }
-.tmpl-home .post-tag{
+.tmpl-home .post-tag {
   border-bottom: 0;
 }
 /* Post */
