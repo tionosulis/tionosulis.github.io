@@ -2,11 +2,13 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
+{% if pageHasCode %}
 {%- css %}
 /* Only include the syntax highlighter CSS on blog posts */
 {% include "assets/css/syntax.css" %}
 {% include "assets/css/prism-diff.css" %}
 {%- endcss %}
+{% endif %}
 <h1 class="title">{{ title }}</h1>
 <div class="post-metadata"><time class="postlist-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
 {%- for tag in tags | filterTagList -%}
@@ -22,11 +24,8 @@ templateClass: tmpl-post
 {%- if nextPost or previousPost %}
 <div class="links-nextprev">
 	{%- if nextPost %}<a class="next" href="{{ nextPost.url }}" title="Next Post"> &lt;&lt;</a><span> &middot; </span>{% endif %}
-	<a class="post-index" href="{{ '/posts/' | url }}" title="Post-Index">Index</a>
+	<a class="blog-index" href="{{ '/posts/' | url }}" title="Archive">Index</a>
 	{%- if previousPost %}<span> &middot; </span><a class="prev" href="{{ previousPost.url }}" title="Previous Post"> &gt;&gt;</a>{% endif %}
 </div>
 {%- endif %}
 {%- endif %}
-
-
-

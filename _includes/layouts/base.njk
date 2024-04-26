@@ -12,7 +12,7 @@
     <meta name="theme-color" content="#ffffff">
 		{%- css %}{% include "assets/css/index.css" %}{% endcss %}
 	<style>
-	 {% getBundle "css" %}
+    {% getBundle "css" %}
 	</style>
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
@@ -36,20 +36,19 @@
       <meta name="robots" content="noindex"/>
     {% endif -%}
   </head>
-
   <body>
     <a href="#skip" class="visually-hidden">Skip to main content</a>
     <header>
       <aside class="logo">
       {% if page.url == '/' %}
+        {% set link = '/about' %}
 		    {% set prompt = "About the Author" %}
-		    {% set link = '/about' %}
 	    {% else %}
 		    {% set link = '/' %}
 		    {% set prompt = "Back to Index" %}
 	    {% endif %}
       <a href="{{ link }}">
-        <img src="{{metadata.logo}}" width="256" height="256" class="s-logo"></a>
+        <img src="{{ metadata.logo }}" alt="Site logo" ></a>
         <span class="logo-prompt">{{ prompt }}</span>
       </aside>
     </header>
@@ -57,7 +56,6 @@
       {{ content | safe }}
     </main>
     {% include "footer.njk" %}
-
     <!-- Current page: {{ page.url | url }} -->
   <script>
   if ('serviceWorker' in navigator) {

@@ -4,6 +4,7 @@ description: A short hello world! test post to make sure that the site build's i
 date: 2022-01-09
 tags: [eleventy]
 ignore: true
+pageHasCode: true
 ---
 This is a short test post to make sure that this [eleventy](https://www.11ty.dev/) based site is build right. Consist of some common typography and code block's styles test to make sure that the `css` rendered correctly.
 
