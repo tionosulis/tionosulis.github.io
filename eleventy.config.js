@@ -1,6 +1,4 @@
 const { DateTime } = require("luxon");
-const fs = require("fs");
-const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -8,6 +6,8 @@ const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier");
+
+const pluginDrafts = require("./eleventy.config.drafts.js");
 
 
 module.exports = function(eleventyConfig) {
@@ -20,12 +20,16 @@ module.exports = function(eleventyConfig) {
   // App plugins
 	eleventyConfig.addPlugin(require("./eleventy.config.drafts.js"));
 
+  // Official plugins
+	eleventyConfig.addPlugin(pluginRss);
+	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+		preAttributes: { tabindex: 0 }
+	});
+	eleventyConfig.addPlugin(pluginNavigation);
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+	eleventyConfig.addPlugin(pluginBundle);
+
   // Add plugins
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
-  eleventyConfig.addPlugin(pluginNavigation);
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-  eleventyConfig.addPlugin(pluginBundle);
   eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
   // Filters
@@ -38,9 +42,6 @@ module.exports = function(eleventyConfig) {
 		// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
 	});
-
-  // Add shortcode
-  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   // Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("head", (array, n) => {
@@ -59,12 +60,6 @@ module.exports = function(eleventyConfig) {
 		return Math.min.apply(null, numbers);
 	});
 
-	function filterTagList(tags) {
-    return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
-  }
-
-  eleventyConfig.addFilter("filterTagList", filterTagList)
-
   // Return all the tags used in a collection
 	eleventyConfig.addFilter("getAllTags", collection => {
 		let tagSet = new Set();
@@ -78,31 +73,40 @@ module.exports = function(eleventyConfig) {
 		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
 	});
 
-  // Customize Markdown library and settings:
-  let markdownLibrary = markdownIt({
-    html: true,
-    breaks: true,
-    linkify: true
-  }).use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: "after",
-      class: "direct-link",
-      symbol: "#",
-      level: [1,2,3,4],
-    }),
-    slugify: eleventyConfig.getFilter("slugify")
-  });
-  eleventyConfig.setLibrary("md", markdownLibrary);
+  // Customize Markdown library settings:
+	eleventyConfig.amendLibrary("md", mdLib => {
+		mdLib.use(markdownItAnchor, {
+			permalink: markdownItAnchor.permalink.ariaHidden({
+				placement: "after",
+				class: "header-anchor",
+				symbol: "#",
+				ariaHidden: false,
+			}),
+			level: [1,2,3,4],
+			slugify: eleventyConfig.getFilter("slugify")
+		});
+	});
 
-  return {
-    // Control which files Eleventy will process
-    // e.g.: *.md, *.njk, *.html, *.liquid
-    templateFormats: [
-      "md",
-      "njk",
-      "html",
-      "liquid"
-    ],
+	// Add shortcode
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+	// Features to make your build faster (when you need them)
+
+	// If your passthrough copy gets heavy and cumbersome, add this line
+	// to emulate the file copy on the dev server. Learn more:
+	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
+
+	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
+	return {
+		// Control which files Eleventy will process
+		// e.g.: *.md, *.njk, *.html, *.liquid
+		templateFormats: [
+			"md",
+			"njk",
+			"html",
+			"liquid",
+		],
 
     // Pre-process *.md files with: (default: `liquid`)
     markdownTemplateEngine: "njk",
