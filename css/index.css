@@ -318,6 +318,15 @@ iframe, video {
   padding-left: .5rem;
   padding-right: .5rem;
 }
+/* Direct Links / Markdown Headers */
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--gray-10);
+}
 /* Footer */
 body > footer div {
   padding-top: 1rem;
