@@ -79,7 +79,7 @@ img {
   height: auto;
   object-fit: cover;
 }
-img:not(.s-logo) {
+img:not(.logo) {
   border-radius: 5px;
 }
 a {
