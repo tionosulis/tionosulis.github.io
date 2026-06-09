@@ -1,19 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:base="en"><title>Sulistiono</title><subtitle>Sulistiono&#39;s thoughts</subtitle><link href="https://tionosulis.github.io/feed/feed.xml" rel="self"/><link href="https://tionosulis.github.io/"/><updated>2022-01-10T00:00:00Z</updated><id>https://tionosulis.github.io</id><author><name>Sulistiono</name><email>contact.sulistiono@gmail.com</email></author><entry><title>2022</title><link href="https://tionosulis.github.io/2022/"/><updated>2022-01-10T00:00:00Z</updated><id>https://tionosulis.github.io/2022/</id><content type="html">&lt;div class=&quot;poetry&quot;&gt;
-Untuk cita-cita, tujuan, harapan, dan resolusi yang berbeda.&lt;br&gt;doa yang sama di 2022:&lt;br&gt;semoga tahun ini lebih baik dari tahun sebelumnya.
-&lt;p&gt;Cuaca mungkin berubah,&lt;br&gt;keadaan mungkin tak lagi sama,&lt;br&gt;pun begitu juga dengan tantangan yang datang.&lt;/p&gt;
-&lt;p&gt;Yang telah lalu relakan pergi,&lt;br&gt;sambut yang datang sebagai kesempatan,&lt;/p&gt;
-&lt;p&gt;Karena pemenang adalah:&lt;br&gt;mereka yang mampu melihat bahwa setiap tantangan adalah kesempatan.&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
-</content></entry><entry><title>Hello World!</title><link href="https://tionosulis.github.io/hello-world/"/><updated>2022-01-09T00:00:00Z</updated><id>https://tionosulis.github.io/hello-world/</id><content type="html">&lt;p&gt;This is a short test post to make sure that this &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;eleventy&lt;/a&gt; based site is build right. Consist of some common typography and code block&#39;s styles test to make sure that the &lt;code&gt;css&lt;/code&gt; rendered correctly.&lt;/p&gt;
-&lt;p&gt;Started with this very typical typography test of &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, and the combination of &lt;strong&gt;&lt;em&gt;both&lt;/em&gt;&lt;/strong&gt; text. Then the below code block&#39;s styles test wrapped in &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; tag applied to this &lt;a href=&quot;https://tionosulis.github.io/hello-world/&quot;&gt;Hello World!&lt;/a&gt; test post, which set its content &lt;code&gt;&amp;lt;meta&amp;gt;&lt;/code&gt; to &lt;code&gt;&amp;lt;noindex&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Here&#39;s the two:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;if ignore&lt;/code&gt; goes inside &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag of the &lt;code&gt;base.njk&lt;/code&gt; layout&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class=&quot;language-html&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- _includes/layouts/base.njk --&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;mark class=&quot;highlight-line highlight-line-active&quot;&gt;{% if ignore %}&lt;/mark&gt;&lt;br&gt;&lt;mark class=&quot;highlight-line highlight-line-active&quot;&gt;   &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;meta&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;robots&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;noindex&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/mark&gt;&lt;br&gt;&lt;mark class=&quot;highlight-line highlight-line-active&quot;&gt;{% endif %}&lt;/mark&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;&lt;code&gt;ignore:true&lt;/code&gt; &lt;em&gt;key-value&lt;/em&gt; pairs goes to the post&#39;s &lt;code&gt;front-matter&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class=&quot;language-diff-yml&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-diff-yml&quot;&gt;# posts/hello-world.md&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token coord&quot;&gt;---&lt;/span&gt;&lt;br&gt;title: Hello World!&lt;br&gt;description: A short hello world! test post&lt;br&gt;date: 2022-01-09&lt;br&gt;tags: [hello, eleventy]&lt;br&gt;&lt;span class=&quot;token inserted-sign inserted language-yml&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token key atrule&quot;&gt;ignore&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;span class=&quot;token coord&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Finally, last but not least there&#39;s nothing much to say here but: thanks for visiting and hope you enjoy your surf.&lt;/p&gt;
-&lt;p&gt;See you around...&lt;/p&gt;
-</content></entry></feed>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  
+  <title>Sulistiono</title>
+  <subtitle>Sulistiono&#39;s thoughts</subtitle>
+  <link href="https://tionosulis.github.io/feed/feed.xml" rel="self" />
+  <link href="https://tionosulis.github.io/" />
+  <updated>2026-06-09T05:58:11Z</updated>
+  <id>https://tionosulis.github.io/</id>
+  <author>
+    <name>Sulistiono</name>
+    <email>contact.sulistiono@gmail.com</email>
+  </author>
+</feed>

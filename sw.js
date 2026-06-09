@@ -1,2 +1,59 @@
-if(!self.define){let e,i={};const c=(c,o)=>(c=new URL(c+".js",o).href,i[c]||new Promise((i=>{if("document"in self){const e=document.createElement("script");e.src=c,e.onload=i,document.head.appendChild(e)}else e=c,importScripts(c),i()})).then((()=>{let e=i[c];if(!e)throw new Error(`Module ${c} didn’t register its module`);return e})));self.define=(o,n)=>{const r=e||("document"in self?document.currentScript.src:"")||location.href;if(i[r])return;let s={};const f=e=>c(e,r),b={module:{uri:r},exports:s,require:f};i[r]=Promise.all(o.map((e=>b[e]||f(e)))).then((e=>(n(...e),s)))}}define(["./workbox-d249b2c8"],(function(e){"use strict";self.addEventListener("message",(e=>{e.data&&"SKIP_WAITING"===e.data.type&&self.skipWaiting()})),e.precacheAndRoute([{url:"android-chrome-192x192.png",revision:"7b286183a19f20534b44337dc6fc654a"},{url:"android-chrome-512x512.png",revision:"8037da0ec0eb513270622b3f684f4844"},{url:"apple-touch-icon.png",revision:"ea39138e49bfc18b9764fc7cb9c22393"},{url:"css/index.css",revision:"d580d42091805f3c57a379e50b1415c2"},{url:"css/prism-diff.css",revision:"43f2cb74b2afbf7c36f1d2b30a7c5edb"},{url:"css/syntax.css",revision:"bf06216c6752c30f56b4374d724292bb"},{url:"favicon.ico",revision:"def5ccb27d1be72573fa87b98a7b33b3"},{url:"favicon.svg",revision:"ba0db4cfb2ece39a95e06f0c8b709f75"},{url:"fonts/IBMPlexSans-Var.woff2",revision:"898da700d594659bbaeb61ec99d31b32"},{url:"img/favicon/android-chrome-192x192.png",revision:"7b286183a19f20534b44337dc6fc654a"},{url:"img/favicon/android-chrome-512x512.png",revision:"8037da0ec0eb513270622b3f684f4844"},{url:"img/favicon/apple-touch-icon.png",revision:"ea39138e49bfc18b9764fc7cb9c22393"},{url:"img/favicon/favicon.ico",revision:"def5ccb27d1be72573fa87b98a7b33b3"},{url:"img/favicon/favicon.svg",revision:"ba0db4cfb2ece39a95e06f0c8b709f75"},{url:"img/favicon/maskable_icon.png",revision:"45262b993d64886c97e49b25957727e4"},{url:"img/logo-wrapper.svg",revision:"637d11ce6e1826bfe12cee43e1ce7562"},{url:"img/s-logo.svg",revision:"34f4381032e5d80096697d1fc33dde2a"},{url:"maskable_icon.png",revision:"45262b993d64886c97e49b25957727e4"}],{})}));
-//# sourceMappingURL=sw.js.map
+const CACHE = "v1";
+const PRECACHE_URLS = [
+  "/",
+  "/about/",
+  "/fonts/IBMPlexSans-Var.woff2",
+];
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE).then((cache) => cache.addAll(PRECACHE_URLS))
+  );
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
+    )
+  );
+});
+
+self.addEventListener("fetch", (event) => {
+  const { request } = event;
+  const url = new URL(request.url);
+
+  if (url.origin !== location.origin) return;
+
+  if (request.destination === "font" || request.destination === "style") {
+    event.respondWith(cacheFirst(request));
+  } else if (request.destination === "document") {
+    event.respondWith(networkFirst(request));
+  } else {
+    event.respondWith(cacheFirst(request));
+  }
+});
+
+async function cacheFirst(request) {
+  const cached = await caches.match(request);
+  return cached || fetchAndCache(request);
+}
+
+async function networkFirst(request) {
+  try {
+    const response = await fetch(request);
+    const cache = await caches.open(CACHE);
+    cache.put(request, response.clone());
+    return response;
+  } catch {
+    const cached = await caches.match(request);
+    return cached || new Response("Offline", { status: 503 });
+  }
+}
+
+async function fetchAndCache(request) {
+  const response = await fetch(request);
+  const cache = await caches.open(CACHE);
+  cache.put(request, response.clone());
+  return response;
+}
