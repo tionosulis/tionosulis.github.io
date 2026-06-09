@@ -167,7 +167,7 @@ The toggle button itself is a small icon in the sidebar — minimal, functional,
 
 ### Design
 
-I drew inspiration from [Shu Ding's website](https://shud.in): clean typography, generous whitespace, a quiet left sidebar on desktop with the site logo and navigation. On mobile, it collapses to a compact header bar.
+I drew inspiration from [Shu Ding's website](https://shud.in): clean typography, generous whitespace, a quiet left sidebar on desktop with navigation links. On mobile, it collapses to a compact header bar.
 
 The old circular SVG logo is gone. In its place: a simple **"S"** in a bordered box — the only ornament the site needs.
 
