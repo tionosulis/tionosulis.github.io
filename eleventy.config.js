@@ -80,6 +80,7 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "assets/fonts": "/fonts" });
   eleventyConfig.addPassthroughCopy({ "assets/img/favicon": "/" });
+  eleventyConfig.addPassthroughCopy({ "assets/img": "/assets/img" });
 
   eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
     return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
