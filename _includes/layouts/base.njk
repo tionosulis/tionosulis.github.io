@@ -23,21 +23,16 @@
   {% if ignore %}<meta name="robots" content="noindex">{% endif %}
   <script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script>
   <style>{% include "assets/css/index.css" %}</style>
-  {% if pageHasCode %}
-  <style>
-    .shiki { background: transparent !important; }
-    .shiki .shiki { border: none; padding: 0; }
-  </style>
-  {% endif %}
-  {% block head %}{% endblock %}
 </head>
 <body>
   <a href="#skip" class="visually-hidden">Skip to main content</a>
-  {% include "partials/header.njk" %}
-  <main id="skip">
-    {{ content | safe }}
-  </main>
-  {% include "partials/footer.njk" %}
+  <div class="layout">
+    {% include "partials/header.njk" %}
+    <main id="skip">
+      {{ content | safe }}
+      {% include "partials/footer.njk" %}
+    </main>
+  </div>
   <script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script>
 </body>
 </html>

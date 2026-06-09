@@ -15,13 +15,16 @@ layout: layouts/base.njk
   </header>
   {{ content | safe }}
 </article>
-{% if collections.posts %}
-{% set nextPost = collections.posts | getNextCollectionItem(page) %}
-{% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-{% if nextPost or previousPost %}
 <nav class="links-nextprev">
-  {% if nextPost %}<a href="{{ nextPost.url }}">← {{ nextPost.data.title }}</a>{% endif %}
-  {% if previousPost %}<a href="{{ previousPost.url }}">{{ previousPost.data.title }} →</a>{% endif %}
+  <a href="/" class="back-link">&larr; All posts</a>
+  {% if collections.posts %}
+  {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+  {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+  {% if nextPost or previousPost %}
+  <div class="nav-pair">
+    {% if nextPost %}<a href="{{ nextPost.url }}">&larr; {{ nextPost.data.title }}</a>{% endif %}
+    {% if previousPost %}<a href="{{ previousPost.url }}">{{ previousPost.data.title }} &rarr;</a>{% endif %}
+  </div>
+  {% endif %}
+  {% endif %}
 </nav>
-{% endif %}
-{% endif %}

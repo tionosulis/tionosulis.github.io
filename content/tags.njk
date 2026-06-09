@@ -1,0 +1,20 @@
+---
+layout: layouts/home.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - posts
+    - post
+    - rss
+permalink: /tags/{{ tag | slugify }}/
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  title: "#{{ tag }}"
+---
+<h1 class="page-title">#{{ tag }}</h1>
+{% set postslist = collections[tag] | reverse %}
+{% include "partials/postslist.njk" %}
