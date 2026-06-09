@@ -216,11 +216,9 @@ The site loads fast by construction — inlined CSS, preloaded fonts, no render-
 
 ## Conclusion
 
-I almost didn't write this post. When I first saw the "Build Awesome" rebranding, I nearly closed the tab and started migrating to a different static site generator. The internet is full of cautionary tales about acquisitions.
+I was skeptical too. Open-source acquisitions have a terrible track record — Oracle/Sun, Adobe/Figma's attempted buyout, HashiCorp's license shift — and I don't blame anyone who reads "Font Awesome acquires Eleventy" and immediately starts shopping for alternatives. But after digging through GitHub activity, the announcement details, and community discussion, I found enough signals to bet on this horse: Zach still leading development, MIT license untouched, real investment in infrastructure instead of cost-cutting. Not blind faith. Just a calculated bet after doing my homework.
 
-But I dug deeper. And what I found was reassuring: a healthy open-source project with real financial backing, active maintenance, and a clear roadmap. The possum is fine.
-
-For anyone else staring at an abandoned side project, hesitating because the ecosystem around it has changed: **do the research first**. Acquisitions aren't always the end. Sometimes they're the beginning.
+Three months later, the possum is still kicking. I'll keep watching. But for now, I'm building.
 
 This blog is alive again. The code is clean. The pagespeed is perfect. And there's room for many more posts.
 
