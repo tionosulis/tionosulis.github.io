@@ -1,14 +1,14 @@
 {
-  "name": "my_eleventy_blog",
-  "description": "Source code of sulistiono's blog (https://tionosulis.github.io/), build with Eleventy (https://github.com/11ty/eleventy), hosted on Github Pages (https://pages.github.com/).",
+  "name": "tionosulis-blog",
+  "description": "Sulistiono's personal blog, built with Eleventy.",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "npx @11ty/eleventy && node build-sw.mjs",
-    "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-    "watch": "npx @11ty/eleventy --watch",
-    "serve": "npx @11ty/eleventy --serve",
-    "start": "npx @11ty/eleventy --serve",
-    "debug": "DEBUG=* npx @11ty/eleventy"
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=Eleventy* eleventy"
   },
   "repository": {
     "type": "git",
@@ -17,19 +17,21 @@
   "author": {
     "name": "Sulistiono",
     "email": "contact.sulistiono@gmail.com",
-    "url": "https://tionosulis.github.io/",
-    "license": "MIT"
+    "url": "https://tionosulis.github.io/"
   },
+  "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0",
-    "@11ty/eleventy-navigation": "^0.3.5",
-    "@11ty/eleventy-plugin-bundle": "^1.0.3",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
-    "@sherby/eleventy-plugin-files-minifier": "^1.1.1",
-    "luxon": "^3.2.1",
-    "markdown-it": "^13.0.1",
-    "markdown-it-anchor": "^8.6.7",
-    "workbox-build": "^6.5.4"
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-navigation": "^1.0.5",
+    "@11ty/eleventy-plugin-bundle": "^3.0.7",
+    "@11ty/eleventy-plugin-rss": "^3.0.0",
+    "@shikijs/markdown-it": "^1.0.0",
+    "html-minifier-terser": "^7.2.0",
+    "luxon": "^3.5.0",
+    "markdown-it": "^14.2.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-toc-done-right": "^4.2.0",
+    "sharp": "^0.34.5"
   }
 }

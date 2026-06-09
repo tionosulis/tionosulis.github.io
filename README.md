@@ -1,8 +1,19 @@
-Source code of [sulistiono](https://tionosulis.github.io/)'s blog, build with [Eleventy](https://github.com/11ty/eleventy) static site generator, hosted on [Github Pages](https://pages.github.com/).
+# tionosulis.github.io
 
-![Build Status](https://github.com/tionosulis/tionosulis.github.io/actions/workflows/gh-pages.yml/badge.svg?branch=main)
+Personal blog of [Sulistiono](https://tionosulis.github.io/), rebuilt with [Eleventy](https://www.11ty.dev/) v3, hosted on [GitHub Pages](https://pages.google.com/).
 
-## Credits
+## Tech Stack
 
-Theme based on
-* Zach Leatherman: [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog)
+- **Eleventy** v3 — static site generator (ESM)
+- **Shiki** — dual-theme syntax highlighting
+- **Vanilla CSS** — CSS nesting, custom properties, dark/light toggle
+- **IBM Plex Sans** — locally hosted variable font
+- **Service Worker** — offline support with vanilla JS
+
+## Development
+
+```bash
+npm install
+npm run serve    # local dev server at localhost:8080
+npm run build    # production build to _site/
+```

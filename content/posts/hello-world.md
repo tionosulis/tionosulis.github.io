@@ -1,44 +1,160 @@
 ---
-title: Hello World!
-description: A short hello world! test post to make sure that the site build's is right.
-date: 2022-01-09
-tags: [eleventy]
-ignore: true
+title: Hello World
+description: A typography test suite and a fresh start for this blog.
+date: 2026-06-09
+tags: [meta]
 pageHasCode: true
 ---
-This is a short test post to make sure that this [eleventy](https://www.11ty.dev/) based site is build right. Consist of some common typography and code block's styles test to make sure that the `css` rendered correctly.
 
-Started with this very typical typography test of **bold**, _italic_, and the combination of **_both_** text. Then the below code block's styles test wrapped in `<pre>` tag applied to this [Hello World!](#) test post, which set its content `<meta>` to `<noindex>`.
+Welcome to the new iteration of my little corner on the web. This is a placeholder post that also serves as a typography test suite. Below you'll find every common Markdown element to make sure everything renders nicely.
 
-Here's the two:
+${toc}
 
-1. `if ignore` goes inside `<head>` tag of the `base.njk` layout
+## Paragraphs
 
-```html/4-6
-<!-- _includes/layouts/base.njk -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## Inline Formatting
+
+This text has **bold**, _italic_, ~~strikethrough~~, and **_bold italic_**. Here's some `inline code` and a [hyperlink](https://www.11ty.dev/). You can also have <mark>highlighted text</mark> and <kbd>keyboard input</kbd>.
+
+## Blockquotes
+
+> This is a simple blockquote. It should stand out from the surrounding text while remaining readable.
+
+> This is a longer blockquote with multiple paragraphs. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+>
+> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+>
+> > And this is a nested blockquote for good measure.
+>
+> <cite>Someone Famous</cite>
+
+## Lists
+
+### Unordered
+
+- Item one
+- Item two
+  - Nested item A
+  - Nested item B
+- Item three
+- Item four
+
+### Ordered
+
+1. First item
+2. Second item
+3. Third item
+   1. Nested 3.1
+   2. Nested 3.2
+4. Fourth item
+
+### Mixed
+
+- Level 1
+  1. Level 2 ordered
+  2. Level 2 ordered
+     - Level 3 unordered
+- Back to level 1
+
+## Code Blocks
+
+### JavaScript
+
+```javascript
+function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+const result = fibonacci(10);
+console.log(`The 10th Fibonacci number is ${result}`);
+```
+
+### HTML
+
+```html
+<!doctype html>
+<html lang="en">
 <head>
-...
-{%raw%}{% if ignore %}
-   <meta name="robots" content="noindex"/>
-{% endif %}{%endraw%}
-...
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example</title>
 </head>
+<body>
+  <h1>Hello World</h1>
+  <p>This is an example HTML document.</p>
+</body>
+</html>
 ```
 
-2. `ignore:true` _key-value_ pairs goes to the post's `front-matter`
+### CSS with nesting
 
-```diff-yml
-# posts/hello-world.md
+```css
+.card {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 1.5rem;
 
----
-title: Hello World!
-description: A short hello world! test post
-date: 2022-01-09
-tags: [hello, eleventy]
-+ignore: true
----
+  & .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  & .body {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+}
 ```
-Finally, last but not least there's nothing much to say here but: thanks for visiting and hope you enjoy your surf.
 
-See you around...
+### Diff
+
+```diff
+-function oldName() {
++function newName() {
+   return 42;
+ }
+```
+
+## Horizontal Rule
+
+---
+
+## Tables
+
+| Feature | Status | Priority |
+|---------|--------|----------|
+| Dark Mode | Done | High |
+| RSS Feed | Done | Medium |
+| Search | TBD | Low |
+| Comments | TBD | Low |
+
+## Headings (for TOC testing)
+
+### Third Level Heading
+
+Content under H3.
+
+#### Fourth Level Heading
+
+Content under H4. Links in the TOC should work correctly.
+
+##### Fifth Level Heading
+
+Can you even read this?
+
+###### Sixth Level Heading
+
+Tiny but mighty.
+
+## Images
+
+![Site favicon](/favicon.svg "The letter S")
+
+## Conclusion
+
+That's it for the typography test suite. If everything looks right, the site is ready for real content. See you around!
