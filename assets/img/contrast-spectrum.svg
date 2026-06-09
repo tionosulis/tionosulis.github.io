@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="280" viewBox="0 0 640 280">
+  <rect width="640" height="280" fill="#fafafa" rx="12"/>
+  <text x="320" y="32" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1a1a1a" text-anchor="middle">WCAG AA Contrast Fix — Light Mode</text>
+  <text x="320" y="52" font-family="system-ui,sans-serif" font-size="12" fill="#5c6370" text-anchor="middle">Minimum ratio: 4.5:1</text>
+
+  <!-- Before box -->
+  <rect x="40" y="70" width="260" height="185" fill="#fff" stroke="#d1d5db" stroke-width="1" rx="8"/>
+  <text x="170" y="95" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#ef4444" text-anchor="middle">Before — Failed</text>
+
+  <rect x="70" y="110" width="200" height="36" fill="#E36209" rx="6"/>
+  <text x="170" y="133" font-family="ui-monospace,monospace" font-size="13" font-weight="600" fill="#fff" text-anchor="middle">#E36209</text>
+  <text x="170" y="162" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#ef4444" text-anchor="middle">3.85 : 1</text>
+  <text x="170" y="180" font-family="system-ui,sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">Orange token — 4.5:1 minimum</text>
+
+  <rect x="70" y="200" width="200" height="36" fill="#D73A49" rx="6"/>
+  <text x="170" y="223" font-family="ui-monospace,monospace" font-size="13" font-weight="600" fill="#fff" text-anchor="middle">#D73A49</text>
+
+  <!-- After box -->
+  <rect x="340" y="70" width="260" height="185" fill="#fff" stroke="#22c55e" stroke-width="1.5" rx="8"/>
+  <text x="470" y="95" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#22c55e" text-anchor="middle">After — Passed</text>
+
+  <rect x="370" y="110" width="200" height="36" fill="#B84D00" rx="6"/>
+  <text x="470" y="133" font-family="ui-monospace,monospace" font-size="13" font-weight="600" fill="#fff" text-anchor="middle">#B84D00</text>
+  <text x="470" y="162" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#22c55e" text-anchor="middle">4.76 : 1</text>
+  <text x="470" y="180" font-family="system-ui,sans-serif" font-size="12" fill="#22c55e" text-anchor="middle">+0.91 — safely above threshold</text>
+
+  <rect x="370" y="200" width="200" height="36" fill="#C92E3D" rx="6"/>
+  <text x="470" y="223" font-family="ui-monospace,monospace" font-size="13" font-weight="600" fill="#fff" text-anchor="middle">#C92E3D</text>
+
+  <!-- Arrow -->
+  <text x="320" y="165" font-family="system-ui,sans-serif" font-size="24" fill="#5c6370" text-anchor="middle">→</text>
+
+  <text x="320" y="270" font-family="system-ui,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">WCAG AA requires minimum 4.5:1 contrast ratio for normal text</text>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      rect:first-child { fill: #18181b; }
+      text:first-child { fill: #e4e4e7; }
+      rect:nth-child(4) { fill: #27272a; stroke: #3f3f46; }
+      rect:nth-child(10) { fill: #27272a; stroke: #22c55e; }
+      text[fill="#5c6370"] { fill: #a1a1aa; }
+      text[fill="#6b7280"] { fill: #8a8a94; }
+    }
+  </style>
+</svg>
