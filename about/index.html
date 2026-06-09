@@ -119,6 +119,37 @@ pre {
 
 pre code { background: none; padding: 0; }
 
+pre { position: relative; }
+
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  color: var(--text-tertiary);
+  &:hover { background: var(--border); color: var(--text); }
+}
+
+pre:hover .copy-btn { opacity: 1; }
+
+.copy-btn svg { width: 16px; height: 16px; }
+
+.copy-btn.copied {
+  opacity: 1;
+  color: var(--accent);
+  pointer-events: none;
+}
+
 blockquote {
   margin: 1.5rem 0;
   padding: 0.75rem 1.25rem;

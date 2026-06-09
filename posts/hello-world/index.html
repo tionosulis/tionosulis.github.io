@@ -119,6 +119,37 @@ pre {
 
 pre code { background: none; padding: 0; }
 
+pre { position: relative; }
+
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  color: var(--text-tertiary);
+  &:hover { background: var(--border); color: var(--text); }
+}
+
+pre:hover .copy-btn { opacity: 1; }
+
+.copy-btn svg { width: 16px; height: 16px; }
+
+.copy-btn.copied {
+  opacity: 1;
+  color: var(--accent);
+  pointer-events: none;
+}
+
 blockquote {
   margin: 1.5rem 0;
   padding: 0.75rem 1.25rem;
@@ -505,4 +536,4 @@ footer.site-footer {
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre><h3 id="diff" tabindex="-1">Diff <a class="header-anchor" href="#diff">#</a></h3><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><code class="language-diff"><span class="line"><span style="color:#B31D28;--shiki-dark:#FDAEB7">-function oldName() {</span></span>
 <span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">+function newName() {</span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">   return 42;</span></span>
-<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8"> }</span></span></code></pre><h2 id="horizontal-rule" tabindex="-1">Horizontal Rule <a class="header-anchor" href="#horizontal-rule">#</a></h2><hr><h2 id="tables" tabindex="-1">Tables <a class="header-anchor" href="#tables">#</a></h2><table><thead><tr><th>Feature</th><th>Status</th><th>Priority</th></tr></thead><tbody><tr><td>Dark Mode</td><td>Done</td><td>High</td></tr><tr><td>RSS Feed</td><td>Done</td><td>Medium</td></tr><tr><td>Search</td><td>TBD</td><td>Low</td></tr><tr><td>Comments</td><td>TBD</td><td>Low</td></tr></tbody></table><h2 id="headings-(for-toc-testing)" tabindex="-1">Headings (for TOC testing) <a class="header-anchor" href="#headings-(for-toc-testing)">#</a></h2><h3 id="third-level-heading" tabindex="-1">Third Level Heading <a class="header-anchor" href="#third-level-heading">#</a></h3><p>Content under H3.</p><h4 id="fourth-level-heading" tabindex="-1">Fourth Level Heading <a class="header-anchor" href="#fourth-level-heading">#</a></h4><p>Content under H4. Links in the TOC should work correctly.</p><h5 id="fifth-level-heading">Fifth Level Heading</h5><p>Can you even read this?</p><h6 id="sixth-level-heading">Sixth Level Heading</h6><p>Tiny but mighty.</p><h2 id="images" tabindex="-1">Images <a class="header-anchor" href="#images">#</a></h2><p><img src="/favicon.svg" alt="Site favicon" title="The letter S"></p><h2 id="conclusion" tabindex="-1">Conclusion <a class="header-anchor" href="#conclusion">#</a></h2><p>That’s it for the typography test suite. If everything looks right, the site is ready for real content. See you around!</p></article><nav class="links-nextprev"><a href="/" class="back-link">← All posts</a></nav><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script></body></html>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8"> }</span></span></code></pre><h2 id="horizontal-rule" tabindex="-1">Horizontal Rule <a class="header-anchor" href="#horizontal-rule">#</a></h2><hr><h2 id="tables" tabindex="-1">Tables <a class="header-anchor" href="#tables">#</a></h2><table><thead><tr><th>Feature</th><th>Status</th><th>Priority</th></tr></thead><tbody><tr><td>Dark Mode</td><td>Done</td><td>High</td></tr><tr><td>RSS Feed</td><td>Done</td><td>Medium</td></tr><tr><td>Search</td><td>TBD</td><td>Low</td></tr><tr><td>Comments</td><td>TBD</td><td>Low</td></tr></tbody></table><h2 id="headings-(for-toc-testing)" tabindex="-1">Headings (for TOC testing) <a class="header-anchor" href="#headings-(for-toc-testing)">#</a></h2><h3 id="third-level-heading" tabindex="-1">Third Level Heading <a class="header-anchor" href="#third-level-heading">#</a></h3><p>Content under H3.</p><h4 id="fourth-level-heading" tabindex="-1">Fourth Level Heading <a class="header-anchor" href="#fourth-level-heading">#</a></h4><p>Content under H4. Links in the TOC should work correctly.</p><h5 id="fifth-level-heading">Fifth Level Heading</h5><p>Can you even read this?</p><h6 id="sixth-level-heading">Sixth Level Heading</h6><p>Tiny but mighty.</p><h2 id="images" tabindex="-1">Images <a class="header-anchor" href="#images">#</a></h2><p><img src="/favicon.svg" alt="Site favicon" title="The letter S"></p><h2 id="conclusion" tabindex="-1">Conclusion <a class="header-anchor" href="#conclusion">#</a></h2><p>That’s it for the typography test suite. If everything looks right, the site is ready for real content. See you around!</p></article><nav class="links-nextprev"><a href="/" class="back-link">← All posts</a><div class="nav-pair"><a href="/posts/reviving-a-ghost/">← Reviving a Ghost: From Abandoned 11ty to Build Awesome</a></div></nav><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll("pre>code").forEach((e)=>{let p=e.parentElement,i=document.createElement("button");i.className="copy-btn",i.setAttribute("aria-label","Copy code"),i.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',i.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(e.textContent),i.classList.add("copied"),i.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',setTimeout(()=>{i.classList.remove("copied"),i.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>'},2000)}catch(e){}}),p.append(i)})</script></body></html>
