@@ -217,24 +217,17 @@ table {
 
 /* Sidebar / Header */
 .sidebar {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 1rem;
-}
-
-.sidebar-left {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .site-logo {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 36px;
@@ -247,21 +240,31 @@ table {
   text-decoration: none;
   transition: all 0.2s ease;
   flex-shrink: 0;
-  &:hover {
-    border-color: var(--text);
-    color: var(--text);
-  }
+  &:hover { border-color: var(--text); color: var(--text); }
 }
 
 h1.site-logo {
   margin: 0;
   font-size: 1rem;
   line-height: 1;
-  a {
-    color: var(--text);
-    text-decoration: none;
-    &:hover { color: var(--text); }
-  }
+  a { color: var(--text); text-decoration: none; &:hover { color: var(--text); } }
+}
+
+.site-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  &:hover { color: var(--accent); }
+}
+
+h1.site-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  a { color: var(--text); text-decoration: none; &:hover { color: var(--accent); } }
 }
 
 .sidebar-nav {
@@ -429,31 +432,33 @@ footer.site-footer {
 
 /* Desktop */
 @media (min-width: 768px) {
-  body { padding: 0 2rem; }
+  body { padding: 0 3rem; }
 
   .layout {
     display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 3rem;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
     padding: 3rem 0;
   }
 
   .sidebar {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.5rem;
     margin-bottom: 0;
     padding-bottom: 0;
+    padding-right: 2rem;
     border-bottom: none;
+    border-right: 1px solid var(--border);
     position: sticky;
     top: 3rem;
     align-self: start;
   }
 
-  .sidebar-left {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
+  .site-logo { display: flex; }
+
+  .site-name { display: none; }
 
   .site-logo {
     width: 44px;
