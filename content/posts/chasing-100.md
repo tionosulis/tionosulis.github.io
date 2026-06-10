@@ -10,7 +10,7 @@ ${toc}
 
 ## The Almost Perfect Score
 
-The day after publishing my blog revamp, I ran Google PageSpeed Insights. I expected validation — weeks of careful optimization surely deserved a perfect score.
+The day after publishing my **[blog revamp](/posts/reviving-a-ghost/)**, I ran Google PageSpeed Insights. I expected validation — weeks of careful optimization surely deserved a perfect score.
 
 I got a 99.
 

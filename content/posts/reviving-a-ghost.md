@@ -169,7 +169,7 @@ The toggle button itself is a small icon in the sidebar — minimal, functional,
 
 I drew inspiration from [Shu Ding's website](https://shud.in): clean typography, generous whitespace, a quiet left sidebar on desktop with navigation links. On mobile, it collapses to a compact header bar.
 
-The old circular SVG logo is gone. In its place: a simple **"S"** in a bordered box — the only ornament the site needs.
+The old circular SVG logo is gone. In its place: a simple **["S" in a bordered box](/posts/golden-ratio-web-design/)** — the only ornament, sized via the golden ratio.
 
 ### Shiki Dual-Theme
 
@@ -199,7 +199,7 @@ After a weekend of work, I ran Google PageSpeed Insights.
 
 <img src="/assets/img/pagespeed.svg" width="800" height="200" alt="Pagespeed 100 across all four categories">
 
-**100/100** across all four metrics: Performance, Accessibility, Best Practices, SEO.
+**[perfect Pagespeed score](/posts/chasing-100/)** across all four metrics: Performance, Accessibility, Best Practices, SEO.
 
 The site loads fast by construction — inlined CSS, preloaded fonts, no render-blocking resources, lazy-loaded images in next-gen formats. There's almost no JavaScript to parse — just the dark mode toggle, the service worker registration, and the copy-code button you see on this very post.
 

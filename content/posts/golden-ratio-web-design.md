@@ -10,7 +10,7 @@ ${toc}
 
 ## From Perfect Scores to Proportions
 
-The last two posts covered technical optimization — Eleventy v3 migration, Shiki syntax highlighting, PWA setup, and chasing a perfect 100/100 Lighthouse score. The site was fast, accessible, and standards-compliant. But something about it still felt assembled rather than composed.
+The last two posts covered technical optimization — **[Eleventy v3 migration](/posts/reviving-a-ghost/)**, Shiki syntax highlighting, PWA setup, and chasing a **[perfect 100/100 Lighthouse score](/posts/chasing-100/)**. The site was fast, accessible, and standards-compliant. But something about it still felt assembled rather than composed.
 
 The sidebar had an "S" monogram. Next to it (on mobile) or below it (on desktop) sat a theme toggle. They were both boxed elements with borders. But their sizes had no relationship to each other. The content area stretched to whatever width the browser gave it. Spacing values like `1.5rem` and `2rem` were chosen by eye, not by system.
 
