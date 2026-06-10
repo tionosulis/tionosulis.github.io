@@ -29,6 +29,8 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(cacheFirst(request));
   } else if (request.destination === "document") {
     event.respondWith(networkFirst(request));
+  } else if (request.destination === "image") {
+    event.respondWith(staleWhileRevalidate(request));
   } else {
     event.respondWith(cacheFirst(request));
   }
@@ -49,6 +51,12 @@ async function networkFirst(request) {
     const cached = await caches.match(request);
     return cached || new Response("Offline", { status: 503 });
   }
+}
+
+async function staleWhileRevalidate(request) {
+  const cached = await caches.match(request);
+  const fetchPromise = fetchAndCache(request);
+  return cached || fetchPromise;
 }
 
 async function fetchAndCache(request) {
