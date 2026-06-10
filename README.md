@@ -1,6 +1,6 @@
 # tionosulis.github.io
 
-Personal blog of [Sulistiono](https://tionosulis.github.io/), rebuilt with [Eleventy](https://www.11ty.dev/) v3, hosted on [GitHub Pages](https://pages.google.com/).
+Source of my personal website: https://tionosulis.github.io/
 
 ## Tech Stack
 
