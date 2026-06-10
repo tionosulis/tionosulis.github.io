@@ -11,5 +11,6 @@
   </nav>
 </aside>
 <script>
-function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t)}
+function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",b=document.querySelector(".theme-toggle");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),b.setAttribute("title",t==="dark"?"Dark mode":"Light mode")}
+var b=document.querySelector(".theme-toggle");b&&b.setAttribute("title",document.documentElement.getAttribute("data-theme")==="dark"?"Dark mode":"Light mode")
 </script>

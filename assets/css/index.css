@@ -321,6 +321,8 @@ main { min-width: 0; padding-bottom: 2rem; }
 
 article { max-width: 618px; }
 
+article img { border: 1px solid var(--border); }
+
 /* Post header */
 .post-header { margin-bottom: 2rem; }
 
