@@ -65,7 +65,7 @@ The lesson: **φ works best for spatial relationships (spacing, proportions, dim
 
 ## Case Study 1: The S Monogram & Theme Toggle
 
-This is the most visible change on the site. Open the sidebar on desktop and you'll see two bordered boxes: the "S" home link and the theme toggle (◉). Before this post, they had no dimensional relationship.
+This is the most visible change on the site. Open the sidebar on desktop and you'll see two bordered boxes: the "S" home link and the theme toggle (&#9681;). Before this post, they had no dimensional relationship.
 
 ### Before
 
@@ -87,7 +87,7 @@ The theme toggle was then derived from the S box using φ:
 
 `toggle size = S box size / φ = 55 / 1.618 ≈ 34px`
 
-The toggle became a **34×34px** box, with the ◉ character centered via flexbox. No padding needed — the box is the button.
+The toggle became a **34×34px** box, with the &#9681; character centered via flexbox. No padding needed — the box is the button.
 
 ```css
 /* After */

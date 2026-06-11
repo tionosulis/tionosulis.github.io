@@ -102,7 +102,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addTransform("copy-code", function (content) {
     if (!this.page.outputPath?.endsWith(".html")) return content;
     const copyBtnHtml = `<button class="copy-btn" aria-label="Copy code" data-copy="${encodeURIComponent(copySvg)}" data-check="${encodeURIComponent(checkSvg)}">${copySvg}</button>`;
-    return content.replace(/(<pre[^>]*>)/g, "$1" + copyBtnHtml);
+    let result = content.replace(/(<pre[^>]*>)/g, "$1" + copyBtnHtml + '<div class="code-wrapper">');
+    return result.replace(/<\/pre>/g, '</div></pre>');
   });
 
   eleventyConfig.addTransform("htmlmin", async function (content) {
