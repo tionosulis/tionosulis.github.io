@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+  <rect width="640" height="360" fill="#fafafa" rx="12"/>
+
+  <!-- Title -->
+  <text x="320" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1a1a1a">Copy Button Overflow Fix: Before vs After</text>
+
+  <!-- ============================================================ -->
+  <!-- BEFORE column -->
+  <!-- ============================================================ -->
+
+  <text x="170" y="52" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#b91c1c">Before (Broken)</text>
+
+  <!-- Pre box -->
+  <rect x="20" y="62" width="290" height="220" fill="#fff" stroke="#d1d5db" stroke-width="1" rx="6"/>
+  <rect x="20" y="62" width="290" height="220" fill="none" stroke="#ef4444" stroke-width="1.5" rx="6" stroke-dasharray="4,2"/>
+
+  <!-- Pre label -->
+  <rect x="24" y="56" width="50" height="16" fill="#fecaca" rx="3"/>
+  <text x="49" y="67" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#b91c1c">&lt;pre&gt;</text>
+
+  <!-- Scrolling code content (offset to show scrolling effect) -->
+  <g transform="translate(35, 80)">
+    <!-- Code lines - overflowing -->
+    <text x="0" y="0" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">1 <tspan fill="#6f42c1">.copy-btn</tspan> {</text>
+    <text x="0" y="16" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">2   <tspan fill="#005cc5">position</tspan>: absolute;</text>
+    <text x="0" y="32" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">3   <tspan fill="#005cc5">top</tspan>: 0.5rem;</text>
+    <text x="0" y="48" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">4   <tspan fill="#005cc5">right</tspan>: 0.5rem;</text>
+    <text x="0" y="64" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">5   <tspan fill="#005cc5">width</tspan>: 34px;</text>
+    <text x="0" y="80" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">6   <tspan fill="#005cc5">height</tspan>: 34px;</text>
+    <text x="0" y="96" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">7   <tspan fill="#005cc5">opacity</tspan>: 0;</text>
+    <text x="0" y="112" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">8   <tspan fill="#005cc5">transition</tspan>: opacity 0.2s;</text>
+    <text x="0" y="128" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">9 }</text>
+  </g>
+
+  <!-- Scrollbar visual -->
+  <rect x="20" y="276" width="290" height="6" fill="#f0f0f0" rx="3"/>
+  <rect x="80" y="276" width="150" height="6" fill="#d1d5db" rx="3"/>
+
+  <!-- Copy button at wrong position (shifted right/middle) -->
+  <rect x="140" y="72" width="34" height="34" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" rx="6"/>
+  <text x="157" y="93" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#b45309">✂</text>
+
+  <!-- Label showing it's in wrong position -->
+  <line x1="174" y1="89" x2="220" y2="110" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="222" y="114" font-family="system-ui,sans-serif" font-size="9" fill="#b45309">Ooops! Button scrolls</text>
+  <text x="222" y="124" font-family="system-ui,sans-serif" font-size="9" fill="#b45309">with the code content</text>
+
+  <!-- Scrolling direction indicator -->
+  <text x="280" y="270" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="#636b78">→ scroll</text>
+
+  <!-- ============================================================ -->
+  <!-- VS divider -->
+  <!-- ============================================================ -->
+
+  <line x1="325" y1="60" x2="325" y2="320" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,4"/>
+  <circle cx="325" cy="190" r="14" fill="#f0f0f0" stroke="#d1d5db" stroke-width="1"/>
+  <text x="325" y="194" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#636b78">vs</text>
+
+  <!-- ============================================================ -->
+  <!-- AFTER column -->
+  <!-- ============================================================ -->
+
+  <text x="490" y="52" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#15803d">After (Fixed)</text>
+
+  <!-- Pre box -->
+  <rect x="340" y="62" width="280" height="220" fill="#fff" stroke="#d1d5db" stroke-width="1" rx="6"/>
+  <rect x="340" y="62" width="280" height="220" fill="none" stroke="#22c55e" stroke-width="1.5" rx="6" stroke-dasharray="4,2"/>
+
+  <!-- Pre label -->
+  <rect x="344" y="56" width="50" height="16" fill="#bbf7d0" rx="3"/>
+  <text x="369" y="67" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#15803d">&lt;pre&gt;</text>
+
+  <!-- Copy button at CORRECT position (top-right corner) -->
+  <rect x="568" y="72" width="34" height="34" fill="#bbf7d0" stroke="#22c55e" stroke-width="1.5" rx="6"/>
+  <text x="585" y="93" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#15803d">✂</text>
+
+  <!-- Label showing correct position -->
+  <line x1="568" y1="72" x2="540" y2="110" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="462" y="114" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="#15803d">Stays at top-right</text>
+  <text x="462" y="124" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="#15803d">corner, fixed ✅</text>
+
+  <!-- Code wrapper visual -->
+  <rect x="360" y="75" width="200" height="195" fill="#f0f0f0" stroke="#d1d5db" stroke-width="1" rx="4"/>
+
+  <!-- Code-wrapper label -->
+  <rect x="364" y="70" width="90" height="14" fill="#e0f2fe" rx="3"/>
+  <text x="409" y="79" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#2563eb">.code-wrapper</text>
+
+  <!-- Code content (scrolling inside wrapper) -->
+  <g transform="translate(370, 90)">
+    <text x="0" y="0" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">1 <tspan fill="#6f42c1">.copy-btn</tspan> {</text>
+    <text x="0" y="16" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">2   <tspan fill="#005cc5">position</tspan>: absolute;</text>
+    <text x="0" y="32" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">3   <tspan fill="#005cc5">top</tspan>: 0.5rem;</text>
+    <text x="0" y="48" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">4   <tspan fill="#005cc5">right</tspan>: 0.5rem;</text>
+    <text x="0" y="64" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">5   <tspan fill="#005cc5">width</tspan>: 34px;</text>
+    <text x="0" y="80" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">6   <tspan fill="#005cc5">height</tspan>: 34px;</text>
+    <text x="0" y="96" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">7   <tspan fill="#005cc5">opacity</tspan>: 0;</text>
+    <text x="0" y="112" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">8   <tspan fill="#005cc5">transition</tspan>: opacity 0.2s;</text>
+    <text x="0" y="128" font-family="ui-monospace,monospace" font-size="9" fill="#24292e">9 }</text>
+  </g>
+
+  <!-- Code wrapper scrollbar -->
+  <rect x="360" y="264" width="200" height="6" fill="#e5e7eb" rx="3"/>
+  <rect x="400" y="264" width="100" height="6" fill="#d1d5db" rx="3"/>
+
+  <!-- Scrolling indicator -->
+  <text x="555" y="268" font-family="system-ui,sans-serif" font-size="9" fill="#636b78">→ scroll</text>
+
+  <!-- ============================================================ -->
+  <!-- Bottom caption / key insight -->
+  <!-- ============================================================ -->
+
+  <rect x="20" y="310" width="600" height="36" fill="#e0f2fe" stroke="#2563eb" stroke-width="1" rx="6"/>
+  <text x="320" y="325" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#2563eb">Key: Let the scroll container handle overflow, not the positioned parent</text>
+  <text x="320" y="337" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#636b78">position: absolute → belongs on pre · overflow-x: auto → belongs on inner wrapper</text>
+</svg>
