@@ -1,0 +1,7 @@
+---
+layout: layouts/home.njk
+permalink: /posts/
+---
+<p class="page-description"><span class="page-decor">/</span>thoughts, notes, and ramblings</p>
+{% set postslist = collections.posts | reverse %}
+{% include "partials/postslist.njk" %}

@@ -1,9 +1,9 @@
 ---
 layout: layouts/page.njk
-title: About
+title: Sulistiono
 ---
 
-Hullo! I'm **Sulistiono** — an Indonesian, a plant lover, and a tech enthusiast who often stays up late wrestling with messy code and is too busy to make his own coffee.
+I'm an Indonesian, a gardening and tech enthusiast who often stays up late wrestling with messy code and is too busy to make his own coffee.
 
 This blog is my little corner of the internet to dump thoughts, notes to self, and whatever else crosses my mind. The entry frequency is most likely random and inconsistent — such is life.
 
