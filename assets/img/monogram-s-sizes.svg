@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <rect width="640" height="420" fill="#fafafa" rx="12"/>
+  <text x="320" y="28" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1a1a1a" text-anchor="middle">The S Monogram — Every Size, One Source</text>
+
+  <!-- 16x16 favicon -->
+  <rect x="40" y="60" width="16" height="16" fill="none" stroke="#d1d5db" stroke-width="1"/>
+  <text x="48" y="73" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#1a1a1a" text-anchor="middle">S</text>
+  <text x="48" y="90" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">16x16</text>
+
+  <!-- 32x32 favicon -->
+  <rect x="90" y="52" width="32" height="32" fill="none" stroke="#d1d5db" stroke-width="1"/>
+  <text x="106" y="73" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#1a1a1a" text-anchor="middle">S</text>
+  <text x="106" y="98" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">32x32</text>
+
+  <!-- 55x55 site logo (highlighted) -->
+  <rect x="155" y="45" width="55" height="55" fill="#e0f2fe" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <text x="182" y="79" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#2563eb" text-anchor="middle">S</text>
+  <text x="182" y="112" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">55x55 (Fibonacci)</text>
+
+  <!-- 180x180 apple touch (scaled down) -->
+  <rect x="250" y="42" width="40" height="40" fill="none" stroke="#d1d5db" stroke-width="1" rx="4"/>
+  <text x="270" y="68" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="middle">S</text>
+  <text x="270" y="98" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">180x180</text>
+
+  <!-- 192x192 PWA (scaled down) -->
+  <rect x="320" y="42" width="42" height="42" fill="none" stroke="#d1d5db" stroke-width="1" rx="4"/>
+  <text x="341" y="69" font-family="system-ui,sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">S</text>
+  <text x="341" y="98" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">192x192</text>
+
+  <!-- 512x512 maskable (scaled down) -->
+  <rect x="395" y="40" width="48" height="48" fill="none" stroke="#d1d5db" stroke-width="1" rx="8"/>
+  <rect x="403" y="48" width="32" height="32" fill="#2563eb" rx="6"/>
+  <text x="419" y="69" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#fafafa" text-anchor="middle">S</text>
+  <text x="419" y="102" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">512x512</text>
+
+  <!-- Divider -->
+  <line x1="40" y1="125" x2="600" y2="125" stroke="#d1d5db" stroke-width="1"/>
+
+  <!-- SVG favicon code comparison -->
+  <text x="320" y="148" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1a1a1a" text-anchor="middle">SVG Favicon: Dark Mode Aware</text>
+
+  <!-- Light version -->
+  <rect x="40" y="160" width="275" height="100" fill="#f0f0f0" rx="6"/>
+  <text x="177" y="178" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370" text-anchor="middle">&lt;svg xmlns="..." viewBox="0 0 55 55"&gt;</text>
+  <text x="177" y="192" font-family="ui-monospace,monospace" font-size="9" fill="#b84d00" text-anchor="middle">&lt;rect width="55" height="55" fill="white"/&gt;</text>
+  <text x="177" y="206" font-family="ui-monospace,monospace" font-size="9" fill="#2563eb" text-anchor="middle">&lt;text fill="#1a1a1a"&gt;S&lt;/text&gt;</text>
+  <text x="177" y="220" font-family="ui-monospace,monospace" font-size="9" fill="#c92e3d" text-anchor="middle">&lt;style&gt; @media (prefers-color-scheme:dark) { ... } &lt;/style&gt;</text>
+  <text x="177" y="238" font-family="ui-monospace,monospace" font-size="9" fill="#636b78" text-anchor="middle">&lt;/svg&gt;</text>
+  <text x="40" y="255" font-family="system-ui,sans-serif" font-size="8" fill="#636b78">One SVG file, two themes, zero JavaScript</text>
+
+  <!-- Monochrome inline approach -->
+  <rect x="330" y="160" width="270" height="100" fill="#f0f0f0" rx="6"/>
+  <text x="465" y="178" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1a1a1a" text-anchor="middle">Inline Attributes Rule</text>
+  <text x="465" y="196" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">No &lt;style&gt; block in SVG for &lt;img&gt;</text>
+  <text x="465" y="212" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">No HTML entities (&amp;times; → x)</text>
+  <text x="465" y="228" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">No &lt;defs&gt;-scoped CSS</text>
+  <text x="465" y="248" font-family="system-ui,sans-serif" font-size="9" fill="#b84d00" text-anchor="middle">inline fill, inline font-family</text>
+
+  <!-- Bottom: relationship with toggle -->
+  <line x1="40" y1="275" x2="600" y2="275" stroke="#d1d5db" stroke-width="1"/>
+
+  <text x="320" y="295" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1a1a1a" text-anchor="middle">The Golden Ratio Connection</text>
+
+  <rect x="160" y="310" width="55" height="55" fill="none" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <text x="187" y="343" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#2563eb" text-anchor="middle">S</text>
+  <text x="187" y="378" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">55px</text>
+
+  <text x="260" y="343" font-family="system-ui,sans-serif" font-size="16" fill="#636b78" text-anchor="middle">&divide; &phi; = 34px</text>
+
+  <rect x="340" y="320" width="34" height="34" fill="none" stroke="#22c55e" stroke-width="2" rx="4"/>
+  <text x="357" y="343" font-family="system-ui,sans-serif" font-size="16" fill="#22c55e" text-anchor="middle">S</text>
+  <text x="357" y="368" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#22c55e" text-anchor="middle">34px</text>
+
+  <text x="440" y="337" font-family="system-ui,sans-serif" font-size="10" fill="#636b78" text-anchor="middle">55 / 1.618 = 33.98</text>
+  <text x="440" y="352" font-family="system-ui,sans-serif" font-size="10" fill="#636b78" text-anchor="middle">S box and toggle</text>
+  <text x="440" y="367" font-family="system-ui,sans-serif" font-size="10" fill="#636b78" text-anchor="middle">form a &phi; pair</text>
+</svg>
