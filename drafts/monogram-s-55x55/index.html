@@ -1,0 +1,537 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Eleventy v3.1.6"><title>The Monogram S: 55×55 Pixels and the Design System Behind It — Sulistiono</title><meta name="description" content="How a single letter became a favicon, a PWA icon, a dark-mode-aware SVG, and the anchor of a golden-ratio design system — all from 55×55 pixels."><link rel="canonical" href="https://tionosulis.github.io/drafts/monogram-s-55x55/"><link rel="alternate" href="https://tionosulis.github.io/feed/feed.xml" type="application/atom+xml" title="Sulistiono"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><link rel="preload" href="/fonts/IBMPlexSans-Var.woff2" as="font" type="font/woff2" crossorigin=""><meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)"><meta property="og:title" content="The Monogram S: 55×55 Pixels and the Design System Behind It"><meta property="og:description" content="How a single letter became a favicon, a PWA icon, a dark-mode-aware SVG, and the anchor of a golden-ratio design system — all from 55×55 pixels."><meta property="og:url" content="https://tionosulis.github.io/drafts/monogram-s-55x55/"><meta property="og:type" content="article"><meta name="twitter:card" content="summary"><script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script><style>@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/IBMPlexSans-Var.woff2") format("woff2-variations");
+  font-weight: 300 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+:root {
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
+
+  --bg: #fafafa;
+  --bg-secondary: #f0f0f0;
+  --text: #1a1a1a;
+  --text-secondary: #5c6370;
+  --text-tertiary: #636b78;
+  --border: #d1d5db;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --selection: rgba(37, 99, 235, 0.15);
+  --syntax-bg: #f6f8fa;
+
+  --radius: 6px;
+}
+
+[data-theme="dark"] {
+  --bg: #0a0a0b;
+  --bg-secondary: #18181b;
+  --text: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #8a8a94;
+  --border: #3f3f46;
+  --accent: #60a5fa;
+  --accent-hover: #93c5fd;
+  --selection: rgba(96, 165, 250, 0.2);
+  --syntax-bg: #18181b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #0a0a0b;
+    --bg-secondary: #18181b;
+    --text: #e4e4e7;
+    --text-secondary: #a1a1aa;
+    --text-tertiary: #a1a1aa;
+    --border: #3f3f46;
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
+    --selection: rgba(96, 165, 250, 0.2);
+    --syntax-bg: #18181b;
+  }
+}
+
+[data-theme="dark"] .shiki {
+  background-color: var(--shiki-dark-bg) !important;
+}
+[data-theme="dark"] .shiki span {
+  color: var(--shiki-dark) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .shiki {
+    background-color: var(--shiki-dark-bg) !important;
+  }
+  :root:not([data-theme]) .shiki span {
+    color: var(--shiki-dark) !important;
+  }
+}
+
+[data-theme="light"] .shiki span[style*="color:#E36209"] { color: #B84D00 !important; }
+[data-theme="light"] .shiki span[style*="color:#D73A49"] { color: #C92E3D !important; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+
+body {
+  margin: 0;
+  padding: 0 1.25rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--selection); color: var(--text); }
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+  &:hover { color: var(--accent-hover); }
+}
+
+img { max-width: 100%; height: auto; border-radius: var(--radius); }
+
+pre, code { font-family: var(--font-mono); font-size: 0.875em; }
+
+code:not(pre code) {
+  background: var(--bg-secondary);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+pre {
+  background: var(--syntax-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  line-height: 1.5;
+  font-size: 0.85rem;
+}
+
+pre code { background: none; padding: 0; }
+
+pre { position: relative; }
+
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  color: var(--text-tertiary);
+  &:hover { background: var(--border); color: var(--text); }
+}
+
+pre:hover .copy-btn { opacity: 1; }
+
+.copy-btn svg { width: 16px; height: 16px; }
+
+.copy-btn.copied {
+  opacity: 1;
+  color: var(--accent);
+  pointer-events: none;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-secondary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--text-secondary);
+  p {
+    margin: 0.5rem 0;
+    &:first-child { margin-top: 0; }
+    &:last-child { margin-bottom: 0; }
+  }
+  cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: italic;
+    font-size: 0.9em;
+    color: var(--text-tertiary);
+    &::before { content: "— "; }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 2rem 0 0.5rem;
+  color: var(--text);
+  &:first-child { margin-top: 0; }
+}
+
+h1 { font-size: 2.25rem; letter-spacing: -0.025em; }
+h2 { font-size: 1.75rem; letter-spacing: -0.02em; margin-top: 2.5rem; }
+h3 { font-size: 1.375rem; }
+h4 { font-size: 1.125rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+p { margin: 1rem 0; }
+
+ul, ol { margin: 1rem 0; padding-left: 1.5rem; }
+
+li { margin: 0.35rem 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9em;
+  th, td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  th { background: var(--bg-secondary); font-weight: 600; }
+}
+
+.header-anchor {
+  color: var(--text-tertiary);
+  text-decoration: none;
+  margin-left: 0.25rem;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  &:hover { color: var(--accent); }
+}
+
+:hover > .header-anchor,
+.header-anchor:focus { opacity: 1; }
+
+.toc {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  p { margin: 0 0 0.5rem; font-weight: 600; color: var(--text); }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li {
+    margin: 0.25rem 0;
+    padding-left: 1rem;
+    border-left: 2px solid var(--border);
+    transition: border-color 0.15s ease;
+    &:hover { border-color: var(--accent); }
+  }
+  a { color: var(--text-secondary); text-decoration: none; &:hover { color: var(--accent); } }
+  ul ul { padding-left: 1rem; }
+}
+
+/* Layout grid */
+.layout {
+  max-width: 810px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Sidebar / Header */
+.sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  &:hover { border-color: var(--text); color: var(--text); }
+}
+
+h1.site-logo {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1;
+  a { color: var(--text); text-decoration: none; &:hover { color: var(--text); } }
+}
+
+.sidebar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.sidebar-nav a,
+.site-logo {
+  text-decoration: none;
+}
+
+.sidebar-nav a {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  transition: color 0.15s ease;
+  &:hover, &[aria-current="page"] { color: var(--text); }
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.15s ease;
+  &:hover { color: var(--text); border-color: var(--text-secondary); }
+  &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+}
+
+main { min-width: 0; padding-bottom: 2rem; }
+
+article { max-width: 618px; }
+
+article img { border: 1px solid var(--border); }
+
+/* Post header */
+.post-header { margin-bottom: 2rem; }
+
+.post-header h1 { margin-bottom: 0.5rem; }
+
+.post-meta {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.post-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  background: var(--bg-secondary);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  &:hover { color: var(--accent); background: var(--selection); }
+}
+
+/* Post list */
+.postlist {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.postlist li {
+  display: flex;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  gap: 0;
+}
+
+.postlist a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  flex-shrink: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  &:hover { color: var(--accent); }
+}
+
+.postlist-dots {
+  flex: 1;
+  min-width: 1.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  &::before {
+    content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+    font-size: 0.85em;
+    color: var(--text-tertiary);
+    letter-spacing: 0.15em;
+    margin: 0 0.5em;
+  }
+}
+
+.postlist-date {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Page header */
+.page-decor {
+  color: var(--text-tertiary);
+  margin-right: 0.25rem;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.page-description {
+  color: var(--text-secondary);
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+}
+
+/* Post navigation */
+.links-nextprev {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.links-nextprev .back-link {
+  color: var(--text-secondary);
+  &:hover { color: var(--accent); }
+}
+
+.links-nextprev .nav-pair {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  a { max-width: 45%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+
+/* Footer */
+footer.site-footer {
+  padding: 1.5rem 0 0.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+/* Utility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  body { padding: 0 3rem; }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+    padding: 3rem 0;
+  }
+
+  .sidebar {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.618rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-right: 1.618rem;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+    position: sticky;
+    top: 3rem;
+    align-self: start;
+  }
+
+  .site-logo {
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+  }
+
+  h1.site-logo {
+    font-size: 1.5rem;
+  }
+
+  .sidebar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .sidebar-nav a { font-size: 1rem; }
+
+  .theme-toggle { margin-top: 0.5rem; width: 34px; height: 34px; padding: 0; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+}
+
+/* Print */
+@media print {
+  .sidebar, footer.site-footer, .theme-toggle, .links-nextprev { display: none; }
+  body { font-size: 12pt; color: #000; background: #fff; }
+  a { color: #000; text-decoration: underline; }
+  pre { white-space: pre-wrap; border: 1px solid #ccc; }
+}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><aside class="sidebar"><a href="/" class="site-logo" aria-label="Home">S</a><nav class="sidebar-nav"><a href="/">Posts</a> <a href="/about/">About</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">◑</button></nav></aside><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",b=document.querySelector(".theme-toggle");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),b.setAttribute("title",t==="dark"?"Dark mode":"Light mode")}
+var b=document.querySelector(".theme-toggle");b&&b.setAttribute("title",document.documentElement.getAttribute("data-theme")==="dark"?"Dark mode":"Light mode")</script><main id="skip"><article><header class="post-header"><h1 id="the-monogram-s-55-55-pixels-and-the-design-system-behind-it">The Monogram S: 55×55 Pixels and the Design System Behind It</h1><div class="post-meta"><time datetime="2026-06-15">15 June 2026</time> <a href="/tags/meta/" class="post-tag">meta</a> <a href="/tags/design/" class="post-tag">design</a> <a href="/tags/svg/" class="post-tag">svg</a> <a href="/tags/favicon/" class="post-tag">favicon</a> <a href="/tags/pwa/" class="post-tag">pwa</a> <a href="/tags/golden-ratio/" class="post-tag">golden-ratio</a></div></header><p>Every design system needs an anchor. On this blog, it’s the letter “S” in a bordered box — 55 pixels wide, 55 pixels tall. From that single element, I derived the theme toggle size, the favicon, the Apple touch icon, the PWA maskable icon, and even the copy button.</p><p>This is the story of those 55 pixels.</p><h2 id="the-old-logo" tabindex="-1">The Old Logo <a class="header-anchor" href="#the-old-logo">#</a></h2><p>Before the revamp, the site had a circular SVG logo — a stylized “S” wrapped in a ring. It was fine, but it didn’t do anything. It sat in the header, looked decorative, and offered no interaction or system integration.</p><p>When I rebuilt the site, I wanted a logo that wasn’t just decoration. I wanted an element that could <strong>scale</strong> — literally and metaphorically — across every corner of the site.</p><p>A letter in a box. Simple enough to render at 16×16 pixels, scalable enough to fill a 512×512 PWA icon, and modular enough to participate in the golden ratio system.</p><h2 id="the-fibonacci-decision%3A-55%C3%9755" tabindex="-1">The Fibonacci Decision: 55×55 <a class="header-anchor" href="#the-fibonacci-decision%3A-55%C3%9755">#</a></h2><p>Why 55 pixels? Because it’s a Fibonacci number — part of the same mathematical sequence that converges on the golden ratio (φ = 1.618).</p><p>If you follow the Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, <strong>55</strong>, 89, 144 — the number 55 sits between 34 and 89. Those two neighbors gave me:</p><ul><li><strong>34px</strong> → The theme toggle size (55 ÷ φ ≈ 34)</li><li><strong>89px</strong> → Not used yet, but available for future elements</li></ul><p>Before this change, the S box was 52×52 pixels — an arbitrary number chosen because it “looked fine.” Bumping it to 55 gave it mathematical backing and unlocked a proportional relationship with the theme toggle. The 3-pixel increase is invisible to the eye, but the 55/34 relationship is perceptible as harmony.</p><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><button class="copy-btn" aria-label="Copy code" data-copy="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%2213%22%20height%3D%2213%22%20rx%3D%222%22%20ry%3D%222%22%2F%3E%3Cpath%20d%3D%22M5%2015H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h9a2%202%200%200%201%202%202v1%22%2F%3E%3C%2Fsvg%3E" data-check="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2220%206%209%2017%204%2012%22%2F%3E%3C%2Fsvg%3E"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><code class="language-css"><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">.site-logo</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  width</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">55</span><span style="color:#D73A49;--shiki-dark:#F97583">px</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  height</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">55</span><span style="color:#D73A49;--shiki-dark:#F97583">px</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre><h2 id="one-svg-to-rule-them-all" tabindex="-1">One SVG to Rule Them All <a class="header-anchor" href="#one-svg-to-rule-them-all">#</a></h2><p>The S monogram lives in a single SVG file (<code>assets/img/favicon/favicon.svg</code>). That one file generates:</p><table><thead><tr><th>Size</th><th>Format</th><th>Where it goes</th></tr></thead><tbody><tr><td>16×16</td><td>SVG</td><td>Browser tab favicon</td></tr><tr><td>32×32</td><td>SVG</td><td>Browser tab (retina)</td></tr><tr><td>55×55</td><td>SVG</td><td>Site sidebar logo</td></tr><tr><td>180×180</td><td>PNG</td><td>Apple Touch Icon</td></tr><tr><td>192×192</td><td>PNG</td><td>PWA manifest</td></tr><tr><td>512×512</td><td>PNG</td><td>PWA maskable icon</td></tr></tbody></table><p>Six (or more) outputs, one source. The PNGs are generated from the SVG via sharp during build, but the SVG itself is the canonical version.</p><h2 id="dark-mode-favicon" tabindex="-1">Dark Mode Favicon <a class="header-anchor" href="#dark-mode-favicon">#</a></h2><p>One of the nicest details: the favicon automatically switches between light and dark themes — no JavaScript required.</p><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><button class="copy-btn" aria-label="Copy code" data-copy="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%2213%22%20height%3D%2213%22%20rx%3D%222%22%20ry%3D%222%22%2F%3E%3Cpath%20d%3D%22M5%2015H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h9a2%202%200%200%201%202%202v1%22%2F%3E%3C%2Fsvg%3E" data-check="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2220%206%209%2017%204%2012%22%2F%3E%3C%2Fsvg%3E"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><code class="language-xml"><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&lt;</span><span style="color:#22863A;--shiki-dark:#85E89D">svg</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> xmlns</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"http://www.w3.org/2000/svg"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> viewBox</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"0 0 55 55"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &lt;</span><span style="color:#22863A;--shiki-dark:#85E89D">defs</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &lt;</span><span style="color:#22863A;--shiki-dark:#85E89D">style</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      @media (prefers-color-scheme: dark) {</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">        rect { fill: #0a0a0b; }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">        text { fill: #e4e4e7; }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &lt;/</span><span style="color:#22863A;--shiki-dark:#85E89D">style</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &lt;/</span><span style="color:#22863A;--shiki-dark:#85E89D">defs</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &lt;</span><span style="color:#22863A;--shiki-dark:#85E89D">rect</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> width</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"55"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> height</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"55"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> fill</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"#fafafa"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> rx</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"6"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">/></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &lt;</span><span style="color:#22863A;--shiki-dark:#85E89D">text</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> x</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"27.5"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> y</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"37"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> font-family</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"system-ui,sans-serif"</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">        font-size</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"32"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> font-weight</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"700"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> fill</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"#1a1a1a"</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">        text-anchor</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"middle"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>S&lt;/</span><span style="color:#22863A;--shiki-dark:#85E89D">text</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&lt;/</span><span style="color:#22863A;--shiki-dark:#85E89D">svg</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre><p>Because <code>favicon.svg</code> is linked directly in <code>&lt;head></code> (not loaded via <code>&lt;img></code>), <code>prefers-color-scheme</code> inside <code>&lt;style></code> works correctly. This is the one place where a <code>&lt;defs></code>-scoped <code>&lt;style></code> block is acceptable — because the SVG is loaded as an icon, not as an <code>&lt;img src></code>.</p><p>The result: a white-background “S” in light mode, a dark-background “S” in dark mode. No flicker, no JavaScript, no extra HTTP request.</p><h3 id="the-maskable-icon" tabindex="-1">The Maskable Icon <a class="header-anchor" href="#the-maskable-icon">#</a></h3><p>PWA icons have a subtle requirement: on Android, the system applies a white mask to icons, clipping them to a circle or rounded square. If your icon has white padding around the edges, it gets cropped awkwardly.</p><p>The fix is a “maskable” icon — one where the subject fills at least 80% of the canvas. My <code>manifest.json</code> points to a 512×512 PNG where the blue “S” extends edge-to-edge:</p><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><button class="copy-btn" aria-label="Copy code" data-copy="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%2213%22%20height%3D%2213%22%20rx%3D%222%22%20ry%3D%222%22%2F%3E%3Cpath%20d%3D%22M5%2015H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h9a2%202%200%200%201%202%202v1%22%2F%3E%3C%2Fsvg%3E" data-check="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2220%206%209%2017%204%2012%22%2F%3E%3C%2Fsvg%3E"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><code class="language-json"><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "icons"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    { </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"src"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"/assets/img/favicon/favicon-192.png"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"sizes"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"192x192"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"type"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"image/png"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    { </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"src"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"/assets/img/favicon/favicon-512.png"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"sizes"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"512x512"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"type"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"image/png"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"purpose"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"maskable"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre><h2 id="the-golden-ratio-connection" tabindex="-1">The Golden Ratio Connection <a class="header-anchor" href="#the-golden-ratio-connection">#</a></h2><p>The S box doesn’t exist in isolation. Its size determines the theme toggle’s size through the golden ratio:</p><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><button class="copy-btn" aria-label="Copy code" data-copy="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%2213%22%20height%3D%2213%22%20rx%3D%222%22%20ry%3D%222%22%2F%3E%3Cpath%20d%3D%22M5%2015H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h9a2%202%200%200%201%202%202v1%22%2F%3E%3C%2Fsvg%3E" data-check="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2220%206%209%2017%204%2012%22%2F%3E%3C%2Fsvg%3E"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><code class="language-css"><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">.site-logo</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { </span><span style="color:#005CC5;--shiki-dark:#79B8FF">width</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">55</span><span style="color:#D73A49;--shiki-dark:#F97583">px</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; </span><span style="color:#005CC5;--shiki-dark:#79B8FF">height</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">55</span><span style="color:#D73A49;--shiki-dark:#F97583">px</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; }</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">.theme-toggle</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { </span><span style="color:#005CC5;--shiki-dark:#79B8FF">width</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">34</span><span style="color:#D73A49;--shiki-dark:#F97583">px</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; </span><span style="color:#005CC5;--shiki-dark:#79B8FF">height</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">34</span><span style="color:#D73A49;--shiki-dark:#F97583">px</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; }      </span><span style="color:#6A737D;--shiki-dark:#6A737D">/* 55 / φ */</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">.copy-btn</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> { </span><span style="color:#005CC5;--shiki-dark:#79B8FF">width</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">34</span><span style="color:#D73A49;--shiki-dark:#F97583">px</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; </span><span style="color:#005CC5;--shiki-dark:#79B8FF">height</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">34</span><span style="color:#D73A49;--shiki-dark:#F97583">px</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; }            </span><span style="color:#6A737D;--shiki-dark:#6A737D">/* match toggle */</span></span></code></pre><p>Three elements, all linked by a single division: 55 ÷ 1.618 ≈ 34. The S box anchors the system; everything else derives from it.</p><p><img src="/assets/img/monogram-s-sizes.svg" alt="S monogram sizes from 16x16 to 512x512, with the 55x55 Fibonacci box highlighted and the golden ratio connection to the 34px toggle"></p><h2 id="lessons-learned" tabindex="-1">Lessons Learned <a class="header-anchor" href="#lessons-learned">#</a></h2><ul><li><strong>Start with one source of truth.</strong> A single SVG that generates every icon format is simpler than maintaining six separate files.</li><li><strong>Fibonacci numbers make design decisions.</strong> 55 looks intentional because it <em>is</em> intentional — it’s part of a sequence with structural integrity.</li><li><strong>Favicon dark mode is free UX.</strong> One <code>@media</code> query inside the SVG, and your browser tab matches your theme. No effort, high polish.</li><li><strong>Maskable icons matter for PWA.</strong> Without them, your icon gets awkwardly cropped on Android. The fix is trivial: full-bleed subject.</li><li><strong>The smallest element can anchor the largest system.</strong> 55 pixels across the sidebar — that’s all it took to define the spacing, the toggle, the button, and the icon family of the entire site.</li></ul><p>The next time you reach for an arbitrary pixel value, ask yourself: what if this number came from a system instead? You might find that 55 pixels is more than enough.</p></article><nav class="links-nextprev"><a href="/" class="back-link">← All posts</a></nav><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
