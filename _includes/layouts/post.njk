@@ -16,7 +16,7 @@ layout: layouts/base.njk
   {{ content | safe }}
 </article>
 <nav class="links-nextprev">
-  <a href="/" class="back-link">&larr; All posts</a>
+  <a href="/posts/" class="back-link">&larr; All posts</a>
   {% if collections.posts %}
   {% set nextPost = collections.posts | getNextCollectionItem(page) %}
   {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
