@@ -65,7 +65,7 @@
   <text x="187" y="343" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#2563eb" text-anchor="middle">S</text>
   <text x="187" y="378" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">55px</text>
 
-  <text x="260" y="343" font-family="system-ui,sans-serif" font-size="16" fill="#636b78" text-anchor="middle">&divide; &phi; = 34px</text>
+  <text x="260" y="343" font-family="system-ui,sans-serif" font-size="16" fill="#636b78" text-anchor="middle">&#x00F7; &#x03C6; = 34px</text>
 
   <rect x="340" y="320" width="34" height="34" fill="none" stroke="#22c55e" stroke-width="2" rx="4"/>
   <text x="357" y="343" font-family="system-ui,sans-serif" font-size="16" fill="#22c55e" text-anchor="middle">S</text>
@@ -73,5 +73,5 @@
 
   <text x="440" y="337" font-family="system-ui,sans-serif" font-size="10" fill="#636b78" text-anchor="middle">55 / 1.618 = 33.98</text>
   <text x="440" y="352" font-family="system-ui,sans-serif" font-size="10" fill="#636b78" text-anchor="middle">S box and toggle</text>
-  <text x="440" y="367" font-family="system-ui,sans-serif" font-size="10" fill="#636b78" text-anchor="middle">form a &phi; pair</text>
+  <text x="440" y="367" font-family="system-ui,sans-serif" font-size="10" fill="#636b78" text-anchor="middle">form a &#x03C6; pair</text>
 </svg>
