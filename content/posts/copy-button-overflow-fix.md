@@ -3,7 +3,7 @@ title: "When position: absolute Meets overflow-x: auto — A Copy Button Debuggi
 description: A small UI bug leads to an enlightening exploration of CSS scroll containers, positioning contexts, and why the simplest fix is often the most architectural.
 date: 2026-06-13
 tags: [css, debugging, design, meta]
-draft: true
+draft: false
 pageHasCode: true
 ---
 

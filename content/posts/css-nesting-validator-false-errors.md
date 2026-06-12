@@ -1,6 +1,6 @@
 ---
 title: "16 CSS Parse Errors — All False: CSS Nesting and the W3C Validator's Blind Spot"
-description: "The W3C validator flagged our modern CSS as invalid. The response is surprising: the validator is wrong, not our code. Here's why."
+description: "The W3C validator flagged my modern CSS as invalid. The response is surprising: the validator is wrong, not my code. Here's why."
 date: 2026-06-14
 tags: [css, validation, standards, meta]
 draft: true
@@ -11,7 +11,7 @@ ${toc}
 
 ## The Validation Report
 
-I ran our blog through the W3C Nu HTML Checker. The result: 16 errors, all the same type:
+I ran my blog through the W3C Nu HTML Checker. The result: 16 errors, all the same type:
 
 ```
 Error: CSS: Parse Error.
@@ -23,7 +23,7 @@ This is the output of a 100/100 Lighthouse page, served in 2026, rendered correc
 
 ## What the Validator Rejected
 
-Every nested rule in our stylesheet was flagged. Here's exactly what the W3C validator considers an error:
+Every nested rule in my stylesheet was flagged. Here's exactly what the W3C validator considers an error:
 
 ```css
 /* These all produce "CSS: Parse Error." in the W3C validator */
@@ -70,15 +70,15 @@ CSS Nesting became a W3C Candidate Recommendation in February 2023. All major br
 
 But the validator's parser hasn't caught up. As of mid-2026, the W3C CSS Validator (jigsaw.w3.org/css-validator) still doesn't parse CSS Nesting. The Nu Html Checker (validator.w3.org/nu) has the same blind spot — an open issue ([#1634](https://github.com/validator/validator/issues/1634)) has been sitting unresolved since September 2023.
 
-This is not a bug in our CSS. It's a lag between the specification advancing and the validation tools catching up — a gap that now spans three years.
+This is not a bug in my CSS. It's a lag between the specification advancing and the validation tools catching up — a gap that now spans three years.
 
 ## Browser Reality vs Validator Reality
 
-I tested our CSS in four browser engines. Result: zero errors.
+I tested my CSS in four browser engines. Result: zero errors.
 
 Chrome DevTools, Firefox Developer Tools, and Safari Web Inspector all parse every nested rule correctly. The rendered pages look exactly as intended. Lighthouse scores 100/100 across all categories.
 
-The validator says our CSS is broken. The browser says it's fine. The browser is the one that matters.
+The validator says my CSS is broken. The browser says it's fine. The browser is the one that matters.
 
 This isn't a new problem. CSS has a long history of features that shipped in browsers before validation tools supported them:
 
@@ -107,7 +107,7 @@ The practical takeaway: **validate your HTML structure, but test your CSS in bro
 
 ## What This Means for This Blog
 
-Our CSS uses nesting because it makes the code more maintainable. The alternative — repeating parent selectors for every hover, focus, and pseudo-element — produces longer, harder-to-read stylesheets:
+My CSS uses nesting because it makes the code more maintainable. The alternative — repeating parent selectors for every hover, focus, and pseudo-element — produces longer, harder-to-read stylesheets:
 
 ```css
 /* Without nesting: 12 lines, repetitive */
