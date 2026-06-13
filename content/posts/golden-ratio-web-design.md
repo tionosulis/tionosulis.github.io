@@ -57,9 +57,9 @@ Most professional web typography uses more conservative scales:
 | **Golden ratio (φ)** | 1.618 | 16 → 26 → 42 → 68 |
 | **Perfect fourth** | 1.333 | 16 → 21 → 28 → 38 |
 | **Major third** | 1.25 | 16 → 20 → 25 → 31 |
-| **Our blog** | custom | 16 → 22 → 28 → 36 |
+| **My blog** | custom | 16 → 22 → 28 → 36 |
 
-Our blog uses a scale closer to the perfect fourth, which produces headings that feel prominent without overwhelming the content. This isn't a failure of φ — it's a recognition that typographic scales serve readability, not mathematical elegance.
+My blog uses a scale closer to the perfect fourth, which produces headings that feel prominent without overwhelming the content. This isn't a failure of φ — it's a recognition that typographic scales serve readability, not mathematical elegance.
 
 The lesson: **φ works best for spatial relationships (spacing, proportions, dimensions), not for typographic hierarchy.** Reserve φ for layout and elements; let typography follow the more forgiving major-third or perfect-fourth scales.
 
@@ -87,7 +87,7 @@ The theme toggle was then derived from the S box using φ:
 
 `toggle size = S box size / φ = 55 / 1.618 ≈ 34px`
 
-The toggle became a **34×34px** box, with the &#9681; character centered via flexbox. No padding needed — the box is the button.
+The toggle became a **34×34px** box, with the (&#9681;) character centered via flexbox. No padding needed — the box is the button.
 
 ```css
 /* After */
@@ -109,7 +109,7 @@ The 34×34 toggle is actually 4px taller than the old padding-based version (~30
 
 The most impactful φ application has nothing to do with decorative elements. It's the reading width.
 
-Optimal line length for web text is 45-75 characters per line. At a body font size of 16-18px, that translates to roughly 600-700px of content width. Our blog's desktop layout (900px container, 160px sidebar, 2rem gap) gave the content column approximately 708px — above the ideal range.
+Optimal line length for web text is 45-75 characters per line. At a body font size of 16-18px, that translates to roughly 600-700px of content width. My blog's desktop layout (900px container, 160px sidebar, 2rem gap) gave the content column approximately 708px — above the ideal range.
 
 φ provides a natural number for this: **618px** (1000 × 0.618, or 1/φ of 1000). Not coincidentally, 618px at 16-18px font size yields about 65-75 characters per line — right at the upper end of the optimal range.
 

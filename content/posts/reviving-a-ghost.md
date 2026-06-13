@@ -44,7 +44,7 @@ I've seen this movie before. Beloved open-source tool gets acquired, gets rebran
 
 ## The Research
 
-I spent the next few hours digging deeper instead of panicking.
+I spent the next few hours digging deeper.
 
 - **Eleventy's GitHub** (github.com/11ty/eleventy): active. v3.1.6 stable, regular releases, issues triaged, PRs merged. Zach Leatherman is still the lead.
 - **npm downloads**: steady — actually growing.
