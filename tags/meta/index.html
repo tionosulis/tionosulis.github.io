@@ -372,12 +372,16 @@ article img { border: 1px solid var(--border); }
   min-width: 1.5em;
   overflow: hidden;
   white-space: nowrap;
+  align-self: center;
+  display: flex;
+  align-items: center;
   &::before {
-    content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+    content: " · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·";
     font-size: 0.85em;
     color: var(--text-tertiary);
     letter-spacing: 0.15em;
     margin: 0 0.5em;
+    line-height: 1;
   }
 }
 
