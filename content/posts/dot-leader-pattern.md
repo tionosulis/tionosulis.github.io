@@ -1,140 +1,170 @@
 ---
-title: "The Dot Leader: A CSS Technique Borrowed From 17th Century Typesetting"
-description: "How a flexbox span with repeating dots replaces tables, JavaScript, and bloat — and brings a classic typesetting technique to the modern web."
+title: "The Dot Leader: 3 CSS Challenges Before It Felt Right"
+description: "The dot leader looks like the simplest CSS pattern — one span, flex: 1, done. But three subtle challenges pushed it from okay to polished, and taught me what separates good CSS from great CSS."
 date: 2026-06-17
 draft: true
 tags: [css, design, typography, howto]
 ---
 
-Look at the post listing on the homepage. Between each post title and its date, there's a trail of dots — a visual connector that guides the eye from content to metadata. This is a **dot leader**, and it's older than the United States.
+Look at the post listing on this blog. Between each post title and its date, there's a trail of dots — a **dot leader**, connecting content to metadata. It dates back to 17th century printed tables of contents, where typesetters inserted periods between chapter titles and page numbers.
 
-Dot leaders first appeared in printed tables of contents in the 17th century. Typesetters would painstakingly insert periods between chapter titles and page numbers, creating a visual bridge that helped readers navigate books. The technique persisted through typewriters (which had dedicated leader keys) and into early digital typesetting systems.
-
-On this blog, it's implemented with one `<span>` and three lines of CSS. No images, no JavaScript, no tables, no border hacks.
-
-## The Markup
-
-The HTML for each post listing item is an `<a>` with three flex children:
+CSS has supported this pattern natively since 2015, when flexbox became broadly available. One `<span>`, a `::before` pseudo-element with repeating dots, and `flex: 1` to fill the gap. The markup is minimal:
 
 ```html
-<a href="/posts/slug/" class="postlist-item">
-  <span class="postlist-title">Post Title</span>
+<li>
+  <a href="/posts/slug/">The Post Title</a>
   <span class="postlist-dots" aria-hidden="true"></span>
-  <time>June 15, 2026</time>
-</a>
+  <time>13 June 2026</time>
+</li>
 ```
 
-The `aria-hidden="true"` on the dots span tells screen readers to ignore it — the dots are visual decoration, not content. The `<time>` element provides semantic date information for accessible tooling.
+But getting from that bare implementation to something that feels right on every viewport, at every font size, with every title length — that's where the real work lives. Here are the three challenges I hit and how each one pushed the design forward.
 
-## The CSS
+## Challenge 1: The Overflow
 
-The magic is in the `postlist-dots` span:
+The first version was exactly what you'd expect:
 
 ```css
 .postlist-item {
   display: flex;
-  align-items: baseline;
-  gap: 0;
-}
-
-.postlist-title {
-  flex: 0 1 auto;
 }
 
 .postlist-dots {
   flex: 1;
-  min-width: 2ch;
   overflow: hidden;
-  white-space: nowrap;
 }
 
 .postlist-dots::before {
-  content: " . . . . . . . . . . . . . . . . . . . . . . . . ";
-  letter-spacing: 0.15em;
-}
-
-.postlist-time {
-  flex: 0 1 auto;
-  white-space: nowrap;
+  content: " · · · · · · · · · · · · · · · · ";
 }
 ```
 
-Here's how it works:
+The string of middle dots is longer than any possible gap between title and date. On wide screens, the dots span expands to fill available space and the overflow is invisible. On narrow screens, the dots simply clip at the edge. Title and date are always intact.
 
-1. **Flex container** — `.postlist-item` is `display: flex` with `align-items: baseline` so the title, dots, and date all sit on the same text baseline.
+That works. But it has a problem: the dots sit on the text baseline, right next to the title text.
 
-2. **Title and date shrink-wrap** — Both have `flex: 0 1 auto`, meaning they take their natural width and never grow. The date also has `white-space: nowrap` to prevent line breaks in the middle of "June 15, 2026."
+## Challenge 2: The Baseline
 
-3. **Dots span fills the gap** — `flex: 1` means the dots span takes all remaining space between title and date. The `::before` pseudo-element fills it with a repeating sequence of dot-space-dot-space.
+When you use a period (`.`) as the dot character, baseline alignment looks fine — the period's dot sits on the baseline just like text. But the middle dot (`·`, U+00B7) is a different glyph. It's designed to sit at x-height center, not on the baseline.
 
-4. **Overflow hidden** — On narrow viewports where the gap shrinks, the dots simply disappear into the overflow. The title and date remain fully visible with no break.
+With `align-items: baseline` on the flex container, the middle dot floats noticeably above the text. The title and date sit on one visual line, and the dots drift above them. It's subtle, but once you see it, you can't unsee it.
 
-![Dot leader flex layout showing the three flex children: title, dots span (flex: 1), and date](/assets/img/dot-leader-flex.svg)
-
-## Why Not Alternatives
-
-There are several other ways to create dot leaders. Here's why they're worse:
-
-### border-bottom
-
-```css
-.postlist-item {
-  border-bottom: 1px dotted;
-}
-```
-
-This puts dots along the entire bottom edge of the container, not between the title and date. At different font sizes or line heights, the alignment breaks. It also can't be made to run horizontally across the gap.
-
-### background-image
+The fix is `align-self: center` on the dots span, which overrides the parent's `align-items: baseline`. The dots now center vertically within the flex container:
 
 ```css
 .postlist-dots {
-  background: repeating-linear-gradient(
-    to right, currentColor 0, currentColor 1px,
-    transparent 1px, transparent 4px
-  );
+  flex: 1;
+  min-width: 4em;
+  overflow: hidden;
+  white-space: nowrap;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: " · · · · · · · · · · · · · · · · ";
+    position: relative;
+    top: 0.05em;
+  }
 }
 ```
 
-Works visually, but introduces a dependency on an image or gradient calculation. The `::before` approach uses a built-in character that naturally matches the font's dot glyph, ensuring consistent appearance across browsers.
+That `top: 0.05em` is a micro-adjustment. Even centered, the middle dot sits a fraction of a pixel low relative to the text's optical center. The nudge is invisible alone, but wrong without it. This is the kind of detail that separates a premium reading experience from a merely functional one.
 
-### JavaScript calculation
+## Challenge 3: The Squeeze
 
-```javascript
-let gap = container.offsetWidth - title.offsetWidth - date.offsetWidth;
-// generate N dots to fill the gap
+With dots and date handling overflow gracefully, I thought it was done. Then I tested with a long title:
+
+```
+"Service Worker Ate My SVG: A Debugging Story That Spans 3 Continents"
 ```
 
-Runtime calculation, forced reflow, extra script. Totally unnecessary when CSS handles it natively.
+The title pushed the dots span past the viewport edge, and the date wrapped awkwardly onto a new line. The dot leader wasn't leading anything — it was hiding off-screen.
 
-### HTML table
+The fix was twofold. First, constrain the title:
 
-Tables from the 1990s web used `<td>` with `text-align: justify` and a repeating dot character. It was functional but semantically wrong — tables for layout violate accessibility guidelines and add markup bloat.
+```css
+.postlist-title {
+  max-width: 65%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+```
 
-## Behavioral Details
+The title now stops growing at 65% of the container width. Anything beyond that gets an ellipsis. This guarantees the dots and date always have room.
 
-Several edge cases are handled implicitly by the CSS:
+Second, give the dots span a minimum width:
 
-- **Overflow on mobile** — On phones, the dots disappear into `overflow: hidden`. The title and date are always fully visible.
-- **Long titles** — If the title is very long, `flex-shrink: 1` on the title and date allows them to shrink. The dots span maintains its `flex: 1` share.
-- **Empty gap** — If the title and date touch (no space between them), the dots span has zero width and renders nothing. No broken layout.
-- **RTL languages** — Flexbox respects `dir="rtl"`, so the dot leader reverses correctly in right-to-left scripts.
+```css
+.postlist-dots {
+  min-width: 4em;
+}
+```
 
-## Accessibility Considerations
+Even on the narrowest viewports where the dots are clipped to near-zero, at least two dots render — preserving the visual cue that connects title to date.
 
-- `aria-hidden="true"` on the dots span — screen readers skip the punctuation noise
-- `<time>` element provides machine-readable dates
-- The entire row is a single `<a>` tag — keyboard navigation works naturally
-- `min-width: 2ch` ensures at least two dots render even on narrow gaps, preserving the visual cue for sighted users
+![Dot leader flex layout showing the three children with constraint labels: title (max-width: 65%), dots (flex: 1, min-width: 4em), and date (flex-shrink: 0)](/assets/img/dot-leader-flex.svg)
 
-## What This Taught Me
+## What the Final Version Looks Like
 
-The dot leader is a perfect example of CSS doing heavy lifting with minimal code. It's not a new technique — flexbox has supported this pattern since 2015. But it's a technique that's easy to overlook when you're reaching for a library or a script.
+The full CSS for the dot leader sits at about 30 lines, including the pseudo-element content:
 
-Before implementing this, I would have probably reached for JavaScript. "I need to calculate the gap and insert the right number of dots — that's dynamic, it needs JS." But CSS has been capable of this the entire time. The only reason it feels like "dynamic" behavior is that we've been trained to solve spacing problems with scripts.
+```css
+.postlist li {
+  display: flex;
+  align-items: baseline;
+  padding: 0.3rem 0;
+  gap: 0;
+}
 
-The dot leader is now one of my favorite CSS patterns. It's elegant, accessible, and entirely declarative. And it connects this blog to a typesetting tradition that's over 400 years old — all from a single `<span>` with `flex: 1`.
+.postlist a {
+  flex-shrink: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 65%;
+}
 
----
+.postlist-dots {
+  flex: 1;
+  min-width: 4em;
+  overflow: hidden;
+  white-space: nowrap;
+  align-self: center;
+  display: flex;
+  align-items: center;
+}
 
-*Want to see the real implementation? The [homepage template](https://github.com/tionosulis/tionosulis.github.io/blob/main/_includes/partials/postslist.njk) and the [CSS](https://github.com/tionosulis/tionosulis.github.io/blob/main/assets/css/index.css) are both open source.*
+.postlist-dots::before {
+  content: " · · · · · · · · · · · · · · · · ";
+  font-size: 0.85em;
+  color: var(--text-tertiary);
+  letter-spacing: 0.15em;
+  margin: 0 0.5em;
+  line-height: 1;
+  position: relative;
+  top: 0.05em;
+}
+
+.postlist-date {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+```
+
+Each line addresses a specific edge case. None are speculative — every property here exists because a real viewport or a real title length broke the previous version. The `padding: 0.3rem` is derived from the golden ratio hierarchy (discussed in [an earlier post](/posts/golden-ratio-web-design/)), where 0.3 creates a vertical rhythm that scales proportionally with font size.
+
+## The Takeaway
+
+The dot leader looks like a two-line pattern. And at a glance, it is. But the journey from two lines to thirty taught me something about CSS quality: the difference between "works" and "feels right" is almost never a single big change. It's a stack of small ones:
+
+- `align-self: center` over baseline
+- `top: 0.05em` micro-nudge
+- `max-width: 65%` constraint
+- `min-width: 4em` fallback
+- `text-overflow: ellipsis` on the title
+- `line-height: 1` on the pseudo-element to prevent extra vertical space
+- `.85em` font size so the dots recede behind the content
+
+None of these alone justifies a blog post. But together, they turned a functional pattern into something I'm happy to look at — and that I hope readers don't consciously notice. Good CSS, like good typesetting, works best when it's invisible.
