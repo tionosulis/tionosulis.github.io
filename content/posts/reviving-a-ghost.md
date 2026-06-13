@@ -127,7 +127,7 @@ export default async function (eleventyConfig) {
 
 ### Dark Mode Toggle
 
-I wanted dark mode without the flicker. The trick is an inline `<script>` in `<head>` that reads `localStorage` before the first paint:
+I wanted [dark mode](/posts/dark-mode-done-right/) without the flicker. The trick is an inline `<script>` in `<head>` that reads `localStorage` before the first paint:
 
 ```javascript
 var t = localStorage.getItem("theme");
