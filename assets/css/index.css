@@ -322,7 +322,7 @@ article p:has(img) + p em:only-child {
   text-align: center;
   font-size: 0.8rem;
   color: var(--text-tertiary);
-  font-style: italic;
+  font-style: normal;
   margin-top: -0.75rem;
   margin-bottom: 1.5rem;
 }
