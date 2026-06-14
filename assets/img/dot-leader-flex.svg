@@ -36,16 +36,16 @@
   <rect x="30" y="212" width="280" height="160" fill="#fff" stroke="#ef4444" stroke-width="1.5" rx="6"/>
   <text x="170" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#b91c1c">Before — Period on Baseline</text>
 
-  <!-- "Post Title" teks -->
+  <!-- "Post Title" text -->
   <text x="45" y="280" font-family="system-ui,sans-serif" font-size="16" font-weight="500" fill="#1a1a1a">Post Title</text>
 
-  <!-- "13 June" teks -->
+  <!-- "13 June" text -->
   <text x="298" y="280" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#636b78">13 June 2026</text>
 
-  <!-- Garis BASELINE merah tipis saja sebagai referensi utama -->
+  <!-- Baseline reference line -->
   <line x1="38" y1="280" x2="305" y2="280" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
 
-  <!-- Dots (period) duduk DI BASELINE = cy=280 -->
+  <!-- Dots (period) sit ON baseline = cy=280 -->
   <circle cx="128" cy="280" r="2.5" fill="#ef4444"/>
   <circle cx="145" cy="280" r="2.5" fill="#ef4444"/>
   <circle cx="162" cy="280" r="2.5" fill="#ef4444"/>
@@ -53,23 +53,23 @@
   <circle cx="196" cy="280" r="2.5" fill="#ef4444"/>
   <circle cx="213" cy="280" r="2.5" fill="#ef4444"/>
 
-  <!-- Keterangan -->
-  <text x="170" y="308" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#b91c1c">. (period) menempel di baseline</text>
-  <text x="170" y="322" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#b91c1c">terlihat terlalu rendah / turun</text>
+  <!-- Labels -->
+  <text x="170" y="308" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#b91c1c">. (period) sits on baseline</text>
+  <text x="170" y="322" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#b91c1c">visually too low / drops below</text>
   <text x="170" y="356" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#9ca3af">align-items: baseline (default)</text>
 
   <!-- ===================== AFTER ===================== -->
   <rect x="330" y="212" width="280" height="160" fill="#fff" stroke="#22c55e" stroke-width="1.5" rx="6"/>
   <text x="470" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#15803d">After — Middle Dot Centered</text>
 
-  <!-- Teks sama persis, baseline y=280 -->
+  <!-- Same text, baseline y=280 -->
   <text x="345" y="280" font-family="system-ui,sans-serif" font-size="16" font-weight="500" fill="#1a1a1a">Post Title</text>
   <text x="608" y="280" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#636b78">13 June 2026</text>
 
-  <!-- Garis CENTER hijau tipis saja sebagai referensi utama -->
+  <!-- Center reference line (green) -->
   <line x1="338" y1="275" x2="608" y2="275" stroke="#22c55e" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
 
-  <!-- Dots (middle dot) tepat di CENTER = cy=275 -->
+  <!-- Dots (middle dot) at x-height CENTER = cy=275 -->
   <circle cx="428" cy="275" r="2.5" fill="#22c55e"/>
   <circle cx="445" cy="275" r="2.5" fill="#22c55e"/>
   <circle cx="462" cy="275" r="2.5" fill="#22c55e"/>
@@ -77,12 +77,12 @@
   <circle cx="496" cy="275" r="2.5" fill="#22c55e"/>
   <circle cx="513" cy="275" r="2.5" fill="#22c55e"/>
 
-  <!-- Keterangan -->
-  <text x="470" y="308" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#15803d">· (middle dot) di tengah tinggi font</text>
-  <text x="470" y="322" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#15803d">sejajar optik dengan teks</text>
+  <!-- Labels -->
+  <text x="470" y="308" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#15803d">· (middle dot) at x-height center</text>
+  <text x="470" y="322" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#15803d">optically aligned with text</text>
   <text x="470" y="356" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#9ca3af">align-self: center + top: 0.05em</text>
 
   <!-- ===================== CAPTION BAR ===================== -->
   <rect x="20" y="438" width="600" height="18" fill="#e0f2fe" stroke="#2563eb" stroke-width="1" rx="6"/>
-  <text x="320" y="450" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#2563eb">align-self: center overrides align-items: baseline — dot duduk tepat di tengah tinggi huruf</text>
+  <text x="320" y="450" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#2563eb">align-self: center overrides align-items: baseline — dot sits precisely at x-height center</text>
 </svg>
