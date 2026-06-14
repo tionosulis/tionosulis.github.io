@@ -9,6 +9,10 @@ tags:
   - howto
 ---
 
+![Supporting graphic for the Dark Mode Done Right guide, featuring three main pillars: Zero Flicker, CSS Architecture, and The Devil in the Details](/assets/img/dark-mode.jpeg)
+
+*Illustration generated using Microsoft Designer (AI).*
+
 Dark mode is table stakes for modern websites. Yet most implementations have a fatal flaw: the flash of wrong theme — a brief burst of blinding white before JavaScript kicks in and sets things right. It's the kind of bug that users feel even if they can't name it.
 
 There's also a spectrum of quality. Some sites manage persistence (remembering your choice). Others respect system preference. Few do all three: instant correct render, persistence, and system-aware defaults. Fewer still handle the tiny UX details that separate good from great.
