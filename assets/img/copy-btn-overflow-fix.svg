@@ -38,7 +38,7 @@
 
   <!-- Copy button at wrong position (shifted right/middle) -->
   <rect x="140" y="72" width="34" height="34" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" rx="6"/>
-  <text x="157" y="93" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#b45309">✂</text>
+  <g transform="translate(149,81) scale(0.666)"><rect x="9" y="9" width="13" height="13" rx="2" fill="none" stroke="#b45309" stroke-width="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="#b45309" stroke-width="2"/></g>
 
   <!-- Label showing it's in wrong position -->
   <line x1="174" y1="89" x2="220" y2="110" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2"/>
@@ -72,7 +72,7 @@
 
   <!-- Copy button at CORRECT position (top-right corner) -->
   <rect x="568" y="72" width="34" height="34" fill="#bbf7d0" stroke="#22c55e" stroke-width="1.5" rx="6"/>
-  <text x="585" y="93" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#15803d">✂</text>
+  <g transform="translate(577,81) scale(0.666)"><rect x="9" y="9" width="13" height="13" rx="2" fill="none" stroke="#15803d" stroke-width="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="#15803d" stroke-width="2"/></g>
 
   <!-- Label showing correct position -->
   <line x1="568" y1="72" x2="540" y2="110" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,2"/>
