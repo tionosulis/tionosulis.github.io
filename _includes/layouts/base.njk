@@ -19,7 +19,9 @@
   <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
   <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
   <meta property="og:type" content="{% if page.url != '/' %}article{% else %}website{% endif %}">
-  <meta name="twitter:card" content="summary">
+  {% set ogImage = image or metadata.image %}
+  <meta property="og:image" content="{{ metadata.url }}{{ ogImage }}">
+  <meta name="twitter:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}">
   {% if ignore %}<meta name="robots" content="noindex">{% endif %}
   <script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script>
   <style>{% include "assets/css/index.css" %}</style>
