@@ -317,7 +317,15 @@ article { max-width: 618px; }
 
 article img { border: 1px solid var(--border); }
 
-/* Post header */
+article p:has(img) + p em:only-child {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin-top: -0.75rem;
+  margin-bottom: 1.5rem;
+}
 .post-header { margin-bottom: 2rem; }
 
 .post-header h1 { margin-bottom: 0.5rem; }
