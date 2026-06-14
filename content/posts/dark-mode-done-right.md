@@ -11,7 +11,7 @@ tags:
 
 ![Three pillars of dark mode done right: Zero Flicker, CSS Architecture, and The Devil in the Details](/assets/img/dark-mode.svg)
 
-*Illustration generated using Microsoft Designer (AI).*
+*The three pillars of a bulletproof dark mode system: zero-flicker rendering, token-based CSS architecture, and edge-case polish.*
 
 Dark mode is table stakes for modern websites. Yet most implementations have a fatal flaw: the flash of wrong theme — a brief burst of blinding white before JavaScript kicks in and sets things right. It's the kind of bug that users feel even if they can't name it.
 
