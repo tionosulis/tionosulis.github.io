@@ -71,7 +71,7 @@
   <text x="260" y="368" font-family="system-ui,sans-serif" font-size="16" fill="#636b78" text-anchor="middle">&#x00F7; &#x03C6; = 34px</text>
 
   <rect x="340" y="345" width="34" height="34" fill="none" stroke="#22c55e" stroke-width="2" rx="4"/>
-  <text x="357" y="368" font-family="system-ui,sans-serif" font-size="16" fill="#22c55e" text-anchor="middle">S</text>
+  <text x="357" y="368" font-family="system-ui,sans-serif" font-size="16" fill="#22c55e" text-anchor="middle">&#9681;</text>
   <text x="357" y="393" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#22c55e" text-anchor="middle">34px</text>
 
   <text x="440" y="362" font-family="system-ui,sans-serif" font-size="10" fill="#636b78" text-anchor="middle">55 / 1.618 = 33.98</text>
