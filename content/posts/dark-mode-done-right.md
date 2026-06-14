@@ -9,7 +9,7 @@ tags:
   - howto
 ---
 
-![Supporting graphic for the Dark Mode Done Right guide, featuring three main pillars: Zero Flicker, CSS Architecture, and The Devil in the Details](/assets/img/dark-mode.jpeg)
+{% image "/assets/img/dark-mode.svg", "Three pillars of dark mode done right: Zero Flicker, CSS Architecture, and The Devil in the Details" %}
 
 *Illustration generated using Microsoft Designer (AI).*
 
