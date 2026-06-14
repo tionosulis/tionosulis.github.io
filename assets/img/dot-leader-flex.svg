@@ -30,33 +30,51 @@
   <rect x="30" y="215" width="280" height="140" fill="#fff" stroke="#ef4444" stroke-width="1.5" rx="6"/>
   <text x="170" y="235" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#b91c1c">Before — Period on Baseline</text>
 
-  <!-- Title, dots, date all on same baseline -->
-  <text x="45" y="300" font-family="system-ui,sans-serif" font-size="15" font-weight="500" fill="#1a1a1a">Post Title</text>
-  <text x="125" y="300" font-family="system-ui,sans-serif" font-size="15" fill="#636b78">. . . . . .</text>
-  <text x="295" y="300" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" fill="#636b78">13 June 2026</text>
+  <text x="45" y="293" font-family="system-ui,sans-serif" font-size="13" font-weight="500" fill="#1a1a1a">Post Title</text>
+  <text x="295" y="293" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#636b78">13 June 2026</text>
 
   <!-- Baseline indicator line -->
-  <line x1="40" y1="296" x2="230" y2="296" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <text x="235" y="299" font-family="system-ui,sans-serif" font-size="8" fill="#ef4444">baseline</text>
+  <line x1="40" y1="290" x2="305" y2="290" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,2"/>
 
-  <text x="170" y="340" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#b91c1c">. (period) sits on baseline — all text at same y</text>
+  <!-- Period dots as circles on the baseline -->
+  <circle cx="130" cy="290" r="3" fill="#ef4444"/>
+  <circle cx="150" cy="290" r="3" fill="#ef4444"/>
+  <circle cx="170" cy="290" r="3" fill="#ef4444"/>
+  <circle cx="190" cy="290" r="3" fill="#ef4444"/>
+  <circle cx="210" cy="290" r="3" fill="#ef4444"/>
+  <circle cx="230" cy="290" r="3" fill="#ef4444"/>
+
+  <text x="170" y="342" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#b91c1c">. (period) — red circles on the baseline</text>
 
   <!-- ===================== AFTER (middle dot centered) ===================== -->
   <rect x="330" y="215" width="280" height="140" fill="#fff" stroke="#22c55e" stroke-width="1.5" rx="6"/>
   <text x="470" y="235" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#15803d">After — Middle Dot Centered</text>
 
-  <!-- Title on baseline, dots centered above, date on baseline -->
-  <text x="345" y="300" font-family="system-ui,sans-serif" font-size="15" font-weight="500" fill="#1a1a1a">Post Title</text>
-  <text x="425" y="293" font-family="system-ui,sans-serif" font-size="15" fill="#636b78">· · · · · ·</text>
-  <text x="595" y="300" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" fill="#636b78">13 June 2026</text>
+  <text x="345" y="293" font-family="system-ui,sans-serif" font-size="13" font-weight="500" fill="#1a1a1a">Post Title</text>
+  <text x="595" y="293" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#636b78">13 June 2026</text>
 
-  <!-- Center indicator line -->
-  <line x1="340" y1="288" x2="530" y2="288" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <text x="535" y="291" font-family="system-ui,sans-serif" font-size="8" fill="#22c55e">x-height center</text>
+  <!-- Baseline line (reference) -->
+  <line x1="340" y1="290" x2="605" y2="290" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4,2"/>
 
-  <text x="470" y="340" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#15803d">· (middle dot) centered — align-self: center + top: 0.05em</text>
+  <!-- X-height center line -->
+  <line x1="340" y1="278" x2="605" y2="278" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+  <!-- Vertical connector showing the shift -->
+  <line x1="270" y1="290" x2="270" y2="278" stroke="#22c55e" stroke-width="1"/>
+  <polygon points="274,284 270,276 266,284" fill="#22c55e"/>
+  <text x="262" y="272" text-anchor="end" font-family="system-ui,sans-serif" font-size="8" fill="#22c55e">centered</text>
+
+  <!-- Middle dots as circles at x-height center -->
+  <circle cx="430" cy="278" r="3" fill="#22c55e"/>
+  <circle cx="450" cy="278" r="3" fill="#22c55e"/>
+  <circle cx="470" cy="278" r="3" fill="#22c55e"/>
+  <circle cx="490" cy="278" r="3" fill="#22c55e"/>
+  <circle cx="510" cy="278" r="3" fill="#22c55e"/>
+  <circle cx="530" cy="278" r="3" fill="#22c55e"/>
+
+  <text x="470" y="342" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#15803d">· (middle dot) — green circles above baseline</text>
 
   <!-- ===================== CAPTION ===================== -->
   <rect x="20" y="400" width="600" height="28" fill="#e0f2fe" stroke="#2563eb" stroke-width="1" rx="6"/>
-  <text x="320" y="418" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#2563eb">align-self: center overrides the parent's align-items: baseline so the middle dot stays optically centered</text>
+  <text x="320" y="418" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#2563eb">align-self: center moves the dots from baseline to x-height center, fixing the optical alignment</text>
 </svg>
