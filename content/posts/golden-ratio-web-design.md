@@ -97,7 +97,7 @@ The toggle became a **34×34px** box, with the (&#9681;) character centered via 
                 justify-content: center; padding: 0; }
 ```
 
-The relationship is visible: the toggle is exactly the S box shrunk by φ. They're no longer two unrelated boxes — they're a matched set with a proportional connection.
+The relationship is visible: the toggle is exactly the S box shrunk by φ. They're no longer two unrelated boxes — they're a matched set with a proportional connection. I explore the monogram's design system — favicon generation, SVG optimization, and maskable icons — in [a dedicated post](/posts/monogram-s-55x55/).
 
 ![Before and after comparison of the S monogram and theme toggle sizes, showing the φ relationship](/assets/img/golden-ratio-boxes.svg)
 

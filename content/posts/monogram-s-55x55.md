@@ -1,8 +1,8 @@
 ---
 title: "The Monogram S: 55×55 Pixels and the Design System Behind It"
 description: "How a single letter became a favicon, a PWA icon, a dark-mode-aware SVG, and the anchor of a golden-ratio design system — all from 55×55 pixels."
-date: 2026-06-15
-draft: true
+date: 2026-06-14
+draft: false
 tags: [meta, design, svg, favicon, pwa, golden-ratio]
 ---
 
@@ -20,7 +20,7 @@ A letter in a box. Simple enough to render at 16×16 pixels, scalable enough to 
 
 ## The Fibonacci Decision: 55×55
 
-Why 55 pixels? Because it's a Fibonacci number — part of the same mathematical sequence that converges on the golden ratio (φ = 1.618).
+Why 55 pixels? Because it's a Fibonacci number — part of the same mathematical sequence that converges on the [golden ratio (φ = 1.618)](/posts/golden-ratio-web-design/).
 
 If you follow the Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, **55**, 89, 144 — the number 55 sits between 34 and 89. Those two neighbors gave me:
 
@@ -101,7 +101,7 @@ The S box doesn't exist in isolation. Its size determines the theme toggle's siz
 .copy-btn { width: 34px; height: 34px; }            /* match toggle */
 ```
 
-Three elements, all linked by a single division: 55 ÷ 1.618 ≈ 34. The S box anchors the system; everything else derives from it.
+Three elements, all linked by a single division: 55 ÷ 1.618 ≈ 34. The S box anchors the system; everything else derives from it. I covered the full golden ratio system — including content width, spacing, and the myth-busting — in [an earlier post](/posts/golden-ratio-web-design/).
 
 ![S monogram sizes from 16x16 to 512x512, with the 55x55 Fibonacci box highlighted and the golden ratio connection to the 34px toggle](/assets/img/monogram-s-sizes.svg)
 

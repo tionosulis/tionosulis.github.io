@@ -136,7 +136,7 @@ function updateTooltip() {
 
 This runs on page load (when the theme is already set by the inline script) and on every toggle click. It's two lines of JavaScript. But it turns an ambiguous icon into a clear affordance.
 
-On this blog, the toggle sits in the sidebar, sized precisely to the golden ratio (34×34 pixels, related to the 55×55 S monogram by φ = 1.618). It's a small detail, but the ratio between the logo and the toggle creates a subtle visual harmony that the eye registers even if the brain doesn't.
+On this blog, the toggle sits in the sidebar, sized precisely to the golden ratio (34×34 pixels, related to the [55×55 S monogram](/posts/monogram-s-55x55/) by φ = 1.618). It's a small detail, but the ratio between the logo and the toggle creates a subtle visual harmony that the eye registers even if the brain doesn't.
 
 ## Syntax Highlighting in Both Themes
 
