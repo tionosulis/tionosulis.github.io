@@ -3,7 +3,7 @@ title: "Shiki Syntax Highlighting Doesn't Know Nunjucks — And Why That's Fine"
 description: "The .njk language shiki error taught me a lesson about code block language tags in Eleventy — and how a simple fallback keeps things moving."
 date: 2026-06-19
 draft: true
-tags: [eleventy, svg, troubleshooting, meta]
+tags: [eleventy, troubleshooting, meta, highlighting]
 pageHasCode: true
 ---
 
@@ -45,9 +45,9 @@ Shiki allows registering custom languages. I could point it to a Nunjucks TextMa
 
 Possible, but the complexity-to-benefit ratio isn't great for a single blog.
 
-### 2. Use `jinja-html` instead
+### 2. Use `jinja` instead
 
-Nunjucks is heavily inspired by Jinja. The syntax is nearly identical. Unfortunately, `jinja-html` isn't in Shiki's default bundle either — same problem.
+Nunjucks is heavily inspired by Jinja. The syntax is nearly identical. Shiki ships `jinja` out of the box, so no missing-language error — but it highlights for Python Jinja templates, not HTML-with-Nunjucks. The result looks odd: interpolated variables get colored correctly, but surrounding HTML stays plain.
 
 ### 3. Use `html` as the language tag
 
@@ -84,4 +84,4 @@ The ideal solution — a perfectly highlighted Nunjucks code block with custom l
 
 This isn't laziness. It's prioritization. The code blocks are readable, the highlighting works for 90% of the syntax, and I spent zero time maintaining a custom language grammar. That's five minutes I'd rather spend writing actual content.
 
-*The `raw`/`endraw` trick is also how I handle code blocks that contain Nunjucks syntax — a pattern I've used in every post with template examples since discovering it.*
+*Every post with template examples on this blog uses this same pattern.*
