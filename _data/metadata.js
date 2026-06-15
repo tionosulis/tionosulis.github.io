@@ -4,6 +4,9 @@ export default {
   language: "en",
   description: "Sulistiono's thoughts",
   image: "/assets/img/favicon/android-chrome-192x192.png",
+  verification: {
+    google: "nGUHc-P1KrLWgaQSmLNdIFM-c0dIvVcOFCXaJGU5-K0",
+  },
   author: {
     name: "Sulistiono",
     email: "contact.sulistiono@gmail.com",

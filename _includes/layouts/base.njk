@@ -22,6 +22,7 @@
   {% set ogImage = image or metadata.image %}
   <meta property="og:image" content="{{ metadata.url }}{{ ogImage }}">
   <meta name="twitter:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}">
+  {% if metadata.verification.google %}<meta name="google-site-verification" content="{{ metadata.verification.google }}">{% endif %}
   {% if ignore %}<meta name="robots" content="noindex">{% endif %}
   <script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script>
   <style>{% include "assets/css/index.css" %}</style>
