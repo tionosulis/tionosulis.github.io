@@ -1,8 +1,8 @@
 ---
 title: "DIY Draft System for Eleventy v3"
 description: When your static site generator doesn't support drafts, build your own with frontmatter, computed data, and a dash of Eleventy's collection API.
-date: 2026-06-12
-draft: true
+date: 2026-06-15
+draft: false
 tags: [eleventy, meta, tutorial]
 pageHasCode: true
 ---
