@@ -75,8 +75,6 @@ node -e "require('sharp')('assets/img/dark-mode.svg').resize(1200,630).png().toF
 
 The output is a 141KB PNG file. Compare that to the 21KB SVG source — the rasterized version is about 7x larger, but still tiny by image standards. And for a hero image that only appears in social media previews, the file size is irrelevant.
 
-For readers who use [Big Pickle](/drafts/big-pickle-opencode-zen/) in their workflow, I could also run this as an OpenCode task: describe the SVG file, and Big Pickle handles the sharp conversion automatically.
-
 ### Step 2: Add a Default `og:image` to Site Metadata
 
 I added an `image` field to my site's metadata file:
