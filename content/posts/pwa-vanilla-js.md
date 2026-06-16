@@ -4,7 +4,10 @@ description: "Building a production PWA without frameworks, libraries, or build 
 date: 2026-06-16
 draft: false
 tags: [pwa, javascript, performance, service-worker]
+image: /assets/img/og/pwa-vanilla-js.png
 ---
+
+![Workbox vs Vanilla JS Service Worker size comparison: ~50KB vs ~1KB](/assets/img/workbox-vs-vanilla-size.svg)
 
 A Progressive Web App needs three things: HTTPS, a manifest, and a service worker. The first two are straightforward. The service worker — that's where opinions diverge.
 
@@ -162,13 +165,16 @@ The minified service worker is 1,024 bytes — roughly **1/50th** of Workbox's m
 
 | Metric | Workbox | Vanilla |
 |---|---|---|
-| Bundle size | ~50KB | ~1KB |
-| Parse time | ~5ms | ~0.1ms |
+| Bundle size | ~50KB [^1] | ~1KB |
+| Parse time | ~5ms [^2] | ~0.1ms |
 | Strategies | 10+ | 3 |
 | Lines of code | ~1000 | ~50 |
 | Learning curve | High | Low |
 
 For a complex app with dynamic routes, Workbox's routing and precaching abstractions are invaluable. For a static blog with three asset types, the overhead isn't justified.
+
+[^1]: Minified (uncompressed) bundle. Workbox is ~50KB minified, ~17KB gzipped.
+[^2]: Parse time is highly device-dependent. A mid-range Android device can be 3–5x slower than a MacBook.
 
 ## The Registration Pattern
 

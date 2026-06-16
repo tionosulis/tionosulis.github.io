@@ -5,6 +5,7 @@ import pluginNavigation from "@11ty/eleventy-navigation";
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import markdownItToc from "markdown-it-toc-done-right";
+import markdownItFootnote from "markdown-it-footnote";
 import shiki from "@shikijs/markdown-it";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { DateTime } from "luxon";
@@ -68,6 +69,8 @@ export default async function (eleventyConfig) {
     containerClass: "toc",
     listType: "ul",
   });
+
+  md.use(markdownItFootnote);
 
   md.use(await shiki({
     themes: {
