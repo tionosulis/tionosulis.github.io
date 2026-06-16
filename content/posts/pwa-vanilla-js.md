@@ -2,7 +2,7 @@
 title: "PWA with Vanilla JS: Why I Ditched Workbox for a 1KB Service Worker"
 description: "Building a production PWA without frameworks, libraries, or build tools — and why a vanilla service worker taught me more about caching than Workbox ever did."
 date: 2026-06-16
-draft: true
+draft: false
 tags: [pwa, javascript, performance, service-worker]
 ---
 
