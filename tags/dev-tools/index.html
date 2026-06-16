@@ -351,6 +351,24 @@ article p:has(img) + p em:only-child {
   &:hover { color: var(--accent); background: var(--selection); }
 }
 
+/* Footnotes */
+.footnotes {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+.footnote-ref {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+.footnote-backref {
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+
 /* Post list */
 .postlist {
   list-style: none;
