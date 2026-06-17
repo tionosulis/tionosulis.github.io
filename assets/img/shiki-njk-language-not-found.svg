@@ -1,20 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F1824"/>
-      <stop offset="100%" stop-color="#111D2E"/>
+      <stop offset="0%" style="stop-color:#0F1824"/>
+      <stop offset="100%" style="stop-color:#111D2E"/>
     </linearGradient>
     <linearGradient id="leftPanel" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2A1515"/>
-      <stop offset="100%" stop-color="#1A0D0D"/>
+      <stop offset="0%" style="stop-color:#1A0D0D"/>
+      <stop offset="100%" style="stop-color:#110808"/>
     </linearGradient>
     <linearGradient id="rightPanel" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0E2A1A"/>
-      <stop offset="100%" stop-color="#082014"/>
+      <stop offset="0%" style="stop-color:#071A12"/>
+      <stop offset="100%" style="stop-color:#050F0C"/>
     </linearGradient>
+
+
+    <!-- Grid -->
     <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#131F35" stroke-width="0.6"/>
     </pattern>
+
+
+    <!-- Glow filters -->
     <filter id="redGlow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="10" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -34,134 +40,262 @@
       <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.18"/>
     </filter>
   </defs>
+
+
+  <!-- Background -->
   <rect width="1200" height="675" fill="url(#bg)"/>
   <rect width="1200" height="675" fill="url(#grid)"/>
+
+
+  <!-- Ambient glow orbs -->
   <ellipse cx="280" cy="338" rx="320" ry="260" fill="#4A0A0A" opacity="0.12"/>
   <ellipse cx="920" cy="338" rx="300" ry="240" fill="#0A4A30" opacity="0.14"/>
+
+
+  <!-- Outer frame — lifts image on light mode -->
   <rect x="1" y="1" width="1198" height="673" rx="10" ry="10"
         fill="none" stroke="#2A3F62" stroke-width="2" opacity="0.7"
         filter="url(#outerLift)"/>
+  <!-- Corner accents -->
   <path d="M 1 18 L 1 1 L 18 1" fill="none" stroke="#C0392B" stroke-width="2" opacity="0.6"/>
   <path d="M 1182 1 L 1199 1 L 1199 18" fill="none" stroke="#10D9A8" stroke-width="2" opacity="0.6"/>
   <path d="M 1 657 L 1 674 L 18 674" fill="none" stroke="#C0392B" stroke-width="2" opacity="0.5"/>
   <path d="M 1182 674 L 1199 674 L 1199 657" fill="none" stroke="#10D9A8" stroke-width="2" opacity="0.5"/>
+
+
+  <!-- Top accent line — split color -->
   <rect x="0" y="0" width="594" height="3" fill="#C0392B" opacity="0.7"/>
   <rect x="606" y="0" width="594" height="3" fill="#10D9A8" opacity="0.7"/>
   <rect x="594" y="0" width="12" height="3" fill="#2A3A50" opacity="0.5"/>
+
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- LEFT PANEL — ERROR STATE           -->
+  <!-- ═══════════════════════════════════ -->
   <rect x="60" y="72" width="500" height="531" rx="12"
-        fill="url(#leftPanel)" stroke="#6B3030" stroke-width="1.5"
+        fill="url(#leftPanel)" stroke="#4A1A1A" stroke-width="1.5"
         filter="url(#softShadow)"/>
-  <rect x="60" y="72" width="500" height="36" rx="12" fill="#201010"/>
-  <rect x="60" y="90" width="500" height="18" fill="#201010"/>
+
+
+  <!-- Terminal bar -->
+  <rect x="60" y="72" width="500" height="36" rx="12" fill="#150A0A"/>
+  <rect x="60" y="90" width="500" height="18" fill="#150A0A"/>
+  <!-- Traffic lights -->
   <circle cx="92" cy="90" r="6" fill="#FF5F57"/>
   <circle cx="114" cy="90" r="6" fill="#FEBC2E"/>
   <circle cx="136" cy="90" r="6" fill="#3A3A3A"/>
-  <text x="310" y="95" font-family="Courier New, Courier, monospace" font-size="12"
-        fill="#A06060" text-anchor="middle">eleventy build &#x2014; error</text>
-  <text x="310" y="142" font-family="Courier New, Courier, monospace"
+  <!-- Terminal title -->
+  <text x="310" y="95" font-family="'Courier New', Courier, monospace" font-size="12"
+        fill="#D08080" text-anchor="middle">eleventy build — error</text>
+
+
+  <!-- STATE label -->
+  <text x="310" y="142" font-family="'Courier New', Courier, monospace"
         font-size="13" font-weight="bold" fill="#C0392B"
         text-anchor="middle" letter-spacing="4">BEFORE</text>
-  <rect x="88" y="158" width="444" height="72" rx="6" fill="#181010" stroke="#3A1515" stroke-width="1"/>
-  <text x="108" y="181" font-family="Courier New, Courier, monospace" font-size="15" fill="#999">```</text>
-  <text x="145" y="181" font-family="Courier New, Courier, monospace" font-size="15" fill="#E06C75" font-weight="bold">njk</text>
-  <text x="108" y="204" font-family="Courier New, Courier, monospace" font-size="13" fill="#8A9AB0">{% set ogImage = image %}</text>
-  <text x="108" y="222" font-family="Courier New, Courier, monospace" font-size="15" fill="#999">```</text>
-  <rect x="88" y="248" width="444" height="130" rx="6" fill="#221010" stroke="#6B1C1C" stroke-width="1.5"/>
+
+
+  <!-- Code block: the failing snippet -->
+  <rect x="88" y="158" width="444" height="72" rx="6" fill="#0D0606" stroke="#3A1515" stroke-width="1"/>
+  <!-- Syntax: backtick fence with njk -->
+  <text x="108" y="181" font-family="'Courier New', Courier, monospace" font-size="15" fill="#888">```</text>
+  <text x="145" y="181" font-family="'Courier New', Courier, monospace" font-size="15" fill="#E06C75" font-weight="bold">njk</text>
+  <text x="108" y="204" font-family="'Courier New', Courier, monospace" font-size="13" fill="#A0B0C0">{% set ogImage = image %}</text>
+  <text x="108" y="222" font-family="'Courier New', Courier, monospace" font-size="15" fill="#888">```</text>
+
+
+  <!-- Error output block — the hero element -->
+  <rect x="88" y="248" width="444" height="130" rx="6" fill="#1A0606" stroke="#6B1C1C" stroke-width="1.5"/>
+
+
+  <!-- Red left border accent -->
   <rect x="88" y="248" width="4" height="130" rx="2" fill="#C0392B" opacity="0.9"/>
-  <text x="112" y="280" font-family="Courier New, Courier, monospace" font-size="14" fill="#E74C3C">&#x2716;</text>
-  <text x="132" y="280" font-family="Courier New, Courier, monospace"
+
+
+  <!-- Error icon -->
+  <text x="112" y="280" font-family="'Courier New', Courier, monospace" font-size="14" fill="#E74C3C">✖</text>
+
+
+  <!-- Error text — big and readable -->
+  <text x="132" y="280" font-family="'Courier New', Courier, monospace"
         font-size="14" fill="#E74C3C" font-weight="bold">[11ty] ShikiError:</text>
-  <text x="108" y="308" font-family="Courier New, Courier, monospace"
-        font-size="20" fill="#FF9090" font-weight="bold"
+
+
+  <text x="108" y="308" font-family="'Courier New', Courier, monospace"
+        font-size="20" fill="#FF6B6B" font-weight="bold"
         filter="url(#redGlow)">Language `njk` not found</text>
-  <text x="108" y="338" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#D08080">you may need to load it first</text>
-  <text x="108" y="364" font-family="Courier New, Courier, monospace"
-        font-size="12" fill="#C07070">&#x2192; syntax highlighting failed</text>
-  <text x="310" y="418" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#D08080" text-anchor="middle">Nunjucks (.njk) is not a</text>
-  <text x="310" y="438" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#D08080" text-anchor="middle">bundled Shiki language</text>
-  <rect x="138" y="462" width="100" height="34" rx="6" fill="#2A1515" stroke="#5A1A1A" stroke-width="1.5"/>
-  <text x="188" y="484" font-family="Courier New, Courier, monospace"
+
+
+  <text x="108" y="338" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#E08080">you may need to load it first</text>
+
+
+  <text x="108" y="364" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#C07070">→ syntax highlighting failed</text>
+
+
+  <!-- What this means -->
+  <text x="310" y="418" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#E08080" text-anchor="middle">Nunjucks (.njk) is not a</text>
+  <text x="310" y="438" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#E08080" text-anchor="middle">bundled Shiki language</text>
+
+
+  <!-- Tag pills showing what failed -->
+  <rect x="138" y="462" width="100" height="34" rx="6" fill="#1A0A0A" stroke="#5A1A1A" stroke-width="1.5"/>
+  <text x="188" y="484" font-family="'Courier New', Courier, monospace"
         font-size="13" fill="#C0392B" text-anchor="middle">```njk</text>
-  <rect x="252" y="462" width="120" height="34" rx="6" fill="#2A1515" stroke="#5A1A1A" stroke-width="1.5"/>
-  <text x="312" y="484" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#D08080" text-anchor="middle">not found</text>
-  <rect x="386" y="462" width="100" height="34" rx="6" fill="#2A1515" stroke="#5A1A1A" stroke-width="1.5"/>
-  <text x="436" y="484" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#C0392B" text-anchor="middle">&#x2716; build</text>
-  <rect x="88" y="516" width="444" height="66" rx="6" fill="#180E0E" stroke="#3A1515" stroke-width="1"/>
-  <text x="108" y="540" font-family="Courier New, Courier, monospace"
+
+
+  <rect x="252" y="462" width="120" height="34" rx="6" fill="#1A0A0A" stroke="#5A1A1A" stroke-width="1.5"/>
+  <text x="312" y="484" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#E08080" text-anchor="middle">not found</text>
+
+
+  <rect x="386" y="462" width="100" height="34" rx="6" fill="#1A0A0A" stroke="#5A1A1A" stroke-width="1.5"/>
+  <text x="436" y="484" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#C0392B" text-anchor="middle">✖ build</text>
+
+
+  <!-- Bottom status -->
+  <rect x="88" y="516" width="444" height="66" rx="6" fill="#100808" stroke="#3A1515" stroke-width="1"/>
+  <text x="108" y="540" font-family="'Courier New', Courier, monospace"
         font-size="12" fill="#C07070">$ eleventy --serve</text>
-  <text x="108" y="560" font-family="Courier New, Courier, monospace"
-        font-size="12" fill="#E74C3C">&#x2716; Build failed &#xB7; 1 error</text>
-  <text x="108" y="574" font-family="Courier New, Courier, monospace"
-        font-size="11" fill="#B06060">plain text fallback &#x2014; no colors</text>
+  <text x="108" y="560" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#E74C3C">✖ Build failed · 1 error</text>
+  <text x="108" y="574" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#B06060">plain text fallback — no colors</text>
+
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- ARROW / DIVIDER                     -->
+  <!-- ═══════════════════════════════════ -->
+  <!-- Arrow shaft -->
   <line x1="578" y1="338" x2="622" y2="338" stroke="#2A3A50" stroke-width="2"/>
+  <!-- Arrow head -->
   <polygon points="622,330 638,338 622,346" fill="#3B82F6" opacity="0.7"/>
-  <text x="600" y="324" font-family="Courier New, Courier, monospace"
+  <!-- fix label -->
+  <text x="600" y="324" font-family="'Courier New', Courier, monospace"
         font-size="11" fill="#3B82F6" text-anchor="middle" opacity="0.8">fix</text>
+
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- RIGHT PANEL — RESOLVED STATE        -->
+  <!-- ═══════════════════════════════════ -->
   <rect x="640" y="72" width="500" height="531" rx="12"
-        fill="url(#rightPanel)" stroke="#1A6A3A" stroke-width="1.5"
+        fill="url(#rightPanel)" stroke="#0D4A2A" stroke-width="1.5"
         filter="url(#softShadow)"/>
-  <rect x="640" y="72" width="500" height="36" rx="12" fill="#0A1E14"/>
-  <rect x="640" y="90" width="500" height="18" fill="#0A1E14"/>
+
+
+  <!-- Terminal bar -->
+  <rect x="640" y="72" width="500" height="36" rx="12" fill="#050F0C"/>
+  <rect x="640" y="90" width="500" height="18" fill="#050F0C"/>
+  <!-- Traffic lights -->
   <circle cx="672" cy="90" r="6" fill="#3A3A3A"/>
   <circle cx="694" cy="90" r="6" fill="#3A3A3A"/>
   <circle cx="716" cy="90" r="6" fill="#27C840"/>
-  <text x="890" y="95" font-family="Courier New, Courier, monospace" font-size="12"
-        fill="#4AAA7A" text-anchor="middle">eleventy build &#x2014; ok</text>
-  <text x="890" y="142" font-family="Courier New, Courier, monospace"
+  <!-- Terminal title -->
+  <text x="890" y="95" font-family="'Courier New', Courier, monospace" font-size="12"
+        fill="#3AB87A" text-anchor="middle">eleventy build — ok</text>
+
+
+  <!-- STATE label -->
+  <text x="890" y="142" font-family="'Courier New', Courier, monospace"
         font-size="13" font-weight="bold" fill="#10D9A8"
         text-anchor="middle" letter-spacing="4"
         filter="url(#subtleGlow)">AFTER</text>
-  <rect x="668" y="158" width="444" height="72" rx="6" fill="#081810" stroke="#0D3A20" stroke-width="1"/>
-  <text x="688" y="181" font-family="Courier New, Courier, monospace" font-size="15" fill="#999">```</text>
-  <text x="725" y="181" font-family="Courier New, Courier, monospace" font-size="15" fill="#10D9A8" font-weight="bold">html</text>
-  <text x="688" y="204" font-family="Courier New, Courier, monospace" font-size="13" fill="#7AAA8A">{% set ogImage = image %}</text>
-  <text x="688" y="222" font-family="Courier New, Courier, monospace" font-size="15" fill="#999">```</text>
-  <rect x="668" y="248" width="444" height="130" rx="6" fill="#0A1E14" stroke="#0D4A2A" stroke-width="1.5"/>
+
+
+  <!-- Code block: fixed snippet -->
+  <rect x="668" y="158" width="444" height="72" rx="6" fill="#050F0A" stroke="#0D3A20" stroke-width="1"/>
+  <text x="688" y="181" font-family="'Courier New', Courier, monospace" font-size="15" fill="#888">```</text>
+  <text x="725" y="181" font-family="'Courier New', Courier, monospace" font-size="15" fill="#10D9A8" font-weight="bold">html</text>
+  <text x="688" y="204" font-family="'Courier New', Courier, monospace" font-size="13" fill="#8AB89A">{% set ogImage = image %}</text>
+  <text x="688" y="222" font-family="'Courier New', Courier, monospace" font-size="15" fill="#888">```</text>
+
+
+  <!-- Success output block -->
+  <rect x="668" y="248" width="444" height="130" rx="6" fill="#061410" stroke="#0D4A2A" stroke-width="1.5"/>
+
+
+  <!-- Green left border accent -->
   <rect x="668" y="248" width="4" height="130" rx="2" fill="#10D9A8" opacity="0.8"/>
-  <text x="692" y="280" font-family="Courier New, Courier, monospace" font-size="14" fill="#10D9A8">&#x2714;</text>
-  <text x="712" y="280" font-family="Courier New, Courier, monospace"
+
+
+  <!-- Success icon -->
+  <text x="692" y="280" font-family="'Courier New', Courier, monospace" font-size="14" fill="#10D9A8">✔</text>
+
+
+  <text x="712" y="280" font-family="'Courier New', Courier, monospace"
         font-size="14" fill="#10D9A8" font-weight="bold">[11ty] Build finished:</text>
-  <text x="688" y="308" font-family="Courier New, Courier, monospace"
+
+
+  <text x="688" y="308" font-family="'Courier New', Courier, monospace"
         font-size="20" fill="#10D9A8" font-weight="bold"
         filter="url(#mintGlow)">Highlighting works</text>
-  <text x="688" y="338" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#5AC0A0">html tag &#x2192; 90% syntax coverage</text>
-  <text x="688" y="364" font-family="Courier New, Courier, monospace"
-        font-size="12" fill="#4AAA7A">&#x2192; zero config changes needed</text>
-  <text x="890" y="418" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#5AC0A0" text-anchor="middle">Use html &#x2014; Nunjucks is</text>
-  <text x="890" y="438" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#5AC0A0" text-anchor="middle">mostly HTML anyway</text>
-  <rect x="718" y="462" width="104" height="34" rx="6" fill="#0E2A1A" stroke="#0D4A2A" stroke-width="1.5"/>
-  <text x="770" y="484" font-family="Courier New, Courier, monospace"
+
+
+  <text x="688" y="338" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#4DC896">html tag → 90% syntax coverage</text>
+
+
+  <text x="688" y="364" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#3AB87A">→ zero config changes needed</text>
+
+
+  <!-- What this means -->
+  <text x="890" y="418" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#4DC896" text-anchor="middle">Use html — Nunjucks is</text>
+  <text x="890" y="438" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#4DC896" text-anchor="middle">mostly HTML anyway</text>
+
+
+  <!-- Tag pills showing what works -->
+  <rect x="718" y="462" width="104" height="34" rx="6" fill="#071A12" stroke="#0D4A2A" stroke-width="1.5"/>
+  <text x="770" y="484" font-family="'Courier New', Courier, monospace"
         font-size="13" fill="#10D9A8" text-anchor="middle">```html</text>
-  <rect x="836" y="462" width="120" height="34" rx="6" fill="#0E2A1A" stroke="#0D4A2A" stroke-width="1.5"/>
-  <text x="896" y="484" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#5AC0A0" text-anchor="middle">highlighted</text>
-  <rect x="970" y="462" width="100" height="34" rx="6" fill="#0E2A1A" stroke="#0D4A2A" stroke-width="1.5"/>
-  <text x="1020" y="484" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#10D9A8" text-anchor="middle">&#x2714; build</text>
-  <rect x="668" y="516" width="444" height="66" rx="6" fill="#081810" stroke="#0D3A20" stroke-width="1"/>
-  <text x="688" y="540" font-family="Courier New, Courier, monospace"
-        font-size="12" fill="#4AAA7A">$ eleventy --serve</text>
-  <text x="688" y="560" font-family="Courier New, Courier, monospace"
-        font-size="12" fill="#10D9A8">&#x2714; Wrote 12 files in 1.23s</text>
-  <text x="688" y="574" font-family="Courier New, Courier, monospace"
-        font-size="11" fill="#3A9A6A">syntax colors applied &#xB7; no errors</text>
-  <rect x="0" y="628" width="1200" height="47" fill="#101A24" opacity="0.9"/>
+
+
+  <rect x="836" y="462" width="120" height="34" rx="6" fill="#071A12" stroke="#0D4A2A" stroke-width="1.5"/>
+  <text x="896" y="484" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#4DC896" text-anchor="middle">highlighted</text>
+
+
+  <rect x="970" y="462" width="100" height="34" rx="6" fill="#071A12" stroke="#0D4A2A" stroke-width="1.5"/>
+  <text x="1020" y="484" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#10D9A8" text-anchor="middle">✔ build</text>
+
+
+  <!-- Bottom status -->
+  <rect x="668" y="516" width="444" height="66" rx="6" fill="#050F0A" stroke="#0D3A20" stroke-width="1"/>
+  <text x="688" y="540" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#3AB87A">$ eleventy --serve</text>
+  <text x="688" y="560" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#10D9A8">✔ Wrote 12 files in 1.23s</text>
+  <text x="688" y="574" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#2A9A5A">syntax colors applied · no errors</text>
+
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- BOTTOM STRIP                        -->
+  <!-- ═══════════════════════════════════ -->
+  <rect x="0" y="628" width="1200" height="47" fill="#060A12" opacity="0.9"/>
   <line x1="0" y1="628" x2="1200" y2="628" stroke="#1A2E50" stroke-width="1"/>
+
+
   <circle cx="84" cy="651" r="5" fill="#E74C3C" opacity="0.7"/>
-  <text x="100" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#6A5050">ShikiError: Language `njk` not found</text>
-  <text x="600" y="656" font-family="Courier New, Courier, monospace"
-        font-size="12" fill="#4A6080" text-anchor="middle"
-        letter-spacing="3">SHIKI &#xB7; ELEVENTY &#xB7; NUNJUCKS &#xB7; SYNTAX HIGHLIGHTING</text>
+  <text x="100" y="656" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#9A6060">ShikiError: Language `njk` not found</text>
+
+
+  <text x="600" y="656" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#5A7090" text-anchor="middle"
+        letter-spacing="3">SHIKI · ELEVENTY · NUNJUCKS · SYNTAX HIGHLIGHTING</text>
+
+
   <circle cx="1020" cy="651" r="5" fill="#10D9A8" opacity="0.7"/>
-  <text x="1036" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#3A7A5A">fixed with html tag</text>
+  <text x="1036" y="656" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#2A8A5A">fixed with html tag</text>
+
+
 </svg>
