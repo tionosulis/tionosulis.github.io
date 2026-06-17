@@ -1,7 +1,7 @@
 ---
 title: "The Service Worker That Ate My SVG"
 description: A perfectly valid SVG file that worked everywhere except in the browser — and the surprising culprit that turned a five-minute fix into an hour-long debugging session.
-date: 2026-06-14
+date: 2026-06-17
 draft: false
 tags: [meta, pwa, debugging, service-worker]
 image: /assets/img/og/service-worker-ate-my-svg.png
