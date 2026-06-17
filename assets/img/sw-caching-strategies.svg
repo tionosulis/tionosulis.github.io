@@ -22,8 +22,8 @@
   <line x1="210" y1="183" x2="210" y2="240" stroke="#22c55e" stroke-width="1.5"/>
   <polygon points="205,238 210,248 215,238" fill="#22c55e"/>
 
-  <rect x="165" y="248" width="90" height="30" fill="#bbf7d0" stroke="#22c55e" stroke-width="1.5" rx="6"/>
-  <text x="210" y="267" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#15803d" text-anchor="middle">Return cached</text>
+  <rect x="120" y="248" width="90" height="30" fill="#bbf7d0" stroke="#22c55e" stroke-width="1.5" rx="6"/>
+  <text x="165" y="267" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#15803d" text-anchor="middle">Return cached</text>
 
   <!-- No branch -->
   <line x1="115" y1="201" x2="115" y2="218" stroke="#ef4444" stroke-width="1.5"/>
