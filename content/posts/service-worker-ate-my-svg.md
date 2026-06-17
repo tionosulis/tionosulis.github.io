@@ -7,9 +7,9 @@ tags: [meta, pwa, debugging, service-worker]
 image: /assets/img/og/service-worker-ate-my-svg.png
 ---
 
-${toc}
-
 ![Diagram showing cacheFirst strategy serving a stale SVG v1 to the browser (top), fixed by switching to staleWhileRevalidate which serves fresh SVG v2 (bottom)](/assets/img/service-worker-ate-my-svg.svg)
+
+${toc}
 
 ## The Setup
 
