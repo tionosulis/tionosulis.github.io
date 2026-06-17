@@ -33,7 +33,7 @@
 
     <!-- Dashed line pattern for stale arrow -->
     <pattern id="dashRed" patternUnits="userSpaceOnUse" width="16" height="1">
-      <line x1="0" y1="0" x2="10" y2="0" stroke="#F5A623" stroke-width="2" opacity="0.7"/>
+      <line x1="0" y1="0" x2="10" y2="0" stroke="#E06050" stroke-width="2" opacity="0.7"/>
     </pattern>
   </defs>
 
@@ -68,8 +68,8 @@
   <!-- SECTION LABEL: BROKEN                       -->
   <!-- ═══════════════════════════════════════════ -->
   <text x="60" y="68" font-family="'Courier New', Courier, monospace"
-        font-size="12" fill="#F5A623" letter-spacing="3" font-weight="bold">// BROKEN — cacheFirst hijacks every request</text>
-  <line x1="60" y1="75" x2="1140" y2="75" stroke="#3D4050" stroke-width="1"/>
+        font-size="12" fill="#E06050" letter-spacing="3" font-weight="bold">// BROKEN — cacheFirst hijacks every request</text>
+  <line x1="60" y1="75" x2="1140" y2="75" stroke="#4A2020" stroke-width="1"/>
 
 
   <!-- ═══════════════════════════════════════════ -->
@@ -99,78 +99,78 @@
 
   <!-- ARROW: Server → SW (crossed out / blocked) -->
   <!-- dim arrow shaft -->
-  <line x1="252" y1="190" x2="370" y2="190" stroke="#3D4050" stroke-width="2" stroke-dasharray="8,5"/>
+  <line x1="252" y1="190" x2="370" y2="190" stroke="#4A2020" stroke-width="2" stroke-dasharray="8,5"/>
   <!-- SVG v2 label on arrow (dim) -->
   <text x="311" y="180" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#D09040" text-anchor="middle">v2 →</text>
+        font-size="10" fill="#E07060" text-anchor="middle">v2 →</text>
   <!-- X mark blocking -->
-  <circle cx="340" cy="190" r="14" fill="#1E1810" stroke="#4A3830" stroke-width="1.5"/>
+  <circle cx="340" cy="190" r="14" fill="#1E1414" stroke="#4A2020" stroke-width="1.5"/>
   <text x="340" y="196" font-family="'Courier New', Courier, monospace"
-        font-size="14" fill="#F5A623" text-anchor="middle" font-weight="bold">✖</text>
+        font-size="14" fill="#E06050" text-anchor="middle" font-weight="bold">✖</text>
 
 
   <!-- NODE: SERVICE WORKER (center, larger — the villain) -->
   <rect x="390" y="85" width="420" height="210" rx="10"
-        fill="#1E1810" stroke="#4A3830" stroke-width="2" filter="url(#nodeShadow)"/>
-  <rect x="390" y="85" width="420" height="4" rx="2" fill="#F5A623" opacity="0.8"/>
+        fill="#1E1414" stroke="#4A2020" stroke-width="2" filter="url(#nodeShadow)"/>
+  <rect x="390" y="85" width="420" height="4" rx="2" fill="#E06050" opacity="0.8"/>
   <text x="600" y="122" font-family="'Courier New', Courier, monospace"
-        font-size="12" fill="#F5A623" text-anchor="middle" letter-spacing="3"
+        font-size="12" fill="#E06050" text-anchor="middle" letter-spacing="3"
         font-weight="bold" filter="url(#redGlow)">SERVICE WORKER</text>
 
 
   <!-- Cache bubble inside SW node -->
-  <rect x="415" y="136" width="180" height="130" rx="8" fill="#1E1810" stroke="#4A3830" stroke-width="1.2"/>
+  <rect x="415" y="136" width="180" height="130" rx="8" fill="#1E1414" stroke="#4A2020" stroke-width="1.2"/>
   <text x="505" y="160" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#D09040" text-anchor="middle" letter-spacing="2">CACHE</text>
+        font-size="10" fill="#E07060" text-anchor="middle" letter-spacing="2">CACHE</text>
   <!-- Stale SVG in cache -->
-  <rect x="440" y="168" width="130" height="62" rx="5" fill="#1E1810" stroke="#4A3830" stroke-width="1"/>
+  <rect x="440" y="168" width="130" height="62" rx="5" fill="#1E1414" stroke="#4A2020" stroke-width="1"/>
   <text x="505" y="188" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#D09040" text-anchor="middle">favicon.svg</text>
+        font-size="9" fill="#E07060" text-anchor="middle">favicon.svg</text>
   <text x="505" y="208" font-family="'Courier New', Courier, monospace"
-        font-size="16" fill="#F5A623" text-anchor="middle" font-weight="bold">SVG</text>
+        font-size="16" fill="#E06050" text-anchor="middle" font-weight="bold">SVG</text>
   <text x="505" y="224" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#D09040" text-anchor="middle">v1 · STALE 👻</text>
+        font-size="9" fill="#E07060" text-anchor="middle">v1 · STALE 👻</text>
 
 
   <!-- Strategy label -->
-  <rect x="610" y="136" width="178" height="130" rx="8" fill="#1E1810" stroke="#4A3830" stroke-width="1.2"/>
+  <rect x="610" y="136" width="178" height="130" rx="8" fill="#1E1414" stroke="#4A2020" stroke-width="1.2"/>
   <text x="699" y="160" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#D09040" text-anchor="middle" letter-spacing="2">STRATEGY</text>
+        font-size="10" fill="#E07060" text-anchor="middle" letter-spacing="2">STRATEGY</text>
   <text x="699" y="196" font-family="'Courier New', Courier, monospace"
-        font-size="14" fill="#F5A623" text-anchor="middle" font-weight="bold">cacheFirst</text>
+        font-size="14" fill="#E06050" text-anchor="middle" font-weight="bold">cacheFirst</text>
   <text x="699" y="218" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#D09040" text-anchor="middle">cache hit?</text>
+        font-size="10" fill="#E07060" text-anchor="middle">cache hit?</text>
   <text x="699" y="236" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#D09040" text-anchor="middle">→ serve it. done.</text>
+        font-size="10" fill="#E07060" text-anchor="middle">→ serve it. done.</text>
   <text x="699" y="252" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#8A7050" text-anchor="middle">never checks server</text>
+        font-size="9" fill="#B05040" text-anchor="middle">never checks server</text>
 
 
   <!-- ARROW: SW → Browser (serving stale) -->
-  <line x1="812" y1="190" x2="928" y2="190" stroke="#4A3830" stroke-width="2.5"/>
-  <polygon points="928,182 944,190 928,198" fill="#F5A623" opacity="0.8"/>
+  <line x1="812" y1="190" x2="928" y2="190" stroke="#4A2020" stroke-width="2.5"/>
+  <polygon points="928,182 944,190 928,198" fill="#E06050" opacity="0.8"/>
   <text x="878" y="178" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#D09040" text-anchor="middle" font-weight="bold">stale v1 →</text>
+        font-size="11" fill="#E07060" text-anchor="middle" font-weight="bold">stale v1 →</text>
 
 
   <!-- NODE: BROWSER -->
   <rect x="946" y="100" width="194" height="180" rx="10"
         fill="#1A2634" stroke="#3D536A" stroke-width="1.5" filter="url(#nodeShadow)"/>
-  <rect x="946" y="100" width="194" height="4" rx="2" fill="#F5A623" opacity="0.5"/>
+  <rect x="946" y="100" width="194" height="4" rx="2" fill="#E06050" opacity="0.5"/>
   <text x="1043" y="138" font-family="'Courier New', Courier, monospace"
         font-size="12" fill="#A0B8D0" text-anchor="middle" letter-spacing="3">BROWSER</text>
   <!-- Confused SVG display -->
-  <rect x="994" y="152" width="98" height="76" rx="6" fill="#1A2634" stroke="#4A3830" stroke-width="1.2"/>
+  <rect x="994" y="152" width="98" height="76" rx="6" fill="#1A2634" stroke="#4A2020" stroke-width="1.2"/>
   <rect x="994" y="152" width="98" height="22" rx="6" fill="#1A2634"/>
   <rect x="994" y="166" width="98" height="8" fill="#1A2634"/>
   <text x="1043" y="168" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#D09040" text-anchor="middle">favicon.svg</text>
+        font-size="10" fill="#E07060" text-anchor="middle">favicon.svg</text>
   <text x="1043" y="196" font-family="'Courier New', Courier, monospace"
-        font-size="18" fill="#F5A623" text-anchor="middle" font-weight="bold">SVG</text>
+        font-size="18" fill="#E06050" text-anchor="middle" font-weight="bold">SVG</text>
   <text x="1043" y="216" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#D09040" text-anchor="middle">v1 · wrong! 😵</text>
+        font-size="9" fill="#E07060" text-anchor="middle">v1 · wrong! 😵</text>
   <text x="1043" y="256" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#D09040" text-anchor="middle">shows old file</text>
+        font-size="11" fill="#E07060" text-anchor="middle">shows old file</text>
 
 
   <!-- ═══════════════════════════════════════════ -->
@@ -291,9 +291,9 @@
   <line x1="0" y1="628" x2="1200" y2="628" stroke="#2D4055" stroke-width="1"/>
 
 
-  <circle cx="84" cy="651" r="5" fill="#F5A623" opacity="0.7"/>
+  <circle cx="84" cy="651" r="5" fill="#E06050" opacity="0.7"/>
   <text x="100" y="656" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#8A7050">cacheFirst → stale forever</text>
+        font-size="13" fill="#B05040">cacheFirst → stale forever</text>
 
 
   <text x="600" y="656" font-family="'Courier New', Courier, monospace"
