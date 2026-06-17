@@ -23,7 +23,9 @@
     <!-- Glow filters -->
     <filter id="redGlow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      <feFlood flood-color="#E06050" flood-opacity="0.7" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="tintedBlur"/>
+      <feMerge><feMergeNode in="tintedBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="mintGlow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="10" result="blur"/>
