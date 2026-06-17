@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080D16"/>
-      <stop offset="100%" stop-color="#0C1628"/>
+      <stop offset="0%" stop-color="#243447"/>
+      <stop offset="100%" stop-color="#1E2C3A"/>
     </linearGradient>
     <linearGradient id="leftCard" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#111D30"/>
-      <stop offset="100%" stop-color="#0D1726"/>
+      <stop offset="0%" stop-color="#1A2634"/>
+      <stop offset="100%" stop-color="#1A2634"/>
     </linearGradient>
     <linearGradient id="rightCard" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#071A12"/>
-      <stop offset="100%" stop-color="#050F0C"/>
+      <stop offset="0%" stop-color="#0E1E16"/>
+      <stop offset="100%" stop-color="#0E1E16"/>
     </linearGradient>
     <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#131F35" stroke-width="0.6"/>
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#2D4055" stroke-width="0.6"/>
     </pattern>
     <filter id="blueGlow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="18" result="blur"/>
@@ -33,91 +33,91 @@
   </defs>
   <rect width="1200" height="675" fill="url(#bg)"/>
   <rect width="1200" height="675" fill="url(#grid)"/>
-  <ellipse cx="280" cy="338" rx="320" ry="260" fill="#1E3A6A" opacity="0.18"/>
-  <ellipse cx="920" cy="338" rx="300" ry="240" fill="#0A4A30" opacity="0.22"/>
-  <rect x="0" y="0" width="1200" height="3" fill="#1E3A6A" opacity="0.8"/>
+  <ellipse cx="280" cy="338" rx="320" ry="260" fill="#2D4055" opacity="0.18"/>
+  <ellipse cx="920" cy="338" rx="300" ry="240" fill="#1A4A30" opacity="0.22"/>
+  <rect x="0" y="0" width="1200" height="3" fill="#2D4055" opacity="0.8"/>
   <rect x="60" y="80" width="480" height="515" rx="12"
-        fill="url(#leftCard)" stroke="#2A4070" stroke-width="2"
+        fill="url(#leftCard)" stroke="#3D536A" stroke-width="2"
         filter="url(#softShadow)"/>
-  <rect x="60" y="80" width="480" height="4" rx="2" fill="#3B6BC8" opacity="0.7"/>
+  <rect x="60" y="80" width="480" height="4" rx="2" fill="#4A8AE0" opacity="0.7"/>
   <text x="300" y="148" font-family="Courier New, Courier, monospace"
-        font-size="18" font-weight="bold" fill="#7BAEE8"
+        font-size="18" font-weight="bold" fill="#A0B8D0"
         text-anchor="middle" letter-spacing="5">WORKBOX</text>
-  <line x1="100" y1="165" x2="500" y2="165" stroke="#2A4070" stroke-width="1"/>
+  <line x1="100" y1="165" x2="500" y2="165" stroke="#3D536A" stroke-width="1"/>
   <text x="300" y="300" font-family="Courier New, Courier, monospace"
-        font-size="110" font-weight="bold" fill="#4A8FE8"
+        font-size="110" font-weight="bold" fill="#4A8AE0"
         text-anchor="middle" filter="url(#blueGlow)">~50</text>
   <text x="300" y="370" font-family="Courier New, Courier, monospace"
-        font-size="48" font-weight="bold" fill="#4A8FE8"
+        font-size="48" font-weight="bold" fill="#4A8AE0"
         text-anchor="middle" opacity="0.9">KB</text>
-  <rect x="118" y="415" width="164" height="38" rx="6" fill="#1A2E50" stroke="#2A4070" stroke-width="1.5"/>
+  <rect x="118" y="415" width="164" height="38" rx="6" fill="#2D4055" stroke="#3D536A" stroke-width="1.5"/>
   <text x="200" y="439" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#6A90C0" text-anchor="middle">build tooling</text>
-  <rect x="318" y="415" width="164" height="38" rx="6" fill="#1A2E50" stroke="#2A4070" stroke-width="1.5"/>
+        font-size="14" fill="#7A9AB0" text-anchor="middle">build tooling</text>
+  <rect x="318" y="415" width="164" height="38" rx="6" fill="#2D4055" stroke="#3D536A" stroke-width="1.5"/>
   <text x="400" y="439" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#6A90C0" text-anchor="middle">10+ strategies</text>
-  <rect x="118" y="468" width="164" height="38" rx="6" fill="#1A2E50" stroke="#2A4070" stroke-width="1.5"/>
+        font-size="14" fill="#7A9AB0" text-anchor="middle">10+ strategies</text>
+  <rect x="118" y="468" width="164" height="38" rx="6" fill="#2D4055" stroke="#3D536A" stroke-width="1.5"/>
   <text x="200" y="492" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#6A90C0" text-anchor="middle">~1000 LOC</text>
-  <rect x="318" y="468" width="164" height="38" rx="6" fill="#1A2E50" stroke="#2A4070" stroke-width="1.5"/>
+        font-size="14" fill="#7A9AB0" text-anchor="middle">~1000 LOC</text>
+  <rect x="318" y="468" width="164" height="38" rx="6" fill="#2D4055" stroke="#3D536A" stroke-width="1.5"/>
   <text x="400" y="492" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#6A90C0" text-anchor="middle">high complexity</text>
+        font-size="14" fill="#7A9AB0" text-anchor="middle">high complexity</text>
   <text x="300" y="558" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#3B6BC8" text-anchor="middle"
+        font-size="13" fill="#4A8AE0" text-anchor="middle"
         opacity="0.8" letter-spacing="2">GOOGLE'S OFFICIAL SW LIBRARY</text>
-  <circle cx="600" cy="338" r="42" fill="#080D16" stroke="#2A4070" stroke-width="2"/>
-  <circle cx="600" cy="338" r="36" fill="#0D1628" stroke="#1A2E50" stroke-width="1"/>
+  <circle cx="600" cy="338" r="42" fill="#243447" stroke="#3D536A" stroke-width="2"/>
+  <circle cx="600" cy="338" r="36" fill="#1E2C3A" stroke="#2D4055" stroke-width="1"/>
   <text x="600" y="347" font-family="Georgia, Times New Roman, serif"
-        font-size="22" font-weight="bold" fill="#C8D8E8"
+        font-size="22" font-weight="bold" fill="#A0B8D0"
         text-anchor="middle">vs</text>
   <rect x="660" y="80" width="480" height="515" rx="12"
-        fill="url(#rightCard)" stroke="#0D4A2A" stroke-width="2"
+        fill="url(#rightCard)" stroke="#2A5A3A" stroke-width="2"
         filter="url(#softShadow)"/>
   <rect x="660" y="80" width="480" height="4" rx="2" fill="#10D9A8" opacity="0.8"/>
   <text x="900" y="148" font-family="Courier New, Courier, monospace"
         font-size="18" font-weight="bold" fill="#10D9A8"
         text-anchor="middle" letter-spacing="5"
         filter="url(#labelGlow)">VANILLA SW</text>
-  <line x1="700" y1="165" x2="1100" y2="165" stroke="#0D4A2A" stroke-width="1"/>
+  <line x1="700" y1="165" x2="1100" y2="165" stroke="#2A5A3A" stroke-width="1"/>
   <text x="900" y="300" font-family="Courier New, Courier, monospace"
         font-size="110" font-weight="bold" fill="#10D9A8"
         text-anchor="middle" filter="url(#mintGlow)">~1</text>
   <text x="900" y="370" font-family="Courier New, Courier, monospace"
         font-size="48" font-weight="bold" fill="#10D9A8"
         text-anchor="middle" opacity="0.9">KB</text>
-  <rect x="718" y="415" width="164" height="38" rx="6" fill="#071A12" stroke="#0D4A2A" stroke-width="1.5"/>
+  <rect x="718" y="415" width="164" height="38" rx="6" fill="#0E1E16" stroke="#2A5A3A" stroke-width="1.5"/>
   <text x="800" y="439" font-family="Courier New, Courier, monospace"
         font-size="14" fill="#10D9A8" text-anchor="middle" opacity="0.85">no build step</text>
-  <rect x="918" y="415" width="164" height="38" rx="6" fill="#071A12" stroke="#0D4A2A" stroke-width="1.5"/>
+  <rect x="918" y="415" width="164" height="38" rx="6" fill="#0E1E16" stroke="#2A5A3A" stroke-width="1.5"/>
   <text x="1000" y="439" font-family="Courier New, Courier, monospace"
         font-size="14" fill="#10D9A8" text-anchor="middle" opacity="0.85">3 strategies</text>
-  <rect x="718" y="468" width="164" height="38" rx="6" fill="#071A12" stroke="#0D4A2A" stroke-width="1.5"/>
+  <rect x="718" y="468" width="164" height="38" rx="6" fill="#0E1E16" stroke="#2A5A3A" stroke-width="1.5"/>
   <text x="800" y="492" font-family="Courier New, Courier, monospace"
         font-size="14" fill="#10D9A8" text-anchor="middle" opacity="0.85">~50 LOC</text>
-  <rect x="918" y="468" width="164" height="38" rx="6" fill="#071A12" stroke="#0D4A2A" stroke-width="1.5"/>
+  <rect x="918" y="468" width="164" height="38" rx="6" fill="#0E1E16" stroke="#2A5A3A" stroke-width="1.5"/>
   <text x="1000" y="492" font-family="Courier New, Courier, monospace"
         font-size="14" fill="#10D9A8" text-anchor="middle" opacity="0.85">zero deps</text>
   <text x="900" y="558" font-family="Courier New, Courier, monospace"
         font-size="13" fill="#10D9A8" text-anchor="middle"
         opacity="0.7" letter-spacing="2" filter="url(#labelGlow)">HAND-WRITTEN &#xB7; OFFLINE-FIRST</text>
-  <rect x="0" y="628" width="1200" height="47" fill="#060A12" opacity="0.9"/>
-  <line x1="0" y1="628" x2="1200" y2="628" stroke="#1A2E50" stroke-width="1"/>
+  <rect x="0" y="628" width="1200" height="47" fill="#1A2634" opacity="0.9"/>
+  <line x1="0" y1="628" x2="1200" y2="628" stroke="#2D4055" stroke-width="1"/>
   <circle cx="84" cy="651" r="5" fill="#10D9A8" opacity="0.7"/>
   <text x="100" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#4A7090">install</text>
+        font-size="13" fill="#7A9AB0">install</text>
   <text x="158" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#2A4060">&#xB7;</text>
-  <circle cx="178" cy="651" r="5" fill="#4A8FE8" opacity="0.5"/>
+        font-size="13" fill="#6A8AAA">&#xB7;</text>
+  <circle cx="178" cy="651" r="5" fill="#4A8AE0" opacity="0.5"/>
   <text x="194" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#4A7090">fetch</text>
+        font-size="13" fill="#7A9AB0">fetch</text>
   <text x="238" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#2A4060">&#xB7;</text>
+        font-size="13" fill="#6A8AAA">&#xB7;</text>
   <circle cx="258" cy="651" r="5" fill="#10D9A8" opacity="0.4"/>
   <text x="274" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#4A7090">activate</text>
+        font-size="13" fill="#7A9AB0">activate</text>
   <text x="600" y="656" font-family="Courier New, Courier, monospace"
-        font-size="12" fill="#2A4060" text-anchor="middle"
+        font-size="12" fill="#6A8AAA" text-anchor="middle"
         letter-spacing="3">PWA &#xB7; VANILLA JS &#xB7; SERVICE WORKERS</text>
   <text x="1116" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#3B6BC8" text-anchor="end" opacity="0.8">No Build Step</text>
+        font-size="13" fill="#4A8AE0" text-anchor="end" opacity="0.8">No Build Step</text>
 </svg>
