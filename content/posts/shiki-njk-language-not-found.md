@@ -5,7 +5,10 @@ date: 2026-06-19
 draft: true
 tags: [eleventy, troubleshooting, meta, highlighting]
 pageHasCode: true
+image: /assets/img/og/shiki-njk-language-not-found.png
 ---
+
+![Terminal split showing Shiki throwing 'Language njk not found' error on the left, resolved by switching the code fence tag from njk to html on the right](/assets/img/shiki-njk-language-not-found.svg)
 
 I was writing a post about SVG hero images and social media previews. Everything was flowing — the introduction, the technical breakdown, the code samples. Then I hit a Nunjucks code block and Eleventy threw this at me:
 
