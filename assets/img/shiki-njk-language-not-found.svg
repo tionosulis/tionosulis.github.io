@@ -5,8 +5,8 @@
       <stop offset="100%" style="stop-color:#1E2C3A"/>
     </linearGradient>
     <linearGradient id="leftPanel" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1E1810"/>
-      <stop offset="100%" style="stop-color:#1E1810"/>
+      <stop offset="0%" style="stop-color:#1E1414"/>
+      <stop offset="100%" style="stop-color:#1E1414"/>
     </linearGradient>
     <linearGradient id="rightPanel" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#0E1E16"/>
@@ -57,14 +57,14 @@
         fill="none" stroke="#3D536A" stroke-width="2" opacity="0.7"
         filter="url(#outerLift)"/>
   <!-- Corner accents -->
-  <path d="M 1 18 L 1 1 L 18 1" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.6"/>
+  <path d="M 1 18 L 1 1 L 18 1" fill="none" stroke="#E06050" stroke-width="2" opacity="0.6"/>
   <path d="M 1182 1 L 1199 1 L 1199 18" fill="none" stroke="#10D9A8" stroke-width="2" opacity="0.6"/>
-  <path d="M 1 657 L 1 674 L 18 674" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.5"/>
+  <path d="M 1 657 L 1 674 L 18 674" fill="none" stroke="#E06050" stroke-width="2" opacity="0.5"/>
   <path d="M 1182 674 L 1199 674 L 1199 657" fill="none" stroke="#10D9A8" stroke-width="2" opacity="0.5"/>
 
 
   <!-- Top accent line — split color -->
-  <rect x="0" y="0" width="594" height="3" fill="#F5A623" opacity="0.7"/>
+  <rect x="0" y="0" width="594" height="3" fill="#E06050" opacity="0.7"/>
   <rect x="606" y="0" width="594" height="3" fill="#10D9A8" opacity="0.7"/>
   <rect x="594" y="0" width="12" height="3" fill="#3D536A" opacity="0.5"/>
 
@@ -73,98 +73,98 @@
   <!-- LEFT PANEL — ERROR STATE           -->
   <!-- ═══════════════════════════════════ -->
   <rect x="60" y="72" width="500" height="531" rx="12"
-        fill="url(#leftPanel)" stroke="#4A3830" stroke-width="1.5"
+        fill="url(#leftPanel)" stroke="#4A2020" stroke-width="1.5"
         filter="url(#softShadow)"/>
 
 
   <!-- Terminal bar -->
-  <rect x="60" y="72" width="500" height="36" rx="12" fill="#1E1810"/>
-  <rect x="60" y="90" width="500" height="18" fill="#1E1810"/>
+  <rect x="60" y="72" width="500" height="36" rx="12" fill="#1E1414"/>
+  <rect x="60" y="90" width="500" height="18" fill="#1E1414"/>
   <!-- Traffic lights -->
-  <circle cx="92" cy="90" r="6" fill="#F5A623"/>
-  <circle cx="114" cy="90" r="6" fill="#F5A623"/>
+  <circle cx="92" cy="90" r="6" fill="#E06050"/>
+  <circle cx="114" cy="90" r="6" fill="#E06050"/>
   <circle cx="136" cy="90" r="6" fill="#2D4055"/>
   <!-- Terminal title -->
   <text x="310" y="95" font-family="'Courier New', Courier, monospace" font-size="12"
-        fill="#D09040" text-anchor="middle">eleventy build — error</text>
+        fill="#E07060" text-anchor="middle">eleventy build — error</text>
 
 
   <!-- STATE label -->
   <text x="310" y="142" font-family="'Courier New', Courier, monospace"
-        font-size="13" font-weight="bold" fill="#F5A623"
+        font-size="13" font-weight="bold" fill="#E06050"
         text-anchor="middle" letter-spacing="4">BEFORE</text>
 
 
   <!-- Code block: the failing snippet -->
-  <rect x="88" y="158" width="444" height="72" rx="6" fill="#1A2634" stroke="#4A3830" stroke-width="1"/>
+  <rect x="88" y="158" width="444" height="72" rx="6" fill="#1A2634" stroke="#4A2020" stroke-width="1"/>
   <!-- Syntax: backtick fence with njk -->
   <text x="108" y="181" font-family="'Courier New', Courier, monospace" font-size="15" fill="#6A8AAA">```</text>
-  <text x="145" y="181" font-family="'Courier New', Courier, monospace" font-size="15" fill="#D09040" font-weight="bold">njk</text>
+  <text x="145" y="181" font-family="'Courier New', Courier, monospace" font-size="15" fill="#E07060" font-weight="bold">njk</text>
   <text x="108" y="204" font-family="'Courier New', Courier, monospace" font-size="13" fill="#A0B8D0">{% set ogImage = image %}</text>
   <text x="108" y="222" font-family="'Courier New', Courier, monospace" font-size="15" fill="#6A8AAA">```</text>
 
 
   <!-- Error output block — the hero element -->
-  <rect x="88" y="248" width="444" height="130" rx="6" fill="#1E1810" stroke="#4A3830" stroke-width="1.5"/>
+  <rect x="88" y="248" width="444" height="130" rx="6" fill="#1E1414" stroke="#4A2020" stroke-width="1.5"/>
 
 
   <!-- Red left border accent -->
-  <rect x="88" y="248" width="4" height="130" rx="2" fill="#F5A623" opacity="0.9"/>
+  <rect x="88" y="248" width="4" height="130" rx="2" fill="#E06050" opacity="0.9"/>
 
 
   <!-- Error icon -->
-  <text x="112" y="280" font-family="'Courier New', Courier, monospace" font-size="14" fill="#F5A623">✖</text>
+  <text x="112" y="280" font-family="'Courier New', Courier, monospace" font-size="14" fill="#E06050">✖</text>
 
 
   <!-- Error text — big and readable -->
   <text x="132" y="280" font-family="'Courier New', Courier, monospace"
-        font-size="14" fill="#F5A623" font-weight="bold">[11ty] ShikiError:</text>
+        font-size="14" fill="#E06050" font-weight="bold">[11ty] ShikiError:</text>
 
 
   <text x="108" y="308" font-family="'Courier New', Courier, monospace"
-        font-size="20" fill="#F5A623" font-weight="bold"
+        font-size="20" fill="#E06050" font-weight="bold"
         filter="url(#redGlow)">Language `njk` not found</text>
 
 
   <text x="108" y="338" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#D09040">you may need to load it first</text>
+        font-size="13" fill="#E07060">you may need to load it first</text>
 
 
   <text x="108" y="364" font-family="'Courier New', Courier, monospace"
-        font-size="12" fill="#8A7050">→ syntax highlighting failed</text>
+        font-size="12" fill="#B05040">→ syntax highlighting failed</text>
 
 
   <!-- What this means -->
   <text x="310" y="418" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#D09040" text-anchor="middle">Nunjucks (.njk) is not a</text>
+        font-size="13" fill="#E07060" text-anchor="middle">Nunjucks (.njk) is not a</text>
   <text x="310" y="438" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#D09040" text-anchor="middle">bundled Shiki language</text>
+        font-size="13" fill="#E07060" text-anchor="middle">bundled Shiki language</text>
 
 
   <!-- Tag pills showing what failed -->
-  <rect x="138" y="462" width="100" height="34" rx="6" fill="#1E1810" stroke="#4A3830" stroke-width="1.5"/>
+  <rect x="138" y="462" width="100" height="34" rx="6" fill="#1E1414" stroke="#4A2020" stroke-width="1.5"/>
   <text x="188" y="484" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#F5A623" text-anchor="middle">```njk</text>
+        font-size="13" fill="#E06050" text-anchor="middle">```njk</text>
 
 
-  <rect x="252" y="462" width="120" height="34" rx="6" fill="#1E1810" stroke="#4A3830" stroke-width="1.5"/>
+  <rect x="252" y="462" width="120" height="34" rx="6" fill="#1E1414" stroke="#4A2020" stroke-width="1.5"/>
   <text x="312" y="484" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#D09040" text-anchor="middle">not found</text>
+        font-size="13" fill="#E07060" text-anchor="middle">not found</text>
 
 
-  <rect x="386" y="462" width="100" height="34" rx="6" fill="#1E1810" stroke="#4A3830" stroke-width="1.5"/>
+  <rect x="386" y="462" width="100" height="34" rx="6" fill="#1E1414" stroke="#4A2020" stroke-width="1.5"/>
   <text x="436" y="484" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#F5A623" text-anchor="middle">✖ build</text>
+        font-size="13" fill="#E06050" text-anchor="middle">✖ build</text>
 
 
   <!-- Bottom status -->
-  <rect x="88" y="516" width="444" height="66" rx="6" fill="#1E1810" stroke="#4A3830" stroke-width="1"/>
+  <rect x="88" y="516" width="444" height="66" rx="6" fill="#1E1414" stroke="#4A2020" stroke-width="1"/>
   <text x="108" y="540" font-family="'Courier New', Courier, monospace"
-        font-size="12" fill="#8A7050">$ eleventy --serve</text>
+        font-size="12" fill="#B05040">$ eleventy --serve</text>
   <text x="108" y="560" font-family="'Courier New', Courier, monospace"
-        font-size="12" fill="#F5A623">✖ Build failed · 1 error</text>
+        font-size="12" fill="#E06050">✖ Build failed · 1 error</text>
   <text x="108" y="574" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#8A7050">plain text fallback — no colors</text>
+        font-size="11" fill="#B05040">plain text fallback — no colors</text>
 
 
   <!-- ═══════════════════════════════════ -->
@@ -283,9 +283,9 @@
   <line x1="0" y1="628" x2="1200" y2="628" stroke="#2D4055" stroke-width="1"/>
 
 
-  <circle cx="84" cy="651" r="5" fill="#F5A623" opacity="0.7"/>
+  <circle cx="84" cy="651" r="5" fill="#E06050" opacity="0.7"/>
   <text x="100" y="656" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#8A7050">ShikiError: Language `njk` not found</text>
+        font-size="13" fill="#B05040">ShikiError: Language `njk` not found</text>
 
 
   <text x="600" y="656" font-family="'Courier New', Courier, monospace"
