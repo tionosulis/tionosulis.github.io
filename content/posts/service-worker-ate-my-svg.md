@@ -2,11 +2,14 @@
 title: "The Service Worker That Ate My SVG"
 description: A perfectly valid SVG file that worked everywhere except in the browser — and the surprising culprit that turned a five-minute fix into an hour-long debugging session.
 date: 2026-06-14
-draft: true
+draft: false
 tags: [meta, pwa, debugging, service-worker]
+image: /assets/img/og/service-worker-ate-my-svg.png
 ---
 
 ${toc}
+
+![Diagram showing cacheFirst strategy serving a stale SVG v1 to the browser (top), fixed by switching to staleWhileRevalidate which serves fresh SVG v2 (bottom)](/assets/img/service-worker-ate-my-svg.svg)
 
 ## The Setup
 

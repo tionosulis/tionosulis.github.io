@@ -93,7 +93,7 @@ async function staleWhileRevalidate(req) {
 }
 ```
 
-This was changed from `cacheFirst` after the SVG cache bug — the topic of a [separate post](/drafts/service-worker-ate-my-svg/). With `staleWhileRevalidate`:
+This was changed from `cacheFirst` after the SVG cache bug — the topic of a [separate post](/posts/service-worker-ate-my-svg/). With `staleWhileRevalidate`:
 
 1. Return the cached response immediately (instant)
 2. In the background, fetch the latest version
