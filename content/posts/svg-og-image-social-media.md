@@ -68,7 +68,7 @@ The entire system consists of three changes: one config file, one template file,
 I render the SVG to a 1200&#215;630 PNG using sharp — the same library Eleventy uses under the hood for image processing.
 
 ```bash
-node -e "require('sharp')('assets/img/dark-mode.svg').resize(1200,630).png().toFile('assets/img/og/dark-mode.png')"
+node -e "require('sharp')('assets/img/dark-mode-done-right.svg').resize(1200,630).png().toFile('assets/img/og/dark-mode-done-right.png')"
 ```
 
 1200&#215;630 is the standard Open Graph image ratio (1.91:1). This is what every social platform expects for a large card preview.
@@ -124,7 +124,7 @@ For posts with a dedicated hero image, I add the `image` field to the frontmatte
 ---
 title: "Dark Mode Done Right"
 date: 2026-06-13
-image: /assets/img/og/dark-mode.png
+image: /assets/img/og/dark-mode-done-right.png
 tags:
   - css
   - javascript
@@ -150,7 +150,7 @@ If I debug the OG tags today, this is what the crawler sees:
 ```html
 <meta property="og:title" content="Dark Mode Done Right: Zero Flicker, CSS Architecture, and the Devil in the Details">
 <meta property="og:description" content="How I built a zero-flicker dark mode...">
-<meta property="og:image" content="https://tionosulis.github.io/assets/img/og/dark-mode.png">
+<meta property="og:image" content="https://tionosulis.github.io/assets/img/og/dark-mode-done-right.png">
 <meta name="twitter:card" content="summary_large_image">
 ```
 

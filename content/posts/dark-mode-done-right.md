@@ -3,14 +3,14 @@ title: "Dark Mode Done Right: Zero Flicker, CSS Architecture, and the Devil in t
 description: "How I built a zero-flicker dark mode with an inline script, CSS custom properties, localStorage persistence, and a dynamically-updating toggle tooltip — and why every site should do it properly."
 date: 2026-06-13
 draft: false
-image: /assets/img/og/dark-mode.png
+image: /assets/img/og/dark-mode-done-right.png
 tags:
   - css
   - javascript
   - howto
 ---
 
-![Three pillars of dark mode done right: Zero Flicker, CSS Architecture, and The Devil in the Details](/assets/img/dark-mode.svg)
+![Three pillars of dark mode done right: Zero Flicker, CSS Architecture, and The Devil in the Details](/assets/img/dark-mode-done-right.svg)
 
 *The three pillars of a bulletproof dark mode system: zero-flicker rendering, token-based CSS architecture, and edge-case polish.*
 
