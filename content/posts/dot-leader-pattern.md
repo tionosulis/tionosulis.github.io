@@ -4,7 +4,10 @@ description: "The dot leader looks like the simplest CSS pattern — one span, f
 date: 2026-06-18
 draft: false
 tags: [css, design, typography, howto]
+image: /assets/img/og/dot-leader-pattern.png
 ---
+
+![Three challenges of building a pixel-perfect CSS dot leader: overflow, baseline misalignment, and title squeeze, with the final result shown at the bottom](/assets/img/dot-leader-pattern.svg)
 
 Look at the post listing on this blog. Between each post title and its date, there's a trail of dots — a **dot leader**, connecting content to metadata. It dates back to 17th century printed tables of contents, where typesetters inserted periods between chapter titles and page numbers.
 
