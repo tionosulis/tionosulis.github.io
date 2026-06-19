@@ -15,7 +15,7 @@ tags:
 
 *The three-panel story of an invisible hero image: browser renders SVG beautifully, social media sees nothing, and the PNG fix restores previews.*
 
-I spent hours crafting an SVG infographic for my dark mode post. Three pillars, indigo-emerald-amber palette, subtle grid dots, code blocks, the works. It looked gorgeous in the browser — crisp at any zoom, 21KB, perfect.
+I spent hours crafting an SVG infographic for my [dark mode post](/posts/dark-mode-done-right/). Three pillars, indigo-emerald-amber palette, subtle grid dots, code blocks, the works. It looked gorgeous in the browser — crisp at any zoom, 21KB, perfect.
 
 Then I shared the link on Twitter. The preview was blank. Just a URL floating in the void. No image, no card, nothing.
 
