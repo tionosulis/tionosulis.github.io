@@ -7,7 +7,7 @@ tags: [css, design, typography, howto]
 image: /assets/img/og/dot-leader-pattern.png
 ---
 
-![Three challenges of building a pixel-perfect CSS dot leader: overflow, baseline misalignment, and title squeeze, with the final result shown at the bottom](/assets/img/dot-leader-pattern.svg)
+![Three CSS dot leader challenges: overflow, baseline misalignment, and title squeeze with the final fix](/assets/img/dot-leader-pattern.svg)
 
 *Three CSS challenges — overflow, baseline alignment, title squeeze — solved with flexbox, `min-width: 0`, and `text-overflow: ellipsis`. The final result handles all edge cases cleanly.*
 

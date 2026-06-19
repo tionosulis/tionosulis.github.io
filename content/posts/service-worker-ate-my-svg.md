@@ -7,7 +7,7 @@ tags: [meta, pwa, debugging, service-worker]
 image: /assets/img/og/service-worker-ate-my-svg.png
 ---
 
-![Diagram showing cacheFirst strategy serving a stale SVG v1 to the browser (top), fixed by switching to staleWhileRevalidate which serves fresh SVG v2 (bottom)](/assets/img/service-worker-ate-my-svg.svg)
+![cacheFirst vs staleWhileRevalidate caching strategies for SVG assets](/assets/img/service-worker-ate-my-svg.svg)
 
 *The same SVG, two different caching strategies: `cacheFirst` returns a stale version from cache (v1), while `staleWhileRevalidate` checks the network first and serves the latest version (v2).*
 

@@ -7,7 +7,7 @@ pageHasCode: true
 image: /assets/img/og/chasing-100-lighthouse.png
 ---
 
-![Lighthouse score comparison showing Performance 99 and Accessibility 97 before fixes, upgraded to perfect 100 across all four categories — Performance, Accessibility, Best Practices, and SEO — after fixing forced reflow, CLS layout shift, and contrast ratio](/assets/img/chasing-100-lighthouse.svg)
+![Lighthouse scores before (99s) and after (100s) across four categories](/assets/img/chasing-100-lighthouse.svg)
 
 *A before-and-after breakdown of Lighthouse scores: orange 99s become glowing green 100s after targeting forced reflow, CLS, and contrast failures.*
 

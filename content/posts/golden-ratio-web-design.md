@@ -7,7 +7,7 @@ pageHasCode: true
 image: /assets/img/og/golden-ratio-web-design.png
 ---
 
-![Three-panel diagram of applying the golden ratio φ=1.618 to web design: the formula with Fibonacci sequence and golden spiral on the left, real case studies showing S box 55px divided by φ equals toggle 34px and content width 618px in the center, and a verdict showing what worked and what was rejected on the right](/assets/img/golden-ratio-web-design.svg)
+![Golden ratio φ=1.618 applied to blog UI components: formula, case studies, and verdict](/assets/img/golden-ratio-web-design.svg)
 
 *The golden ratio φ=1.618 applied to real blog components: the S monogram (55px), theme toggle (34px), and content width (618px). Not every φ relationship survived — the verdict panel shows what stayed and what was rejected.*
 

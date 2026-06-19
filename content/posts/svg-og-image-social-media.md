@@ -11,7 +11,7 @@ tags:
   - howto
 ---
 
-![Three-panel illustration showing the problem and solution: SVG renders perfectly in browser, social media shows empty preview, and PNG fallback fixes it.](/assets/img/social-preview-invisible.svg)
+![Three-panel illustration: browser renders SVG, social media shows blank, PNG fixes preview](/assets/img/social-preview-invisible.svg)
 
 *The three-panel story of an invisible hero image: browser renders SVG beautifully, social media sees nothing, and the PNG fix restores previews.*
 
