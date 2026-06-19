@@ -9,6 +9,8 @@ image: /assets/img/og/pwa-vanilla-js.png
 
 ![Workbox vs Vanilla JS Service Worker size comparison: ~50KB vs ~1KB](/assets/img/workbox-vs-vanilla-size.svg)
 
+*A 50KB framework vs 1KB of vanilla JavaScript — the size difference tells you everything about the tradeoffs between Workbox and a hand-written service worker.*
+
 A Progressive Web App needs three things: HTTPS, a manifest, and a service worker. The first two are straightforward. The service worker — that's where opinions diverge.
 
 The conventional wisdom says: use Workbox. It handles caching strategies, precaching, routing, and cleanup. It's Google-backed, battle-tested, and integrates with every major build tool.

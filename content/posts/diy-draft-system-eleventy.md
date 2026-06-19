@@ -10,6 +10,8 @@ pageHasCode: true
 
 ![Comparison of _drafts folder approach vs frontmatter flag approach for Eleventy v3 draft system](/assets/img/diy-draft-system-eleventy.svg)
 
+*Two approaches to Eleventy drafts: the traditional `_drafts` folder with extra config, and the frontmatter flag approach with live preview URLs and zero plugins.*
+
 ${toc}
 
 ## The Problem
