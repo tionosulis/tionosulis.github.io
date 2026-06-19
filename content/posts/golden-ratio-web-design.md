@@ -4,7 +4,10 @@ description: What happens when you apply φ (1.618) to a blog's UI elements — 
 date: 2026-06-10
 tags: [meta, design, css, golden-ratio]
 pageHasCode: true
+image: /assets/img/og/golden-ratio-web-design.png
 ---
+
+![Three-panel diagram of applying the golden ratio φ=1.618 to web design: the formula with Fibonacci sequence and golden spiral on the left, real case studies showing S box 55px divided by φ equals toggle 34px and content width 618px in the center, and a verdict showing what worked and what was rejected on the right](/assets/img/golden-ratio-web-design.svg)
 
 ${toc}
 
