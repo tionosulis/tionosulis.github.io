@@ -1,8 +1,8 @@
 <aside class="sidebar">
   {% if page.url == '/' %}
-  <div class="site-logo"><a href="/" aria-label="Home">S</a></div>
+  <div class="site-logo"><a href="/" aria-label="Home"><span>S</span></a></div>
   {% else %}
-  <a href="/" class="site-logo" aria-label="Home">S</a>
+  <a href="/" class="site-logo" aria-label="Home"><span>S</span></a>
   {% endif %}
   <nav class="sidebar-nav">
     <a href="/posts/" {% if '/posts/' in page.url and page.url != '/' %}aria-current="page"{% endif %}>Posts</a>

@@ -275,12 +275,11 @@ table {
   text-decoration: none;
   transition: all 0.2s ease;
   flex-shrink: 0;
-  line-height: 1;
-  transform: translateY(2px);
   &:hover { border-color: var(--text); color: var(--text); }
 }
 
 .site-logo a { color: var(--text); text-decoration: none; &:hover { color: var(--text); } }
+.site-logo span { display: block; transform: translateY(2px); }
 
 .sidebar-nav {
   display: flex;
@@ -304,7 +303,12 @@ table {
   background: none;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 0.35rem 0.55rem;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   color: var(--text-secondary);
   font-size: 1.5rem;
@@ -525,7 +529,7 @@ footer.site-footer {
 
   .sidebar-nav a { font-size: 1rem; }
 
-  .theme-toggle { margin-top: 0.5rem; width: 34px; height: 34px; padding: 0; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; }
+  .theme-toggle { margin-top: 0.5rem; font-size: 1.75rem; }
 }
 
 /* Print */
