@@ -1,13 +1,13 @@
 ---
 title: "One Palette for Two Modes: Building a Hero Image Color System"
-description: "Hero images in a dark-mode blog have to survive two backgrounds: #fafafa in light mode, #0a0a0b in dark mode. After several rounds of iteration, I landed on a palette and a set of visual conventions that work in both — without media queries, without inline styles, and without sacrificing contrast."
+description: "Hero images in a dark-mode blog have to survive two backgrounds: #F0F4F8 in light mode, #0F1520 in dark mode. After several rounds of iteration, I landed on a palette and a set of visual conventions that work in both — without media queries, without inline styles, and without sacrificing contrast."
 date: 2026-06-20
 draft: true
 tags: [design, css, meta, howto]
 image: /assets/img/og/dark-mode-done-right.png
 ---
 
-Every hero image on this blog is an SVG embedded via `<img>`. That means the browser renders it on a transparent canvas, and the page background shows through. In a blog with both light and dark mode, that single image has to survive two completely different backgrounds: `#fafafa` on the light side, `#0a0a0b` on the dark side.
+Every hero image on this blog is an SVG embedded via `<img>`. That means the browser renders it on a transparent canvas, and the page background shows through. In a blog with both light and dark mode, that single image has to survive two completely different backgrounds: `#F0F4F8` on the light side, `#0F1520` on the dark side.
 
 When I first started creating hero SVGs, I didn't think about this. I picked a dark navy, `#0F1824`, because it looked dramatic and matched the "developer" vibe I was going for. It worked fine in dark mode. In light mode, it looked like a black hole had swallowed my content.
 
@@ -15,7 +15,7 @@ This is the story of how I iterated from that to a systematic palette that works
 
 ## The Problem: One Image, Two Backgrounds
 
-The blog's body background is `#fafafa` in light mode and `#0a0a0b` in dark mode. Every hero image sits inside `article img`, which gets `border: 1px solid var(--border)` — but that border alone isn't enough to fix a bad background color.
+The blog's body background is `#F0F4F8` in light mode and `#0F1520` in dark mode. Every hero image sits inside `article img`, which gets `border: 1px solid var(--border)` — but that border alone isn't enough to fix a bad background color.
 
 My original palette was `#0F1824` — a very dark navy. Here's how it performed:
 
@@ -46,8 +46,8 @@ linear-gradient(135deg, #243447, #1E2C3A)
 
 Why this works:
 
-- **Against `#fafafa`:** `#243447` is dark enough to create clear separation — the `1px` border keeps it framed, but the bg isn't black, so the eye reads it as a card, not a hole.
-- **Against `#0a0a0b`:** `#243447` is lighter than the page bg, so the image stays distinct without needing a glowing border.
+- **Against `#F0F4F8`:** `#243447` is dark enough to create clear separation — the `1px` border keeps it framed, but the bg isn't black, so the eye reads it as a card, not a hole.
+- **Against `#0F1520`:** `#243447` is lighter than the page bg, so the image stays distinct without needing a glowing border.
 - **As a backdrop for content:** White text (`#C8D8E8`), secondary text (`#7A9AB0`), and colored accents all have enough contrast against this mid-dark slate. Card fills at `#1A2634` create depth without disappearing.
 
 This one change fixed the biggest visual problem. But it also opened the door to something more important: standardization.
@@ -85,7 +85,7 @@ While I was standardizing the palette, I also added an outer frame to every hero
 
 The frame does two things:
 
-1. **Gives the image its own visual boundary** — especially important in light mode, where the dark bg needs a clean edge against `#fafafa`.
+1. **Gives the image its own visual boundary** — especially important in light mode, where the dark bg needs a clean edge against `#F0F4F8`.
 2. **Provides consistent brand identity** across every hero image. Orange corner accents at the top, green at the bottom. Three pill dots on the right edge. A subtle outer shadow. These details accumulate into a recognisable visual language.
 
 ## The Red Glow Problem
@@ -128,7 +128,7 @@ article img {
 }
 ```
 
-`--border` resolves to `#E0E2E8` in light mode and `#2A2A2D` in dark mode. That thin border is what separates the hero image from the page background — especially in light mode, where `#243447` against `#fafafa` needs a clean transition.
+`--border` resolves to `#BCC2CC` in light mode and `#3f3f46` in dark mode. That thin border is what separates the hero image from the page background — especially in light mode, where `#243447` against `#F0F4F8` needs a clean transition.
 
 Without it, the dark image looks like a floating cutout. With it, the image snaps into place as a deliberate design element.
 
