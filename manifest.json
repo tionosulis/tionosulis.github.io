@@ -4,8 +4,8 @@
   "description": "Sulistiono's thoughts",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F0F4F8",
-  "theme_color": "#F0F4F8",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "/favicon.svg",

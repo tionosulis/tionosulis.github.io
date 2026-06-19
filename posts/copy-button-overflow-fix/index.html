@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Eleventy v3.1.6"><title>When position: absolute Meets overflow-x: auto — A Copy Button Debugging Story — Sulistiono</title><meta name="description" content="A small UI bug leads to an enlightening exploration of CSS scroll containers, positioning contexts, and why the simplest fix is often the most architectural."><link rel="canonical" href="https://tionosulis.github.io/posts/copy-button-overflow-fix/"><link rel="alternate" href="https://tionosulis.github.io/feed/feed.xml" type="application/atom+xml" title="Sulistiono"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><link rel="preload" href="/fonts/IBMPlexSans-Var.woff2" as="font" type="font/woff2" crossorigin=""><meta name="theme-color" content="#F0F4F8" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0F1520" media="(prefers-color-scheme: dark)"><meta property="og:title" content="When position: absolute Meets overflow-x: auto — A Copy Button Debugging Story"><meta property="og:description" content="A small UI bug leads to an enlightening exploration of CSS scroll containers, positioning contexts, and why the simplest fix is often the most architectural."><meta property="og:url" content="https://tionosulis.github.io/posts/copy-button-overflow-fix/"><meta property="og:type" content="article"><meta property="og:image" content="https://tionosulis.github.io/assets/img/favicon/android-chrome-192x192.png"><meta name="twitter:card" content="summary"><meta name="google-site-verification" content="nGUHc-P1KrLWgaQSmLNdIFM-c0dIvVcOFCXaJGU5-K0"><script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script><style>@font-face {
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Eleventy v3.1.6"><title>When position: absolute Meets overflow-x: auto — A Copy Button Debugging Story — Sulistiono</title><meta name="description" content="A small UI bug leads to an enlightening exploration of CSS scroll containers, positioning contexts, and why the simplest fix is often the most architectural."><link rel="canonical" href="https://tionosulis.github.io/posts/copy-button-overflow-fix/"><link rel="alternate" href="https://tionosulis.github.io/feed/feed.xml" type="application/atom+xml" title="Sulistiono"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><link rel="preload" href="/fonts/IBMPlexSans-Var.woff2" as="font" type="font/woff2" crossorigin=""><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)"><meta property="og:title" content="When position: absolute Meets overflow-x: auto — A Copy Button Debugging Story"><meta property="og:description" content="A small UI bug leads to an enlightening exploration of CSS scroll containers, positioning contexts, and why the simplest fix is often the most architectural."><meta property="og:url" content="https://tionosulis.github.io/posts/copy-button-overflow-fix/"><meta property="og:type" content="article"><meta property="og:image" content="https://tionosulis.github.io/assets/img/favicon/android-chrome-192x192.png"><meta name="twitter:card" content="summary"><meta name="google-site-verification" content="nGUHc-P1KrLWgaQSmLNdIFM-c0dIvVcOFCXaJGU5-K0"><script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script><style>@font-face {
   font-family: "IBM Plex Sans";
   src: url("/fonts/IBMPlexSans-Var.woff2") format("woff2-variations");
   font-weight: 300 700;
@@ -10,45 +10,45 @@
   --font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
 
-  --bg: #F0F4F8;
-  --bg-secondary: #E4E8EC;
+  --bg: #ffffff;
+  --bg-secondary: #f4f4f4;
   --text: #1a1a1a;
   --text-secondary: #5c6370;
   --text-tertiary: #636b78;
-  --border: #BCC2CC;
-  --accent: #2563eb;
-  --accent-hover: #1d4ed8;
-  --selection: rgba(37, 99, 235, 0.15);
-  --syntax-bg: #E4E8EC;
+  --border: #e0e0e0;
+  --accent: #0f62fe;
+  --accent-hover: #0043ce;
+  --selection: rgba(15, 98, 254, 0.15);
+  --syntax-bg: #f4f4f4;
 
   --radius: 6px;
 }
 
 [data-theme="dark"] {
-  --bg: #0F1520;
-  --bg-secondary: #1A2232;
+  --bg: #161616;
+  --bg-secondary: #262626;
   --text: #e4e4e7;
   --text-secondary: #a1a1aa;
   --text-tertiary: #8a8a94;
-  --border: #3f3f46;
-  --accent: #60a5fa;
-  --accent-hover: #93c5fd;
-  --selection: rgba(96, 165, 250, 0.2);
-  --syntax-bg: #182030;
+  --border: #424242;
+  --accent: #78a9ff;
+  --accent-hover: #a6c8ff;
+  --selection: rgba(120, 169, 255, 0.2);
+  --syntax-bg: #262626;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --bg: #0F1520;
-    --bg-secondary: #1A2232;
+    --bg: #161616;
+    --bg-secondary: #262626;
     --text: #e4e4e7;
     --text-secondary: #a1a1aa;
     --text-tertiary: #a1a1aa;
-    --border: #3f3f46;
-    --accent: #60a5fa;
-    --accent-hover: #93c5fd;
-    --selection: rgba(96, 165, 250, 0.2);
-    --syntax-bg: #182030;
+    --border: #424242;
+    --accent: #78a9ff;
+    --accent-hover: #a6c8ff;
+    --selection: rgba(120, 169, 255, 0.2);
+    --syntax-bg: #262626;
   }
 }
 
