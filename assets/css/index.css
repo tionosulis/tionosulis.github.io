@@ -303,15 +303,15 @@ table {
   background: none;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  width: 34px;
-  height: 34px;
+  width: 26px;
+  height: 26px;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: var(--text-secondary);
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   line-height: 1;
   transition: all 0.15s ease;
   &:hover { color: var(--text); border-color: var(--text-secondary); }
@@ -529,7 +529,7 @@ footer.site-footer {
 
   .sidebar-nav a { font-size: 1rem; }
 
-  .theme-toggle { margin-top: 0.5rem; font-size: 1.75rem; }
+  .theme-toggle { margin-top: 0.5rem; font-size: 1.25rem; }
 }
 
 /* Print */
