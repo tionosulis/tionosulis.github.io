@@ -1,0 +1,394 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#243447"/>
+      <stop offset="100%" style="stop-color:#1E2D3D"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1C2A3A"/>
+      <stop offset="100%" style="stop-color:#182436"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E2A18"/>
+      <stop offset="100%" style="stop-color:#1A2614"/>
+    </linearGradient>
+
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="0.7" fill="#3A5068" opacity="0.6"/>
+    </pattern>
+
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="5" stdDeviation="14" flood-color="#000" flood-opacity="0.38"/>
+    </filter>
+    <filter id="outerLift" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <filter id="goldGlow" x="-30%" y="-50%" width="160%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="subtleGlow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fixShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#dots)"/>
+
+  <!-- Watermark φ — large, subtle -->
+  <text x="600" y="420" font-family="Georgia, serif" font-size="420"
+        fill="#D4A84B" opacity="0.04" text-anchor="middle"
+        font-weight="bold">φ</text>
+
+  <!-- Ambient glow -->
+  <ellipse cx="200" cy="320" rx="280" ry="200" fill="#D4A84B" opacity="0.04"/>
+  <ellipse cx="1000" cy="300" rx="260" ry="180" fill="#7EB8D4" opacity="0.05"/>
+  <ellipse cx="600" cy="340" rx="300" ry="200" fill="#2AD878" opacity="0.03"/>
+
+  <!-- Outer frame -->
+  <rect x="1" y="1" width="1198" height="673" rx="12" ry="12"
+        fill="none" stroke="#3A5470" stroke-width="1.5" opacity="0.9"
+        filter="url(#outerLift)"/>
+  <!-- Corner accents: gold top, slate blue bottom -->
+  <path d="M 1 20 L 1 1 L 20 1" fill="none" stroke="#D4A84B" stroke-width="2" opacity="0.9"/>
+  <path d="M 1180 1 L 1199 1 L 1199 20" fill="none" stroke="#D4A84B" stroke-width="2" opacity="0.9"/>
+  <path d="M 1 655 L 1 674 L 20 674" fill="none" stroke="#7EB8D4" stroke-width="2" opacity="0.7"/>
+  <path d="M 1180 674 L 1199 674 L 1199 655" fill="none" stroke="#7EB8D4" stroke-width="2" opacity="0.7"/>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- TOP LABEL                              -->
+  <!-- ══════════════════════════════════════ -->
+  <text x="600" y="44" font-family="Georgia, serif" font-size="14"
+        fill="#7EB8D4" text-anchor="middle" letter-spacing="3">THE GOLDEN RATIO IN WEB DESIGN — φ = 1.618</text>
+  <line x1="140" y1="54" x2="430" y2="54" stroke="#3A5470" stroke-width="1"/>
+  <circle cx="600" cy="54" r="3" fill="#D4A84B" opacity="0.8"/>
+  <line x1="770" y1="54" x2="1060" y2="54" stroke="#3A5470" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- LEFT COLUMN — THE FORMULA              -->
+  <!-- ══════════════════════════════════════ -->
+  <rect x="32" y="68" width="320" height="542" rx="12"
+        fill="url(#cardGrad)" stroke="#2E4560" stroke-width="1.5"
+        filter="url(#cardShadow)"/>
+  <rect x="32" y="68" width="320" height="4" rx="2" fill="#D4A84B" opacity="0.9"/>
+
+  <!-- Column header -->
+  <text x="192" y="104" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#D4A84B" text-anchor="middle"
+        letter-spacing="3">THE FORMULA</text>
+  <line x1="52" y1="114" x2="332" y2="114" stroke="#2E4560" stroke-width="1"/>
+
+  <!-- Big phi -->
+  <text x="192" y="210" font-family="Georgia, serif" font-size="120"
+        fill="#D4A84B" text-anchor="middle" font-weight="bold"
+        opacity="0.95" filter="url(#goldGlow)">φ</text>
+
+  <!-- Equals 1.618 -->
+  <text x="192" y="248" font-family="'Courier New', Courier, monospace"
+        font-size="22" fill="#D4A84B" text-anchor="middle"
+        font-weight="bold" filter="url(#subtleGlow)">= 1.618033...</text>
+
+  <!-- Formula box -->
+  <rect x="52" y="262" width="280" height="44" rx="8"
+        fill="#182030" stroke="#2E4560" stroke-width="1"/>
+  <text x="192" y="280" font-family="Georgia, serif" font-size="13"
+        fill="#7EB8D4" text-anchor="middle">(a + b) / a  =  a / b  =  φ</text>
+  <text x="192" y="298" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#4A7090" text-anchor="middle">the golden proportion</text>
+
+  <!-- Divider -->
+  <line x1="52" y1="322" x2="332" y2="322" stroke="#2E4560" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Fibonacci sequence -->
+  <text x="52" y="346" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#5A7890" letter-spacing="2">FIBONACCI SEQUENCE</text>
+
+  <text x="52" y="372" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#A8C8D8">0 · 1 · 1 · 2 · 3 · 5 · 8</text>
+  <text x="52" y="394" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#A8C8D8">13 · 21 ·
+        <tspan fill="#D4A84B" font-weight="bold" filter="url(#subtleGlow)">34</tspan>
+        <tspan fill="#A8C8D8"> · </tspan>
+        <tspan fill="#D4A84B" font-weight="bold" filter="url(#subtleGlow)">55</tspan>
+        <tspan fill="#A8C8D8"> · 89</tspan>
+  </text>
+  <text x="52" y="414" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#4A7090">34 and 55 → used in this blog's UI</text>
+
+  <!-- Divider -->
+  <line x1="52" y1="430" x2="332" y2="430" stroke="#2E4560" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Golden spiral arcs — decorative -->
+  <text x="52" y="450" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#5A7890" letter-spacing="2">GOLDEN SPIRAL</text>
+
+  <g transform="translate(192, 520)">
+    <!-- Spiral built from nested arcs -->
+    <path d="M 0,-80 A 80,80 0 0,1 80,0" fill="none" stroke="#D4A84B" stroke-width="2" opacity="0.7"/>
+    <path d="M 80,0 A 49,49 0 0,1 31,49" fill="none" stroke="#D4A84B" stroke-width="1.8" opacity="0.6"/>
+    <path d="M 31,49 A 30,30 0 0,1 1,19" fill="none" stroke="#D4A84B" stroke-width="1.5" opacity="0.5"/>
+    <path d="M 1,19 A 19,19 0 0,1 -18,0" fill="none" stroke="#D4A84B" stroke-width="1.2" opacity="0.4"/>
+    <path d="M -18,0 A 12,12 0 0,1 -6,-12" fill="none" stroke="#D4A84B" stroke-width="1" opacity="0.35"/>
+    <path d="M -6,-12 A 7,7 0 0,1 1,-5" fill="none" stroke="#D4A84B" stroke-width="0.8" opacity="0.3"/>
+    <!-- Rectangle guides -->
+    <rect x="-80" y="-80" width="160" height="160" fill="none" stroke="#D4A84B" stroke-width="0.5" opacity="0.12"/>
+    <rect x="-18" y="-80" width="98" height="98" fill="none" stroke="#D4A84B" stroke-width="0.5" opacity="0.10"/>
+    <rect x="-18" y="18" width="49" height="49" fill="none" stroke="#D4A84B" stroke-width="0.5" opacity="0.10"/>
+    <rect x="-18" y="18" width="30" height="30" fill="none" stroke="#D4A84B" stroke-width="0.5" opacity="0.08"/>
+  </g>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- CENTER COLUMN — THE RELATIONSHIPS      -->
+  <!-- ══════════════════════════════════════ -->
+  <rect x="376" y="68" width="448" height="542" rx="12"
+        fill="url(#cardGrad)" stroke="#2E4560" stroke-width="1.5"
+        filter="url(#cardShadow)"/>
+  <rect x="376" y="68" width="448" height="4" rx="2" fill="#7EB8D4" opacity="0.9"/>
+
+  <!-- Column header -->
+  <text x="600" y="104" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#7EB8D4" text-anchor="middle"
+        letter-spacing="3">THE RELATIONSHIPS</text>
+  <line x1="396" y1="114" x2="804" y2="114" stroke="#2E4560" stroke-width="1"/>
+
+  <!-- ── Relationship 1: S box ÷ φ = Toggle ── -->
+  <text x="396" y="140" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#5A7890" letter-spacing="2">CASE STUDY 1 — UI ELEMENTS</text>
+
+  <!-- S box -->
+  <rect x="396" y="150" width="110" height="110" rx="10"
+        fill="#182030" stroke="#D4A84B" stroke-width="2"
+        filter="url(#fixShadow)"/>
+  <text x="451" y="212" font-family="Georgia, serif" font-size="44"
+        fill="#D4A84B" text-anchor="middle" font-weight="bold"
+        filter="url(#subtleGlow)">S</text>
+  <text x="451" y="244" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#7EB8D4" text-anchor="middle">55 × 55 px</text>
+  <text x="451" y="256" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#4A7090" text-anchor="middle">Fibonacci ✔</text>
+
+  <!-- Connector -->
+  <text x="530" y="200" font-family="Georgia, serif" font-size="18"
+        fill="#5A7890" text-anchor="middle">÷</text>
+  <rect x="510" y="208" width="40" height="22" rx="5"
+        fill="#1A2A18" stroke="#3A6A30" stroke-width="1"/>
+  <text x="530" y="223" font-family="Georgia, serif" font-size="13"
+        fill="#D4A84B" text-anchor="middle" font-weight="bold">φ</text>
+  <text x="530" y="244" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#4A7090" text-anchor="middle">= 1.618</text>
+  <text x="530" y="256" font-family="'Courier New', Courier, monospace"
+        font-size="18" fill="#5A7890" text-anchor="middle">=</text>
+
+  <!-- Toggle box -->
+  <rect x="574" y="168" width="68" height="68" rx="8"
+        fill="#182030" stroke="#D4A84B" stroke-width="1.5"
+        filter="url(#fixShadow)"/>
+  <text x="608" y="210" font-family="Georgia, serif" font-size="26"
+        fill="#D4A84B" text-anchor="middle" filter="url(#subtleGlow)">◑</text>
+  <text x="608" y="230" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#7EB8D4" text-anchor="middle">34 × 34 px</text>
+  <text x="608" y="252" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#4A7090" text-anchor="middle">55 ÷ φ ✔</text>
+
+  <!-- Result line -->
+  <line x1="660" y1="200" x2="800" y2="200" stroke="#2E4560" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="730" y="190" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#2AD878" text-anchor="middle">matched set</text>
+  <text x="730" y="210" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#4A7090" text-anchor="middle">copy btn = 34px</text>
+
+  <!-- Divider -->
+  <line x1="396" y1="275" x2="804" y2="275" stroke="#2E4560" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ── Relationship 2: Content Width ── -->
+  <text x="396" y="298" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#5A7890" letter-spacing="2">CASE STUDY 2 — CONTENT WIDTH</text>
+
+  <!-- Width bar: layout -->
+  <rect x="396" y="310" width="408" height="34" rx="6"
+        fill="#182030" stroke="#2E4560" stroke-width="1"/>
+  <rect x="396" y="310" width="252" height="34" rx="6"
+        fill="#1A2E3A" stroke="#7EB8D4" stroke-width="1.5"/>
+  <text x="522" y="332" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#7EB8D4" text-anchor="middle">618px content</text>
+  <text x="714" y="332" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#4A6070" text-anchor="middle">sidebar + gap</text>
+
+  <!-- Labels -->
+  <text x="396" y="360" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#4A7090">← 618px →</text>
+  <text x="804" y="360" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#4A7090" text-anchor="end">810px total →</text>
+
+  <!-- Formula -->
+  <rect x="396" y="368" width="408" height="38" rx="7"
+        fill="#182030" stroke="#2E4560" stroke-width="1"/>
+  <text x="600" y="382" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#7EB8D4" text-anchor="middle">1000 × 0.618  =  618px</text>
+  <text x="600" y="398" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#2AD878" text-anchor="middle">65–75 chars/line — optimal reading width ✔</text>
+
+  <!-- Divider -->
+  <line x1="396" y1="420" x2="804" y2="420" stroke="#2E4560" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ── Relationship 3: Spacing ── -->
+  <text x="396" y="443" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#5A7890" letter-spacing="2">CASE STUDY 3 — SIDEBAR SPACING</text>
+
+  <rect x="396" y="454" width="408" height="74" rx="8"
+        fill="#182030" stroke="#2E4560" stroke-width="1"/>
+
+  <!-- Before -->
+  <text x="416" y="476" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#7A5050" letter-spacing="1">BEFORE</text>
+  <text x="416" y="494" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#C08070">gap: 1.5rem</text>
+  <text x="416" y="512" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#C08070">padding-right: 2rem</text>
+
+  <!-- Arrow -->
+  <text x="600" y="496" font-family="'Courier New', Courier, monospace"
+        font-size="18" fill="#3A5470" text-anchor="middle">→</text>
+
+  <!-- After -->
+  <text x="626" y="476" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#2A7A4A" letter-spacing="1">AFTER</text>
+  <text x="626" y="494" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#D4A84B" filter="url(#subtleGlow)">gap: 1.618rem</text>
+  <text x="626" y="512" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#D4A84B" filter="url(#subtleGlow)">padding-right: 1.618rem</text>
+
+  <!-- Note -->
+  <text x="600" y="545" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#4A7090" text-anchor="middle">every spacing value from the same φ family</text>
+
+  <!-- Divider -->
+  <line x1="396" y1="560" x2="804" y2="560" stroke="#2E4560" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Key quote -->
+  <text x="600" y="582" font-family="Georgia, serif" font-size="13"
+        fill="#8AAAC0" text-anchor="middle" font-style="italic">"φ creates relationships, not values"</text>
+  <text x="600" y="600" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#4A7090" text-anchor="middle">— the core lesson</text>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- RIGHT COLUMN — THE VERDICT             -->
+  <!-- ══════════════════════════════════════ -->
+  <rect x="848" y="68" width="320" height="542" rx="12"
+        fill="url(#cardGrad)" stroke="#2E4560" stroke-width="1.5"
+        filter="url(#cardShadow)"/>
+  <rect x="848" y="68" width="320" height="4" rx="2" fill="#2AD878" opacity="0.8"/>
+
+  <!-- Column header -->
+  <text x="1008" y="104" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#2AD878" text-anchor="middle"
+        letter-spacing="3">THE VERDICT</text>
+  <line x1="868" y1="114" x2="1148" y2="114" stroke="#2E4560" stroke-width="1"/>
+
+  <!-- ✅ Works -->
+  <text x="868" y="140" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#2A7A4A" letter-spacing="2">φ WORKS WELL FOR</text>
+
+  <rect x="868" y="150" width="280" height="48" rx="8"
+        fill="#0A1E10" stroke="#1A5A2A" stroke-width="1.2"/>
+  <text x="888" y="172" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#2AD878">✅  Element sizing</text>
+  <text x="888" y="190" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#2A6A3A">S box → toggle → copy button</text>
+
+  <rect x="868" y="206" width="280" height="48" rx="8"
+        fill="#0A1E10" stroke="#1A5A2A" stroke-width="1.2"/>
+  <text x="888" y="228" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#2AD878">✅  Content width</text>
+  <text x="888" y="246" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#2A6A3A">618px — empirically optimal</text>
+
+  <rect x="868" y="262" width="280" height="48" rx="8"
+        fill="#0A1E10" stroke="#1A5A2A" stroke-width="1.2"/>
+  <text x="888" y="284" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#2AD878">✅  Spacing rhythm</text>
+  <text x="888" y="302" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#2A6A3A">consistent φ family values</text>
+
+  <!-- Divider -->
+  <line x1="868" y1="324" x2="1148" y2="324" stroke="#2E4560" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ❌ Doesn't work -->
+  <text x="868" y="348" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#7A4040" letter-spacing="2">φ REJECTED FOR</text>
+
+  <rect x="868" y="358" width="280" height="80" rx="8"
+        fill="#160808" stroke="#5A1A1A" stroke-width="1.2"/>
+  <text x="888" y="380" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#E05050">❌  Typography scale</text>
+  <!-- Scale visual -->
+  <text x="888" y="400" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#8A4040">16 → 26 → 42 →</text>
+  <text x="1020" y="400" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#E05050" font-weight="bold">68px</text>
+  <text x="888" y="416" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#6A3030">h1 too large · jarring on mobile</text>
+  <text x="888" y="430" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#4A2A2A">→ use major third (×1.25) instead</text>
+
+  <!-- Divider -->
+  <line x1="868" y1="454" x2="1148" y2="454" stroke="#2E4560" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Summary table -->
+  <text x="868" y="476" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#5A7890" letter-spacing="2">RESULTS</text>
+
+  <rect x="868" y="484" width="280" height="22" rx="4" fill="#182030" stroke="#2E4560" stroke-width="1"/>
+  <text x="878" y="499" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#7EB8D4">S box</text>
+  <text x="1138" y="499" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#D4A84B" text-anchor="end">52px → 55px</text>
+
+  <rect x="868" y="510" width="280" height="22" rx="4" fill="#182030" stroke="#2E4560" stroke-width="1"/>
+  <text x="878" y="525" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#7EB8D4">Toggle</text>
+  <text x="1138" y="525" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#D4A84B" text-anchor="end">~30px → 34px</text>
+
+  <rect x="868" y="536" width="280" height="22" rx="4" fill="#182030" stroke="#2E4560" stroke-width="1"/>
+  <text x="878" y="551" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#7EB8D4">Content width</text>
+  <text x="1138" y="551" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#D4A84B" text-anchor="end">~708px → 618px</text>
+
+  <rect x="868" y="562" width="280" height="22" rx="4" fill="#182030" stroke="#2E4560" stroke-width="1"/>
+  <text x="878" y="577" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#7EB8D4">Sidebar gap</text>
+  <text x="1138" y="577" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#D4A84B" text-anchor="end">1.5 → 1.618rem</text>
+
+  <rect x="868" y="588" width="280" height="22" rx="4" fill="#182030" stroke="#2E4560" stroke-width="1"/>
+  <text x="878" y="603" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#7EB8D4">Layout width</text>
+  <text x="1138" y="603" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#D4A84B" text-anchor="end">900px → 810px</text>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- BOTTOM STRIP                           -->
+  <!-- ══════════════════════════════════════ -->
+  <rect x="0" y="628" width="1200" height="47" fill="#111E2C" opacity="0.95"/>
+  <line x1="0" y1="628" x2="1200" y2="628" stroke="#3A5470" stroke-width="1"/>
+
+  <circle cx="84" cy="651" r="5" fill="#D4A84B" opacity="0.8"/>
+  <text x="100" y="656" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#8A7040">φ = 1.618  ·  Fibonacci: 34 · 55</text>
+
+  <text x="600" y="656" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#3A5470" text-anchor="middle"
+        letter-spacing="3">GOLDEN RATIO · CSS · UI DESIGN · TYPOGRAPHY</text>
+
+  <circle cx="960" cy="651" r="5" fill="#2AD878" opacity="0.7"/>
+  <text x="976" y="656" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#2A7A4A">proportion over perfection</text>
+
+</svg>
