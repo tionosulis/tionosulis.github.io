@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">  <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#243447"/>
+      <stop offset="0%" style="stop-color:#2A4053"/>
       <stop offset="100%" style="stop-color:#1E2D3D"/>
     </linearGradient>
     <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -206,7 +206,7 @@
   <!-- DIVIDER                                                    -->
   <!-- ══════════════════════════════════════════════════════════ -->
   <line x1="48" y1="424" x2="1152" y2="424" stroke="#3A5470" stroke-width="1" stroke-dasharray="5,4"/>
-  <rect x="540" y="414" width="120" height="20" rx="5" fill="#243447" stroke="#3A5470" stroke-width="1"/>
+  <rect x="540" y="414" width="120" height="20" rx="5" fill="#2A4053" stroke="#3A5470" stroke-width="1"/>
   <text x="600" y="428" font-family="'Courier New', Courier, monospace"
         font-size="10" fill="#7EB8D4" text-anchor="middle" letter-spacing="2">FIXED ✔</text>
 

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">  <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#243447"/>
-      <stop offset="100%" style="stop-color:#1E2C3A"/>
+      <stop offset="0%" style="stop-color:#2A4053"/>
+      <stop offset="100%" style="stop-color:#243846"/>
     </linearGradient>
     <linearGradient id="cardOld" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#1E1414"/>
@@ -14,7 +14,7 @@
 
 
     <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="12" cy="12" r="0.8" fill="#2D4055" opacity="0.8"/>
+      <circle cx="12" cy="12" r="0.8" fill="#35556B" opacity="0.8"/>
     </pattern>
 
 
@@ -241,7 +241,7 @@
   <!-- BOTTOM STRIP                           -->
   <!-- ══════════════════════════════════════ -->
   <rect x="0" y="650" width="1200" height="25" fill="#1A2634" opacity="0.9"/>
-  <line x1="0" y1="650" x2="1200" y2="650" stroke="#2D4055" stroke-width="1"/>
+  <line x1="0" y1="650" x2="1200" y2="650" stroke="#35556B" stroke-width="1"/>
   <text x="600" y="664" font-family="'Courier New', Courier, monospace"
         font-size="11" fill="#6A8AAA" text-anchor="middle"
         letter-spacing="3">ELEVENTY v3 · DIY DRAFT SYSTEM · FRONTMATTER · NO PLUGINS</text>
