@@ -8,7 +8,9 @@ pageHasCode: true
 image: /assets/img/og/shiki-njk-language-not-found.png
 ---
 
-![Terminal split showing Shiki throwing 'Language njk not found' error on the left, resolved by switching the code fence tag from njk to html on the right](/assets/img/shiki-njk-language-not-found.svg)
+![Split terminal comparing Shiki njk error with html tag fix](/assets/img/shiki-njk-language-not-found.svg)
+
+*The fix was one word: switching the code fence tag from `njk` to `html` eliminated the Shiki error and restored syntax highlighting with zero configuration changes.*
 
 I was writing a post about SVG hero images and social media previews. Everything was flowing — the introduction, the technical breakdown, the code samples. Then I hit a Nunjucks code block and Eleventy threw this at me:
 
