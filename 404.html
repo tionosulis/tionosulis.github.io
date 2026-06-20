@@ -19,7 +19,7 @@
   --accent: #0f62fe;
   --accent-hover: #0043ce;
   --selection: rgba(15, 98, 254, 0.15);
-  --syntax-bg: #f0f0f0;
+  --syntax-bg: #fcfcfc;
 
   --radius: 6px;
 }
@@ -52,6 +52,9 @@
   }
 }
 
+.shiki {
+  background-color: var(--syntax-bg) !important;
+}
 [data-theme="dark"] .shiki {
   background-color: var(--shiki-dark-bg) !important;
 }
