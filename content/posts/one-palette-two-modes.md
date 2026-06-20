@@ -34,21 +34,23 @@ SVG-in-`<img>` renders on a transparent canvas, but the page background doesn't 
 
 Transparent background was a dead end. The SVG needed a solid, intentional color.
 
-## The Iteration: Finding #243447
+## The Iteration: Finding #2A4053
 
 I needed a background dark enough to anchor the content in dark mode, but light enough that the image doesn't look like a black rectangle in light mode.
 
-After a few rounds of tweaking, I landed on `#243447` with a subtle gradient to `#1E2C3A`:
+After several rounds of tweaking, I landed on `#2A4053` with a subtle gradient to `#243846`:
 
 ```css
-linear-gradient(135deg, #243447, #1E2C3A)
+linear-gradient(135deg, #2A4053, #243846)
 ```
 
 Why this works:
 
-- **Against `#ffffff`:** `#243447` is dark enough to create clear separation — the `1px` border keeps it framed, but the bg isn't black, so the eye reads it as a card, not a hole.
-- **Against `#161616`:** `#243447` is lighter than the page bg, so the image stays distinct without needing a glowing border.
+- **Against `#ffffff`:** `#2A4053` is dark enough to create clear separation — the `1px` border keeps it framed, but the bg isn't black, so the eye reads it as a card, not a hole.
+- **Against `#161616`:** `#2A4053` is lighter than the page bg, so the image stays distinct without needing a glowing border.
 - **As a backdrop for content:** White text (`#C8D8E8`), secondary text (`#7A9AB0`), and colored accents all have enough contrast against this mid-dark slate. Card fills at `#1A2634` create depth without disappearing.
+
+The earlier iteration used `#243447` — slightly darker and cooler. After publishing new posts, I noticed the images looked too heavy in light mode and leaned bluer than intended. Lightening the gradient to `#2A4053` warmed the balance and made the outer frame pop without losing contrast in dark mode. The `#35556B` grid lines replaced `#2D4055` to maintain visibility against the lighter background.
 
 This one change fixed the biggest visual problem. But it also opened the door to something more important: standardization.
 
@@ -58,7 +60,7 @@ Once the bg was settled, I mapped every color in every hero image to a consisten
 
 | Role | Old (random) | New |
 |---|---|---|
-| Background | `#0F1824` | `#243447` → `#1E2C3A` |
+| Background | `#0F1824` | `#2A4053` → `#243846` |
 | Card fill | varied | `#1A2634` |
 | Card border | varied | `#3D536A` |
 | Primary text | varied | `#A0B8D0` / `#C8D8E8` |
@@ -128,9 +130,9 @@ article img {
 }
 ```
 
-`--border` resolves to `#e0e0e0` in light mode and `#424242` in dark mode. That thin border is what separates the hero image from the page background — especially in light mode, where `#243447` against `#ffffff` needs a clean transition.
+`--border` resolves to `#e0e0e0` in light mode and `#424242` in dark mode. That thin border is what separates the hero image from the page background — especially in light mode, where `#2A4053` against `#ffffff` needs a clean transition.
 
-Without it, the dark image looks like a floating cutout. With it, the image snaps into place as a deliberate design element.
+Without it, the `#2A4053` image looks like a floating cutout. With it, the image snaps into place as a deliberate design element.
 
 ## Color Semantics as a Decision Framework
 
