@@ -12,7 +12,7 @@ image: /assets/img/og/shiki-njk-language-not-found.png
 
 *The fix was one word: switching the code fence tag from `njk` to `html` eliminated the Shiki error and restored syntax highlighting with zero configuration changes.*
 
-I was writing a post about SVG hero images and social media previews. Everything was flowing — the introduction, the technical breakdown, the code samples. Then I hit a Nunjucks code block and Eleventy threw this at me:
+I was writing a post about [SVG hero images and social media previews](/posts/svg-og-image-social-media/). Everything was flowing — the introduction, the technical breakdown, the code samples. Then I hit a Nunjucks code block and Eleventy threw this at me:
 
 ```text
 [11ty] Language `njk` not found, you may need to load it first
@@ -22,7 +22,7 @@ Not a build-stopping error per se, but a syntax highlighting failure. The page w
 
 ## The Problem
 
-Shiki, the syntax highlighter I use via `@shikijs/markdown-it`, ships with hundreds of languages. JavaScript, CSS, HTML, YAML, Python, Rust — they're all there. But Nunjucks (`njk`) isn't one of them.
+Shiki, the [syntax highlighter I use](/posts/dark-mode-done-right/) via `@shikijs/markdown-it`, ships with hundreds of languages. JavaScript, CSS, HTML, YAML, Python, Rust — they're all there. But Nunjucks (`njk`) isn't one of them.
 
 This makes sense when you think about it. Nunjucks is a templating language used primarily in the Eleventy ecosystem. It's not as widespread as Jinja (Python) or Liquid (Shopify). Shiki can't bundle every niche templating language — the bundle would be enormous.
 

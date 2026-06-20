@@ -88,7 +88,7 @@ The color migration shipped in commit `28b506f`. Here's what changed for readers
 
 - **Readability improved** in both light and dark modes — less eye strain during long reading sessions.
 - **Hero images now transition smoothly** against the page background. The 1px border + box-shadow provides clean separation without visual noise.
-- **Code blocks look cleaner** — syntax highlighting bg (`#f0f0f0`) is subtly distinct from the page bg without shouting for attention.
+- **Code blocks look cleaner** — [syntax highlighting](/posts/shiki-njk-language-not-found/) bg (`#f0f0f0`) is subtly distinct from the page bg without shouting for attention.
 - **The site feels like it belongs to itself** — fonts, colors, and proportions all come from the same design vocabulary.
 
 ---

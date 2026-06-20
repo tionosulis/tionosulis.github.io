@@ -21,7 +21,7 @@ The button wasn't broken. It was behaving exactly as instructed — just not as 
 
 ## The Structure
 
-Every code block on this blog is rendered by Shiki into this HTML structure:
+Every code block on this blog is [rendered by Shiki](/posts/shiki-njk-language-not-found/) into this HTML structure:
 
 ```html
 <pre class="shiki" style="position: relative; overflow-x: auto;">
