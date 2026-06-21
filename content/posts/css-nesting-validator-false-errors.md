@@ -1,9 +1,9 @@
 ---
 title: "16 CSS Parse Errors — All False: CSS Nesting and the W3C Validator's Blind Spot"
 description: "The W3C validator flagged my modern CSS as invalid. The response is surprising: the validator is wrong, not my code. Here's why."
-date: 2026-06-14
+date: 2026-06-21
 tags: [css, validation, standards, meta]
-draft: true
+draft: false
 pageHasCode: true
 ---
 
