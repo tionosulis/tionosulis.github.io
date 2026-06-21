@@ -97,6 +97,28 @@ export default async function (eleventyConfig) {
     return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
   });
 
+  eleventyConfig.addFilter("getDate", (dateObj, format) => {
+    if (!dateObj) return "";
+    if (dateObj.date instanceof Date) {
+      return DateTime.fromJSDate(dateObj.date, { zone: "utc" }).toFormat(format);
+    }
+    if (dateObj instanceof Date) {
+      return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(format);
+    }
+    return "";
+  });
+
+  eleventyConfig.addNunjucksFilter("date", (dateObj, format) => {
+    if (!dateObj) return "";
+    if (dateObj.date instanceof Date) {
+      return DateTime.fromJSDate(dateObj.date, { zone: "utc" }).toFormat(format);
+    }
+    if (dateObj instanceof Date) {
+      return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(format);
+    }
+    return "";
+  });
+
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   const copySvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';

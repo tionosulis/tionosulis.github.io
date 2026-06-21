@@ -1,14 +1,12 @@
-<aside class="sidebar">
-  {% if page.url == '/' %}
-  <div class="site-logo"><a href="/" aria-label="Home"><span>S</span></a></div>
-  {% else %}
-  <a href="/" class="site-logo" aria-label="Home"><span>S</span></a>
-  {% endif %}
-  <nav class="sidebar-nav">
+<header class="topbar">
+  <a href="/" class="site-logo-link" aria-label="Home">
+    <span class="logo-prompt">&gt;_</span><span class="logo-initial">S</span>
+  </a>
+  <nav class="topbar-nav">
     <a href="/posts/" {% if '/posts/' in page.url and page.url != '/' %}aria-current="page"{% endif %}>Posts</a>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">&#9681;</button>
   </nav>
-</aside>
+</header>
 <script>
 function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",b=document.querySelector(".theme-toggle");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),b.setAttribute("title",t==="dark"?"Dark mode":"Light mode")}
 var b=document.querySelector(".theme-toggle");b&&b.setAttribute("title",document.documentElement.getAttribute("data-theme")==="dark"?"Dark mode":"Light mode")

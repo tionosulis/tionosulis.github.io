@@ -1,8 +1,55 @@
 ---
-layout: layouts/home.njk
+layout: layouts/base.njk
 permalink: /posts/
+title: Posts
 ---
-<h1 class="page-title">Posts</h1>
-<p class="page-description"><span class="page-decor">/</span>thoughts, notes, and ramblings</p>
-{% set postslist = collections.posts | reverse %}
-{% include "partials/postslist.njk" %}
+
+<div class="posts-page">
+
+  <header class="posts-header">
+    <nav class="breadcrumb"><a href="/">~</a> / posts</nav>
+    <div class="heading-prompt">
+      <span class="prompt-char">$</span>
+      <h1>posts</h1>
+    </div>
+    <p class="subheading">
+      <span class="cmd">cat</span> thoughts.log
+      <span class="cursor"></span>
+    </p>
+    <div class="stats-bar">
+      <span><strong>{{ collections.posts | length }}</strong> entries</span>
+      <span>latest <strong>{{ collections.posts | last | getDate("yyyy-MM-dd") }}</strong></span>
+    </div>
+  </header>
+
+  {% set currentYear = "" %}
+  <ol class="post-list">
+    {% for post in collections.posts | reverse %}
+      {% set postYear = post.date | date("yyyy") %}
+      {% if postYear !== currentYear %}
+        <div class="year-label">{{ postYear }}</div>
+        {% set currentYear = postYear %}
+      {% endif %}
+      <li class="post-item">
+        <div class="line-sep"></div>
+        <div class="post-content">
+          <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
+          {% if post.data.tags %}
+          <div class="post-tags">
+            {% for tag in post.data.tags %}
+              {% if tag !== "posts" %}<span class="tag">{{ tag }}</span>{% endif %}
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <span class="post-date">{{ post.date | date("yyyy-MM-dd") }}</span>
+      </li>
+    {% endfor %}
+  </ol>
+
+  <footer class="page-footer">
+    <span><span class="footer-cmd">:q</span> — press esc to go back</span>
+    <span>{{ collections.posts | length }} posts</span>
+  </footer>
+
+</div>
