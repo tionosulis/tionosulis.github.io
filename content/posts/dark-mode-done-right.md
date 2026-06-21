@@ -3,7 +3,6 @@ title: "Dark Mode Done Right: Zero Flicker, CSS Architecture, and the Devil in t
 description: "How I built a zero-flicker dark mode with an inline script, CSS custom properties, localStorage persistence, and a dynamically-updating toggle tooltip — and why every site should do it properly."
 date: 2026-06-13
 draft: false
-redesign_notice: true
 image: /assets/img/og/dark-mode-done-right.png
 tags:
   - css
@@ -142,7 +141,6 @@ function updateTooltip() {
 
 This runs on page load (when the theme is already set by the inline script) and on every toggle click. It's two lines of JavaScript. But it turns an ambiguous icon into a clear affordance.
 
-On this blog, the toggle sits in the sidebar, sized precisely to the golden ratio (34×34 pixels, related to the [55×55 S monogram](/posts/monogram-s-55x55/) by φ = 1.618). It's a small detail, but the ratio between the logo and the toggle creates a subtle visual harmony that the eye registers even if the brain doesn't.
 
 ## Syntax Highlighting in Both Themes
 
