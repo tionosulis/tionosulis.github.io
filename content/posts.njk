@@ -7,7 +7,10 @@ title: Posts
 <div class="posts-page">
 
   <header class="posts-header">
-    <nav class="breadcrumb"><a href="/">~</a> / posts</nav>
+    <nav class="breadcrumb">
+      <span><a href="/">~</a> / posts</span>
+      <button class="theme-toggle-posts" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button>
+    </nav>
     <div class="heading-prompt">
       <span class="prompt-char">$</span>
       <h1>posts</h1>
@@ -18,6 +21,7 @@ title: Posts
     </p>
     <div class="stats-bar">
       <span><strong>{{ collections.posts | length }}</strong> entries</span>
+      <span><strong>{{ collections.posts | countTopics }}</strong> topics</span>
       <span>latest <strong>{{ collections.posts | last | getDate("yyyy-MM-dd") }}</strong></span>
     </div>
   </header>

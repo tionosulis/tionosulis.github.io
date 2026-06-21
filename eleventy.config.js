@@ -97,6 +97,19 @@ export default async function (eleventyConfig) {
     return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
   });
 
+  eleventyConfig.addFilter("countTopics", (posts) => {
+    const tags = new Set();
+    if (!posts) return 0;
+    for (const post of posts) {
+      if (post.data && Array.isArray(post.data.tags)) {
+        for (const tag of post.data.tags) {
+          if (tag !== "posts") tags.add(tag);
+        }
+      }
+    }
+    return tags.size;
+  });
+
   eleventyConfig.addFilter("getDate", (dateObj, format) => {
     if (!dateObj) return "";
     if (dateObj.date instanceof Date) {
