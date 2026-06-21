@@ -17,6 +17,9 @@ layout: layouts/base.njk
       {% endif %}
     </div>
   </header>
+  {% if redesign_notice %}
+  {% include "partials/notice-redesign.njk" %}
+  {% endif %}
   {{ content | safe }}
 </article>
 <nav class="links-nextprev">

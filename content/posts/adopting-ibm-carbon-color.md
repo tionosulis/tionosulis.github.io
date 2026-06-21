@@ -3,6 +3,7 @@ title: "How I Accidentally Built an IBM Design System Theme"
 description: "I was using IBM Plex Sans but Cool Gray backgrounds. After a deep dive into IBM Carbon's color system, I discovered the neutral Gray family — and my blog finally felt like it belonged."
 date: 2026-06-19
 draft: true
+redesign_notice: true
 tags: [design, css, meta, howto]
 ---
 

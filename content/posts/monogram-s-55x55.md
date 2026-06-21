@@ -3,6 +3,7 @@ title: "The Monogram S: 55×55 Pixels and the Design System Behind It"
 description: "How a single letter became a favicon, a PWA icon, a dark-mode-aware SVG, and the anchor of a golden-ratio design system — all from 55×55 pixels."
 date: 2026-06-14
 draft: false
+redesign_notice: true
 tags: [meta, design, svg, favicon, pwa, golden-ratio]
 ---
 

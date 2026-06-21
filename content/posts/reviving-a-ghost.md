@@ -2,6 +2,7 @@
 title: "Reviving a Ghost: From Abandoned 11ty to Build Awesome"
 description: The resurrection of a dead blog, navigating the Eleventy-to-Build Awesome transition, and the pursuit of a perfect Pagespeed score.
 date: 2026-06-09
+redesign_notice: true
 tags: [meta, eleventy, build-awesome]
 pageHasCode: true
 ---

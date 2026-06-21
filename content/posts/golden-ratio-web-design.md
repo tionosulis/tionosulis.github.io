@@ -2,6 +2,7 @@
 title: "The Golden Ratio in Web Design: A Case Study on This Blog"
 description: What happens when you apply φ (1.618) to a blog's UI elements — S monogram, theme toggle, content width, and spacing. The good, the bad, and the myth-busting.
 date: 2026-06-10
+redesign_notice: true
 tags: [meta, design, css, golden-ratio]
 pageHasCode: true
 image: /assets/img/og/golden-ratio-web-design.png

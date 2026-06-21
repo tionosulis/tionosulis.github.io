@@ -3,6 +3,7 @@ title: "Dark Mode Done Right: Zero Flicker, CSS Architecture, and the Devil in t
 description: "How I built a zero-flicker dark mode with an inline script, CSS custom properties, localStorage persistence, and a dynamically-updating toggle tooltip — and why every site should do it properly."
 date: 2026-06-13
 draft: false
+redesign_notice: true
 image: /assets/img/og/dark-mode-done-right.png
 tags:
   - css

@@ -7,7 +7,7 @@ Source of my personal website: https://tionosulis.github.io/
 - **Eleventy** v3 — static site generator (ESM)
 - **Shiki** — dual-theme syntax highlighting
 - **Vanilla CSS** — CSS nesting, custom properties, dark/light toggle
-- **IBM Plex Sans** — locally hosted variable font
+- **JetBrains Mono** — locally hosted variable font
 - **Service Worker** — offline support with vanilla JS
 
 ## Development
