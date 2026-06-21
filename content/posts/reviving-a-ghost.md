@@ -169,7 +169,7 @@ The theme toggle was a small icon in the sidebar at this stage — minimal, func
 
 I drew inspiration from [Shu Ding's website](https://shud.in): clean typography, generous whitespace, and a quiet left sidebar on desktop with navigation links. On mobile, it collapsed to a compact header bar. (This layout has since evolved into a single-column terminal theme, but the principles of intentional spacing remain.)
 
-The old circular SVG logo was gone. In its place: a simple **["S" in a bordered box](/posts/golden-ratio-web-design/)** — then the only ornament, sized via the golden ratio. (The branding has since evolved to the `>_S` terminal prompt.)
+The old circular SVG logo was gone. In its place: a simple **["S" in a bordered box](/posts/monogram-s-55x55/)** — then the only ornament, sized via the golden ratio. (The branding has since evolved to the `>_S` terminal prompt.)
 
 ### Shiki Dual-Theme
 
