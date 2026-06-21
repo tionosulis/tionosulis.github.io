@@ -16,9 +16,9 @@
   --text-secondary: #5c6370;
   --text-tertiary: #636b78;
   --border: #e0e0e0;
-  --accent: #F59E0B;
-  --accent-hover: #D97706;
-  --selection: rgba(245, 158, 11, 0.15);
+  --accent: #B45309;
+  --accent-hover: #92400E;
+  --selection: rgba(180, 83, 9, 0.15);
   --syntax-bg: #fbfbfb;
 
   --radius: 6px;
@@ -276,7 +276,7 @@ table {
   gap: 0;
 }
 .site-logo-link:hover { color: var(--text); }
-.site-logo-link .logo-prompt { color: #F59E0B; }
+.site-logo-link .logo-prompt { color: var(--accent); }
 .site-logo-link .logo-initial { color: inherit; }
 
 .topbar-nav {
@@ -290,7 +290,7 @@ table {
   color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.15s ease;
-  &:hover, &[aria-current="page"] { color: var(--text); }
+  &:hover, &[aria-current="page"] { color: var(--accent); }
 }
 
 .theme-toggle {
@@ -460,7 +460,7 @@ footer.site-footer {
   margin-bottom: 1.2rem;
   letter-spacing: 0.03em;
 }
-.posts-page .breadcrumb a { color: #64748B; text-decoration: none; }
+.posts-page .breadcrumb a { color: var(--accent); text-decoration: none; }
 .posts-page .breadcrumb a:hover { color: var(--accent); }
 .posts-page .heading-prompt {
   display: flex;
@@ -675,5 +675,5 @@ footer.site-footer {
   body { font-size: 12pt; color: #000; background: #fff; }
   a { color: #000; text-decoration: underline; }
   pre { white-space: pre-wrap; border: 1px solid #ccc; }
-}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span></a><nav class="topbar-nav"><a href="/posts/"><span class="prompt-char">$</span> posts</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button></nav></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"})}
+}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span></a><nav class="topbar-nav"><a href="/posts/"><span class="prompt-char">$</span> posts/</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button></nav></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"})}
 document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(n){n.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"[light]":"[dark]"})</script><main id="skip"><div class="home-terminal"><p><span class="prompt-char">$</span> <span class="cmd">whoami</span></p><p class="output">sulistiono</p><p><span class="prompt-char">$</span> <span class="cmd">cat</span> about.txt</p><p class="output">Indonesian code-tinkerer and part-time plant whisperer.<br>Often found up late wrestling with messy code<br>and way too busy to brew my own coffee.</p><p class="output">This blog is my little corner of the internet<br>to dump thoughts, notes to self, and whatever else<br>crosses my mind. Posting frequency? Random and<br>highly inconsistent — such is life.</p><p><span class="prompt-char">$</span> <span class="cmd">ls</span> links/</p><p class="output"><a href="https://github.com/tionosulis">github.com/tionosulis</a><br><a href="https://twitter.com/tionosulis_">twitter.com/tionosulis_</a></p><p class="cursor-line"><span class="prompt-char">$</span> <span class="blinking-cursor">▊</span></p></div><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>

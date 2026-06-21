@@ -16,9 +16,9 @@
   --text-secondary: #5c6370;
   --text-tertiary: #636b78;
   --border: #e0e0e0;
-  --accent: #F59E0B;
-  --accent-hover: #D97706;
-  --selection: rgba(245, 158, 11, 0.15);
+  --accent: #B45309;
+  --accent-hover: #92400E;
+  --selection: rgba(180, 83, 9, 0.15);
   --syntax-bg: #fbfbfb;
 
   --radius: 6px;
@@ -276,7 +276,7 @@ table {
   gap: 0;
 }
 .site-logo-link:hover { color: var(--text); }
-.site-logo-link .logo-prompt { color: #F59E0B; }
+.site-logo-link .logo-prompt { color: var(--accent); }
 .site-logo-link .logo-initial { color: inherit; }
 
 .topbar-nav {
@@ -290,7 +290,7 @@ table {
   color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.15s ease;
-  &:hover, &[aria-current="page"] { color: var(--text); }
+  &:hover, &[aria-current="page"] { color: var(--accent); }
 }
 
 .theme-toggle {
@@ -460,7 +460,7 @@ footer.site-footer {
   margin-bottom: 1.2rem;
   letter-spacing: 0.03em;
 }
-.posts-page .breadcrumb a { color: #64748B; text-decoration: none; }
+.posts-page .breadcrumb a { color: var(--accent); text-decoration: none; }
 .posts-page .breadcrumb a:hover { color: var(--accent); }
 .posts-page .heading-prompt {
   display: flex;
@@ -675,7 +675,7 @@ footer.site-footer {
   body { font-size: 12pt; color: #000; background: #fff; }
   a { color: #000; text-decoration: underline; }
   pre { white-space: pre-wrap; border: 1px solid #ccc; }
-}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span></a><nav class="topbar-nav"><a href="/posts/" aria-current="page"><span class="prompt-char">$</span> posts</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button></nav></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"})}
+}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span></a><nav class="topbar-nav"><a href="/posts/" aria-current="page"><span class="prompt-char">$</span> posts/</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button></nav></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"})}
 document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(n){n.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"[light]":"[dark]"})</script><main id="skip"><article><header class="post-header"><h1 id="dark-mode-done-right-zero-flicker-css-architecture-and-the-devil-in-the-details">Dark Mode Done Right: Zero Flicker, CSS Architecture, and the Devil in the Details</h1><div class="post-meta"><time datetime="2026-06-13">13 June 2026</time> <a href="/tags/css/" class="post-tag">css</a> <a href="/tags/javascript/" class="post-tag">javascript</a> <a href="/tags/howto/" class="post-tag">howto</a></div></header><p><img src="/assets/img/dark-mode-done-right.svg" alt="Three pillars of dark mode done right: Zero Flicker, CSS Architecture, and The Devil in the Details"></p><p><em>The three pillars of a bulletproof dark mode system: zero-flicker rendering, token-based CSS architecture, and edge-case polish.</em></p><p>Dark mode is table stakes for modern websites. Yet most implementations have a fatal flaw: the flash of wrong theme — a brief burst of blinding white before JavaScript kicks in and sets things right. It’s the kind of bug that users feel even if they can’t name it.</p><p>There’s also a spectrum of quality. Some sites manage persistence (remembering your choice). Others respect system preference. Few do all three: instant correct render, persistence, and system-aware defaults. Fewer still handle the tiny UX details that separate good from great.</p><p>This post walks through my dark mode implementation — the one you’re probably using right now. It’s not complicated, but every line earns its keep.</p><h2 id="the-zero-flicker-trick" tabindex="-1">The Zero-Flicker Trick <a class="header-anchor" href="#the-zero-flicker-trick">#</a></h2><p>The root cause of dark mode flicker is timing. If you wait for the DOM to load, for CSS to parse, or for a framework to hydrate, you’ve already lost — the browser has painted the first frame.</p><p>The fix is brutally simple: run your theme logic in a <code>&lt;script></code> tag in <code>&lt;head></code>, before the stylesheet loads.</p><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><button class="copy-btn" aria-label="Copy code" data-copy="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%2213%22%20height%3D%2213%22%20rx%3D%222%22%20ry%3D%222%22%2F%3E%3Cpath%20d%3D%22M5%2015H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h9a2%202%200%200%201%202%202v1%22%2F%3E%3C%2Fsvg%3E" data-check="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2220%206%209%2017%204%2012%22%2F%3E%3C%2Fsvg%3E"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><div class="code-wrapper"><code class="language-html"><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&lt;!</span><span style="color:#22863A;--shiki-dark:#85E89D">DOCTYPE</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> html</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&lt;</span><span style="color:#22863A;--shiki-dark:#85E89D">html</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> lang</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"en"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&lt;</span><span style="color:#22863A;--shiki-dark:#85E89D">head</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
