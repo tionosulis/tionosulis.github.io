@@ -1,5 +1,5 @@
 ---
-layout: layouts/home.njk
+layout: layouts/base.njk
 pagination:
   data: collections
   size: 1
@@ -15,6 +15,44 @@ eleventyExcludeFromCollections: true
 eleventyComputed:
   title: "#{{ tag }}"
 ---
-<h1 class="page-title">#{{ tag }}</h1>
-{% set postslist = collections[tag] | reverse %}
-{% include "partials/postslist.njk" %}
+
+<div class="posts-page">
+
+  <header class="posts-header">
+    <nav class="breadcrumb">
+      <span><a href="/">~</a> / <a href="/posts/">posts</a> / {{ tag }}</span>
+      <button class="theme-toggle-posts" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button>
+    </nav>
+    <div class="heading-prompt">
+      <span class="prompt-char">$</span>
+      <h1><span class="cmd">cat</span> tag/{{ tag }}</h1>
+    </div>
+    <div class="stats-bar">
+      <span><strong>{{ collections[tag] | length }}</strong> entries</span>
+    </div>
+  </header>
+
+  {% set currentYear = "" %}
+  <ol class="post-list">
+    {% for post in collections[tag] | reverse %}
+      {% set postYear = post.date | date("yyyy") %}
+      {% if postYear !== currentYear %}
+        <div class="year-label">{{ postYear }}</div>
+        {% set currentYear = postYear %}
+      {% endif %}
+      <li class="post-item">
+        <div class="line-sep"></div>
+        <div class="post-content">
+          <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
+        </div>
+        <span class="post-date">{{ post.date | date("yyyy-MM-dd") }}</span>
+      </li>
+    {% endfor %}
+  </ol>
+
+  <footer class="page-footer">
+    <span><span class="footer-cmd">:q</span> — <a href="/posts/" class="back-link">back to all posts</a></span>
+    <span>{{ collections[tag] | length }} posts</span>
+  </footer>
+
+</div>

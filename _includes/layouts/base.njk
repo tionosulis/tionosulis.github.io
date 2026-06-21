@@ -29,11 +29,11 @@
 </head>
 <body>
   <a href="#skip" class="visually-hidden">Skip to main content</a>
-  <div class="layout{% if page.url == '/posts/' %} layout--posts{% endif %}">
+  <div class="layout{% if page.url == '/posts/' or '/tags/' in page.url %} layout--posts{% endif %}">
     {% include "partials/header.njk" %}
     <main id="skip">
       {{ content | safe }}
-      {% if page.url != '/posts/' %}
+      {% if page.url != '/posts/' and '/tags/' not in page.url %}
       {% include "partials/footer.njk" %}
       {% endif %}
     </main>
