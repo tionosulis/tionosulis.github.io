@@ -295,26 +295,33 @@ table {
 
 .theme-toggle {
   background: none;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: none;
   cursor: pointer;
   color: var(--text-secondary);
-  font-size: 1.75rem;
-  line-height: 1;
-  transition: all 0.15s ease;
-  &:hover { color: var(--text); border-color: var(--text-secondary); }
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  padding: 0.15rem 0.3rem;
+  transition: color 0.15s ease;
+  &:hover { color: var(--accent); }
+  &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+}
+
+.theme-toggle-posts {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748B;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  padding: 0;
+  transition: color 0.15s ease;
+  &:hover { color: var(--accent); }
   &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
 
 main { min-width: 0; padding-bottom: 2rem; }
 
-article { max-width: 618px; }
+article { max-width: 618px; margin: 0 auto; }
 
 article img { border: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
 
@@ -445,6 +452,9 @@ footer.site-footer {
   border-bottom: 1px solid rgba(100, 116, 139, 0.15);
 }
 .posts-page .breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 0.7rem;
   color: #64748B;
   margin-bottom: 1.2rem;
@@ -663,5 +673,5 @@ footer.site-footer {
   body { font-size: 12pt; color: #000; background: #fff; }
   a { color: #000; text-decoration: underline; }
   pre { white-space: pre-wrap; border: 1px solid #ccc; }
-}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span></a><nav class="topbar-nav"><a href="/posts/">Posts</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">◑</button></nav></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",b=document.querySelector(".theme-toggle");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),b.setAttribute("title",t==="dark"?"Dark mode":"Light mode")}
-var b=document.querySelector(".theme-toggle");b&&b.setAttribute("title",document.documentElement.getAttribute("data-theme")==="dark"?"Dark mode":"Light mode")</script><main id="skip"><h1 class="page-title" id="lighthouse">#lighthouse</h1><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
+}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span></a><nav class="topbar-nav"><a href="/posts/"><span class="prompt-char">$</span> posts</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button></nav></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"})}
+document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(n){n.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"[light]":"[dark]"})</script><main id="skip"><h1 class="page-title" id="lighthouse">#lighthouse</h1><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
