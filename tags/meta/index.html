@@ -261,7 +261,7 @@ table {
   gap: 1rem;
   margin-bottom: 2.618rem;
   padding-bottom: 1.618rem;
-  border-bottom: 3px double var(--border);
+  border-bottom: 2px double var(--border);
 }
 
 .site-logo-link {
@@ -278,21 +278,6 @@ table {
 .site-logo-link:hover { color: var(--text); }
 .site-logo-link .logo-prompt { color: var(--accent); }
 .site-logo-link .logo-initial { color: inherit; }
-
-.topbar-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.topbar-nav a {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.15s ease;
-  &:hover, &[aria-current="page"] { color: var(--accent); }
-}
-.topbar-nav .prompt-char { color: var(--accent); }
 
 .theme-toggle {
   background: none;
@@ -622,7 +607,24 @@ footer.site-footer {
   .posts-page .post-date { display: none; }
 }
 
-/* ───────────── Homepage terminal ───────────── */
+.entry-count { color: #64748B; font-size: 0.65rem; }
+
+/* ───────────── Article page ───────────── */
+.article-page .breadcrumb {
+  font-size: 0.7rem;
+  color: #64748B;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+.article-page .breadcrumb .prompt-char {
+  color: var(--accent);
+  font-weight: 700;
+  user-select: none;
+}
+.article-page .breadcrumb .cmd { color: var(--accent); }
+.article-page .breadcrumb a { color: var(--accent); text-decoration: none; }
+.article-page .breadcrumb a:hover { color: var(--accent-hover); }
+.article-page .breadcrumb .current { color: #64748B; }
 .home-terminal {
   font-family: "JetBrains Mono", monospace;
   max-width: 618px;
@@ -676,5 +678,5 @@ footer.site-footer {
   body { font-size: 12pt; color: #000; background: #fff; }
   a { color: #000; text-decoration: underline; }
   pre { white-space: pre-wrap; border: 1px solid #ccc; }
-}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout layout--posts"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span></a><nav class="topbar-nav"><a href="/posts/"><span class="prompt-char">$</span> posts/</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button></nav></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"})}
+}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout layout--posts"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span> </a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"})}
 document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(n){n.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"[light]":"[dark]"})</script><main id="skip"><div class="posts-page"><header class="posts-header"><nav class="breadcrumb"><span><a href="/">~</a> / <a href="/posts/">posts</a> / meta</span> <button class="theme-toggle-posts" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button></nav><div class="heading-prompt"><span class="prompt-char">$</span><h1 id="cat-tag-meta"><span class="cmd">cat</span> tag/meta</h1></div><div class="stats-bar"><span><strong>10</strong> entries</span></div></header><ol class="post-list"><div class="year-label">2026</div><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/shiki-njk-language-not-found/" class="post-title">Shiki Syntax Highlighting Doesn't Know Nunjucks — And Why That's Fine</a></div><span class="post-date">2026-06-20</span></li><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/svg-og-image-social-media/" class="post-title">SVGs Look Great on Your Blog. Too Bad Twitter, Facebook Can't See Them</a></div><span class="post-date">2026-06-19</span></li><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/service-worker-ate-my-svg/" class="post-title">The Service Worker That Ate My SVG</a></div><span class="post-date">2026-06-17</span></li><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/diy-draft-system-eleventy/" class="post-title">DIY Draft System for Eleventy v3</a></div><span class="post-date">2026-06-15</span></li><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/monogram-s-55x55/" class="post-title">The Monogram S: 55×55 Pixels and the Design System Behind It</a></div><span class="post-date">2026-06-14</span></li><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/copy-button-overflow-fix/" class="post-title">When position: absolute Meets overflow-x: auto — A Copy Button Debugging Story</a></div><span class="post-date">2026-06-12</span></li><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/golden-ratio-web-design/" class="post-title">The Golden Ratio in Web Design: A Case Study on This Blog</a></div><span class="post-date">2026-06-10</span></li><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/chasing-100/" class="post-title">Chasing 100: A Field Guide to Perfect Lighthouse Scores</a></div><span class="post-date">2026-06-10</span></li><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/reviving-a-ghost/" class="post-title">Reviving a Ghost: From Abandoned 11ty to Build Awesome</a></div><span class="post-date">2026-06-09</span></li><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/hello-world/" class="post-title">Hello World</a></div><span class="post-date">2026-06-09</span></li></ol><footer class="page-footer"><span><span class="footer-cmd">:q</span> — <a href="/posts/" class="back-link">back to all posts</a></span> <span>10 posts</span></footer></div></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
