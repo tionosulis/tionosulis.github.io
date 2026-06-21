@@ -1,6 +1,10 @@
 ---
 layout: layouts/base.njk
 ---
+<div class="article-page">
+<nav class="breadcrumb">
+  <span class="prompt-char">$</span> <span class="cmd">cat</span> <a href="/">~</a>/<a href="/posts/">posts</a>/<span class="current">{{ title }}</span>
+</nav>
 <article>
   <header class="post-header">
     <h1>{{ title }}</h1>
@@ -28,3 +32,4 @@ layout: layouts/base.njk
   {% endif %}
   {% endif %}
 </nav>
+</div>

@@ -261,7 +261,7 @@ table {
   gap: 1rem;
   margin-bottom: 2.618rem;
   padding-bottom: 1.618rem;
-  border-bottom: 3px double var(--border);
+  border-bottom: 2px double var(--border);
 }
 
 .site-logo-link {
@@ -278,21 +278,6 @@ table {
 .site-logo-link:hover { color: var(--text); }
 .site-logo-link .logo-prompt { color: var(--accent); }
 .site-logo-link .logo-initial { color: inherit; }
-
-.topbar-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.topbar-nav a {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.15s ease;
-  &:hover, &[aria-current="page"] { color: var(--accent); }
-}
-.topbar-nav .prompt-char { color: var(--accent); }
 
 .theme-toggle {
   background: none;
@@ -622,7 +607,24 @@ footer.site-footer {
   .posts-page .post-date { display: none; }
 }
 
-/* ───────────── Homepage terminal ───────────── */
+.entry-count { color: #64748B; font-size: 0.65rem; }
+
+/* ───────────── Article page ───────────── */
+.article-page .breadcrumb {
+  font-size: 0.7rem;
+  color: #64748B;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+.article-page .breadcrumb .prompt-char {
+  color: var(--accent);
+  font-weight: 700;
+  user-select: none;
+}
+.article-page .breadcrumb .cmd { color: var(--accent); }
+.article-page .breadcrumb a { color: var(--accent); text-decoration: none; }
+.article-page .breadcrumb a:hover { color: var(--accent-hover); }
+.article-page .breadcrumb .current { color: #64748B; }
 .home-terminal {
   font-family: "JetBrains Mono", monospace;
   max-width: 618px;

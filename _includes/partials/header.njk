@@ -2,10 +2,7 @@
   <a href="/" class="site-logo-link" aria-label="Home">
     <span class="logo-prompt">&gt;_</span><span class="logo-initial">S</span>
   </a>
-  <nav class="topbar-nav">
-    <a href="/posts/" {% if '/posts/' in page.url and page.url != '/' %}aria-current="page"{% endif %}><span class="prompt-char">$</span> posts/</a>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button>
-  </nav>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button>
 </header>
 <script>
 function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"})}
