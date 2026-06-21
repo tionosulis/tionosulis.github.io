@@ -180,7 +180,7 @@ blockquote {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.2;
   margin: 2rem 0 0.5rem;
   color: var(--text);
   &:first-child { margin-top: 0; }
@@ -337,7 +337,7 @@ article p:has(img) + p em:only-child {
 
 .post-header { margin-bottom: 2rem; }
 
-.post-header h1 { margin-bottom: 0.5rem; }
+.post-header h1 { margin-bottom: 0.5rem; line-height: 1.1; }
 
 .post-meta {
   font-size: 0.85rem;
@@ -575,7 +575,7 @@ footer.site-footer {
   text-overflow: ellipsis;
   letter-spacing: -0.01em;
   transition: color 0.12s;
-  line-height: 1.3;
+  line-height: 1.15;
 }
 .posts-page .post-item:hover .post-title { color: var(--accent); }
 .posts-page .post-tags {
@@ -624,6 +624,8 @@ footer.site-footer {
 /* ───────────── Homepage terminal ───────────── */
 .home-terminal {
   font-family: "JetBrains Mono", monospace;
+  max-width: 618px;
+  margin: 0 auto;
 }
 .home-terminal .prompt-char {
   color: var(--accent);
@@ -673,5 +675,5 @@ footer.site-footer {
   body { font-size: 12pt; color: #000; background: #fff; }
   a { color: #000; text-decoration: underline; }
   pre { white-space: pre-wrap; border: 1px solid #ccc; }
-}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span></a><nav class="topbar-nav"><a href="/posts/"><span class="prompt-char">$</span> posts</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button></nav></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"})}
-document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(n){n.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"[light]":"[dark]"})</script><main id="skip"><h1 class="page-title" id="service-worker">#service-worker</h1><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
+}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout layout--posts"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span></a><nav class="topbar-nav"><a href="/posts/"><span class="prompt-char">$</span> posts</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button></nav></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"})}
+document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(n){n.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"[light]":"[dark]"})</script><main id="skip"><div class="posts-page"><header class="posts-header"><nav class="breadcrumb"><span><a href="/">~</a> / <a href="/posts/">posts</a> / service-worker</span> <button class="theme-toggle-posts" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button></nav><div class="heading-prompt"><span class="prompt-char">$</span><h1 id="cat-tag-service-worker"><span class="cmd">cat</span> tag/service-worker</h1></div><div class="stats-bar"><span><strong>2</strong> entries</span></div></header><ol class="post-list"><div class="year-label">2026</div><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/service-worker-ate-my-svg/" class="post-title">The Service Worker That Ate My SVG</a></div><span class="post-date">2026-06-17</span></li><li class="post-item"><div class="line-sep"></div><div class="post-content"><a href="/posts/pwa-vanilla-js/" class="post-title">PWA with Vanilla JS: Why I Ditched Workbox for a 1KB Service Worker</a></div><span class="post-date">2026-06-16</span></li></ol><footer class="page-footer"><span><span class="footer-cmd">:q</span> — <a href="/posts/" class="back-link">back to all posts</a></span> <span>2 posts</span></footer></div></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>

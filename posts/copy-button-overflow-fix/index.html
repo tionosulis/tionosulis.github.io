@@ -180,7 +180,7 @@ blockquote {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.2;
   margin: 2rem 0 0.5rem;
   color: var(--text);
   &:first-child { margin-top: 0; }
@@ -337,7 +337,7 @@ article p:has(img) + p em:only-child {
 
 .post-header { margin-bottom: 2rem; }
 
-.post-header h1 { margin-bottom: 0.5rem; }
+.post-header h1 { margin-bottom: 0.5rem; line-height: 1.1; }
 
 .post-meta {
   font-size: 0.85rem;
@@ -575,7 +575,7 @@ footer.site-footer {
   text-overflow: ellipsis;
   letter-spacing: -0.01em;
   transition: color 0.12s;
-  line-height: 1.3;
+  line-height: 1.15;
 }
 .posts-page .post-item:hover .post-title { color: var(--accent); }
 .posts-page .post-tags {
@@ -624,6 +624,8 @@ footer.site-footer {
 /* ───────────── Homepage terminal ───────────── */
 .home-terminal {
   font-family: "JetBrains Mono", monospace;
+  max-width: 618px;
+  margin: 0 auto;
 }
 .home-terminal .prompt-char {
   color: var(--accent);
@@ -701,4 +703,4 @@ document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// After: button + scroll wrapper</span></span>
 <span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">let</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> result </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> content.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">replace</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">/</span><span style="color:#032F62;--shiki-dark:#DBEDFF">(&lt;pre</span><span style="color:#005CC5;--shiki-dark:#79B8FF">[</span><span style="color:#D73A49;--shiki-dark:#F97583">^</span><span style="color:#005CC5;--shiki-dark:#79B8FF">>]</span><span style="color:#D73A49;--shiki-dark:#F97583">*</span><span style="color:#032F62;--shiki-dark:#DBEDFF">>)</span><span style="color:#032F62;--shiki-dark:#9ECBFF">/</span><span style="color:#D73A49;--shiki-dark:#F97583">g</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"$1"</span><span style="color:#D73A49;--shiki-dark:#F97583"> +</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> copyBtnHtml </span><span style="color:#D73A49;--shiki-dark:#F97583">+</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> '&lt;div class="code-wrapper">'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">);</span></span>
-<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">return</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> result.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">replace</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">/</span><span style="color:#032F62;--shiki-dark:#DBEDFF">&lt;</span><span style="color:#22863A;font-weight:bold;--shiki-dark:#85E89D;--shiki-dark-font-weight:bold">\/</span><span style="color:#032F62;--shiki-dark:#DBEDFF">pre></span><span style="color:#032F62;--shiki-dark:#9ECBFF">/</span><span style="color:#D73A49;--shiki-dark:#F97583">g</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'&lt;/div>&lt;/pre>'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">);</span></span></code></div></pre><h2 id="what-this-taught-me" tabindex="-1">What This Taught Me <a class="header-anchor" href="#what-this-taught-me">#</a></h2><p>Every CSS property interacts with its container. <code>position: absolute</code> is often taught as “removes from flow,” which is true — but only partially. It removes from the normal layout flow, not from the scroll flow. Understanding this distinction turned a two-hour debugging session into a ten-second fix with a clear rationale.</p><p>The next time you see a <code>position: absolute</code> element that won’t stay put inside an overflowing container, remember: the scrollport doesn’t care about your layout context. Give it its own container.</p><hr><p><em>The full source of this blog — including this fix — is <a href="https://github.com/tionosulis/tionosulis.github.io">on GitHub</a>.</em></p></article><nav class="links-nextprev"><a href="/posts/" class="back-link"><span class="vim-cmd">:q</span> back to posts</a><div class="nav-pair"><a href="/posts/dark-mode-done-right/" class="prev"><span class="vim-cmd">:prev</span> Dark Mode Done Right: Zero Flicker, CSS Architecture, and the Devil in the Details</a> <a href="/posts/git-shallow-clone/" class="next">Git Shallow Clone Headache: Pushing from a --depth 1 Repository <span class="vim-cmd">:next</span></a></div></nav><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">return</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> result.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">replace</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">/</span><span style="color:#032F62;--shiki-dark:#DBEDFF">&lt;</span><span style="color:#22863A;font-weight:bold;--shiki-dark:#85E89D;--shiki-dark-font-weight:bold">\/</span><span style="color:#032F62;--shiki-dark:#DBEDFF">pre></span><span style="color:#032F62;--shiki-dark:#9ECBFF">/</span><span style="color:#D73A49;--shiki-dark:#F97583">g</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'&lt;/div>&lt;/pre>'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">);</span></span></code></div></pre><h2 id="what-this-taught-me" tabindex="-1">What This Taught Me <a class="header-anchor" href="#what-this-taught-me">#</a></h2><p>Every CSS property interacts with its container. <code>position: absolute</code> is often taught as “removes from flow,” which is true — but only partially. It removes from the normal layout flow, not from the scroll flow. Understanding this distinction turned a two-hour debugging session into a ten-second fix with a clear rationale.</p><p>The next time you see a <code>position: absolute</code> element that won’t stay put inside an overflowing container, remember: the scrollport doesn’t care about your layout context. Give it its own container.</p><hr><p><em>The full source of this blog — including this fix — is <a href="https://github.com/tionosulis/tionosulis.github.io">on GitHub</a>.</em></p></article><nav class="links-nextprev"><a href="/posts/" class="back-link"><span class="vim-cmd">:q</span> back to posts</a><div class="nav-pair"><a href="/posts/dark-mode-done-right/" class="prev"><span class="vim-cmd">:prev</span> Dark Mode Done Right: Zero Flicker, CSS Architecture, and the Devil in the Details</a> <a href="/posts/git-shallow-clone/" class="next"><span class="vim-cmd">:next</span> Git Shallow Clone Headache: Pushing from a --depth 1 Repository</a></div></nav><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
