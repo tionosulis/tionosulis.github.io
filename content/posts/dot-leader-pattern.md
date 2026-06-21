@@ -9,7 +9,9 @@ image: /assets/img/og/dot-leader-pattern.png
 
 ![Three CSS dot leader challenges: overflow, baseline misalignment, and title squeeze with the final fix](/assets/img/dot-leader-pattern.svg)
 
-*Three CSS challenges — overflow, baseline alignment, title squeeze — solved with flexbox, `min-width: 0`, and `text-overflow: ellipsis`. The final result handles all edge cases cleanly.*
+*The post listing before the terminal revamp: dot leaders connecting titles to dates. The CSS below solves the three challenges visible in this layout.*
+
+The hero image above shows this blog's post listing before the terminal redesign. The listing has since been redesigned to a terminal style, but the CSS challenges I hit while building this dot leader are worth documenting regardless of the current design.
 
 A **dot leader** is a trail of dots between a title and its metadata, like a date — a classic pattern from 17th century printed tables of contents, where typesetters inserted periods between chapter titles and page numbers. CSS has supported building this pattern natively since 2015, when flexbox became broadly available.
 
