@@ -2,7 +2,6 @@
 title: "Reviving a Ghost: From Abandoned 11ty to Build Awesome"
 description: The resurrection of a dead blog, navigating the Eleventy-to-Build Awesome transition, and the pursuit of a perfect Pagespeed score.
 date: 2026-06-09
-redesign_notice: true
 tags: [meta, eleventy, build-awesome]
 pageHasCode: true
 ---
@@ -69,7 +68,7 @@ This is where theory became practice. I had a checklist of modern features I wan
 | Syntax highlighting | Shiki (dual-theme: github-light/github-dark) |
 | Image pipeline | `@11ty/eleventy-img` (AVIF + WebP) |
 | CSS | Vanilla — Nesting, Custom Properties, inlined + minified |
-| Fonts | IBM Plex Sans (local woff2, `font-display: swap`) |
+| Fonts | JetBrains Mono (local woff2, `font-display: swap`) |
 | Service Worker | Vanilla JS (no Workbox) |
 | Templates | Nunjucks |
 
@@ -164,13 +163,13 @@ The CSS then builds on CSS custom properties scoped to `[data-theme="dark"]` and
 }
 ```
 
-The toggle button itself is a small icon in the sidebar — minimal, functional, and the only piece of interactive JavaScript on the entire site.
+The theme toggle was a small icon in the sidebar at this stage — minimal, functional, and the only piece of interactive JavaScript on the site.
 
 ### Design
 
-I drew inspiration from [Shu Ding's website](https://shud.in): clean typography, generous whitespace, a quiet left sidebar on desktop with navigation links. On mobile, it collapses to a compact header bar.
+I drew inspiration from [Shu Ding's website](https://shud.in): clean typography, generous whitespace, and a quiet left sidebar on desktop with navigation links. On mobile, it collapsed to a compact header bar. (This layout has since evolved into a single-column terminal theme, but the principles of intentional spacing remain.)
 
-The old circular SVG logo is gone. In its place: a simple **["S" in a bordered box](/posts/golden-ratio-web-design/)** — the only ornament, sized via the golden ratio.
+The old circular SVG logo was gone. In its place: a simple **["S" in a bordered box](/posts/golden-ratio-web-design/)** — then the only ornament, sized via the golden ratio. (The branding has since evolved to the `>_S` terminal prompt.)
 
 ### Shiki Dual-Theme
 
@@ -190,9 +189,9 @@ No Flash of Unstyled Code. No extra HTTP requests. Just clean, themed tokens.
 ### Everything Else
 
 - **PWA**: a vanilla service worker that precaches fonts and core pages, with cache-first for assets and network-first for documents.
-- **Dot leader**: post titles and dates separated by a flex-grow dots span, like a table of contents from a 1990s computer book.
+- **Dot leader** — the original post listing used a flex-grow dots span between titles and dates, like a table of contents from a 1990s computer book. (The listing has since been redesigned to a terminal style, but the CSS technique is documented in [a dedicated post](/posts/dot-leader-pattern/).)
 - **Tag pages**: auto-generated via Eleventy pagination — click a tag on any post and you get a filtered listing.
-- **Favicon**: the "S" monogram in SVG + PNG sizes, including a maskable icon for Android.
+- **Favicon**: the "S" monogram in SVG + PNG sizes, including a maskable icon for Android. (Later updated to the `>_S` prompt logo.)
 
 ## The Result
 

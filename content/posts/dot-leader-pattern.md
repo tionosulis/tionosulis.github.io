@@ -3,7 +3,6 @@ title: "The Dot Leader: 3 CSS Challenges Before It Felt Right"
 description: "The dot leader looks like the simplest CSS pattern — one span, flex: 1, done. But three subtle challenges pushed it from okay to polished, and taught me what separates good CSS from great CSS."
 date: 2026-06-18
 draft: false
-redesign_notice: true
 tags: [css, design, typography, howto]
 image: /assets/img/og/dot-leader-pattern.png
 ---
@@ -12,9 +11,9 @@ image: /assets/img/og/dot-leader-pattern.png
 
 *Three CSS challenges — overflow, baseline alignment, title squeeze — solved with flexbox, `min-width: 0`, and `text-overflow: ellipsis`. The final result handles all edge cases cleanly.*
 
-Look at the post listing on this blog. Between each post title and its date, there's a trail of dots — a **dot leader**, connecting content to metadata. It dates back to 17th century printed tables of contents, where typesetters inserted periods between chapter titles and page numbers.
+A **dot leader** is a trail of dots between a title and its metadata, like a date — a classic pattern from 17th century printed tables of contents, where typesetters inserted periods between chapter titles and page numbers. CSS has supported building this pattern natively since 2015, when flexbox became broadly available.
 
-CSS has supported this pattern natively since 2015, when flexbox became broadly available. One `<span>`, a `::before` pseudo-element with repeating dots, and `flex: 1` to fill the gap. The markup is minimal:
+One `<span>`, a `::before` pseudo-element with repeating dots, and `flex: 1` to fill the gap. The markup is minimal:
 
 ```html
 <li>
@@ -159,7 +158,7 @@ The full CSS for the dot leader sits at about 30 lines, including the pseudo-ele
 }
 ```
 
-Each line addresses a specific edge case. None are speculative — every property here exists because a real viewport or a real title length broke the previous version. The `padding: 0.3rem` is derived from the golden ratio hierarchy (discussed in [an earlier post](/posts/golden-ratio-web-design/)), where 0.3 creates a vertical rhythm that scales proportionally with font size.
+Each line addresses a specific edge case. None are speculative — every property here exists because a real viewport or a real title length broke the previous version. The `padding: 0.3rem` can be derived from the golden ratio hierarchy (discussed in [an earlier post](/posts/golden-ratio-web-design/)), where 0.3 creates a vertical rhythm that scales proportionally with font size.
 
 ## The Takeaway
 

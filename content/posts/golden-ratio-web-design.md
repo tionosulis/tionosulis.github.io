@@ -2,7 +2,6 @@
 title: "The Golden Ratio in Web Design: A Case Study on This Blog"
 description: What happens when you apply φ (1.618) to a blog's UI elements — S monogram, theme toggle, content width, and spacing. The good, the bad, and the myth-busting.
 date: 2026-06-10
-redesign_notice: true
 tags: [meta, design, css, golden-ratio]
 pageHasCode: true
 image: /assets/img/og/golden-ratio-web-design.png
@@ -10,7 +9,7 @@ image: /assets/img/og/golden-ratio-web-design.png
 
 ![Golden ratio φ=1.618 applied to blog UI components: formula, case studies, and verdict](/assets/img/golden-ratio-web-design.svg)
 
-*The golden ratio φ=1.618 applied to real blog components: the S monogram (55px), theme toggle (34px), and content width (618px). Not every φ relationship survived — the verdict panel shows what stayed and what was rejected.*
+*The golden ratio φ=1.618 applied to real blog components. Not every φ relationship survived — the verdict panel shows what stayed and what was rejected.*
 
 ${toc}
 
@@ -18,7 +17,7 @@ ${toc}
 
 The last two posts covered technical optimization — **[Eleventy v3 migration](/posts/reviving-a-ghost/)**, Shiki syntax highlighting, PWA setup, and chasing a **[perfect 100/100 Lighthouse score](/posts/chasing-100/)**. The site was fast, accessible, and standards-compliant. But something about it still felt assembled rather than composed.
 
-The sidebar had an "S" monogram. Next to it (on mobile) or below it (on desktop) sat a theme toggle. They were both boxed elements with borders. But their sizes had no relationship to each other. The content area stretched to whatever width the browser gave it. Spacing values like `1.5rem` and `2rem` were chosen by eye, not by system.
+At the time, the sidebar had an "S" monogram. Next to it (on mobile) or below it (on desktop) sat a theme toggle. They were both boxed elements with borders. But their sizes had no relationship to each other. The content area stretched to whatever width the browser gave it. Spacing values like `1.5rem` and `2rem` were chosen by eye, not by system.
 
 This post is about applying the golden ratio (φ) to those decisions — what worked, what didn't, and why the most famous proportion in design isn't always the right answer.
 
@@ -71,7 +70,7 @@ The lesson: **φ works best for spatial relationships (spacing, proportions, dim
 
 ## Case Study 1: The S Monogram & Theme Toggle
 
-This is the most visible change on the site. Open the sidebar on desktop and you'll see two bordered boxes: the "S" home link and the theme toggle (&#9681;). Before this post, they had no dimensional relationship.
+The first φ application targeted the "S" home link and the theme toggle in the sidebar. Before this change, they had no dimensional relationship — the S box was a rounded 52×52px, and the toggle's size was determined entirely by its padding and font-size.
 
 ### Before
 
@@ -103,7 +102,7 @@ The toggle became a **34×34px** box, with the (&#9681;) character centered via 
                 justify-content: center; padding: 0; }
 ```
 
-The relationship is visible: the toggle is exactly the S box shrunk by φ. They're no longer two unrelated boxes — they're a matched set with a proportional connection. I explore the monogram's design system — favicon generation, SVG optimization, and maskable icons — in [a dedicated post](/posts/monogram-s-55x55/).
+The relationship is visible: the toggle is exactly the S box shrunk by φ. They were no longer two unrelated boxes — they were a matched set with a proportional connection. (Both elements have since been redesigned in the terminal theme, but the φ relationship principle remains instructive.)
 
 ![Before and after comparison of the S monogram and theme toggle sizes, showing the φ relationship](/assets/img/golden-ratio-boxes.svg)
 
@@ -133,9 +132,9 @@ The layout container shrunk from 900px to 810px, ensuring the content column nat
 
 The result: text that's measurably more comfortable to read, anchored by a proportion that's been recognized as optimal for centuries. This is φ doing what it does best — providing an empirically sound constraint that removes the burden of arbitrary decisions.
 
-## Case Study 3: Sidebar Vertical Rhythm
+## Case Study 3: Spatial Rhythm with φ
 
-The desktop sidebar stacks elements vertically: S box, navigation links, theme toggle. Before the φ treatment, these were spaced with `gap: 1.5rem` and the sidebar had `padding-right: 2rem` separating it from the vertical border.
+The golden ratio shines brightest in spatial relationships — gaps, margins, and paddings between elements. On the original sidebar layout, elements were spaced with `gap: 1.5rem` and `padding-right: 2rem` separating it from the vertical border.
 
 Both values were adjusted to φ-based numbers:
 
@@ -149,11 +148,11 @@ Both values were adjusted to φ-based numbers:
 
 The gap increase from 1.5rem to 1.618rem is only about 2px — not visually transformative on its own. The padding-right decrease from 2rem to 1.618rem (~6px) is more noticeable, giving the content area a bit more breathing room.
 
-These changes are subtle. Their value isn't in the individual pixel shifts but in the consistency they create. Every spacing value in the sidebar now comes from the same φ family, forming a coherent vertical rhythm rather than a collection of individually-optimized numbers.
+These changes are subtle. Their value isn't in the individual pixel shifts but in the consistency they create. Every spacing value in the sidebar came from the same φ family, forming a coherent vertical rhythm rather than a collection of individually-optimized numbers. The same φ-based spacing continues to be used in the current topbar, breadcrumb, and article layout.
 
 ### A Note on Border Width
 
-One temptation was to scale the sidebar's vertical border using φ: `border-right: 1.618px solid var(--border)`. Browsers don't reliably render sub-pixel borders, and a 1.618px border looks identical to a 1px border in practice. The principle matters, but browser reality matters more.
+One temptation was to scale the sidebar's vertical border using φ: `border-right: 1.618px solid var(--border)`. (The sidebar has since been replaced by a topbar, but the sub-pixel border lesson applies regardless.) Browsers don't reliably render sub-pixel borders, and a 1.618px border looks identical to a 1px border in practice. The principle matters, but browser reality matters more.
 
 ## Case Study 4: The Copy Button
 
@@ -173,7 +172,7 @@ A 2px increase on a button that's only visible on hover. Is it noticeable? Barel
 
 ## Results Summary
 
-Here's a before-and-after table of every φ-influenced change:
+Here's a before-and-after table of every φ-influenced change at the time (the sidebar and S monogram have since been replaced, but the φ ratios continue in the current layout):
 
 | Element | Before | After | φ Basis |
 |---|---|---|---|
