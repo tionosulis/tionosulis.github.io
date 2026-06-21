@@ -1,14 +1,14 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Eleventy v3.1.6"><title>Big Pickle: The Free AI That Made Me Rethink What 'Good Code' Means — Sulistiono</title><meta name="description" content="A personal journal entry about trying almost every AI coding tool and finding one that understands project architecture — not just syntax."><link rel="canonical" href="https://tionosulis.github.io/drafts/big-pickle-opencode-zen/"><link rel="alternate" href="https://tionosulis.github.io/feed/feed.xml" type="application/atom+xml" title="Sulistiono"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><link rel="preload" href="/fonts/IBMPlexSans-Var.woff2" as="font" type="font/woff2" crossorigin=""><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)"><meta property="og:title" content="Big Pickle: The Free AI That Made Me Rethink What 'Good Code' Means"><meta property="og:description" content="A personal journal entry about trying almost every AI coding tool and finding one that understands project architecture — not just syntax."><meta property="og:url" content="https://tionosulis.github.io/drafts/big-pickle-opencode-zen/"><meta property="og:type" content="article"><meta property="og:image" content="https://tionosulis.github.io/assets/img/favicon/android-chrome-192x192.png"><meta name="twitter:card" content="summary"><meta name="google-site-verification" content="nGUHc-P1KrLWgaQSmLNdIFM-c0dIvVcOFCXaJGU5-K0"><script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script><style>@font-face {
-  font-family: "IBM Plex Sans";
-  src: url("/fonts/IBMPlexSans-Var.woff2") format("woff2-variations");
-  font-weight: 300 700;
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Eleventy v3.1.6"><title>Big Pickle: The Free AI That Made Me Rethink What 'Good Code' Means — Sulistiono</title><meta name="description" content="A personal journal entry about trying almost every AI coding tool and finding one that understands project architecture — not just syntax."><link rel="canonical" href="https://tionosulis.github.io/drafts/big-pickle-opencode-zen/"><link rel="alternate" href="https://tionosulis.github.io/feed/feed.xml" type="application/atom+xml" title="Sulistiono"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><link rel="preload" href="/fonts/JetBrainsMono[wght].woff2" as="font" type="font/woff2" crossorigin=""><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)"><meta property="og:title" content="Big Pickle: The Free AI That Made Me Rethink What 'Good Code' Means"><meta property="og:description" content="A personal journal entry about trying almost every AI coding tool and finding one that understands project architecture — not just syntax."><meta property="og:url" content="https://tionosulis.github.io/drafts/big-pickle-opencode-zen/"><meta property="og:type" content="article"><meta property="og:image" content="https://tionosulis.github.io/assets/img/favicon/android-chrome-192x192.png"><meta name="twitter:card" content="summary"><meta name="google-site-verification" content="nGUHc-P1KrLWgaQSmLNdIFM-c0dIvVcOFCXaJGU5-K0"><script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script><style>@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono[wght].woff2") format("woff2-variations");
+  font-weight: 100 800;
   font-display: swap;
   font-style: normal;
 }
 
 :root {
-  --font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
+  --font-sans: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --bg: #ffffff;
   --bg-secondary: #f4f4f4;
@@ -16,9 +16,9 @@
   --text-secondary: #5c6370;
   --text-tertiary: #636b78;
   --border: #e0e0e0;
-  --accent: #0f62fe;
-  --accent-hover: #0043ce;
-  --selection: rgba(15, 98, 254, 0.15);
+  --accent: #F59E0B;
+  --accent-hover: #D97706;
+  --selection: rgba(245, 158, 11, 0.15);
   --syntax-bg: #fbfbfb;
 
   --radius: 6px;
@@ -31,9 +31,9 @@
   --text-secondary: #a1a1aa;
   --text-tertiary: #8a8a94;
   --border: #424242;
-  --accent: #78a9ff;
-  --accent-hover: #a6c8ff;
-  --selection: rgba(120, 169, 255, 0.2);
+  --accent: #FBBF24;
+  --accent-hover: #FCD34D;
+  --selection: rgba(251, 191, 36, 0.2);
   --syntax-bg: #262626;
 }
 
@@ -45,9 +45,9 @@
     --text-secondary: #a1a1aa;
     --text-tertiary: #a1a1aa;
     --border: #424242;
-    --accent: #78a9ff;
-    --accent-hover: #a6c8ff;
-    --selection: rgba(120, 169, 255, 0.2);
+    --accent: #FBBF24;
+    --accent-hover: #FCD34D;
+    --selection: rgba(251, 191, 36, 0.2);
     --syntax-bg: #262626;
   }
 }
@@ -82,8 +82,8 @@ body {
   margin: 0;
   padding: 0 1.25rem;
   font-family: var(--font-sans);
-  font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
-  line-height: 1.7;
+  font-size: clamp(0.9rem, 0.5vw + 0.8rem, 1rem);
+  line-height: 1.8;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -246,15 +246,15 @@ table {
   ul ul { padding-left: 1rem; }
 }
 
-/* Layout grid */
+/* Layout */
 .layout {
   max-width: 810px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 
-/* Sidebar / Header */
-.sidebar {
+/* Topbar */
+.topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -264,40 +264,31 @@ table {
   border-bottom: 1px solid var(--border);
 }
 
-.site-logo {
+.site-logo-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  color: var(--text);
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text);
-  text-decoration: none;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-  &:hover { border-color: var(--text); color: var(--text); }
+  gap: 0;
 }
+.site-logo-link:hover { color: var(--text); }
+.site-logo-link .logo-prompt { color: #F59E0B; }
+.site-logo-link .logo-initial { color: inherit; }
 
-.site-logo a { color: var(--text); text-decoration: none; &:hover { color: var(--text); } }
-.site-logo span { display: block; transform: translateY(2px); }
-
-.sidebar-nav {
+.topbar-nav {
   display: flex;
   align-items: center;
   gap: 1.25rem;
 }
 
-.sidebar-nav a,
-.site-logo {
-  text-decoration: none;
-}
-
-.sidebar-nav a {
+.topbar-nav a {
   font-size: 1rem;
   color: var(--text-secondary);
+  text-decoration: none;
   transition: color 0.15s ease;
   &:hover, &[aria-current="page"] { color: var(--text); }
 }
@@ -306,15 +297,15 @@ table {
   background: none;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  width: 26px;
-  height: 26px;
+  width: 34px;
+  height: 34px;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: var(--text-secondary);
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   line-height: 1;
   transition: all 0.15s ease;
   &:hover { color: var(--text); border-color: var(--text-secondary); }
@@ -336,6 +327,7 @@ article p:has(img) + p em:only-child {
   margin-top: -0.75rem;
   margin-bottom: 1.5rem;
 }
+
 .post-header { margin-bottom: 2rem; }
 
 .post-header h1 { margin-bottom: 0.5rem; }
@@ -350,15 +342,14 @@ article p:has(img) + p em:only-child {
 }
 
 .post-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  padding: 0.15em 0.5em;
-  background: var(--bg-secondary);
-  border-radius: 999px;
-  color: var(--text-secondary);
+  font-size: 0.72rem;
+  color: #64748B;
   text-decoration: none;
-  &:hover { color: var(--accent); background: var(--selection); }
+  letter-spacing: 0.02em;
+  transition: color 0.12s;
 }
+.post-tag::before { content: "# "; color: var(--accent); opacity: 0.6; }
+.post-tag:hover { color: var(--accent); }
 
 /* Footnotes */
 .footnotes {
@@ -374,59 +365,6 @@ article p:has(img) + p em:only-child {
 .footnote-backref {
   text-decoration: none;
   color: var(--text-secondary);
-}
-
-/* Post list */
-.postlist {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0;
-}
-
-.postlist li {
-  display: flex;
-  align-items: baseline;
-  padding: 0.3rem 0;
-  gap: 0;
-}
-
-.postlist a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
-  flex-shrink: 1;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 65%;
-  &:hover { color: var(--accent); }
-}
-
-.postlist-dots {
-  flex: 1;
-  min-width: 4em;
-  overflow: hidden;
-  white-space: nowrap;
-  align-self: center;
-  display: flex;
-  align-items: center;
-  &::before {
-    content: " · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·";
-    font-size: 0.85em;
-    color: var(--text-tertiary);
-    letter-spacing: 0.15em;
-    margin: 0 0.5em;
-    line-height: 1;
-    position: relative;
-    top: 0.05em;
-  }
-}
-
-.postlist-date {
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
 /* Page header */
@@ -447,7 +385,12 @@ article p:has(img) + p em:only-child {
   font-size: 0.85rem;
 }
 
-/* Post navigation */
+/* Post navigation — vim style */
+.vim-cmd {
+  color: var(--accent);
+  font-weight: 500;
+}
+
 .links-nextprev {
   margin-top: 3rem;
   padding-top: 1.5rem;
@@ -467,7 +410,7 @@ article p:has(img) + p em:only-child {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  a { max-width: 45%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  a { max-width: 45%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-secondary); &:hover { color: var(--accent); } }
 }
 
 /* Footer */
@@ -492,56 +435,235 @@ footer.site-footer {
   border: 0;
 }
 
+/* ───────────── Posts page ───────────── */
+.posts-page {
+  font-family: "JetBrains Mono", monospace;
+}
+.posts-page .posts-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.15);
+}
+.posts-page .breadcrumb {
+  font-size: 0.7rem;
+  color: #64748B;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.03em;
+}
+.posts-page .breadcrumb a { color: #64748B; text-decoration: none; }
+.posts-page .breadcrumb a:hover { color: var(--accent); }
+.posts-page .heading-prompt {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.posts-page .prompt-char {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 700;
+  user-select: none;
+}
+.posts-page h1 {
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0;
+}
+.posts-page .subheading {
+  font-size: 0.72rem;
+  color: #64748B;
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.posts-page .subheading .cmd { color: var(--accent); }
+.posts-page .cursor {
+  display: inline-block;
+  width: 7px;
+  height: 0.85em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: cursor-blink 1.1s step-end infinite;
+}
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.posts-page .stats-bar {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.68rem;
+  color: #64748B;
+}
+.posts-page .stats-bar strong { color: var(--accent); font-weight: 500; }
+.posts-page .year-label {
+  font-size: 0.65rem;
+  color: #64748B;
+  letter-spacing: 0.08em;
+  padding: 1.5rem 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  user-select: none;
+  text-transform: uppercase;
+}
+.posts-page .year-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(100, 116, 139, 0.15);
+}
+.posts-page .post-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: post-counter;
+}
+.posts-page .post-item {
+  counter-increment: post-counter;
+  display: grid;
+  grid-template-columns: 2rem 1px 1fr auto;
+  gap: 0 0.9rem;
+  align-items: center;
+  padding: 0.55rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-radius: 3px;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.08);
+  transition: background 0.15s;
+}
+.posts-page .post-item:hover { background: rgba(48, 77, 106, 0.07); }
+.posts-page .post-item::before {
+  content: counter(post-counter, decimal-leading-zero);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-align: right;
+  opacity: 0.85;
+}
+.posts-page .line-sep {
+  width: 1px;
+  height: 1.1rem;
+  background: rgba(100, 116, 139, 0.2);
+  align-self: center;
+}
+.posts-page .post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.posts-page .post-title {
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+  transition: color 0.12s;
+  line-height: 1.3;
+}
+.posts-page .post-item:hover .post-title { color: var(--accent); }
+.posts-page .post-tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+.posts-page .tag {
+  font-size: 0.6rem;
+  color: #64748B;
+  opacity: 0.7;
+  letter-spacing: 0.04em;
+}
+.posts-page .tag::before { content: "#"; }
+.posts-page .post-date {
+  font-size: 0.65rem;
+  color: #64748B;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+}
+.posts-page .page-footer {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(100, 116, 139, 0.15);
+  font-size: 0.65rem;
+  color: #64748B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.posts-page .footer-cmd { color: var(--accent); }
+
+@media (prefers-color-scheme: dark) {
+  .posts-page .post-item:hover { background: rgba(48, 77, 106, 0.25); }
+}
+[data-theme="dark"] .posts-page .post-item:hover {
+  background: rgba(48, 77, 106, 0.25);
+}
+
+@media (max-width: 480px) {
+  .posts-page .post-item { grid-template-columns: 1.8rem 1px 1fr; }
+  .posts-page .post-date { display: none; }
+}
+
+/* ───────────── Homepage terminal ───────────── */
+.home-terminal {
+  font-family: "JetBrains Mono", monospace;
+}
+.home-terminal .prompt-char {
+  color: var(--accent);
+  font-weight: 700;
+  user-select: none;
+}
+.home-terminal .cmd { color: var(--accent); }
+.home-terminal .output {
+  color: var(--text-secondary);
+  margin: 0.25rem 0 1.25rem 1.2rem;
+  line-height: 1.7;
+}
+.home-terminal .output a {
+  color: var(--accent);
+  text-decoration: none;
+  &:hover { color: var(--accent-hover); text-decoration: underline; }
+}
+.home-terminal .cursor-line {
+  margin-top: 0.5rem;
+}
+.home-terminal .blinking-cursor {
+  color: var(--accent);
+  animation: cursor-blink 1.1s step-end infinite;
+}
+
+/* Sidebar hidden on posts page */
+.layout--posts .topbar { display: none; }
+.layout--posts main { margin: 0; }
+
 /* Desktop */
 @media (min-width: 768px) {
   body { padding: 0 3rem; }
 
   .layout {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 2rem;
     padding: 3rem 0;
   }
 
-  .sidebar {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 1.618rem;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    padding-right: 2rem;
-    border-bottom: none;
-    border-right: 1px solid var(--border);
-    position: sticky;
-    top: 3rem;
-    align-self: start;
+  .topbar {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.75rem;
   }
-
-  .site-logo {
-    width: 55px;
-    height: 55px;
-    font-size: 2.25rem;
-  }
-
-  .sidebar-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
-
-  .sidebar-nav a { font-size: 1rem; }
-
-  .theme-toggle { margin-top: 0.5rem; width: 34px; height: 34px; font-size: 1.75rem; }
 }
 
 /* Print */
 @media print {
-  .sidebar, footer.site-footer, .theme-toggle, .links-nextprev { display: none; }
+  .topbar, footer.site-footer, .theme-toggle, .links-nextprev, .posts-page .page-footer { display: none; }
   body { font-size: 12pt; color: #000; background: #fff; }
   a { color: #000; text-decoration: underline; }
   pre { white-space: pre-wrap; border: 1px solid #ccc; }
-}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><aside class="sidebar"><a href="/" class="site-logo" aria-label="Home"><span>S</span></a><nav class="sidebar-nav"><a href="/posts/">Posts</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">◑</button></nav></aside><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",b=document.querySelector(".theme-toggle");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),b.setAttribute("title",t==="dark"?"Dark mode":"Light mode")}
+}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span></a><nav class="topbar-nav"><a href="/posts/">Posts</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">◑</button></nav></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",b=document.querySelector(".theme-toggle");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),b.setAttribute("title",t==="dark"?"Dark mode":"Light mode")}
 var b=document.querySelector(".theme-toggle");b&&b.setAttribute("title",document.documentElement.getAttribute("data-theme")==="dark"?"Dark mode":"Light mode")</script><main id="skip"><article><header class="post-header"><h1 id="big-pickle-the-free-ai-that-made-me-rethink-what-good-code-means">Big Pickle: The Free AI That Made Me Rethink What 'Good Code' Means</h1><div class="post-meta"><time datetime="2026-06-18">18 June 2026</time> <a href="/tags/ai/" class="post-tag">ai</a> <a href="/tags/coding/" class="post-tag">coding</a> <a href="/tags/tools/" class="post-tag">tools</a> <a href="/tags/personal/" class="post-tag">personal</a></div></header><p><strong>June 18, 2026</strong></p><p>I’ve spent the better part of a year rotating through AI tools for coding and technical writing. ChatGPT, Gemini, Claude — each one promised to be the productivity multiplier I was looking for. And each one delivered, to some degree. But none of them made me sit back and think: <em>this is a fundamentally different way of working.</em></p><p>Until Big Pickle.</p><h2 id="the-craft-problem" tabindex="-1">The Craft Problem <a class="header-anchor" href="#the-craft-problem">#</a></h2><p>Most AI tools answer questions. You ask “how do I implement a dot leader pattern?”, they give you a flexbox snippet. It’s correct. It compiles. You copy-paste, adapt, move on.</p><p>And honestly, that’s fine — I didn’t tell it about my project, so how could it know? But here’s what Big Pickle did differently: before writing a single line, it read the project. It opened my postslist template, my CSS file, my Eleventy config — and <em>then</em> wrote code that fit. Not code that worked in isolation. Code that belonged in my project. That’s the difference between answering a question and improving a codebase.</p><p>Here’s what I mean. I gave the same prompt — <em>“implement a dot leader for my blog post listing”</em> — to four different tools:</p><h3 id="chatgpt" tabindex="-1">ChatGPT <a class="header-anchor" href="#chatgpt">#</a></h3><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><button class="copy-btn" aria-label="Copy code" data-copy="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%2213%22%20height%3D%2213%22%20rx%3D%222%22%20ry%3D%222%22%2F%3E%3Cpath%20d%3D%22M5%2015H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h9a2%202%200%200%201%202%202v1%22%2F%3E%3C%2Fsvg%3E" data-check="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2220%206%209%2017%204%2012%22%2F%3E%3C%2Fsvg%3E"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><div class="code-wrapper"><code class="language-css"><span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">/* ChatGPT's response */</span></span>
 <span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">.postlist-item</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  display</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">flex</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
@@ -584,4 +706,4 @@ var b=document.querySelector(".theme-toggle");b&&b.setAttribute("title",document
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  min-width</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">4</span><span style="color:#D73A49;--shiki-dark:#F97583">em</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  overflow</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">hidden</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  align-self</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">center</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></div></pre><p><img src="/assets/img/big-pickle-project-awareness.svg" alt="Side-by-side comparison: Typical AI sees one isolated file (dot-leader.css) while Big Pickle reads the full interconnected project"></p><p>See the difference? The <code>padding: 0.3rem</code> matches the golden ratio hierarchy already defined elsewhere in the CSS. The <code>max-width: 65%</code> accounts for long titles pushing content off-screen. The <code>align-self: center</code> anticipates the middle dot alignment problem before I even noticed it existed. This code didn’t answer a question — it improved a project.</p><p>This is what I mean by <em>craft over correctness</em>. Big Pickle doesn’t just write code that works. It writes code that belongs.</p><h2 id="0.05em" tabindex="-1">0.05em <a class="header-anchor" href="#0.05em">#</a></h2><p>I want to tell you about the exact moment I realized this tool was different.</p><p>Big Pickle had written the dot leader implementation. It worked. I was about to move on. Then it added one line of CSS:</p><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><button class="copy-btn" aria-label="Copy code" data-copy="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%2213%22%20height%3D%2213%22%20rx%3D%222%22%20ry%3D%222%22%2F%3E%3Cpath%20d%3D%22M5%2015H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h9a2%202%200%200%201%202%202v1%22%2F%3E%3C%2Fsvg%3E" data-check="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2220%206%209%2017%204%2012%22%2F%3E%3C%2Fsvg%3E"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><div class="code-wrapper"><code class="language-css"><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">top: 0.05em;</span></span></code></div></pre><p>I stared at it. “What’s that for?”</p><p>The middle dot character (·, U+00B7) sits at x-height center by design — not on the baseline like a period. Even with <code>align-self: center</code>, something about its vertical position felt slightly low relative to the text’s optical center. Big Pickle had noticed. And fixed it. Without being asked.</p><p>This is an incredibly hard thing to get an AI to do because it requires understanding how a glyph is designed, how optical alignment differs from mathematical alignment, and how a 0.05em nudge affects the reading experience. It’s the kind of detail most developers don’t think about. Certainly not something you’d expect an AI to volunteer unprompted.</p><p>But this was not an isolated incident. The same thing happened with the technical writing.</p><h2 id="the-writing-compliment" tabindex="-1">The Writing Compliment <a class="header-anchor" href="#the-writing-compliment">#</a></h2><p>My original draft for the dot leader post was a straightforward tutorial. Here’s the HTML. Here’s the CSS. Here’s how it works. Functional. Dry. The kind of post that answers a question and disappears from memory immediately.</p><p>Big Pickle rewrote it — and by “rewrote,” I don’t mean it fixed my grammar. I mean it restructured the entire narrative into a three-challenge debugging story with a before-and-after arc. It added context about 17th century typesetting. It explained <em>why</em> each CSS property mattered in terms of real edge cases I had actually encountered. It connected the dot pattern to the golden ratio post I had written two weeks prior.</p><p>I did not ask for any of this. I asked for a draft about CSS. What I got was a piece of writing that understood the broader narrative of the blog — the ongoing story about iteration, polish, and invisible craftsmanship.</p><p>Most AI writing tools are excellent at <em>sounding</em> like they understand content. Big Pickle is the first one that I believe actually does.</p><h2 id="the-honest-comparison" tabindex="-1">The Honest Comparison <a class="header-anchor" href="#the-honest-comparison">#</a></h2><p>Claude Code from Anthropic is widely considered the gold standard for AI-assisted coding. I’ve used it. It’s excellent. Here’s my honest assessment:</p><table><thead><tr><th>Aspect</th><th>Claude Code</th><th>Big Pickle</th></tr></thead><tbody><tr><td>Code quality</td><td>Excellent — deep reasoning, few hallucinations</td><td>Excellent — same tier</td></tr><tr><td>Project awareness</td><td>Scans project structure via CLI</td><td>Reads and understands architecture organically</td></tr><tr><td>Writing quality</td><td>Functional, gets the job done</td><td>Narrative, craft-aware, interlink-conscious</td></tr><tr><td>Cost</td><td>$20/month Pro + usage overages</td><td>Free via Opencode Zen</td></tr><tr><td>Session friction</td><td>Context window fills, session restarts needed</td><td>Generous context, no disruptive limits</td></tr><tr><td>Interaction model</td><td>Terminal commands, ask-answer</td><td>Conversational, proactive polish</td></tr></tbody></table><p>Big Pickle runs on <a href="https://opencode.ai">Opencode</a>, an open-source AI coding tool, through their free tier called <strong>Opencode Zen</strong> — which uses this Big Pickle model at no cost. No credit card, no trial clock, no “you’ve used your 50 messages for today.”</p><p>I want to be careful not to overstate. Claude Code is genuinely powerful, and for certain types of work — large refactors, complex multi-file migrations — it may still have an edge. But for the kind of work I do (technical blogging, project maintenance, design systems), Big Pickle has become my primary tool. It’s not just “good for a free tool.” It’s good, period. The fact that it’s free is almost incidental.</p><h2 id="the-takeaway" tabindex="-1">The Takeaway <a class="header-anchor" href="#the-takeaway">#</a></h2><p>I’m not writing this to sell you on any particular tool. I’m writing it because I think the distinction between “code that works” and “code that belongs” is an important one, and I didn’t fully understand it until I experienced the difference side by side.</p><p>Most AI tools answer prompts. Big Pickle understands projects. Most AI tools fix syntax. Big Pickle fixes architecture. Most AI tools write words. Big Pickle writes narratives.</p><p>For me, on this blog, at this stage — that’s the tool I needed. And it happened to be free.</p><hr><p><em>This is a personal reflection, not a sponsored post. I have no affiliation with Opencode or Anthropic. I’m just someone who enjoys tinkering with code and found a tool that changed how I work, and wanted to write it down.</em></p></article><nav class="links-nextprev"><a href="/posts/" class="back-link">← All posts</a></nav><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></div></pre><p><img src="/assets/img/big-pickle-project-awareness.svg" alt="Side-by-side comparison: Typical AI sees one isolated file (dot-leader.css) while Big Pickle reads the full interconnected project"></p><p>See the difference? The <code>padding: 0.3rem</code> matches the golden ratio hierarchy already defined elsewhere in the CSS. The <code>max-width: 65%</code> accounts for long titles pushing content off-screen. The <code>align-self: center</code> anticipates the middle dot alignment problem before I even noticed it existed. This code didn’t answer a question — it improved a project.</p><p>This is what I mean by <em>craft over correctness</em>. Big Pickle doesn’t just write code that works. It writes code that belongs.</p><h2 id="0.05em" tabindex="-1">0.05em <a class="header-anchor" href="#0.05em">#</a></h2><p>I want to tell you about the exact moment I realized this tool was different.</p><p>Big Pickle had written the dot leader implementation. It worked. I was about to move on. Then it added one line of CSS:</p><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8" tabindex="0"><button class="copy-btn" aria-label="Copy code" data-copy="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%2213%22%20height%3D%2213%22%20rx%3D%222%22%20ry%3D%222%22%2F%3E%3Cpath%20d%3D%22M5%2015H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h9a2%202%200%200%201%202%202v1%22%2F%3E%3C%2Fsvg%3E" data-check="%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2220%206%209%2017%204%2012%22%2F%3E%3C%2Fsvg%3E"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><div class="code-wrapper"><code class="language-css"><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">top: 0.05em;</span></span></code></div></pre><p>I stared at it. “What’s that for?”</p><p>The middle dot character (·, U+00B7) sits at x-height center by design — not on the baseline like a period. Even with <code>align-self: center</code>, something about its vertical position felt slightly low relative to the text’s optical center. Big Pickle had noticed. And fixed it. Without being asked.</p><p>This is an incredibly hard thing to get an AI to do because it requires understanding how a glyph is designed, how optical alignment differs from mathematical alignment, and how a 0.05em nudge affects the reading experience. It’s the kind of detail most developers don’t think about. Certainly not something you’d expect an AI to volunteer unprompted.</p><p>But this was not an isolated incident. The same thing happened with the technical writing.</p><h2 id="the-writing-compliment" tabindex="-1">The Writing Compliment <a class="header-anchor" href="#the-writing-compliment">#</a></h2><p>My original draft for the dot leader post was a straightforward tutorial. Here’s the HTML. Here’s the CSS. Here’s how it works. Functional. Dry. The kind of post that answers a question and disappears from memory immediately.</p><p>Big Pickle rewrote it — and by “rewrote,” I don’t mean it fixed my grammar. I mean it restructured the entire narrative into a three-challenge debugging story with a before-and-after arc. It added context about 17th century typesetting. It explained <em>why</em> each CSS property mattered in terms of real edge cases I had actually encountered. It connected the dot pattern to the golden ratio post I had written two weeks prior.</p><p>I did not ask for any of this. I asked for a draft about CSS. What I got was a piece of writing that understood the broader narrative of the blog — the ongoing story about iteration, polish, and invisible craftsmanship.</p><p>Most AI writing tools are excellent at <em>sounding</em> like they understand content. Big Pickle is the first one that I believe actually does.</p><h2 id="the-honest-comparison" tabindex="-1">The Honest Comparison <a class="header-anchor" href="#the-honest-comparison">#</a></h2><p>Claude Code from Anthropic is widely considered the gold standard for AI-assisted coding. I’ve used it. It’s excellent. Here’s my honest assessment:</p><table><thead><tr><th>Aspect</th><th>Claude Code</th><th>Big Pickle</th></tr></thead><tbody><tr><td>Code quality</td><td>Excellent — deep reasoning, few hallucinations</td><td>Excellent — same tier</td></tr><tr><td>Project awareness</td><td>Scans project structure via CLI</td><td>Reads and understands architecture organically</td></tr><tr><td>Writing quality</td><td>Functional, gets the job done</td><td>Narrative, craft-aware, interlink-conscious</td></tr><tr><td>Cost</td><td>$20/month Pro + usage overages</td><td>Free via Opencode Zen</td></tr><tr><td>Session friction</td><td>Context window fills, session restarts needed</td><td>Generous context, no disruptive limits</td></tr><tr><td>Interaction model</td><td>Terminal commands, ask-answer</td><td>Conversational, proactive polish</td></tr></tbody></table><p>Big Pickle runs on <a href="https://opencode.ai">Opencode</a>, an open-source AI coding tool, through their free tier called <strong>Opencode Zen</strong> — which uses this Big Pickle model at no cost. No credit card, no trial clock, no “you’ve used your 50 messages for today.”</p><p>I want to be careful not to overstate. Claude Code is genuinely powerful, and for certain types of work — large refactors, complex multi-file migrations — it may still have an edge. But for the kind of work I do (technical blogging, project maintenance, design systems), Big Pickle has become my primary tool. It’s not just “good for a free tool.” It’s good, period. The fact that it’s free is almost incidental.</p><h2 id="the-takeaway" tabindex="-1">The Takeaway <a class="header-anchor" href="#the-takeaway">#</a></h2><p>I’m not writing this to sell you on any particular tool. I’m writing it because I think the distinction between “code that works” and “code that belongs” is an important one, and I didn’t fully understand it until I experienced the difference side by side.</p><p>Most AI tools answer prompts. Big Pickle understands projects. Most AI tools fix syntax. Big Pickle fixes architecture. Most AI tools write words. Big Pickle writes narratives.</p><p>For me, on this blog, at this stage — that’s the tool I needed. And it happened to be free.</p><hr><p><em>This is a personal reflection, not a sponsored post. I have no affiliation with Opencode or Anthropic. I’m just someone who enjoys tinkering with code and found a tool that changed how I work, and wanted to write it down.</em></p></article><nav class="links-nextprev"><a href="/posts/" class="back-link"><span class="vim-cmd">:q</span> back to posts</a></nav><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>

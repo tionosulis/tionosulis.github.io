@@ -1,14 +1,14 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Eleventy v3.1.6"><title>#highlighting — Sulistiono</title><meta name="description" content="Sulistiono's thoughts"><link rel="canonical" href="https://tionosulis.github.io/tags/highlighting/"><link rel="alternate" href="https://tionosulis.github.io/feed/feed.xml" type="application/atom+xml" title="Sulistiono"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><link rel="preload" href="/fonts/IBMPlexSans-Var.woff2" as="font" type="font/woff2" crossorigin=""><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)"><meta property="og:title" content="#highlighting"><meta property="og:description" content="Sulistiono's thoughts"><meta property="og:url" content="https://tionosulis.github.io/tags/highlighting/"><meta property="og:type" content="article"><meta property="og:image" content="https://tionosulis.github.io/assets/img/favicon/android-chrome-192x192.png"><meta name="twitter:card" content="summary"><meta name="google-site-verification" content="nGUHc-P1KrLWgaQSmLNdIFM-c0dIvVcOFCXaJGU5-K0"><script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script><style>@font-face {
-  font-family: "IBM Plex Sans";
-  src: url("/fonts/IBMPlexSans-Var.woff2") format("woff2-variations");
-  font-weight: 300 700;
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Eleventy v3.1.6"><title>#highlighting — Sulistiono</title><meta name="description" content="Sulistiono's thoughts"><link rel="canonical" href="https://tionosulis.github.io/tags/highlighting/"><link rel="alternate" href="https://tionosulis.github.io/feed/feed.xml" type="application/atom+xml" title="Sulistiono"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><link rel="preload" href="/fonts/JetBrainsMono[wght].woff2" as="font" type="font/woff2" crossorigin=""><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)"><meta property="og:title" content="#highlighting"><meta property="og:description" content="Sulistiono's thoughts"><meta property="og:url" content="https://tionosulis.github.io/tags/highlighting/"><meta property="og:type" content="article"><meta property="og:image" content="https://tionosulis.github.io/assets/img/favicon/android-chrome-192x192.png"><meta name="twitter:card" content="summary"><meta name="google-site-verification" content="nGUHc-P1KrLWgaQSmLNdIFM-c0dIvVcOFCXaJGU5-K0"><script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script><style>@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono[wght].woff2") format("woff2-variations");
+  font-weight: 100 800;
   font-display: swap;
   font-style: normal;
 }
 
 :root {
-  --font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
+  --font-sans: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --bg: #ffffff;
   --bg-secondary: #f4f4f4;
@@ -16,9 +16,9 @@
   --text-secondary: #5c6370;
   --text-tertiary: #636b78;
   --border: #e0e0e0;
-  --accent: #0f62fe;
-  --accent-hover: #0043ce;
-  --selection: rgba(15, 98, 254, 0.15);
+  --accent: #F59E0B;
+  --accent-hover: #D97706;
+  --selection: rgba(245, 158, 11, 0.15);
   --syntax-bg: #fbfbfb;
 
   --radius: 6px;
@@ -31,9 +31,9 @@
   --text-secondary: #a1a1aa;
   --text-tertiary: #8a8a94;
   --border: #424242;
-  --accent: #78a9ff;
-  --accent-hover: #a6c8ff;
-  --selection: rgba(120, 169, 255, 0.2);
+  --accent: #FBBF24;
+  --accent-hover: #FCD34D;
+  --selection: rgba(251, 191, 36, 0.2);
   --syntax-bg: #262626;
 }
 
@@ -45,9 +45,9 @@
     --text-secondary: #a1a1aa;
     --text-tertiary: #a1a1aa;
     --border: #424242;
-    --accent: #78a9ff;
-    --accent-hover: #a6c8ff;
-    --selection: rgba(120, 169, 255, 0.2);
+    --accent: #FBBF24;
+    --accent-hover: #FCD34D;
+    --selection: rgba(251, 191, 36, 0.2);
     --syntax-bg: #262626;
   }
 }
@@ -82,8 +82,8 @@ body {
   margin: 0;
   padding: 0 1.25rem;
   font-family: var(--font-sans);
-  font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
-  line-height: 1.7;
+  font-size: clamp(0.9rem, 0.5vw + 0.8rem, 1rem);
+  line-height: 1.8;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -246,15 +246,15 @@ table {
   ul ul { padding-left: 1rem; }
 }
 
-/* Layout grid */
+/* Layout */
 .layout {
   max-width: 810px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 
-/* Sidebar / Header */
-.sidebar {
+/* Topbar */
+.topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -264,40 +264,31 @@ table {
   border-bottom: 1px solid var(--border);
 }
 
-.site-logo {
+.site-logo-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  color: var(--text);
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text);
-  text-decoration: none;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-  &:hover { border-color: var(--text); color: var(--text); }
+  gap: 0;
 }
+.site-logo-link:hover { color: var(--text); }
+.site-logo-link .logo-prompt { color: #F59E0B; }
+.site-logo-link .logo-initial { color: inherit; }
 
-.site-logo a { color: var(--text); text-decoration: none; &:hover { color: var(--text); } }
-.site-logo span { display: block; transform: translateY(2px); }
-
-.sidebar-nav {
+.topbar-nav {
   display: flex;
   align-items: center;
   gap: 1.25rem;
 }
 
-.sidebar-nav a,
-.site-logo {
-  text-decoration: none;
-}
-
-.sidebar-nav a {
+.topbar-nav a {
   font-size: 1rem;
   color: var(--text-secondary);
+  text-decoration: none;
   transition: color 0.15s ease;
   &:hover, &[aria-current="page"] { color: var(--text); }
 }
@@ -306,15 +297,15 @@ table {
   background: none;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  width: 26px;
-  height: 26px;
+  width: 34px;
+  height: 34px;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: var(--text-secondary);
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   line-height: 1;
   transition: all 0.15s ease;
   &:hover { color: var(--text); border-color: var(--text-secondary); }
@@ -336,6 +327,7 @@ article p:has(img) + p em:only-child {
   margin-top: -0.75rem;
   margin-bottom: 1.5rem;
 }
+
 .post-header { margin-bottom: 2rem; }
 
 .post-header h1 { margin-bottom: 0.5rem; }
@@ -350,15 +342,14 @@ article p:has(img) + p em:only-child {
 }
 
 .post-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  padding: 0.15em 0.5em;
-  background: var(--bg-secondary);
-  border-radius: 999px;
-  color: var(--text-secondary);
+  font-size: 0.72rem;
+  color: #64748B;
   text-decoration: none;
-  &:hover { color: var(--accent); background: var(--selection); }
+  letter-spacing: 0.02em;
+  transition: color 0.12s;
 }
+.post-tag::before { content: "# "; color: var(--accent); opacity: 0.6; }
+.post-tag:hover { color: var(--accent); }
 
 /* Footnotes */
 .footnotes {
@@ -374,59 +365,6 @@ article p:has(img) + p em:only-child {
 .footnote-backref {
   text-decoration: none;
   color: var(--text-secondary);
-}
-
-/* Post list */
-.postlist {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0;
-}
-
-.postlist li {
-  display: flex;
-  align-items: baseline;
-  padding: 0.3rem 0;
-  gap: 0;
-}
-
-.postlist a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
-  flex-shrink: 1;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 65%;
-  &:hover { color: var(--accent); }
-}
-
-.postlist-dots {
-  flex: 1;
-  min-width: 4em;
-  overflow: hidden;
-  white-space: nowrap;
-  align-self: center;
-  display: flex;
-  align-items: center;
-  &::before {
-    content: " · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·";
-    font-size: 0.85em;
-    color: var(--text-tertiary);
-    letter-spacing: 0.15em;
-    margin: 0 0.5em;
-    line-height: 1;
-    position: relative;
-    top: 0.05em;
-  }
-}
-
-.postlist-date {
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
 /* Page header */
@@ -447,7 +385,12 @@ article p:has(img) + p em:only-child {
   font-size: 0.85rem;
 }
 
-/* Post navigation */
+/* Post navigation — vim style */
+.vim-cmd {
+  color: var(--accent);
+  font-weight: 500;
+}
+
 .links-nextprev {
   margin-top: 3rem;
   padding-top: 1.5rem;
@@ -467,7 +410,7 @@ article p:has(img) + p em:only-child {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  a { max-width: 45%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  a { max-width: 45%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-secondary); &:hover { color: var(--accent); } }
 }
 
 /* Footer */
@@ -492,54 +435,233 @@ footer.site-footer {
   border: 0;
 }
 
+/* ───────────── Posts page ───────────── */
+.posts-page {
+  font-family: "JetBrains Mono", monospace;
+}
+.posts-page .posts-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.15);
+}
+.posts-page .breadcrumb {
+  font-size: 0.7rem;
+  color: #64748B;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.03em;
+}
+.posts-page .breadcrumb a { color: #64748B; text-decoration: none; }
+.posts-page .breadcrumb a:hover { color: var(--accent); }
+.posts-page .heading-prompt {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.posts-page .prompt-char {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 700;
+  user-select: none;
+}
+.posts-page h1 {
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0;
+}
+.posts-page .subheading {
+  font-size: 0.72rem;
+  color: #64748B;
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.posts-page .subheading .cmd { color: var(--accent); }
+.posts-page .cursor {
+  display: inline-block;
+  width: 7px;
+  height: 0.85em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: cursor-blink 1.1s step-end infinite;
+}
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.posts-page .stats-bar {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.68rem;
+  color: #64748B;
+}
+.posts-page .stats-bar strong { color: var(--accent); font-weight: 500; }
+.posts-page .year-label {
+  font-size: 0.65rem;
+  color: #64748B;
+  letter-spacing: 0.08em;
+  padding: 1.5rem 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  user-select: none;
+  text-transform: uppercase;
+}
+.posts-page .year-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(100, 116, 139, 0.15);
+}
+.posts-page .post-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: post-counter;
+}
+.posts-page .post-item {
+  counter-increment: post-counter;
+  display: grid;
+  grid-template-columns: 2rem 1px 1fr auto;
+  gap: 0 0.9rem;
+  align-items: center;
+  padding: 0.55rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-radius: 3px;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.08);
+  transition: background 0.15s;
+}
+.posts-page .post-item:hover { background: rgba(48, 77, 106, 0.07); }
+.posts-page .post-item::before {
+  content: counter(post-counter, decimal-leading-zero);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-align: right;
+  opacity: 0.85;
+}
+.posts-page .line-sep {
+  width: 1px;
+  height: 1.1rem;
+  background: rgba(100, 116, 139, 0.2);
+  align-self: center;
+}
+.posts-page .post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.posts-page .post-title {
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+  transition: color 0.12s;
+  line-height: 1.3;
+}
+.posts-page .post-item:hover .post-title { color: var(--accent); }
+.posts-page .post-tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+.posts-page .tag {
+  font-size: 0.6rem;
+  color: #64748B;
+  opacity: 0.7;
+  letter-spacing: 0.04em;
+}
+.posts-page .tag::before { content: "#"; }
+.posts-page .post-date {
+  font-size: 0.65rem;
+  color: #64748B;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+}
+.posts-page .page-footer {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(100, 116, 139, 0.15);
+  font-size: 0.65rem;
+  color: #64748B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.posts-page .footer-cmd { color: var(--accent); }
+
+@media (prefers-color-scheme: dark) {
+  .posts-page .post-item:hover { background: rgba(48, 77, 106, 0.25); }
+}
+[data-theme="dark"] .posts-page .post-item:hover {
+  background: rgba(48, 77, 106, 0.25);
+}
+
+@media (max-width: 480px) {
+  .posts-page .post-item { grid-template-columns: 1.8rem 1px 1fr; }
+  .posts-page .post-date { display: none; }
+}
+
+/* ───────────── Homepage terminal ───────────── */
+.home-terminal {
+  font-family: "JetBrains Mono", monospace;
+}
+.home-terminal .prompt-char {
+  color: var(--accent);
+  font-weight: 700;
+  user-select: none;
+}
+.home-terminal .cmd { color: var(--accent); }
+.home-terminal .output {
+  color: var(--text-secondary);
+  margin: 0.25rem 0 1.25rem 1.2rem;
+  line-height: 1.7;
+}
+.home-terminal .output a {
+  color: var(--accent);
+  text-decoration: none;
+  &:hover { color: var(--accent-hover); text-decoration: underline; }
+}
+.home-terminal .cursor-line {
+  margin-top: 0.5rem;
+}
+.home-terminal .blinking-cursor {
+  color: var(--accent);
+  animation: cursor-blink 1.1s step-end infinite;
+}
+
+/* Sidebar hidden on posts page */
+.layout--posts .topbar { display: none; }
+.layout--posts main { margin: 0; }
+
 /* Desktop */
 @media (min-width: 768px) {
   body { padding: 0 3rem; }
 
   .layout {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 2rem;
     padding: 3rem 0;
   }
 
-  .sidebar {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 1.618rem;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    padding-right: 2rem;
-    border-bottom: none;
-    border-right: 1px solid var(--border);
-    position: sticky;
-    top: 3rem;
-    align-self: start;
+  .topbar {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.75rem;
   }
-
-  .site-logo {
-    width: 55px;
-    height: 55px;
-    font-size: 2.25rem;
-  }
-
-  .sidebar-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
-
-  .sidebar-nav a { font-size: 1rem; }
-
-  .theme-toggle { margin-top: 0.5rem; width: 34px; height: 34px; font-size: 1.75rem; }
 }
 
 /* Print */
 @media print {
-  .sidebar, footer.site-footer, .theme-toggle, .links-nextprev { display: none; }
+  .topbar, footer.site-footer, .theme-toggle, .links-nextprev, .posts-page .page-footer { display: none; }
   body { font-size: 12pt; color: #000; background: #fff; }
   a { color: #000; text-decoration: underline; }
   pre { white-space: pre-wrap; border: 1px solid #ccc; }
-}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><aside class="sidebar"><a href="/" class="site-logo" aria-label="Home"><span>S</span></a><nav class="sidebar-nav"><a href="/posts/">Posts</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">◑</button></nav></aside><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",b=document.querySelector(".theme-toggle");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),b.setAttribute("title",t==="dark"?"Dark mode":"Light mode")}
-var b=document.querySelector(".theme-toggle");b&&b.setAttribute("title",document.documentElement.getAttribute("data-theme")==="dark"?"Dark mode":"Light mode")</script><main id="skip"><h1 class="page-title" id="highlighting">#highlighting</h1><ol class="postlist" reversed><li><a href="/posts/shiki-njk-language-not-found/">Shiki Syntax Highlighting Doesn't Know Nunjucks — And Why That's Fine</a> <span class="postlist-dots"></span> <time class="postlist-date" datetime="2026-06-20">20 June 2026</time></li></ol><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
+}</style></head><body><a href="#skip" class="visually-hidden">Skip to main content</a><div class="layout"><header class="topbar"><a href="/" class="site-logo-link" aria-label="Home"><span class="logo-prompt">>_</span><span class="logo-initial">S</span></a><nav class="topbar-nav"><a href="/posts/">Posts</a> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">◑</button></nav></header><script>function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",b=document.querySelector(".theme-toggle");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),b.setAttribute("title",t==="dark"?"Dark mode":"Light mode")}
+var b=document.querySelector(".theme-toggle");b&&b.setAttribute("title",document.documentElement.getAttribute("data-theme")==="dark"?"Dark mode":"Light mode")</script><main id="skip"><h1 class="page-title" id="highlighting">#highlighting</h1><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
