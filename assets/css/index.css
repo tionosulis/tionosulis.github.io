@@ -16,9 +16,9 @@
   --text-secondary: #5c6370;
   --text-tertiary: #636b78;
   --border: #e0e0e0;
-  --accent: #F59E0B;
-  --accent-hover: #D97706;
-  --selection: rgba(245, 158, 11, 0.15);
+  --accent: #B45309;
+  --accent-hover: #92400E;
+  --selection: rgba(180, 83, 9, 0.15);
   --syntax-bg: #fbfbfb;
 
   --radius: 6px;
@@ -276,7 +276,7 @@ table {
   gap: 0;
 }
 .site-logo-link:hover { color: var(--text); }
-.site-logo-link .logo-prompt { color: #F59E0B; }
+.site-logo-link .logo-prompt { color: var(--accent); }
 .site-logo-link .logo-initial { color: inherit; }
 
 .topbar-nav {
@@ -290,7 +290,7 @@ table {
   color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.15s ease;
-  &:hover, &[aria-current="page"] { color: var(--text); }
+  &:hover, &[aria-current="page"] { color: var(--accent); }
 }
 
 .theme-toggle {
@@ -460,7 +460,7 @@ footer.site-footer {
   margin-bottom: 1.2rem;
   letter-spacing: 0.03em;
 }
-.posts-page .breadcrumb a { color: #64748B; text-decoration: none; }
+.posts-page .breadcrumb a { color: var(--accent); text-decoration: none; }
 .posts-page .breadcrumb a:hover { color: var(--accent); }
 .posts-page .heading-prompt {
   display: flex;
