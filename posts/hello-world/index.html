@@ -101,6 +101,8 @@ a {
   text-underline-offset: 2px;
   transition: color 0.15s ease;
   &:hover { color: var(--accent-hover); }
+  &:active { color: var(--accent-hover); }
+  &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--radius); }
 }
 
 img { max-width: 100%; height: auto; border-radius: var(--radius); }
