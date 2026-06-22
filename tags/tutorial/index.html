@@ -470,7 +470,8 @@ a.visually-hidden:focus {
   letter-spacing: 0.03em;
 }
 .posts-page .breadcrumb a { color: var(--accent); text-decoration: none; }
-.posts-page .breadcrumb a:hover { color: var(--accent); }
+.posts-page .breadcrumb a:hover,
+.posts-page .breadcrumb a:focus { color: var(--accent); text-decoration: underline; }
 .posts-page .heading-prompt {
   display: flex;
   align-items: baseline;
@@ -586,7 +587,8 @@ a.visually-hidden:focus {
   transition: color 0.12s;
   line-height: 1.15;
 }
-.posts-page .post-item:hover .post-title { color: var(--accent); }
+.posts-page .post-item:hover .post-title { color: var(--accent); text-decoration: underline; }
+.posts-page .post-title:focus { text-decoration: underline; }
 .posts-page .post-tags {
   display: flex;
   gap: 0.35rem;
@@ -595,7 +597,6 @@ a.visually-hidden:focus {
 .posts-page .tag {
   font-size: 0.6rem;
   color: var(--text-tertiary);
-  opacity: 0.7;
   letter-spacing: 0.04em;
 }
 .posts-page .tag::before { content: "#"; }
@@ -604,7 +605,6 @@ a.visually-hidden:focus {
   color: var(--text-tertiary);
   white-space: nowrap;
   letter-spacing: 0.02em;
-  opacity: 0.75;
 }
 .posts-page .page-footer {
   margin-top: 3.5rem;
@@ -646,7 +646,8 @@ a.visually-hidden:focus {
 }
 .article-page .breadcrumb .cmd { color: var(--accent); }
 .article-page .breadcrumb a { color: var(--accent); text-decoration: none; }
-.article-page .breadcrumb a:hover { color: var(--accent-hover); }
+.article-page .breadcrumb a:hover,
+.article-page .breadcrumb a:focus { color: var(--accent-hover); text-decoration: underline; }
 .article-page .breadcrumb .current { color: var(--text-tertiary); }
 
 /* ───────────── Redesign notice ───────────── */
