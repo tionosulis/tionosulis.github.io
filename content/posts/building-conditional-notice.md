@@ -35,7 +35,7 @@ The solution had to meet three constraints:
 
 No third-party library. No JavaScript. No cookie banners pretending to be something useful. Just a conditional include in a Nunjucks template and a few lines of CSS.
 
-## $ cat solution.sh
+## $ cat `solution.sh`
 
 Small enough to show in full.
 
