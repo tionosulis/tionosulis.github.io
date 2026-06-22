@@ -37,7 +37,7 @@ After mapping every amber shade between `#D97706` and `#B45309` with a contrast 
 - **Light mode:** `#B45309` (5.02:1 against white) — passes WCAG AA for normal text
 - **Dark mode:** `#FBBF24` (10.83:1 against `#161616`) — passes with room to spare
 
-Why not the same amber for both modes? Because perception changes with background. `#B45309` on `#161616` looks dull — it loses warmth. `#FBBF24` on `#ffffff` is unreadable. Two ambers, same brand feel,各自's context.
+Why not the same amber for both modes? Because perception changes with background. `#B45309` on `#161616` looks dull — it loses warmth. `#FBBF24` on `#ffffff` is unreadable. Two ambers, same brand feel, each in its own context.
 
 For hover states, I went darker in light mode (`#92400E`, 3.19:1 — passes for large text / UI components) and lighter in dark mode (`#FCD34D`).
 
@@ -102,7 +102,7 @@ Each rejection taught me something about the design's north star: *terminal vibe
 
 ## A Note on the Older Posts
 
-You might notice that some posts on this blog reference elements that no longer exist — the sidebar, the IBM Plex Sans font family, the 55×55 "S" monogram, the golden-ratio toggle dimensions. Those posts are marked with a small note at the top, like a `# comment` in a config file. I chose not to rewrite them because they document a real evolution. Design is a process, not a product.
+You might notice that some posts on this blog reference elements that no longer exist — the sidebar, the IBM Plex Sans font family, the 55×55 "S" monogram, the golden-ratio toggle dimensions. Those posts are marked with a notice box at the top — an amber left border with a `>` prefix — signalling "this describes the previous design." I chose not to rewrite them because they document a real evolution. Design is a process, not a product.
 
 ## Lessons Learned
 
