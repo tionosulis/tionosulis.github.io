@@ -10,6 +10,7 @@ import shiki from "@shikijs/markdown-it";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { DateTime } from "luxon";
 import { minify } from "html-minifier-terser";
+import { readFileSync } from "fs";
 
 export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginNavigation);
@@ -134,14 +135,48 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-  const copySvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
-  const checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+  const copySvg = '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+  const checkSvg = '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
 
   eleventyConfig.addTransform("copy-code", function (content) {
     if (!this.page.outputPath?.endsWith(".html")) return content;
     const copyBtnHtml = `<button class="copy-btn" aria-label="Copy code" data-copy="${encodeURIComponent(copySvg)}" data-check="${encodeURIComponent(checkSvg)}">${copySvg}</button>`;
     let result = content.replace(/(<pre[^>]*>)/g, "$1" + copyBtnHtml + '<div class="code-wrapper">');
     return result.replace(/<\/pre>/g, '</div></pre>');
+  });
+
+  const svgSizeCache = new Map();
+
+  eleventyConfig.addTransform("fix-svg-imgs", function (content) {
+    if (!this.page.outputPath?.endsWith(".html")) return content;
+    return content.replace(/<img[^>]+src="([^"]+\.svg)"[^>]*>/gi, (match, src) => {
+      if (/width="[^"]+"/i.test(match) || /height="[^"]+"/i.test(match)) return match;
+      const filePath = src.replace(/^\//, "");
+      let dims = svgSizeCache.get(filePath);
+      if (!dims) {
+        try {
+          const svgContent = readFileSync(filePath, "utf-8");
+          const wMatch = svgContent.match(/width="(\d+)"/);
+          const hMatch = svgContent.match(/height="(\d+)"/);
+          const vbMatch = svgContent.match(/viewBox="\d+\s+\d+\s+(\d+)\s+(\d+)"/);
+          if (wMatch && hMatch) {
+            dims = { w: wMatch[1], h: hMatch[1] };
+          } else if (vbMatch) {
+            dims = { w: vbMatch[1], h: vbMatch[2] };
+          }
+          if (dims) svgSizeCache.set(filePath, dims);
+        } catch {}
+      }
+      if (dims) {
+        return match.replace(/^<img /, `<img width="${dims.w}" height="${dims.h}" `);
+      }
+      return match;
+    });
+  });
+
+  eleventyConfig.addTransform("rm-pre-tabindex", function (content) {
+    if (!this.page.outputPath?.endsWith(".html")) return content;
+    return content.replace(/<pre\s+/g, '<pre ').replace(/\s+tabindex="0"/g, '');
   });
 
   eleventyConfig.addTransform("htmlmin", async function (content) {
