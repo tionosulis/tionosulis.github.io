@@ -697,8 +697,11 @@ a.visually-hidden:focus {
 }
 .home-terminal .output a {
   color: var(--accent);
-  text-decoration: none;
-  &:hover { color: var(--accent-hover); text-decoration: underline; }
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--accent);
+  &:hover { color: var(--accent-hover); }
 }
 .home-terminal .cursor-line {
   margin-top: 0.5rem;
