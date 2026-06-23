@@ -1,160 +1,219 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
-  <defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">  <defs>
     <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.06"/>
+      <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.05"/>
     </pattern>
 
-    <!-- Amber glow -->
-    <radialGradient id="amberGlow" cx="30%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#B45309" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#B45309" stop-opacity="0"/>
-    </radialGradient>
 
-    <!-- Subtle right glow -->
-    <radialGradient id="rightGlow" cx="80%" cy="50%" r="40%">
+    <radialGradient id="amberGlow" cx="30%" cy="50%" r="55%">
       <stop offset="0%" stop-color="#B45309" stop-opacity="0.12"/>
       <stop offset="100%" stop-color="#B45309" stop-opacity="0"/>
     </radialGradient>
+
+
+    <radialGradient id="rightGlow" cx="80%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1e3a5f" stop-opacity="0"/>
+    </radialGradient>
+
+
+    <!-- Drop shadow filter -->
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="4" stdDeviation="16" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+
+
+    <!-- Clip path for rounded corners -->
+    <clipPath id="rounded">
+      <rect width="1200" height="675" rx="10" ry="10"/>
+    </clipPath>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="675" fill="#161616"/>
-  <rect width="1200" height="675" fill="url(#dots)"/>
-  <rect width="1200" height="675" fill="url(#amberGlow)"/>
-  <rect width="1200" height="675" fill="url(#rightGlow)"/>
 
-  <!-- Border frame -->
-  <rect x="32" y="32" width="1136" height="611" fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.4"/>
+  <!-- Shadow layer (behind card) -->
+  <rect width="1200" height="675" rx="10" ry="10" fill="#000000" opacity="0.18" transform="translate(0, 6)" filter="url(#cardShadow)"/>
 
-  <!-- Corner accents — top left -->
-  <line x1="32" y1="32" x2="80" y2="32" stroke="#B45309" stroke-width="2" stroke-opacity="0.9"/>
-  <line x1="32" y1="32" x2="32" y2="80" stroke="#B45309" stroke-width="2" stroke-opacity="0.9"/>
 
-  <!-- Corner accents — top right -->
-  <line x1="1168" y1="32" x2="1120" y2="32" stroke="#B45309" stroke-width="2" stroke-opacity="0.9"/>
-  <line x1="1168" y1="32" x2="1168" y2="80" stroke="#B45309" stroke-width="2" stroke-opacity="0.9"/>
+  <!-- Card group with rounded clip -->
+  <g clip-path="url(#rounded)">
 
-  <!-- Corner accents — bottom left -->
-  <line x1="32" y1="643" x2="80" y2="643" stroke="#B45309" stroke-width="2" stroke-opacity="0.9"/>
-  <line x1="32" y1="643" x2="32" y2="595" stroke="#B45309" stroke-width="2" stroke-opacity="0.9"/>
 
-  <!-- Corner accents — bottom right -->
-  <line x1="1168" y1="643" x2="1120" y2="643" stroke="#B45309" stroke-width="2" stroke-opacity="0.9"/>
-  <line x1="1168" y1="643" x2="1168" y2="595" stroke="#B45309" stroke-width="2" stroke-opacity="0.9"/>
+    <!-- Background -->
+    <rect width="1200" height="675" fill="#242424"/>
+    <rect width="1200" height="675" fill="url(#dots)"/>
+    <rect width="1200" height="675" fill="url(#amberGlow)"/>
+    <rect width="1200" height="675" fill="url(#rightGlow)"/>
 
-  <!-- Top bar — terminal window chrome -->
-  <rect x="32" y="32" width="1136" height="44" fill="#B45309" fill-opacity="0.08"/>
-  <line x1="32" y1="76" x2="1168" y2="76" stroke="#B45309" stroke-width="1" stroke-opacity="0.25"/>
 
-  <!-- Terminal dots -->
-  <circle cx="68" cy="54" r="6" fill="#ff5f57" opacity="0.7"/>
-  <circle cx="92" cy="54" r="6" fill="#febc2e" opacity="0.7"/>
-  <circle cx="116" cy="54" r="6" fill="#28c840" opacity="0.7"/>
+    <!-- Border frame -->
+    <rect x="32" y="32" width="1136" height="611" fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.3"/>
 
-  <!-- Tab label -->
-  <text x="148" y="60" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" fill="#B45309" opacity="0.7" letter-spacing="0.5">typography.md</text>
 
-  <!-- Vertical divider — left panel / right panel -->
-  <line x1="520" y1="76" x2="520" y2="643" stroke="#ffffff" stroke-width="1" stroke-opacity="0.06"/>
+    <!-- Corner accents — top left -->
+    <line x1="32" y1="32" x2="80" y2="32" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
+    <line x1="32" y1="32" x2="32" y2="80" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
 
-  <!-- LEFT PANEL — code/editor simulation -->
 
-  <!-- Line numbers column -->
-  <rect x="32" y="76" width="56" height="567" fill="#ffffff" fill-opacity="0.02"/>
-  <line x1="88" y1="76" x2="88" y2="643" stroke="#ffffff" stroke-width="1" stroke-opacity="0.05"/>
+    <!-- Corner accents — top right -->
+    <line x1="1168" y1="32" x2="1120" y2="32" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
+    <line x1="1168" y1="32" x2="1168" y2="80" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
 
-  <!-- Line numbers -->
-  <text x="68" y="126" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.5" text-anchor="middle">01</text>
-  <text x="68" y="158" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.5" text-anchor="middle">02</text>
-  <text x="68" y="190" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.5" text-anchor="middle">03</text>
-  <text x="68" y="222" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.5" text-anchor="middle">04</text>
-  <text x="68" y="254" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.5" text-anchor="middle">05</text>
-  <text x="68" y="286" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.5" text-anchor="middle">06</text>
-  <text x="68" y="318" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.5" text-anchor="middle">07</text>
-  <text x="68" y="350" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.5" text-anchor="middle">08</text>
-  <text x="68" y="382" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.5" text-anchor="middle">09</text>
-  <text x="68" y="414" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.5" text-anchor="middle">10</text>
 
-  <!-- Active line highlight -->
-  <rect x="88" y="272" width="432" height="28" fill="#B45309" fill-opacity="0.08"/>
+    <!-- Corner accents — bottom left -->
+    <line x1="32" y1="643" x2="80" y2="643" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
+    <line x1="32" y1="643" x2="32" y2="595" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
 
-  <!-- CSS code lines -->
-  <text x="104" y="126" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B">@font-face {</text>
 
-  <text x="104" y="158" font-family="'JetBrains Mono', monospace" font-size="13">
-    <tspan fill="#64748B">  font-family: </tspan><tspan fill="#B45309">'JetBrains Mono'</tspan><tspan fill="#64748B">;</tspan>
-  </text>
+    <!-- Corner accents — bottom right -->
+    <line x1="1168" y1="643" x2="1120" y2="643" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
+    <line x1="1168" y1="643" x2="1168" y2="595" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
 
-  <text x="104" y="190" font-family="'JetBrains Mono', monospace" font-size="13">
-    <tspan fill="#64748B">  src: </tspan><tspan fill="#B45309">url</tspan><tspan fill="#e2e8f0">('</tspan><tspan fill="#10b981">/fonts/JBMono.woff2</tspan><tspan fill="#e2e8f0">')</tspan><tspan fill="#64748B">;</tspan>
-  </text>
 
-  <text x="104" y="222" font-family="'JetBrains Mono', monospace" font-size="13">
-    <tspan fill="#64748B">  font-weight: </tspan><tspan fill="#B45309">100 800</tspan><tspan fill="#64748B">;</tspan>
-  </text>
+    <!-- Top bar -->
+    <rect x="0" y="0" width="1200" height="44" fill="#B45309" fill-opacity="0.07"/>
+    <line x1="0" y1="44" x2="1200" y2="44" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
 
-  <text x="104" y="254" font-family="'JetBrains Mono', monospace" font-size="13">
-    <tspan fill="#64748B">  font-display: </tspan><tspan fill="#B45309">swap</tspan><tspan fill="#64748B">;</tspan>
-  </text>
 
-  <!-- Active line -->
-  <text x="104" y="286" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B">}</text>
+    <!-- Terminal dots -->
+    <circle cx="56" cy="22" r="6" fill="#ff5f57" opacity="0.75"/>
+    <circle cx="80" cy="22" r="6" fill="#febc2e" opacity="0.75"/>
+    <circle cx="104" cy="22" r="6" fill="#28c840" opacity="0.75"/>
 
-  <text x="104" y="318" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B"> </text>
 
-  <text x="104" y="350" font-family="'JetBrains Mono', monospace" font-size="13">
-    <tspan fill="#e2e8f0">body</tspan><tspan fill="#64748B">, h1, h2, nav {</tspan>
-  </text>
+    <!-- Tab label -->
+    <text x="136" y="28" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" fill="#B45309" opacity="0.6" letter-spacing="0.3" dominant-baseline="middle">typography.md</text>
 
-  <text x="104" y="382" font-family="'JetBrains Mono', monospace" font-size="13">
-    <tspan fill="#64748B">  font-family: </tspan><tspan fill="#B45309">'JetBrains Mono'</tspan><tspan fill="#64748B">;</tspan>
-  </text>
 
-  <text x="104" y="414" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B">}</text>
+    <!-- Vertical panel divider -->
+    <line x1="520" y1="44" x2="520" y2="675" stroke="#ffffff" stroke-width="1" stroke-opacity="0.05"/>
 
-  <!-- Cursor -->
-  <rect x="104" y="421" width="8" height="16" fill="#B45309" opacity="0.9">
-    <animate attributeName="opacity" values="0.9;0;0.9" dur="1.1s" repeatCount="indefinite"/>
-  </rect>
 
-  <!-- RIGHT PANEL — main content -->
+    <!-- LEFT PANEL — line numbers column -->
+    <rect x="0" y="44" width="56" height="631" fill="#ffffff" fill-opacity="0.015"/>
+    <line x1="56" y1="44" x2="56" y2="675" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
 
-  <!-- Prompt line -->
-  <text x="560" y="130" font-family="'JetBrains Mono', monospace" font-size="14" fill="#B45309" opacity="0.6">$ cat typography.md</text>
 
-  <!-- Divider -->
-  <line x1="560" y1="150" x2="1140" y2="150" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
+    <!-- Line numbers -->
+    <text x="36" y="112" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.45" text-anchor="middle">01</text>
+    <text x="36" y="144" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.45" text-anchor="middle">02</text>
+    <text x="36" y="176" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.45" text-anchor="middle">03</text>
+    <text x="36" y="208" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.45" text-anchor="middle">04</text>
+    <text x="36" y="240" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.45" text-anchor="middle">05</text>
+    <text x="36" y="272" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.45" text-anchor="middle">06</text>
+    <text x="36" y="304" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.45" text-anchor="middle">07</text>
+    <text x="36" y="336" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.45" text-anchor="middle">08</text>
+    <text x="36" y="368" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.45" text-anchor="middle">09</text>
+    <text x="36" y="400" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.45" text-anchor="middle">10</text>
 
-  <!-- Main headline -->
-  <text x="560" y="220" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#d4d4d8" letter-spacing="-1">Why I Went</text>
-  <text x="560" y="268" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#d4d4d8" letter-spacing="-1">All-In on</text>
-  <text x="560" y="316" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#B45309" letter-spacing="-1">Monospace</text>
 
-  <!-- Subline -->
-  <text x="560" y="368" font-family="'JetBrains Mono', monospace" font-size="15" fill="#64748B">and stopped apologizing for it</text>
+    <!-- Active line highlight -->
+    <rect x="56" y="258" width="464" height="28" fill="#B45309" fill-opacity="0.07"/>
 
-  <!-- Divider -->
-  <line x1="560" y1="395" x2="1140" y2="395" stroke="#ffffff" stroke-width="1" stroke-opacity="0.06"/>
 
-  <!-- Meta row -->
-  <text x="560" y="430" font-family="'JetBrains Mono', monospace" font-size="12" fill="#B45309" opacity="0.7">2026-06-23</text>
-  <text x="680" y="430" font-family="'JetBrains Mono', monospace" font-size="12" fill="#64748B" opacity="0.6">#css</text>
-  <text x="730" y="430" font-family="'JetBrains Mono', monospace" font-size="12" fill="#64748B" opacity="0.6">#typography</text>
-  <text x="852" y="430" font-family="'JetBrains Mono', monospace" font-size="12" fill="#64748B" opacity="0.6">#design</text>
+    <!-- CSS code lines -->
+    <text x="76" y="112" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B">@font-face {</text>
 
-  <!-- Font specimen row -->
-  <text x="560" y="490" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B" opacity="0.5">specimen</text>
-  <line x1="640" y1="483" x2="1140" y2="483" stroke="#ffffff" stroke-width="1" stroke-opacity="0.05"/>
 
-  <!-- Alphabet specimen -->
-  <text x="560" y="525" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="400" fill="#d4d4d8" opacity="0.25" letter-spacing="2">A B C D E F G H I J K L M</text>
-  <text x="560" y="555" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="400" fill="#d4d4d8" opacity="0.25" letter-spacing="2">N O P Q R S T U V W X Y Z</text>
-  <text x="560" y="585" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#B45309" opacity="0.5" letter-spacing="2">0 1 2 3 4 5 6 7 8 9 ! @ # $</text>
+    <text x="76" y="144" font-family="'JetBrains Mono', monospace" font-size="13">
+      <tspan fill="#64748B">  font-family: </tspan><tspan fill="#B45309">'JetBrains Mono'</tspan><tspan fill="#64748B">;</tspan>
+    </text>
 
-  <!-- Bottom status bar -->
-  <rect x="32" y="617" width="1136" height="26" fill="#B45309" fill-opacity="0.06"/>
-  <line x1="32" y1="617" x2="1168" y2="617" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
-  <text x="56" y="634" font-family="'JetBrains Mono', monospace" font-size="11" fill="#B45309" opacity="0.5">NORMAL</text>
-  <text x="130" y="634" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748B" opacity="0.4">typography.md</text>
-  <text x="1050" y="634" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748B" opacity="0.4">JetBrains Mono · 800w</text>
+
+    <text x="76" y="176" font-family="'JetBrains Mono', monospace" font-size="13">
+      <tspan fill="#64748B">  src: </tspan><tspan fill="#B45309">url</tspan><tspan fill="#c8d3e0">(</tspan><tspan fill="#10b981">'/fonts/JBMono.woff2'</tspan><tspan fill="#c8d3e0">)</tspan><tspan fill="#64748B">;</tspan>
+    </text>
+
+
+    <text x="76" y="208" font-family="'JetBrains Mono', monospace" font-size="13">
+      <tspan fill="#64748B">  font-weight: </tspan><tspan fill="#B45309">100 800</tspan><tspan fill="#64748B">;</tspan>
+    </text>
+
+
+    <text x="76" y="240" font-family="'JetBrains Mono', monospace" font-size="13">
+      <tspan fill="#64748B">  font-display: </tspan><tspan fill="#B45309">swap</tspan><tspan fill="#64748B">;</tspan>
+    </text>
+
+
+    <text x="76" y="272" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B">}</text>
+
+
+    <text x="76" y="304" font-family="'JetBrains Mono', monospace" font-size="13" fill="#2d3748"> </text>
+
+
+    <text x="76" y="336" font-family="'JetBrains Mono', monospace" font-size="13">
+      <tspan fill="#c8d3e0">body</tspan><tspan fill="#64748B">, h1, h2, nav {</tspan>
+    </text>
+
+
+    <text x="76" y="368" font-family="'JetBrains Mono', monospace" font-size="13">
+      <tspan fill="#64748B">  font-family: </tspan><tspan fill="#B45309">'JetBrains Mono'</tspan><tspan fill="#64748B">;</tspan>
+    </text>
+
+
+    <text x="76" y="400" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748B">}</text>
+
+
+    <!-- Cursor blink -->
+    <rect x="76" y="408" width="8" height="15" fill="#B45309" opacity="0.85">
+      <animate attributeName="opacity" values="0.85;0;0.85" dur="1.1s" repeatCount="indefinite"/>
+    </rect>
+
+
+    <!-- RIGHT PANEL -->
+
+
+    <!-- Prompt line -->
+    <text x="556" y="80" font-family="'JetBrains Mono', monospace" font-size="13" fill="#B45309" opacity="0.55" dominant-baseline="middle">$ cat typography.md</text>
+
+
+    <!-- Divider -->
+    <line x1="556" y1="100" x2="1160" y2="100" stroke="#B45309" stroke-width="1" stroke-opacity="0.12"/>
+
+
+    <!-- Main headline -->
+    <text x="556" y="178" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#e2e8f0" letter-spacing="-1">Why I Went</text>
+    <text x="556" y="226" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#e2e8f0" letter-spacing="-1">All-In on</text>
+    <text x="556" y="274" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#B45309" letter-spacing="-1">Monospace</text>
+
+
+    <!-- Subline -->
+    <text x="556" y="314" font-family="'JetBrains Mono', monospace" font-size="14" fill="#64748B">and stopped apologizing for it</text>
+
+
+    <!-- Divider -->
+    <line x1="556" y1="338" x2="1160" y2="338" stroke="#ffffff" stroke-width="1" stroke-opacity="0.05"/>
+
+
+    <!-- Meta row -->
+    <text x="556" y="368" font-family="'JetBrains Mono', monospace" font-size="12" fill="#B45309" opacity="0.65">2026-06-23</text>
+    <text x="676" y="368" font-family="'JetBrains Mono', monospace" font-size="12" fill="#64748B" opacity="0.55">#css</text>
+    <text x="724" y="368" font-family="'JetBrains Mono', monospace" font-size="12" fill="#64748B" opacity="0.55">#typography</text>
+    <text x="844" y="368" font-family="'JetBrains Mono', monospace" font-size="12" fill="#64748B" opacity="0.55">#design</text>
+
+
+    <!-- Specimen label -->
+    <text x="556" y="418" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748B" opacity="0.4">specimen</text>
+    <line x1="630" y1="412" x2="1160" y2="412" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
+
+
+    <!-- Alphabet specimen -->
+    <text x="556" y="450" font-family="'JetBrains Mono', monospace" font-size="19" fill="#e2e8f0" opacity="0.18" letter-spacing="2">A B C D E F G H I J K L M</text>
+    <text x="556" y="480" font-family="'JetBrains Mono', monospace" font-size="19" fill="#e2e8f0" opacity="0.18" letter-spacing="2">N O P Q R S T U V W X Y Z</text>
+    <text x="556" y="510" font-family="'JetBrains Mono', monospace" font-size="19" font-weight="700" fill="#B45309" opacity="0.4" letter-spacing="2">0 1 2 3 4 5 6 7 8 9 ! @ # $</text>
+
+
+    <!-- Status bar -->
+    <rect x="0" y="649" width="1200" height="26" fill="#B45309" fill-opacity="0.05"/>
+    <line x1="0" y1="649" x2="1200" y2="649" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
+    <text x="24" y="666" font-family="'JetBrains Mono', monospace" font-size="11" fill="#B45309" opacity="0.45">NORMAL</text>
+    <text x="100" y="666" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748B" opacity="0.35">typography.md</text>
+    <text x="1020" y="666" font-family="'JetBrains Mono', monospace" font-size="11" fill="#64748B" opacity="0.35">JetBrains Mono · 800w</text>
+
+
+  </g>
+
+
+  <!-- Rounded border overlay -->
+  <rect width="1200" height="675" rx="10" ry="10" fill="none" stroke="#3a3a3a" stroke-width="1"/>
+
+
 </svg>
