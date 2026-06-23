@@ -10,7 +10,7 @@ Imagine arriving at a blog post about golden ratios in web design. The screensho
 
 That moment of confusion is exactly what happened after this blog's terminal redesign. And it's what led to a tiny piece of UI that taught me more about design iteration than any A/B test ever did.
 
-## $ cat problem.txt
+## The Problem
 
 After the revamp, three posts had direct references to the old design:
 
@@ -25,7 +25,7 @@ But even edited posts have readers who scan without reading captions. They see a
 
 I needed a way to answer that question before it was asked.
 
-## $ cat requirements.txt
+## Requirements
 
 The solution had to meet three constraints:
 
@@ -35,7 +35,7 @@ The solution had to meet three constraints:
 
 No third-party library. No JavaScript. No cookie banners pretending to be something useful. Just a conditional include in a Nunjucks template and a few lines of CSS.
 
-## $ cat solution&#46;sh
+## The Implementation
 
 Small enough to show in full.
 
@@ -68,7 +68,7 @@ That's the entire pipeline. A frontmatter key, a Nunjucks conditional, a three-l
 
 The hard part wasn't the implementation — it took five minutes. The hard part was making it look right. That took three weeks.
 
-## $ cat iterations.log
+## Iterations
 
 ### v1 — The `#` Comment
 
@@ -124,7 +124,7 @@ I replaced the equal border with a 3px accent left border:
 
 Three pixels of amber transformed the box. The `>` beam prefix tied it back to the terminal theme. The rest of the border faded into the background as it should. The notice finally did what a notice is supposed to do: caught attention without demanding it.
 
-## $ cat takeaways.txt
+## Takeaways
 
 Three things this process confirmed:
 
