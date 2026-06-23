@@ -30,8 +30,6 @@ Most advice about web typography follows a familiar script: pick a readable seri
 
 For a marketing site or a SaaS product, that's exactly what you want — invisible typography that gets out of the way. But a personal developer blog is not a product. It's closer to a voice. And voices are not supposed to be invisible.
 
-The disconnect I kept running into: I was writing about code, configs, and edge cases you only hit when you tinker too much — inside a layout that looked borrowed from a lifestyle magazine. Elegant serif headings. Comfortable body text. A nice "Posts" page with dot leaders. Pleasant. Forgettable.
-
 ## What Fonts Signal
 
 Fonts carry context. We absorb it without realizing.
