@@ -6,14 +6,14 @@
 
     <!-- Amber glow -->
     <radialGradient id="amberGlow" cx="30%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#B45309" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#B45309" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#F5A623" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
     </radialGradient>
 
     <!-- Amber right glow -->
     <radialGradient id="rightGlow" cx="80%" cy="50%" r="40%">
-      <stop offset="0%" stop-color="#B45309" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#B45309" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#F5A623" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
     </radialGradient>
 
     <!-- Drop shadow filter -->
@@ -40,27 +40,27 @@
     <rect width="1200" height="675" fill="url(#rightGlow)"/>
 
     <!-- Border frame -->
-    <rect x="32" y="32" width="1136" height="611" fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.3"/>
+    <rect x="32" y="32" width="1136" height="611" fill="none" stroke="#F5A623" stroke-width="1" stroke-opacity="0.2"/>
 
     <!-- Corner accents — top left -->
-    <line x1="32" y1="32" x2="80" y2="32" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
-    <line x1="32" y1="32" x2="32" y2="80" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
+    <line x1="32" y1="32" x2="80" y2="32" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="32" y1="32" x2="32" y2="80" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
 
     <!-- Corner accents — top right -->
-    <line x1="1168" y1="32" x2="1120" y2="32" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
-    <line x1="1168" y1="32" x2="1168" y2="80" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
+    <line x1="1168" y1="32" x2="1120" y2="32" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="1168" y1="32" x2="1168" y2="80" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
 
     <!-- Corner accents — bottom left -->
-    <line x1="32" y1="643" x2="80" y2="643" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
-    <line x1="32" y1="643" x2="32" y2="595" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
+    <line x1="32" y1="643" x2="80" y2="643" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="32" y1="643" x2="32" y2="595" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
 
     <!-- Corner accents — bottom right -->
-    <line x1="1168" y1="643" x2="1120" y2="643" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
-    <line x1="1168" y1="643" x2="1168" y2="595" stroke="#B45309" stroke-width="2" stroke-opacity="0.8"/>
+    <line x1="1168" y1="643" x2="1120" y2="643" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="1168" y1="643" x2="1168" y2="595" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
 
     <!-- Top bar — full width window chrome -->
-    <rect x="0" y="0" width="1200" height="44" fill="#B45309" fill-opacity="0.07"/>
-    <line x1="0" y1="44" x2="1200" y2="44" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
+    <rect x="0" y="0" width="1200" height="44" fill="#F5A623" fill-opacity="0.07"/>
+    <line x1="0" y1="44" x2="1200" y2="44" stroke="#F5A623" stroke-width="1" stroke-opacity="0.2"/>
 
     <!-- Terminal dots -->
     <circle cx="56" cy="22" r="6" fill="#ff5f57" opacity="0.75"/>
@@ -68,7 +68,7 @@
     <circle cx="104" cy="22" r="6" fill="#28c840" opacity="0.75"/>
 
     <!-- Tab label -->
-    <text x="136" y="28" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" fill="#B45309" opacity="0.6" letter-spacing="0.3" dominant-baseline="middle">typography.md</text>
+    <text x="136" y="28" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" fill="#F5A623" opacity="0.5" letter-spacing="0.3" dominant-baseline="middle">typography.md</text>
 
     <!-- Vertical panel divider -->
     <line x1="520" y1="44" x2="520" y2="675" stroke="#ffffff" stroke-width="1" stroke-opacity="0.05"/>
@@ -90,7 +90,7 @@
     <text x="36" y="450" font-family="'JetBrains Mono', monospace" font-size="13" fill="#94a3b8" opacity="0.6" text-anchor="middle">10</text>
 
     <!-- Active line highlight -->
-    <rect x="56" y="308" width="464" height="28" fill="#B45309" fill-opacity="0.07"/>
+    <rect x="56" y="308" width="464" height="28" fill="#F5A623" fill-opacity="0.07"/>
 
     <!-- CSS code lines -->
     <text x="76" y="162" font-family="'JetBrains Mono', monospace" font-size="13" fill="#94a3b8">@font-face {</text>
@@ -126,7 +126,7 @@
     <text x="76" y="450" font-family="'JetBrains Mono', monospace" font-size="13" fill="#94a3b8">}</text>
 
     <!-- Cursor blink -->
-    <rect x="76" y="458" width="8" height="15" fill="#B45309" opacity="0.85">
+    <rect x="76" y="458" width="8" height="15" fill="#F5A623" opacity="0.8">
       <animate attributeName="opacity" values="0.85;0;0.85" dur="1.1s" repeatCount="indefinite"/>
     </rect>
 
@@ -136,12 +136,12 @@
     <text x="556" y="130" font-family="'JetBrains Mono', monospace" font-size="13" fill="#B45309" opacity="0.55" dominant-baseline="middle">$ cat typography.md</text>
 
     <!-- Divider -->
-    <line x1="556" y1="150" x2="1160" y2="150" stroke="#B45309" stroke-width="1" stroke-opacity="0.12"/>
+    <line x1="556" y1="150" x2="1160" y2="150" stroke="#F5A623" stroke-width="1" stroke-opacity="0.12"/>
 
     <!-- Main headline -->
     <text x="556" y="228" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#d4d4d8" letter-spacing="-1">Why I Went</text>
     <text x="556" y="276" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#d4d4d8" letter-spacing="-1">All-In on</text>
-    <text x="556" y="324" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#B45309" letter-spacing="-1">Monospace</text>
+    <text x="556" y="324" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#F5A623" letter-spacing="-1">Monospace</text>
 
     <!-- Subline -->
     <text x="556" y="364" font-family="'JetBrains Mono', monospace" font-size="14" fill="#64748B">and stopped apologizing for it</text>
@@ -150,7 +150,7 @@
     <line x1="556" y1="388" x2="1160" y2="388" stroke="#ffffff" stroke-width="1" stroke-opacity="0.05"/>
 
     <!-- Meta row -->
-    <text x="556" y="418" font-family="'JetBrains Mono', monospace" font-size="12" fill="#B45309" opacity="0.65">2026-06-23</text>
+    <text x="556" y="418" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F5A623" opacity="0.65">2026-06-23</text>
     <text x="676" y="418" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8" opacity="0.7">#css</text>
     <text x="724" y="418" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8" opacity="0.7">#typography</text>
     <text x="844" y="418" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8" opacity="0.7">#design</text>
@@ -162,12 +162,12 @@
     <!-- Alphabet specimen -->
     <text x="556" y="500" font-family="'JetBrains Mono', monospace" font-size="19" fill="#d4d4d8" opacity="0.3" letter-spacing="2">A B C D E F G H I J K L M</text>
     <text x="556" y="530" font-family="'JetBrains Mono', monospace" font-size="19" fill="#d4d4d8" opacity="0.3" letter-spacing="2">N O P Q R S T U V W X Y Z</text>
-    <text x="556" y="560" font-family="'JetBrains Mono', monospace" font-size="19" font-weight="700" fill="#B45309" opacity="0.55" letter-spacing="2">0 1 2 3 4 5 6 7 8 9 ! @ # $</text>
+    <text x="556" y="560" font-family="'JetBrains Mono', monospace" font-size="19" font-weight="700" fill="#F5A623" opacity="0.55" letter-spacing="2">0 1 2 3 4 5 6 7 8 9 ! @ # $</text>
 
     <!-- Status bar -->
-    <rect x="0" y="649" width="1200" height="26" fill="#B45309" fill-opacity="0.05"/>
-    <line x1="0" y1="649" x2="1200" y2="649" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
-    <text x="24" y="666" font-family="'JetBrains Mono', monospace" font-size="11" fill="#B45309" opacity="0.45">NORMAL</text>
+    <rect x="0" y="649" width="1200" height="26" fill="#F5A623" fill-opacity="0.05"/>
+    <line x1="0" y1="649" x2="1200" y2="649" stroke="#F5A623" stroke-width="1" stroke-opacity="0.15"/>
+    <text x="24" y="666" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F5A623" opacity="0.35">NORMAL</text>
     <text x="100" y="666" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8" opacity="0.5">typography.md</text>
     <text x="1020" y="666" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8" opacity="0.5">JetBrains Mono · 800w</text>
 
