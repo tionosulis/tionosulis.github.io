@@ -32,8 +32,6 @@ For a marketing site or a SaaS product, that's exactly what you want — invisib
 
 The disconnect I kept running into: I was writing about code, configs, and edge cases you only hit when you tinker too much — inside a layout that looked borrowed from a lifestyle magazine. Elegant serif headings. Comfortable body text. A nice "Posts" page with dot leaders. Pleasant. Forgettable.
 
-Every time I dropped a code block into a post, the JetBrains Mono inside it felt more honest than anything surrounding it. More *me*. That friction kept nagging.
-
 ## What Fonts Signal
 
 Fonts carry context. We absorb it without realizing.
