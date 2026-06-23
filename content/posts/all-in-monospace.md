@@ -1,11 +1,14 @@
 ---
 title: "Why I Went All-In on Monospace — And Stopped Apologizing for It"
+description: "Five font pairings, three redesigns, one conclusion: the most honest typeface for a developer blog was right in front of me the whole time."
 date: 2026-06-23
+draft: true
 tags:
   - css
   - typography
   - design
   - jetbrains-mono
+image: /assets/img/og/all-in-monospace.svg
 ---
 
 At some point, every developer who maintains a personal blog faces the same quiet crisis: *does this look like me, or does it look like a template?*
