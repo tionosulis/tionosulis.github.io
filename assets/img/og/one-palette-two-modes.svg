@@ -16,10 +16,10 @@
   <rect x="60" y="100" width="1080" height="475" rx="12" fill="none" stroke="#3D536A" stroke-width="1.5"/>
 
   <!-- Corner accents -->
-  <path d="M 60 130 L 60 112 L 72 100" fill="none" stroke="#F5A623" stroke-width="3"/>
-  <path d="M 1140 100 L 1128 100 L 1140 112" fill="none" stroke="#F5A623" stroke-width="3"/>
-  <path d="M 60 575 L 60 557 L 72 545" fill="none" stroke="#10D9A8" stroke-width="3"/>
-  <path d="M 1140 575 L 1128 575 L 1140 563" fill="none" stroke="#10D9A8" stroke-width="3"/>
+  <path d="M 60 130 L 60 112 L 72 100" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
+  <path d="M 1140 100 L 1128 100 L 1140 112" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
+  <path d="M 60 575 L 60 557 L 72 545" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
+  <path d="M 1140 575 L 1128 575 L 1140 563" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
 
   <!-- Pill dots (right edge) -->
   <circle cx="1130" cy="337" r="3" fill="#3D536A"/>
@@ -38,9 +38,9 @@
   <text x="900" y="295" text-anchor="middle" fill="#6A8AA8" font-family="JetBrains Mono,monospace" font-size="14" font-weight="700">DARK</text>
   <text x="900" y="315" text-anchor="middle" fill="#6A8AA8" font-family="JetBrains Mono,monospace" font-size="12">#161616 background</text>
 
-  <!-- Arrow: light → card -->
-  <line x1="200" y1="340" x2="330" y2="340" stroke="#4A8AE0" stroke-width="2" opacity="0.6"/>
-  <polygon points="330,335 340,340 330,345" fill="#4A8AE0" opacity="0.6"/>
+  <!-- Arrow: card → light -->
+  <line x1="330" y1="340" x2="200" y2="340" stroke="#4A8AE0" stroke-width="2" opacity="0.6"/>
+  <polygon points="210,335 200,340 210,345" fill="#4A8AE0" opacity="0.6"/>
 
   <!-- Arrow: card → dark -->
   <line x1="860" y1="340" x2="990" y2="340" stroke="#4A8AE0" stroke-width="2" opacity="0.6"/>
