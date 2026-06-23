@@ -12,13 +12,13 @@
 
     <!-- Subtle right glow -->
     <radialGradient id="rightGlow" cx="80%" cy="50%" r="40%">
-      <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#1e3a5f" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#B45309" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#B45309" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="675" fill="#0f0f0f"/>
+  <rect width="1200" height="675" fill="#161616"/>
   <rect width="1200" height="675" fill="url(#dots)"/>
   <rect width="1200" height="675" fill="url(#amberGlow)"/>
   <rect width="1200" height="675" fill="url(#rightGlow)"/>
@@ -126,8 +126,8 @@
   <line x1="560" y1="150" x2="1140" y2="150" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
 
   <!-- Main headline -->
-  <text x="560" y="220" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#e2e8f0" letter-spacing="-1">Why I Went</text>
-  <text x="560" y="268" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#e2e8f0" letter-spacing="-1">All-In on</text>
+  <text x="560" y="220" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#d4d4d8" letter-spacing="-1">Why I Went</text>
+  <text x="560" y="268" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#d4d4d8" letter-spacing="-1">All-In on</text>
   <text x="560" y="316" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#B45309" letter-spacing="-1">Monospace</text>
 
   <!-- Subline -->
@@ -147,8 +147,8 @@
   <line x1="640" y1="483" x2="1140" y2="483" stroke="#ffffff" stroke-width="1" stroke-opacity="0.05"/>
 
   <!-- Alphabet specimen -->
-  <text x="560" y="525" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="400" fill="#e2e8f0" opacity="0.25" letter-spacing="2">A B C D E F G H I J K L M</text>
-  <text x="560" y="555" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="400" fill="#e2e8f0" opacity="0.25" letter-spacing="2">N O P Q R S T U V W X Y Z</text>
+  <text x="560" y="525" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="400" fill="#d4d4d8" opacity="0.25" letter-spacing="2">A B C D E F G H I J K L M</text>
+  <text x="560" y="555" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="400" fill="#d4d4d8" opacity="0.25" letter-spacing="2">N O P Q R S T U V W X Y Z</text>
   <text x="560" y="585" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#B45309" opacity="0.5" letter-spacing="2">0 1 2 3 4 5 6 7 8 9 ! @ # $</text>
 
   <!-- Bottom status bar -->
