@@ -14,15 +14,13 @@ pageHasCode: true
 
 ![Split-terminal: editor panel kiri, rendered typography panel kanan, keduanya dalam JetBrains Mono](/assets/img/og/all-in-monospace.svg)
 
-*The hero image for this post — code on the left, rendered typography on the right, both speaking the same monospace voice.*
+*Code on the left, rendered typography on the right — both speaking the same monospace voice.*
 
 At some point, anyone who keeps a personal corner of the web faces the same quiet crisis: *does this look like me, or does it look like a template?*
 
 I faced mine somewhere between my fourth font pairing attempt and my third "maybe I should just use Inter" moment. The answer, when it finally arrived, was not what the typography textbooks would recommend. It was a monospace font. For everything.
 
----
-
-## $ cat professional.md
+## $ cat professional.txt
 
 Most advice about web typography follows a familiar script: pick a readable serif or humanist sans-serif for body text, pair it with something contrasting for headings, keep code blocks in monospace, done. It works. It looks clean. It looks like everyone else.
 
@@ -32,9 +30,7 @@ The disconnect I kept running into: I was writing about code, configs, and edge 
 
 Every time I dropped a code block into a post, the JetBrains Mono inside it felt more honest than anything surrounding it. More *me*. That friction kept nagging.
 
----
-
-## $ cat signals.md
+## $ cat signals.txt
 
 Fonts carry context. We absorb it without realizing.
 
@@ -44,9 +40,7 @@ Research in cognitive typography suggests that typeface choices influence how re
 
 For someone writing about the command line and the mess behind the UI, monospace is not an eccentric choice. It's the honest one. It closes the gap between the author's context and the reader's context. Most of us live in editors half the time anyway. The typeface is a handshake.
 
----
-
-## $ cat readability.md
+## $ cat readability.txt
 
 The standard objection to monospace body text is readability. Fixed-width characters, the argument goes, lack the natural rhythm of proportional fonts — the varying widths of 'i', 'm', 'w' — that help the eye flow through text.
 
@@ -56,9 +50,7 @@ There's also a practical counter: the discomfort of monospace body text — if i
 
 There's a deeper layer here too — the *disfluency effect*. Cognitive psychology research has shown that text which is slightly harder to read is often *better retained*, because the reader must process it more deliberately. Monospace body text introduces a small dose of this: not enough to fatigue, but enough to keep the reader engaged rather than skimming. For technical content where precision matters, that trade-off is a feature, not a bug.
 
----
-
-## $ cat tradeoffs.css
+## $ cat tradeoffs.txt
 
 Going all-in is different from just using monospace for headings. It means the navigation, the metadata, the tags, the date stamps, the body text, the footer — everything speaks the same typographic language.
 
@@ -104,9 +96,7 @@ UI labels and tags at `0.7rem` benefit from slight `letter-spacing: 0.04em` to s
 
 None of these are obstacles. They're calibrations — the kind any deliberate typographic choice requires.
 
----
-
-## $ cat commitment.md
+## $ cat commitment.txt
 
 There's a version of this essay that hedges — that says "monospace can work if you're careful" and ends with a balanced list of pros and cons. This is not that essay.
 
@@ -117,8 +107,6 @@ That's not a universal answer. It doesn't need to be. Personal sites are the las
 Monospace everywhere is a commitment — one that forces every other design decision to fall in line. The spacing, the colors, the layout, the tone of the writing itself — they all have to answer to the same constraint. That's the real value. Not the specific typeface, but the clarity that comes from choosing *something* and seeing it through.
 
 Every personal site needs at least one of those decisions, whatever it may be.
-
----
 
 The fonts that surrounded me every day — in my editor, in my terminal, in every tool I actually use — were monospace. It took embarrassingly long to realize the blog should be too.
 
