@@ -12,15 +12,19 @@ image: /assets/img/og/all-in-monospace.svg
 pageHasCode: true
 ---
 
-![Split-terminal: editor panel kiri, rendered typography panel kanan, keduanya dalam JetBrains Mono](/assets/img/og/all-in-monospace.svg)
+![Hero image showing a split-panel editor layout: CSS @font-face code on the left with JetBrains Mono applied, and the article title 'Why I Went All-In on Monospace' on the right with a font specimen row.](/assets/img/og/all-in-monospace.svg)
 
-*Code on the left, rendered typography on the right — both speaking the same monospace voice.*
+*The same font in my editor, my terminal, and now my blog.*
 
 At some point, anyone who keeps a personal corner of the web faces the same quiet crisis: *does this look like me, or does it look like a template?*
 
 I faced mine somewhere between my fourth font pairing attempt and my third "maybe I should just use Inter" moment. The answer, when it finally arrived, was not what the typography textbooks would recommend. It was a monospace font. For everything.
 
-## $ cat professional.txt
+I was writing about code, configs, and edge cases you only hit when you push things too far — inside a layout that looked borrowed from a minimalist magazine. The disconnect was impossible to ignore.
+
+Every time I dropped a code block into a post, the JetBrains Mono inside it felt more honest than anything surrounding it. More *me*. That friction kept nagging.
+
+## The Professional Context
 
 Most advice about web typography follows a familiar script: pick a readable serif or humanist sans-serif for body text, pair it with something contrasting for headings, keep code blocks in monospace, done. It works. It looks clean. It looks like everyone else.
 
@@ -30,7 +34,7 @@ The disconnect I kept running into: I was writing about code, configs, and edge 
 
 Every time I dropped a code block into a post, the JetBrains Mono inside it felt more honest than anything surrounding it. More *me*. That friction kept nagging.
 
-## $ cat signals.txt
+## What Fonts Signal
 
 Fonts carry context. We absorb it without realizing.
 
@@ -40,7 +44,7 @@ Research in cognitive typography suggests that typeface choices influence how re
 
 For someone writing about the command line and the mess behind the UI, monospace is not an eccentric choice. It's the honest one. It closes the gap between the author's context and the reader's context. Most of us live in editors half the time anyway. The typeface is a handshake.
 
-## $ cat readability.txt
+## The Readability Question
 
 The standard objection to monospace body text is readability. Fixed-width characters, the argument goes, lack the natural rhythm of proportional fonts — the varying widths of 'i', 'm', 'w' — that help the eye flow through text.
 
@@ -50,7 +54,7 @@ There's also a practical counter: the discomfort of monospace body text — if i
 
 There's a deeper layer here too — the *disfluency effect*. Cognitive psychology research has shown that text which is slightly harder to read is often *better retained*, because the reader must process it more deliberately. Monospace body text introduces a small dose of this: not enough to fatigue, but enough to keep the reader engaged rather than skimming. For technical content where precision matters, that trade-off is a feature, not a bug.
 
-## $ cat tradeoffs.txt
+## The Trade-Offs
 
 Going all-in is different from just using monospace for headings. It means the navigation, the metadata, the tags, the date stamps, the body text, the footer — everything speaks the same typographic language.
 
@@ -96,7 +100,7 @@ UI labels and tags at `0.7rem` benefit from slight `letter-spacing: 0.04em` to s
 
 None of these are obstacles. They're calibrations — the kind any deliberate typographic choice requires.
 
-## $ cat commitment.txt
+## The Commitment
 
 There's a version of this essay that hedges — that says "monospace can work if you're careful" and ends with a balanced list of pros and cons. This is not that essay.
 
