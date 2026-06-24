@@ -61,6 +61,7 @@ export default async function (eleventyConfig) {
       class: "header-anchor",
       symbol: "#",
       ariaHidden: false,
+      space: false,
     }),
     level: [1, 2, 3, 4],
   });
