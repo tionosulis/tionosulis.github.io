@@ -73,23 +73,23 @@
     <text x="100" y="250" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#d4d4d8">both)</text>
     <text x="184" y="250" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#ef4444" opacity="0.7">#</text>
 
-    <!-- Ghost line highlight -->
-    <rect x="100" y="250" width="60" height="24" rx="3" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.7"/>
-    <text x="110" y="266" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="9" fill="#ef4444">phantom</text>
+    <!-- Ghost line highlight — moved below heading baseline -->
+    <rect x="100" y="260" width="56" height="16" rx="3" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.7"/>
+    <text x="108" y="272" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="9" fill="#ef4444">phantom</text>
 
     <!-- Paragraph lines (showing the gap) -->
-    <rect x="100" y="295" width="380" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
-    <rect x="100" y="307" width="340" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
-    <rect x="100" y="319" width="360" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
+    <rect x="100" y="326" width="380" height="4" rx="2" fill="#4a6a82" opacity="0.55"/>
+    <rect x="100" y="338" width="340" height="4" rx="2" fill="#4a6a82" opacity="0.55"/>
+    <rect x="100" y="350" width="360" height="4" rx="2" fill="#4a6a82" opacity="0.55"/>
 
-    <!-- Spacing indicator arrow -->
-    <line x1="540" y1="190" x2="540" y2="290" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
+    <!-- Spacing indicator bracket — left side of Before card gap -->
+    <line x1="540" y1="190" x2="540" y2="320" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
     <polygon points="540,190 536,200 544,200" fill="#ef4444" opacity="0.5"/>
-    <polygon points="540,290 536,280 544,280" fill="#ef4444" opacity="0.5"/>
+    <polygon points="540,320 536,310 544,310" fill="#ef4444" opacity="0.5"/>
 
-    <!-- Annotation -->
-    <text x="548" y="248" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#ef4444">anchor wraps to</text>
-    <text x="548" y="264" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#ef4444">own line → phantom gap</text>
+    <!-- Red annotation — inside gap, to left of bracket -->
+    <text x="530" y="248" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#ef4444" text-anchor="end">anchor wraps to</text>
+    <text x="530" y="264" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#ef4444" text-anchor="end">own line → phantom gap</text>
 
     <!-- ───────────── RIGHT: AFTER ───────────── -->
 
@@ -114,17 +114,17 @@
     <text x="700" y="250" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#d4d4d8">both)</text>
 
     <!-- Paragraph lines — no gap -->
-    <rect x="700" y="275" width="380" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
-    <rect x="700" y="287" width="340" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
-    <rect x="700" y="299" width="360" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
+    <rect x="700" y="275" width="380" height="4" rx="2" fill="#4a6a82" opacity="0.55"/>
+    <rect x="700" y="287" width="340" height="4" rx="2" fill="#4a6a82" opacity="0.55"/>
+    <rect x="700" y="299" width="360" height="4" rx="2" fill="#4a6a82" opacity="0.55"/>
 
-    <!-- Green indicator -->
-    <line x1="660" y1="190" x2="660" y2="300" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
+    <!-- Green indicator — right side of After card gap -->
+    <line x1="660" y1="190" x2="660" y2="320" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
     <polygon points="660,190 656,200 664,200" fill="#22c55e" opacity="0.5"/>
-    <polygon points="660,300 656,290 664,290" fill="#22c55e" opacity="0.5"/>
+    <polygon points="660,320 656,310 664,310" fill="#22c55e" opacity="0.5"/>
 
-    <text x="624" y="254" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#22c55e" text-anchor="end">anchor hidden →</text>
-    <text x="624" y="270" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#22c55e" text-anchor="end">clean spacing</text>
+    <text x="670" y="248" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#22c55e">anchor hidden →</text>
+    <text x="670" y="264" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#22c55e">no phantom gap</text>
 
     <!-- CSS snippet -->
     <rect x="700" y="336" width="400" height="190" rx="6" fill="#161616" stroke="#3D536A" stroke-width="0.5"/>
