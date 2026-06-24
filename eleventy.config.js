@@ -180,6 +180,11 @@ export default async function (eleventyConfig) {
     return content.replace(/<pre\s+/g, '<pre ').replace(/\s+tabindex="0"/g, '');
   });
 
+  eleventyConfig.addTransform("wrap-tables", function (content) {
+    if (!this.page.outputPath?.endsWith(".html")) return content;
+    return content.replace(/<table/g, '<div class="table-wrap"><table').replace(/<\/table>/g, '</table></div>');
+  });
+
   eleventyConfig.addTransform("htmlmin", async function (content) {
     if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
       return minify(content, {
