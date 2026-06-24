@@ -222,7 +222,8 @@ table {
   margin-left: 0.25rem;
   opacity: 0;
   font-size: 0;
-  transition: opacity 0.15s ease, font-size 0s 0.15s;
+  line-height: 0;
+  transition: opacity 0.15s ease, font-size 0s 0.15s, line-height 0s 0.15s;
   &:hover { color: var(--accent); }
 }
 
@@ -230,7 +231,8 @@ table {
 .header-anchor:focus {
   opacity: 1;
   font-size: inherit;
-  transition: opacity 0.15s ease, font-size 0s;
+  line-height: inherit;
+  transition: opacity 0.15s ease, font-size 0s, line-height 0s;
 }
 
 .toc {
