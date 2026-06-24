@@ -302,7 +302,7 @@ table {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--text-secondary);
+  color: var(--text);
   font-family: var(--font-sans);
   font-size: 0.85rem;
   padding: 0.15rem 0.3rem;
@@ -329,6 +329,7 @@ main { min-width: 0; padding-bottom: 2rem; }
 article { max-width: 618px; margin: 0 auto; }
 
 article p, article li { color: var(--text-body); }
+article blockquote p { color: var(--text-secondary); }
 article .footnotes p, article .footnotes li { color: inherit; }
 
 article img { border: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
@@ -372,17 +373,17 @@ article p:has(img) + p em:only-child {
 /* Footnotes */
 .footnotes {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: var(--text-tertiary);
   margin-top: 1.5rem;
 }
 .footnote-ref {
   font-size: 0.75rem;
-  color: var(--text-secondary);
+  color: var(--text-tertiary);
   text-decoration: none;
 }
 .footnote-backref {
   text-decoration: none;
-  color: var(--text-secondary);
+  color: var(--accent);
 }
 
 /* Page header */
