@@ -92,14 +92,16 @@ Here's the final implementation:
   margin-left: 0.25rem;
   opacity: 0;
   font-size: 0;
-  transition: opacity 0.15s ease, font-size 0s 0.15s;
+  line-height: 0;
+  transition: opacity 0.15s ease, font-size 0s 0.15s, line-height 0s 0.15s;
 }
 
 :hover > .header-anchor,
 .header-anchor:focus {
   opacity: 1;
   font-size: inherit;
-  transition: opacity 0.15s ease, font-size 0s;
+  line-height: inherit;
+  transition: opacity 0.15s ease, font-size 0s, line-height 0s;
 }
 ```
 
@@ -107,14 +109,16 @@ Let's break down what each part does.
 
 When the anchor is **hidden** (default state):
 - `opacity: 0` — invisible
-- `font-size: 0` — zero width, zero height contribution
+- `font-size: 0` — zero width
+- `line-height: 0` — zero height contribution, no phantom line box
 - `margin-left: 0.25rem` — still present, but at `font-size: 0` the margin is effectively negligible in layout
-- The `transition` includes a 0.15s delay on font-size so that when hiding, the font-size snaps to 0 *after* the opacity fades out
+- The `transition` includes a 0.15s delay on font-size and line-height so that when hiding, both snap to 0 *after* the opacity fades out
 
 When the anchor is **shown** (hover or focus):
 - `opacity: 1` — fully visible
 - `font-size: inherit` — instantly matches the parent heading's font size
-- The `transition` has no delay on font-size, so the anchor appears at full size immediately before fading in
+- `line-height: inherit` — matches parent's line-height so the anchor participates in inline layout normally
+- The `transition` has no delay on font-size or line-height, so the anchor restores size instantly before fading in
 
 The `transition` timing is the subtle detail that makes this feel polished:
 
@@ -122,10 +126,11 @@ The `transition` timing is the subtle detail that makes this feel polished:
 |---|---|---|
 | **opacity** | 0 → 1 over 0.15s | 1 → 0 over 0.15s |
 | **font-size** | 0 → inherit instantly | inherit → 0 after 0.15s delay |
+| **line-height** | 0 → inherit instantly | inherit → 0 after 0.15s delay |
 
-When showing: font-size jumps to normal first, then opacity fades in. The anchor appears at full size immediately, fading in smoothly.
+When showing: font-size and line-height jump to normal first, then opacity fades in. The anchor appears at full size immediately, fading in smoothly.
 
-When hiding: opacity fades out over 0.15s, then font-size snaps to zero. The anchor disappears smoothly, then becomes zero-width after the fade completes.
+When hiding: opacity fades out over 0.15s, then font-size and line-height snap to zero. The anchor disappears smoothly, then becomes zero-dimensional after the fade completes.
 
 No flicker, no phantom space, no indentation.
 
@@ -141,13 +146,13 @@ I considered other approaches before landing on this:
 
 **`position: absolute`** — Removes from flow, but requires `position: relative` on every heading and explicit positioning. Over-engineered for what's supposed to be a simple anchor link.
 
-`font-size: 0` is the simplest solution with the fewest side effects. One property, zero layout impact when hidden, smooth transition when shown.
+`font-size: 0` paired with `line-height: 0` is the simplest solution with the fewest side effects. Two properties, zero layout impact when hidden, smooth transition when shown.
 
 ## What This Taught Me
 
 The `#` anchor link is a tiny element — one character, invisible by default, easy to overlook. But in CSS, invisible doesn't mean absent. Every inline element participates in layout regardless of its opacity. When it wraps to its own line on a narrow viewport, it brings its parent's line-height with it, creating phantom space that looks like a layout bug.
 
-The fix — `font-size: 0` — is almost too simple to believe. An invisible element should take no space. CSS gives us the tools to make that true, but only if we remember to use them.
+The fix — `font-size: 0` with `line-height: 0` — is almost too simple to believe. An invisible element should take no space. CSS gives us the tools to make that true, but only if we remember to use them.
 
 Not every layout bug needs a complex solution. Sometimes the right fix is asking: "if this element is invisible, why is it still here?"
 
