@@ -15,6 +15,7 @@ pageHasCode: true
 ![Hero image showing a split-panel editor layout: CSS @font-face code on the left with JetBrains Mono applied, and the article title 'Why I Went All-In on Monospace' on the right with a font specimen row.](/assets/img/og/all-in-monospace.svg)
 
 *The same font in my editor, my terminal, and now my blog.*
+*The redesign log covers the how; this is the why.*
 
 At some point, anyone who keeps a personal corner of the web faces the same quiet crisis: *does this look like me, or does it look like a template?*
 
