@@ -219,14 +219,19 @@ table {
 .header-anchor {
   color: var(--text-tertiary);
   text-decoration: none;
-  margin-right: 0.25rem;
+  margin-left: 0.25rem;
   opacity: 0;
-  transition: opacity 0.15s ease;
+  font-size: 0;
+  transition: opacity 0.15s ease, font-size 0s 0.15s;
   &:hover { color: var(--accent); }
 }
 
 :hover > .header-anchor,
-.header-anchor:focus { opacity: 1; }
+.header-anchor:focus {
+  opacity: 1;
+  font-size: inherit;
+  transition: opacity 0.15s ease, font-size 0s;
+}
 
 .toc {
   background: var(--bg-secondary);
