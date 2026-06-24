@@ -57,7 +57,7 @@ export default async function (eleventyConfig) {
 
   md.use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: "before",
+      placement: "after",
       class: "header-anchor",
       symbol: "#",
       ariaHidden: false,
