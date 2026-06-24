@@ -331,6 +331,7 @@ article { max-width: 618px; margin: 0 auto; }
 article p, article li { color: var(--text-body); }
 article blockquote p { color: var(--text-secondary); }
 article .footnotes p, article .footnotes li { color: inherit; }
+article hr { display: none; }
 
 article img { border: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
 
@@ -684,6 +685,26 @@ a.visually-hidden:focus {
 .post-divider::after {
   content: "~~ ~";
 }
+
+.post-exit {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+  user-select: none;
+}
+.post-exit .prompt-char {
+  color: var(--accent);
+  font-weight: 700;
+  user-select: none;
+}
+.post-exit .cmd { color: var(--accent); }
+.cursor {
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
 
 /* ───────────── Redesign notice ───────────── */
 .notice-redesign {

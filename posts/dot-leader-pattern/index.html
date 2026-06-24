@@ -331,6 +331,7 @@ article { max-width: 618px; margin: 0 auto; }
 article p, article li { color: var(--text-body); }
 article blockquote p { color: var(--text-secondary); }
 article .footnotes p, article .footnotes li { color: inherit; }
+article hr { display: none; }
 
 article img { border: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
 
@@ -685,6 +686,26 @@ a.visually-hidden:focus {
   content: "~~ ~";
 }
 
+.post-exit {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+  user-select: none;
+}
+.post-exit .prompt-char {
+  color: var(--accent);
+  font-weight: 700;
+  user-select: none;
+}
+.post-exit .cmd { color: var(--accent); }
+.cursor {
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
 /* ───────────── Redesign notice ───────────── */
 .notice-redesign {
   border: 1px solid var(--border);
@@ -844,4 +865,4 @@ document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  font-size</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">0.8</span><span style="color:#D73A49;--shiki-dark:#F97583">rem</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  white-space</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">nowrap</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  flex-shrink</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">0</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></div></pre><p>Each line addresses a specific edge case. None are speculative — every property here exists because a real viewport or a real title length broke the previous version. The <code>padding: 0.3rem</code> can be derived from the golden ratio hierarchy (discussed in <a href="/posts/golden-ratio-web-design/">an earlier post</a>), where 0.3 creates a vertical rhythm that scales proportionally with font size.</p><h2 id="the-takeaway" tabindex="-1">The Takeaway<a class="header-anchor" href="#the-takeaway">#</a></h2><p>The dot leader looks like a two-line pattern. And at a glance, it is. But the journey from two lines to thirty taught me something about CSS quality: the difference between “works” and “feels right” is almost never a single big change. It’s a stack of small ones:</p><ul><li><code>align-self: center</code> over baseline</li><li><code>top: 0.05em</code> micro-nudge</li><li><code>max-width: 65%</code> constraint</li><li><code>min-width: 4em</code> fallback</li><li><code>text-overflow: ellipsis</code> on the title</li><li><code>line-height: 1</code> on the pseudo-element to prevent extra vertical space</li><li><code>.85em</code> font size so the dots recede behind the content</li></ul><p>None of these alone justifies a blog post. But together, they turned a functional pattern into something I’m happy to look at — and that I hope readers don’t consciously notice. Good CSS, like good typesetting, works best when it’s invisible.</p></article><nav class="links-nextprev"><a href="/posts/" class="back-link"><span class="vim-cmd">:q</span> back to posts</a><div class="nav-pair"><a href="/posts/svg-og-image-social-media/" class="prev"><span class="vim-cmd">:prev</span> SVGs Look Great on Your Blog. Too Bad Twitter, Facebook Can't See Them</a> <a href="/posts/service-worker-ate-my-svg/" class="next"><span class="vim-cmd">:next</span> The Service Worker That Ate My SVG</a></div></nav></div><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></div></pre><p>Each line addresses a specific edge case. None are speculative — every property here exists because a real viewport or a real title length broke the previous version. The <code>padding: 0.3rem</code> can be derived from the golden ratio hierarchy (discussed in <a href="/posts/golden-ratio-web-design/">an earlier post</a>), where 0.3 creates a vertical rhythm that scales proportionally with font size.</p><h2 id="the-takeaway" tabindex="-1">The Takeaway<a class="header-anchor" href="#the-takeaway">#</a></h2><p>The dot leader looks like a two-line pattern. And at a glance, it is. But the journey from two lines to thirty taught me something about CSS quality: the difference between “works” and “feels right” is almost never a single big change. It’s a stack of small ones:</p><ul><li><code>align-self: center</code> over baseline</li><li><code>top: 0.05em</code> micro-nudge</li><li><code>max-width: 65%</code> constraint</li><li><code>min-width: 4em</code> fallback</li><li><code>text-overflow: ellipsis</code> on the title</li><li><code>line-height: 1</code> on the pseudo-element to prevent extra vertical space</li><li><code>.85em</code> font size so the dots recede behind the content</li></ul><p>None of these alone justifies a blog post. But together, they turned a functional pattern into something I’m happy to look at — and that I hope readers don’t consciously notice. Good CSS, like good typesetting, works best when it’s invisible.</p><div class="post-divider" aria-hidden="true"></div><p class="post-exit" aria-hidden="true"><span class="prompt-char">$</span> <span class="cmd">cd</span> ..</p><p class="post-exit" aria-hidden="true"><span class="prompt-char">$</span> <span class="cmd">ls</span> posts/<span class="cursor">▋</span></p></article><nav class="links-nextprev"><a href="/posts/" class="back-link"><span class="vim-cmd">:q</span> back to posts</a><div class="nav-pair"><a href="/posts/svg-og-image-social-media/" class="prev"><span class="vim-cmd">:prev</span> SVGs Look Great on Your Blog. Too Bad Twitter, Facebook Can't See Them</a> <a href="/posts/service-worker-ate-my-svg/" class="next"><span class="vim-cmd">:next</span> The Service Worker That Ate My SVG</a></div></nav></div><footer class="site-footer"><p>© 2026 Sulistiono. Powered by <a href="https://www.11ty.dev/">Eleventy</a> & <a href="https://pages.github.com/">GitHub Pages</a>.</p></footer></main></div><script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js")</script><script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script></body></html>
