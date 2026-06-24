@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="4" stdDeviation="16" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+
+    <clipPath id="rounded">
+      <rect width="1200" height="675" rx="10" ry="10"/>
+    </clipPath>
+  </defs>
+
+  <!-- Shadow -->
+  <rect width="1200" height="675" rx="10" ry="10" fill="#000000" opacity="0.18" transform="translate(0, 6)" filter="url(#cardShadow)"/>
+
+  <g clip-path="url(#rounded)">
+
+    <!-- Background -->
+    <rect width="1200" height="675" fill="#161616"/>
+    <rect width="1200" height="675" fill="url(#dots)"/>
+
+    <!-- Outer border frame -->
+    <rect x="32" y="32" width="1136" height="611" fill="none" stroke="#F5A623" stroke-width="1" stroke-opacity="0.2"/>
+
+    <!-- Corner accents -->
+    <line x1="32" y1="32" x2="80" y2="32" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="32" y1="32" x2="32" y2="80" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="1168" y1="32" x2="1120" y2="32" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="1168" y1="32" x2="1168" y2="80" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="32" y1="643" x2="80" y2="643" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="32" y1="643" x2="32" y2="595" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="1168" y1="643" x2="1120" y2="643" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="1168" y1="643" x2="1168" y2="595" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+
+    <!-- Top bar -->
+    <rect x="0" y="0" width="1200" height="44" fill="#F5A623" fill-opacity="0.07"/>
+    <line x1="0" y1="44" x2="1200" y2="44" stroke="#F5A623" stroke-width="1" stroke-opacity="0.2"/>
+
+    <!-- Terminal dots -->
+    <circle cx="56" cy="22" r="6" fill="#ff5f57" opacity="0.75"/>
+    <circle cx="80" cy="22" r="6" fill="#febc2e" opacity="0.75"/>
+    <circle cx="104" cy="22" r="6" fill="#28c840" opacity="0.75"/>
+
+    <!-- Tab -->
+    <text x="136" y="28" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" fill="#F5A623" opacity="0.5" letter-spacing="0.3" dominant-baseline="middle">heading-anchor.md</text>
+
+    <!-- Center divider -->
+    <line x1="600" y1="44" x2="600" y2="675" stroke="#ffffff" stroke-width="1" stroke-opacity="0.06"/>
+
+    <!-- ───────────── LEFT: BEFORE ───────────── -->
+
+    <!-- Label -->
+    <text x="60" y="80" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="14" fill="#F5A623" font-weight="700"># Before</text>
+    <text x="156" y="80" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#94a3b8" opacity="0.6">placement: after</text>
+
+    <!-- Viewport card -->
+    <rect x="80" y="110" width="440" height="500" rx="8" fill="#1e1e1e" stroke="#3D536A" stroke-width="1"/>
+
+    <!-- Viewport inner title -->
+    <text x="100" y="140" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11" fill="#94a3b8" opacity="0.5">~/posts/example.md</text>
+    <line x1="80" y1="153" x2="520" y2="153" stroke="#3D536A" stroke-width="1" opacity="0.3"/>
+
+    <!-- Heading line 1 -->
+    <text x="100" y="190" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#d4d4d8">4. The Raw Wrapper</text>
+
+    <!-- Heading line 2 -->
+    <text x="100" y="220" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#d4d4d8">(for when you need</text>
+
+    <!-- Heading line 3 — with # anchor wrapped to its own line -->
+    <text x="100" y="250" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#d4d4d8">both)</text>
+    <text x="184" y="250" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#ef4444" opacity="0.7">#</text>
+
+    <!-- Ghost line highlight -->
+    <rect x="100" y="250" width="60" height="24" rx="3" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.7"/>
+    <text x="110" y="266" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="9" fill="#ef4444">phantom</text>
+
+    <!-- Paragraph lines (showing the gap) -->
+    <rect x="100" y="295" width="380" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
+    <rect x="100" y="307" width="340" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
+    <rect x="100" y="319" width="360" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
+
+    <!-- Spacing indicator arrow -->
+    <line x1="540" y1="190" x2="540" y2="290" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
+    <polygon points="540,190 536,200 544,200" fill="#ef4444" opacity="0.5"/>
+    <polygon points="540,290 536,280 544,280" fill="#ef4444" opacity="0.5"/>
+
+    <!-- Annotation -->
+    <text x="548" y="248" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#ef4444">anchor wraps to</text>
+    <text x="548" y="264" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#ef4444">own line → phantom gap</text>
+
+    <!-- ───────────── RIGHT: AFTER ───────────── -->
+
+    <!-- Label -->
+    <text x="660" y="80" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="14" fill="#F5A623" font-weight="700"># After</text>
+    <text x="750" y="80" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#94a3b8" opacity="0.6">font-size: 0</text>
+
+    <!-- Viewport card -->
+    <rect x="680" y="110" width="440" height="500" rx="8" fill="#1e1e1e" stroke="#3D536A" stroke-width="1"/>
+
+    <!-- Viewport inner title -->
+    <text x="700" y="140" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11" fill="#94a3b8" opacity="0.5">~/posts/example.md</text>
+    <line x1="680" y1="153" x2="1120" y2="153" stroke="#3D536A" stroke-width="1" opacity="0.3"/>
+
+    <!-- Heading line 1 — same text, no phantom -->
+    <text x="700" y="190" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#d4d4d8">4. The Raw Wrapper</text>
+
+    <!-- Heading line 2 -->
+    <text x="700" y="220" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#d4d4d8">(for when you need</text>
+
+    <!-- Heading line 3 — clean, no anchor visible -->
+    <text x="700" y="250" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#d4d4d8">both)</text>
+
+    <!-- Paragraph lines — no gap -->
+    <rect x="700" y="275" width="380" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
+    <rect x="700" y="287" width="340" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
+    <rect x="700" y="299" width="360" height="4" rx="2" fill="#3D536A" opacity="0.4"/>
+
+    <!-- Green indicator -->
+    <line x1="660" y1="190" x2="660" y2="300" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
+    <polygon points="660,190 656,200 664,200" fill="#22c55e" opacity="0.5"/>
+    <polygon points="660,300 656,290 664,290" fill="#22c55e" opacity="0.5"/>
+
+    <text x="624" y="254" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#22c55e" text-anchor="end">anchor hidden →</text>
+    <text x="624" y="270" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#22c55e" text-anchor="end">clean spacing</text>
+
+    <!-- CSS snippet -->
+    <rect x="700" y="336" width="400" height="190" rx="6" fill="#161616" stroke="#3D536A" stroke-width="0.5"/>
+
+    <!-- CSS label -->
+    <text x="714" y="358" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#64748B">/* When hidden — zero width */</text>
+
+    <!-- CSS code lines -->
+    <text x="714" y="376" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#d4d4d8">.header-anchor {</text>
+
+    <text x="714" y="396" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12">
+      <tspan fill="#F5A623">  font-size</tspan><tspan fill="#d4d4d8">:</tspan><tspan fill="#94a3b8"> 0</tspan><tspan fill="#d4d4d8">;</tspan>
+    </text>
+
+    <text x="714" y="416" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12">
+      <tspan fill="#F5A623">  opacity</tspan><tspan fill="#d4d4d8">:</tspan><tspan fill="#94a3b8"> 0</tspan><tspan fill="#d4d4d8">;</tspan>
+    </text>
+
+    <text x="714" y="436" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#d4d4d8">}</text>
+
+    <text x="714" y="462" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#64748B">/* On hover — visible again */</text>
+
+    <text x="714" y="480" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#d4d4d8">:hover > .header-anchor {</text>
+
+    <text x="714" y="500" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12">
+      <tspan fill="#F5A623">  font-size</tspan><tspan fill="#d4d4d8">:</tspan><tspan fill="#94a3b8"> inherit</tspan><tspan fill="#d4d4d8">;</tspan>
+    </text>
+
+    <text x="714" y="518" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#d4d4d8">}</text>
+
+  </g>
+
+  <!-- Rounded border overlay -->
+  <rect width="1200" height="675" rx="10" ry="10" fill="none" stroke="#3a3a3a" stroke-width="1"/>
+</svg>
