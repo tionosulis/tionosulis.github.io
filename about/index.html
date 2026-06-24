@@ -15,7 +15,7 @@
   --text: #1a1a1a;
   --text-secondary: #5c6370;
   --text-tertiary: #636b78;
-  --border: #e0e0e0;
+  --border: #d0d0d0;
   --accent: #B45309;
   --accent-hover: #92400E;
   --selection: rgba(180, 83, 9, 0.15);
@@ -29,8 +29,8 @@
   --bg-secondary: #262626;
   --text: #e4e4e7;
   --text-secondary: #a1a1aa;
-  --text-tertiary: #8a8a94;
-  --border: #424242;
+  --text-tertiary: #9898a0;
+  --border: #505050;
   --accent: #FBBF24;
   --accent-hover: #FCD34D;
   --selection: rgba(251, 191, 36, 0.2);
@@ -44,7 +44,7 @@
     --text: #e4e4e7;
     --text-secondary: #a1a1aa;
     --text-tertiary: #a1a1aa;
-    --border: #424242;
+    --border: #505050;
     --accent: #FBBF24;
     --accent-hover: #FCD34D;
     --selection: rgba(251, 191, 36, 0.2);
@@ -269,7 +269,7 @@ table {
   gap: 1rem;
   margin-bottom: 2.618rem;
   padding-bottom: 1.618rem;
-  border-bottom: 2px double var(--border);
+  border-bottom: 2px dashed var(--border);
 }
 
 .site-logo-link {
@@ -656,6 +656,17 @@ a.visually-hidden:focus {
 .article-page .breadcrumb a:hover,
 .article-page .breadcrumb a:focus { color: var(--accent-hover); }
 .article-page .breadcrumb .current { color: var(--text-tertiary); }
+
+/* ───────────── Post content divider ───────────── */
+.post-divider {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  opacity: 0.65;
+  margin: 2rem 0 2.5rem;
+  user-select: none;
+}
 
 /* ───────────── Redesign notice ───────────── */
 .notice-redesign {
