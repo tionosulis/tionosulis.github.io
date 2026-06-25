@@ -259,15 +259,11 @@ table {
     padding-left: 1rem;
     border-left: 2px solid var(--border);
     transition: border-color 0.15s ease;
-    @media (hover: hover) { &:hover { border-color: var(--accent); } }
+    &:hover { border-color: var(--accent); }
     &.is-active { border-left-color: var(--accent); }
     &.is-active a { color: var(--accent); font-weight: 600; }
   }
-  a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    @media (hover: hover) { &:hover { color: var(--accent); } }
-  }
+  a { color: var(--text-secondary); text-decoration: none; &:hover { color: var(--accent); } }
   ul ul { padding-left: 1rem; }
 }
 
