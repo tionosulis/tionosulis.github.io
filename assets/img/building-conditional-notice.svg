@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
   <defs>
     <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.05"/>
