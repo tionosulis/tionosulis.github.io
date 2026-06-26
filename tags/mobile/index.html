@@ -14,7 +14,7 @@
   --bg-secondary: #f4f4f4;
   --text: #1a1a1a;
   --text-body: #343842;
-  --text-secondary: #68707c;
+  --text-secondary: #6b7280;
   --text-tertiary: #999da8;
   --border: #d0d0d0;
   --accent: #B45309;
@@ -164,10 +164,12 @@ pre:hover .copy-btn { opacity: 1; }
 blockquote {
   margin: 1.5rem 0;
   padding: 0.75rem 1.25rem;
-  border-left: 3px solid var(--accent);
-  background: var(--bg-secondary);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 2px solid var(--accent);
   color: var(--text-secondary);
+  > p:first-child::before {
+    content: "> ";
+    color: var(--accent);
+  }
   p {
     margin: 0.5rem 0;
     &:first-child { margin-top: 0; }
@@ -245,14 +247,14 @@ table {
 }
 
 .toc {
-  background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem;
   margin: 1.5rem 0;
   margin-top: 2.25rem;
   font-size: 0.9rem;
-  p { margin: 0 0 0.5rem; font-weight: 600; color: var(--text); }
+  position: relative;
+  p { display: none; }
   ul { list-style: none; padding: 0; margin: 0; }
   li {
     margin: 0.25rem 0;
@@ -265,6 +267,19 @@ table {
   }
   a { color: var(--text-secondary); text-decoration: none; &:hover { color: var(--accent); } }
   ul ul { padding-left: 1rem; }
+}
+.toc::before {
+  content: "$ cat headings";
+  position: absolute;
+  top: -0.55rem;
+  left: 1rem;
+  background: var(--bg);
+  padding: 0 0.4rem;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 /* Layout */
