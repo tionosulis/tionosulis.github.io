@@ -1,56 +1,85 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
   <defs>
+    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="4" stdDeviation="16" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+    <clipPath id="rounded">
+      <rect width="1200" height="675" rx="10" ry="10"/>
+    </clipPath>
     <style>
       @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
       .cr { animation: blink 1.2s step-end infinite; }
     </style>
   </defs>
 
-  <rect width="1200" height="675" fill="#161616"/>
+  <rect width="1200" height="675" rx="10" ry="10" fill="#000000" opacity="0.18" transform="translate(0, 6)" filter="url(#cardShadow)"/>
 
-  <!-- grep command -->
-  <text x="80" y="105" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#FBBF24" font-weight="700">$</text>
-  <text x="102" y="105" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#e4e4e7">cat posts/golden.md | grep redesign</text>
+  <g clip-path="url(#rounded)">
+    <rect width="1200" height="675" fill="#161616"/>
+    <rect width="1200" height="675" fill="url(#dots)"/>
 
-  <!-- grep output -->
-  <text x="80" y="145" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#9ca3af">redesign_notice: true</text>
+    <rect x="32" y="32" width="1136" height="611" fill="none" stroke="#F5A623" stroke-width="1" stroke-opacity="0.2"/>
 
-  <!-- build command -->
-  <text x="80" y="185" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#FBBF24" font-weight="700">$</text>
-  <text x="102" y="185" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#e4e4e7">./build --preview</text>
+    <line x1="32" y1="32" x2="80" y2="32" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="32" y1="32" x2="32" y2="80" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="1168" y1="32" x2="1120" y2="32" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="1168" y1="32" x2="1168" y2="80" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="32" y1="643" x2="80" y2="643" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="32" y1="643" x2="32" y2="595" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="1168" y1="643" x2="1120" y2="643" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <line x1="1168" y1="643" x2="1168" y2="595" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
 
-  <!-- notice box: outer border -->
-  <rect x="230" y="240" width="740" height="165" rx="6" fill="#161616" stroke="#505050" stroke-width="1"/>
-  <!-- notice box: amber left border -->
-  <rect x="230" y="242" width="3" height="161" fill="#FBBF24"/>
+    <rect x="0" y="0" width="1200" height="44" fill="#F5A623" fill-opacity="0.07"/>
+    <line x1="0" y1="44" x2="1200" y2="44" stroke="#F5A623" stroke-width="1" stroke-opacity="0.2"/>
 
-  <!-- "NOTE" label bg and text -->
-  <rect x="254" y="232" width="47" height="18" fill="#161616"/>
-  <text x="259" y="246" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="12" fill="#FBBF24" font-weight="700" letter-spacing="1">NOTE</text>
+    <circle cx="56" cy="22" r="6" fill="#ff5f57" opacity="0.75"/>
+    <circle cx="80" cy="22" r="6" fill="#febc2e" opacity="0.75"/>
+    <circle cx="104" cy="22" r="6" fill="#28c840" opacity="0.75"/>
 
-  <!-- Box content line 1: > prefix + text -->
-  <text x="267" y="293" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="18" fill="#FBBF24">&gt;</text>
-  <text x="290" y="293" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="18" fill="#e4e4e7">This post describes the previous blog design.</text>
+    <text x="136" y="28" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" fill="#F5A623" opacity="0.5" letter-spacing="0.3" dominant-baseline="middle">notice-redesign.md</text>
 
-  <!-- Box content line 2: continuation -->
-  <text x="267" y="327" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="18" fill="#e4e4e7">  The site has since been redesigned.</text>
+    <!-- grep command -->
+    <text x="80" y="105" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#F5A623" font-weight="700">$</text>
+    <text x="102" y="105" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#d4d4d8">cat posts/golden.md | grep redesign</text>
 
-  <!-- echo done -->
-  <text x="80" y="460" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#FBBF24" font-weight="700">$</text>
-  <text x="102" y="460" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#e4e4e7">echo "done"</text>
-  <text x="216" y="460" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#6b7280">// one line, zero JS</text>
+    <!-- grep output -->
+    <text x="80" y="145" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#94a3b8">redesign_notice: true</text>
 
-  <!-- separator -->
-  <rect x="80" y="497" width="380" height="1" fill="#505050"/>
+    <!-- build command -->
+    <text x="80" y="185" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#F5A623" font-weight="700">$</text>
+    <text x="102" y="185" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#d4d4d8">./build --preview</text>
 
-  <!-- find command -->
-  <text x="80" y="537" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#FBBF24" font-weight="700">$</text>
-  <text x="102" y="537" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#e4e4e7">find . -name "*.md" | xargs grep redesign_notice | wc -l</text>
+    <!-- notice box: outer border -->
+    <rect x="230" y="240" width="740" height="165" rx="6" fill="#161616" stroke="#505050" stroke-width="1"/>
+    <rect x="230" y="242" width="3" height="161" fill="#F5A623"/>
 
-  <!-- result -->
-  <text x="80" y="580" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#22c55e" font-weight="700">3</text>
+    <rect x="254" y="232" width="47" height="18" fill="#161616"/>
+    <text x="259" y="246" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#F5A623" font-weight="700" letter-spacing="1">NOTE</text>
 
-  <!-- blinking prompt -->
-  <text x="80" y="620" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#FBBF24" font-weight="700">$</text>
-  <text x="102" y="620" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="20" fill="#FBBF24" class="cr">▋</text>
+    <text x="267" y="293" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" fill="#F5A623">&gt;</text>
+    <text x="290" y="293" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" fill="#d4d4d8">This post describes the previous blog design.</text>
+
+    <text x="267" y="327" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" fill="#d4d4d8">  The site has since been redesigned.</text>
+
+    <!-- echo done -->
+    <text x="80" y="460" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#F5A623" font-weight="700">$</text>
+    <text x="102" y="460" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#d4d4d8">echo "done"</text>
+    <text x="216" y="460" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#6b7280">// one line, zero JS</text>
+
+    <rect x="80" y="497" width="380" height="1" fill="#505050"/>
+
+    <!-- find command -->
+    <text x="80" y="537" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#F5A623" font-weight="700">$</text>
+    <text x="102" y="537" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#d4d4d8">find . -name "*.md" | xargs grep redesign_notice | wc -l</text>
+
+    <text x="80" y="580" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#22c55e" font-weight="700">3</text>
+
+    <text x="80" y="620" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#F5A623" font-weight="700">$</text>
+    <text x="102" y="620" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="20" fill="#F5A623" class="cr">▋</text>
+  </g>
+
+  <rect width="1200" height="675" rx="10" ry="10" fill="none" stroke="#3a3a3a" stroke-width="1"/>
 </svg>

@@ -4,10 +4,10 @@ description: "Tables overflow on mobile. The fix is simple, but most implementat
 date: 2026-06-25
 draft: true
 tags: [css, html, accessibility, howto]
-image: /assets/img/og/responsive-tables-hero.png
+image: /assets/img/og/responsive-tables-semantic-overflow.png
 ---
 
-![A split illustration: left side shows a table overflowing a phone screen with a red "cut off" indicator, right side shows the same table contained within a scrollable wrapper](/assets/img/responsive-tables-hero.svg)
+![A split illustration: left side shows a table overflowing a phone screen with a red "cut off" indicator, right side shows the same table contained within a scrollable wrapper](/assets/img/responsive-tables-semantic-overflow.svg)
 
 *A responsive table should never clip its content. The fix: a wrapper div with horizontal scroll, not a hack on the table itself.*
 
