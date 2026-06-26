@@ -4,7 +4,7 @@ description: "A scroll-aware table of contents that highlights the current secti
 date: 2026-06-25
 draft: true
 tags: [javascript, css, ux, howto]
-image: /assets/img/og/toc-active-hero.svg
+image: /assets/img/og/toc-active-hero.png
 ---
 
 ![An illustration showing a blog article with a table of contents: one item highlighted in amber with a left border accent, representing the active reading position](/assets/img/og/toc-active-hero.svg)

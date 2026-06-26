@@ -8,7 +8,7 @@ tags:
   - design
   - monospace
   - jetbrains-mono
-image: /assets/img/og/all-in-monospace.svg
+image: /assets/img/og/all-in-monospace.png
 pageHasCode: true
 ---
 

@@ -8,7 +8,7 @@ tags:
   - troubleshooting
   - meta
   - howto
-image: /assets/img/og/heading-anchor-fix.svg
+image: /assets/img/og/heading-anchor-fix.png
 ---
 
 ![Split-screen comparison showing a heading with the anchor # creating phantom spacing on mobile (left, labeled 'Before'), and the same heading with clean spacing after the font-size: 0 fix (right, labeled 'After').](/assets/img/og/heading-anchor-fix.svg)

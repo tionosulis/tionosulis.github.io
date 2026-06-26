@@ -4,7 +4,7 @@ description: "Tables overflow on mobile. The fix is simple, but most implementat
 date: 2026-06-25
 draft: true
 tags: [css, html, accessibility, howto]
-image: /assets/img/og/responsive-tables-hero.svg
+image: /assets/img/og/responsive-tables-hero.png
 ---
 
 ![A split illustration: left side shows a table overflowing a phone screen with a red "cut off" indicator, right side shows the same table contained within a scrollable wrapper](/assets/img/og/responsive-tables-hero.svg)
