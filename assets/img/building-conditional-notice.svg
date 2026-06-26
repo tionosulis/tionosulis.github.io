@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <style>
+      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+      .cr { animation: blink 1.2s step-end infinite; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" fill="#161616"/>
+
+  <!-- grep command -->
+  <text x="80" y="105" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#FBBF24" font-weight="700">$</text>
+  <text x="102" y="105" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#e4e4e7">cat posts/golden.md | grep redesign</text>
+
+  <!-- grep output -->
+  <text x="80" y="145" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#9ca3af">redesign_notice: true</text>
+
+  <!-- build command -->
+  <text x="80" y="185" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#FBBF24" font-weight="700">$</text>
+  <text x="102" y="185" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#e4e4e7">./build --preview</text>
+
+  <!-- notice box: outer border -->
+  <rect x="230" y="240" width="740" height="165" rx="6" fill="#161616" stroke="#505050" stroke-width="1"/>
+  <!-- notice box: amber left border -->
+  <rect x="230" y="242" width="3" height="161" fill="#FBBF24"/>
+
+  <!-- "NOTE" label bg and text -->
+  <rect x="254" y="232" width="47" height="18" fill="#161616"/>
+  <text x="259" y="246" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="12" fill="#FBBF24" font-weight="700" letter-spacing="1">NOTE</text>
+
+  <!-- Box content line 1: > prefix + text -->
+  <text x="267" y="293" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="18" fill="#FBBF24">&gt;</text>
+  <text x="290" y="293" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="18" fill="#e4e4e7">This post describes the previous blog design.</text>
+
+  <!-- Box content line 2: continuation -->
+  <text x="267" y="327" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="18" fill="#e4e4e7">  The site has since been redesigned.</text>
+
+  <!-- echo done -->
+  <text x="80" y="460" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#FBBF24" font-weight="700">$</text>
+  <text x="102" y="460" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#e4e4e7">echo "done"</text>
+  <text x="216" y="460" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#6b7280">// one line, zero JS</text>
+
+  <!-- separator -->
+  <rect x="80" y="497" width="380" height="1" fill="#505050"/>
+
+  <!-- find command -->
+  <text x="80" y="537" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#FBBF24" font-weight="700">$</text>
+  <text x="102" y="537" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#e4e4e7">find . -name "*.md" | xargs grep redesign_notice | wc -l</text>
+
+  <!-- result -->
+  <text x="80" y="580" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#22c55e" font-weight="700">3</text>
+
+  <!-- blinking prompt -->
+  <text x="80" y="620" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="19" fill="#FBBF24" font-weight="700">$</text>
+  <text x="102" y="620" font-family="'JetBrains Mono','Cascadia Code','Fira Code','Consolas','Courier New',monospace" font-size="20" fill="#FBBF24" class="cr">▋</text>
+</svg>
