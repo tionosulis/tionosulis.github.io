@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
-  <rect width="1200" height="630" fill="#FAFAFA"/>
+  <rect width="1200" height="630" fill="#ffffff"/>
   
   <!-- Title -->
   <text x="600" y="56" text-anchor="middle" font-family="ui-monospace,monospace" font-size="18" fill="#1a1a1a" font-weight="700">Responsive Tables — Before &amp; After</text>
@@ -63,8 +63,8 @@
   <text x="514" y="228" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#EF4444">→ invisible</text>
   
   <!-- Red arrow from table edge to overflow -->
-  <path d="M 484 232 L 472 232 L 472 110" stroke="#EF4444" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
-  <text x="472" y="104" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#EF4444">❌ Last column hidden</text>
+  <path d="M 484 232 L 472 232 L 472 98" stroke="#EF4444" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+  <text x="472" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#EF4444">❌ Last column hidden</text>
   
   <!-- ============ RIGHT COLUMN (After) ============ -->
   <text x="900" y="108" text-anchor="middle" font-family="ui-monospace,monospace" font-size="14" fill="#5c6370">After: Table-Wrap Container</text>
@@ -140,9 +140,9 @@
   <text x="708" y="476" font-family="ui-monospace,monospace" font-size="9" fill="#a1a1aa">   &lt;table&gt;... </text>
   
   <!-- Bottom legend -->
-  <rect x="230" y="530" width="740" height="50" rx="8" fill="#ffffff" stroke="#d0d0d0" stroke-width="1"/>
-  <circle cx="266" cy="555" r="6" fill="#EF4444"/>
-  <text x="280" y="559" font-family="ui-monospace,monospace" font-size="11" fill="#5c6370">Uncontained table bleeds past viewport</text>
-  <circle cx="266" cy="575" r="6" fill="#16A34A"/>
-  <text x="280" y="579" font-family="ui-monospace,monospace" font-size="11" fill="#5c6370">Wrapper div enables scroll without affecting semantics</text>
+  <rect x="230" y="520" width="740" height="60" rx="8" fill="#ffffff" stroke="#d0d0d0" stroke-width="1"/>
+  <circle cx="266" cy="548" r="6" fill="#EF4444"/>
+  <text x="280" y="552" font-family="ui-monospace,monospace" font-size="11" fill="#5c6370">Uncontained table bleeds past viewport</text>
+  <circle cx="266" cy="568" r="6" fill="#16A34A"/>
+  <text x="280" y="572" font-family="ui-monospace,monospace" font-size="11" fill="#5c6370">Wrapper div enables scroll without affecting semantics</text>
 </svg>
