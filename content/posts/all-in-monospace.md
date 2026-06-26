@@ -81,6 +81,8 @@ body {
 }
 ```
 
+*The full design system behind these values — amber color contrast, golden-ratio spacing, and the `>_S` prompt brand — is documented in [$ cat ~/redesign-log](/posts/redesign-log-terminal-theme).*
+
 ### word-spacing
 
 Monospace fonts carry wider default word spacing than proportional fonts. On large headings, this creates awkward gaps. The fix is `word-spacing: -0.15em` on headings — tight enough that multi-line titles read as a single block, loose enough that words don't collide.

@@ -4,6 +4,7 @@ description: What happens when you apply φ (1.618) to a blog's UI elements — 
 date: 2026-06-10
 tags: [meta, design, css, golden-ratio]
 pageHasCode: true
+redesign_notice: true
 image: /assets/img/og/golden-ratio-web-design.png
 ---
 
@@ -102,7 +103,7 @@ The toggle became a **34×34px** box, with the (&#9681;) character centered via 
                 justify-content: center; padding: 0; }
 ```
 
-The relationship is visible: the toggle is exactly the S box shrunk by φ. They were no longer two unrelated boxes — they were a matched set with a proportional connection. (Both elements have since been redesigned in the terminal theme, but the φ relationship principle remains instructive.)
+The relationship is visible: the toggle is exactly the S box shrunk by φ. They were no longer two unrelated boxes — they were a matched set with a proportional connection. (Both elements have since been redesigned in the [terminal theme](/posts/redesign-log-terminal-theme), but the φ relationship principle remains instructive.)
 
 ![Before and after comparison of the S monogram and theme toggle sizes, showing the φ relationship](/assets/img/golden-ratio-boxes.svg)
 
