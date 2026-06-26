@@ -6,6 +6,7 @@ tags:
   - css
   - typography
   - design
+  - monospace
   - jetbrains-mono
 image: /assets/img/og/all-in-monospace.svg
 pageHasCode: true
