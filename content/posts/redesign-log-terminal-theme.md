@@ -1,8 +1,7 @@
 ---
 title: "$ cat ~/redesign-log: Terminal Theme, Amber Accent, and the Pursuit of Consistency"
 description: "A field log of transforming this blog from a conventional sidebar layout into a terminal-themed space — JetBrains Mono, amber accents, golden-ratio spacing, and the design decisions behind each change."
-date: 2026-06-21
-draft: true
+date: 2026-06-25
 tags: [meta, design, css, terminal, golden-ratio]
 ---
 
@@ -16,7 +15,7 @@ This post is the field log of that realignment. Every change, every rejection, e
 
 ## Why Monospace?
 
-I switched to JetBrains Mono as the sole body font across the entire blog. I wrote about the thinking behind that decision in [a separate post](/posts/all-in-monospace); here's what it took on the implementation side.
+I switched to JetBrains Mono as the sole body font across the entire blog. I wrote about the thinking behind that decision in a separate post; here's what it took on the implementation side.
 
 JetBrains Mono was the natural choice. It's one of the most readable monospace fonts at body sizes, with a large x-height, clear punctuation, and excellent variable weight support (200–800). The slashed zero and distinctive `@` are small touches that reward close reading.
 
