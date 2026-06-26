@@ -4,6 +4,7 @@ description: "How a simple notice box evolved through three iterations — from 
 date: 2026-06-22
 draft: true
 tags: [design, css, meta]
+image: /assets/img/og/building-conditional-notice.svg
 ---
 
 Imagine arriving at a blog post about golden ratios in web design. The screenshots show a sidebar layout, a blue accent, and an IBM Plex Sans body font. You look at the live site — monospace font, amber accent, no sidebar. The disconnect is instant. Is the information outdated? Is the post wrong?

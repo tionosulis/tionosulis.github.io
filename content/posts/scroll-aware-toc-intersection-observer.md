@@ -7,7 +7,7 @@ tags: [javascript, css, ux, howto]
 image: /assets/img/og/toc-active-hero.png
 ---
 
-![An illustration showing a blog article with a table of contents: one item highlighted in amber with a left border accent, representing the active reading position](/assets/img/og/toc-active-hero.svg)
+![An illustration showing a blog article with a table of contents: one item highlighted in amber with a left border accent, representing the active reading position](/assets/img/toc-active-hero.svg)
 
 *A table of contents that highlights your current section as you scroll. No scroll event listeners required.*
 

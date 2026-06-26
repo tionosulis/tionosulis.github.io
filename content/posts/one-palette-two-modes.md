@@ -7,7 +7,7 @@ tags: [design, css, meta, howto]
 image: /assets/img/og/one-palette-two-modes.png
 ---
 
-![Split comparison: a hero card at #2A4053 surviving against light bg #ffffff (left) and dark bg #161616 (right), with color palette swatches](/assets/img/og/one-palette-two-modes.svg)
+![Split comparison: a hero card at #2A4053 surviving against light bg #ffffff (left) and dark bg #161616 (right), with color palette swatches](/assets/img/one-palette-two-modes.svg)
 
 *The same hero card, two backgrounds — light and dark. The palette below shows the semantic color system used across every hero SVG on this blog.*
 

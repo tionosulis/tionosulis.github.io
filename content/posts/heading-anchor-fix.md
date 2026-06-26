@@ -11,7 +11,7 @@ tags:
 image: /assets/img/og/heading-anchor-fix.png
 ---
 
-![Split-screen comparison showing a heading with the anchor # creating phantom spacing on mobile (left, labeled 'Before'), and the same heading with clean spacing after the font-size: 0 fix (right, labeled 'After').](/assets/img/og/heading-anchor-fix.svg)
+![Split-screen comparison showing a heading with the anchor # creating phantom spacing on mobile (left, labeled 'Before'), and the same heading with clean spacing after the font-size: 0 fix (right, labeled 'After').](/assets/img/heading-anchor-fix.svg)
 
 *The same heading, same viewport — before and after fixing the anchor spacing issue. The difference is one CSS property on a single element.*
 
