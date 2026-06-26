@@ -1,167 +1,265 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FDFBF9"/>
-      <stop offset="100%" stop-color="#F3EDE4"/>
-    </linearGradient>
-    <filter id="cardShadow" x="-6%" y="-6%" width="112%" height="112%">
-      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#B45309" flood-opacity="0.08"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">  <defs>
+    <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="8" flood-color="#000000" flood-opacity="0.12"/>
     </filter>
-    <pattern id="dotgrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-      <circle cx="16" cy="16" r="0.8" fill="#B45309" opacity="0.06"/>
+    <filter id="phoneShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="dotgrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="0.9" fill="#B45309" opacity="0.12"/>
     </pattern>
+    <!-- Gradient fade untuk efek kolom terpotong -->
+    <linearGradient id="fadeRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
+    </linearGradient>
+    <!-- Clip left phone screen content -->
+    <clipPath id="leftScreenClip">
+      <rect x="146" y="136" width="308" height="436"/>
+    </clipPath>
   </defs>
 
-  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+
+  <!-- Background transparan — menyatu dengan #fff dan #161616 -->
+  <!-- Dot pattern subtle di atas transparan -->
   <rect width="1200" height="675" fill="url(#dotgrid)"/>
 
-  <!-- Amber top accent line -->
-  <rect x="0" y="0" width="1200" height="3" fill="#B45309" opacity="0.3"/>
 
-  <!-- Title -->
-  <text x="600" y="81" text-anchor="middle" font-family="ui-monospace,monospace" font-size="18" fill="#1a1a1a" font-weight="700">Responsive Tables — Before &amp; After</text>
+  <!-- ── TITLE AREA ─────────────────────────────────── -->
+  <text x="600" y="44" text-anchor="middle"
+        font-family="ui-monospace,monospace" font-size="17" font-weight="700"
+        fill="#B45309" letter-spacing="0.5">Responsive Tables</text>
+  <text x="600" y="64" text-anchor="middle"
+        font-family="ui-monospace,monospace" font-size="11"
+        fill="#B45309" opacity="0.55" letter-spacing="2">BEFORE  ·  AFTER</text>
 
-  <!-- Divider -->
-  <line x1="100" y1="72" x2="1100" y2="72" stroke="#d0d0d0" stroke-width="1"/>
 
-  <!-- ============ LEFT COLUMN (Before) ============ -->
-  <text x="300" y="133" text-anchor="middle" font-family="ui-monospace,monospace" font-size="14" fill="#5c6370">Before: Uncontained Overflow</text>
+  <!-- Divider bawah title -->
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#B45309" stroke-width="0.5" opacity="0.25"/>
 
-  <!-- Phone outline -->
-  <rect x="100" y="151" width="400" height="440" rx="16" fill="#ffffff" stroke="#d0d0d0" stroke-width="1" filter="url(#cardShadow)"/>
-  <rect x="100" y="151" width="400" height="4" rx="2" fill="#EF4444" opacity="0.5"/>
 
-  <!-- Phone notch -->
-  <rect x="240" y="151" width="120" height="22" rx="11" fill="#1a1a1a"/>
+  <!-- Center divider -->
+  <line x1="600" y1="84" x2="600" y2="612"
+        stroke="#B45309" stroke-width="0.5" opacity="0.2" stroke-dasharray="5 5"/>
 
-  <!-- Table header row -->
-  <rect x="116" y="193" width="368" height="32" fill="#f4f4f4" rx="4"/>
-  <line x1="200" y1="168" x2="200" y2="200" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="290" y1="168" x2="290" y2="200" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="380" y1="168" x2="380" y2="200" stroke="#d0d0d0" stroke-width="0.5"/>
 
-  <text x="160" y="213" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#1a1a1a" font-weight="600">Issue</text>
-  <text x="246" y="213" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#1a1a1a" font-weight="600">Cause</text>
-  <text x="336" y="213" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#1a1a1a" font-weight="600">Fix</text>
-  <text x="430" y="213" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#1a1a1a" font-weight="600">Impact</text>
+  <!-- ══════════════════════════════════════════════════
+       LEFT COLUMN — Before
+  ══════════════════════════════════════════════════ -->
 
-  <!-- Table rows -->
-  <rect x="116" y="229" width="368" height="28" fill="#ffffff" rx="0"/>
-  <line x1="200" y1="204" x2="200" y2="232" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="290" y1="204" x2="290" y2="232" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="380" y1="204" x2="380" y2="232" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="160" y="246" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Reflow</text>
-  <text x="246" y="246" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">JS calls</text>
-  <text x="336" y="246" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Transform</text>
-  <text x="440" y="246" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#B45309">99 → 100</text>
 
-  <rect x="116" y="261" width="368" height="28" fill="#fafafa" rx="0"/>
-  <line x1="200" y1="236" x2="200" y2="264" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="290" y1="236" x2="290" y2="264" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="380" y1="236" x2="380" y2="264" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="160" y="278" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Shift</text>
-  <text x="246" y="278" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">No dims</text>
-  <text x="336" y="278" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">W+H attrs</text>
-  <text x="440" y="278" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">CLS fix</text>
+  <!-- Column label -->
+  <text x="300" y="100" text-anchor="middle"
+        font-family="ui-monospace,monospace" font-size="11" font-weight="600"
+        fill="#EF4444" letter-spacing="1">❌  BEFORE: Uncontained Overflow</text>
 
-  <!-- Overflow indicator — the key visual: content spilling out -->
-  <rect x="116" y="293" width="368" height="28" fill="#ffffff" rx="0"/>
-  <line x1="200" y1="268" x2="200" y2="296" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="290" y1="268" x2="290" y2="296" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="380" y1="268" x2="380" y2="296" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="160" y="310" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Contrast</text>
-  <text x="246" y="310" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Shiki</text>
-  <text x="336" y="310" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Override</text>
-  <text x="440" y="310" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">A11y 100</text>
 
-  <!-- Overflow indicator — simulated content beyond viewport -->
-  <rect x="484" y="193" width="60" height="128" fill="#ffffff" stroke="#EF4444" stroke-width="1.5" rx="4"/>
-  <text x="514" y="221" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#EF4444">Overflow</text>
-  <text x="514" y="237" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#EF4444">cut off</text>
-  <text x="514" y="253" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#EF4444">→ invisible</text>
+  <!-- Phone body -->
+  <rect x="135" y="112" width="330" height="468" rx="22"
+        fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"
+        filter="url(#phoneShadow)"/>
+  <!-- Phone screen bezel -->
+  <rect x="148" y="134" width="304" height="432" rx="6" fill="#f5f5f5"/>
+  <!-- Red status bar — problema indicator -->
+  <rect x="148" y="134" width="304" height="5" rx="2" fill="#EF4444" opacity="0.7"/>
+  <!-- Notch -->
+  <rect x="255" y="112" width="120" height="18" rx="9" fill="#111111"/>
+  <!-- Camera dot in notch -->
+  <circle cx="370" cy="121" r="3" fill="#2a2a2a"/>
 
-  <!-- Red arrow from table edge to overflow -->
-  <path d="M 484 232 L 472 232 L 472 98" stroke="#EF4444" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
-  <text x="472" y="117" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#EF4444">❌ Last column hidden</text>
 
-  <!-- ============ RIGHT COLUMN (After) ============ -->
-  <text x="900" y="133" text-anchor="middle" font-family="ui-monospace,monospace" font-size="14" fill="#5c6370">After: Table-Wrap Container</text>
+  <!-- ── Table inside phone (clipped to screen) ── -->
+  <g clip-path="url(#leftScreenClip)">
 
-  <!-- Phone outline -->
-  <rect x="700" y="151" width="400" height="440" rx="16" fill="#ffffff" stroke="#d0d0d0" stroke-width="1" filter="url(#cardShadow)"/>
-  <rect x="700" y="151" width="400" height="4" rx="2" fill="#16A34A" opacity="0.5"/>
 
-  <!-- Phone notch -->
-  <rect x="840" y="151" width="120" height="22" rx="11" fill="#1a1a1a"/>
+    <!-- Table header — wide table, kolom ke-4 sengaja meluap -->
+    <rect x="148" y="148" width="380" height="30" fill="#e8e8e8"/>
+    <!-- Col dividers -->
+    <line x1="228" y1="148" x2="228" y2="178" stroke="#cccccc" stroke-width="0.5"/>
+    <line x1="308" y1="148" x2="308" y2="178" stroke="#cccccc" stroke-width="0.5"/>
+    <line x1="388" y1="148" x2="388" y2="178" stroke="#cccccc" stroke-width="0.5"/>
+    <text x="188" y="168" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9.5" fill="#1a1a1a" font-weight="600">Issue</text>
+    <text x="268" y="168" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9.5" fill="#1a1a1a" font-weight="600">Cause</text>
+    <text x="348" y="168" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9.5" fill="#1a1a1a" font-weight="600">Fix</text>
+    <text x="436" y="168" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9.5" fill="#1a1a1a" font-weight="600">Impact</text>
 
-  <!-- Scrollable wrapper visual (dashed box inside phone) -->
-  <rect x="716" y="191" width="368" height="160" rx="6" fill="#f0f7f0" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="4 3"/>
-  <text x="720" y="207" font-family="ui-monospace,monospace" font-size="8" fill="#16A34A" font-weight="600">div.table-wrap { overflow-x: auto; }</text>
 
-  <!-- Table header row -->
-  <rect x="726" y="215" width="348" height="30" fill="#f4f4f4" rx="4"/>
-  <line x1="810" y1="190" x2="810" y2="220" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="890" y1="190" x2="890" y2="220" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="970" y1="190" x2="970" y2="220" stroke="#d0d0d0" stroke-width="0.5"/>
+    <!-- Row 1 -->
+    <rect x="148" y="182" width="380" height="26" fill="#ffffff"/>
+    <line x1="228" y1="182" x2="228" y2="208" stroke="#eeeeee" stroke-width="0.5"/>
+    <line x1="308" y1="182" x2="308" y2="208" stroke="#eeeeee" stroke-width="0.5"/>
+    <line x1="388" y1="182" x2="388" y2="208" stroke="#eeeeee" stroke-width="0.5"/>
+    <text x="188" y="199" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Reflow</text>
+    <text x="268" y="199" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">JS calls</text>
+    <text x="348" y="199" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Transform</text>
+    <text x="436" y="199" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#B45309">99 → 100</text>
 
-  <text x="770" y="235" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#1a1a1a" font-weight="600">Issue</text>
-  <text x="852" y="235" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#1a1a1a" font-weight="600">Cause</text>
-  <text x="932" y="235" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#1a1a1a" font-weight="600">Fix</text>
-  <text x="1028" y="235" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#1a1a1a" font-weight="600">Impact</text>
+
+    <!-- Row 2 -->
+    <rect x="148" y="212" width="380" height="26" fill="#fafafa"/>
+    <line x1="228" y1="212" x2="228" y2="238" stroke="#eeeeee" stroke-width="0.5"/>
+    <line x1="308" y1="212" x2="308" y2="238" stroke="#eeeeee" stroke-width="0.5"/>
+    <line x1="388" y1="212" x2="388" y2="238" stroke="#eeeeee" stroke-width="0.5"/>
+    <text x="188" y="229" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Shift</text>
+    <text x="268" y="229" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">No dims</text>
+    <text x="348" y="229" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">W+H attrs</text>
+    <text x="436" y="229" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">CLS fix</text>
+
+
+    <!-- Row 3 -->
+    <rect x="148" y="242" width="380" height="26" fill="#ffffff"/>
+    <line x1="228" y1="242" x2="228" y2="268" stroke="#eeeeee" stroke-width="0.5"/>
+    <line x1="308" y1="242" x2="308" y2="268" stroke="#eeeeee" stroke-width="0.5"/>
+    <line x1="388" y1="242" x2="388" y2="268" stroke="#eeeeee" stroke-width="0.5"/>
+    <text x="188" y="259" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Contrast</text>
+    <text x="268" y="259" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Shiki</text>
+    <text x="348" y="259" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Override</text>
+    <text x="436" y="259" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">A11y 100</text>
+
+
+    <!-- Fade overlay — simulasi kolom terpotong -->
+    <rect x="390" y="134" width="62" height="436" fill="url(#fadeRight)"/>
+
+
+    <!-- Annotation box: overflow warning -->
+    <rect x="148" y="284" width="304" height="46" rx="4" fill="#FEF2F2"/>
+    <line x1="148" y1="284" x2="452" y2="284" stroke="#EF4444" stroke-width="1.5" opacity="0.4"/>
+    <text x="300" y="304" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#EF4444" font-weight="600">⚠  Column 4 cut off by viewport</text>
+    <text x="300" y="320" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#EF4444" opacity="0.8">table extends beyond screen edge</text>
+
+
+    <!-- No scroll bar visual -->
+    <rect x="148" y="344" width="304" height="10" rx="5" fill="#f0f0f0"/>
+    <text x="300" y="372" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#EF4444">no scrollbar  ✗</text>
+
+
+    <!-- Code block -->
+    <rect x="148" y="388" width="304" height="60" rx="4" fill="#1e1e1e"/>
+    <text x="158" y="405" font-family="ui-monospace,monospace" font-size="8" fill="#6b7280">&lt;!-- ❌ no wrapper --&gt;</text>
+    <text x="158" y="421" font-family="ui-monospace,monospace" font-size="8" fill="#EF4444">&lt;table&gt;</text>
+    <text x="168" y="437" font-family="ui-monospace,monospace" font-size="8" fill="#9ca3af">  &lt;thead&gt;...&lt;/thead&gt;</text>
+
+  </g>
+
+
+  <!-- ══════════════════════════════════════════════════
+       RIGHT COLUMN — After
+  ══════════════════════════════════════════════════ -->
+
+
+  <!-- Column label -->
+  <text x="900" y="100" text-anchor="middle"
+        font-family="ui-monospace,monospace" font-size="11" font-weight="600"
+        fill="#16A34A" letter-spacing="1">✓  AFTER: Table-Wrap Container</text>
+
+
+  <!-- Phone body -->
+  <rect x="735" y="112" width="330" height="468" rx="22"
+        fill="#1a1a1a" stroke="#2e2e2e" stroke-width="1.5"
+        filter="url(#phoneShadow)"/>
+  <!-- Phone screen bezel -->
+  <rect x="748" y="134" width="304" height="432" rx="6" fill="#f5f5f5"/>
+  <!-- Green status bar — aman -->
+  <rect x="748" y="134" width="304" height="5" rx="2" fill="#16A34A" opacity="0.7"/>
+  <!-- Notch -->
+  <rect x="855" y="112" width="120" height="18" rx="9" fill="#111111"/>
+  <!-- Camera dot in notch -->
+  <circle cx="970" cy="121" r="3" fill="#2a2a2a"/>
+
+
+  <!-- ── Wrapper label chip ── -->
+  <rect x="748" y="148" width="304" height="20" rx="3" fill="#f0fdf4" stroke="#16A34A" stroke-width="0.5" opacity="0.8"/>
+  <text x="900" y="162" text-anchor="middle"
+        font-family="ui-monospace,monospace" font-size="7.5" fill="#16A34A" font-weight="600"
+        letter-spacing="0.3">div.table-wrap  {  overflow-x: auto  }</text>
+
+
+  <!-- Dashed wrapper border encompassing table -->
+  <rect x="748" y="148" width="304" height="146" rx="4"
+        fill="none" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="5 3" opacity="0.6"/>
+
+
+  <!-- Table header -->
+  <rect x="748" y="172" width="304" height="28" fill="#e8e8e8" rx="2"/>
+  <line x1="824" y1="172" x2="824" y2="200" stroke="#cccccc" stroke-width="0.5"/>
+  <line x1="896" y1="172" x2="896" y2="200" stroke="#cccccc" stroke-width="0.5"/>
+  <line x1="968" y1="172" x2="968" y2="200" stroke="#cccccc" stroke-width="0.5"/>
+  <text x="786" y="191" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#1a1a1a" font-weight="600">Issue</text>
+  <text x="860" y="191" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#1a1a1a" font-weight="600">Cause</text>
+  <text x="932" y="191" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#1a1a1a" font-weight="600">Fix</text>
+  <text x="1014" y="191" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#1a1a1a" font-weight="600">Impact</text>
+
 
   <!-- Row 1 -->
-  <rect x="726" y="249" width="348" height="26" fill="#ffffff" rx="0"/>
-  <line x1="810" y1="224" x2="810" y2="250" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="890" y1="224" x2="890" y2="250" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="970" y1="224" x2="970" y2="250" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="770" y="265" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#5c6370">Reflow</text>
-  <text x="852" y="265" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#5c6370">JS calls</text>
-  <text x="932" y="265" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#5c6370">Transform</text>
-  <text x="1028" y="265" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#16A34A">99 → 100</text>
+  <rect x="748" y="204" width="304" height="26" fill="#ffffff"/>
+  <line x1="824" y1="204" x2="824" y2="230" stroke="#eeeeee" stroke-width="0.5"/>
+  <line x1="896" y1="204" x2="896" y2="230" stroke="#eeeeee" stroke-width="0.5"/>
+  <line x1="968" y1="204" x2="968" y2="230" stroke="#eeeeee" stroke-width="0.5"/>
+  <text x="786" y="221" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Reflow</text>
+  <text x="860" y="221" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">JS calls</text>
+  <text x="932" y="221" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Transform</text>
+  <text x="1014" y="221" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#16A34A">99 → 100</text>
+
 
   <!-- Row 2 -->
-  <rect x="726" y="279" width="348" height="26" fill="#fafafa" rx="0"/>
-  <line x1="810" y1="254" x2="810" y2="280" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="890" y1="254" x2="890" y2="280" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="970" y1="254" x2="970" y2="280" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="770" y="295" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#5c6370">Shift</text>
-  <text x="852" y="295" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#5c6370">No dims</text>
-  <text x="932" y="295" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#5c6370">W+H attrs</text>
-  <text x="1028" y="295" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#16A34A">CLS fix</text>
+  <rect x="748" y="234" width="304" height="26" fill="#fafafa"/>
+  <line x1="824" y1="234" x2="824" y2="260" stroke="#eeeeee" stroke-width="0.5"/>
+  <line x1="896" y1="234" x2="896" y2="260" stroke="#eeeeee" stroke-width="0.5"/>
+  <line x1="968" y1="234" x2="968" y2="260" stroke="#eeeeee" stroke-width="0.5"/>
+  <text x="786" y="251" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Shift</text>
+  <text x="860" y="251" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">No dims</text>
+  <text x="932" y="251" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">W+H attrs</text>
+  <text x="1014" y="251" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#16A34A">CLS fix</text>
+
 
   <!-- Row 3 -->
-  <rect x="726" y="309" width="348" height="26" fill="#ffffff" rx="0"/>
-  <line x1="810" y1="284" x2="810" y2="310" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="890" y1="284" x2="890" y2="310" stroke="#d0d0d0" stroke-width="0.5"/>
-  <line x1="970" y1="284" x2="970" y2="310" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="770" y="325" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#5c6370">Contrast</text>
-  <text x="852" y="325" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#5c6370">Shiki</text>
-  <text x="932" y="325" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#5c6370">Override</text>
-  <text x="1028" y="325" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#16A34A">A11y 100</text>
+  <rect x="748" y="264" width="304" height="26" fill="#ffffff"/>
+  <line x1="824" y1="264" x2="824" y2="290" stroke="#eeeeee" stroke-width="0.5"/>
+  <line x1="896" y1="264" x2="896" y2="290" stroke="#eeeeee" stroke-width="0.5"/>
+  <line x1="968" y1="264" x2="968" y2="290" stroke="#eeeeee" stroke-width="0.5"/>
+  <text x="786" y="281" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Contrast</text>
+  <text x="860" y="281" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Shiki</text>
+  <text x="932" y="281" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#555">Override</text>
+  <text x="1014" y="281" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8.5" fill="#16A34A">A11y 100</text>
 
-  <!-- Scroll hint (arrows indicating scroll) -->
-  <rect x="1068" y="345" width="28" height="28" rx="14" fill="#16A34A" opacity="0.15"/>
-  <text x="1082" y="363" text-anchor="middle" font-family="ui-monospace,monospace" font-size="16" fill="#16A34A">›</text>
-  <text x="718" y="363" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#16A34A">← scroll →</text>
 
-  <!-- Check mark at bottom -->
-  <circle cx="900" cy="405" r="16" fill="#16A34A" opacity="0.15"/>
-  <text x="900" y="411" text-anchor="middle" font-family="ui-monospace,monospace" font-size="18" fill="#16A34A">✓</text>
-  <text x="900" y="435" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#16A34A">All data visible</text>
+  <!-- Scrollbar thumb — ada & aktif -->
+  <rect x="748" y="302" width="304" height="8" rx="4" fill="#e2f4ea"/>
+  <rect x="748" y="302" width="145" height="8" rx="4" fill="#16A34A" opacity="0.55"/>
+  <text x="900" y="326" text-anchor="middle"
+        font-family="ui-monospace,monospace" font-size="8.5" fill="#16A34A">← scrollable →  ✓</text>
 
-  <!-- Footer code -->
-  <rect x="116" y="465" width="368" height="28" rx="4" fill="#1a1a1a"/>
-  <text x="124" y="483" font-family="ui-monospace,monospace" font-size="9" fill="#a1a1aa">&lt;div class="table-wrap"&gt;  &lt;!-- ❌ missing --&gt;</text>
-  <text x="124" y="501" font-family="ui-monospace,monospace" font-size="9" fill="#EF4444">&lt;table&gt;... no overflow handling</text>
 
-  <rect x="700" y="465" width="400" height="28" rx="4" fill="#1a1a1a"/>
-  <text x="708" y="483" font-family="ui-monospace,monospace" font-size="9" fill="#16A34A"> &lt;div class="table-wrap"&gt;  &lt;!-- ✅ always present --&gt;</text>
-  <text x="708" y="501" font-family="ui-monospace,monospace" font-size="9" fill="#a1a1aa">   &lt;table&gt;... </text>
+  <!-- Annotation: semua terlihat -->
+  <rect x="748" y="342" width="304" height="46" rx="4" fill="#F0FDF4"/>
+  <line x1="748" y1="342" x2="1052" y2="342" stroke="#16A34A" stroke-width="1.5" opacity="0.4"/>
+  <text x="900" y="362" text-anchor="middle"
+        font-family="ui-monospace,monospace" font-size="9" fill="#16A34A" font-weight="600">✓  All columns accessible</text>
+  <text x="900" y="378" text-anchor="middle"
+        font-family="ui-monospace,monospace" font-size="8.5" fill="#16A34A" opacity="0.8">horizontal scroll without breaking semantics</text>
 
-  <!-- Bottom legend -->
-  <rect x="230" y="545" width="740" height="60" rx="8" fill="#ffffff" stroke="#d0d0d0" stroke-width="1" filter="url(#cardShadow)"/>
-  <circle cx="266" cy="573" r="6" fill="#EF4444"/>
-  <text x="280" y="577" font-family="ui-monospace,monospace" font-size="11" fill="#5c6370">Uncontained table bleeds past viewport</text>
-  <circle cx="266" cy="593" r="6" fill="#16A34A"/>
-  <text x="280" y="597" font-family="ui-monospace,monospace" font-size="11" fill="#5c6370">Wrapper div enables scroll without affecting semantics</text>
+
+  <!-- Code block -->
+  <rect x="748" y="406" width="304" height="74" rx="4" fill="#1e1e1e"/>
+  <text x="758" y="423" font-family="ui-monospace,monospace" font-size="8" fill="#6b7280">&lt;!-- ✅ always has wrapper --&gt;</text>
+  <text x="758" y="440" font-family="ui-monospace,monospace" font-size="8" fill="#16A34A">&lt;div class="table-wrap"&gt;</text>
+  <text x="768" y="456" font-family="ui-monospace,monospace" font-size="8" fill="#9ca3af">  &lt;table&gt;</text>
+  <text x="778" y="472" font-family="ui-monospace,monospace" font-size="8" fill="#9ca3af">    &lt;thead&gt;...&lt;/thead&gt;</text>
+
+
+  <!-- ══════════════════════════════════════════════════
+       LEGEND STRIP
+  ══════════════════════════════════════════════════ -->
+  <line x1="80" y1="614" x2="1120" y2="614" stroke="#B45309" stroke-width="0.5" opacity="0.2"/>
+
+
+  <!-- Legend items — tanpa background box, teks langsung -->
+  <circle cx="260" cy="636" r="5" fill="#EF4444" opacity="0.85"/>
+  <text x="272" y="641" font-family="ui-monospace,monospace" font-size="10" fill="#EF4444" opacity="0.75">Without wrapper — content overflows, columns cut off</text>
+
+
+  <circle cx="700" cy="636" r="5" fill="#16A34A" opacity="0.85"/>
+  <text x="712" y="641" font-family="ui-monospace,monospace" font-size="10" fill="#16A34A" opacity="0.75">With div.table-wrap — clean scroll, semantics intact</text>
+
+
 </svg>
