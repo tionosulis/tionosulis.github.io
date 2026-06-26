@@ -96,19 +96,19 @@
   <polygon points="380,192 388,196 380,200" fill="#B45309" opacity="0.5"/>
   
   <!-- Bottom "how it works" section -->
-  <rect x="450" y="466" width="620" height="48" rx="6" fill="#f4f4f4"/>
-  <circle cx="470" cy="490" r="12" fill="#B45309" opacity="0.15"/>
-  <text x="470" y="495" text-anchor="middle" font-family="ui-monospace,monospace" font-size="14" fill="#B45309">1</text>
-  <text x="492" y="486" font-family="ui-monospace,monospace" font-size="10" fill="#1a1a1a" font-weight="600">IntersectionObserver</text>
-  <text x="492" y="502" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Detects which heading is in the reading zone</text>
+  <rect x="430" y="466" width="670" height="48" rx="6" fill="#f4f4f4"/>
+  <circle cx="455" cy="490" r="12" fill="#B45309" opacity="0.15"/>
+  <text x="455" y="495" text-anchor="middle" font-family="ui-monospace,monospace" font-size="14" fill="#B45309">1</text>
+  <text x="477" y="486" font-family="ui-monospace,monospace" font-size="10" fill="#1a1a1a" font-weight="600">IntersectionObserver</text>
+  <text x="477" y="502" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Detects heading in reading zone</text>
   
-  <circle cx="700" cy="490" r="12" fill="#B45309" opacity="0.15"/>
-  <text x="700" y="495" text-anchor="middle" font-family="ui-monospace,monospace" font-size="14" fill="#B45309">2</text>
-  <text x="722" y="486" font-family="ui-monospace,monospace" font-size="10" fill="#1a1a1a" font-weight="600">CSS Active State</text>
-  <text x="722" y="502" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Border + text color update in the TOC</text>
+  <circle cx="660" cy="490" r="12" fill="#B45309" opacity="0.15"/>
+  <text x="660" y="495" text-anchor="middle" font-family="ui-monospace,monospace" font-size="14" fill="#B45309">2</text>
+  <text x="682" y="486" font-family="ui-monospace,monospace" font-size="10" fill="#1a1a1a" font-weight="600">CSS Active State</text>
+  <text x="682" y="502" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Updates border + text in TOC</text>
   
-  <circle cx="930" cy="490" r="12" fill="#B45309" opacity="0.15"/>
-  <text x="930" y="495" text-anchor="middle" font-family="ui-monospace,monospace" font-size="14" fill="#B45309">3</text>
-  <text x="952" y="486" font-family="ui-monospace,monospace" font-size="10" fill="#1a1a1a" font-weight="600">Click Handler</text>
-  <text x="952" y="502" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Instant feedback, IO corrects after scroll</text>
+  <circle cx="860" cy="490" r="12" fill="#B45309" opacity="0.15"/>
+  <text x="860" y="495" text-anchor="middle" font-family="ui-monospace,monospace" font-size="14" fill="#B45309">3</text>
+  <text x="882" y="486" font-family="ui-monospace,monospace" font-size="10" fill="#1a1a1a" font-weight="600">Click Handler</text>
+  <text x="882" y="502" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Instant feedback, IO corrects after scroll</text>
 </svg>

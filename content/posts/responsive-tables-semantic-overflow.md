@@ -11,7 +11,6 @@ image: /assets/img/og/responsive-tables-hero.svg
 
 *A responsive table should never clip its content. The fix: a wrapper div with horizontal scroll, not a hack on the table itself.*
 
-${toc}
 
 ## The Problem
 
