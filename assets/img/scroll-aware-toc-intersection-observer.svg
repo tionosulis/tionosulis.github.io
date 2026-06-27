@@ -1,127 +1,111 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">  <defs>
-    <filter id="cardShadow" x="-6%" y="-6%" width="112%" height="112%">
-      <feDropShadow dx="0" dy="3" stdDeviation="8" flood-color="#000000" flood-opacity="0.10"/>
+    <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6"  flood-color="#000000" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#B45309" flood-opacity="0.10"/>
     </filter>
     <pattern id="dotgrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="14" cy="14" r="0.9" fill="#B45309" opacity="0.12"/>
+      <circle cx="14" cy="14" r="0.9" fill="#B45309" opacity="0.14"/>
     </pattern>
   </defs>
 
 
-  <!-- Background transparan — dot pattern saja -->
+  <!-- Transparent bg + dot grid -->
   <rect width="1200" height="675" fill="url(#dotgrid)"/>
 
 
-  <!-- ── TITLE AREA ─────────────────────────────────── -->
+  <!-- Offset +22px vertical to fill 675px canvas evenly -->
+  <g transform="translate(0,14)">
+
+
+  <!-- ── TITLE ── -->
   <text x="600" y="44" text-anchor="middle"
         font-family="ui-monospace,monospace" font-size="17" font-weight="700"
         fill="#B45309" letter-spacing="0.5">Scroll-Aware Table of Contents</text>
   <text x="600" y="64" text-anchor="middle"
         font-family="ui-monospace,monospace" font-size="11"
         fill="#B45309" opacity="0.55" letter-spacing="2">IntersectionObserver  ·  Active State  ·  Click Handler</text>
+  <line x1="80" y1="76" x2="1120" y2="76" stroke="#B45309" stroke-width="0.5" opacity="0.25"/>
 
 
-  <!-- Divider bawah title -->
-  <line x1="80" y1="76" x2="1120" y2="76"
-        stroke="#B45309" stroke-width="0.5" opacity="0.25"/>
-
-
-  <!-- ============================================================
-       LEFT COLUMN: TOC Panel
-  ============================================================ -->
+  <!-- ══ LEFT: TOC Panel ══ -->
   <rect x="100" y="100" width="280" height="460" rx="10"
-        fill="#ffffff" stroke="#e0e0e0" stroke-width="1"
+        fill="#ffffff" stroke="#B45309" stroke-width="0.75" stroke-opacity="0.2"
         filter="url(#cardShadow)"/>
 
 
-  <!-- TOC header label -->
-  <rect x="100" y="100" width="280" height="32" rx="10" fill="#f9f9f9"/>
-  <rect x="100" y="120" width="280" height="12" fill="#f9f9f9"/>
+  <!-- TOC header -->
+  <rect x="100" y="100" width="280" height="32" rx="10" fill="#fafafa"/>
+  <rect x="100" y="120" width="280" height="12" fill="#fafafa"/>
   <text x="120" y="122" font-family="ui-monospace,monospace" font-size="10"
         fill="#B45309" font-weight="600" letter-spacing="1.5">ON THIS PAGE</text>
-  <line x1="100" y1="132" x2="380" y2="132"
-        stroke="#e0e0e0" stroke-width="0.5"/>
+  <line x1="100" y1="132" x2="380" y2="132" stroke="#e0e0e0" stroke-width="0.5"/>
 
 
-  <!-- ── TOC Item 1: inactive ── -->
+  <!-- Item 1: inactive -->
   <rect x="100" y="144" width="3" height="20" rx="1.5" fill="#d0d0d0"/>
-  <text x="120" y="158" font-family="ui-monospace,monospace" font-size="10"
-        fill="#5c6370">The Almost Perfect Score</text>
+  <text x="120" y="158" font-family="ui-monospace,monospace" font-size="10" fill="#5c6370">The Almost Perfect Score</text>
 
 
-  <!-- ── TOC Item 2: inactive ── -->
+  <!-- Item 2: inactive -->
   <rect x="100" y="172" width="3" height="20" rx="1.5" fill="#d0d0d0"/>
-  <text x="120" y="186" font-family="ui-monospace,monospace" font-size="10"
-        fill="#5c6370">The Forced Reflow</text>
+  <text x="120" y="186" font-family="ui-monospace,monospace" font-size="10" fill="#5c6370">The Forced Reflow</text>
 
 
-  <!-- ── TOC Item 3: ACTIVE ── -->
+  <!-- Item 3: ACTIVE -->
   <rect x="100" y="200" width="3" height="20" rx="1.5" fill="#B45309"/>
-  <!-- Active highlight bg -->
   <rect x="103" y="198" width="277" height="24" fill="#B45309" opacity="0.06"/>
   <text x="120" y="214" font-family="ui-monospace,monospace" font-size="10"
         fill="#B45309" font-weight="600">The CLS Culprit</text>
 
 
-  <!-- ── Sub-item 3a ── -->
+  <!-- Sub-item 3a -->
   <rect x="112" y="230" width="2" height="16" rx="1" fill="#d0d0d0"/>
-  <text x="128" y="242" font-family="ui-monospace,monospace" font-size="9"
-        fill="#5c6370">The Problem</text>
+  <text x="128" y="242" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">The Problem</text>
 
 
-  <!-- ── Sub-item 3b ── -->
+  <!-- Sub-item 3b -->
   <rect x="112" y="252" width="2" height="16" rx="1" fill="#d0d0d0"/>
-  <text x="128" y="264" font-family="ui-monospace,monospace" font-size="9"
-        fill="#5c6370">The Fix</text>
+  <text x="128" y="264" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">The Fix</text>
 
 
-  <!-- ── TOC Item 4: inactive ── -->
+  <!-- Item 4: inactive -->
   <rect x="100" y="276" width="3" height="20" rx="1.5" fill="#d0d0d0"/>
-  <text x="120" y="290" font-family="ui-monospace,monospace" font-size="10"
-        fill="#5c6370">The Contrast Calculation</text>
+  <text x="120" y="290" font-family="ui-monospace,monospace" font-size="10" fill="#5c6370">The Contrast Calculation</text>
 
 
-  <!-- ── TOC Item 5: inactive ── -->
+  <!-- Item 5: inactive -->
   <rect x="100" y="304" width="3" height="20" rx="1.5" fill="#d0d0d0"/>
-  <text x="120" y="318" font-family="ui-monospace,monospace" font-size="10"
-        fill="#5c6370">The Big Picture</text>
+  <text x="120" y="318" font-family="ui-monospace,monospace" font-size="10" fill="#5c6370">The Big Picture</text>
 
 
-  <!-- ── TOC Item 6: inactive ── -->
+  <!-- Item 6: inactive -->
   <rect x="100" y="332" width="3" height="20" rx="1.5" fill="#d0d0d0"/>
-  <text x="120" y="346" font-family="ui-monospace,monospace" font-size="10"
-        fill="#5c6370">What I Learned</text>
+  <text x="120" y="346" font-family="ui-monospace,monospace" font-size="10" fill="#5c6370">What I Learned</text>
 
 
-  <!-- ── Legend box ── -->
-  <rect x="112" y="460" width="256" height="80" rx="6"
-        fill="#f9f9f9" stroke="#e0e0e0" stroke-width="0.5"/>
+  <!-- Legend box -->
+  <rect x="112" y="460" width="256" height="82" rx="6"
+        fill="#fafafa" stroke="#B45309" stroke-width="0.5" stroke-opacity="0.25"/>
   <text x="124" y="476" font-family="ui-monospace,monospace" font-size="8"
         fill="#B45309" font-weight="600" letter-spacing="1">LEGEND</text>
   <line x1="112" y1="480" x2="368" y2="480" stroke="#e0e0e0" stroke-width="0.5"/>
-  <!-- Active legend -->
   <rect x="124" y="490" width="3" height="14" rx="1.5" fill="#B45309"/>
-  <text x="136" y="501" font-family="ui-monospace,monospace" font-size="9"
-        fill="#5c6370">Active — IntersectionObserver</text>
-  <!-- Inactive legend -->
+  <text x="136" y="501" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Active — IntersectionObserver</text>
   <rect x="124" y="512" width="3" height="14" rx="1.5" fill="#d0d0d0"/>
-  <text x="136" y="523" font-family="ui-monospace,monospace" font-size="9"
-        fill="#5c6370">Inactive section</text>
-  <text x="124" y="535" font-family="ui-monospace,monospace" font-size="8.5"
-        fill="#5c6370" opacity="0.7">:hover persists → navigation history</text>
+  <text x="136" y="523" font-family="ui-monospace,monospace" font-size="9" fill="#5c6370">Inactive section</text>
+  <text x="124" y="537" font-family="ui-monospace,monospace" font-size="8.5"
+        fill="#5c6370" opacity="0.7">:hover persists &#8594; navigation history</text>
 
 
-  <!-- ============================================================
-       RIGHT COLUMN: Article Preview
-  ============================================================ -->
+  <!-- ══ RIGHT: Article Preview ══ -->
   <rect x="420" y="100" width="680" height="460" rx="10"
-        fill="#ffffff" stroke="#e0e0e0" stroke-width="1"
+        fill="#ffffff" stroke="#B45309" stroke-width="0.75" stroke-opacity="0.2"
         filter="url(#cardShadow)"/>
 
 
-  <!-- Article header area -->
-  <rect x="420" y="100" width="680" height="56" rx="10" fill="#f9f9f9"/>
-  <rect x="420" y="140" width="680" height="16" fill="#f9f9f9"/>
+  <!-- Article header -->
+  <rect x="420" y="100" width="680" height="56" rx="10" fill="#fafafa"/>
+  <rect x="420" y="140" width="680" height="16" fill="#fafafa"/>
   <text x="450" y="124" font-family="ui-monospace,monospace" font-size="15"
         fill="#1a1a1a" font-weight="700">Chasing 100: A Field Guide</text>
   <text x="450" y="144" font-family="ui-monospace,monospace" font-size="10"
@@ -129,78 +113,61 @@
   <line x1="420" y1="156" x2="1100" y2="156" stroke="#e0e0e0" stroke-width="0.5"/>
 
 
-  <!-- Intro body text -->
+  <!-- Body text -->
   <text x="450" y="180" font-family="ui-monospace,monospace" font-size="10" fill="#4a4e5a">The day after publishing my blog revamp, I ran Google PageSpeed Insights.</text>
   <text x="450" y="196" font-family="ui-monospace,monospace" font-size="10" fill="#4a4e5a">I expected validation — weeks of careful optimization surely deserved</text>
   <text x="450" y="212" font-family="ui-monospace,monospace" font-size="10" fill="#4a4e5a">a perfect score.</text>
   <text x="450" y="234" font-family="ui-monospace,monospace" font-size="10" fill="#4a4e5a">I got a 99.</text>
-
-
   <line x1="450" y1="248" x2="1080" y2="248" stroke="#e0e0e0" stroke-width="0.5"/>
 
 
-  <!-- Section heading 1 -->
+  <!-- Section 1 -->
   <text x="450" y="272" font-family="ui-monospace,monospace" font-size="13"
         fill="#1a1a1a" font-weight="700">The Almost Perfect Score</text>
   <text x="450" y="292" font-family="ui-monospace,monospace" font-size="10" fill="#4a4e5a">Not a 98, not a 95 — a 99. One single point away from perfection.</text>
-
-
   <line x1="450" y1="308" x2="1080" y2="308" stroke="#e0e0e0" stroke-width="0.5"/>
 
 
-  <!-- Section heading 2 -->
+  <!-- Section 2 -->
   <text x="450" y="332" font-family="ui-monospace,monospace" font-size="13"
         fill="#1a1a1a" font-weight="700">The Forced Reflow</text>
   <text x="450" y="352" font-family="ui-monospace,monospace" font-size="10" fill="#4a4e5a">PageSpeed's warning: A forced reflow occurs when JavaScript queries</text>
   <text x="450" y="368" font-family="ui-monospace,monospace" font-size="10" fill="#4a4e5a">geometric properties after styles have been invalidated.</text>
-
-
   <line x1="450" y1="384" x2="1080" y2="384" stroke="#e0e0e0" stroke-width="0.5"/>
 
 
-  <!-- Section heading 3 — THE CLS CULPRIT (active, currently in reading zone) -->
+  <!-- Section 3: ACTIVE (in reading zone) -->
   <text x="450" y="408" font-family="ui-monospace,monospace" font-size="13"
         fill="#1a1a1a" font-weight="700">The CLS Culprit</text>
   <text x="450" y="428" font-family="ui-monospace,monospace" font-size="10" fill="#4a4e5a">Cumulative Layout Shift: images without dimensions cause the browser</text>
   <text x="450" y="444" font-family="ui-monospace,monospace" font-size="10" fill="#4a4e5a">to recalculate layout as assets load in.</text>
 
 
-  <!-- ── Reading zone indicator ── -->
-  <!-- Amber highlight band across article width at active heading -->
-  <rect x="420" y="396" width="680" height="58"
-        fill="#B45309" opacity="0.05"/>
-  <!-- Top edge dashed line -->
+  <!-- Reading zone highlight -->
+  <rect x="420" y="396" width="680" height="58" fill="#B45309" opacity="0.05"/>
   <line x1="420" y1="396" x2="1100" y2="396"
         stroke="#B45309" stroke-width="1" opacity="0.3" stroke-dasharray="4 3"/>
-  <!-- Bottom edge dashed line -->
   <line x1="420" y1="454" x2="1100" y2="454"
         stroke="#B45309" stroke-width="1" opacity="0.15" stroke-dasharray="4 3"/>
-  <!-- Label -->
-  <text x="1092" y="422" text-anchor="end"
+  <text x="1092" y="392" text-anchor="end"
         font-family="ui-monospace,monospace" font-size="8"
         fill="#B45309" opacity="0.8">reading zone</text>
 
 
-  <!-- Arrow from reading zone → active TOC item -->
-  <!-- Horizontal segment leaving article left -->
+  <!-- Arrow: reading zone → TOC active item -->
   <line x1="420" y1="425" x2="390" y2="425"
         stroke="#B45309" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
-  <!-- Vertical segment going up to TOC active item -->
   <line x1="390" y1="425" x2="390" y2="209"
         stroke="#B45309" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
-  <!-- Horizontal into TOC -->
-  <line x1="390" y1="209" x2="380" y2="209"
+  <line x1="390" y1="209" x2="383" y2="209"
         stroke="#B45309" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
-  <!-- Arrowhead -->
-  <polygon points="384,205 376,209 384,213" fill="#B45309" opacity="0.55"/>
+  <polygon points="387,205 379,209 387,213" fill="#B45309" opacity="0.55"/>
 
 
-  <!-- ── "How it works" strip ── -->
+  <!-- ── How it works strip ── -->
   <line x1="420" y1="464" x2="1100" y2="464" stroke="#e0e0e0" stroke-width="0.5"/>
-  <rect x="420" y="464" width="680" height="96" rx="0"
-        fill="#f9f9f9"/>
-  <!-- rounded bottom corners only -->
-  <rect x="420" y="516" width="680" height="44" rx="10" fill="#f9f9f9"/>
+  <rect x="420" y="464" width="680" height="96" rx="0" fill="#fafafa"/>
+  <rect x="420" y="516" width="680" height="44" rx="10" fill="#fafafa"/>
 
 
   <!-- Step 1 -->
@@ -213,9 +180,8 @@
         fill="#5c6370">Detects heading in reading zone</text>
 
 
-  <!-- Connector arrow 1→2 -->
-  <line x1="700" y1="499" x2="718" y2="499"
-        stroke="#d0d0d0" stroke-width="1"/>
+  <!-- Arrow 1→2 -->
+  <line x1="700" y1="499" x2="718" y2="499" stroke="#d0d0d0" stroke-width="1"/>
   <polygon points="714,495 722,499 714,503" fill="#d0d0d0"/>
 
 
@@ -229,9 +195,8 @@
         fill="#5c6370">Updates border + text in TOC</text>
 
 
-  <!-- Connector arrow 2→3 -->
-  <line x1="926" y1="499" x2="942" y2="499"
-        stroke="#d0d0d0" stroke-width="1"/>
+  <!-- Arrow 2→3 -->
+  <line x1="926" y1="499" x2="942" y2="499" stroke="#d0d0d0" stroke-width="1"/>
   <polygon points="938,495 946,499 938,503" fill="#d0d0d0"/>
 
 
@@ -248,8 +213,7 @@
 
 
   <!-- ── LEGEND BAR ── -->
-  <line x1="80" y1="578" x2="1120" y2="578"
-        stroke="#B45309" stroke-width="0.5" opacity="0.2"/>
+  <line x1="80" y1="578" x2="1120" y2="578" stroke="#B45309" stroke-width="0.5" opacity="0.2"/>
   <circle cx="360" cy="598" r="5" fill="#B45309" opacity="0.85"/>
   <text x="372" y="603" font-family="ui-monospace,monospace" font-size="10"
         fill="#B45309" opacity="0.75">Active section — currently visible in viewport</text>
@@ -258,4 +222,5 @@
         fill="#5c6370" opacity="0.75">Inactive — click or scroll to activate</text>
 
 
+  </g>
 </svg>
