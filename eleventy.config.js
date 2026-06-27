@@ -95,6 +95,12 @@ export default async function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
 
+  eleventyConfig.addFilter("sortPinned", (collection) => {
+    const pinned = collection.filter(p => p.data.pinned);
+    const rest = collection.filter(p => !p.data.pinned).reverse();
+    return [...pinned, ...rest];
+  });
+
   eleventyConfig.addFilter("filterTagList", (tags) => {
     return (tags || []).filter((tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
   });

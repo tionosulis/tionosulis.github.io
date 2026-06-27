@@ -28,13 +28,13 @@ title: Posts
 
   {% set currentYear = "" %}
   <ol class="post-list">
-    {% for post in collections.posts | reverse %}
+    {% for post in collections.posts | sortPinned %}
       {% set postYear = post.date | date("yyyy") %}
-      {% if postYear !== currentYear %}
+      {% if not post.data.pinned and postYear !== currentYear %}
         <li class="year-label" aria-hidden="true">{{ postYear }}</li>
         {% set currentYear = postYear %}
       {% endif %}
-      <li class="post-item">
+      <li class="post-item{% if post.data.pinned %} pinned{% endif %}">
         <div class="line-sep"></div>
         <div class="post-content">
           <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
