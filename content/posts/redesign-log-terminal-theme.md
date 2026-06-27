@@ -2,6 +2,7 @@
 title: "$ cat ~/redesign-log: Terminal Theme, Amber Accent, and the Pursuit of Consistency"
 description: "A field log of transforming this blog from a conventional sidebar layout into a terminal-themed space — JetBrains Mono, amber accents, golden-ratio spacing, and the design decisions behind each change."
 date: 2026-06-25
+pinned: true
 tags: [meta, design, css, terminal, golden-ratio]
 ---
 
