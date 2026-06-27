@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">  <defs>
+    <!-- Dual shadow: black depth + amber glow — works on both light and dark bg -->
     <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="116%">
       <feDropShadow dx="0" dy="2" stdDeviation="6"  flood-color="#000000" flood-opacity="0.18"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#B45309" flood-opacity="0.10"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#B45309" flood-opacity="0.22"/>
     </filter>
     <filter id="phoneShadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000000" flood-opacity="0.30"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#B45309" flood-opacity="0.12"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="26" flood-color="#B45309" flood-opacity="0.22"/>
     </filter>
     <pattern id="dotgrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
       <circle cx="14" cy="14" r="0.9" fill="#B45309" opacity="0.14"/>
