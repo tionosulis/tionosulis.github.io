@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="0.9" fill="#B45309" opacity="0.14"/>
+    </pattern>
+    <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6"  flood-color="#000000" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#B45309" flood-opacity="0.22"/>
+    </filter>
+    <clipPath id="rounded">
+      <rect width="1200" height="675" rx="10" ry="10"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="675" rx="10" ry="10"
+        fill="none" filter="url(#cardShadow)" transform="translate(0,2)"/>
+
+  <g clip-path="url(#rounded)">
+    <rect width="1200" height="675" fill="#161616"/>
+    <rect width="1200" height="675" fill="url(#dots)"/>
+
+    <rect x="32" y="32" width="1136" height="611"
+          fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
+
+    <path d="M 32 80 L 32 32 L 80 32"   fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 1120 32 L 1168 32 L 1168 80"  fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 32 595 L 32 643 L 80 643"     fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 1168 595 L 1168 643 L 1120 643" fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+
+    <rect x="0" y="0" width="1200" height="44" fill="#B45309" fill-opacity="0.07"/>
+    <line x1="0" y1="44" x2="1200" y2="44" stroke="#B45309" stroke-width="1" stroke-opacity="0.25"/>
+
+    <circle cx="56" cy="22" r="6" fill="#ff5f57" opacity="0.75"/>
+    <circle cx="80" cy="22" r="6" fill="#febc2e" opacity="0.75"/>
+    <circle cx="104" cy="22" r="6" fill="#28c840" opacity="0.75"/>
+
+    <text x="136" y="28"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="13" fill="#B45309" opacity="0.55"
+          letter-spacing="0.3" dominant-baseline="middle">pinned.md</text>
+
+    <!-- cat command -->
+    <text x="80" y="105"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309" font-weight="700">$</text>
+    <text x="102" y="105"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#d4d4d8">cat posts/ | sort-pinned</text>
+
+    <!-- Post list header -->
+    <line x1="80" y1="125" x2="460" y2="125" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
+
+    <!-- Pinned post — ★ -->
+    <text x="80" y="165"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309">★</text>
+    <text x="118" y="165"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#d4d4d8" font-weight="600">$ cat ~/redesign-log</text>
+    <text x="600" y="165"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="15" fill="#64748b">2026-06-25</text>
+
+    <!-- Thin separator -->
+    <line x1="80" y1="185" x2="460" y2="185" stroke="#B45309" stroke-width="1" stroke-opacity="0.08"/>
+
+    <!-- Year label -->
+    <text x="80" y="215"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="13" fill="#94a3b8" opacity="0.6">2026</text>
+
+    <!-- Post 01 -->
+    <text x="80" y="250"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309" opacity="0.85">01</text>
+    <text x="118" y="250"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#d4d4d8">all-in-monospace</text>
+    <text x="600" y="250"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="15" fill="#64748b">2026-06-26</text>
+
+    <!-- Post 02 -->
+    <text x="80" y="285"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309" opacity="0.85">02</text>
+    <text x="118" y="285"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#d4d4d8">building-conditional-notice</text>
+    <text x="600" y="285"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="15" fill="#64748b">2026-06-27</text>
+
+    <!-- Post 03 -->
+    <text x="80" y="320"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309" opacity="0.85">03</text>
+    <text x="118" y="320"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#d4d4d8">responsive-tables</text>
+    <text x="600" y="320"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="15" fill="#64748b">2026-06-25</text>
+
+    <!-- Separator -->
+    <rect x="80" y="360" width="1040" height="1" fill="#B45309" opacity="0.15"/>
+
+    <!-- Framework summary — right panel style -->
+    <text x="80" y="410"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309" font-weight="700">$</text>
+    <text x="102" y="410"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#d4d4d8">cat framework.md</text>
+
+    <!-- Framework items — as output -->
+    <text x="80" y="455"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="18" fill="#B45309">⊚</text>
+    <text x="110" y="455"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="18" fill="#94a3b8">Permanent or seasonal?</text>
+
+    <text x="80" y="492"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="18" fill="#B45309">⊚</text>
+    <text x="110" y="492"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="18" fill="#94a3b8">One or many?</text>
+
+    <text x="80" y="529"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="18" fill="#B45309">⊚</text>
+    <text x="110" y="529"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="18" fill="#94a3b8">Index only or everywhere?</text>
+
+    <!-- Prompt + cursor -->
+    <text x="80" y="610"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309" font-weight="700">$</text>
+    <text x="102" y="611"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="20" fill="#B45309" opacity="0.7">▋</text>
+  </g>
+
+  <rect width="1200" height="675" rx="10" ry="10"
+        fill="none" stroke="#B45309" stroke-width="1.5" stroke-opacity="0.35"/>
+</svg>
