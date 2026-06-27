@@ -3,7 +3,7 @@ title: "Building a Conditional Notice System: A Case Study in Design Iteration"
 description: "How a simple notice box evolved through three iterations — from `#` comment lines to an accent-bordered callout — and what it taught me about designing for context, not perfection."
 date: 2026-06-27
 draft: true
-tags: [design, css, meta]
+tags: [design, css, meta, eleventy]
 image: /assets/img/og/building-conditional-notice.png
 ---
 
