@@ -1,85 +1,169 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
-  <defs>
-    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.05"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">  <defs>
+    <!-- Amber dot grid — visible on dark bg, consistent with blog accent -->
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="0.9" fill="#B45309" opacity="0.14"/>
     </pattern>
-    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="108%">
-      <feDropShadow dx="0" dy="4" stdDeviation="16" flood-color="#000000" flood-opacity="0.18"/>
+
+
+    <!-- Dual shadow: depth + amber glow — our established standard -->
+    <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6"  flood-color="#000000" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#B45309" flood-opacity="0.22"/>
     </filter>
+
+
     <clipPath id="rounded">
       <rect width="1200" height="675" rx="10" ry="10"/>
     </clipPath>
-    <style>
-      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-      .cr { animation: blink 1.2s step-end infinite; }
-    </style>
   </defs>
 
-  <rect width="1200" height="675" rx="10" ry="10" fill="#000000" opacity="0.18" transform="translate(0, 6)" filter="url(#cardShadow)"/>
+
+  <!-- Outer lift shadow — separates from both #ffffff and #161616 page -->
+  <rect width="1200" height="675" rx="10" ry="10"
+        fill="none" filter="url(#cardShadow)"
+        transform="translate(0,2)"/>
+
 
   <g clip-path="url(#rounded)">
+
+
+    <!-- Dark background — terminal by design, works on both page modes -->
     <rect width="1200" height="675" fill="#161616"/>
+    <!-- Amber dot grid -->
     <rect width="1200" height="675" fill="url(#dots)"/>
 
-    <rect x="32" y="32" width="1136" height="611" fill="none" stroke="#F5A623" stroke-width="1" stroke-opacity="0.2"/>
 
-    <line x1="32" y1="32" x2="80" y2="32" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
-    <line x1="32" y1="32" x2="32" y2="80" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
-    <line x1="1168" y1="32" x2="1120" y2="32" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
-    <line x1="1168" y1="32" x2="1168" y2="80" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
-    <line x1="32" y1="643" x2="80" y2="643" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
-    <line x1="32" y1="643" x2="32" y2="595" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
-    <line x1="1168" y1="643" x2="1120" y2="643" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
-    <line x1="1168" y1="643" x2="1168" y2="595" stroke="#F5A623" stroke-width="2" stroke-opacity="0.6"/>
+    <!-- Inner frame border — amber, our standard -->
+    <rect x="32" y="32" width="1136" height="611"
+          fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
 
-    <rect x="0" y="0" width="1200" height="44" fill="#F5A623" fill-opacity="0.07"/>
-    <line x1="0" y1="44" x2="1200" y2="44" stroke="#F5A623" stroke-width="1" stroke-opacity="0.2"/>
 
+    <!-- Corner accents — our established standard -->
+    <path d="M 32 80 L 32 32 L 80 32"   fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 1120 32 L 1168 32 L 1168 80"  fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 32 595 L 32 643 L 80 643"     fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 1168 595 L 1168 643 L 1120 643" fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+
+
+    <!-- Title bar strip -->
+    <rect x="0" y="0" width="1200" height="44" fill="#B45309" fill-opacity="0.07"/>
+    <line x1="0" y1="44" x2="1200" y2="44" stroke="#B45309" stroke-width="1" stroke-opacity="0.25"/>
+
+
+    <!-- Traffic light dots -->
     <circle cx="56" cy="22" r="6" fill="#ff5f57" opacity="0.75"/>
     <circle cx="80" cy="22" r="6" fill="#febc2e" opacity="0.75"/>
     <circle cx="104" cy="22" r="6" fill="#28c840" opacity="0.75"/>
 
-    <text x="136" y="28" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" fill="#F5A623" opacity="0.5" letter-spacing="0.3" dominant-baseline="middle">notice-redesign.md</text>
+
+    <!-- Tab filename -->
+    <text x="136" y="28"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="13" fill="#B45309" opacity="0.55"
+          letter-spacing="0.3" dominant-baseline="middle">notice-redesign.md</text>
+
+
+    <!-- ── TERMINAL CONTENT ── -->
+
 
     <!-- grep command -->
-    <text x="80" y="105" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#F5A623" font-weight="700">$</text>
-    <text x="102" y="105" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#d4d4d8">cat posts/golden.md | grep redesign</text>
+    <text x="80" y="105"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309" font-weight="700">$</text>
+    <text x="102" y="105"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#d4d4d8">cat posts/golden.md | grep redesign</text>
+
 
     <!-- grep output -->
-    <text x="80" y="145" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#94a3b8">redesign_notice: true</text>
+    <text x="80" y="145"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#94a3b8">redesign_notice: true</text>
+
 
     <!-- build command -->
-    <text x="80" y="185" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#F5A623" font-weight="700">$</text>
-    <text x="102" y="185" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#d4d4d8">./build --preview</text>
+    <text x="80" y="185"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309" font-weight="700">$</text>
+    <text x="102" y="185"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#d4d4d8">./build --preview</text>
 
-    <!-- notice box: outer border -->
-    <rect x="230" y="240" width="740" height="165" rx="6" fill="#161616" stroke="#505050" stroke-width="1"/>
-    <rect x="230" y="242" width="3" height="161" fill="#F5A623"/>
 
+    <!-- Notice box -->
+    <rect x="230" y="240" width="740" height="165" rx="6"
+          fill="#1a1a1a" stroke="#B45309" stroke-width="0.75" stroke-opacity="0.35"/>
+    <!-- Left amber accent bar -->
+    <rect x="230" y="242" width="3" height="161" fill="#B45309" opacity="0.8"/>
+
+
+    <!-- NOTE label chip -->
     <rect x="254" y="232" width="47" height="18" fill="#161616"/>
-    <text x="259" y="246" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#F5A623" font-weight="700" letter-spacing="1">NOTE</text>
+    <text x="259" y="246"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="12" fill="#B45309" font-weight="700" letter-spacing="1">NOTE</text>
 
-    <text x="267" y="293" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" fill="#F5A623">&gt;</text>
-    <text x="290" y="293" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" fill="#d4d4d8">This post describes the previous blog design.</text>
 
-    <text x="267" y="327" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" fill="#d4d4d8">  The site has since been redesigned.</text>
+    <!-- Notice text -->
+    <text x="267" y="293"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="18" fill="#B45309">&gt;</text>
+    <text x="290" y="293"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="18" fill="#d4d4d8">This post describes the previous blog design.</text>
 
-    <!-- echo done -->
-    <text x="80" y="460" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#F5A623" font-weight="700">$</text>
-    <text x="102" y="460" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#d4d4d8">echo "done"</text>
-    <text x="216" y="460" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#6b7280">// one line, zero JS</text>
 
-    <rect x="80" y="497" width="380" height="1" fill="#505050"/>
+    <text x="267" y="327"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="18" fill="#d4d4d8">  The site has since been redesigned.</text>
+
+
+    <!-- echo command -->
+    <text x="80" y="460"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309" font-weight="700">$</text>
+    <text x="102" y="460"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#d4d4d8">echo "done"</text>
+    <text x="216" y="460"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#4a5568">// one line, zero JS</text>
+
+
+    <!-- Separator -->
+    <rect x="80" y="497" width="380" height="1" fill="#B45309" opacity="0.2"/>
+
 
     <!-- find command -->
-    <text x="80" y="537" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#F5A623" font-weight="700">$</text>
-    <text x="102" y="537" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#d4d4d8">find . -name "*.md" | xargs grep redesign_notice | wc -l</text>
+    <text x="80" y="537"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309" font-weight="700">$</text>
+    <text x="102" y="537"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#d4d4d8">find . -name "*.md" | xargs grep redesign_notice | wc -l</text>
 
-    <text x="80" y="580" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#22c55e" font-weight="700">3</text>
 
-    <text x="80" y="620" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="19" fill="#F5A623" font-weight="700">$</text>
-    <text x="102" y="620" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="20" fill="#F5A623" class="cr">▋</text>
+    <!-- Output: 3 -->
+    <text x="80" y="580"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#22c55e" font-weight="700">3</text>
+
+
+    <!-- Prompt + cursor -->
+    <text x="80" y="620"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="19" fill="#B45309" font-weight="700">$</text>
+    <text x="102" y="621"
+          font-family="'JetBrains Mono', 'Courier New', monospace"
+          font-size="20" fill="#B45309" opacity="0.7">▋</text>
+
+
   </g>
 
-  <rect width="1200" height="675" rx="10" ry="10" fill="none" stroke="#3a3a3a" stroke-width="1"/>
+
+  <!-- Outer border — amber subtle, our standard -->
+  <rect width="1200" height="675" rx="10" ry="10"
+        fill="none" stroke="#B45309" stroke-width="1.5" stroke-opacity="0.35"/>
+
+
 </svg>
