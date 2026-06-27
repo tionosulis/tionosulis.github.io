@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">  <defs>
+    <!-- Dual shadow: depth + amber glow for dark mode legibility -->
     <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="116%">
       <feDropShadow dx="0" dy="2" stdDeviation="6"  flood-color="#000000" flood-opacity="0.18"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#B45309" flood-opacity="0.10"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#B45309" flood-opacity="0.22"/>
     </filter>
     <pattern id="dotgrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
       <circle cx="14" cy="14" r="0.9" fill="#B45309" opacity="0.14"/>
@@ -29,7 +30,7 @@
 
   <!-- ══ LEFT: TOC Panel ══ -->
   <rect x="100" y="100" width="280" height="460" rx="10"
-        fill="#ffffff" stroke="#B45309" stroke-width="0.75" stroke-opacity="0.2"
+        fill="#ffffff" stroke="#B45309" stroke-width="0.75" stroke-opacity="0.35"
         filter="url(#cardShadow)"/>
 
 
@@ -99,7 +100,7 @@
 
   <!-- ══ RIGHT: Article Preview ══ -->
   <rect x="420" y="100" width="680" height="460" rx="10"
-        fill="#ffffff" stroke="#B45309" stroke-width="0.75" stroke-opacity="0.2"
+        fill="#ffffff" stroke="#B45309" stroke-width="0.75" stroke-opacity="0.35"
         filter="url(#cardShadow)"/>
 
 
