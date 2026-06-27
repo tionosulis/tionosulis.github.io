@@ -603,6 +603,14 @@ a.visually-hidden:focus {
   text-align: right;
   opacity: 0.85;
 }
+.posts-page .post-item.pinned {
+  counter-increment: none;
+}
+.posts-page .post-item.pinned::before {
+  content: "★";
+  font-size: 0.85rem;
+  opacity: 1;
+}
 .posts-page .line-sep {
   width: 1px;
   height: 1.1rem;
