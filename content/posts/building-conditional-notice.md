@@ -1,7 +1,7 @@
 ---
 title: "Building a Conditional Notice System: A Case Study in Design Iteration"
 description: "How a simple notice box evolved through three iterations — from `#` comment lines to an accent-bordered callout — and what it taught me about designing for context, not perfection."
-date: 2026-06-22
+date: 2026-06-27
 draft: true
 tags: [design, css, meta]
 image: /assets/img/og/building-conditional-notice.png
@@ -13,7 +13,7 @@ image: /assets/img/og/building-conditional-notice.png
 
 Imagine arriving at a blog post about golden ratios in web design. The screenshots show a sidebar layout, a blue accent, and an IBM Plex Sans body font. You look at the live site — monospace font, amber accent, no sidebar. The disconnect is instant. Is the information outdated? Is the post wrong?
 
-That moment of confusion is exactly what happened after this blog's terminal redesign. And it's what led to a tiny piece of UI that taught me more about design iteration than any A/B test ever did.
+That moment of confusion is exactly what happened after this blog's [terminal redesign](/posts/redesign-log-terminal-theme). And it's what led to a tiny piece of UI that taught me more about design iteration than any A/B test ever did.
 
 ## The Problem
 

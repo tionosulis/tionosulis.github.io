@@ -101,7 +101,7 @@ Each rejection taught me something about the design's north star: *terminal vibe
 
 ## A Note on the Older Posts
 
-You might notice that some posts on this blog reference elements that no longer exist — the sidebar, the IBM Plex Sans font family, the 55×55 "S" monogram, the golden-ratio toggle dimensions. Those posts are marked with a notice box at the top — an amber left border with a `>` prefix — signalling "this describes the previous design." I chose not to rewrite them because they document a real evolution. Design is a process, not a product.
+You might notice that some posts on this blog reference elements that no longer exist — the sidebar, the IBM Plex Sans font family, the 55×55 "S" monogram, the golden-ratio toggle dimensions. Those posts are marked with a notice box at the top — an amber left border with a `>` prefix — signalling "this describes the previous design." (See [the full case study on this notice system](/posts/building-conditional-notice).) I chose not to rewrite them because they document a real evolution. Design is a process, not a product.
 
 ## Lessons Learned
 
