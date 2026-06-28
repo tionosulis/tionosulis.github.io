@@ -3,247 +3,195 @@
     <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
       <circle cx="14" cy="14" r="0.9" fill="#B45309" opacity="0.14"/>
     </pattern>
-    <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="116%">
-      <feDropShadow dx="0" dy="2" stdDeviation="6"  flood-color="#000000" flood-opacity="0.18"/>
-      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#B45309" flood-opacity="0.22"/>
-    </filter>
     <filter id="panelShadow" x="-4%" y="-4%" width="108%" height="108%">
       <feDropShadow dx="0" dy="2" stdDeviation="8" flood-color="#000000" flood-opacity="0.28"/>
     </filter>
-    <clipPath id="rounded">
-      <rect width="1200" height="675" rx="10" ry="10"/>
-    </clipPath>
   </defs>
 
-  <rect width="1200" height="675" rx="10" ry="10"
-        fill="none" filter="url(#cardShadow)" transform="translate(0,2)"/>
+  <rect width="1200" height="675" fill="#161616"/>
+  <rect width="1200" height="675" fill="url(#dots)"/>
 
-  <g clip-path="url(#rounded)">
-    <rect width="1200" height="675" fill="#161616"/>
-    <rect width="1200" height="675" fill="url(#dots)"/>
+  <rect x="38" y="38" width="1124" height="599" rx="10" fill="#000" opacity="0.25"/>
 
-    <!-- Inner frame -->
-    <rect x="32" y="32" width="1136" height="611"
-          fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
+  <rect x="36" y="36" width="1128" height="603" rx="10" fill="#1B1B1D" stroke="#3D536A" stroke-width="1.5"/>
 
-    <!-- Corner accents -->
-    <path d="M 32 80 L 32 32 L 80 32"        fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1120 32 L 1168 32 L 1168 80"  fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 32 595 L 32 643 L 80 643"     fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1168 595 L 1168 643 L 1120 643" fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+  <rect x="36" y="36" width="1128" height="38" rx="10" fill="#222225"/>
+  <rect x="36" y="56" width="1128" height="18" fill="#222225"/>
 
-    <!-- Title bar -->
-    <rect x="0" y="0" width="1200" height="44" fill="#B45309" fill-opacity="0.07"/>
-    <line x1="0" y1="44" x2="1200" y2="44" stroke="#B45309" stroke-width="1" stroke-opacity="0.25"/>
+  <circle cx="62" cy="55" r="4.5" fill="#B45309"/>
+  <circle cx="82" cy="55" r="4.5" fill="#B45309" opacity="0.55"/>
+  <circle cx="102" cy="55" r="4.5" fill="#B45309" opacity="0.25"/>
 
-    <!-- Traffic lights -->
-    <circle cx="56" cy="22" r="6" fill="#ff5f57" opacity="0.75"/>
-    <circle cx="80" cy="22" r="6" fill="#febc2e" opacity="0.75"/>
-    <circle cx="104" cy="22" r="6" fill="#28c840" opacity="0.75"/>
-    <text x="136" y="28" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="13" fill="#B45309" opacity="0.55" dominant-baseline="middle">color-audit.css</text>
+  <text x="600" y="60" font-family="ui-monospace,SFMono-Regular,monospace" font-size="13" fill="#878f9d" text-anchor="middle" dominant-baseline="middle">~/color-audit.css — bash</text>
 
-    <!-- ══════════════════════════════════
-         TITLE AREA
-    ══════════════════════════════════ -->
-    <text x="600" y="108"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="11" fill="#B45309" opacity="0.5"
-          text-anchor="middle" letter-spacing="3">THE GRAY YOU CHOOSE IS NOT NEUTRAL</text>
-    <line x1="200" y1="118" x2="1000" y2="118"
-          stroke="#B45309" stroke-width="0.5" stroke-opacity="0.2"/>
+  <text x="600" y="108"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="11" fill="#B45309" opacity="0.5"
+        text-anchor="middle" letter-spacing="3">THE GRAY YOU CHOOSE IS NOT NEUTRAL</text>
+  <line x1="200" y1="118" x2="1000" y2="118"
+        stroke="#B45309" stroke-width="0.5" stroke-opacity="0.2"/>
 
-    <!-- ══════════════════════════════════
-         LEFT PANEL — Purple-Gray
-    ══════════════════════════════════ -->
+  <rect x="80" y="138" width="460" height="390" rx="8"
+        fill="#1a1a1a" stroke="#7c3aed" stroke-width="0.75" stroke-opacity="0.35"
+        filter="url(#panelShadow)"/>
 
-    <!-- Panel card -->
-    <rect x="80" y="138" width="460" height="390" rx="8"
-          fill="#1a1a1a" stroke="#7c3aed" stroke-width="0.75" stroke-opacity="0.35"
-          filter="url(#panelShadow)"/>
+  <rect x="80" y="138" width="460" height="36" rx="8" fill="#1e1528"/>
+  <rect x="80" y="158" width="460" height="16" fill="#1e1528"/>
+  <text x="310" y="161" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#a78bfa" font-weight="600" letter-spacing="2">PURPLE-GRAY  ·  HSL 265° 10% 65%</text>
+  <line x1="80" y1="174" x2="540" y2="174"
+        stroke="#7c3aed" stroke-width="0.5" stroke-opacity="0.3"/>
 
-    <!-- Panel header -->
-    <rect x="80" y="138" width="460" height="36" rx="8" fill="#1e1528"/>
-    <rect x="80" y="158" width="460" height="16" fill="#1e1528"/>
-    <text x="310" y="161" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#a78bfa" font-weight="600" letter-spacing="2">PURPLE-GRAY  ·  HSL 265° 10% 65%</text>
-    <line x1="80" y1="174" x2="540" y2="174"
-          stroke="#7c3aed" stroke-width="0.5" stroke-opacity="0.3"/>
+  <rect x="104" y="190" width="412" height="52" rx="6" fill="#9a8fac"/>
+  <text x="310" y="221" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="12" fill="#1a1a1a" font-weight="600">#9A8FAC  —  purple-gray</text>
 
-    <!-- Color swatch: purple-gray -->
-    <rect x="104" y="190" width="412" height="52" rx="6" fill="#9a8fac"/>
-    <text x="310" y="221" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="12" fill="#1a1a1a" font-weight="600">#9A8FAC  —  purple-gray</text>
+  <rect x="104" y="252" width="412" height="32" rx="4" fill="#1e1528"/>
+  <text x="120" y="273" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#7c3aed" opacity="0.7">H: 265°</text>
+  <text x="220" y="273" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#a78bfa" opacity="0.7">S: 10%</text>
+  <text x="300" y="273" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#c4b5fd" opacity="0.7">L: 65%</text>
+  <text x="390" y="273" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#7c3aed" opacity="0.55">⟵ violet quadrant</text>
 
-    <!-- HSL breakdown -->
-    <rect x="104" y="252" width="412" height="32" rx="4" fill="#1e1528"/>
-    <text x="120" y="273" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#7c3aed" opacity="0.7">H: 265°</text>
-    <text x="220" y="273" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#a78bfa" opacity="0.7">S: 10%</text>
-    <text x="300" y="273" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#c4b5fd" opacity="0.7">L: 65%</text>
-    <text x="390" y="273" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#7c3aed" opacity="0.55">⟵ violet quadrant</text>
+  <rect x="104" y="294" width="412" height="130" rx="6" fill="#111111"/>
+  <text x="120" y="316" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#e4e4e7" opacity="0.9">Primary text — near white</text>
+  <text x="120" y="338" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#9a8fac">Secondary text in purple-gray</text>
+  <text x="120" y="358" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#7a6f8a">Tertiary text — deeper purple-gray</text>
+  <line x1="120" y1="370" x2="496" y2="370" stroke="#7c3aed" stroke-width="0.5" opacity="0.2"/>
+  <text x="120" y="388" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#B45309">Accent: amber</text>
+  <text x="220" y="388" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#7a6f8a">← competing warm hues</text>
 
-    <!-- Simulated reading sample — purple-gray -->
-    <rect x="104" y="294" width="412" height="130" rx="6" fill="#111111"/>
-    <text x="120" y="316" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#e4e4e7" opacity="0.9">Primary text — near white</text>
-    <text x="120" y="338" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#9a8fac">Secondary text in purple-gray</text>
-    <text x="120" y="358" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#7a6f8a">Tertiary text — deeper purple-gray</text>
-    <line x1="120" y1="370" x2="496" y2="370" stroke="#7c3aed" stroke-width="0.5" opacity="0.2"/>
-    <text x="120" y="388" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#B45309">Accent: amber</text>
-    <text x="220" y="388" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#7a6f8a">← competing warm hues</text>
+  <text x="104" y="450" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#7c3aed" opacity="0.6">⚠  hue orphaned without purple accent</text>
+  <text x="104" y="468" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#7c3aed" opacity="0.6">⚠  warm accent + purple-gray = 3 competing hues</text>
+  <text x="104" y="486" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#7c3aed" opacity="0.6">⚠  hue discontinuity vs light mode gray</text>
+  <text x="104" y="504" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#a78bfa" opacity="0.5">✓  works well with purple accent systems</text>
 
-    <!-- Observations -->
-    <text x="104" y="450" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#7c3aed" opacity="0.6">⚠  hue orphaned without purple accent</text>
-    <text x="104" y="468" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#7c3aed" opacity="0.6">⚠  warm accent + purple-gray = 3 competing hues</text>
-    <text x="104" y="486" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#7c3aed" opacity="0.6">⚠  hue discontinuity vs light mode gray</text>
-    <text x="104" y="504" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#a78bfa" opacity="0.5">✓  works well with purple accent systems</text>
+  <rect x="660" y="138" width="460" height="390" rx="8"
+        fill="#1a1a1a" stroke="#B45309" stroke-width="0.75" stroke-opacity="0.35"
+        filter="url(#panelShadow)"/>
 
-    <!-- ══════════════════════════════════
-         RIGHT PANEL — Blue-Gray
-    ══════════════════════════════════ -->
+  <rect x="660" y="138" width="460" height="36" rx="8" fill="#1a1f2e"/>
+  <rect x="660" y="158" width="460" height="16" fill="#1a1f2e"/>
+  <text x="890" y="161" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#94a3b8" font-weight="600" letter-spacing="2">BLUE-GRAY  ·  HSL 215° 16% 65%</text>
+  <line x1="660" y1="174" x2="1120" y2="174"
+        stroke="#94a3b8" stroke-width="0.5" stroke-opacity="0.3"/>
 
-    <!-- Panel card -->
-    <rect x="660" y="138" width="460" height="390" rx="8"
-          fill="#1a1a1a" stroke="#B45309" stroke-width="0.75" stroke-opacity="0.35"
-          filter="url(#panelShadow)"/>
+  <rect x="684" y="190" width="412" height="52" rx="6" fill="#94a3b8"/>
+  <text x="890" y="221" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="12" fill="#1a1a1a" font-weight="600">#94A3B8  —  slate-400</text>
 
-    <!-- Panel header -->
-    <rect x="660" y="138" width="460" height="36" rx="8" fill="#1a1f2e"/>
-    <rect x="660" y="158" width="460" height="16" fill="#1a1f2e"/>
-    <text x="890" y="161" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#94a3b8" font-weight="600" letter-spacing="2">BLUE-GRAY  ·  HSL 215° 16% 65%</text>
-    <line x1="660" y1="174" x2="1120" y2="174"
-          stroke="#94a3b8" stroke-width="0.5" stroke-opacity="0.3"/>
+  <rect x="684" y="252" width="412" height="32" rx="4" fill="#1a1f2e"/>
+  <text x="700" y="273" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#64748b" opacity="0.9">H: 215°</text>
+  <text x="800" y="273" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#94a3b8" opacity="0.9">S: 16%</text>
+  <text x="880" y="273" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#cbd5e1" opacity="0.9">L: 65%</text>
+  <text x="970" y="273" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#64748b" opacity="0.7">⟵ blue quadrant</text>
 
-    <!-- Color swatch: blue-gray (slate-400) -->
-    <rect x="684" y="190" width="412" height="52" rx="6" fill="#94a3b8"/>
-    <text x="890" y="221" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="12" fill="#1a1a1a" font-weight="600">#94A3B8  —  slate-400</text>
+  <rect x="684" y="294" width="412" height="130" rx="6" fill="#111111"/>
+  <text x="700" y="316" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#e4e4e7" opacity="0.9">Primary text — near white</text>
+  <text x="700" y="338" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#94a3b8">Secondary text in blue-gray</text>
+  <text x="700" y="358" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="10" fill="#64748b">Tertiary text — deeper blue-gray</text>
+  <line x1="700" y1="370" x2="1076" y2="370" stroke="#94a3b8" stroke-width="0.5" opacity="0.2"/>
+  <text x="700" y="388" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#B45309">Accent: amber</text>
+  <text x="800" y="388" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#64748b">← warm/cool complement</text>
 
-    <!-- HSL breakdown -->
-    <rect x="684" y="252" width="412" height="32" rx="4" fill="#1a1f2e"/>
-    <text x="700" y="273" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#64748b" opacity="0.9">H: 215°</text>
-    <text x="800" y="273" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#94a3b8" opacity="0.9">S: 16%</text>
-    <text x="880" y="273" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#cbd5e1" opacity="0.9">L: 65%</text>
-    <text x="970" y="273" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#64748b" opacity="0.7">⟵ blue quadrant</text>
+  <text x="684" y="450" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#64748b" opacity="0.8">✓  hue anchored to blue-axis display model</text>
+  <text x="684" y="468" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#64748b" opacity="0.8">✓  warm accent + cool gray = temperature harmony</text>
+  <text x="684" y="486" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#64748b" opacity="0.8">✓  consistent hue family across light/dark mode</text>
+  <text x="684" y="504" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#94a3b8" opacity="0.5">—  less distinctive with blue accent systems</text>
 
-    <!-- Simulated reading sample — blue-gray -->
-    <rect x="684" y="294" width="412" height="130" rx="6" fill="#111111"/>
-    <text x="700" y="316" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#e4e4e7" opacity="0.9">Primary text — near white</text>
-    <text x="700" y="338" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#94a3b8">Secondary text in blue-gray</text>
-    <text x="700" y="358" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="10" fill="#64748b">Tertiary text — deeper blue-gray</text>
-    <line x1="700" y1="370" x2="1076" y2="370" stroke="#94a3b8" stroke-width="0.5" opacity="0.2"/>
-    <text x="700" y="388" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#B45309">Accent: amber</text>
-    <text x="800" y="388" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#64748b">← warm/cool complement</text>
+  <line x1="600" y1="138" x2="600" y2="528"
+        stroke="#B45309" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="4 4"/>
+  <rect x="574" y="316" width="52" height="22" rx="11" fill="#1e1a12"/>
+  <text x="600" y="331" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#B45309" opacity="0.7">vs</text>
 
-    <!-- Observations -->
-    <text x="684" y="450" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#64748b" opacity="0.8">✓  hue anchored to blue-axis display model</text>
-    <text x="684" y="468" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#64748b" opacity="0.8">✓  warm accent + cool gray = temperature harmony</text>
-    <text x="684" y="486" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#64748b" opacity="0.8">✓  consistent hue family across light/dark mode</text>
-    <text x="684" y="504" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#94a3b8" opacity="0.5">—  less distinctive with blue accent systems</text>
+  <rect x="80" y="548" width="1040" height="56" rx="6"
+        fill="#111111" stroke="#B45309" stroke-width="0.5" stroke-opacity="0.2"/>
 
-    <!-- ══════════════════════════════════
-         CENTER DIVIDER + LABEL
-    ══════════════════════════════════ -->
-    <line x1="600" y1="138" x2="600" y2="528"
-          stroke="#B45309" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="4 4"/>
-    <rect x="574" y="316" width="52" height="22" rx="11" fill="#1e1a12"/>
-    <text x="600" y="331" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#B45309" opacity="0.7">vs</text>
+  <text x="96" y="566" font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#B45309" opacity="0.5" letter-spacing="1">HSL HUE</text>
 
-    <!-- ══════════════════════════════════
-         BOTTOM — HSL HUE RULER
-    ══════════════════════════════════ -->
-    <rect x="80" y="548" width="1040" height="56" rx="6"
-          fill="#111111" stroke="#B45309" stroke-width="0.5" stroke-opacity="0.2"/>
+  <rect x="96" y="572" width="200" height="18" rx="3" fill="#2d5a8e" opacity="0.6"/>
+  <text x="196" y="585" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="8" fill="#94a3b8">180°–240°  blue</text>
 
-    <!-- Hue ruler label -->
-    <text x="96" y="566" font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#B45309" opacity="0.5" letter-spacing="1">HSL HUE</text>
+  <rect x="236" y="569" width="80" height="24" rx="3"
+        fill="none" stroke="#94a3b8" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 2"/>
+  <text x="276" y="579" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="7" fill="#94a3b8" opacity="0.8">215°</text>
+  <text x="276" y="589" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="7" fill="#94a3b8" opacity="0.8">slate-400</text>
 
-    <!-- Hue gradient bar — simplified representation -->
-    <!-- Blue zone 180-240 -->
-    <rect x="96" y="572" width="200" height="18" rx="3" fill="#2d5a8e" opacity="0.6"/>
-    <text x="196" y="585" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="8" fill="#94a3b8">180°–240°  blue</text>
+  <rect x="296" y="572" width="60" height="18" rx="3" fill="#4a4a6a" opacity="0.6"/>
+  <text x="326" y="585" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="8" fill="#a1a1aa">240°</text>
 
-    <!-- Safe zone marker -->
-    <rect x="236" y="569" width="80" height="24" rx="3"
-          fill="none" stroke="#94a3b8" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 2"/>
-    <text x="276" y="579" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="7" fill="#94a3b8" opacity="0.8">215°</text>
-    <text x="276" y="589" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="7" fill="#94a3b8" opacity="0.8">slate-400</text>
+  <rect x="356" y="572" width="200" height="18" rx="3" fill="#5b21b6" opacity="0.5"/>
+  <text x="456" y="585" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="8" fill="#a78bfa">240°–300°  purple</text>
 
-    <!-- Neutral 240 -->
-    <rect x="296" y="572" width="60" height="18" rx="3" fill="#4a4a6a" opacity="0.6"/>
-    <text x="326" y="585" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="8" fill="#a1a1aa">240°</text>
+  <rect x="486" y="569" width="80" height="24" rx="3"
+        fill="none" stroke="#7c3aed" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 2"/>
+  <text x="526" y="579" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="7" fill="#a78bfa" opacity="0.8">265°</text>
+  <text x="526" y="589" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="7" fill="#a78bfa" opacity="0.8">purple-gray</text>
 
-    <!-- Purple zone 240-300 -->
-    <rect x="356" y="572" width="200" height="18" rx="3" fill="#5b21b6" opacity="0.5"/>
-    <text x="456" y="585" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="8" fill="#a78bfa">240°–300°  purple</text>
+  <rect x="880" y="572" width="100" height="18" rx="3" fill="#78350f" opacity="0.7"/>
+  <text x="930" y="585" text-anchor="middle"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="8" fill="#B45309">30°–40°  amber</text>
 
-    <!-- Purple-gray marker -->
-    <rect x="486" y="569" width="80" height="24" rx="3"
-          fill="none" stroke="#7c3aed" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 2"/>
-    <text x="526" y="579" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="7" fill="#a78bfa" opacity="0.8">265°</text>
-    <text x="526" y="589" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="7" fill="#a78bfa" opacity="0.8">purple-gray</text>
+  <text x="1100" y="585" text-anchor="end"
+        font-family="'JetBrains Mono','Courier New',monospace"
+        font-size="9" fill="#B45309" opacity="0.45">hue is never neutral</text>
 
-    <!-- Amber accent marker -->
-    <rect x="880" y="572" width="100" height="18" rx="3" fill="#78350f" opacity="0.7"/>
-    <text x="930" y="585" text-anchor="middle"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="8" fill="#B45309">30°–40°  amber</text>
+  <g stroke-linecap="round" fill="none">
+    <path d="M 2 22 L 2 2 L 22 2" stroke="#F5A623" stroke-width="2.5"/>
+    <path d="M 1178 2 L 1198 2 L 1198 22" stroke="#F5A623" stroke-width="2.5"/>
+    <path d="M 2 653 L 2 673 L 22 673" stroke="#10D9A8" stroke-width="2.5"/>
+    <path d="M 1178 673 L 1198 673 L 1198 653" stroke="#10D9A8" stroke-width="2.5"/>
 
-    <!-- Conclusion note -->
-    <text x="1100" y="585" text-anchor="end"
-          font-family="'JetBrains Mono','Courier New',monospace"
-          font-size="9" fill="#B45309" opacity="0.45">hue is never neutral</text>
-
+    <path d="M 1184 316" stroke="#3D536A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 1184 338" stroke="#3D536A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 1184 360" stroke="#3D536A" stroke-width="6" stroke-linecap="round"/>
   </g>
-
-  <!-- Outer border -->
-  <rect width="1200" height="675" rx="10" ry="10"
-        fill="none" stroke="#B45309" stroke-width="1.5" stroke-opacity="0.35"/>
 </svg>
