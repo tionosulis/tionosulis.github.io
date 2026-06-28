@@ -1,8 +1,8 @@
 ---
 title: "One Palette for Two Modes: Building a Hero Image Color System"
 description: "Hero images in a dark-mode blog have to survive two backgrounds: #ffffff in light mode, #161616 in dark mode. After several rounds of iteration, I landed on a palette and a set of visual conventions that work in both — without media queries, without inline styles, and without sacrificing contrast."
-date: 2026-06-20
-draft: true
+date: 2026-06-28
+draft: false
 tags: [design, css, meta, howto]
 image: /assets/img/og/one-palette-two-modes.png
 ---
@@ -126,15 +126,16 @@ Same technique works for any dark accent colour, by the way. If I ever add a blu
 
 ## The CSS Glue
 
-All of this work in the SVG itself would be pointless without one line of CSS:
+All of this work in the SVG itself would be pointless without two lines of CSS:
 
 ```css
 article img {
   border: 1px solid var(--border);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
 }
 ```
 
-`--border` resolves to `#e0e0e0` in light mode and `#424242` in dark mode. That thin border is what separates the hero image from the page background — especially in light mode, where `#2A4053` against `#ffffff` needs a clean transition.
+`--border` resolves to `#d0d0d0` in light mode and `#505050` in dark mode. That thin border is what separates the hero image from the page background — especially in light mode, where `#2A4053` against `#ffffff` needs a clean transition. The subtle `box-shadow` adds depth without calling attention to itself.
 
 Without it, the `#2A4053` image looks like a floating cutout. With it, the image snaps into place as a deliberate design element.
 
@@ -159,4 +160,4 @@ Before this system, I'd pick a colour for each image based on what "felt right."
 
 ---
 
-*This entire site is open source on [GitHub](https://github.com/tionosulis/tionosulis.github.io).*
+*This entire site is open source on [GitHub](https://github.com/tionosulis/tionosulis.github.io). This post is part of a series on the [terminal redesign](/posts/redesign-log-terminal-theme). For the other side of the dark mode story — how text hierarchy and gray hue choice follow the same one-palette principle — see [The Gray You Choose Is Not Neutral](/posts/gray-hue-is-not-neutral).*

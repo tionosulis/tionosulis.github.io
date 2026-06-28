@@ -57,7 +57,7 @@ The strongest practical argument for choosing one gray family over another comes
 Consider three scenarios:
 
 **Scenario A: Amber accent, blue-gray secondary text**
-The warm amber and cool blue-gray create a classic temperature complement. Two hue families, one warm, one cool. The eye reads them as clearly differentiated and harmonious. This is the triad I settled on: amber at `HSL 30° 90% 37%` for accent, and a blue-gray at `HSL 218° 9% 56%` for secondary text in dark mode.
+The warm amber and cool blue-gray create a classic temperature complement. Two hue families, one warm, one cool. The eye reads them as clearly differentiated and harmonious. This is the triad I settled on: amber at `HSL 26° 90% 37%` for accent, and a blue-gray at `HSL 218° 9% 56%` for secondary text in dark mode.
 
 **Scenario B: Amber accent, purple-gray secondary text**
 Now you have three competing hue references: near-white primary text (neutral), purple-gray secondary text (violet-leaning), amber accent (warm orange). None of these are strictly wrong, but the purple-gray has no anchor — nothing else in the system is purple. It reads as an uninvited guest.
@@ -114,7 +114,9 @@ Purple-gray can enter a CSS system through paths that are easy to miss:
 /* Purple-gray zone:     H 250°–290° */
 
 /* Your tokens should read intentionally, not accidentally */
---text-secondary: /* your value */;
+:root {
+  --text-secondary: /* your value */;
+}
 ```
 
 If the hue values differ by more than 20–30° between your light and dark mode, your secondary text is presenting as a different hue family in each mode. This may be intentional — but it is worth naming that decision explicitly.
