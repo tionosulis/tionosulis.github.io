@@ -9,7 +9,7 @@ image: /assets/img/og/one-palette-two-modes.png
 
 ![Split comparison: a hero card at #2A4053 surviving against light bg #ffffff (left) and dark bg #161616 (right), with color palette swatches](/assets/img/one-palette-two-modes.svg)
 
-*The same hero card, two backgrounds — light and dark. The palette below shows the semantic color system used across every hero SVG on this blog.*
+*The same hero card, two backgrounds — light and dark. The palette below shows the semantic color system that standardises accent colours across hero SVGs on this blog.*
 
 Every hero image on this blog is an SVG embedded via `<img>`. That means the browser renders it on a transparent canvas, and the page background shows through. In a blog with both light and dark mode, that single image has to survive two completely different backgrounds: `#ffffff` on the light side, `#161616` on the dark side.
 
