@@ -139,6 +139,8 @@ article img {
 
 Without it, the `#2A4053` image looks like a floating cutout. With it, the image snaps into place as a deliberate design element.
 
+Not every hero image on this blog uses `#2A4053`. Terminal-window SVGs use `#161616` with an amber dot grid — the dark background carries the terminal metaphor, and amber provides contrast against both light and dark page backgrounds. Tutorial-style SVGs use a light `#fafafa` base with a dot pattern, keeping the illustration airy and letting the page layout provide the dark-mode anchor. The `#2A4053` approach described here is for *card-style* heroes — where content needs a solid, neutral anchor between two vastly different page backgrounds. Choose the strategy that fits the metaphor.
+
 ## Color Semantics as a Decision Framework
 
 The most valuable outcome of this process wasn't the palette itself — it was the decision framework behind it:
@@ -160,4 +162,4 @@ Before this system, I'd pick a colour for each image based on what "felt right."
 
 ---
 
-*This entire site is open source on [GitHub](https://github.com/tionosulis/tionosulis.github.io). This post is part of a series on the [terminal redesign](/posts/redesign-log-terminal-theme). For the other side of the dark mode story — how text hierarchy and gray hue choice follow the same one-palette principle — see [The Gray You Choose Is Not Neutral](/posts/gray-hue-is-not-neutral).*
+*This entire site is open source on [GitHub](https://github.com/tionosulis/tionosulis.github.io). This post is part of a series on the [terminal redesign](/posts/redesign-log-terminal-theme).*
