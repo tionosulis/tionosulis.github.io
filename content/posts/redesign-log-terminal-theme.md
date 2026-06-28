@@ -4,7 +4,12 @@ description: "A field log of transforming this blog from a conventional sidebar 
 date: 2026-06-25
 pinned: true
 tags: [meta, design, css, terminal, golden-ratio]
+image: /assets/img/og/redesign-log-terminal-theme.png
 ---
+
+![A terminal window showing the redesign deployment log: four tasks executed successfully — JetBrains Mono font, amber accent, golden-ratio spacing, terminal prompts — with amber OK tags and a blinking cursor](/assets/img/redesign-log-terminal-theme.svg)
+
+*The deployment log of the terminal redesign — every change executed, every step confirmed.*
 
 Every design system starts with a tension between what you have and what you want. This blog had a clean, conventional layout: IBM Plex Sans, a left sidebar with an "S" monogram, dot leaders between post titles and dates, and blue accent links. Nothing was broken. Everything was functional.
 

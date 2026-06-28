@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <pattern id="dot-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="1.5" fill="#B45309" opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="675" fill="#161616"/>
+  <rect width="1200" height="675" fill="url(#dot-grid)"/>
+
+  <rect x="38" y="38" width="1124" height="599" rx="10" fill="#000" opacity="0.25"/>
+
+  <rect x="36" y="36" width="1128" height="603" rx="10" fill="#1B1B1D" stroke="#3D536A" stroke-width="1.5"/>
+
+  <rect x="36" y="36" width="1128" height="38" rx="10" fill="#222225"/>
+  <rect x="36" y="56" width="1128" height="18" fill="#222225"/>
+
+  <circle cx="62" cy="55" r="4.5" fill="#B45309"/>
+  <circle cx="82" cy="55" r="4.5" fill="#B45309" opacity="0.55"/>
+  <circle cx="102" cy="55" r="4.5" fill="#B45309" opacity="0.25"/>
+
+  <text x="600" y="60" font-family="ui-monospace,SFMono-Regular,monospace" font-size="13" fill="#878f9d" text-anchor="middle" dominant-baseline="middle">~/redesign-log — bash</text>
+
+  <g font-family="ui-monospace,SFMono-Regular,monospace">
+    <text x="66" y="125" font-size="20" fill="#878f9d">~/blog</text>
+    <text x="150" y="125" font-size="20" fill="#878f9d"> $</text>
+    <text x="182" y="125" font-size="20" fill="#B45309"> ./redesign --deploy</text>
+
+    <text x="86" y="175" font-size="18" fill="#B45309">›</text>
+    <text x="112" y="175" font-size="18" fill="#C8D8E8">Setting font </text>
+    <text x="325" y="175" font-size="18" fill="#878f9d">→</text>
+    <text x="350" y="175" font-size="18" fill="#C8D8E8"> JetBrains Mono</text>
+    <rect x="1035" y="162" width="44" height="22" rx="4" fill="#10D9A8" opacity="0.15"/>
+    <text x="1057" y="175" font-size="15" fill="#10D9A8" font-weight="bold" text-anchor="middle">OK</text>
+
+    <text x="86" y="223" font-size="18" fill="#B45309">›</text>
+    <text x="112" y="223" font-size="18" fill="#C8D8E8">Configuring amber accent</text>
+    <rect x="1035" y="210" width="44" height="22" rx="4" fill="#10D9A8" opacity="0.15"/>
+    <text x="1057" y="223" font-size="15" fill="#10D9A8" font-weight="bold" text-anchor="middle">OK</text>
+
+    <text x="86" y="271" font-size="18" fill="#B45309">›</text>
+    <text x="112" y="271" font-size="18" fill="#C8D8E8">Applying golden-ratio spacing</text>
+    <rect x="1035" y="258" width="44" height="22" rx="4" fill="#10D9A8" opacity="0.15"/>
+    <text x="1057" y="271" font-size="15" fill="#10D9A8" font-weight="bold" text-anchor="middle">OK</text>
+
+    <text x="86" y="319" font-size="18" fill="#B45309">›</text>
+    <text x="112" y="319" font-size="18" fill="#C8D8E8">Deploying terminal UX patterns</text>
+    <rect x="1035" y="306" width="44" height="22" rx="4" fill="#10D9A8" opacity="0.15"/>
+    <text x="1057" y="319" font-size="15" fill="#10D9A8" font-weight="bold" text-anchor="middle">OK</text>
+
+    <text x="600" y="382" font-size="15" fill="#5e6173" text-anchor="middle">─────────────────────────────────</text>
+
+    <text x="600" y="438" font-size="24" fill="#C8D8E8" text-anchor="middle" font-weight="bold">Blog redesign complete.</text>
+    <text x="600" y="475" font-size="16" fill="#878f9d" text-anchor="middle">https://tionosulis.github.io</text>
+
+    <text x="66" y="545" font-size="20" fill="#878f9d">~/blog</text>
+    <text x="150" y="545" font-size="20" fill="#878f9d"> $</text>
+    <rect x="182" y="530" width="13" height="22" rx="2" fill="#B45309"/>
+  </g>
+
+  <text x="1134" y="635" font-family="ui-monospace,SFMono-Regular,monospace" font-size="34" fill="#B45309" text-anchor="end" font-weight="bold">&gt;_S</text>
+
+  <g stroke-linecap="round" fill="none">
+    <path d="M 2 22 L 2 2 L 22 2" stroke="#F5A623" stroke-width="2.5"/>
+    <path d="M 1178 2 L 1198 2 L 1198 22" stroke="#F5A623" stroke-width="2.5"/>
+    <path d="M 2 653 L 2 673 L 22 673" stroke="#10D9A8" stroke-width="2.5"/>
+    <path d="M 1178 673 L 1198 673 L 1198 653" stroke="#10D9A8" stroke-width="2.5"/>
+
+    <path d="M 1184 316" stroke="#3D536A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 1184 338" stroke="#3D536A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 1184 360" stroke="#3D536A" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>
