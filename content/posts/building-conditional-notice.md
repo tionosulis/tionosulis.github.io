@@ -15,6 +15,8 @@ Imagine arriving at a blog post about golden ratios in web design. The screensho
 
 That moment of confusion is exactly what happened after this blog's [terminal redesign](/posts/redesign-log-terminal-theme). And it's what led to a tiny piece of UI that taught me more about design iteration than any A/B test ever did.
 
+${toc}
+
 ## The Problem
 
 After the revamp, three posts had direct references to the old design:

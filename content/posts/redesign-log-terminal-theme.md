@@ -14,6 +14,8 @@ IBM Plex Sans is a beautiful typeface — I have nothing but respect for it. It 
 
 This post is the field log of that realignment. Every change, every rejection, every "why."
 
+${toc}
+
 ## Why Monospace?
 
 I switched to JetBrains Mono as the sole body font across the entire blog. I wrote about the thinking behind that decision in [a separate post](/posts/all-in-monospace); here's what it took on the implementation side.

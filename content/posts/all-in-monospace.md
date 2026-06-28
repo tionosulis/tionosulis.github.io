@@ -24,6 +24,8 @@ I was writing about code, configs, and edge cases you only hit when you push thi
 
 Every time I dropped a code block into a post, the JetBrains Mono inside it felt more honest than anything surrounding it. More *me*. That friction kept nagging.
 
+${toc}
+
 ## The Professional Context
 
 Most advice about web typography follows a familiar script: pick a readable serif or humanist sans-serif for body text, pair it with something contrasting for headings, keep code blocks in monospace, done. It works. It looks clean. It looks like everyone else.

@@ -17,6 +17,8 @@ When I first started creating hero SVGs, I didn't think about this. I picked a d
 
 This is the story of how I iterated from that to a systematic palette that works everywhere — and the unexpected lessons I learned about color semantics, glow filters, and the power of a single CSS property.
 
+${toc}
+
 ## The Problem: One Image, Two Backgrounds
 
 The blog's body background is `#ffffff` in light mode and `#161616` in dark mode. Every hero image sits inside `article img`, which gets `border: 1px solid var(--border)` — but that border alone isn't enough to fix a bad background color.
