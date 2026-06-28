@@ -1,5 +1,5 @@
 ---
-title: "★ Breaking Chronology: A Framework for Pinned Content"
+title: "Breaking Chronology: A Framework for Pinned Content ★"
 description: "When does a blog post deserve to break chronological order? A design framework for deciding, implementing, and styling pinned content — with a worked example."
 date: 2026-06-27
 draft: true
