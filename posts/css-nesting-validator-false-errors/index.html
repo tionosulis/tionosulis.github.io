@@ -26,6 +26,16 @@
   --syntax-bg: #fbfbfb;
 
   --radius: 6px;
+
+  color-scheme: light dark;
+}
+
+*, *::before, *::after {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none; }
 }
 
 [data-theme="dark"] {
