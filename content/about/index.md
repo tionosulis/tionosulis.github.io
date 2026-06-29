@@ -1,6 +1,9 @@
 ---
 layout: layouts/page.njk
 title: ./sulistiono
+description: >-
+  Behind the terminal: colophon, technical stack, now page, post categories,
+  and a fun fact about how this site is built and maintained.
 ---
 
 <div class="home-terminal">
