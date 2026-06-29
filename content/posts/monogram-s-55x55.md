@@ -62,13 +62,13 @@ One of the nicest details: the favicon automatically switches between light and 
     <style>
       @media (prefers-color-scheme: dark) {
         rect { fill: #0a0a0b; }
-        text { fill: #e4e4e7; }
+        text { fill: #eef0f5; }
       }
     </style>
   </defs>
   <rect width="55" height="55" fill="#fafafa" rx="6"/>
   <text x="27.5" y="37" font-family="system-ui,sans-serif"
-        font-size="32" font-weight="700" fill="#1a1a1a"
+        font-size="32" font-weight="700" fill="#1b1e23"
         text-anchor="middle">S</text>
 </svg>
 ```

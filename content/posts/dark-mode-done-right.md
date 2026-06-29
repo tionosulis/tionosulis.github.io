@@ -62,14 +62,14 @@ With the toggle attribute in place, the stylesheet defines two sets of custom pr
 ```css
 :root {
   --bg: #fafafa;
-  --text: #1a1a1a;
+  --text: #1b1e23;
   --accent: #2563eb;
   /* ... more variables */
 }
 
 [data-theme="dark"] {
   --bg: #0a0a0b;
-  --text: #e4e4e7;
+  --text: #eef0f5;
   --accent: #60a5fa;
   /* ... more variables */
 }
@@ -87,7 +87,7 @@ A `@media (prefers-color-scheme)` rule handles this:
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     --bg: #0a0a0b;
-    --text: #e4e4e7;
+    --text: #eef0f5;
   }
 }
 ```

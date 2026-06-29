@@ -73,7 +73,7 @@ One underappreciated consequence of choosing different hue families for light an
 
 I wrote about this blog's overall dark mode approach in [a separate post about one palette, two modes](/posts/one-palette-two-modes). The principle there was: maintain the same color tokens across both themes, varying only lightness and saturation — not hue. The gray hierarchy follows the same rule.
 
-My light mode secondary text is `#68707e` (`HSL 218° 10% 45%` — blue-gray). My dark mode secondary text is `#878f9d` (`HSL 218° 9% 57%` — same blue-gray family). The hue is within 1° across modes. The semantic meaning of "secondary text" preserves its identity regardless of theme.
+My light mode secondary text is `#58606e` (`HSL 218° 11% 39%` — blue-gray). My dark mode secondary text is `#9ba3b1` (`HSL 218° 12% 65%` — same blue-gray family). The hue is within 1° across modes. The semantic meaning of "secondary text" preserves its identity regardless of theme.
 
 If your light mode secondary text is a cool blue-gray and your dark mode secondary text drifts toward purple-gray, the same semantic role now carries a different hue identity in each mode. Users with higher color sensitivity — or those switching frequently — will perceive secondary text as a different *kind* of content, not just a different *brightness* of the same content.
 
@@ -81,15 +81,15 @@ Here is what the actual token structure looks like in production:
 
 ```css
 :root {
-  --text-body: #343842;
-  --text-secondary: #68707e;   /* HSL 218° 10% 45% — blue-gray */
-  --text-tertiary: #999da8;
+  --text-body: #2d323c;
+  --text-secondary: #58606e;   /* HSL 218° 11% 39% — blue-gray */
+  --text-tertiary: #7e8695;
 }
 
 [data-theme="dark"] {
-  --text-body: #c3c6cb;
-  --text-secondary: #878f9d;   /* HSL 218° 9% 57% — same blue-gray */
-  --text-tertiary: #5e6173;
+  --text-body: #c8ccd6;
+  --text-secondary: #9ba3b1;   /* HSL 218° 12% 65% — same blue-gray */
+  --text-tertiary: #6e7685;
 }
 ```
 
