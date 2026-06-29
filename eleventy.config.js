@@ -118,6 +118,21 @@ export default async function (eleventyConfig) {
     return tags.size;
   });
 
+  eleventyConfig.addFilter("tagCounts", (posts) => {
+    const counts = {};
+    if (!posts) return [];
+    for (const post of posts) {
+      if (post.data && Array.isArray(post.data.tags)) {
+        for (const tag of post.data.tags) {
+          if (tag !== "posts") {
+            counts[tag] = (counts[tag] || 0) + 1;
+          }
+        }
+      }
+    }
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  });
+
   eleventyConfig.addFilter("getDate", (dateObj, format) => {
     if (!dateObj) return "";
     if (dateObj.date instanceof Date) {

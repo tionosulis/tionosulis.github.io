@@ -15,21 +15,10 @@ description: >-
 <a href="https://twitter.com/tionosulis_">twitter.com/tionosulis_</a>
 </p>
 
-<p><span class="prompt-char">$</span> <span class="cmd">du -sh</span> /categories/*</p>
+{% set cats = collections.posts | tagCounts %}
+<p><span class="prompt-char">$</span> <span class="cmd">wc -l</span> /categories/*</p>
 <p class="output">
- 12K    css/<br>
- 12K    design/<br>
- 8.0K   eleventy/<br>
- 4.0K   typography/<br>
- 4.0K   pwa/<br>
- 4.0K   performance/<br>
- 4.0K   javascript/<br>
- 4.0K   accessibility/<br>
- 4.0K   git/<br>
- 4.0K   troubleshooting/<br>
- 4.0K   debugging/<br>
- 4.0K   tutorial/<br>
- ...
+{% for cat in cats %}{% if loop.index <= 12 %}{% if cat[1] < 10 %}&nbsp;{% endif %}{{ cat[1] }}    {{ cat[0] }}/<br>{% endif %}{% endfor %} ...
 </p>
 
 <p><span class="prompt-char">$</span> <span class="cmd">cat</span> colophon.txt</p>
