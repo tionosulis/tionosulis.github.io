@@ -5,18 +5,6 @@ title: ./sulistiono
 
 <div class="home-terminal">
 
-<p><span class="prompt-char">$</span> <span class="cmd">whoami</span></p>
-<p class="output">sulistiono</p>
-
-<p><span class="prompt-char">$</span> <span class="cmd">cat</span> about.txt</p>
-<p class="output">Indonesian code-tinkerer and part-time plant whisperer.<br>
-Often found up late wrestling with messy code<br>
-and way too busy to brew my own coffee.</p>
-<p class="output">This blog is my little corner of the internet<br>
-to dump thoughts, notes to self, and whatever else<br>
-crosses my mind. Posting frequency? Random and<br>
-highly inconsistent — such is life.</p>
-
 <p><span class="prompt-char">$</span> <span class="cmd">ls</span> links/</p>
 <p class="output">
 <a href="/posts/">posts/</a> <span class="entry-count">{{ collections.posts | length }} entries</span><br>
