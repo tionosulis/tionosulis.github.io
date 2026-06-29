@@ -1,6 +1,6 @@
 {
   "name": "tionosulis-blog",
-  "description": "Sulistiono's personal blog, built with Eleventy.",
+  "description": "Personal blog.",
   "private": true,
   "type": "module",
   "scripts": {
