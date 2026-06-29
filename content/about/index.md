@@ -1,13 +1,79 @@
 ---
 layout: layouts/page.njk
-title: Sulistiono
+title: ./sulistiono
 ---
 
-I'm an Indonesian, a gardening and tech enthusiast who often stays up late wrestling with messy code and is too busy to make his own coffee.
+<div class="home-terminal">
 
-This blog is my little corner of the internet to dump thoughts, notes to self, and whatever else crosses my mind. The entry frequency is most likely random and inconsistent — such is life.
+<p><span class="prompt-char">$</span> <span class="cmd">whoami</span></p>
+<p class="output">sulistiono</p>
 
-Find me elsewhere:
+<p><span class="prompt-char">$</span> <span class="cmd">cat</span> about.txt</p>
+<p class="output">Indonesian code-tinkerer and part-time plant whisperer.<br>
+Often found up late wrestling with messy code<br>
+and way too busy to brew my own coffee.</p>
+<p class="output">This blog is my little corner of the internet<br>
+to dump thoughts, notes to self, and whatever else<br>
+crosses my mind. Posting frequency? Random and<br>
+highly inconsistent — such is life.</p>
 
-- [GitHub](https://github.com/tionosulis)
-- [Twitter](https://twitter.com/tionosulis_)
+<p><span class="prompt-char">$</span> <span class="cmd">ls</span> links/</p>
+<p class="output">
+<a href="/posts/">posts/</a> <span class="entry-count">{{ collections.posts | length }} entries</span><br>
+<a href="https://github.com/tionosulis">github.com/tionosulis</a><br>
+<a href="https://twitter.com/tionosulis_">twitter.com/tionosulis_</a>
+</p>
+
+<p><span class="prompt-char">$</span> <span class="cmd">du -sh</span> /categories/*</p>
+<p class="output">
+ 12K    css/<br>
+ 12K    design/<br>
+ 8.0K   eleventy/<br>
+ 4.0K   typography/<br>
+ 4.0K   pwa/<br>
+ 4.0K   performance/<br>
+ 4.0K   javascript/<br>
+ 4.0K   accessibility/<br>
+ 4.0K   git/<br>
+ 4.0K   troubleshooting/<br>
+ 4.0K   debugging/<br>
+ 4.0K   tutorial/<br>
+ ...
+</p>
+
+<p><span class="prompt-char">$</span> <span class="cmd">cat</span> colophon.txt</p>
+<p class="output">
+  generator:      Eleventy v3<br>
+  host:           GitHub Pages<br>
+  domain:         tionosulis.github.io<br>
+  font:           JetBrains Mono (variable)<br>
+  css:            vanilla (no framework)<br>
+  js:             vanilla (no framework)<br>
+  highlighting:   Shiki<br>
+  svg → png:      sharp<br>
+  icons:          hand-crafted SVG<br>
+  analysis:       fonttools + by-hand math
+</p>
+
+<p><span class="prompt-char">$</span> <span class="cmd">cat</span> now.txt</p>
+<p class="output">
+  watching:       Mad Men, Peaky Blinders<br>
+  reading:        Ronggeng Dukuh Paruk — Achmad Tohari<br>
+  learning:       Python<br>
+  building:       IDX Stock Screener Dashboard &amp; Telegram BOT
+</p>
+
+<p><span class="prompt-char">$</span> <span class="cmd">cat</span> funfact.txt</p>
+<p class="output">
+This entire site — every post, every CSS variable,<br>
+every typo — is maintained via SSH from a smartphone.<br>
+I write code at 2 AM in a dark room, debug layout bugs<br>
+on a 6-inch screen, and deploy to production using<br>
+nothing but a terminal emulator and sheer stubbornness.<br>
+The future is here and it looks suspiciously like<br>
+a Nokia E71 with a really good keyboard.
+</p>
+
+<p class="cursor-line"><span class="prompt-char">$</span> <span class="blinking-cursor">&#9610;</span></p>
+
+</div>
