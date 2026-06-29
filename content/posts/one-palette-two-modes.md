@@ -82,7 +82,7 @@ Every accent color has a semantic meaning now. Orange is never used for errors. 
 
 While I was standardizing the palette, I also added an outer frame to every hero SVG:
 
-```
+```xml
 <rect x="1" y="1" width="1198" height="673" rx="12" 
       stroke="#3D536A" stroke-width="1.5" .../>
 <path d="M 1 20 L 1 1 L 20 1" stroke="#F5A623" .../>    // top-left corner
