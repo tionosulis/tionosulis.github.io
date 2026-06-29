@@ -87,7 +87,7 @@ export default {
 };
 ```
 
-Twenty lines. No plugins. No external dependencies.
+Ten lines. No plugins. No external dependencies.
 
 ## How Publishing Works
 
@@ -132,7 +132,7 @@ But the folder approach has tradeoffs:
 
 | Aspect | `_drafts/` folder | `draft: true` frontmatter |
 |---|---|---|
-| Setup | Zero config | 20 lines in data file |
+| Setup | Zero config | 10 lines in data file |
 | Preview | Impossible (no URL) | ✅ `/drafts/slug/` |
 | Publish | `git mv` between folders | Delete one line |
 | Content organization | Split across two folders | All posts in one place |
