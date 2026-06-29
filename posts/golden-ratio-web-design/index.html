@@ -759,6 +759,16 @@ a.visually-hidden:focus {
 }
 .notice-redesign p { margin: 0; }
 .notice-redesign p::before { content: "> "; color: var(--accent); }
+.notice-redesign p::after {
+  content: "▊";
+  color: var(--accent);
+  margin-left: 0.15em;
+  animation: cursor-blink 1s step-end infinite;
+}
+@keyframes cursor-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .notice-redesign p::after { animation: none; }
+}
 .home-terminal {
   font-family: "JetBrains Mono", monospace;
   max-width: 618px;
