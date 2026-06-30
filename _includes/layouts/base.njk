@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="{{ eleventy.generator }}">
-  <title>{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}</title>
-  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
+  <title>{% if title %}{{ title | safe }}{% else %}{{ metadata.title | safe }}{% endif %}</title>
+  <meta name="description" content="{% if description %}{{ description | safe }}{% else %}{{ metadata.description | safe }}{% endif %}">
   <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
-  <link rel="alternate" href="{{ metadata.url }}/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+  <link rel="alternate" href="{{ metadata.url }}/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title | safe }}">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -15,8 +15,8 @@
   <link rel="preload" href="/fonts/JetBrainsMono[wght].woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)">
-  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}">
-  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
+  <meta property="og:title" content="{% if title %}{{ title | safe }}{% else %}{{ metadata.title | safe }}{% endif %}">
+  <meta property="og:description" content="{% if description %}{{ description | safe }}{% else %}{{ metadata.description | safe }}{% endif %}">
   <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
   <meta property="og:type" content="{% if page.url != '/' %}article{% else %}website{% endif %}">
   {% set ogImage = image or metadata.image %}
@@ -24,7 +24,7 @@
   {% if image %}
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta name="twitter:image:alt" content="{{ description or metadata.description }}">
+  <meta name="twitter:image:alt" content="{{ (description or metadata.description) | safe }}">
   {% endif %}
   <meta name="twitter:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}">
   {% if metadata.verification.google %}<meta name="google-site-verification" content="{{ metadata.verification.google }}">{% endif %}
