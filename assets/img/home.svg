@@ -65,7 +65,7 @@
     <text x="600" y="355"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
           font-size="16" fill="#94a3b8"
-          text-anchor="middle">Web design, CSS &amp; terminal dev notes</text>
+          text-anchor="middle">Web Design &amp; Terminal Dev Notes</text>
 
     <!-- Status bar -->
     <rect x="0" y="606" width="1200" height="24" fill="#B45309" fill-opacity="0.05"/>
