@@ -18,6 +18,7 @@
   <meta property="og:title" content="{% if title %}{{ title | safe }}{% else %}{{ metadata.title | safe }}{% endif %}">
   <meta property="og:description" content="{% if description %}{{ description | safe }}{% else %}{{ metadata.description | safe }}{% endif %}">
   <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ metadata.title | safe }}">
   <meta property="og:type" content="{% if page.url != '/' %}article{% else %}website{% endif %}">
   {% set ogImage = image or metadata.image %}
   <meta property="og:image" content="{{ metadata.url }}{{ ogImage }}">
