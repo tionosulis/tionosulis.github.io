@@ -8,7 +8,8 @@
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
     "start": "eleventy --serve",
-    "debug": "DEBUG=Eleventy* eleventy"
+    "debug": "DEBUG=Eleventy* eleventy",
+    "og:convert": "node scripts/og-convert.mjs"
   },
   "repository": {
     "type": "git",

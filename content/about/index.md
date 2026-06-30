@@ -4,6 +4,7 @@ title: ./sulistiono
 description: >-
   Developer behind this terminal-themed blog. Vanilla CSS/JS, JetBrains Mono,
   built and shipped entirely from a smartphone via SSH.
+image: /assets/img/og/about.png
 ---
 
 <div class="home-terminal">

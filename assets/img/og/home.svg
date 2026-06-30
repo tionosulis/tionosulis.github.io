@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Amber dot grid — faded for OG thumbnail clarity -->
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="0.8" fill="#B45309" opacity="0.08"/>
+    </pattern>
+    <!-- Amber ambient glow — centered -->
+    <radialGradient id="amberGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#B45309" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#B45309" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Clip path for rounded corners -->
+    <clipPath id="rounded">
+      <rect width="1200" height="630" rx="10" ry="10"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#rounded)">
+    <!-- Dark background -->
+    <rect width="1200" height="630" fill="#161616"/>
+    <!-- Dot grid -->
+    <rect width="1200" height="630" fill="url(#dots)"/>
+    <!-- Ambient glow -->
+    <rect width="1200" height="630" fill="url(#amberGlow)"/>
+
+    <!-- Inner frame border -->
+    <rect x="32" y="32" width="1136" height="566"
+          fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
+
+    <!-- Corner accents -->
+    <path d="M 32 80 L 32 32 L 80 32"        fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 1120 32 L 1168 32 L 1168 80"  fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 32 550 L 32 598 L 80 598"     fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 1168 550 L 1168 598 L 1120 598" fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+
+    <!-- Title bar -->
+    <rect x="0" y="0" width="1200" height="40" fill="#B45309" fill-opacity="0.07"/>
+    <line x1="0" y1="40" x2="1200" y2="40" stroke="#B45309" stroke-width="1" stroke-opacity="0.25"/>
+
+    <!-- Traffic light dots -->
+    <circle cx="50" cy="20" r="5" fill="#ff5f57" opacity="0.75"/>
+    <circle cx="70" cy="20" r="5" fill="#febc2e" opacity="0.75"/>
+    <circle cx="90" cy="20" r="5" fill="#28c840" opacity="0.75"/>
+
+    <!-- Prompt label in title bar -->
+    <text x="120" y="26"
+          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
+          font-size="12" fill="#B45309" opacity="0.55"
+          letter-spacing="0.3" dominant-baseline="middle">~/</text>
+
+    <!-- Main content — centered in safe zone (y: 70-560) -->
+    <!-- Prompt line -->
+    <text x="600" y="200"
+          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
+          font-size="14" fill="#B45309" opacity="0.7"
+          text-anchor="middle">$ cat ~/</text>
+
+    <!-- Site name — primary focus -->
+    <text x="600" y="298"
+          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
+          font-size="56" font-weight="700" fill="#d4d4d8"
+          text-anchor="middle">SULISTIONO</text>
+
+    <!-- Subtitle — one line, secondary hierarchy -->
+    <text x="600" y="355"
+          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
+          font-size="16" fill="#94a3b8"
+          text-anchor="middle">Web design, CSS &amp; terminal dev notes</text>
+
+    <!-- Status bar -->
+    <rect x="0" y="606" width="1200" height="24" fill="#B45309" fill-opacity="0.05"/>
+    <line x1="0" y1="606" x2="1200" y2="606" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
+    <text x="20" y="620"
+          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
+          font-size="10" fill="#B45309" opacity="0.35">NORMAL</text>
+    <text x="1080" y="620"
+          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
+          font-size="10" fill="#94a3b8" opacity="0.5">~/</text>
+  </g>
+
+  <!-- Outer border — amber standard -->
+  <rect width="1200" height="630" rx="10" ry="10"
+        fill="none" stroke="#B45309" stroke-width="1.5" stroke-opacity="0.35"/>
+</svg>
