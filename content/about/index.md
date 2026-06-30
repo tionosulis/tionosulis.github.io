@@ -2,8 +2,8 @@
 layout: layouts/page.njk
 title: ./sulistiono
 description: >-
-  Behind the terminal: colophon, technical stack, now page, post categories,
-  and a fun fact about how this site is built and maintained.
+  Developer behind this terminal-themed blog. Vanilla CSS/JS, JetBrains Mono,
+  built and shipped entirely from a smartphone via SSH.
 ---
 
 <div class="home-terminal">
