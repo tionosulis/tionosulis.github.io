@@ -17,18 +17,29 @@
   <meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="{% if title %}{{ title | safe }}{% else %}{{ metadata.title | safe }}{% endif %}">
   <meta property="og:description" content="{% if description %}{{ description | safe }}{% else %}{{ metadata.description | safe }}{% endif %}">
+  <meta name="twitter:title" content="{% if title %}{{ title | safe }}{% else %}{{ metadata.title | safe }}{% endif %}">
+  <meta name="twitter:description" content="{% if description %}{{ description | safe }}{% else %}{{ metadata.description | safe }}{% endif %}">
   <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
   <meta property="og:site_name" content="{{ metadata.title | safe }}">
   <meta property="og:type" content="{% if page.url != '/' %}article{% else %}website{% endif %}">
+  {% if page.url != '/' and page.date %}
+  <meta property="article:published_time" content="{{ page.date | htmlDateString }}">
+  {% endif %}
+  {% for tag in tags | default([]) %}{% if tag != 'posts' %}
+  <meta property="article:tag" content="{{ tag }}">
+  {% endif %}{% endfor %}
   {% set ogImage = image or metadata.image %}
   <meta property="og:image" content="{{ metadata.url }}{{ ogImage }}">
   {% if image %}
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="{{ metadata.url }}{{ image }}">
   <meta name="twitter:image:alt" content="{{ (description or metadata.description) | safe }}">
   {% endif %}
   <meta name="twitter:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}">
   {% if metadata.verification.google %}<meta name="google-site-verification" content="{{ metadata.verification.google }}">{% endif %}
+  {% if metadata.twitterHandle %}<meta name="twitter:site" content="{{ metadata.twitterHandle }}">{% endif %}
+  {% if metadata.twitterHandle and page.url != '/' %}<meta name="twitter:creator" content="{{ metadata.twitterHandle }}">{% endif %}
   {% if ignore %}<meta name="robots" content="noindex">{% endif %}
   <script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script>
   <style>{% include "assets/css/index.css" %}</style>

@@ -7,6 +7,7 @@ export default {
   verification: {
     google: "nGUHc-P1KrLWgaQSmLNdIFM-c0dIvVcOFCXaJGU5-K0",
   },
+  twitterHandle: "@tionosulis_",
   author: {
     name: "Sulistiono",
     email: "contact.sulistiono@gmail.com",
