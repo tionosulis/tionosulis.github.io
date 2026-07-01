@@ -188,7 +188,7 @@ I opened the Elements panel. Every image was now wrapped in a `<picture>` elemen
 ```html
 <picture>
   <source type="image/avif" srcset="/img/bvdUKiDvjb-1200.avif 1200w">
-  <img loading="lazy" decoding="async"
+  <img loading="lazy" decoding="auto"
        src="/img/bvdUKiDvjb-1200.webp"
        alt="A terminal-themed comparison of purple-gray and blue-gray"
        width="1200" height="675">
@@ -261,7 +261,7 @@ eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp"],
     defaultAttributes: {
 -     loading: "lazy",
-+     decoding: "async",
++     decoding: "auto",
     },
 });
 ```
