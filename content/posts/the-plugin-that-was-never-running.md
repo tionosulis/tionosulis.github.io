@@ -8,9 +8,9 @@ pageHasCode: true
 image: /assets/img/og/the-plugin-that-was-never-running.png
 ---
 
-${toc}
-
 ![Split-panel terminal comparison: left panel "BEFORE" shows a bare <img> tag with no width, height, or srcset; right panel "AFTER" shows the same image wrapped in a <picture> element with AVIF and WebP sources, proper dimensions, and loading="eager"](/assets/img/the-plugin-that-was-never-running.svg)
+
+${toc}
 
 ## Ignorance Is Bliss
 
