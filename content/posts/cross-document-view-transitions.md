@@ -68,10 +68,6 @@ The default crossfade is smooth but uniform. For a more polished experience, you
 
 When the user navigates from page A to page B, elements with matching `view-transition-name` values are paired. The browser morphs each pair independently: position, size, and content dissolve from the old state to the new state. Elements without a name (or with names that exist on only one page) simply crossfade.
 
-![Blog article page showing transitioned content](/assets/img/posts/view-transitions/demo-after.png)
-
-*Elements with matching `view-transition-name` morph independently — the featured container expands to its article layout while the site title changes size and opacity.*
-
 The rule is simple: **every `view-transition-name` must be unique within a page**. You cannot reuse the same name for multiple elements on the same document.
 
 ## How the Browser Runs the Transition
@@ -127,7 +123,7 @@ During the transition, all elements are bitmap snapshots. They do not respond to
 
 Cross-document view transitions add approximately 70ms to Largest Contentful Paint on mobile devices. This is the time needed to capture the old snapshot before navigation can begin. On fast connections with instant server response, this represents a meaningful fraction of the total page load timeline.
 
-The mitigation is [Speculation Rules](https://developer.chrome.com/docs/web-platform/speculation-rules):
+The mitigation is [Speculation Rules](https://developer.chrome.com/docs/web-platform/prerender-pages):
 
 ```html
 <script type="speculationrules">
