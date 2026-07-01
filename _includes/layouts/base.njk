@@ -24,6 +24,7 @@
   <meta property="og:type" content="{% if page.url != '/' %}article{% else %}website{% endif %}">
   {% if page.url != '/' and page.date %}
   <meta property="article:published_time" content="{{ page.date | htmlDateString }}">
+  <meta property="article:modified_time" content="{% if updated %}{{ updated | htmlDateString }}{% else %}{{ page.date | htmlDateString }}{% endif %}">
   {% endif %}
   {% for tag in tags | default([]) %}{% if tag != 'posts' %}
   <meta property="article:tag" content="{{ tag }}">

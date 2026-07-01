@@ -13,7 +13,7 @@ layout: layouts/base.njk
   "headline": "{{ title | escape }}",
   "url": "{{ metadata.url }}{{ page.url }}",
   "datePublished": "{{ page.date | htmlDateString }}",
-  "dateModified": "{{ page.date | htmlDateString }}",
+  "dateModified": "{% if updated %}{{ updated | htmlDateString }}{% else %}{{ page.date | htmlDateString }}{% endif %}",
   "author": {
     "@type": "Person",
     "name": "{{ metadata.author.name }}",
