@@ -9,7 +9,7 @@ pageHasCode: true
 
 I spent seven days deciding between two grays.
 
-Not `#000000` vs `#ffffff`. Not navy vs charcoal. Two grays that differed by exactly 12 points of lightness — `#c2c6d0` and `#ced2dc`. Luminance difference of 0.07. A gap that, by any rational measure, no reader would ever consciously detect.
+Not `#000000` vs `#ffffff`. Not navy vs charcoal. Two grays that differed by exactly 24 points of lightness — `#b6bac4` and `#ced2dc`. Luminance difference of 0.15. A gap that, by any rational measure, no reader would ever consciously detect.
 
 And yet I stared at them like they held the secret to readable typography.
 
@@ -75,7 +75,7 @@ I would also start with the research — Apple, Material, WebAIM — before open
 
 ## The Closing
 
-The final dark mode body text on this blog is `#c2c6d0`. It is not the perfect gray. There is no perfect gray.
+The final dark mode body text on this blog is `#b6bac4`. It is not the perfect gray. There is no perfect gray.
 
 But it is a gray I chose deliberately, with context, with reference to industry patterns, and — most importantly — with the willingness to stop iterating.
 

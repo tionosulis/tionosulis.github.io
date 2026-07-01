@@ -87,7 +87,7 @@ Here is what the actual token structure looks like in production:
 }
 
 [data-theme="dark"] {
-  --text-body: #c2c6d0;
+  --text-body: #b6bac4;
   --text-secondary: #9ba3b1;   /* HSL 218° 12% 65% — same blue-gray */
   --text-tertiary: #6e7685;
 }
