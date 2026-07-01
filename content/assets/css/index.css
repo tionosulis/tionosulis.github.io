@@ -369,7 +369,7 @@ article img { border: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0
 article p:has(img) { margin-top: 1.5rem; }
 .article-page article > p:first-child:has(img) { margin-top: 2.5rem; }
 
-article p:has(img) + p { margin-bottom: 2rem; }
+article p:has(img) + p { margin-bottom: 2.5rem; }
 
 article p:has(img) + p em:only-child {
   display: block;
