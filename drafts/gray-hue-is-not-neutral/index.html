@@ -42,7 +42,7 @@
   --bg: #161616;
   --bg-secondary: #262626;
   --text: #d6d6da;
-  --text-body: #c2c6d0;
+  --text-body: #b6bac4;
   --text-secondary: #9ba3b1;
   --text-tertiary: #6e7685;
   --border: #505050;
@@ -57,7 +57,7 @@
     --bg: #161616;
     --bg-secondary: #262626;
     --text: #d6d6da;
-    --text-body: #c2c6d0;
+    --text-body: #b6bac4;
     --text-secondary: #9ba3b1;
     --text-tertiary: #6e7685;
     --border: #505050;
@@ -860,7 +860,7 @@ document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">[</span><span style="color:#6F42C1;--shiki-dark:#B392F0">data-theme</span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"dark"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">] {</span></span>
-<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  --text-body</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">#c2c6d0</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  --text-body</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">#b6bac4</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  --text-secondary</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">#9ba3b1</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;   </span><span style="color:#6A737D;--shiki-dark:#6A737D">/* HSL 218° 12% 65% — same blue-gray */</span></span>
 <span class="line"><span style="color:#E36209;--shiki-dark:#FFAB70">  --text-tertiary</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">#6e7685</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></div></pre><h2 id="detecting-hue-drift-in-your-own-system" tabindex="-1">Detecting Hue Drift in Your Own System<a class="header-anchor" href="#detecting-hue-drift-in-your-own-system">#</a></h2><p>Purple-gray can enter a CSS system through paths that are easy to miss:</p><p><strong>Framework palette mismatch.</strong> Using <code>gray-*</code> for light mode and <code>zinc-*</code> for dark mode introduces a hue shift at the 400–500 range, where zinc leans purple relative to gray.</p><p><strong>CSS variable cascade conflicts.</strong> A <code>filter</code> property, <code>mix-blend-mode</code>, or unintended inheritance can shift the computed color of a token without changing the declared value.</p><p><strong>Design tool rendering.</strong> Some design tools render gray swatches with a slight tint that doesn’t translate accurately to browser rendering.</p><p><strong>To check your current secondary text hue:</strong></p><pre class="shiki shiki-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8"><button class="copy-btn" aria-label="Copy code" data-copy="%3Csvg%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%2213%22%20height%3D%2213%22%20rx%3D%222%22%20ry%3D%222%22%2F%3E%3Cpath%20d%3D%22M5%2015H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h9a2%202%200%200%201%202%202v1%22%2F%3E%3C%2Fsvg%3E" data-check="%3Csvg%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2220%206%209%2017%204%2012%22%2F%3E%3C%2Fsvg%3E"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><div class="code-wrapper"><code class="language-css"><span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">/* Open DevTools → Elements → Computed → color</span></span>
