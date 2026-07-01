@@ -8,10 +8,9 @@ pageHasCode: true
 image: /assets/img/og/the-plugin-that-was-never-running.png
 ---
 
-<figure>
-  <img alt='Split-panel terminal comparison: left panel "BEFORE" shows a bare &lt;img&gt; tag with no width, height, or srcset; right panel "AFTER" shows the same image wrapped in a &lt;picture&gt; element with AVIF and WebP sources, proper dimensions, and loading="eager"' src="/assets/img/the-plugin-that-was-never-running.svg">
-  <figcaption>Perbandingan terminal sebelum dan sesudah: kiri tag <code>&lt;img&gt;</code> mentah tanpa atribut, kanan <code>&lt;picture&gt;</code> dengan AVIF/WebP, dimensi eksplisit, dan <code>loading="eager"</code></figcaption>
-</figure>
+![Split-panel terminal comparison: left panel "BEFORE" shows a bare <img> tag with no width, height, or srcset; right panel "AFTER" shows the same image wrapped in a <picture> element with AVIF and WebP sources, proper dimensions, and loading="eager"](/assets/img/the-plugin-that-was-never-running.svg)
+
+*Terminal-style before and after comparison of the image transform: a bare `<img>` tag on the left versus a responsive `<picture>` with AVIF, WebP, explicit dimensions and eager loading on the right*
 
 ${toc}
 
@@ -180,10 +179,9 @@ Clean build. No errors. And then I saw it:
 
 Forty-five images. Across every published and draft post. Optimized.
 
-<figure>
-  <img alt="A published blog post page after the fix: hero image rendered as &lt;picture&gt; with AVIF source, code blocks intact, layout unchanged" src="/assets/img/posts/the-plugin-that-was-never-running/screenshot-post.png">
-  <figcaption>Halaman <em>The Gray You Choose Is Not Neutral</em> setelah plugin berjalan: hero image terbungkus <code>&lt;picture&gt;</code> dengan source AVIF, kode blok dan layout tetap utuh</figcaption>
-</figure>
+![A published blog post page after the fix: hero image rendered as <picture> with AVIF source, code blocks intact, layout unchanged](/assets/img/posts/the-plugin-that-was-never-running/screenshot-post.png)
+
+*The Gray You Choose Is Not Neutral after the fix: the hero image is wrapped in a `<picture>` element with an AVIF source, while all code blocks and page layout remain intact*
 
 I opened the Elements panel. Every image was now wrapped in a `<picture>` element:
 
