@@ -21,6 +21,8 @@ ${toc}
 
 ![A blog homepage with featured article and article cards](/assets/img/posts/view-transitions/demo-before.png)
 
+*The starting state: a blog homepage before navigation. Every click on a static site begins from a fully rendered page, then disappears into a white flash.*
+
 Clicking a link on a static site triggers a full page navigation. The browser unloads the current document, renders a blank white screen, fetches the new HTML, parses it, and paints the result. From the user's perspective: content disappears, white flash, content reappears.
 
 This is not a network problem. Even with instant server response, the browser's navigation lifecycle introduces a mandatory visual discontinuity. SPAs solve this by keeping the same document alive and swapping content via JavaScript. But SPAs come with their own costs: JavaScript bundle, client-side routing, accessibility complexity.
@@ -39,7 +41,9 @@ Three lines in any stylesheet:
 
 That's it. The browser now captures a screenshot of the current page before navigating, navigates to the new page, captures a screenshot of the new page, and morphs between the two using a default crossfade animation.
 
-![Mid-transition morphing between two views](/assets/img/posts/view-transitions/demo-morph.png)
+![Blog article page after navigation](/assets/img/posts/view-transitions/demo-after.png)
+
+*The result after navigation: the same page reached with no white flash — just a smooth compositor-level crossfade that completes in ~300ms.*
 
 The entire transition runs on the compositor thread — separate from the main JavaScript thread. It does not block layout, painting, or user interaction. The crossfade duration is approximately 300ms, matching the browser's natural navigation latency window.
 
@@ -66,6 +70,8 @@ When the user navigates from page A to page B, elements with matching `view-tran
 
 ![Blog article page showing transitioned content](/assets/img/posts/view-transitions/demo-after.png)
 
+*Elements with matching `view-transition-name` morph independently — the featured container expands to its article layout while the site title changes size and opacity.*
+
 The rule is simple: **every `view-transition-name` must be unique within a page**. You cannot reuse the same name for multiple elements on the same document.
 
 ## How the Browser Runs the Transition
@@ -77,6 +83,10 @@ The transition lifecycle has five phases:
 3. **Snapshot (again)**: Browser captures the new state of all named elements on the new page.
 4. **Merge**: Browser creates a pseudo-element tree under `::view-transition` with both old and new snapshots positioned to match.
 5. **Animate**: The default crossfade runs on the compositor. Old snapshots fade out, new snapshots fade in and morph to their final positions.
+
+![Mid-transition between two views: old and new content blend frame-by-frame](/assets/img/posts/view-transitions/demo-morph.png)
+
+*Mid-transition — the browser blends old and new snapshots frame-by-frame on the compositor thread. At this moment, elements are bitmap captures, not live DOM nodes.*
 
 This pseudo-element tree is accessible via CSS:
 
