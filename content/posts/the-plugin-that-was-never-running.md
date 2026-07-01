@@ -235,8 +235,6 @@ Now hero images get immediate priority, and supporting images below the fold laz
 | Non-hero lazy loading | ❌ (not applied) | ✅ (applied correctly) |
 | Build output image processing | none | `45 images optimized` |
 
-![Terminal emulator showing the Eleventy build output: "[11ty/eleventy-img] 45 images optimized" and "Copied 77 Wrote 73 files" with a blinking cursor](/assets/img/posts/the-plugin-that-was-never-running/build-output.png)
-
 ## Key Takeaways
 
 1. **Verify your output.** Don't trust that a plugin works just because the build succeeds. Inspect the actual HTML, check the Network tab, look for the transformations you expect.
