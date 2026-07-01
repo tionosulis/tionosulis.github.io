@@ -5,6 +5,7 @@ date: 2026-06-10
 tags: [meta, performance, lighthouse, eleventy]
 pageHasCode: true
 image: /assets/img/og/chasing-100-lighthouse.png
+image_alt: "Lighthouse performance scores comparison showing 99s on the left and perfect 100s on the right across Performance, Accessibility, Best Practices, and SEO"
 ---
 
 ![Lighthouse scores before (99s) and after (100s) across four categories](/assets/img/chasing-100-lighthouse.svg)

@@ -6,6 +6,7 @@ tags: [meta, design, css, golden-ratio]
 pageHasCode: true
 redesign_notice: true
 image: /assets/img/og/golden-ratio-web-design.png
+image_alt: "Golden ratio φ=1.618 applied to blog UI components: formula annotations, case study screenshots of the S monogram, and verdict highlights"
 ---
 
 ![Golden ratio φ=1.618 applied to blog UI components: formula, case studies, and verdict](/assets/img/golden-ratio-web-design.svg)

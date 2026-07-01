@@ -9,6 +9,7 @@ tags:
   - monospace
   - jetbrains-mono
 image: /assets/img/og/all-in-monospace.png
+image_alt: "Split-panel editor layout: CSS @font-face code on the left with JetBrains Mono applied, and the article title on the right with a font specimen row showing character samples"
 pageHasCode: true
 ---
 

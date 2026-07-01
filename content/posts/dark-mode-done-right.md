@@ -4,6 +4,7 @@ description: "How I built a zero-flicker dark mode with an inline script, CSS cu
 date: 2026-06-13
 draft: false
 image: /assets/img/og/dark-mode-done-right.png
+image_alt: "Three pillars of dark mode: Zero Flicker (inline script icon), CSS Architecture (custom properties diagram), and The Devil in the Details (toggle tooltip)"
 tags:
   - css
   - javascript

@@ -5,6 +5,7 @@ date: 2026-06-18
 draft: false
 tags: [css, design, typography, howto]
 image: /assets/img/og/dot-leader-pattern.png
+image_alt: "Three CSS dot leader challenges visualized: text overflow cut off, baseline misalignment between dots and text, and the title being squeezed by the dots"
 ---
 
 ![Three CSS dot leader challenges: overflow, baseline misalignment, and title squeeze with the final fix](/assets/img/dot-leader-pattern.svg)

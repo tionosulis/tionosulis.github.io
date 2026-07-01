@@ -5,6 +5,7 @@ date: 2026-06-25
 draft: true
 tags: [javascript, css, ux, howto]
 image: /assets/img/og/scroll-aware-toc-intersection-observer.png
+image_alt: "A blog article layout with a table of contents sidebar where one item is highlighted in amber with a left border accent, indicating the active reading position"
 ---
 
 ![An illustration showing a blog article with a table of contents: one item highlighted in amber with a left border accent, representing the active reading position](/assets/img/scroll-aware-toc-intersection-observer.svg)

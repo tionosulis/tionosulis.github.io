@@ -5,6 +5,7 @@ date: 2026-06-28
 draft: false
 tags: [design, css, meta, howto]
 image: /assets/img/og/one-palette-two-modes.png
+image_alt: "Split comparison showing a hero card at #2A4053 surviving against both light (#ffffff) and dark (#161616) backgrounds, with color palette swatches alongside"
 ---
 
 ![Split comparison: a hero card at #2A4053 surviving against light bg #ffffff (left) and dark bg #161616 (right), with color palette swatches](/assets/img/one-palette-two-modes.svg)

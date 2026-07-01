@@ -6,6 +6,7 @@ draft: false
 tags: [eleventy, troubleshooting, meta, highlighting]
 pageHasCode: true
 image: /assets/img/og/shiki-njk-language-not-found.png
+image_alt: "Split terminal showing Shiki syntax highlighting error on a nunjucks language tag compared to the correct html tag solution"
 ---
 
 ![Split terminal comparing Shiki njk error with html tag fix](/assets/img/shiki-njk-language-not-found.svg)

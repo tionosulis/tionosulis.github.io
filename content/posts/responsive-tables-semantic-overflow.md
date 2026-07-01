@@ -5,6 +5,7 @@ date: 2026-06-25
 draft: true
 tags: [css, html, accessibility, howto]
 image: /assets/img/og/responsive-tables-semantic-overflow.png
+image_alt: "Split illustration: left side shows a table overflowing a phone screen with a red cutoff indicator, right side shows the same table contained within a scrollable wrapper"
 ---
 
 ![A split illustration: left side shows a table overflowing a phone screen with a red "cut off" indicator, right side shows the same table contained within a scrollable wrapper](/assets/img/responsive-tables-semantic-overflow.svg)

@@ -45,7 +45,7 @@ Each round of the spiral followed the same pattern: open validator, notice somet
 
 **Round four: image dimensions.** Without explicit `og:image:width` and `og:image:height`, platforms guess the aspect ratio before the image loads. The result can be a layout shift in the card preview or — worse — the favicon being stretched across 1200×630. Fix: conditional width/height tags, only when `image` is set in frontmatter. Same commit.
 
-**Round five: `twitter:image:alt` for accessibility.** Twitter doesn't display alt text visually, but screen readers use it. Without it, the validator warns. Fix: conditional `twitter:image:alt` using the description field. Commit `ef58136` (yes, this was actually the first fix — but the spiral wasn't linear).
+**Round five: `twitter:image:alt` for accessibility.** Twitter doesn't display alt text visually, but screen readers use it. Without it, the validator warns. Fix: conditional `twitter:image:alt` with a dedicated `image_alt` frontmatter field — not the article `description`, which serves a different purpose (search snippet). Commit `ef58136` (yes, this was actually the first fix — but the spiral wasn't linear).
 
 **Round six: OG image title text truncated in previews.** The homepage OG title was 78 characters. Twitter's card truncates at ~70. Discord at ~60. The subtitle — "Web Design, Terminal Dev Notes, Open Source Tinkering" — was getting cut mid-word. Fix: shortened the homepage `og:title` to 44 characters. Commit `cfd213c`.
 
@@ -87,7 +87,7 @@ After the seventh commit, I wrote down exactly what I should have checked before
 □ twitter:title matches og:title (no fallback dependency)
 □ twitter:description matches og:description
 □ twitter:image matches og:image
-□ twitter:image:alt present (use description or specific alt)
+□ twitter:image:alt present (use `image_alt` frontmatter, not `description`)
 □ twitter:site set
 □ twitter:creator set (for author attribution)
 □ article:published_time present on posts

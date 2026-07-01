@@ -5,6 +5,7 @@ date: 2026-06-27
 draft: false
 tags: [design, css, meta, eleventy]
 image: /assets/img/og/building-conditional-notice.png
+image_alt: "Three iterations of a redesign notice component: from hash-comment lines to an accent-bordered callout with amber left border"
 ---
 
 ![Three iterations of a redesign notice component](/assets/img/building-conditional-notice.svg)

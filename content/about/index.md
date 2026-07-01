@@ -5,6 +5,7 @@ description: >-
   Developer behind this terminal-themed blog. Vanilla CSS/JS, JetBrains Mono,
   built and shipped entirely from a smartphone via SSH.
 image: /assets/img/og/about.png
+image_alt: "A terminal interface showing dollar sign commands: ls links/ listing posts directory, GitHub profile, and Twitter profile as navigation entries"
 ---
 
 <div class="home-terminal">

@@ -5,6 +5,7 @@ date: 2026-06-17
 draft: false
 tags: [meta, pwa, debugging, service-worker]
 image: /assets/img/og/service-worker-ate-my-svg.png
+image_alt: "cacheFirst vs staleWhileRevalidate caching strategies for SVG assets in a service worker flow diagram"
 ---
 
 ![cacheFirst vs staleWhileRevalidate caching strategies for SVG assets](/assets/img/service-worker-ate-my-svg.svg)

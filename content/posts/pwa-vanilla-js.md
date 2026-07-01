@@ -5,6 +5,7 @@ date: 2026-06-16
 draft: false
 tags: [pwa, javascript, performance, service-worker]
 image: /assets/img/og/pwa-vanilla-js.png
+image_alt: "Size comparison between Workbox (~50KB) and a vanilla JavaScript service worker (~1KB)"
 ---
 
 ![Workbox vs Vanilla JS Service Worker size comparison: ~50KB vs ~1KB](/assets/img/workbox-vs-vanilla-size.svg)

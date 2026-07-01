@@ -4,6 +4,7 @@ description: When your static site generator doesn't support drafts, build your 
 date: 2026-06-15
 draft: false
 image: /assets/img/og/diy-draft-system-eleventy.png
+image_alt: "Comparison between two Eleventy draft approaches: a _drafts folder structure vs frontmatter draft flag with computed data"
 tags: [eleventy, meta, tutorial]
 pageHasCode: true
 ---

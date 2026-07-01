@@ -9,6 +9,7 @@ tags:
   - meta
   - howto
 image: /assets/img/og/heading-anchor-fix.png
+image_alt: "Before-and-after split comparison: a heading with the anchor symbol creating phantom spacing on mobile (left), and the same heading with clean spacing after the CSS fix (right)"
 ---
 
 ![Split-screen comparison showing a heading with the anchor # creating phantom spacing on mobile (left, labeled 'Before'), and the same heading with clean spacing after the font-size: 0 fix (right, labeled 'After').](/assets/img/heading-anchor-fix.svg)

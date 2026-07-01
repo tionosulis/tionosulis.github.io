@@ -5,6 +5,7 @@ date: 2026-06-27
 draft: true
 tags: [design, meta, tutorial, eleventy]
 image: /assets/img/og/pinned-content-framework.png
+image_alt: "A terminal window displaying a blog post list with a starred pinned item at the top, visually separated from the chronological entries below"
 pageHasCode: true
 ---
 

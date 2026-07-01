@@ -6,6 +6,7 @@ tags: [debugging, eleventy, meta, web-development]
 draft: true
 pageHasCode: true
 image: /assets/img/og/the-plugin-that-was-never-running.png
+image_alt: "Split-panel terminal comparison: left panel BEFORE shows a bare img tag with no width or height; right panel AFTER shows the same image wrapped in a picture element with AVIF and WebP sources and proper dimensions"
 ---
 
 ![Split-panel terminal comparison: left panel "BEFORE" shows a bare <img> tag with no width, height, or srcset; right panel "AFTER" shows the same image wrapped in a <picture> element with AVIF and WebP sources, proper dimensions, and loading="eager"](/assets/img/the-plugin-that-was-never-running.svg)

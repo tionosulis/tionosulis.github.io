@@ -5,6 +5,7 @@ date: 2026-07-01
 draft: false
 tags: [design, css, typography, accessibility]
 image: /assets/img/og/gray-hue-is-not-neutral.png
+image_alt: "A side-by-side comparison of purple-gray and blue-gray in a terminal: two panels with simulated reading samples, HSL breakdown, and hue coherence annotations"
 pageHasCode: true
 ---
 
