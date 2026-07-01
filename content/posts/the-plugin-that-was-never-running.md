@@ -228,6 +228,42 @@ eleventyConfig.addTransform("loading-attr", function (content) {
 
 Now hero images get immediate priority, and supporting images below the fold lazy-load as expected. Lighthouse is happy, users are happy.
 
+### The `decoding` Conflict
+
+There was one more default attribute I hadn't thought about: `decoding`.
+
+The `decoding` attribute controls **when** the browser decodes an image relative to the first paint:
+
+| Value | Behavior |
+|-------|----------|
+| `sync` | Hold first paint until image decode completes. No flash — the image is there on frame one. |
+| `async` | Paint first, decode later. Frame one may show an empty hero slot before the image pops in. |
+| `auto` | Browser chooses per image. Same-origin above-fold images typically get `sync`; below-fold images get `async`. |
+
+My config had `decoding: "async"` in `defaultAttributes` — the same place `loading: "lazy"` lived. This created a subtle internal conflict with the loading fix I had just applied.
+
+Here's what was happening:
+
+1. `loading="eager"` + `fetchpriority="high"` → download the hero image immediately
+2. `decoding="async"` → but don't wait for the decode; paint the page now
+3. First paint → hero area is an empty box (the image bytes finished downloading, but the browser refused to decode them before painting)
+4. Decode completes → hero image pops in
+
+The hero image downloaded at full speed, then sat there, fully downloaded, while the browser painted a blank space. The `decoding="async"` attribute told the browser it was acceptable to show an empty frame — even though the image data was already available.
+
+This is the same conflict the WordPress core team documented: `decoding="async"` on an LCP image that also has `fetchpriority="high"` is internally contradictory. The first two attributes rush the download, the third tells the browser it's fine to paint without the result.
+
+The fix was deleting eight characters:
+
+```diff
+  defaultAttributes: {
+-   decoding: "async",
++   decoding: "auto",
+  },
+```
+
+With `decoding="auto"`, the browser uses its own heuristic. For same-origin hero images above the fold, it chooses `sync` implicitly — the first paint waits for the decode, and there is no flash. For below-fold images with `loading="lazy"`, it chooses `async` implicitly — the decode happens off-screen and never affects the visual timeline.
+
 ## The Result
 
 | Metric | Before | After |
