@@ -42,7 +42,7 @@
   {% if metadata.twitterHandle and page.url != '/' %}<meta name="twitter:creator" content="{{ metadata.twitterHandle }}">{% endif %}
   {% if ignore %}<meta name="robots" content="noindex">{% endif %}
   <script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)</script>
-  <style>{% include "assets/css/index.css" %}</style>
+  <style>{% include "content/assets/css/index.css" %}</style>
 </head>
 <body>
   <a href="#skip" class="visually-hidden">Skip to main content</a>

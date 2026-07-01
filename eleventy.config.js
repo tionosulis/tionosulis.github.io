@@ -37,7 +37,6 @@ export default async function (eleventyConfig) {
   });
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    extensions: "jpg,jpeg,png,gif,webp,avif",
     formats: ["avif", "webp"],
     defaultAttributes: {
       loading: "lazy",
@@ -83,9 +82,9 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.setLibrary("md", md);
 
-  eleventyConfig.addPassthroughCopy({ "assets/fonts": "/fonts" });
-  eleventyConfig.addPassthroughCopy({ "assets/img/favicon": "/" });
-  eleventyConfig.addPassthroughCopy({ "assets/img": "/assets/img" });
+  eleventyConfig.addPassthroughCopy({ "content/assets/fonts": "/fonts" });
+  eleventyConfig.addPassthroughCopy({ "content/assets/img/favicon": "/" });
+  eleventyConfig.addPassthroughCopy({ "content/assets/img": "/assets/img" });
   eleventyConfig.addPassthroughCopy({ "demos": "/demos" });
 
   eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
@@ -174,7 +173,7 @@ export default async function (eleventyConfig) {
     if (!this.page.outputPath?.endsWith(".html")) return content;
     return content.replace(/<img[^>]+src="([^"]+\.svg)"[^>]*>/gi, (match, src) => {
       if (/width="[^"]+"/i.test(match) || /height="[^"]+"/i.test(match)) return match;
-      const filePath = src.replace(/^\//, "");
+      const filePath = "content/" + src.replace(/^\//, "");
       let dims = svgSizeCache.get(filePath);
       if (!dims) {
         try {
