@@ -62,7 +62,7 @@ One of the nicest details: the favicon automatically switches between light and 
     <style>
       @media (prefers-color-scheme: dark) {
         rect { fill: #0a0a0b; }
-        text { fill: #e4e4e7; }
+        text { fill: #d6d6da; }
       }
     </style>
   </defs>

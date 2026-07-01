@@ -150,14 +150,14 @@ The CSS then builds on CSS custom properties scoped to `[data-theme="dark"]` and
 
 [data-theme="dark"] {
   --bg: #0a0a0b;
-  --text: #e4e4e7;
+  --text: #d6d6da;
   --accent: #60a5fa;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     --bg: #0a0a0b;
-    --text: #e4e4e7;
+    --text: #d6d6da;
     --accent: #60a5fa;
   }
 }
