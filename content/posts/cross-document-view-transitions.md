@@ -149,6 +149,13 @@ With prerender enabled, the browser loads pages before the user clicks. When nav
 
 Cross-document view transitions are on the Interop 2026 focus area, meaning browser vendors are actively working toward compatibility. The feature degrades gracefully: browsers that do not support it perform a standard navigation with no visible effect. No polyfill is needed because the transition is a visual enhancement, not a functional requirement.
 
+## Try It Yourself
+
+Open these pages in Chrome 126+, Edge 126+, or Safari 18.2+:
+
+- [Cross-document navigation: Page A → Page B](/demos/view-transitions/page-a.html) — tap "Navigate →" to see a morphing transition between two layouts, powered by `@view-transition { navigation: auto; }`.
+- [SPA-style mid-transition (slowed to 2.5s)](/demos/view-transitions/demo-morph.html) — tap "Toggle View" to watch the crossfade and morph at a comfortable pace. Open Chrome DevTools → Elements → `::view-transition` to inspect the pseudo-element tree while the animation is running.
+
 ## Summary
 
 ```
