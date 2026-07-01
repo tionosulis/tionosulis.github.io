@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Transitions — SPA Demo</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 2.5s;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .site-title {
+    view-transition-name: site-title;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 2rem;
+  }
+
+  .featured {
+    view-transition-name: featured;
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  }
+  .featured h2 { font-size: 1.5rem; margin-bottom: .5rem; }
+  .featured p { color: #555; }
+  .featured .meta { font-size: .85rem; color: #888; margin-top: 1rem; display: none; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    view-transition-name: var(--name);
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  }
+  .card h3 { font-size: 1.1rem; margin-bottom: .3rem; }
+  .card p  { font-size: .9rem; color: #555; }
+  .card-1 { --name: card-1; }
+  .card-2 { --name: card-2; }
+  .card-3 { --name: card-3; }
+
+  .nav-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .6rem 1.2rem;
+    background: #1d1d1f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+  }
+  .nav-link:hover { opacity: .85; }
+
+  /* State B (article view) */
+  body.state-b .site-title { font-size: 1.4rem; opacity: .7; }
+  body.state-b .featured { padding: 2.5rem 3rem; }
+  body.state-b .featured h2 { font-size: 2rem; }
+  body.state-b .featured .meta { display: block; }
+  body.state-b .card h3 { font-size: 1rem; }
+  body.state-b .card p { font-size: .85rem; }
+</style>
+</head>
+<body>
+
+<div class="site-title">My Blog</div>
+
+<div class="featured">
+  <h2>Understanding View Transitions</h2>
+  <p>Cross-document view transitions let you create seamless navigation between pages using pure CSS. No JavaScript required.</p>
+  <div class="meta">Published July 1, 2026 · 5 min read</div>
+</div>
+
+<div class="card-grid">
+  <div class="card card-1">
+    <h3>CSS Layers</h3>
+    <p>A deep dive into cascade layers and @layer at-rule.</p>
+  </div>
+  <div class="card card-2">
+    <h3>Container Queries</h3>
+    <p>Building truly responsive components with container queries.</p>
+  </div>
+  <div class="card card-3">
+    <h3>Has Selector</h3>
+    <p>Practical uses of the :has() selector in daily work.</p>
+  </div>
+</div>
+
+<button class="nav-link" onclick="toggleView()">Toggle View</button>
+
+<script>
+  let isB = false;
+  function toggleView() {
+    if (!document.startViewTransition) {
+      document.body.classList.toggle('state-b');
+      return;
+    }
+    const transition = document.startViewTransition(() => {
+      isB = !isB;
+      document.body.classList.toggle('state-b');
+      document.querySelector('.nav-link').textContent = isB
+        ? '\u2190 Back'
+        : 'Toggle View';
+    });
+  }
+</script>
+
+</body>
+</html>

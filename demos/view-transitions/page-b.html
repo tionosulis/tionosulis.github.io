@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Blog — Article</title>
+<style>
+  @view-transition { navigation: auto; }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .site-title {
+    view-transition-name: site-title;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 1.5rem;
+    opacity: .7;
+  }
+
+  .featured {
+    view-transition-name: featured;
+    background: #fff;
+    border-radius: 12px;
+    padding: 2.5rem 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  }
+  .featured h2 { font-size: 2rem; margin-bottom: 1rem; }
+  .featured p { color: #555; margin-bottom: 1rem; }
+  .featured .meta { font-size: .85rem; color: #888; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    view-transition-name: var(--name);
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  }
+  .card h3 { font-size: 1rem; margin-bottom: .3rem; }
+  .card p  { font-size: .85rem; color: #555; }
+
+  .card-1 { --name: card-1; }
+  .card-2 { --name: card-2; }
+  .card-3 { --name: card-3; }
+
+  .nav-link {
+    display: inline-block;
+    margin-top: .5rem;
+    padding: .6rem 1.2rem;
+    background: #1d1d1f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+  .nav-link:hover { opacity: .85; }
+</style>
+</head>
+<body>
+
+<div class="site-title">My Blog</div>
+
+<div class="featured">
+  <h2>Understanding View Transitions</h2>
+  <p>Cross-document view transitions are part of the CSS View Transitions Module Level 2 specification. They enable smooth navigation between pages on multi-page applications without any JavaScript framework — just a single CSS rule.</p>
+  <p>The browser handles the entire transition lifecycle: it captures a snapshot of the current page, navigates to the new page, captures a snapshot of the new page, and then morphs between the two snapshots on the compositor thread.</p>
+  <div class="meta">Published July 1, 2026 · 5 min read</div>
+</div>
+
+<div class="card-grid">
+  <div class="card card-1">
+    <h3>CSS Layers</h3>
+    <p>Cascade layers explained with real examples.</p>
+  </div>
+  <div class="card card-2">
+    <h3>Container Queries</h3>
+    <p>Responsive components without media queries.</p>
+  </div>
+  <div class="card card-3">
+    <h3>Has Selector</h3>
+    <p>Parent selection and more with :has().</p>
+  </div>
+</div>
+
+<a href="page-a.html" class="nav-link">← Back</a>
+
+</body>
+</html>
