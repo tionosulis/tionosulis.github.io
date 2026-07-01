@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <pattern id="dot-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="1.5" fill="#B45309" opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="675" fill="#161616"/>
+  <rect width="1200" height="675" fill="url(#dot-grid)"/>
+
+  <!-- Terminal window shadow -->
+  <rect x="18" y="18" width="1164" height="639" rx="10" fill="#000" opacity="0.25"/>
+
+  <!-- Terminal window frame -->
+  <rect x="16" y="16" width="1168" height="643" rx="10" fill="#1B1B1D" stroke="#3D536A" stroke-width="1.5"/>
+
+  <!-- Title bar -->
+  <rect x="16" y="16" width="1168" height="38" rx="10" fill="#222225"/>
+  <rect x="16" y="36" width="1168" height="18" fill="#222225"/>
+
+  <!-- Traffic lights -->
+  <circle cx="42" cy="35" r="4.5" fill="#B45309"/>
+  <circle cx="62" cy="35" r="4.5" fill="#B45309" opacity="0.55"/>
+  <circle cx="82" cy="35" r="4.5" fill="#B45309" opacity="0.25"/>
+
+  <text x="600" y="40" font-family="ui-monospace,SFMono-Regular,monospace" font-size="13" fill="#878f9d" text-anchor="middle" dominant-baseline="middle">~/blog — bash — debugging</text>
+
+  <!-- Split divider -->
+  <line x1="600" y1="54" x2="600" y2="640" stroke="#3D536A" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- LEFT PANEL: BEFORE -->
+  <clipPath id="left-clip">
+    <rect x="16" y="54" width="584" height="605"/>
+  </clipPath>
+
+  <g clip-path="url(#left-clip)" font-family="ui-monospace,SFMono-Regular,monospace">
+    <!-- "BEFORE" label -->
+    <rect x="28" y="66" width="78" height="24" rx="4" fill="#B45309" opacity="0.2"/>
+    <text x="67" y="82" font-size="14" fill="#B45309" text-anchor="middle" font-weight="bold">BEFORE</text>
+
+    <!-- Command prompt -->
+    <text x="36" y="130" font-size="16" fill="#878f9d">~/blog</text>
+    <text x="105" y="130" font-size="16" fill="#878f9d"> $</text>
+    <text x="128" y="130" font-size="16" fill="#B45309"> npm run build</text>
+
+    <!-- Output lines -->
+    <text x="36" y="170" font-size="15" fill="#c8d6e5">[11ty] Writing ./_site/index.html</text>
+    <text x="36" y="190" font-size="15" fill="#c8d6e5">[11ty] Writing ./_site/posts/hello-world/index.html</text>
+    <text x="36" y="210" font-size="15" fill="#c8d6e5">[11ty] Writing ./_site/about/index.html</text>
+    <text x="36" y="240" font-size="15" fill="#878f9d">...</text>
+    <text x="36" y="270" font-size="15" fill="#c8d6e5">[11ty] Copied 77 Wrote 73 files</text>
+
+    <!-- No image processing -->
+    <text x="36" y="310" font-size="15" fill="#5e6173">(no image processing logged)</text>
+
+    <!-- Inspect element output -->
+    <text x="36" y="360" font-size="15" fill="#878f9d">~/blog</text>
+    <text x="105" y="360" font-size="15" fill="#878f9d"> $</text>
+    <text x="128" y="360" font-size="15" fill="#B45309"> inspect &lt;img&gt;</text>
+
+    <text x="36" y="400" font-size="15" fill="#F87171">&lt;img src="/assets/img/hero.svg"</text>
+    <text x="36" y="420" font-size="15" fill="#F87171">     alt="Hero image"&gt;</text>
+
+    <!-- Missing attributes -->
+    <text x="36" y="460" font-size="14" fill="#F87171" opacity="0.8">✗ No width/height attributes</text>
+    <text x="36" y="480" font-size="14" fill="#F87171" opacity="0.8">✗ No loading="lazy"</text>
+    <text x="36" y="500" font-size="14" fill="#F87171" opacity="0.8">✗ No srcset</text>
+    <text x="36" y="520" font-size="14" fill="#F87171" opacity="0.8">✗ No AVIF/WebP formats</text>
+  </g>
+
+  <!-- RIGHT PANEL (AFTER) -->
+  <clipPath id="right-clip">
+    <rect x="600" y="54" width="584" height="605"/>
+  </clipPath>
+
+  <g clip-path="url(#right-clip)" font-family="ui-monospace,SFMono-Regular,monospace">
+    <!-- "AFTER" label -->
+    <rect x="620" y="66" width="64" height="24" rx="4" fill="#10D9A8" opacity="0.2"/>
+    <text x="652" y="82" font-size="14" fill="#10D9A8" text-anchor="middle" font-weight="bold">AFTER</text>
+
+    <!-- Command prompt -->
+    <text x="620" y="130" font-size="16" fill="#878f9d">~/blog</text>
+    <text x="689" y="130" font-size="16" fill="#878f9d"> $</text>
+    <text x="712" y="130" font-size="16" fill="#10D9A8"> npm run build</text>
+
+    <!-- Transform plugin output -->
+    <text x="620" y="170" font-size="15" fill="#c8d6e5">[11ty/eleventy-img] Processing ./content/</text>
+    <text x="632" y="190" font-size="15" fill="#c8d6e5">assets/img/hero.svg (transform)</text>
+    <text x="620" y="215" font-size="15" fill="#c8d6e5">[11ty/eleventy-img] Processing ./content/</text>
+    <text x="632" y="235" font-size="15" fill="#c8d6e5">assets/img/demo.png (transform)</text>
+    <text x="620" y="260" font-size="15" fill="#c8d6e5">[11ty/eleventy-img] 45 images optimized</text>
+
+    <!-- Success -->
+    <rect x="1104" y="248" width="44" height="22" rx="4" fill="#10D9A8" opacity="0.15"/>
+    <text x="1126" y="262" font-size="15" fill="#10D9A8" font-weight="bold" text-anchor="middle">OK</text>
+
+    <text x="620" y="300" font-size="15" fill="#878f9d">~/blog</text>
+    <text x="689" y="300" font-size="15" fill="#878f9d"> $</text>
+    <text x="712" y="300" font-size="15" fill="#10D9A8"> inspect &lt;picture&gt;</text>
+
+    <text x="620" y="340" font-size="15" fill="#10D9A8" opacity="0.9">&lt;picture&gt;</text>
+    <text x="632" y="360" font-size="15" fill="#c8d6e5">  &lt;source</text>
+    <text x="644" y="380" font-size="15" fill="#c8d6e5">    type="image/avif"</text>
+    <text x="644" y="400" font-size="15" fill="#c8d6e5">    srcset="..."&gt;</text>
+    <text x="632" y="420" font-size="15" fill="#c8d6e5">  &lt;img src="/img/hero.webp"</text>
+    <text x="644" y="440" font-size="14" fill="#10D9A8">    width="1200"</text>
+    <text x="644" y="460" font-size="14" fill="#10D9A8">    height="675"</text>
+    <text x="644" y="480" font-size="14" fill="#10D9A8">    loading="lazy"</text>
+    <text x="644" y="500" font-size="14" fill="#10D9A8">    fetchpriority="high"</text>
+    <text x="632" y="520" font-size="14" fill="#c8d6e5">  &gt;</text>
+    <text x="620" y="540" font-size="15" fill="#10D9A8" opacity="0.9">&lt;/picture&gt;</text>
+  </g>
+
+  <text x="1134" y="630" font-family="ui-monospace,SFMono-Regular,monospace" font-size="32" fill="#B45309" text-anchor="end" font-weight="bold">&gt;_S</text>
+
+  <!-- Corner accents -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M 2 22 L 2 2 L 22 2" stroke="#F5A623" stroke-width="2.5"/>
+    <path d="M 1178 2 L 1198 2 L 1198 22" stroke="#F5A623" stroke-width="2.5"/>
+    <path d="M 2 653 L 2 673 L 22 673" stroke="#10D9A8" stroke-width="2.5"/>
+    <path d="M 1178 673 L 1198 673 L 1198 653" stroke="#10D9A8" stroke-width="2.5"/>
+  </g>
+</svg>
