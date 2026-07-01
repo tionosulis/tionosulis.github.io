@@ -39,7 +39,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp"],
     defaultAttributes: {
-      loading: "lazy",
       decoding: "async",
     },
   });
@@ -204,6 +203,18 @@ export default async function (eleventyConfig) {
   eleventyConfig.addTransform("wrap-tables", function (content) {
     if (!this.page.outputPath?.endsWith(".html")) return content;
     return content.replace(/<table/g, '<div class="table-wrap"><table').replace(/<\/table>/g, '</table></div>');
+  });
+
+  eleventyConfig.addTransform("loading-attr", function (content) {
+    if (!this.page.outputPath?.endsWith(".html")) return content;
+    let count = 0;
+    return content.replace(/<img\s/g, () => {
+      count++;
+      if (count === 1) {
+        return '<img loading="eager" fetchpriority="high" ';
+      }
+      return '<img loading="lazy" ';
+    });
   });
 
   eleventyConfig.addTransform("htmlmin", async function (content) {
