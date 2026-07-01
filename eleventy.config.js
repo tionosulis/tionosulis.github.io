@@ -39,7 +39,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp"],
     defaultAttributes: {
-      decoding: "async",
+      decoding: "auto",
     },
   });
 
