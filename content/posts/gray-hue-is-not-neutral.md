@@ -1,8 +1,8 @@
 ---
 title: "The Gray You Choose Is Not Neutral"
 description: "How a single HSL value — the hue of your gray — can make or break dark mode text hierarchy. A framework for choosing between blue-gray and purple-gray secondary text, with real CSS values from a production blog."
-date: 2026-06-27
-draft: true
+date: 2026-07-01
+draft: false
 tags: [design, css, typography, accessibility]
 image: /assets/img/og/gray-hue-is-not-neutral.png
 pageHasCode: true
