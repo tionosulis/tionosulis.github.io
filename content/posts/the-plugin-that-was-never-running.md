@@ -53,8 +53,6 @@ What tipped me off? I was inspecting the Network tab in DevTools and noticed ima
 
 I opened the Elements panel. The `<img>` tags were untouched. No `width`. No `height`. No `srcset`. The plugin's promise of automatic optimization — generating multiple formats, adding responsive resolutions, injecting lazy loading — had left zero trace in the output.
 
-![Homepage after the fix showing all hero images wrapped in <picture> elements with AVIF and WebP sources, lazy loading on non-hero images, and proper width/height attributes throughout](/assets/img/posts/the-plugin-that-was-never-running/screenshot-home.png)
-
 Something was wrong.
 
 ## Reading the Source Code
@@ -237,7 +235,7 @@ Now hero images get immediate priority, and supporting images below the fold laz
 | Non-hero lazy loading | ❌ (not applied) | ✅ (applied correctly) |
 | Build output image processing | none | `45 images optimized` |
 
-![Full-page screenshot of the blog after optimization: every image across all posts is now responsive with AVIF/WebP sources, width/height attributes, and correct loading strategies](/assets/img/posts/the-plugin-that-was-never-running/screenshot-full.png)
+![Terminal emulator showing the Eleventy build output: "[11ty/eleventy-img] 45 images optimized" and "Copied 77 Wrote 73 files" with a blinking cursor](/assets/img/posts/the-plugin-that-was-never-running/build-output.png)
 
 ## Key Takeaways
 
