@@ -10,7 +10,7 @@ pageHasCode: true
 
 ![A side-by-side comparison of purple-gray and blue-gray in a terminal: two panels with simulated reading samples, HSL breakdown, and hue coherence annotations](/assets/img/gray-hue-is-not-neutral.svg)
 
-*Two gray families, one amber accent. The left panel shows purple-gray secondary text competing with the warm accent. The right panel shows blue-gray in temperature harmony.*
+*Purple-gray vs blue-gray: same lightness, different hue — know which you're using*
 
 It started with a feeling. Not a bug report, not a failed contrast check — just a quiet, persistent sense that something in my dark mode was slightly *off*. The contrast ratios passed WCAG AA. The accent color was correct. And yet secondary text felt like it belonged to a different page.
 
