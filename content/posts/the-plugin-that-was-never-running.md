@@ -10,6 +10,8 @@ image: /assets/img/og/the-plugin-that-was-never-running.png
 
 ${toc}
 
+![Split-panel terminal comparison: left panel "BEFORE" shows a bare <img> tag with no width, height, or srcset; right panel "AFTER" shows the same image wrapped in a <picture> element with AVIF and WebP sources, proper dimensions, and loading="eager"](/assets/img/the-plugin-that-was-never-running.svg)
+
 ## Ignorance Is Bliss
 
 A few hours ago, I was proud of my blog. Every post had a hero image. Every build completed with zero errors. The Eleventy Image Transform Plugin was configured and ready to optimize every `<img>` tag on the site. I had checked all the boxes.
@@ -50,6 +52,8 @@ That was months ago.
 What tipped me off? I was inspecting the Network tab in DevTools and noticed images loading at their original sizes — no WebP, no AVIF, no resizing. Hero images, SVGs in diagrams, screenshots in posts — every single one was being served as-is.
 
 I opened the Elements panel. The `<img>` tags were untouched. No `width`. No `height`. No `srcset`. The plugin's promise of automatic optimization — generating multiple formats, adding responsive resolutions, injecting lazy loading — had left zero trace in the output.
+
+![Homepage after the fix showing all hero images wrapped in <picture> elements with AVIF and WebP sources, lazy loading on non-hero images, and proper width/height attributes throughout](/assets/img/posts/the-plugin-that-was-never-running/screenshot-home.png)
 
 Something was wrong.
 
@@ -175,6 +179,8 @@ Clean build. No errors. And then I saw it:
 
 Forty-five images. Across every published and draft post. Optimized.
 
+![A published blog post page after the fix: hero image rendered as <picture> with AVIF source, code blocks intact, layout unchanged](/assets/img/posts/the-plugin-that-was-never-running/screenshot-post.png)
+
 I opened the Elements panel. Every image was now wrapped in a `<picture>` element:
 
 ```html
@@ -230,6 +236,8 @@ Now hero images get immediate priority, and supporting images below the fold laz
 | Hero loading strategy | `lazy` (wrong!) | `eager` + `fetchpriority=high` |
 | Non-hero lazy loading | ❌ (not applied) | ✅ (applied correctly) |
 | Build output image processing | none | `45 images optimized` |
+
+![Full-page screenshot of the blog after optimization: every image across all posts is now responsive with AVIF/WebP sources, width/height attributes, and correct loading strategies](/assets/img/posts/the-plugin-that-was-never-running/screenshot-full.png)
 
 ## Key Takeaways
 
