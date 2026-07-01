@@ -8,7 +8,10 @@ pageHasCode: true
 image: /assets/img/og/the-plugin-that-was-never-running.png
 ---
 
-![Split-panel terminal comparison: left panel "BEFORE" shows a bare <img> tag with no width, height, or srcset; right panel "AFTER" shows the same image wrapped in a <picture> element with AVIF and WebP sources, proper dimensions, and loading="eager"](/assets/img/the-plugin-that-was-never-running.svg)
+<figure>
+  <img alt='Split-panel terminal comparison: left panel "BEFORE" shows a bare &lt;img&gt; tag with no width, height, or srcset; right panel "AFTER" shows the same image wrapped in a &lt;picture&gt; element with AVIF and WebP sources, proper dimensions, and loading="eager"' src="/assets/img/the-plugin-that-was-never-running.svg">
+  <figcaption>Perbandingan terminal sebelum dan sesudah: kiri tag <code>&lt;img&gt;</code> mentah tanpa atribut, kanan <code>&lt;picture&gt;</code> dengan AVIF/WebP, dimensi eksplisit, dan <code>loading="eager"</code></figcaption>
+</figure>
 
 ${toc}
 
@@ -177,7 +180,10 @@ Clean build. No errors. And then I saw it:
 
 Forty-five images. Across every published and draft post. Optimized.
 
-![A published blog post page after the fix: hero image rendered as <picture> with AVIF source, code blocks intact, layout unchanged](/assets/img/posts/the-plugin-that-was-never-running/screenshot-post.png)
+<figure>
+  <img alt="A published blog post page after the fix: hero image rendered as &lt;picture&gt; with AVIF source, code blocks intact, layout unchanged" src="/assets/img/posts/the-plugin-that-was-never-running/screenshot-post.png">
+  <figcaption>Halaman <em>The Gray You Choose Is Not Neutral</em> setelah plugin berjalan: hero image terbungkus <code>&lt;picture&gt;</code> dengan source AVIF, kode blok dan layout tetap utuh</figcaption>
+</figure>
 
 I opened the Elements panel. Every image was now wrapped in a `<picture>` element:
 
