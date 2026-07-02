@@ -8,7 +8,7 @@ image: /assets/img/og/service-worker-ate-my-svg.png
 image_alt: "cacheFirst vs staleWhileRevalidate caching strategies for SVG assets in a service worker flow diagram"
 ---
 
-![cacheFirst vs staleWhileRevalidate caching strategies for SVG assets](/assets/img/service-worker-ate-my-svg.svg)
+![cacheFirst vs staleWhileRevalidate caching strategies for SVG assets](../assets/img/service-worker-ate-my-svg.svg)
 
 *The same SVG, two different caching strategies: `cacheFirst` returns a stale version from cache (v1), while `staleWhileRevalidate` checks the network first and serves the latest version (v2).*
 
@@ -108,7 +108,7 @@ async function staleWhileRevalidate(request) {
 }
 ```
 
-![Comparison of three service worker caching strategies: cacheFirst, staleWhileRevalidate, and networkFirst](/assets/img/sw-caching-strategies.svg)
+![Comparison of three service worker caching strategies: cacheFirst, staleWhileRevalidate, and networkFirst](../assets/img/sw-caching-strategies.svg)
 
 ## What I Learned
 

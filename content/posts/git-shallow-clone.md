@@ -61,7 +61,7 @@ The culprit was right there in my original clone command: `--depth 1`.
 
 A shallow clone (`--depth 1`) downloads only the tip commit. The parent pointer still exists in Git's object model, but the actual parent commit data — the blob, the tree, the author info — simply isn't there. Your local Git knows *of* the parent, but doesn't *have* it.
 
-![Shallow clone vs full clone — missing ancestors that Git needs to verify ancestry](/assets/img/shallow-clone.svg)
+![Shallow clone vs full clone — missing ancestors that Git needs to verify ancestry](../assets/img/shallow-clone.svg)
 
 When you push, the remote performs an ancestry check on every commit in your local branch. If any ancestor is missing from the shallow graft, the remote can't verify that your commit descends from its current tip. And without that assurance, it rejects the push outright. It's not a permission issue — it's a verification failure.
 

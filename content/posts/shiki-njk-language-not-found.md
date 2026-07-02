@@ -10,7 +10,7 @@ image: /assets/img/og/shiki-njk-language-not-found.png
 image_alt: "Split terminal showing Shiki syntax highlighting error on a nunjucks language tag compared to the correct html tag solution"
 ---
 
-![Split terminal comparing Shiki njk error with html tag fix](/assets/img/shiki-njk-language-not-found.svg)
+![Split terminal comparing Shiki njk error with html tag fix](../assets/img/shiki-njk-language-not-found.svg)
 
 *The fix was one word: switching the code fence tag from `njk` to `html` eliminated the Shiki error and restored syntax highlighting with zero configuration changes.*
 

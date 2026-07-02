@@ -9,7 +9,7 @@ image: /assets/img/og/golden-ratio-web-design.png
 image_alt: "Golden ratio φ=1.618 applied to blog UI components: formula annotations, case study screenshots of the S monogram, and verdict highlights"
 ---
 
-![Golden ratio φ=1.618 applied to blog UI components: formula, case studies, and verdict](/assets/img/golden-ratio-web-design.svg)
+![Golden ratio φ=1.618 applied to blog UI components: formula, case studies, and verdict](../assets/img/golden-ratio-web-design.svg)
 
 *The golden ratio φ=1.618 applied to real blog components. Not every φ relationship survived — the verdict panel shows what stayed and what was rejected.*
 
@@ -106,7 +106,7 @@ The toggle became a **34×34px** box, with the (&#9681;) character centered via 
 
 The relationship is visible: the toggle is exactly the S box shrunk by φ. They were no longer two unrelated boxes — they were a matched set with a proportional connection. (Both elements have since been redesigned in the [terminal theme](/posts/redesign-log-terminal-theme), but the φ relationship principle remains instructive.)
 
-![Before and after comparison of the S monogram and theme toggle sizes, showing the φ relationship](/assets/img/golden-ratio-boxes.svg)
+![Before and after comparison of the S monogram and theme toggle sizes, showing the φ relationship](../assets/img/golden-ratio-boxes.svg)
 
 ### Practical Impact
 

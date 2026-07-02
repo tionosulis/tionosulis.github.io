@@ -101,7 +101,7 @@ Then it answered:
 }
 ```
 
-![Side-by-side comparison: Typical AI sees one isolated file (dot-leader.css) while Big Pickle reads the full interconnected project](/assets/img/big-pickle-project-awareness.svg)
+![Side-by-side comparison: Typical AI sees one isolated file (dot-leader.css) while Big Pickle reads the full interconnected project](../assets/img/big-pickle-project-awareness.svg)
 
 See the difference? The `padding: 0.3rem` matches the golden ratio hierarchy already defined elsewhere in the CSS. The `max-width: 65%` accounts for long titles pushing content off-screen. The `align-self: center` anticipates the middle dot alignment problem before I even noticed it existed. This code didn't answer a question — it improved a project.
 

@@ -20,7 +20,7 @@ ${toc}
 
 ## The Problem
 
-![A blog homepage with featured article and article cards](/assets/img/posts/view-transitions/demo-before.png)
+![A blog homepage with featured article and article cards](../assets/img/posts/view-transitions/demo-before.png)
 
 *The starting state: a blog homepage before navigation. Every click on a static site begins from a fully rendered page, then disappears into a white flash.*
 
@@ -42,7 +42,7 @@ Three lines in any stylesheet:
 
 That's it. The browser now captures a screenshot of the current page before navigating, navigates to the new page, captures a screenshot of the new page, and morphs between the two using a default crossfade animation.
 
-![Blog article page after navigation](/assets/img/posts/view-transitions/demo-after.png)
+![Blog article page after navigation](../assets/img/posts/view-transitions/demo-after.png)
 
 *The result after navigation: the same page reached with no white flash — just a smooth compositor-level crossfade that completes in ~300ms.*
 
@@ -81,7 +81,7 @@ The transition lifecycle has five phases:
 4. **Merge**: Browser creates a pseudo-element tree under `::view-transition` with both old and new snapshots positioned to match.
 5. **Animate**: The default crossfade runs on the compositor. Old snapshots fade out, new snapshots fade in and morph to their final positions.
 
-![Mid-transition between two views: old and new content blend frame-by-frame](/assets/img/posts/view-transitions/demo-morph.png)
+![Mid-transition between two views: old and new content blend frame-by-frame](../assets/img/posts/view-transitions/demo-morph.png)
 
 *Mid-transition — the browser blends old and new snapshots frame-by-frame on the compositor thread. At this moment, elements are bitmap captures, not live DOM nodes.*
 

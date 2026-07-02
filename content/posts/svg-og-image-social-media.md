@@ -13,7 +13,7 @@ tags:
   - howto
 ---
 
-![Three-panel illustration: browser renders SVG, social media shows blank, PNG fixes preview](/assets/img/social-preview-invisible.svg)
+![Three-panel illustration: browser renders SVG, social media shows blank, PNG fixes preview](../assets/img/social-preview-invisible.svg)
 
 *The three-panel story of an invisible hero image: browser renders SVG beautifully, social media sees nothing, and the PNG fix restores previews.*
 
@@ -39,7 +39,7 @@ That was my situation: an `og:image` tag that simply didn't exist, and an SVG th
 
 Before settling on a solution, I mapped out three approaches. Each has its tradeoffs.
 
-![Comparison table of three approaches: Manual PNG Render, Auto Shortcode, and Hybrid + Fallback.](/assets/img/og-approaches-comparison.svg)
+![Comparison table of three approaches: Manual PNG Render, Auto Shortcode, and Hybrid + Fallback.](../assets/img/og-approaches-comparison.svg)
 
 *The three approaches evaluated: manual rendering, automatic build-time conversion, and the hybrid frontmatter system I ultimately chose.*
 

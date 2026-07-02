@@ -9,7 +9,7 @@ image: /assets/img/og/the-plugin-that-was-never-running.png
 image_alt: "Split-panel terminal comparison: left panel BEFORE shows a bare img tag with no width or height; right panel AFTER shows the same image wrapped in a picture element with AVIF and WebP sources and proper dimensions"
 ---
 
-![Split-panel terminal comparison: left panel "BEFORE" shows a bare <img> tag with no width, height, or srcset; right panel "AFTER" shows the same image wrapped in a <picture> element with AVIF and WebP sources, proper dimensions, and loading="eager"](/assets/img/the-plugin-that-was-never-running.svg)
+![Split-panel terminal comparison: left panel "BEFORE" shows a bare <img> tag with no width, height, or srcset; right panel "AFTER" shows the same image wrapped in a <picture> element with AVIF and WebP sources, proper dimensions, and loading="eager"](../assets/img/the-plugin-that-was-never-running.svg)
 
 *Before and after: bare `<img>` tag (left) vs `<picture>` with AVIF/WebP and eager loading (right)*
 
@@ -180,7 +180,7 @@ Clean build. No errors. And then I saw it:
 
 Forty-five images. Across every published and draft post. Optimized.
 
-![A published blog post page after the fix: hero image rendered as <picture> with AVIF source, code blocks intact, layout unchanged](/assets/img/posts/the-plugin-that-was-never-running/screenshot-post.png)
+![A published blog post page after the fix: hero image rendered as <picture> with AVIF source, code blocks intact, layout unchanged](../assets/img/posts/the-plugin-that-was-never-running/screenshot-post.png)
 
 *After the fix: hero image wrapped in `<picture>` with AVIF source, layout intact*
 

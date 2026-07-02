@@ -105,7 +105,7 @@ The S box doesn't exist in isolation. Its size determines the theme toggle's siz
 
 Three elements, all linked by a single division: 55 ÷ 1.618 ≈ 34. The S box anchors the system; everything else derives from it. I covered the full golden ratio system — including content width, spacing, and the myth-busting — in [an earlier post](/posts/golden-ratio-web-design/).
 
-![S monogram sizes from 16x16 to 512x512, with the 55x55 Fibonacci box highlighted and the golden ratio connection to the 34px toggle](/assets/img/monogram-s-sizes.svg)
+![S monogram sizes from 16x16 to 512x512, with the 55x55 Fibonacci box highlighted and the golden ratio connection to the 34px toggle](../assets/img/monogram-s-sizes.svg)
 
 ## Lessons Learned
 

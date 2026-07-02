@@ -16,7 +16,7 @@ Everything worked fine until someone scrolled a code block horizontally.
 
 On hover, the copy button appeared at the top-right corner — exactly where it should be. But when the code was long enough to trigger `overflow-x: auto`, the button drifted. Not far, but enough to look broken. Instead of hugging the top-right corner of the code block, it sat somewhere in the middle.
 
-![Before and after comparison of the copy button position with overflow-x](/assets/img/copy-btn-overflow-fix.svg)
+![Before and after comparison of the copy button position with overflow-x](../assets/img/copy-btn-overflow-fix.svg)
 
 The button wasn't broken. It was behaving exactly as instructed — just not as intended.
 

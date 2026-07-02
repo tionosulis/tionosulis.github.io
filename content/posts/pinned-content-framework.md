@@ -9,7 +9,7 @@ image_alt: "A terminal window displaying a blog post list with a starred pinned 
 pageHasCode: true
 ---
 
-![A terminal window showing a post list with a ★ pinned item at the top, separated from the chronological listing below](/assets/img/pinned-content-framework.svg)
+![A terminal window showing a post list with a ★ pinned item at the top, separated from the chronological listing below](../assets/img/pinned-content-framework.svg)
 
 *A terminal-style post listing: the pinned item sits above the year label with a ★, while the chronological list continues underneath with numbered counters.*
 

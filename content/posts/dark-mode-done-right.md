@@ -13,7 +13,7 @@ tags:
   - howto
 ---
 
-![Three pillars of dark mode done right: Zero Flicker, CSS Architecture, and The Devil in the Details](/assets/img/dark-mode-done-right.svg)
+![Three pillars of dark mode done right: Zero Flicker, CSS Architecture, and The Devil in the Details](../assets/img/dark-mode-done-right.svg)
 
 *The three pillars of a bulletproof dark mode system: zero-flicker rendering, token-based CSS architecture, and edge-case polish.*
 

@@ -9,7 +9,7 @@ image: /assets/img/og/building-conditional-notice.png
 image_alt: "Three iterations of a redesign notice component: from hash-comment lines to an accent-bordered callout with amber left border"
 ---
 
-![Three iterations of a redesign notice component](/assets/img/building-conditional-notice.svg)
+![Three iterations of a redesign notice component](../assets/img/building-conditional-notice.svg)
 
 *The redesign notice through three iterations: # prefix, bordered "note" box, and the final amber left-border design.*
 

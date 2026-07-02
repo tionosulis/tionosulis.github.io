@@ -9,7 +9,7 @@ image_alt: "A side-by-side comparison of purple-gray and blue-gray in a terminal
 pageHasCode: true
 ---
 
-![A side-by-side comparison of purple-gray and blue-gray in a terminal: two panels with simulated reading samples, HSL breakdown, and hue coherence annotations](/assets/img/gray-hue-is-not-neutral.svg)
+![A side-by-side comparison of purple-gray and blue-gray in a terminal: two panels with simulated reading samples, HSL breakdown, and hue coherence annotations](../assets/img/gray-hue-is-not-neutral.svg)
 
 *Purple-gray vs blue-gray: same lightness, different hue — know which you're using*
 

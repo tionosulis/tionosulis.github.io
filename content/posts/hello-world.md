@@ -153,7 +153,7 @@ Tiny but mighty.
 
 ## Images
 
-![Site favicon](/assets/img/favicon/favicon.svg "The letter S")
+![Site favicon](../assets/img/favicon/favicon.svg "The letter S")
 
 ## Conclusion
 

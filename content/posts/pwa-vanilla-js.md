@@ -9,7 +9,7 @@ image: /assets/img/og/pwa-vanilla-js.png
 image_alt: "Size comparison between Workbox (~50KB) and a vanilla JavaScript service worker (~1KB)"
 ---
 
-![Workbox vs Vanilla JS Service Worker size comparison: ~50KB vs ~1KB](/assets/img/workbox-vs-vanilla-size.svg)
+![Workbox vs Vanilla JS Service Worker size comparison: ~50KB vs ~1KB](../assets/img/workbox-vs-vanilla-size.svg)
 
 *A 50KB framework vs 1KB of vanilla JavaScript — the size difference tells you everything about the tradeoffs between Workbox and a hand-written service worker.*
 
@@ -149,7 +149,7 @@ The trickiest detail: **by default, a new service worker waits for all pages run
 
 `skipWaiting` is safe here because it's a static blog — no persistent state between page loads. In a dynamic app with session data, test carefully.
 
-![Service worker caching strategies: cacheFirst for fonts/style, staleWhileRevalidate for images, networkFirst for documents](/assets/img/sw-strategy-flow.svg)
+![Service worker caching strategies: cacheFirst for fonts/style, staleWhileRevalidate for images, networkFirst for documents](../assets/img/sw-strategy-flow.svg)
 
 ## Versioning with Cache V2
 

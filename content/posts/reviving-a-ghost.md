@@ -197,7 +197,7 @@ No Flash of Unstyled Code. No extra HTTP requests. Just clean, themed tokens.
 
 After a weekend of work, I ran Google PageSpeed Insights.
 
-<img src="/assets/img/pagespeed.svg" width="800" height="200" alt="Pagespeed 100 across all four categories">
+<img src="../assets/img/pagespeed.svg" width="800" height="200" alt="Pagespeed 100 across all four categories">
 
 **[perfect Pagespeed score](/posts/chasing-100/)** across all four metrics: Performance, Accessibility, Best Practices, SEO.
 

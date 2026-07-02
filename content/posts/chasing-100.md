@@ -8,7 +8,7 @@ image: /assets/img/og/chasing-100-lighthouse.png
 image_alt: "Lighthouse performance scores comparison showing 99s on the left and perfect 100s on the right across Performance, Accessibility, Best Practices, and SEO"
 ---
 
-![Lighthouse scores before (99s) and after (100s) across four categories](/assets/img/chasing-100-lighthouse.svg)
+![Lighthouse scores before (99s) and after (100s) across four categories](../assets/img/chasing-100-lighthouse.svg)
 
 *A before-and-after breakdown of Lighthouse scores: orange 99s become glowing green 100s after targeting forced reflow, CLS, and contrast failures.*
 
@@ -165,7 +165,7 @@ I needed colors that look visually similar but cross the 4.5:1 threshold. After 
 
 These overrides only apply in light mode. Dark mode is handled by Shiki's `--shiki-dark` CSS variables, which already pass WCAG AA against the dark background.
 
-![Contrast ratio improvement before and after — both colors now pass WCAG AA](/assets/img/contrast-spectrum.svg)
+![Contrast ratio improvement before and after — both colors now pass WCAG AA](../assets/img/contrast-spectrum.svg)
 
 ### Bonus: The Cite Fix
 

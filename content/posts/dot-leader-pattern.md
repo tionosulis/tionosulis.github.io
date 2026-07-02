@@ -8,7 +8,7 @@ image: /assets/img/og/dot-leader-pattern.png
 image_alt: "Three CSS dot leader challenges visualized: text overflow cut off, baseline misalignment between dots and text, and the title being squeezed by the dots"
 ---
 
-![Three CSS dot leader challenges: overflow, baseline misalignment, and title squeeze with the final fix](/assets/img/dot-leader-pattern.svg)
+![Three CSS dot leader challenges: overflow, baseline misalignment, and title squeeze with the final fix](../assets/img/dot-leader-pattern.svg)
 
 *The post listing before the terminal revamp: dot leaders connecting titles to dates. The CSS below solves the three challenges visible in this layout.*
 
@@ -111,7 +111,7 @@ Second, give the dots span a minimum width:
 
 Even on the narrowest viewports where the dots are clipped to near-zero, at least two dots render — preserving the visual cue that connects title to date.
 
-![Dot leader flex layout showing the three children with constraint labels: title (max-width: 65%), dots (flex: 1, min-width: 4em), and date (flex-shrink: 0)](/assets/img/dot-leader-flex.svg)
+![Dot leader flex layout showing the three children with constraint labels: title (max-width: 65%), dots (flex: 1, min-width: 4em), and date (flex-shrink: 0)](../assets/img/dot-leader-flex.svg)
 
 ## What the Final Version Looks Like
 

@@ -9,7 +9,7 @@ tags: [eleventy, meta, tutorial]
 pageHasCode: true
 ---
 
-![Comparison of _drafts folder vs frontmatter draft flag for Eleventy](/assets/img/diy-draft-system-eleventy.svg)
+![Comparison of _drafts folder vs frontmatter draft flag for Eleventy](../assets/img/diy-draft-system-eleventy.svg)
 
 *Two approaches to Eleventy drafts: the traditional `_drafts` folder with extra config, and the frontmatter flag approach with live preview URLs and zero plugins.*
 

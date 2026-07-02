@@ -9,7 +9,7 @@ image: /assets/img/og/redesign-log-terminal-theme.png
 image_alt: "A terminal window showing the redesign deployment log with four tasks: JetBrains Mono font, amber accent, golden-ratio spacing, and terminal prompts — all marked with amber OK tags and a blinking cursor"
 ---
 
-![A terminal window showing the redesign deployment log: four tasks executed successfully — JetBrains Mono font, amber accent, golden-ratio spacing, terminal prompts — with amber OK tags and a blinking cursor](/assets/img/redesign-log-terminal-theme.svg)
+![A terminal window showing the redesign deployment log: four tasks executed successfully — JetBrains Mono font, amber accent, golden-ratio spacing, terminal prompts — with amber OK tags and a blinking cursor](../assets/img/redesign-log-terminal-theme.svg)
 
 *The deployment log of the terminal redesign — every change executed, every step confirmed.*
 

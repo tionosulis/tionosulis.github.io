@@ -14,7 +14,7 @@ image_alt: "Split-panel editor layout: CSS @font-face code on the left with JetB
 pageHasCode: true
 ---
 
-![Hero image showing a split-panel editor layout: CSS @font-face code on the left with JetBrains Mono applied, and the article title 'Why I Went All-In on Monospace' on the right with a font specimen row.](/assets/img/all-in-monospace.svg)
+![Hero image showing a split-panel editor layout: CSS @font-face code on the left with JetBrains Mono applied, and the article title 'Why I Went All-In on Monospace' on the right with a font specimen row.](../assets/img/all-in-monospace.svg)
 
 *The same font in my editor, my terminal, and now my blog.*
 
