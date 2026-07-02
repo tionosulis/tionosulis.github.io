@@ -1,5 +1,6 @@
 ---
 title: "Why I Went All-In on Monospace — And Stopped Apologizing for It"
+seoTitle: "Why I Went All-In on Monospace — No Apologies"
 description: "Five font pairings, three redesigns, one conclusion: the most honest typeface for a developer blog was right in front of me the whole time."
 date: 2026-06-26
 tags:

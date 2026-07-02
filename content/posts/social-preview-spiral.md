@@ -1,5 +1,6 @@
 ---
 title: "The Social Preview Spiral: What I Learned From 7 Rounds of Meta Tags"
+seoTitle: "The Social Preview Spiral: 7 Rounds of Meta Tags"
 description: "How a validator warning about Twitter cards turned into a 7-commit deep-dive — and the checklist I wish I'd started with."
 date: 2026-06-30
 draft: true

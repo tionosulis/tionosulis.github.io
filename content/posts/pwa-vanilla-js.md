@@ -1,5 +1,6 @@
 ---
 title: "PWA with Vanilla JS: Why I Ditched Workbox for a 1KB Service Worker"
+seoTitle: "PWA with Vanilla JS: A 1KB Workbox Alternative"
 description: "Building a production PWA without frameworks, libraries, or build tools — and why a vanilla service worker taught me more about caching than Workbox ever did."
 date: 2026-06-16
 draft: false

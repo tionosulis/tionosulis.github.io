@@ -1,5 +1,6 @@
 ---
 title: "Shiki Syntax Highlighting Doesn't Know Nunjucks — And Why That's Fine"
+seoTitle: "Shiki Doesn't Know Nunjucks — And Why That's Fine"
 description: "The .njk language shiki error taught me a lesson about code block language tags in Eleventy — and how a simple fallback keeps things moving."
 date: 2026-06-20
 draft: false

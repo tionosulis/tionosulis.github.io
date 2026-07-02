@@ -1,5 +1,6 @@
 ---
 title: "Dark Mode Done Right: Zero Flicker, CSS Architecture, and the Devil in the Details"
+seoTitle: "Dark Mode Done Right: Zero Flicker, CSS Architecture"
 description: "Zero-flicker dark mode with inline script, CSS custom properties, and localStorage persistence. A production implementation with an accessible toggle tooltip."
 date: 2026-06-13
 draft: false

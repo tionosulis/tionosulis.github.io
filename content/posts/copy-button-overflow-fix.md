@@ -1,5 +1,6 @@
 ---
 title: "When position: absolute Meets overflow-x: auto — A Copy Button Debugging Story"
+seoTitle: "When position: absolute Meets overflow-x: auto"
 description: A small UI bug leads to an enlightening exploration of CSS scroll containers, positioning contexts, and why the simplest fix is often the most architectural.
 date: 2026-06-12
 tags: [css, debugging, design, meta, eleventy]

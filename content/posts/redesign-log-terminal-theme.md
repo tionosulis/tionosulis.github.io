@@ -1,5 +1,6 @@
 ---
 title: "$ cat ~/redesign-log: Terminal Theme, Amber Accent, and the Pursuit of Consistency"
+seoTitle: "Redesigning My Blog: Terminal Theme & Amber Accent"
 description: "A field log of transforming a blog to a terminal-themed space — JetBrains Mono, amber accents, and golden-ratio spacing with full design rationale."
 date: 2026-06-25
 pinned: true

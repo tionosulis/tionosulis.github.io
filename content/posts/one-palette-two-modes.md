@@ -1,5 +1,6 @@
 ---
 title: "One Palette for Two Modes: Building a Hero Image Color System"
+seoTitle: "One Palette for Two Modes: A Hero Image Color System"
 description: "Hero images survive two backgrounds: white and near-black. A palette that works in both light and dark modes without media queries or inline styles."
 date: 2026-06-28
 draft: false

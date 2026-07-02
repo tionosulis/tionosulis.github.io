@@ -1,5 +1,6 @@
 ---
 title: "Big Pickle: The Free AI That Made Me Rethink What 'Good Code' Means"
+seoTitle: "Big Pickle: Rethinking What 'Good Code' Means"
 description: "A personal journal entry about trying almost every AI coding tool and finding one that understands project architecture — not just syntax."
 date: 2026-06-18
 draft: true

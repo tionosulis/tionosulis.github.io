@@ -1,5 +1,6 @@
 ---
 title: "The Optimization Trap: What I Learned From 17 Rounds of Gray"
+seoTitle: "The Optimization Trap: 17 Rounds of Gray"
 description: "How a week of tweaking text colors taught me that the hardest design decision isn't which shade to pick — it's knowing when to stop."
 date: 2026-06-29
 draft: true

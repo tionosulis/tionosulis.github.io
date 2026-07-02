@@ -1,5 +1,6 @@
 ---
 title: "Building a Conditional Notice System: A Case Study in Design Iteration"
+seoTitle: "Building a Conditional Notice: Design Iteration Case Study"
 description: "Three iterations of a simple notice box — from comment lines to accent-bordered callout — taught me about designing for context, not perfection."
 date: 2026-06-27
 draft: false

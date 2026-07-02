@@ -1,5 +1,6 @@
 ---
 title: "Invisible Character, Visible Problem: Fixing Heading Anchors Without Breaking Layout"
+seoTitle: "Invisible Character, Visible Problem: Heading Anchor Fix"
 description: "How a tiny # symbol broke my blog's mobile layout — and a clean CSS fix that took two iterations to get right."
 date: 2026-06-27
 draft: true

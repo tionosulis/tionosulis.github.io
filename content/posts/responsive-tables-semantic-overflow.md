@@ -1,5 +1,6 @@
 ---
 title: "Taming Tables on Small Screens: A Semantic Approach to Horizontal Overflow"
+seoTitle: "Taming Tables on Small Screens: Semantic Overflow"
 description: "Tables overflow on mobile. The fix is simple, but most implementations break semantics for screen readers. Here's the clean, accessible approach I use."
 date: 2026-06-25
 draft: true

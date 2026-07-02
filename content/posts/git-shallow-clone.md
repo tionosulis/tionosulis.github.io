@@ -1,5 +1,6 @@
 ---
 title: "Git Shallow Clone Headache: Pushing from a --depth 1 Repository"
+seoTitle: "Git Shallow Clone: Pushing from --depth 1"
 description: When your mobile Git clone saves bandwidth but costs you an hour debugging a rejected push — and how to fix it for good.
 date: 2026-06-11
 draft: false

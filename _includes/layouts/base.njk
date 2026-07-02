@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="{{ eleventy.generator }}">
-  <title>{% if title %}{{ title | safe }}{% else %}{{ metadata.title | safe }}{% endif %}</title>
+  <title>{% if seoTitle %}{{ seoTitle | safe }}{% elif title %}{{ title | safe }}{% else %}{{ metadata.title | safe }}{% endif %}</title>
   <meta name="description" content="{% if description %}{{ description | safe }}{% else %}{{ metadata.description | safe }}{% endif %}">
   <meta name="author" content="{{ metadata.author.name }}">
   <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">

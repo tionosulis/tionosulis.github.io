@@ -1,5 +1,6 @@
 ---
 title: "Where Are You Reading? Building a Table of Contents That Knows"
+seoTitle: "Where Are You Reading? A Table of Contents That Knows"
 description: "A scroll-aware table of contents that highlights the current section as you read — using IntersectionObserver, not scroll events."
 date: 2026-06-25
 draft: true

@@ -1,5 +1,6 @@
 ---
 title: "SVGs Look Great on Your Blog. Too Bad Twitter, Facebook Can't See Them"
+seoTitle: "SVGs Look Great. Twitter and Facebook Disagree."
 description: "How I discovered that SVG hero images are invisible to social media — and built a simple, reproducible system to fix it."
 date: 2026-06-19
 draft: false
