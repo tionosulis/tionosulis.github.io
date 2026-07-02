@@ -41,8 +41,8 @@
   <g clip-path="url(#rounded)">
 
 
-    <!-- #2A4053 background -->
-    <rect width="1200" height="675" fill="#2A4053"/>
+    <!-- Dark background -->
+    <rect width="1200" height="675" fill="#161616"/>
     <!-- Amber dot grid -->
     <rect width="1200" height="675" fill="url(#dots)"/>
     <!-- Ambient glows -->
