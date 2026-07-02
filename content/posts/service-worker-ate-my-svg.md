@@ -139,4 +139,8 @@ The golden ratio post is now live with its SVG diagram intact. And the service w
 
 ---
 
+**Since this post was published.** The service worker has been refined: the install handler uses `Promise.allSettled` so one failed URL doesn't abort the entire precache, `self.skipWaiting()` and `self.clients.claim()` enable immediate activation, and the registration script catches errors gracefully. The three caching strategies at the heart of this story — `cacheFirst` for fonts and styles, `networkFirst` for documents, `staleWhileRevalidate` for images — are unchanged. The current source is [on GitHub](https://github.com/tionosulis/tionosulis.github.io/blob/main/content/sw.njk).
+
+---
+
 *The full source of this blog — including the service worker, all SVGs, and every debugging commit — is [on GitHub](https://github.com/tionosulis/tionosulis.github.io).*

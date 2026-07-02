@@ -22,35 +22,41 @@ Not because Workbox is bad — it's excellent. But for a static site with a hand
 
 ## The Architecture
 
-My service worker (at `/sw.js`) is about 50 lines of JavaScript. It defines three caching strategies based on request type:
+My service worker (at `/sw.js`) is about 80 lines of JavaScript. It defines three caching strategies based on request type:
 
 ```javascript
 const CACHE = "v2";
-const FONTS = ["/fonts/", "/assets/css/"];
-const ASSETS = [ /* HTML pages */ ];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(ASSETS))
+    caches.open(CACHE).then((cache) =>
+      Promise.allSettled(
+        ["/", "/about/"].map((url) =>
+          fetch(url).then((r) => { if (r.ok) cache.put(url, r); })
+        )
+      )
+    )
   );
+  self.skipWaiting();
 });
 
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
-    )
+    ).then(() => self.clients.claim())
   );
 });
 
 self.addEventListener("fetch", (e) => {
-  let url = new URL(e.request.url);
-  if (FONTS.some((f) => url.pathname.startsWith(f))) {
+  if (e.request.destination === "font" || e.request.destination === "style") {
     e.respondWith(cacheFirst(e.request));
+  } else if (e.request.destination === "document") {
+    e.respondWith(networkFirst(e.request));
   } else if (e.request.destination === "image") {
     e.respondWith(staleWhileRevalidate(e.request));
   } else {
-    e.respondWith(networkFirst(e.request));
+    e.respondWith(cacheFirst(e.request));
   }
 });
 ```
@@ -138,7 +144,9 @@ Understanding the lifecycle was the hardest part. A service worker goes through 
 2. **Activate** — fires after install, once the old SW is no longer controlling clients. Clean up old caches here.
 3. **Fetch** — fires on every network request from pages controlled by this SW.
 
-The trickiest detail: **a new service worker doesn't take control until all tabs running the old SW are closed.** During development, this means a lot of `"Update on reload"` toggling in DevTools.
+The trickiest detail: **by default, a new service worker waits for all pages running the old one to close before taking control.** That's why the `install` handler calls `self.skipWaiting()` — it activates immediately. Then `self.clients.claim()` in the `activate` handler tells the new worker to take control of all open pages right away.
+
+`skipWaiting` is safe here because it's a static blog — no persistent state between page loads. In a dynamic app with session data, test carefully.
 
 ![Service worker caching strategies: cacheFirst for fonts/style, staleWhileRevalidate for images, networkFirst for documents](/assets/img/sw-strategy-flow.svg)
 
@@ -155,12 +163,14 @@ self.addEventListener("activate", (e) => {
       Promise.all(
         keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))
       )
-    )
+    ).then(() => self.clients.claim())
   );
 });
 ```
 
 When I bumped from `v1` to `v2` (after the SVG cache bug), the old cache was automatically purged. No user action needed, no stale assets lingering.
+
+The install handler also changed: instead of `cache.addAll()` — which fails atomically if any URL returns a non-2xx — it uses `fetch()` + `cache.put()` wrapped in `Promise.allSettled()`. A temporary CDN blip on one asset no longer takes down the entire install.
 
 ## The 1KB Payload
 
@@ -181,14 +191,15 @@ For a complex app with dynamic routes, Workbox's routing and precaching abstract
 
 ## The Registration Pattern
 
-Registration is a one-liner in the `<script>` tag at the bottom of the page:
+Registration is a few lines in the `<script>` tag at the bottom of the page:
 
 ```javascript
 navigator.serviceWorker &&
-navigator.serviceWorker.register("/sw.js");
+navigator.serviceWorker.register("/sw.js")
+  .catch(e => console.warn("SW:", e));
 ```
 
-The `navigator.serviceWorker` guard ensures this doesn't throw in browsers without SW support (Safari before 11.3, some older mobile browsers). The path `/sw.js` is at the root scope, meaning it controls the entire site.
+The `navigator.serviceWorker` guard prevents errors in browsers without SW support (Safari before 11.3, some older mobile browsers). The `.catch()` handles environments where registration might reject — crawlers, restricted contexts, or a service worker file that failed to parse — without throwing an uncaught promise rejection. The path `/sw.js` is at the root scope, meaning it controls the entire site.
 
 ## What I Learned
 
