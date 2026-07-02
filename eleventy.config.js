@@ -43,6 +43,7 @@ export default async function (eleventyConfig) {
     formats: ["avif", "webp"],
     defaultAttributes: {
       decoding: "auto",
+      sizes: "100vw",
     },
   });
 
