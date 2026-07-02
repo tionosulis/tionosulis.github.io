@@ -4,5 +4,6 @@ export default {
   permalink: ({ draft, page }) => draft ? `/drafts/${page.fileSlug}/` : `/posts/${page.fileSlug}/`,
   eleventyComputed: {
     eleventyExcludeFromCollections: ({ draft }) => draft ? true : undefined,
+    ignore: ({ draft }) => draft ? true : undefined,
   },
 };

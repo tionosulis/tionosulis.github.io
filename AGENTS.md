@@ -1,5 +1,18 @@
 # Post Authoring Guidelines
 
+## 0. Draft Workflow
+
+Setiap post baru WAJIB `draft: true` di frontmatter. Tidak boleh langsung publish.
+
+**Flow:**
+1. Tulis post → `draft: true` → commit & push
+2. User review & baca ulang
+3. User perintahkan publish → set `draft: false` → commit & push ke main
+
+Jangan publish tanpa persetujuan eksplisit.
+
+---
+
 ## 1. SEO Title
 
 Cek panjang `title` di frontmatter. Kalau > 60 karakter:

@@ -65,11 +65,46 @@ export default {
   eleventyComputed: {
     eleventyExcludeFromCollections: ({ draft }) =>
       draft ? true : undefined,
+    ignore: ({ draft }) =>
+      draft ? true : undefined,
   },
 };
 ```
 
 The function returns `true` only when `draft: true`. Otherwise it returns `undefined`, leaving the default behavior intact.
+
+### Step 3: Prevent Search Engine Indexing
+
+A draft at `/drafts/slug/` is accessible to anyone who knows the URL. Without protection, a search engine that finds the URL (via an external referrer or direct link) could index it before you're ready to publish.
+
+Eleventy's `eleventyExcludeFromCollections` only hides drafts from your site's navigation — it doesn't tell search engines to stay away. For that, we need a `<meta name="robots" content="noindex">` tag in the `<head>` of draft pages.
+
+The blog's layout template (`base.njk`) already has this:
+
+{% raw %}
+```jinja-html
+{% if ignore %}<meta name="robots" content="noindex">{% endif %}
+```
+{% endraw %}
+
+The missing piece is setting `ignore: true` on draft pages. We wire it through the same `eleventyComputed` block:
+
+```javascript
+// content/posts/posts.11tydata.js
+export default {
+  // ...
+  eleventyComputed: {
+    eleventyExcludeFromCollections: ({ draft }) =>
+      draft ? true : undefined,
+    ignore: ({ draft }) =>
+      draft ? true : undefined,
+  },
+};
+```
+
+Now every draft page outputs `<meta name="robots" content="noindex">`. Published pages don't — the variable is `undefined`, so {% raw %}`{% if ignore %}`{% endraw %} evaluates to `false` and the tag is omitted.
+
+This is defense in depth: no internal links, no sitemap entry, and an explicit noindex directive. Search engines would have to discover the URL externally and deliberately ignore the `noindex` tag to index a draft.
 
 ### The Complete Data File
 
@@ -84,11 +119,13 @@ export default {
   eleventyComputed: {
     eleventyExcludeFromCollections: ({ draft }) =>
       draft ? true : undefined,
+    ignore: ({ draft }) =>
+      draft ? true : undefined,
   },
 };
 ```
 
-Ten lines. No plugins. No external dependencies.
+Twelve lines. No plugins. No external dependencies.
 
 ## How Publishing Works
 
@@ -106,7 +143,7 @@ tags: [some-topic]
 When you build or deploy, the post is:
 
 | Aspect | Behavior |
-|---|---|
+|---|---|---|
 | File location | `/drafts/my-upcoming-post/` |
 | Homepage | Hidden |
 | Tag pages | Hidden |
@@ -114,6 +151,7 @@ When you build or deploy, the post is:
 | Next/prev nav | Hidden |
 | Sitemap | Hidden |
 | Direct URL access | ✅ Works |
+| Search engine indexing | `noindex` via `<meta name="robots">` |
 
 To publish, delete the `draft: true` line, commit, and push:
 
@@ -133,8 +171,9 @@ But the folder approach has tradeoffs:
 
 | Aspect | `_drafts/` folder | `draft: true` frontmatter |
 |---|---|---|
-| Setup | Zero config | 10 lines in data file |
+| Setup | Zero config | 12 lines in data file |
 | Preview | Impossible (no URL) | ✅ `/drafts/slug/` |
+| SEO safety | Not rendered — no risk | `noindex` via eleventyComputed |
 | Publish | `git mv` between folders | Delete one line |
 | Content organization | Split across two folders | All posts in one place |
 | Accidental publish | File move = publish risk | Toggle is explicit |
