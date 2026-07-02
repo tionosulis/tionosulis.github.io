@@ -10,7 +10,7 @@ image: /assets/img/og/from-16-to-zero.png
 image_alt: "W3C Nu HTML Checker results split in two panels — left side with 16 CSS parse errors marked in red, right side with zero errors in green after applying a Lightning CSS build-time transform"
 ---
 
-![W3C validator results comparison: 16 CSS parse errors reduced to zero using Lightning CSS build-time transform](/assets/img/from-16-to-zero.svg)
+![W3C validator results comparison: 16 CSS parse errors reduced to zero using Lightning CSS build-time transform](../assets/img/from-16-to-zero.svg)
 
 *A side-by-side comparison of W3C validator output: 16 CSS parse errors on the left, zero errors on the right — with no source CSS changed.*
 
