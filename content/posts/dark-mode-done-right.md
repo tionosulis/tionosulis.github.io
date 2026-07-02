@@ -8,6 +8,7 @@ image_alt: "Three pillars of dark mode: Zero Flicker (inline script icon), CSS A
 tags:
   - css
   - javascript
+  - design
   - howto
 ---
 
