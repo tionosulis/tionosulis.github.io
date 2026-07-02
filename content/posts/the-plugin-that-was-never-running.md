@@ -1,6 +1,6 @@
 ---
 title: The Plugin That Was Never Running
-description: I spent months trusting that my Eleventy image plugin was optimizing images. It wasn't. Here's how a misnamed config option silently broke image transformations across my entire site.
+description: "Months of trusting that my Eleventy image plugin was optimizing images — wasted. A misnamed config option silently broke all image transformations on the site."
 date: 2026-07-01
 tags: [debugging, eleventy, meta, web-development]
 draft: true

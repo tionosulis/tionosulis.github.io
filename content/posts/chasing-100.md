@@ -1,6 +1,6 @@
 ---
 title: "Chasing 100: A Field Guide to Perfect Lighthouse Scores"
-description: Three real-world bottlenecks that cost one point — and the exact fixes that brought it back to 100.
+description: "Three real-world Lighthouse performance bottlenecks that cost one point — and the exact fixes that brought this blog back to a perfect 100 score."
 date: 2026-06-10
 tags: [meta, performance, lighthouse, eleventy]
 pageHasCode: true

@@ -1,6 +1,6 @@
 ---
 title: "The Dot Leader: 3 CSS Challenges Before It Felt Right"
-description: "The dot leader looks like the simplest CSS pattern — one span, flex: 1, done. But three subtle challenges pushed it from okay to polished, and taught me what separates good CSS from great CSS."
+description: "The dot leader is the simplest CSS pattern — one span, flex: 1 — until three subtle challenges pushed it from okay to polished and taught me better CSS."
 date: 2026-06-18
 draft: false
 tags: [css, design, typography, howto]

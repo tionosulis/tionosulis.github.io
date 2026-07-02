@@ -1,6 +1,6 @@
 ---
 title: "The Gray You Choose Is Not Neutral"
-description: "How a single HSL value — the hue of your gray — can make or break dark mode text hierarchy. A framework for choosing between blue-gray and purple-gray secondary text, with real CSS values from a production blog."
+description: "How your gray's hue can make or break dark mode text hierarchy. A framework for choosing between blue-gray and purple-gray secondary text, with real CSS values."
 date: 2026-07-01
 draft: false
 tags: [design, css, typography, accessibility]
@@ -43,13 +43,13 @@ Tailwind's `zinc-400` (`#a1a1aa`, `HSL 240° 4% 65%`) sits at the boundary — b
 
 Color theory for screen typography has been studied with increasing rigor as dark mode has become a first-class design concern.
 
-**On hue coherence:** Design systems researchers at EightShapes note that teams frequently revisit their gray palettes specifically to "cool a blander grayscale toward blueish grays or charcoals" as a deliberate professional choice — not as a default. The implication is that hue selection in neutrals should be a conscious decision anchored to the broader color system.
+**On hue coherence:** Design systems researchers at EightShapes note that teams frequently revisit their gray palettes specifically to "cool a blander grayscale toward blueish grays or charcoals" as a deliberate professional choice — not as a default.[^eightshapes] The implication is that hue selection in neutrals should be a conscious decision anchored to the broader color system.
 
-**On dark mode text contrast:** Studies document that text color is "where the most common mistake lives" in dark mode — and that this extends beyond luminance to hue. A gray that reads as professional and quiet on a light background can feel tonally disconnected in dark mode if its hue has no relationship to the surrounding accent or brand color.
+**On dark mode text contrast:** Design system practitioners frequently observe that text color is "where the most common mistake lives" in dark mode — and that this extends beyond luminance to hue.[^dark-mode] A gray that reads as professional and quiet on a light background can feel tonally disconnected in dark mode if its hue has no relationship to the surrounding accent or brand color.
 
 **On the WCAG floor:** Gray text brightness on a `#161616` dark background should maintain at least 4.5:1 contrast ratio for body text (WCAG AA), and 3:1 for large text. Both blue-gray and purple-gray at the typical 400–500 range of design scales can meet this threshold — meaning hue choice, in this context, is primarily an aesthetic and coherence decision rather than an accessibility one.
 
-**On OLED behavior:** UXMatters notes that highly saturated blues cause particular rendering challenges on dark backgrounds, but at the low saturation levels typical of text grays (4–16%), this is not a significant concern for either family in practice.
+**On OLED behavior:** UXMatters notes that highly saturated blues cause particular rendering challenges on dark backgrounds,[^uxmatters] but at the low saturation levels typical of text grays (4–16%), this is not a significant concern for either family in practice.
 
 ## The Hue Coherence Problem
 
@@ -147,6 +147,10 @@ Before shipping your dark mode typography tokens:
 Your secondary text hue is a number between 0° and 360°. Right now, in your production dark mode, you may not know what that number is. Taking ten seconds to check it in DevTools is the fastest typography audit you will ever run.
 
 Gray carries a hue. Make it a deliberate one.
+
+[^eightshapes]: EightShapes, "Color in Design Systems," 2016 — eightshapes.com/articles/color-in-design-systems
+[^dark-mode]: Commonly noted by design system practitioners and researchers; see also Material Design's dark mode guidelines (m3.material.io)
+[^uxmatters]: UXmatters, "Dark Isn't Just a Mode," 2020 — uxmatters.com/mt/archives/2020/01/dark-isnt-just-a-mode.php
 
 ---
 

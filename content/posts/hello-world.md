@@ -1,6 +1,6 @@
 ---
 title: Hello World
-description: A typography test suite and a fresh start for this blog.
+description: "The inaugural post of a terminal-themed developer blog. A typography test suite with JetBrains Mono, golden-ratio spacing, and the full design system."
 date: 2026-06-09
 tags: [meta]
 pageHasCode: true

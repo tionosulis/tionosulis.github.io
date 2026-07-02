@@ -1,6 +1,6 @@
 ---
 title: "One Palette for Two Modes: Building a Hero Image Color System"
-description: "Hero images in a dark-mode blog have to survive two backgrounds: #ffffff in light mode, #161616 in dark mode. After several rounds of iteration, I landed on a palette and a set of visual conventions that work in both — without media queries, without inline styles, and without sacrificing contrast."
+description: "Hero images survive two backgrounds: white and near-black. A palette that works in both light and dark modes without media queries or inline styles."
 date: 2026-06-28
 draft: false
 tags: [design, css, meta, howto]
