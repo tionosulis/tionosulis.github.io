@@ -5,7 +5,7 @@
     </pattern>
   </defs>
 
-  <rect width="1200" height="675" fill="#2A4053"/>
+  <rect width="1200" height="675" fill="#161616"/>
   <rect width="1200" height="675" fill="url(#dot-grid)"/>
 
   <!-- Terminal window shadow -->
