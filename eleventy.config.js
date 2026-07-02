@@ -230,7 +230,6 @@ export default async function (eleventyConfig) {
         removeComments: true,
         removeEmptyAttributes: true,
         useShortDoctype: true,
-        minifyCSS: true,
       });
     }
     return content;
