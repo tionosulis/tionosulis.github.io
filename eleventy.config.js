@@ -12,6 +12,8 @@ import { DateTime } from "luxon";
 import { minify } from "html-minifier-terser";
 import { transform as lightning } from "lightningcss";
 import { readFileSync } from "fs";
+import { glob } from "tinyglobby";
+import matter from "gray-matter";
 
 export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginNavigation);
@@ -160,6 +162,19 @@ export default async function (eleventyConfig) {
   });
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+  eleventyConfig.on("eleventy.before", async ({ dir }) => {
+    const files = await glob(`${dir.input}/posts/**/*.md`);
+    for (const file of files) {
+      const { data } = matter(readFileSync(file, "utf8"));
+      const title = data.title || "";
+      if (title.length > 60 && !data.seoTitle) {
+        console.warn(
+          `\u26A0\uFE0F  [SEO] "${file}" \u2013 title ${title.length} chars, seoTitle missing:\n    \u201C${title}\u201D`
+        );
+      }
+    }
+  });
 
   const copySvg = '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
   const checkSvg = '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
