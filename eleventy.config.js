@@ -10,6 +10,7 @@ import shiki from "@shikijs/markdown-it";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { DateTime } from "luxon";
 import { minify } from "html-minifier-terser";
+import { transform as lightning } from "lightningcss";
 import { readFileSync } from "fs";
 
 export default async function (eleventyConfig) {
@@ -218,6 +219,27 @@ export default async function (eleventyConfig) {
         return '<img loading="eager" fetchpriority="high" ';
       }
       return '<img loading="lazy" ';
+    });
+  });
+
+  eleventyConfig.addTransform("lightning-css", function (content) {
+    if (!this.page.outputPath?.endsWith(".html")) return content;
+    return content.replace(/<style>([\s\S]*?)<\/style>/g, (match, css) => {
+      try {
+        const result = lightning({
+          code: Buffer.from(css),
+          minify: true,
+          targets: {
+            chrome: 100 << 16,
+            safari: 15 << 16,
+            firefox: 100 << 16,
+          },
+        });
+        return `<style>${result.code.toString()}</style>`;
+      } catch (e) {
+        console.warn(`[lightning-css] ${this.page.outputPath}: ${e.message}`);
+        return match;
+      }
     });
   });
 
