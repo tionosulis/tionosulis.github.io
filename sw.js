@@ -2,7 +2,7 @@ const CACHE = "v2";
 const PRECACHE_URLS = [
   "/",
   "/about/",
-  "/fonts/JetBrainsMono[wght].woff2",
+  "/fonts/JetBrainsMono%5Bwght%5D.woff2",
 ];
 
 self.addEventListener("install", (event) => {
