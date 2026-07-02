@@ -12,8 +12,8 @@ layout: layouts/base.njk
   "@type": "BlogPosting",
   "headline": "{{ title | escape }}",
   "url": "{{ metadata.url }}{{ page.url }}",
-  "datePublished": "{{ page.date | htmlDateString }}",
-  "dateModified": "{% if updated %}{{ updated | htmlDateString }}{% else %}{{ page.date | htmlDateString }}{% endif %}",
+  "datePublished": "{{ page.date | isoDateTime }}",
+  "dateModified": "{% if updated %}{{ updated | isoDateTime }}{% else %}{{ page.date | isoDateTime }}{% endif %}",
   "author": {
     "@type": "Person",
     "name": "{{ metadata.author.name }}",

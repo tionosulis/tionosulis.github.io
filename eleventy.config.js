@@ -94,6 +94,10 @@ export default async function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
 
+  eleventyConfig.addFilter("isoDateTime", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toISO();
+  });
+
   eleventyConfig.addFilter("sortPinned", (collection) => {
     const pinned = collection.filter(p => p.data.pinned);
     const rest = collection.filter(p => !p.data.pinned).reverse();
@@ -226,6 +230,7 @@ export default async function (eleventyConfig) {
         removeComments: true,
         removeEmptyAttributes: true,
         useShortDoctype: true,
+        minifyCSS: true,
       });
     }
     return content;
