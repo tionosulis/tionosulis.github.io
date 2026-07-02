@@ -2,7 +2,6 @@ const CACHE = "v2";
 const PRECACHE_URLS = [
   "/",
   "/about/",
-  "/fonts/IBMPlexSans-Var.woff2",
 ];
 
 self.addEventListener("install", (event) => {
