@@ -83,6 +83,36 @@ Caption (teks di bawah gambar, format `*italic*` setelah image di markdown) dipa
 
 ---
 
+## 7. SVG Color Scheme Reference
+
+**Background gradient** (OG images / hero SVGs):
+- Start: `#1E2A38` (top-left)
+- End: `#1A2430` (bottom-right)
+- Fallback flat: `#1A2430`
+
+**Texture**: dot pattern `#2A4055` at 0.3–0.5 opacity, 24–28px grid
+
+**Palette**:
+
+| Role | Color | Usage |
+|---|---|---|
+| Panel fill | `#1A2634` | Card backgrounds, code panes |
+| Bottom strip | `#16202E` | Config/status bar |
+| Accent blue | `#3B82F6` | Primary interactive, arrows |
+| Blue light | `#60A8F0` | Highlighted elements |
+| Code amber | `#C08040` | Code/config labels |
+| Status red | `#E05050` | Errors, warnings |
+| Status green | `#10D9A8` | Success, validation pass |
+| Text bright | `#7A9AB0` | Labels, headings |
+| Text muted | `#6A8AAA` | Secondary text / borders |
+| Border | `#3A5068` | Frames, dividers |
+| Frame corner | `#3A5068` | Outer border corner, 0.8 opacity |
+
+**Kapan pakai**: Semua OG image / hero SVG baru.
+**Skip** kalau konten spesifik butuh `#161616` sebagai bagian dari cerita (dark mode comparison, terminal aesthetic).
+
+---
+
 ## 6. Pre-Publish Checklist (ringkas)
 
 - [ ] `title` dicek panjangnya, `seoTitle` diisi kalau perlu
