@@ -2,16 +2,16 @@
 title: "Taming Tables on Small Screens: A Semantic Approach to Horizontal Overflow"
 seoTitle: "Taming Tables on Small Screens: Semantic Overflow"
 description: "Tables overflow on mobile. The fix is simple, but most implementations break semantics for screen readers. Here's the clean, accessible approach I use."
-date: 2026-06-25
-draft: true
+date: 2026-07-03
+draft: false
 tags: [css, html, accessibility, howto]
 image: /assets/img/og/responsive-tables-semantic-overflow.png
 image_alt: "Split illustration: left side shows a table overflowing a phone screen with a red cutoff indicator, right side shows the same table contained within a scrollable wrapper"
 ---
 
-![A split illustration: left side shows a table overflowing a phone screen with a red "cut off" indicator, right side shows the same table contained within a scrollable wrapper](../assets/img/responsive-tables-semantic-overflow.svg)
+![Split illustration comparing an overflowing table on a phone (left) with the same table inside a scrollable wrapper (right)](../assets/img/responsive-tables-semantic-overflow.svg)
 
-*A responsive table should never clip its content. The fix: a wrapper div with horizontal scroll, not a hack on the table itself.*
+*The fix: a wrapper div with horizontal scroll, preserving table semantics*
 
 
 ## The Problem
