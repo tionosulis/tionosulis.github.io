@@ -62,7 +62,7 @@
     <text x="156" y="80" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#94a3b8" opacity="0.6">placement: after</text>
 
     <!-- Viewport card -->
-    <rect x="80" y="110" width="440" height="500" rx="8" fill="#1e1e1e" stroke="#3D536A" stroke-width="1"/>
+    <rect x="80" y="110" width="440" height="500" rx="8" fill="#1A2634" stroke="#3D536A" stroke-width="1"/>
 
     <!-- Viewport inner title -->
     <text x="100" y="140" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11" fill="#94a3b8" opacity="0.5">~/posts/example.md</text>
@@ -99,7 +99,7 @@
     <text x="750" y="80" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#94a3b8" opacity="0.6">font-size: 0</text>
 
     <!-- Viewport card -->
-    <rect x="680" y="110" width="440" height="500" rx="8" fill="#1e1e1e" stroke="#3D536A" stroke-width="1"/>
+    <rect x="680" y="110" width="440" height="500" rx="8" fill="#1A2634" stroke="#3D536A" stroke-width="1"/>
 
     <!-- Viewport inner title -->
     <text x="700" y="140" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11" fill="#94a3b8" opacity="0.5">~/posts/example.md</text>
