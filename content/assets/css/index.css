@@ -129,7 +129,7 @@ code:not(pre code) {
   padding: 0.15em 0.4em;
   border-radius: 4px;
   font-size: 0.85em;
-  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 pre {
@@ -359,7 +359,7 @@ main { min-width: 0; padding-bottom: 2rem; }
 
 article { max-width: 618px; margin: 0 auto; }
 
-article p, article li { color: var(--text-body); }
+article p, article li { color: var(--text-body); overflow-wrap: break-word; }
 article blockquote p { color: var(--text-secondary); }
 article .footnotes p, article .footnotes li { color: inherit; }
 
