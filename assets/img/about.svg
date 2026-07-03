@@ -50,31 +50,31 @@
 
     <!-- Main content — centered in safe zone -->
     <!-- Prompt: $ whoami (playful, identity-revealing) -->
-    <text x="600" y="155"
+    <text x="600" y="196"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="14" fill="#B45309" opacity="0.7"
+          font-size="28" fill="#F59E0B"
           text-anchor="middle">$ whoami</text>
 
     <!-- Output: name — primary focus -->
-    <text x="600" y="248"
+    <text x="600" y="300"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
           font-size="92" font-weight="700" fill="#d4d4d8"
           text-anchor="middle">sulistiono</text>
 
     <!-- Supporting links — two columns -->
-    <text x="420" y="372"
+    <text x="420" y="368"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
           font-size="28" font-weight="700" fill="#d4d4d8"
           text-anchor="middle">github/</text>
-    <text x="420" y="400"
+    <text x="420" y="392"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
           font-size="18" fill="#94a3b8"
           text-anchor="middle">@tionosulis</text>
-    <text x="780" y="372"
+    <text x="780" y="368"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
           font-size="28" font-weight="700" fill="#d4d4d8"
           text-anchor="middle">twitter/</text>
-    <text x="780" y="400"
+    <text x="780" y="392"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
           font-size="18" fill="#94a3b8"
           text-anchor="middle">@tionosulis_</text>
