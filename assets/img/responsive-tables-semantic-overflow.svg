@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2A38"/>
+      <stop offset="100%" stop-color="#1A2430"/>
+    </linearGradient>
     <!-- Dual shadow: black depth + amber glow — works on both light and dark bg -->
     <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="116%">
       <feDropShadow dx="0" dy="2" stdDeviation="6"  flood-color="#000000" flood-opacity="0.18"/>
@@ -9,7 +13,7 @@
       <feDropShadow dx="0" dy="0" stdDeviation="26" flood-color="#B45309" flood-opacity="0.22"/>
     </filter>
     <pattern id="dotgrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="14" cy="14" r="0.9" fill="#B45309" opacity="0.14"/>
+      <circle cx="14" cy="14" r="0.9" fill="#2A4055" opacity="0.4"/>
     </pattern>
     <linearGradient id="fadeRight" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="55%" stop-color="#f5f5f5" stop-opacity="0"/>
@@ -21,7 +25,8 @@
   </defs>
 
 
-  <!-- Transparent background + dot grid -->
+  <!-- Navy gradient background + dot texture -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
   <rect width="1200" height="675" fill="url(#dotgrid)"/>
 
 
