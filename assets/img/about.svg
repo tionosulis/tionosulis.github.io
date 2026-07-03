@@ -50,22 +50,34 @@
 
     <!-- Main content — centered in safe zone -->
     <!-- Prompt: $ whoami (playful, identity-revealing) -->
-    <text x="600" y="200"
+    <text x="600" y="155"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
           font-size="14" fill="#B45309" opacity="0.7"
           text-anchor="middle">$ whoami</text>
 
     <!-- Output: name — primary focus -->
-    <text x="600" y="298"
+    <text x="600" y="248"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="56" font-weight="700" fill="#d4d4d8"
+          font-size="92" font-weight="700" fill="#d4d4d8"
           text-anchor="middle">sulistiono</text>
 
-    <!-- Tagline — one line, secondary hierarchy -->
-    <text x="600" y="355"
+    <!-- Supporting links — two columns -->
+    <text x="420" y="372"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="16" fill="#94a3b8"
-          text-anchor="middle">Vanilla CSS/JS · JetBrains Mono · SSH</text>
+          font-size="28" font-weight="700" fill="#d4d4d8"
+          text-anchor="middle">github/</text>
+    <text x="420" y="400"
+          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
+          font-size="18" fill="#94a3b8"
+          text-anchor="middle">@tionosulis</text>
+    <text x="780" y="372"
+          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
+          font-size="28" font-weight="700" fill="#d4d4d8"
+          text-anchor="middle">twitter/</text>
+    <text x="780" y="400"
+          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
+          font-size="18" fill="#94a3b8"
+          text-anchor="middle">@tionosulis_</text>
 
     <!-- Status bar -->
     <rect x="0" y="606" width="1200" height="24" fill="#B45309" fill-opacity="0.05"/>
