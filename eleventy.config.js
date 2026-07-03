@@ -230,6 +230,15 @@ export default async function (eleventyConfig) {
       .replace(/<\/div>\s*<\/pre>/g, '</span></pre>');
   });
 
+  eleventyConfig.addTransform("fix-footnotes", function (content) {
+    if (!this.page.outputPath?.endsWith(".html")) return content;
+    // <section> must have identifying heading — add aria-label
+    return content.replace(
+      '<section class="footnotes">',
+      '<section class="footnotes" aria-label="Footnotes">'
+    );
+  });
+
   eleventyConfig.addTransform("wrap-tables", function (content) {
     if (!this.page.outputPath?.endsWith(".html")) return content;
     return content.replace(/<table/g, '<div class="table-wrap"><table').replace(/<\/table>/g, '</table></div>');

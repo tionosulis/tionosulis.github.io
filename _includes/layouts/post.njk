@@ -54,8 +54,8 @@ layout: layouts/base.njk
   {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
   {% if nextPost or previousPost %}
   <div class="nav-pair">
-    {% if nextPost %}<a href="{{ nextPost.url }}" class="prev"><span class="vim-cmd">:prev</span> {{ nextPost.data.title }}</a>{% endif %}
-    {% if previousPost %}<a href="{{ previousPost.url }}" class="next"><span class="vim-cmd">:next</span> {{ previousPost.data.title }}</a>{% endif %}
+    {% if nextPost %}<a href="{{ nextPost.url }}" class="prev" rel="prev"><span class="vim-cmd">:prev</span> {{ nextPost.data.title }}</a>{% endif %}
+    {% if previousPost %}<a href="{{ previousPost.url }}" class="next" rel="next"><span class="vim-cmd">:next</span> {{ previousPost.data.title }}</a>{% endif %}
   </div>
   {% endif %}
   {% endif %}
