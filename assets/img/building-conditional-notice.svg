@@ -3,9 +3,13 @@
     <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
       <circle cx="14" cy="14" r="0.9" fill="#B45309" opacity="0.14"/>
     </pattern>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2A38"/>
+      <stop offset="100%" stop-color="#1A2430"/>
+    </linearGradient>
   </defs>
 
-  <rect width="1200" height="675" fill="#161616"/>
+  <rect width="1200" height="675" fill="url(#bg)"/>
   <rect width="1200" height="675" fill="url(#dots)"/>
 
   <rect x="38" y="38" width="1124" height="599" rx="10" fill="#000" opacity="0.25"/>
@@ -43,7 +47,7 @@
         fill="#1a1a1a" stroke="#B45309" stroke-width="0.75" stroke-opacity="0.35"/>
   <rect x="230" y="242" width="3" height="161" fill="#B45309" opacity="0.8"/>
 
-  <rect x="254" y="232" width="47" height="18" fill="#161616"/>
+  <rect x="254" y="232" width="47" height="18" fill="#1A2634"/>
   <text x="259" y="246"
         font-family="'JetBrains Mono', 'Courier New', monospace"
         font-size="12" fill="#B45309" font-weight="700" letter-spacing="1">NOTE</text>

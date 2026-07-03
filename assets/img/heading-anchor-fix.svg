@@ -4,6 +4,11 @@
       <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.05"/>
     </pattern>
 
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2A38"/>
+      <stop offset="100%" stop-color="#1A2430"/>
+    </linearGradient>
+
     <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="108%">
       <feDropShadow dx="0" dy="4" stdDeviation="16" flood-color="#000000" flood-opacity="0.18"/>
     </filter>
@@ -19,7 +24,7 @@
   <g clip-path="url(#rounded)">
 
     <!-- Background -->
-    <rect width="1200" height="675" fill="#161616"/>
+    <rect width="1200" height="675" fill="url(#bg)"/>
     <rect width="1200" height="675" fill="url(#dots)"/>
 
     <!-- Outer border frame -->
@@ -120,7 +125,7 @@
     <polygon points="660,300 656,290 664,290" fill="#22c55e" opacity="0.5"/>
 
     <!-- CSS snippet -->
-    <rect x="700" y="336" width="400" height="190" rx="6" fill="#161616" stroke="#3D536A" stroke-width="0.5"/>
+    <rect x="700" y="336" width="400" height="190" rx="6" fill="#1A2634" stroke="#3D536A" stroke-width="0.5"/>
 
     <!-- CSS label -->
     <text x="714" y="358" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#64748B">/* When hidden — zero width */</text>

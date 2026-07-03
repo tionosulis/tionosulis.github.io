@@ -3,9 +3,13 @@
     <pattern id="dot-grid" width="28" height="28" patternUnits="userSpaceOnUse">
       <circle cx="14" cy="14" r="1.5" fill="#B45309" opacity="0.12"/>
     </pattern>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2A38"/>
+      <stop offset="100%" stop-color="#1A2430"/>
+    </linearGradient>
   </defs>
 
-  <rect width="1200" height="675" fill="#161616"/>
+  <rect width="1200" height="675" fill="url(#bg)"/>
   <rect width="1200" height="675" fill="url(#dot-grid)"/>
 
   <!-- Terminal window shadow -->
