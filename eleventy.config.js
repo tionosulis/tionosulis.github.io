@@ -12,6 +12,7 @@ import { DateTime } from "luxon";
 import { minify } from "html-minifier-terser";
 import { transform as lightning } from "lightningcss";
 import { readFileSync } from "fs";
+import path from "node:path";
 import { glob } from "tinyglobby";
 import matter from "gray-matter";
 
@@ -44,6 +45,10 @@ export default async function (eleventyConfig) {
     defaultAttributes: {
       decoding: "auto",
       sizes: "100vw",
+    },
+    filenameFormat: (id, src, width, format) => {
+      const srcName = path.parse(src).name;
+      return `${srcName}-${width}.${format}`;
     },
   });
 
