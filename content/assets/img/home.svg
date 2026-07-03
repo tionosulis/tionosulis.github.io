@@ -50,21 +50,21 @@
 
     <!-- Main content — centered in safe zone -->
     <!-- Prompt line -->
-    <text x="600" y="155"
+    <text x="600" y="196"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="14" fill="#B45309" opacity="0.7"
+          font-size="28" fill="#F59E0B"
           text-anchor="middle">$ cat ~/</text>
 
     <!-- Site name — primary focus -->
-    <text x="600" y="248"
+    <text x="600" y="300"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
           font-size="92" font-weight="700" fill="#d4d4d8"
           text-anchor="middle">SULISTIONO</text>
 
     <!-- Subtitle — one line, secondary hierarchy -->
-    <text x="600" y="360"
+    <text x="600" y="368"
           font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="24" fill="#94a3b8"
+          font-size="28" fill="#94a3b8"
           text-anchor="middle">Web Design &amp; Terminal Dev Notes</text>
 
     <!-- Status bar -->
