@@ -16,7 +16,7 @@ image_alt: "Split illustration: left side shows a table overflowing a phone scre
 
 ## The Problem
 
-I published a blog post with a four-column comparison table. On desktop, it rendered beautifully — columns evenly spaced, data scannable at a glance. On mobile, the last column (Impact) drifted quietly off-screen. No scrollbar. No wrap. No warning. Just invisible data.
+I published a [blog post](/posts/chasing-100/) with a four-column comparison table. On desktop, it rendered beautifully — columns evenly spaced, data scannable at a glance. On mobile, the last column (Impact) drifted quietly off-screen. No scrollbar. No wrap. No warning. Just invisible data.
 
 This is the fundamental nature of HTML tables: their minimum width is determined by the sum of their cell content. A cell containing "Performance 99 → 100" needs more horizontal space than a 375px viewport can give it. The browser respects the content — and the content breaks the layout.
 

@@ -55,6 +55,7 @@ export default async function (eleventyConfig) {
     html: true,
     linkify: true,
     typographer: true,
+    tables: true,
   });
 
   md.use(markdownItAnchor, {

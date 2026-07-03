@@ -143,7 +143,7 @@ tags: [some-topic]
 When you build or deploy, the post is:
 
 | Aspect | Behavior |
-|---|---|---|
+|---|---|
 | File location | `/drafts/my-upcoming-post/` |
 | Homepage | Hidden |
 | Tag pages | Hidden |
