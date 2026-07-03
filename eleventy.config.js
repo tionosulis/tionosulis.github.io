@@ -222,6 +222,14 @@ export default async function (eleventyConfig) {
     return content.replace(/<pre\s+/g, '<pre ').replace(/\s+tabindex="0"/g, '');
   });
 
+  eleventyConfig.addTransform("fix-code-wrapper", function (content) {
+    if (!this.page.outputPath?.endsWith(".html")) return content;
+    // <div class="code-wrapper"> inside <pre> is invalid — change to <span>
+    return content
+      .replace(/<div class="code-wrapper">/g, '<span class="code-wrapper">')
+      .replace(/<\/div>\s*<\/pre>/g, '</span></pre>');
+  });
+
   eleventyConfig.addTransform("wrap-tables", function (content) {
     if (!this.page.outputPath?.endsWith(".html")) return content;
     return content.replace(/<table/g, '<div class="table-wrap"><table').replace(/<\/table>/g, '</table></div>');
