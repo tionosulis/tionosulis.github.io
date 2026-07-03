@@ -14,10 +14,10 @@
 
   <rect x="38" y="38" width="1124" height="599" rx="10" fill="#000" opacity="0.25"/>
 
-  <rect x="36" y="36" width="1128" height="603" rx="10" fill="#1B1B1D" stroke="#3D536A" stroke-width="1.5"/>
+  <rect x="36" y="36" width="1128" height="603" rx="10" fill="#1A2634" stroke="#3D536A" stroke-width="1.5"/>
 
-  <rect x="36" y="36" width="1128" height="38" rx="10" fill="#222225"/>
-  <rect x="36" y="56" width="1128" height="18" fill="#222225"/>
+  <rect x="36" y="36" width="1128" height="38" rx="10" fill="#16202E"/>
+  <rect x="36" y="56" width="1128" height="18" fill="#16202E"/>
 
   <circle cx="62" cy="55" r="4.5" fill="#B45309"/>
   <circle cx="82" cy="55" r="4.5" fill="#B45309" opacity="0.55"/>

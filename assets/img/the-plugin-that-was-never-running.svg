@@ -16,11 +16,11 @@
   <rect x="18" y="18" width="1164" height="639" rx="10" fill="#000" opacity="0.25"/>
 
   <!-- Terminal window frame -->
-  <rect x="16" y="16" width="1168" height="643" rx="10" fill="#1B1B1D" stroke="#3D536A" stroke-width="1.5"/>
+  <rect x="16" y="16" width="1168" height="643" rx="10" fill="#1A2634" stroke="#3D536A" stroke-width="1.5"/>
 
   <!-- Title bar -->
-  <rect x="16" y="16" width="1168" height="38" rx="10" fill="#222225"/>
-  <rect x="16" y="36" width="1168" height="18" fill="#222225"/>
+  <rect x="16" y="16" width="1168" height="38" rx="10" fill="#16202E"/>
+  <rect x="16" y="36" width="1168" height="18" fill="#16202E"/>
 
   <!-- Traffic lights -->
   <circle cx="42" cy="35" r="4.5" fill="#B45309"/>
