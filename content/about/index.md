@@ -5,7 +5,7 @@ description: >-
   Sulistiono — web developer and blogger. Vanilla CSS, static sites, writes about
   frontend. Ships mainly from a phone via SSH and sheer stubbornness.
 image: /assets/img/og/about.png
-image_alt: "A terminal interface showing dollar sign commands: ls links/ listing posts directory, GitHub profile, and Twitter profile as navigation entries"
+image_alt: "Terminal OG card showing dollar sign commands: ls links/ listing posts directory, GitHub profile, and Twitter profile as navigation entries"
 ---
 
 <div class="home-terminal">
