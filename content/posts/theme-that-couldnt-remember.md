@@ -112,7 +112,7 @@ But there's a more specific question: why was the homepage restored correctly (d
 
 Here's the part that took the longest to trace.
 
-The dark mode system has been live since June 13. It worked correctly with bfcache — or rather, it didn't need to work with bfcache because I never updated the service worker in a way that triggered re-evaluation of cached pages.
+The dark mode system has been live since the blog relaunch in June. It worked correctly with bfcache — or rather, it didn't need to work with bfcache because I never updated the service worker in a way that triggered re-evaluation of cached pages.
 
 Then, over the course of a single afternoon, I pushed three service worker updates:
 
