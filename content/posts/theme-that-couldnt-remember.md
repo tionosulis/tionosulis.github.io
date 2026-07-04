@@ -20,15 +20,15 @@ image_alt: "Navigation flow: homepage (light) → posts (light) → post detail 
 
 *Forward path (green) shows consistent theme; back-navigation (red) shows the stale-state bug.*
 
-${toc}
-
-Dark mode on this blog works. The inline script in `<head>` sets `data-theme` before the first paint. The toggle button persists the choice to `localStorage`. CSS variables cascade the change across every element. It's the architecture I documented in [Dark Mode Done Right](/posts/dark-mode-done-right/), and it's been running since June 13 without issues.
+Dark mode on this blog works. The inline script in `<head>` sets `data-theme` before the first paint. The toggle button persists the choice to `localStorage`. CSS variables cascade the change across every element. It's the architecture I documented in [Dark Mode Done Right](/posts/dark-mode-done-right/), and it's been running without issues.
 
 Then I pressed the back button.
 
 The posts list appeared in light mode — even though I had just toggled to dark. The code was the same. The `localStorage` value was `"dark"`. But the page showed a stale snapshot of itself, frozen in time from my first visit.
 
 This is the story of how a browser feature designed to make navigation instant introduced an invisible state bug — and the one event listener that fixed it.
+
+${toc}
 
 ## The Bug
 
