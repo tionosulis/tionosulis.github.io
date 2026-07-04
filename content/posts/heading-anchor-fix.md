@@ -2,20 +2,20 @@
 title: "Invisible Character, Visible Problem: Fixing Heading Anchors Without Breaking Layout"
 seoTitle: "Invisible Character, Visible Problem: Heading Anchor Fix"
 description: "How a tiny # symbol broke my blog's mobile layout — and a clean CSS fix that took two iterations to get right."
-date: 2026-06-27
-draft: true
+date: 2026-07-04
+draft: false
 tags:
   - css
   - troubleshooting
   - meta
   - howto
 image: /assets/img/og/heading-anchor-fix.png
-image_alt: "Before-and-after split comparison: a heading with the anchor symbol creating phantom spacing on mobile (left), and the same heading with clean spacing after the CSS fix (right)"
+image_alt: "Before-and-after comparison: heading anchor ghost spacing on mobile (left) vs clean spacing after font-size: 0 fix (right)"
 ---
 
 ![Split-screen comparison showing a heading with the anchor # creating phantom spacing on mobile (left, labeled 'Before'), and the same heading with clean spacing after the font-size: 0 fix (right, labeled 'After').](../assets/img/heading-anchor-fix.svg)
 
-*The same heading, same viewport — before and after fixing the anchor spacing issue. The difference is one CSS property on a single element.*
+*One CSS property — `font-size: 0` — eliminates the phantom spacing with zero side effects.*
 
 If you use a static site generator with markdown-it-anchor, eleventy-plugin-anchor, or any tool that auto-generates heading permalinks, you've probably seen this HTML pattern:
 
@@ -153,6 +153,8 @@ I considered other approaches before landing on this:
 ## What This Taught Me
 
 The `#` anchor link is a tiny element — one character, invisible by default, easy to overlook. But in CSS, invisible doesn't mean absent. Every inline element participates in layout regardless of its opacity. When it wraps to its own line on a narrow viewport, it brings its parent's line-height with it, creating phantom space that looks like a layout bug.
+
+This isn't the first time a deceptively simple CSS pattern needed multiple iterations to get right. The same thing happened while [building the dot leader pattern](/posts/dot-leader-pattern/): three edge cases, zero margin changes, and a `line-height: 1` fix to prevent exactly this kind of phantom vertical space.
 
 The fix — `font-size: 0` with `line-height: 0` — is almost too simple to believe. An invisible element should take no space. CSS gives us the tools to make that true, but only if we remember to use them.
 
