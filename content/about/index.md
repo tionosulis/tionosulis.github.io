@@ -1,11 +1,11 @@
 ---
 layout: layouts/page.njk
 title: ./sulistiono
-  description: >-
-    Sulistiono — web developer and blogger. Vanilla CSS, static sites, writes about
-    frontend. Ships mainly from a phone via SSH and sheer stubbornness.
-  image: /assets/img/og/about.png
-  image_alt: "Terminal OG card with \$ whoami and \$ ls links/ commands, sulistiono heading, GitHub and Twitter handles, and >_S ghost logo on dark dot-grid background"
+description: >-
+  Sulistiono — web developer and blogger. Vanilla CSS, static sites, writes about
+  frontend. Ships mainly from a phone via SSH and sheer stubbornness.
+image: /assets/img/og/about.png
+image_alt: "Terminal OG card with $ whoami and $ ls links/ commands, sulistiono heading, GitHub and Twitter handles, and >_S ghost logo on dark dot-grid background"
 ---
 
 <div class="home-terminal">
