@@ -27,8 +27,6 @@ The objective case for fixing it was weak. The subjective case was harder to art
 
 This post is the story of what I found when I chased that seam. It turned out to be two problems, not one. And the second problem was entirely of my own making.
 
----
-
 ## The Block Period
 
 To understand FOIT, you need to understand `font-display`.
