@@ -3,7 +3,7 @@ export default {
   url: "https://tionosulis.github.io",
   language: "en",
   description: "Sulistiono's thoughts",
-  image: "/assets/img/favicon/android-chrome-192x192.png",
+  image: "/assets/img/og/home.png",
   verification: {
     google: "nGUHc-P1KrLWgaQSmLNdIFM-c0dIvVcOFCXaJGU5-K0",
   },
