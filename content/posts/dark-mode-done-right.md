@@ -196,4 +196,6 @@ A CSS-only approach is fine for a landing page. For a blog where users spend min
 
 The entire dark mode system on this blog — inline script, CSS variables, persistence, toggle, tooltip, Shiki integration, WCAG overrides — is about 50 lines of code total. It's one of the highest-ROI features on the site.
 
+*Follow-up: The "no runtime dependency after page load" claim has one blind spot — bfcache restores. The fix is documented in [The Theme That Couldn't Remember](/posts/theme-that-couldnt-remember/).*
+
 [What does your dark mode implementation handle? I'd love to hear about it.]({{ metadata.url }}/about/)

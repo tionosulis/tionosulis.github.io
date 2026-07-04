@@ -20,15 +20,15 @@ image_alt: "Navigation flow: homepage (light) → posts (light) → post detail 
 
 *Forward path (green) shows consistent theme; back-navigation (red) shows the stale-state bug.*
 
-I spent an hour debugging a problem I was told could not exist.
+${toc}
 
-And to be fair — the code looked bulletproof on paper. A synchronous inline `<script>` in `<head>` reads `localStorage` and sets `data-theme` before any CSS paints. A `toggleTheme()` function inverts the attribute and persists to `localStorage`. CSS custom properties cascade the change across every element. It's the architecture I documented in [Dark Mode Done Right](/posts/dark-mode-done-right/), and it's been running without issues since June.
+Dark mode on this blog works. The inline script in `<head>` sets `data-theme` before the first paint. The toggle button persists the choice to `localStorage`. CSS variables cascade the change across every element. It's the architecture I documented in [Dark Mode Done Right](/posts/dark-mode-done-right/), and it's been running since June 13 without issues.
 
-Then a reader sent me a video. Or rather, the reader was me, using my own site on my own phone.
+Then I pressed the back button.
 
-The bug was simple to reproduce but impossible to explain with my mental model of how the theme system worked. This is the story of what I found when I stopped assuming my code was correct and started interrogating the browser itself.
+The posts list appeared in light mode — even though I had just toggled to dark. The code was the same. The `localStorage` value was `"dark"`. But the page showed a stale snapshot of itself, frozen in time from my first visit.
 
----
+This is the story of how a browser feature designed to make navigation instant introduced an invisible state bug — and the one event listener that fixed it.
 
 ## The Bug
 
@@ -58,8 +58,6 @@ The posts page remembers the theme from the initial visit, ignoring the toggle t
 
 Two pages. Same browser. Same session. Different behavior.
 
----
-
 ## The Inline Script's Blind Spot
 
 The zero-flicker trick from [Dark Mode Done Right](/posts/dark-mode-done-right/#the-zero-flicker-trick) is an inline script in `<head>`:
@@ -85,8 +83,6 @@ The `data-theme` attribute in the snapshot reflects the value from the initial v
 
 That section in Dark Mode Done Right that says *"No runtime dependency after page load"* was wrong. There is a runtime dependency — it just only matters when the page comes back from the dead.
 
----
-
 ## What Is bfcache, Exactly?
 
 bfcache stores a frozen page snapshot when the user navigates away. On back or forward navigation, the browser thaws this snapshot in under 10ms — compared to hundreds of milliseconds for a full page reload.
@@ -111,8 +107,6 @@ It is NOT blocked by:
 Chrome DevTools now has a dedicated panel for inspecting bfcache: **Application → Back/forward cache**. It shows whether the current page is eligible and, if not, the specific reason. The `NotRestoredReasons` API exposes this programmatically, letting you measure bfcache health across your visitors.
 
 But there's a more specific question: why was the homepage restored correctly (dark mode) while the posts page was stuck on the old theme?
-
----
 
 ## The "Why Now?" Question
 
@@ -145,8 +139,6 @@ The homepage was the first page visited — the oldest entry in the back-stack. 
 
 The inconsistency wasn't caused by a bug in the dark mode code. It was caused by a browser behavior at the intersection of two features — bfcache and service workers — that weren't designed to coordinate with each other.
 
----
-
 ## The Research Trail
 
 Once I understood the mechanism, the fix was straightforward. But getting there required connecting dots across multiple browser features, each with its own specification and implementation quirks:
@@ -160,8 +152,6 @@ Once I understood the mechanism, the fix was straightforward. But getting there 
 | Theme persistence | Data attribute vs localStorage sync | [Guilherme Simões](https://guilhermesimoes.github.io/blog/making-dark-mode-work-with-bfcache) |
 
 The Guilherme Simões article was particularly useful — it documents exactly the same pattern (inline script + `pageshow` handler) and the gotcha about CSS transition animations during the sync.
-
----
 
 ## The Fix: pageshow + no-transition
 
@@ -237,15 +227,11 @@ The `pageshow` handler adds the third:
 | Back-navigation (bfcache) | ❌ Stale data-theme | ✅ pageshow re-syncs |
 | CSS transition on sync | N/A (bug was silent) | ❌ Was a problem → ✅ no-transition guard |
 
----
-
 ## The Performance Question
 
 The `pageshow` handler is negligible. It fires once per bfcache restore, reads one `localStorage` key, sets one attribute, and toggles one class. The entire execution is under 0.1ms. There is no recurring cost.
 
 The `no-transition` guard uses `!important`, which is normally a code smell. In this case it's justified — the rule must override any existing transition property on any element, and it's scoped to a specific class that only exists for ~16ms during bfcache restore. The class is removed before the user can interact, so it never interferes with normal toggle behavior.
-
----
 
 ## Checklist for Your Own Site
 
@@ -263,13 +249,11 @@ If you maintain a dark mode implementation with `localStorage` persistence, here
 
 **6. Use NotRestoredReasons.** Chrome's [NotRestoredReasons API](https://github.com/GoogleChrome/developer.chrome.com/blob/main/site/en/docs/web-platform/bfcache-notrestoredreasons/index.md) provides per-frame reasons why a page was not served from bfcache. You can query it programmatically to monitor caches health in the wild.
 
----
-
 ## Closing: The Invisible Friction Series
 
 This is the second post in what I'm calling the Invisible Friction series — bugs that are almost impossible to notice but, once fixed, make the experience feel more solid in ways that are hard to articulate.
 
-The first was [The FOIT You Couldn't See](/drafts/foit-you-couldnt-see/) — a 340ms font loading gap that appeared only on the first visit over 3G. This one is a theme inconsistency that appears only on back-navigation after a service worker update. Different mechanisms, same pattern: the bug exists at the boundary between browser features that weren't designed to coordinate.
+The first was [The FOIT You Couldn't See](/posts/foit-you-couldnt-see/) — a 340ms font loading gap that appeared only on the first visit over 3G. This one is a theme inconsistency that appears only on back-navigation after a service worker update. Different mechanisms, same pattern: the bug exists at the boundary between browser features that weren't designed to coordinate.
 
 The inline script in `<head>` was step one. The `pageshow` handler is step two. There will be a step three — because browsers keep evolving, and every new feature creates a new edge case at its boundary with existing features.
 
