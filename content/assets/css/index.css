@@ -316,20 +316,76 @@ table {
   border-bottom: 2px double var(--border);
 }
 
+/* ── Site Logo ── */
+
 .site-logo-link {
+  position: relative;
+  padding: 0.363rem 0.587rem;
+
   font-family: "JetBrains Mono", monospace;
   font-size: 0.95rem;
   font-weight: 700;
-  text-decoration: none;
+  line-height: 1;
   letter-spacing: -0.02em;
+  text-decoration: none;
   color: var(--text);
   display: flex;
   align-items: center;
   gap: 0;
 }
+
 .site-logo-link:hover { color: var(--text); }
-.site-logo-link .logo-prompt { color: var(--accent); }
+
+.site-logo-link .logo-prompt {
+  color: var(--accent);
+}
+
 .site-logo-link .logo-initial { color: inherit; }
+
+/* ── Neofetch ASCII border ── */
+
+.site-logo-link::before,
+.site-logo-link::after {
+  position: absolute;
+  left: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.587rem;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.65;
+  pointer-events: none;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.site-logo-link::before {
+  content: '┌─────┐';
+  top: -0.95rem;
+}
+
+.site-logo-link::after {
+  content: '└─────┘';
+  bottom: -0.95rem;
+}
+
+.site-logo-link:hover::before,
+.site-logo-link:hover::after {
+  opacity: 1;
+  color: var(--accent-hover);
+}
+
+/* ── Terminal glow ── */
+
+.site-logo-link .logo-prompt {
+  transition: text-shadow 0.2s;
+}
+
+.site-logo-link:hover .logo-prompt {
+  text-shadow:
+    0 0 10px currentColor,
+    0 0 22px currentColor;
+}
 
 .theme-toggle {
   background: none;
