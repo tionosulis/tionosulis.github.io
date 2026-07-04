@@ -2,8 +2,8 @@
 title: "The FOIT You Couldn't See: Chasing Invisible Friction"
 seoTitle: "The FOIT You Couldn't See"
 description: "How a font subset and one renamed file eliminated a sub-second flicker that almost nobody would notice — and why chasing small frictions in text is worth it."
-date: 2026-07-04
-draft: true
+date: 2026-06-29
+draft: false
 tags:
   - performance
   - typography

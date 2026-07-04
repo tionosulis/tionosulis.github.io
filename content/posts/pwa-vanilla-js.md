@@ -149,6 +149,8 @@ The trickiest detail: **by default, a new service worker waits for all pages run
 
 `skipWaiting` is safe here because it's a static blog — no persistent state between page loads. In a dynamic app with session data, test carefully.
 
+There is a tradeoff I didn't anticipate: `clients.claim()` triggers a [Chromium bug](https://issues.chromium.org/issues/504335759) that can evict bfcache entries, causing stale theme states on back-navigation. I documented the full debugging trail in [The Theme That Couldn't Remember](/posts/theme-that-couldnt-remember/).
+
 ![Service worker caching strategies: cacheFirst for fonts/style, staleWhileRevalidate for images, networkFirst for documents](../assets/img/sw-strategy-flow.svg)
 
 ## Versioning with Cache V2
