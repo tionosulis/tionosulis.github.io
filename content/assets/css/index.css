@@ -35,6 +35,11 @@
   *, *::before, *::after { transition: none; }
 }
 
+html.no-transition, html.no-transition *,
+html.no-transition *::before, html.no-transition *::after {
+  transition: none !important;
+}
+
 [data-theme="dark"] {
   --bg: #161616;
   --bg-secondary: #262626;
