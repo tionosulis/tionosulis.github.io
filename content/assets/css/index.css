@@ -313,17 +313,7 @@ table {
   gap: 1rem;
   margin-bottom: 2.618rem;
   padding-bottom: 1.618rem;
-  border-bottom: none;
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    rgb(from var(--accent) r g b / 0.25) 15%,
-    rgb(from var(--accent) r g b / 0.25) 85%,
-    transparent
-  );
-  background-size: 100% 1px;
-  background-repeat: no-repeat;
-  background-position: bottom;
+  border-bottom: 2px double var(--border);
 }
 
 /* ── Site Logo ── */
@@ -608,7 +598,7 @@ a.visually-hidden:focus {
   align-items: center;
   font-size: 0.7rem;
   color: var(--text-secondary);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.618rem;
   letter-spacing: 0.03em;
 }
 .posts-page .breadcrumb a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; text-decoration-color: var(--accent); }
