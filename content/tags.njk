@@ -21,7 +21,11 @@ eleventyComputed:
   <header class="posts-header">
     <nav class="breadcrumb">
       <span><a href="/">~</a>/<a href="/posts/">posts</a>/{{ tag }}</span>
-      <button class="theme-toggle-posts" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button>
+      <button class="theme-toggle-posts" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span class="toggle-bracket">[</span>
+        <span class="toggle-label">--dark</span>
+        <span class="toggle-bracket">]</span>
+      </button>
     </nav>
     <div class="heading-prompt">
       <span class="prompt-char">$</span>

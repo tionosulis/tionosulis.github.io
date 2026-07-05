@@ -2,10 +2,14 @@
   <a href="/" class="site-logo-link" aria-label="Home">
     <span class="logo-prompt">&gt;_</span><span class="logo-initial">S</span>
   </a>
-  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">[dark]</button>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+    <span class="toggle-bracket">[</span>
+    <span class="toggle-label">--dark</span>
+    <span class="toggle-bracket">]</span>
+  </button>
 </header>
 <script>
-function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"})}
-document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(n){n.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"[light]":"[dark]"})
-window.addEventListener("pageshow",function(e){if(!e.persisted)return;var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.classList.add("no-transition");document.documentElement.setAttribute("data-theme",t);document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(n){n.textContent=t==="dark"?"[light]":"[dark]"});requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove("no-transition")})})})
+function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.querySelector('.toggle-label').textContent=t==="dark"?"--light":"--dark"})}
+document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(n){n.querySelector('.toggle-label').textContent=document.documentElement.getAttribute("data-theme")==="dark"?"--light":"--dark"})
+window.addEventListener("pageshow",function(e){if(!e.persisted)return;var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.classList.add("no-transition");document.documentElement.setAttribute("data-theme",t);document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(n){n.querySelector('.toggle-label').textContent=t==="dark"?"--light":"--dark"});requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove("no-transition")})})})
 </script>

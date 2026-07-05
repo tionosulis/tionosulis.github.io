@@ -391,12 +391,15 @@ table {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--text);
   font-family: var(--font-sans);
   font-size: 0.85rem;
-  padding: 0.15rem 0.3rem;
-  transition: color 0.15s ease;
-  &:hover { color: var(--accent); }
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  padding: 0.325rem 0.526rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
   &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
 
@@ -404,14 +407,29 @@ table {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--text-secondary);
   font-family: var(--font-sans);
   font-size: 0.7rem;
-  padding: 0;
-  transition: color 0.15s ease;
-  &:hover { color: var(--accent); }
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  padding: 0.268rem 0.433rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
   &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
+
+.toggle-bracket {
+  color: var(--accent);
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+.theme-toggle:hover .toggle-bracket,
+.theme-toggle-posts:hover .toggle-bracket { opacity: 1; }
+
+.toggle-label { transition: color 0.15s ease; }
+.theme-toggle:hover .toggle-label,
+.theme-toggle-posts:hover .toggle-label { color: var(--accent); }
 
 main { min-width: 0; padding-bottom: 2rem; }
 
