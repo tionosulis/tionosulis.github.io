@@ -313,7 +313,17 @@ table {
   gap: 1rem;
   margin-bottom: 2.618rem;
   padding-bottom: 1.618rem;
-  border-bottom: 2px double var(--border);
+  border-bottom: none;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgb(from var(--accent) r g b / 0.25) 15%,
+    rgb(from var(--accent) r g b / 0.25) 85%,
+    transparent
+  );
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 /* ── Site Logo ── */
