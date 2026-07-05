@@ -598,7 +598,7 @@ a.visually-hidden:focus {
   align-items: center;
   font-size: 0.7rem;
   color: var(--text-secondary);
-  margin-bottom: 0.618rem;
+  margin-bottom: 1.2rem;
   letter-spacing: 0.03em;
 }
 .posts-page .breadcrumb a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; text-decoration-color: var(--accent); }
@@ -776,8 +776,7 @@ a.visually-hidden:focus {
 .article-page .breadcrumb {
   font-size: 0.7rem;
   color: var(--text-secondary);
-  margin-bottom: 1.618rem;
-  letter-spacing: 0.03em;
+  margin-bottom: 0.618rem;
 }
 .article-page .breadcrumb .prompt-char {
   color: var(--accent);
