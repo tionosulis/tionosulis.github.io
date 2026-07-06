@@ -108,6 +108,11 @@ export default async function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toISO();
   });
 
+  eleventyConfig.addFilter("toDate", (val) => {
+    if (val instanceof Date) return val;
+    return new Date(val);
+  });
+
   eleventyConfig.addFilter("sortPinned", (collection) => {
     const pinned = collection.filter(p => p.data.pinned);
     const rest = collection.filter(p => !p.data.pinned).reverse();

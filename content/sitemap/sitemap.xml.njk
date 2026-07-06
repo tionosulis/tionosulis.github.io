@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
   {% set absoluteUrl = metadata.url ~ page.url %}
   <url>
     <loc>{{ absoluteUrl }}</loc>
-    {% if page.date %}<lastmod>{{ page.date | htmlDateString }}</lastmod>{% endif %}
+    {% set lastmod = page.data.updated | toDate if page.data.updated else page.date %}{% if lastmod %}<lastmod>{{ lastmod | htmlDateString }}</lastmod>{% endif %}
   </url>
 {%- endfor %}
 </urlset>
