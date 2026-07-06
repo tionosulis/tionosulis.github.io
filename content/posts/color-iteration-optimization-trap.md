@@ -2,7 +2,7 @@
 title: "The Optimization Trap: When Good Enough Is Better Than Perfect"
 seoTitle: "Optimization Trap: When Good Enough Is Better"
 description: "How 24 points of lightness taught me the hardest design lesson: knowing when good enough is better than perfect."
-date: 2026-06-29
+date: 2026-07-06
 draft: false
 tags: [design, css, typography, meta]
 pageHasCode: true
