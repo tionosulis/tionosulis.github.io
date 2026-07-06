@@ -1,20 +1,24 @@
 ---
-title: "The Optimization Trap: What I Learned From 17 Rounds of Gray"
-seoTitle: "The Optimization Trap: 17 Rounds of Gray"
-description: "How a week of tweaking text colors taught me that the hardest design decision isn't which shade to pick — it's knowing when to stop."
+title: "The Optimization Trap: When Good Enough Is Better Than Perfect"
+seoTitle: "Optimization Trap: When Good Enough Is Better"
+description: "How 24 points of lightness taught me the hardest design lesson: knowing when good enough is better than perfect."
 date: 2026-06-29
 draft: true
 tags: [design, css, typography, meta]
 pageHasCode: true
+image: /assets/img/og/color-iteration-optimization-trap.png
+image_alt: "A spiral of 17 color circles converging from black and dark gray toward two nearly identical light grays at the center, with a glowing blue checkmark marking the stopping point — representing diminishing returns in iterative design"
 ---
 
-I spent seven days deciding between two grays.
+![Spiral of 17 color iterations converging from black to two nearly identical grays, with a blue checkmark at the center marking the stopping point](../assets/img/color-iteration-optimization-trap.svg)
 
-Not `#000000` vs `#ffffff`. Not navy vs charcoal. Two grays that differed by exactly 24 points of lightness — `#b6bac4` and `#ced2dc`. Luminance difference of 0.15. A gap that, by any rational measure, no reader would ever consciously detect.
+*The spiral of iteration: 17 rounds converging on diminishing returns*
+
+The difference between `#b6bac4` and `#ced2dc` is 24 points of lightness. Luminance difference of 0.15. A gap that, by any rational measure, no reader would ever consciously detect.
 
 And yet I stared at them like they held the secret to readable typography.
 
-This is the story of how a routine text hierarchy refinement turned into a week-long investigation of Weber-Fechner laws, Apple's HIG contrast conventions, and the uncomfortable truth about diminishing returns in design decisions. It is not a story about finding the perfect color. It is a story about learning to recognize when "good enough" is actually better.
+This is the story of how a routine text hierarchy refinement turned into a deep-dive on Weber-Fechner laws, Apple's HIG contrast conventions, and the uncomfortable truth about diminishing returns in design decisions. It is not a story about finding the perfect color. It is a story about learning to recognize when "good enough" is actually better.
 
 ${toc}
 

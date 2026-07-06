@@ -123,4 +123,4 @@ You might notice that some posts on this blog reference elements that no longer 
 
 ---
 
-*This entire site is open source on [GitHub](https://github.com/tionosulis/tionosulis.github.io). The favicon SVGs, the CSS architecture, and the Eleventy configuration are all there — fork, adapt, make it yours. Complementary reading: [why gray hue matters for dark mode](/posts/gray-hue-is-not-neutral).*
+*This entire site is open source on [GitHub](https://github.com/tionosulis/tionosulis.github.io). The favicon SVGs, the CSS architecture, and the Eleventy configuration are all there — fork, adapt, make it yours. Complementary reading: [why gray hue matters for dark mode](/posts/gray-hue-is-not-neutral) and [the optimization trap of color iteration](/posts/color-iteration-optimization-trap).*
