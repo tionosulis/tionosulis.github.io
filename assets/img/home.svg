@@ -1,160 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
-    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="14" cy="14" r="0.8" fill="#B45309" opacity="0.08"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&amp;display=swap');
+      .l { font-family: 'JetBrains Mono', monospace; font-weight: 800; }
+      .b { font-family: 'JetBrains Mono', monospace; font-weight: 400; }
+      .t { font-family: 'JetBrains Mono', monospace; font-weight: 400; }
+    </style>
+    <pattern id="d" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.2" fill="#2A4055" opacity="0.4"/>
     </pattern>
-    <radialGradient id="amberGlow" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#B45309" stop-opacity="0.07"/>
-      <stop offset="100%" stop-color="#B45309" stop-opacity="0"/>
-    </radialGradient>
-    <clipPath id="rounded">
-      <rect width="1200" height="630" rx="10" ry="10"/>
-    </clipPath>
   </defs>
 
+  <rect width="1200" height="630" fill="#161616"/>
+  <rect width="1200" height="630" fill="url(#d)"/>
 
-  <g clip-path="url(#rounded)">
-    <rect width="1200" height="630" fill="#161616"/>
-    <rect width="1200" height="630" fill="url(#dots)"/>
-    <rect width="1200" height="630" fill="url(#amberGlow)"/>
-
-
-    <rect x="32" y="32" width="1136" height="566"
-          fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
-
-
-    <path d="M 32 80 L 32 32 L 80 32"          fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1120 32 L 1168 32 L 1168 80"    fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 32 550 L 32 598 L 80 598"       fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1168 550 L 1168 598 L 1120 598" fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-
-
-    <!-- Title bar -->
-    <rect x="0" y="0" width="1200" height="40" fill="#B45309" fill-opacity="0.07"/>
-    <line x1="0" y1="40" x2="1200" y2="40" stroke="#B45309" stroke-width="1" stroke-opacity="0.25"/>
-    <circle cx="50" cy="20" r="5" fill="#ff5f57" opacity="0.75"/>
-    <circle cx="70" cy="20" r="5" fill="#febc2e" opacity="0.75"/>
-    <circle cx="90" cy="20" r="5" fill="#28c840" opacity="0.75"/>
-    <text x="120" y="26"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="12" fill="#B45309" opacity="0.55"
-          letter-spacing="0.3" dominant-baseline="middle">tionosulis.github.io</text>
-
-
-    <!-- Prompt -->
-    <text x="100" y="118"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="24" fill="#FBBF24" opacity="0.9">$ neofetch</text>
-
-
-    <!-- LEFT: >_S ASCII-style logo -->
-    <text x="100" y="210"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="22" fill="#B45309" opacity="0.75">  ╔══════════╗</text>
-    <text x="100" y="248"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="22" fill="#B45309" opacity="0.75">  ║          ║</text>
-    <text x="100" y="286"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="22" fill="#B45309" opacity="0.75">  ║          ║</text>
-    <text x="100" y="324"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="22" fill="#B45309" opacity="0.75">  ║          ║</text>
-    <text x="100" y="362"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="22" fill="#B45309" opacity="0.75">  ║          ║</text>
-    <text x="100" y="400"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="22" fill="#B45309" opacity="0.75">  ╚══════════╝</text>
-
-
-    <!-- >_S centered in box -->
-    <text x="238" y="338"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="96" font-weight="700" fill="#d4d4d8"
-          text-anchor="middle">&gt;_S</text>
-
-
-    <!-- Vertical divider -->
-    <line x1="480" y1="105" x2="480" y2="480" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
-
-
-    <!-- RIGHT: neofetch info block -->
-    <!-- Username @ host -->
-    <text x="520" y="158"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="30" font-weight="700">
-      <tspan fill="#FBBF24">tionosulis</tspan><tspan fill="#d4d4d8">@github.io</tspan>
-    </text>
-
-
-    <!-- Separator -->
-    <text x="520" y="195"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="20" fill="#B45309" opacity="0.35">──────────────────────────</text>
-
-
-    <!-- Info rows -->
-    <text x="520" y="240"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#FBBF24" opacity="0.85">Site</text>
-    <text x="636" y="240"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#d4d4d8">tionosulis.github.io</text>
-
-
-    <text x="520" y="288"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#FBBF24" opacity="0.85">Host</text>
-    <text x="650" y="288"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#d4d4d8">GitHub Pages</text>
-
-
-    <text x="520" y="336"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#FBBF24" opacity="0.85">Shell</text>
-    <text x="668" y="336"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#d4d4d8">Eleventy + Vanilla CSS</text>
-
-
-    <text x="520" y="384"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#FBBF24" opacity="0.85">Theme</text>
-    <text x="686" y="384"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#d4d4d8">Terminal Amber</text>
-
-
-    <text x="520" y="432"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#FBBF24" opacity="0.85">Device</text>
-    <text x="692" y="432"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#d4d4d8">Smartphone + SSH</text>
-
-
-    <!-- Color palette dots -->
-    <circle cx="520" cy="476" r="14" fill="#ff5f57"/>
-    <circle cx="556" cy="476" r="14" fill="#febc2e"/>
-    <circle cx="592" cy="476" r="14" fill="#28c840"/>
-    <circle cx="628" cy="476" r="14" fill="#FBBF24"/>
-    <circle cx="664" cy="476" r="14" fill="#94a3b8"/>
-    <circle cx="700" cy="476" r="14" fill="#d4d4d8"/>
-
-
-    <!-- Status bar -->
-    <rect x="0" y="606" width="1200" height="24" fill="#B45309" fill-opacity="0.05"/>
-    <line x1="0" y1="606" x2="1200" y2="606" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
-    <text x="20" y="620"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="10" fill="#B45309" opacity="0.35">NORMAL</text>
-    <text x="1060" y="620"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="10" fill="#94a3b8" opacity="0.5">~/</text>
-  </g>
-
-
-  <rect width="1200" height="630" rx="10" ry="10"
-        fill="none" stroke="#B45309" stroke-width="1.5" stroke-opacity="0.35"/>
+  <text x="600" y="89.5" text-anchor="middle" dominant-baseline="central" class="b" font-size="99" fill="#FBBF24" opacity="0.65">┌───┐</text>
+  <text x="600" y="280" text-anchor="middle" dominant-baseline="central" class="l" font-size="160">
+    <tspan fill="#FBBF24">>_</tspan><tspan fill="#D6D6DA">S</tspan>
+  </text>
+  <text x="600" y="470.5" text-anchor="middle" dominant-baseline="central" class="b" font-size="99" fill="#FBBF24" opacity="0.65">└───┘</text>
+  <text x="600" y="562" text-anchor="middle" class="t" font-size="50" fill="#9BA3B1">Web Design &amp; Terminal Dev Notes</text>
 </svg>
