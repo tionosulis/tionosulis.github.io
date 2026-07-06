@@ -783,7 +783,7 @@ a.visually-hidden:focus {
 .article-page .breadcrumb {
   font-size: 0.7rem;
   color: var(--text-secondary);
-  margin-bottom: 0.618rem;
+  margin-bottom: 1.2rem;
 }
 .article-page .breadcrumb .prompt-char {
   color: var(--accent);
