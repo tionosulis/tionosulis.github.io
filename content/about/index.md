@@ -49,12 +49,26 @@ image_alt: "Terminal OG card with $ whoami and $ ls links/ commands, sulistiono 
 <p class="output">
 This entire site — every post, every CSS variable,<br>
 every typo — is maintained via SSH from a smartphone.<br>
-I write code at 2 AM in a dark room, debug layout bugs<br>
-on a 6-inch screen, and deploy to production using<br>
-nothing but a terminal emulator and sheer stubbornness.<br>
+I debug layout bugs on a 6-inch screen from a phone<br>
+that's older than some of my dependencies, and deploy<br>
+to production using nothing but a terminal emulator<br>
+and sheer stubbornness.<br>
 The future is here and it looks suspiciously like<br>
 a Nokia E71 with a really good keyboard.
 </p>
+
+<p><span class="prompt-char">$</span> <span class="cmd">cat</span> ~/motto</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+Embrace a tranquil and mindful life. 🌸<br>
+Live Now: Focus on the present.<br>
+Simplify: Eliminate the unnecessary.<br>
+Calm: Find peace in daily routines.<br>
+Balance: Harmonize body and mind.
+</p>
+&mdash; Sulistiono (@tionosulis_)
+<a href="https://twitter.com/tionosulis_/status/1835520698112233900">September 16, 2024</a>
+</blockquote>
 
 <p class="cursor-line"><span class="prompt-char">$</span> <span class="blinking-cursor">&#9610;</span></p>
 

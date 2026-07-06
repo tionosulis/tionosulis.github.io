@@ -201,6 +201,13 @@ blockquote {
   }
 }
 
+blockquote.twitter-tweet {
+  all: revert;
+  border-left: 2px solid var(--accent);
+  margin: 1.5rem 0 1.5rem 1.25rem;
+  padding: 0.75rem 1.25rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
