@@ -1,117 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
-    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="14" cy="14" r="0.8" fill="#B45309" opacity="0.08"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&amp;display=swap');
+    </style>
+    <pattern id="d" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="1" fill="#2A4055" opacity="0.35"/>
     </pattern>
-    <radialGradient id="amberGlow" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#B45309" stop-opacity="0.07"/>
-      <stop offset="100%" stop-color="#B45309" stop-opacity="0"/>
-    </radialGradient>
-    <clipPath id="rounded">
-      <rect width="1200" height="630" rx="10" ry="10"/>
-    </clipPath>
   </defs>
 
+  <rect width="1200" height="630" fill="#161616"/>
+  <rect width="1200" height="630" fill="url(#d)"/>
 
-  <g clip-path="url(#rounded)">
-    <rect width="1200" height="630" fill="#161616"/>
-    <rect width="1200" height="630" fill="url(#dots)"/>
-    <rect width="1200" height="630" fill="url(#amberGlow)"/>
+  <!-- LEFT CONTENT -->
+  <text x="120" y="150" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="700" fill="#FBBF24" opacity="0.9">$ whoami</text>
 
+  <text x="120" y="248" font-family="'JetBrains Mono', monospace" font-size="86" font-weight="700" fill="#D6D6DA" letter-spacing="2">sulistiono</text>
 
-    <rect x="32" y="32" width="1136" height="566"
-          fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
+  <line x1="120" y1="278" x2="560" y2="278" stroke="#FBBF24" stroke-width="1" stroke-opacity="0.2"/>
 
+  <text x="120" y="322" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="700" fill="#FBBF24" opacity="0.9">$ ls links/</text>
 
-    <path d="M 32 80 L 32 32 L 80 32"          fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1120 32 L 1168 32 L 1168 80"    fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 32 550 L 32 598 L 80 598"       fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1168 550 L 1168 598 L 1120 598" fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+  <text x="120" y="372" font-family="'JetBrains Mono', monospace" font-size="30" fill="#9BA3B1">github.com/tionosulis</text>
 
+  <text x="120" y="418" font-family="'JetBrains Mono', monospace" font-size="30" fill="#9BA3B1">twitter.com/tionosulis_</text>
 
-    <rect x="0" y="0" width="1200" height="40" fill="#B45309" fill-opacity="0.07"/>
-    <line x1="0" y1="40" x2="1200" y2="40" stroke="#B45309" stroke-width="1" stroke-opacity="0.25"/>
-    <circle cx="50" cy="20" r="5" fill="#ff5f57" opacity="0.75"/>
-    <circle cx="70" cy="20" r="5" fill="#febc2e" opacity="0.75"/>
-    <circle cx="90" cy="20" r="5" fill="#28c840" opacity="0.75"/>
-    <text x="120" y="26"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="12" fill="#B45309" opacity="0.55"
-          letter-spacing="0.3" dominant-baseline="middle">~/about</text>
+  <rect x="120" y="436" width="18" height="26" fill="#FBBF24" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0;0.7" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
 
+  <!-- RIGHT BLOCK: >_S logo box -->
+  <text x="840" y="195" text-anchor="middle" dominant-baseline="central" font-family="'JetBrains Mono', monospace" font-size="52" font-weight="400" fill="#FBBF24" opacity="0.65">┌───┐</text>
 
-    <!-- LEFT BLOCK -->
+  <text x="840" y="295" text-anchor="middle" dominant-baseline="central" font-family="'JetBrains Mono', monospace" font-size="84" font-weight="800">
+    <tspan fill="#FBBF24">&gt;_</tspan><tspan fill="#D6D6DA">S</tspan>
+  </text>
 
+  <text x="840" y="395" text-anchor="middle" dominant-baseline="central" font-family="'JetBrains Mono', monospace" font-size="52" font-weight="400" fill="#FBBF24" opacity="0.65">└───┘</text>
 
-    <!-- $ whoami -->
-    <text x="120" y="150"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#FBBF24" opacity="0.9">$ whoami</text>
-
-
-    <!-- sulistiono — larger, dominant -->
-    <text x="120" y="248"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="86" font-weight="700" fill="#d4d4d8" letter-spacing="2">sulistiono</text>
-
-
-    <!-- Divider -->
-    <line x1="120" y1="278" x2="580" y2="278" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
-
-
-    <!-- $ ls links/ -->
-    <text x="120" y="322"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="26" fill="#FBBF24" opacity="0.9">$ ls links/</text>
-
-
-    <!-- GitHub -->
-    <text x="120" y="372"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="30" fill="#94a3b8">github.com/tionosulis</text>
-
-
-    <!-- Twitter -->
-    <text x="120" y="418"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="30" fill="#94a3b8">twitter.com/tionosulis_</text>
-
-
-    <!-- Blinking cursor -->
-    <rect x="120" y="436" width="18" height="26" fill="#FBBF24" opacity="0.7">
-      <animate attributeName="opacity" values="0.7;0;0.7" dur="1.2s" repeatCount="indefinite"/>
-    </rect>
-
-
-    <!-- Vertical divider -->
-    <line x1="660" y1="70" x2="660" y2="570" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
-
-
-    <!-- RIGHT BLOCK: >_S ghost logo -->
-    <text x="930" y="410"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="160" font-weight="700"
-          fill="#d4d4d8" opacity="0.12"
-          text-anchor="middle">&gt;_S</text>
-
-
-    <!-- Tagline -->
-    <text x="930" y="468"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="18" fill="#94a3b8" opacity="0.4"
-          text-anchor="middle">Web Design &amp; Terminal Dev Notes</text>
-
-
-    <rect x="0" y="606" width="1200" height="24" fill="#B45309" fill-opacity="0.05"/>
-    <line x1="0" y1="606" x2="1200" y2="606" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
-    <text x="20" y="620"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="10" fill="#B45309" opacity="0.35">NORMAL</text>
-    <text x="1060" y="620"
-          font-family="'JetBrains Mono', 'Liberation Mono', monospace"
-          font-size="10" fill="#94a3b8" opacity="0.5">~/about</text>
-  </g>
-
-
-  <rect width="1200" height="630" rx="10" ry="10"
-        fill="none" stroke="#B45309" stroke-width="1.5" stroke-opacity="0.35"/>
+  <text x="840" y="460" text-anchor="middle" dominant-baseline="central" font-family="'JetBrains Mono', monospace" font-size="22" fill="#9BA3B1" opacity="0.7">Web Design &amp; Terminal Dev Notes</text>
 </svg>
