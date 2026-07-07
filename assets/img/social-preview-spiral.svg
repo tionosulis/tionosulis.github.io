@@ -1,0 +1,70 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E2A38"/>
+      <stop offset="100%" stop-color="#1A2430"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="0.9" fill="#2A4055" opacity="0.4"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Title block -->
+  <text x="600" y="85" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="600" letter-spacing="6" text-anchor="middle">THE SOCIAL PREVIEW SPIRAL</text>
+  <text x="600" y="112" fill="#6A8AAA" font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="2" text-anchor="middle">Eight Rounds. Eight Commits.</text>
+
+  <!-- Spiral path -->
+  <polyline points="830,330 720,470 570,510 440,420 410,270 510,180 640,220 600,350" fill="none" stroke="#3B82F6" stroke-width="1.5" opacity="0.3" stroke-linejoin="round" stroke-dasharray="3 4"/>
+
+  <!-- R1 -->
+  <circle cx="830" cy="330" r="22" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <text x="858" y="326" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500">R1</text>
+
+  <!-- R2 -->
+  <circle cx="720" cy="470" r="20" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <text x="730" y="493" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500">R2</text>
+
+  <!-- R3 -->
+  <circle cx="570" cy="510" r="18" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <text x="590" y="532" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500">R3</text>
+
+  <!-- R4 -->
+  <circle cx="440" cy="420" r="16" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <text x="420" y="425" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500" text-anchor="end">R4</text>
+
+  <!-- R5 -->
+  <circle cx="410" cy="270" r="15" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <text x="390" y="275" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" text-anchor="end">R5</text>
+
+  <!-- R6 -->
+  <circle cx="510" cy="180" r="14" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <text x="510" y="162" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" text-anchor="middle">R6</text>
+
+  <!-- R7 -->
+  <circle cx="640" cy="220" r="13" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <text x="658" y="217" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">R7</text>
+
+  <!-- R8 STOP -->
+  <circle cx="600" cy="350" r="15" fill="#3B82F6" stroke="#60A8F0" stroke-width="2" filter="url(#glow)"/>
+  <text x="601" y="354" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" text-anchor="middle">✓</text>
+
+  <!-- Annotation: iteration start -->
+  <text x="850" y="300" fill="#C08040" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle" letter-spacing="0.5">iteration start</text>
+
+  <!-- Annotation: first commit -->
+  <path d="M 395 248 L 407 260" fill="none" stroke="#C08040" stroke-width="0.8" opacity="0.6"/>
+  <text x="392" y="250" fill="#C08040" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="end" letter-spacing="0.3">first commit →</text>
+
+  <!-- STOP label -->
+  <text x="600" y="380" fill="#60A8F0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" text-anchor="middle" letter-spacing="1">STOP</text>
+
+  <!-- Caption bottom-right -->
+  <text x="1150" y="615" fill="#3A5068" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="end" opacity="0.6">8 rounds · 21 attributes · unconditional</text>
+</svg>
