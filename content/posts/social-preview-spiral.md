@@ -7,12 +7,12 @@ draft: false
 tags: [meta, web-development, eleventy, design]
 pageHasCode: true
 image: /assets/img/og/social-preview-spiral.png
-image_alt: "8 amber rounds spiral to blue ✓ STOP on dark dotted bg; title THE SOCIAL PREVIEW SPIRAL, first commit marks non-linear path"
+image_alt: "Git commit diagram with 8 zigzag nodes — red WARN, amber INFO, and final amber STOP — showing a non-linear meta tag fixing process"
 ---
 
-![8 amber rounds spiral to blue ✓ STOP on dark dotted bg; title THE SOCIAL PREVIEW SPIRAL, first commit marks non-linear path](../assets/img/social-preview-spiral.svg)
+![Git commit diagram with 8 zigzag nodes — red WARN, amber INFO, and final amber STOP — showing a non-linear meta tag fixing process](../assets/img/social-preview-spiral.svg)
 
-*Eight rounds, eight commits — converging on unconditional image metadata*
+*Eight commits, zero straight lines — the meta tag spiral in git form.*
 
 I opened Twitter Card Validator expecting a quick check. Instead I got this:
 
