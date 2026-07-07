@@ -13,8 +13,9 @@ image_alt: "Dark dotted background; $ whoami with name and social handles on lef
 <p><span class="prompt-char">$</span> <span class="cmd">ls</span> links/</p>
 <p class="output">
 <a href="/posts/">posts/</a> <span class="entry-count">{{ collections.posts | length }} entries</span><br>
-<a href="https://github.com/tionosulis">github.com/tionosulis</a><br>
-<a href="https://twitter.com/tionosulis_">twitter.com/tionosulis_</a>
+<a href="https://github.com/tionosulis">github</a><br>
+<a href="https://x.com/tionosulis_">x.com</a><br>
+<a href="mailto:contact.sulistiono@gmail.com">email</a>
 </p>
 
 {% set cats = collections.posts | tagCounts %}
