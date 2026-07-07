@@ -35,7 +35,7 @@
   {% endif %}{% endfor %}
   {% set ogImage = image or metadata.image or '/assets/img/og/home.png' %}
   {% if image %}
-    {% set ogAlt = image_alt or description or metadata.image_alt %}
+    {% set ogAlt = image_alt or description %}
   {% else %}
     {% set ogAlt = metadata.image_alt %}
   {% endif %}

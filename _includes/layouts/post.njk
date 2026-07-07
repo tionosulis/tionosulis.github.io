@@ -19,8 +19,8 @@ layout: layouts/base.njk
     "name": "{{ metadata.author.name }}",
     "url": "{{ metadata.author.url }}"
   }{% if description %},
-  "description": "{{ description | escape }}"{% endif %}{% if image %},
-  "image": "{{ metadata.url }}{{ image }}"{% endif %}
+  "description": "{{ description | escape }}"{% endif %},
+  "image": "{{ metadata.url }}{{ image or metadata.image or '/assets/img/og/home.png' }}"
 }
 </script>
   <header class="post-header">
