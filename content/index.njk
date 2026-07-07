@@ -23,13 +23,14 @@ image: /assets/img/og/home.png
   crosses my mind. Posting frequency? Random and<br>
   highly inconsistent — such is life.</p>
 
-  <p><span class="prompt-char">$</span> <span class="cmd">ls</span> links/</p>
-  <p class="output">
-    <a href="/about/">about/</a> <span class="entry-count">whoami</span><br>
-    <a href="/posts/">posts/</a> <span class="entry-count">{{ collections.posts | length }} entries</span><br>
-    <a href="https://github.com/tionosulis">github.com/tionosulis</a><br>
-    <a href="https://twitter.com/tionosulis_">twitter.com/tionosulis_</a>
-  </p>
+  <p><span class="prompt-char">$</span> <span class="cmd">tree</span> links/</p>
+  <div class="tree-listing">
+    <span class="tree-dir">links/</span>
+    <span class="tree-line">├── <a href="/about/">about/</a> <span class="entry-count">whoami</span></span>
+    <span class="tree-line">├── <a href="/posts/">posts/</a> <span class="entry-count">{{ collections.posts | length }} entries</span></span>
+    <span class="tree-line">├── <a href="https://github.com/tionosulis">github.com/tionosulis</a></span>
+    <span class="tree-line">└── <a href="https://twitter.com/tionosulis_">twitter.com/tionosulis_</a></span>
+  </div>
 
   <p class="cursor-line"><span class="prompt-char">$</span> <span class="blinking-cursor">&#9610;</span></p>
 </div>
