@@ -1,14 +1,18 @@
 ---
-title: "The Social Preview Spiral: What I Learned From 7 Rounds of Meta Tags"
-seoTitle: "The Social Preview Spiral: 7 Rounds of Meta Tags"
-description: "How a validator warning about Twitter cards turned into a 7-commit deep-dive — and the checklist I wish I'd started with."
-date: 2026-06-30
-draft: true
+title: "The Social Preview Spiral: What I Learned From 8 Rounds of Meta Tags"
+seoTitle: "The Social Preview Spiral: 8 Rounds of Meta Tags"
+description: "How a validator warning about Twitter cards turned into an 8-commit deep-dive — and the checklist I wish I'd started with."
+date: 2026-07-07
+draft: false
 tags: [meta, web-development, eleventy, design]
 pageHasCode: true
 image: /assets/img/og/social-preview-spiral.png
 image_alt: "8 amber rounds spiral to blue ✓ STOP on dark dotted bg; title THE SOCIAL PREVIEW SPIRAL, first commit marks non-linear path"
 ---
+
+![8 amber rounds spiral to blue ✓ STOP on dark dotted bg; title THE SOCIAL PREVIEW SPIRAL, first commit marks non-linear path](../assets/img/social-preview-spiral.svg)
+
+*Eight rounds, eight commits — converging on unconditional image metadata*
 
 I opened Twitter Card Validator expecting a quick check. Instead I got this:
 
