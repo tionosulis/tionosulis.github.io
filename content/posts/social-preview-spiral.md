@@ -52,7 +52,7 @@ Each round of the spiral followed the same pattern: open validator, notice somet
 
 **Round seven: article metadata.** The blog has publish dates and tags. Neither were exposed as structured meta. Every post card was just a generic page — no `article:published_time`, no `article:tag`. Fix: conditional `article:published_time` (only on non-homepage pages with `page.date`) and a loop over all tags excluding the `"posts"` collection tag. Same commit as round three.
 
-**Round eight: unconditional image metadata.** The conditional approach for width, height, and alt had a blindspot — posts without frontmatter `image` still got `og:image` via site fallback, but `og:image:width`, `og:image:height`, and `og:image:alt` were silently missing. Twitter fell back to `summary` card (small icon) instead of `summary_large_image`. Fix: moved all image metas outside the conditional block, added a second fallback variable `ogAlt` with chain `image_alt → description → metadata.image_alt`, and set `metadata.image_alt` as the site-wide default in `metadata.js`. Now every page — regardless of frontmatter — outputs complete image metadata. Commit `94e39ee`.
+**Round eight: unconditional image metadata.** The conditional approach for width, height, and alt had a blindspot — posts without frontmatter `image` still got `og:image` via site fallback, but `og:image:width`, `og:image:height`, and `og:image:alt` were silently missing. Twitter fell back to `summary` card (small icon) instead of `summary_large_image`. Fix: moved all image metas outside the conditional block, split `ogAlt` logic — when a page has its own `image`, the alt fallback chain is `image_alt → description → metadata.image_alt`; when using the site default image, `ogAlt` always uses `metadata.image_alt` (describing the visual, not the page). Set `metadata.image_alt` as the site-wide default in `metadata.js`. Now every page — regardless of frontmatter — outputs complete image metadata. Commit `94e39ee`.
 
 Eight rounds. Eight commits. Each one individually justified. Collectively: a full afternoon of what felt like productive work that, in retrospect, I could have done in one sitting with the right checklist.
 
@@ -74,7 +74,7 @@ That last point is the real danger. If your CSS breaks, the page looks wrong ins
 
 ## The Checklist That Should Have Prevented This
 
-After the seventh commit, I wrote down exactly what I should have checked before the first deploy. Here it is:
+After the eighth commit, I wrote down exactly what I should have checked before the first deploy. Here it is:
 
 ```
 □ og:title exists and is under 60 characters
