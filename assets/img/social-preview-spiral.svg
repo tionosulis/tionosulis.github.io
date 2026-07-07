@@ -1,70 +1,127 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1E2A38"/>
-      <stop offset="100%" stop-color="#1A2430"/>
-    </linearGradient>
-    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle cx="13" cy="13" r="0.9" fill="#2A4055" opacity="0.4"/>
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="0.8" fill="#B45309" opacity="0.08"/>
     </pattern>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <radialGradient id="amberGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#B45309" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#B45309" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#FBBF24" flood-opacity="0.4"/>
     </filter>
+    <filter id="shadowWarn">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#ef4444" flood-opacity="0.3"/>
+    </filter>
+    <clipPath id="rounded">
+      <rect width="1200" height="630" rx="10" ry="10"/>
+    </clipPath>
   </defs>
 
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect width="1200" height="630" fill="url(#dots)"/>
+  <g clip-path="url(#rounded)">
+    <rect width="1200" height="630" fill="#161616"/>
+    <rect width="1200" height="630" fill="url(#dots)"/>
+    <rect width="1200" height="630" fill="url(#amberGlow)"/>
 
-  <!-- Title block -->
-  <text x="600" y="85" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="600" letter-spacing="6" text-anchor="middle">THE SOCIAL PREVIEW SPIRAL</text>
-  <text x="600" y="112" fill="#6A8AAA" font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="2" text-anchor="middle">Eight Rounds. Eight Commits.</text>
+    <!-- Inner frame -->
+    <rect x="32" y="32" width="1136" height="566" fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
 
-  <!-- Spiral path -->
-  <polyline points="830,330 720,470 570,510 440,420 410,270 510,180 640,220 600,350" fill="none" stroke="#3B82F6" stroke-width="1.5" opacity="0.3" stroke-linejoin="round" stroke-dasharray="3 4"/>
+    <!-- Corner accents -->
+    <path d="M 32 80 L 32 32 L 80 32"          fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 1120 32 L 1168 32 L 1168 80"    fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 32 550 L 32 598 L 80 598"       fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 1168 550 L 1168 598 L 1120 598" fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
 
-  <!-- R1 -->
-  <circle cx="830" cy="330" r="22" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="858" y="326" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500">R1</text>
+    <!-- Title bar -->
+    <rect x="0" y="0" width="1200" height="40" fill="#B45309" fill-opacity="0.07"/>
+    <line x1="0" y1="40" x2="1200" y2="40" stroke="#B45309" stroke-width="1" stroke-opacity="0.25"/>
+    <circle cx="50" cy="20" r="5" fill="#ff5f57" opacity="0.75"/>
+    <circle cx="70" cy="20" r="5" fill="#febc2e" opacity="0.75"/>
+    <circle cx="90" cy="20" r="5" fill="#28c840" opacity="0.75"/>
+    <text x="120" y="26" font-family="'JetBrains Mono', monospace" font-size="12" fill="#B45309" opacity="0.55" letter-spacing="0.3" dominant-baseline="middle">git log --oneline</text>
 
-  <!-- R2 -->
-  <circle cx="720" cy="470" r="20" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="730" y="493" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500">R2</text>
+    <!-- Title -->
+    <text x="600" y="88" font-family="'JetBrains Mono', monospace" font-size="14" fill="#FBBF24" opacity="0.9" text-anchor="middle">$ git log --oneline · 8 commits · not linear</text>
 
-  <!-- R3 -->
-  <circle cx="570" cy="510" r="18" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="590" y="532" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500">R3</text>
+    <!-- Connector lines -->
+    <line x1="180" y1="175" x2="420" y2="255" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5 3"/>
+    <line x1="420" y1="255" x2="680" y2="175" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5 3"/>
+    <line x1="680" y1="175" x2="920" y2="285" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5 3"/>
+    <line x1="920" y1="285" x2="680" y2="390" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5 3"/>
+    <line x1="680" y1="390" x2="420" y2="320" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5 3"/>
+    <line x1="420" y1="320" x2="220" y2="420" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5 3"/>
+    <line x1="220" y1="420" x2="520" y2="490" stroke="#FBBF24" stroke-width="2" stroke-dasharray="5 3"/>
 
-  <!-- R4 -->
-  <circle cx="440" cy="420" r="16" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="420" y="425" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500" text-anchor="end">R4</text>
+    <!-- COMMIT 1 — WARN -->
+    <circle cx="180" cy="175" r="26" fill="#1e1010" stroke="#ef4444" stroke-width="2" filter="url(#shadowWarn)"/>
+    <text x="180" y="169" font-family="'JetBrains Mono', monospace" font-size="12" fill="#d4d4d8" text-anchor="middle" font-weight="700">01</text>
+    <text x="180" y="184" font-family="'JetBrains Mono', monospace" font-size="10" fill="#ef4444" text-anchor="middle" font-weight="700">WARN</text>
+    <text x="180" y="214" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8" text-anchor="middle">ef58136</text>
+    <text x="180" y="230" font-family="'JetBrains Mono', monospace" font-size="11" fill="#b0b8c8" text-anchor="middle">add og:image</text>
 
-  <!-- R5 -->
-  <circle cx="410" cy="270" r="15" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="390" y="275" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" text-anchor="end">R5</text>
+    <!-- COMMIT 2 — WARN -->
+    <circle cx="420" cy="255" r="26" fill="#1e1010" stroke="#ef4444" stroke-width="2" filter="url(#shadowWarn)"/>
+    <text x="420" y="249" font-family="'JetBrains Mono', monospace" font-size="12" fill="#d4d4d8" text-anchor="middle" font-weight="700">02</text>
+    <text x="420" y="264" font-family="'JetBrains Mono', monospace" font-size="10" fill="#ef4444" text-anchor="middle" font-weight="700">WARN</text>
+    <text x="420" y="294" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8" text-anchor="middle">0570209</text>
+    <text x="420" y="310" font-family="'JetBrains Mono', monospace" font-size="11" fill="#b0b8c8" text-anchor="middle">fix path</text>
 
-  <!-- R6 -->
-  <circle cx="510" cy="180" r="14" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="510" y="162" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" text-anchor="middle">R6</text>
+    <!-- COMMIT 3 — INFO -->
+    <circle cx="680" cy="175" r="26" fill="#1a1500" stroke="#f59e0b" stroke-width="2"/>
+    <text x="680" y="169" font-family="'JetBrains Mono', monospace" font-size="12" fill="#d4d4d8" text-anchor="middle" font-weight="700">03</text>
+    <text x="680" y="184" font-family="'JetBrains Mono', monospace" font-size="10" fill="#f59e0b" text-anchor="middle" font-weight="700">INFO</text>
+    <text x="680" y="214" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8" text-anchor="middle">a3f1c22</text>
+    <text x="680" y="230" font-family="'JetBrains Mono', monospace" font-size="11" fill="#b0b8c8" text-anchor="middle">add twitter:card</text>
 
-  <!-- R7 -->
-  <circle cx="640" cy="220" r="13" fill="#B45309" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="658" y="217" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">R7</text>
+    <!-- COMMIT 4 — WARN -->
+    <circle cx="920" cy="285" r="26" fill="#1e1010" stroke="#ef4444" stroke-width="2" filter="url(#shadowWarn)"/>
+    <text x="920" y="279" font-family="'JetBrains Mono', monospace" font-size="12" fill="#d4d4d8" text-anchor="middle" font-weight="700">04</text>
+    <text x="920" y="294" font-family="'JetBrains Mono', monospace" font-size="10" fill="#ef4444" text-anchor="middle" font-weight="700">WARN</text>
+    <text x="920" y="324" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8" text-anchor="middle">b8d4e91</text>
+    <text x="920" y="340" font-family="'JetBrains Mono', monospace" font-size="11" fill="#b0b8c8" text-anchor="middle">fix dimensions</text>
 
-  <!-- R8 STOP -->
-  <circle cx="600" cy="350" r="15" fill="#3B82F6" stroke="#60A8F0" stroke-width="2" filter="url(#glow)"/>
-  <text x="601" y="354" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" text-anchor="middle">✓</text>
+    <!-- COMMIT 5 — INFO -->
+    <circle cx="680" cy="390" r="26" fill="#1a1500" stroke="#f59e0b" stroke-width="2"/>
+    <text x="680" y="384" font-family="'JetBrains Mono', monospace" font-size="12" fill="#d4d4d8" text-anchor="middle" font-weight="700">05</text>
+    <text x="680" y="399" font-family="'JetBrains Mono', monospace" font-size="10" fill="#f59e0b" text-anchor="middle" font-weight="700">INFO</text>
+    <text x="680" y="429" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8" text-anchor="middle">c2a8f44</text>
+    <text x="680" y="445" font-family="'JetBrains Mono', monospace" font-size="11" fill="#b0b8c8" text-anchor="middle">add og:alt</text>
 
-  <!-- Annotation: iteration start -->
-  <text x="850" y="300" fill="#C08040" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle" letter-spacing="0.5">iteration start</text>
+    <!-- COMMIT 6 — INFO -->
+    <circle cx="420" cy="320" r="26" fill="#1a1500" stroke="#f59e0b" stroke-width="2"/>
+    <text x="420" y="314" font-family="'JetBrains Mono', monospace" font-size="12" fill="#d4d4d8" text-anchor="middle" font-weight="700">06</text>
+    <text x="420" y="329" font-family="'JetBrains Mono', monospace" font-size="10" fill="#f59e0b" text-anchor="middle" font-weight="700">INFO</text>
+    <text x="420" y="359" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8" text-anchor="middle">d9b3c17</text>
+    <text x="420" y="375" font-family="'JetBrains Mono', monospace" font-size="11" fill="#b0b8c8" text-anchor="middle">structured data</text>
 
-  <!-- Annotation: first commit -->
-  <path d="M 395 248 L 407 260" fill="none" stroke="#C08040" stroke-width="0.8" opacity="0.6"/>
-  <text x="392" y="250" fill="#C08040" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="end" letter-spacing="0.3">first commit →</text>
+    <!-- COMMIT 7 — INFO -->
+    <circle cx="220" cy="420" r="26" fill="#1a1500" stroke="#f59e0b" stroke-width="2"/>
+    <text x="220" y="414" font-family="'JetBrains Mono', monospace" font-size="12" fill="#d4d4d8" text-anchor="middle" font-weight="700">07</text>
+    <text x="220" y="429" font-family="'JetBrains Mono', monospace" font-size="10" fill="#f59e0b" text-anchor="middle" font-weight="700">INFO</text>
+    <text x="220" y="459" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8" text-anchor="middle">f1e6a83</text>
+    <text x="220" y="475" font-family="'JetBrains Mono', monospace" font-size="11" fill="#b0b8c8" text-anchor="middle">seoTitle fix</text>
 
-  <!-- STOP label -->
-  <text x="600" y="380" fill="#60A8F0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" text-anchor="middle" letter-spacing="1">STOP</text>
+    <!-- COMMIT 8 — DONE -->
+    <circle cx="520" cy="490" r="30" fill="#1a1200" stroke="#FBBF24" stroke-width="2.5" filter="url(#shadow)"/>
+    <text x="520" y="483" font-family="'JetBrains Mono', monospace" font-size="12" fill="#FBBF24" text-anchor="middle" font-weight="700">08</text>
+    <text x="520" y="499" font-family="'JetBrains Mono', monospace" font-size="11" fill="#FBBF24" text-anchor="middle" font-weight="700">✓ STOP</text>
+    <text x="520" y="533" font-family="'JetBrains Mono', monospace" font-size="11" fill="#FBBF24" opacity="0.7" text-anchor="middle">3d9c2f1</text>
+    <text x="520" y="549" font-family="'JetBrains Mono', monospace" font-size="11" fill="#FBBF24" opacity="0.6" text-anchor="middle">all tags valid</text>
 
-  <!-- Caption bottom-right -->
-  <text x="1150" y="615" fill="#3A5068" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="end" opacity="0.6">8 rounds · 21 attributes · unconditional</text>
+    <!-- Legend -->
+    <circle cx="820" cy="555" r="6" fill="#1e1010" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="834" y="560" font-family="'JetBrains Mono', monospace" font-size="12" fill="#d4d4d8">WARN</text>
+    <circle cx="908" cy="555" r="6" fill="#1a1500" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="922" y="560" font-family="'JetBrains Mono', monospace" font-size="12" fill="#d4d4d8">INFO</text>
+    <circle cx="992" cy="555" r="6" fill="#1a1200" stroke="#FBBF24" stroke-width="1.5"/>
+    <text x="1006" y="560" font-family="'JetBrains Mono', monospace" font-size="12" fill="#d4d4d8">DONE</text>
+
+    <!-- Status bar -->
+    <rect x="0" y="606" width="1200" height="24" fill="#B45309" fill-opacity="0.05"/>
+    <line x1="0" y1="606" x2="1200" y2="606" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
+    <text x="20" y="620" font-family="'JetBrains Mono', monospace" font-size="10" fill="#B45309" opacity="0.35">NORMAL</text>
+    <text x="1040" y="620" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8" opacity="0.5">8 commits</text>
+  </g>
+
+  <rect width="1200" height="630" rx="10" ry="10" fill="none" stroke="#B45309" stroke-width="1.5" stroke-opacity="0.35"/>
 </svg>
