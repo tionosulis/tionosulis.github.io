@@ -6,6 +6,8 @@ date: 2026-06-30
 draft: true
 tags: [meta, web-development, eleventy, design]
 pageHasCode: true
+image: /assets/img/og/social-preview-spiral.png
+image_alt: "8 amber rounds spiral to blue ✓ STOP on dark dotted bg; title THE SOCIAL PREVIEW SPIRAL, first commit marks non-linear path"
 ---
 
 I opened Twitter Card Validator expecting a quick check. Instead I got this:

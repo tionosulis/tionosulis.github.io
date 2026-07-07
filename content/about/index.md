@@ -5,7 +5,7 @@ description: >-
   Sulistiono — web developer and blogger. Vanilla CSS, static sites, writes about
   frontend. Ships mainly from a phone via SSH and sheer stubbornness.
 image: /assets/img/og/about.png
-image_alt: "Terminal card: sulistiono heading, $ whoami and $ ls links/ commands, GitHub and Twitter handles, >_S logo in amber ASCII box on dark dotted background"
+image_alt: "Dark dotted background; $ whoami with name and social handles on left, >_S amber ASCII logo box with tagline on right"
 ---
 
 <div class="home-terminal">
