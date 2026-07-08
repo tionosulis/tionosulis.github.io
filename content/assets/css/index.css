@@ -10,17 +10,17 @@
   --font-sans: "JetBrains Mono", ui-monospace, monospace;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --bg: #ffffff;
-  --bg-secondary: #f4f4f4;
+  --bg: #f8f5f0;
+  --bg-secondary: #efebe4;
   --text: #1b1e23;
   --text-body: #2d323c;
   --text-secondary: #58606e;
   --text-tertiary: #7e8695;
-  --border: #d0d0d0;
+  --border: #c9c4bb;
   --accent: #B45309;
   --accent-hover: #92400E;
   --selection: rgba(180, 83, 9, 0.15);
-  --syntax-bg: #fbfbfb;
+  --syntax-bg: #f2eee7;
   --error: #EF4444;
 
   --radius: 6px;
@@ -600,7 +600,7 @@ a.visually-hidden:focus {
 .posts-page .posts-header {
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(100, 116, 139, 0.15);
+  border-bottom: 1px solid rgba(100, 116, 139, 0.45);
 }
 .posts-page .breadcrumb {
   display: flex;
@@ -693,7 +693,7 @@ a.visually-hidden:focus {
   padding: 0.55rem 0.5rem;
   margin: 0 -0.5rem;
   border-radius: 3px;
-  border-bottom: 1px solid rgba(100, 116, 139, 0.08);
+  border-bottom: 1px solid rgba(100, 116, 139, 0.3);
   transition: background 0.15s;
 }
 .posts-page .post-item:hover { background: rgba(180, 83, 9, 0.07); }
@@ -716,7 +716,7 @@ a.visually-hidden:focus {
 .posts-page .line-sep {
   width: 1px;
   height: 1.1rem;
-  background: rgba(100, 116, 139, 0.2);
+  background: rgba(100, 116, 139, 0.65);
   align-self: center;
 }
 .posts-page .post-content {
@@ -770,9 +770,17 @@ a.visually-hidden:focus {
 
 @media (prefers-color-scheme: dark) {
   .posts-page .post-item:hover { background: rgba(251, 191, 36, 0.12); }
+  .posts-page .posts-header { border-bottom-color: rgba(100, 116, 139, 0.8); }
+  .posts-page .line-sep { background: rgba(100, 116, 139, 1); }
 }
 [data-theme="dark"] .posts-page .post-item:hover {
   background: rgba(251, 191, 36, 0.12);
+}
+[data-theme="dark"] .posts-page .posts-header {
+  border-bottom-color: rgba(100, 116, 139, 0.8);
+}
+[data-theme="dark"] .posts-page .line-sep {
+  background: rgba(100, 116, 139, 1);
 }
 
 @media (max-width: 480px) {
@@ -922,6 +930,7 @@ a.visually-hidden:focus {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   text-decoration-color: var(--accent);
+  padding: 0.45rem 0.4rem;
   &:hover { color: var(--accent-hover); }
 }
 .tree-line .entry-count {
@@ -945,8 +954,9 @@ a.visually-hidden:focus {
 .tree-line--ext .entry-count {
   color: var(--text-muted);
 }
-.tree-line a {
-  padding: 0.3rem 0;
+
+@media (max-width: 480px) {
+  .tree-line a { padding: 0.55rem 0.4rem; }
 }
 
 /* File meta */
