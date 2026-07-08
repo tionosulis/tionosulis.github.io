@@ -600,7 +600,7 @@ a.visually-hidden:focus {
 .posts-page .posts-header {
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(100, 116, 139, 0.45);
+  border-bottom: 1px solid rgba(100, 116, 139, 0.15);
 }
 .posts-page .breadcrumb {
   display: flex;
@@ -693,7 +693,7 @@ a.visually-hidden:focus {
   padding: 0.55rem 0.5rem;
   margin: 0 -0.5rem;
   border-radius: 3px;
-  border-bottom: 1px solid rgba(100, 116, 139, 0.3);
+  border-bottom: 1px solid rgba(100, 116, 139, 0.12);
   transition: background 0.15s;
 }
 .posts-page .post-item:hover { background: rgba(180, 83, 9, 0.07); }
@@ -716,7 +716,7 @@ a.visually-hidden:focus {
 .posts-page .line-sep {
   width: 1px;
   height: 1.1rem;
-  background: rgba(100, 116, 139, 0.65);
+  background: rgba(100, 116, 139, 0.4);
   align-self: center;
 }
 .posts-page .post-content {
@@ -770,17 +770,9 @@ a.visually-hidden:focus {
 
 @media (prefers-color-scheme: dark) {
   .posts-page .post-item:hover { background: rgba(251, 191, 36, 0.12); }
-  .posts-page .posts-header { border-bottom-color: rgba(100, 116, 139, 0.8); }
-  .posts-page .line-sep { background: rgba(100, 116, 139, 1); }
 }
 [data-theme="dark"] .posts-page .post-item:hover {
   background: rgba(251, 191, 36, 0.12);
-}
-[data-theme="dark"] .posts-page .posts-header {
-  border-bottom-color: rgba(100, 116, 139, 0.8);
-}
-[data-theme="dark"] .posts-page .line-sep {
-  background: rgba(100, 116, 139, 1);
 }
 
 @media (max-width: 480px) {
@@ -930,7 +922,7 @@ a.visually-hidden:focus {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   text-decoration-color: var(--accent);
-  padding: 0.45rem 0.4rem;
+  padding: 0.15rem 0;
   &:hover { color: var(--accent-hover); }
 }
 .tree-line .entry-count {
@@ -939,6 +931,8 @@ a.visually-hidden:focus {
 }
 .tree-prefix {
   color: inherit;
+  display: inline-block;
+  padding: 0.15rem 0;
 }
 .tree-line--ext {
   color: var(--text-muted);
@@ -956,7 +950,8 @@ a.visually-hidden:focus {
 }
 
 @media (max-width: 480px) {
-  .tree-line a { padding: 0.55rem 0.4rem; }
+  .tree-line a { padding: 0.15rem 0; }
+  .tree-prefix { padding: 0.15rem 0; }
 }
 
 /* File meta */
