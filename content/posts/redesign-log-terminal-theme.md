@@ -73,8 +73,8 @@ The most visible change is the interaction language. Every page adopts a command
 | Page | Prompt | Meaning |
 |------|--------|---------|
 | Home | `$ whoami` | Who runs this blog |
-| Home | `$ cat about.txt` | Read the about file |
-| Home | `$ ls links/` | List external links |
+| Home | `$ cat about.md` | Read the about file |
+| Home | `$ tree links/` | List external links |
 | Posts | `$ posts` | You're in the posts directory |
 | Posts | `cat thoughts.log` | Loading the log |
 | Tag | `$ cat tag/css` | Filter by tag |
