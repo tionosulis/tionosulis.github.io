@@ -64,7 +64,7 @@ With the toggle attribute in place, the stylesheet defines two sets of custom pr
 
 ```css
 :root {
-  --bg: #fafafa;
+  --bg: #f8f5f0;
   --text: #1b1e23;
   --accent: #2563eb;
   /* ... more variables */
@@ -167,14 +167,14 @@ The dark mode CSS toggles which one is visible:
 [data-theme="dark"] .shiki.github-dark { display: block; }
 ```
 
-There's also a `@media (prefers-color-scheme: dark)` fallback for the no-script case. After the Chasing 100 post, I also had to adjust specific Shiki token colors to meet WCAG AA contrast (4.5:1) — orange `#E36209` became `#B84D00`, red `#D73A49` became `#C92E3D`.
+There's also a `@media (prefers-color-scheme: dark)` fallback for the no-script case. After the Chasing 100 post, I also had to adjust specific Shiki token colors to meet WCAG AA contrast (4.5:1) — orange `#E36209` became `#A84400`, red `#D73A49` became `#C92E3D`.
 
 ## Why Not CSS-Only? (The Temptation)
 
 There's a seductive approach that uses `prefers-color-scheme` exclusively, without JavaScript:
 
 ```css
-:root { --bg: #fafafa; /* light */ }
+:root { --bg: #f8f5f0; /* light */ }
 @media (prefers-color-scheme: dark) { :root { --bg: #0a0a0b; } }
 ```
 

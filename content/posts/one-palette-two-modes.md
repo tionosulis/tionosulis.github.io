@@ -6,14 +6,14 @@ date: 2026-06-28
 draft: false
 tags: [design, css, meta, howto]
 image: /assets/img/og/one-palette-two-modes.png
-image_alt: "Split comparison showing a hero card at #2A4053 surviving against both light (#ffffff) and dark (#161616) backgrounds, with color palette swatches alongside"
+image_alt: "Split comparison showing a hero card at #2A4053 surviving against both light (#f8f5f0) and dark (#161616) backgrounds, with color palette swatches alongside"
 ---
 
-![Split comparison: a hero card at #2A4053 surviving against light bg #ffffff (left) and dark bg #161616 (right), with color palette swatches](../assets/img/one-palette-two-modes.svg)
+![Split comparison: a hero card at #2A4053 surviving against light bg #f8f5f0 (left) and dark bg #161616 (right), with color palette swatches](../assets/img/one-palette-two-modes.svg)
 
 *The same hero card, two backgrounds — light and dark. The palette below shows the semantic color system that standardises accent colours across hero SVGs on this blog.*
 
-Every hero image on this blog is an SVG embedded via `<img>`. That means the browser renders it on a transparent canvas, and the page background shows through. In a blog with both light and dark mode, that single image has to survive two completely different backgrounds: `#ffffff` on the light side, `#161616` on the dark side.
+Every hero image on this blog is an SVG embedded via `<img>`. That means the browser renders it on a transparent canvas, and the page background shows through. In a blog with both light and dark mode, that single image has to survive two completely different backgrounds: `#f8f5f0` on the light side, `#161616` on the dark side.
 
 When I first started creating hero SVGs, I didn't think about this. I picked a dark navy, `#0F1824`, because it looked dramatic and matched the "developer" vibe I was going for. It worked fine in dark mode. In light mode, it looked like a black hole had swallowed my content.
 
@@ -23,12 +23,12 @@ ${toc}
 
 ## The Problem: One Image, Two Backgrounds
 
-The blog's body background is `#ffffff` in light mode and `#161616` in dark mode. Every hero image sits inside `article img`, which gets `border: 1px solid var(--border)` — but that border alone isn't enough to fix a bad background color.
+The blog's body background is `#f8f5f0` in light mode and `#161616` in dark mode. Every hero image sits inside `article img`, which gets `border: 1px solid var(--border)` — but that border alone isn't enough to fix a bad background color.
 
 My original palette was `#0F1824` — a very dark navy. Here's how it performed:
 
 - **Dark mode:** Acceptable. The image bg and page bg were close enough that the border provided separation. But the inner card fills were even darker (`#0A0F16`), making text and icons hard to read.
-- **Light mode:** Poor. The dark image block against `#ffffff` created high contrast, but the content inside the image — the actual illustration — was nearly invisible. Card fills blended into each other. Text didn't pop.
+- **Light mode:** Poor. The dark image block against `#f8f5f0` created high contrast, but the content inside the image — the actual illustration — was nearly invisible. Card fills blended into each other. Text didn't pop.
 
 Worse, every hero SVG used its own arbitrary palette. Orange meant different things in different images. Red was used for both errors and decorative accents. There was no system.
 
@@ -54,7 +54,7 @@ linear-gradient(135deg, #2A4053, #243846)
 
 Why this works:
 
-- **Against `#ffffff`:** `#2A4053` is dark enough to create clear separation — the `1px` border keeps it framed, but the bg isn't black, so the eye reads it as a card, not a hole.
+- **Against `#f8f5f0`:** `#2A4053` is dark enough to create clear separation — the `1px` border keeps it framed, but the bg isn't black, so the eye reads it as a card, not a hole.
 - **Against `#161616`:** `#2A4053` is lighter than the page bg, so the image stays distinct without needing a glowing border.
 - **As a backdrop for content:** White text (`#C8D8E8`), secondary text (`#7A9AB0`), and colored accents all have enough contrast against this mid-dark slate. Card fills at `#1A2634` create depth without disappearing.
 
@@ -95,7 +95,7 @@ While I was standardizing the palette, I also added an outer frame to every hero
 
 The frame does two things:
 
-1. **Gives the image its own visual boundary** — especially important in light mode, where the dark bg needs a clean edge against `#ffffff`.
+1. **Gives the image its own visual boundary** — especially important in light mode, where the dark bg needs a clean edge against `#f8f5f0`.
 2. **Provides consistent brand identity** across every hero image. Orange corner accents at the top, green at the bottom. Three pill dots on the right edge. A subtle outer shadow. These details accumulate into a recognisable visual language.
 
 ## The Red Glow Problem
@@ -139,11 +139,13 @@ article img {
 }
 ```
 
-`--border` resolves to `#d0d0d0` in light mode and `#505050` in dark mode. That thin border is what separates the hero image from the page background — especially in light mode, where `#2A4053` against `#ffffff` needs a clean transition. The subtle `box-shadow` adds depth without calling attention to itself.
+`--border` resolves to `#c9c4bb` in light mode and `#505050` in dark mode. That thin border is what separates the hero image from the page background — especially in light mode, where `#2A4053` against `#f8f5f0` needs a clean transition. The subtle `box-shadow` adds depth without calling attention to itself.
 
 Without it, the `#2A4053` image looks like a floating cutout. With it, the image snaps into place as a deliberate design element.
 
 Not every hero image on this blog uses `#2A4053`. Terminal-window SVGs use `#161616` with an amber dot grid — the dark background carries the terminal metaphor, and amber provides contrast against both light and dark page backgrounds. Tutorial-style SVGs use a light `#fafafa` base with a dot pattern, keeping the illustration airy and letting the page layout provide the dark-mode anchor. The `#2A4053` approach described here is for *card-style* heroes — where content needs a solid, neutral anchor between two vastly different page backgrounds. Choose the strategy that fits the metaphor.
+
+Since the initial publication, the light background shifted from `#ffffff` to `#f8f5f0` — a warm off-white. The change wasn't aimed at hero images, but it improved them across the board. Card-style heroes (`#2A4053`) still read as deliberate cards — the border frames them. Terminal-style heroes (`#161616`) feel less harsh; the dark block against warm off-white is easier on the eyes than against stark white. Light-bg illustrations (`#fafafa`) no longer float — the warm page tone gives them a natural home. And pure white elements inside SVGs gain a subtle distinction they never had against a pure white page. A background that works with every hero type wasn't the goal — but it's the result.
 
 ## Color Semantics as a Decision Framework
 

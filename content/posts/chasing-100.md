@@ -143,7 +143,7 @@ After calculating luminance for each color against a white (`#FFFFFF`) backgroun
 | `#E36209` | 0.2233 | 3.85:1 | ❌ Fail |
 | `#D73A49` | 0.1794 | 4.58:1 | ⚠️ Borderline |
 
-The orange was clearly failing at 3.85:1. The red technically passed on white, but failed on the slightly gray `#F6F8FA` background that Shiki uses — at 4.31:1.
+The orange was clearly failing at 3.85:1. The red technically passed on white, but failed on the slightly gray `#f2eee7` background that Shiki now uses — at 4.31:1.
 
 ### The Fix: Override with WCAG-Safe Values
 
@@ -151,7 +151,7 @@ I needed colors that look visually similar but cross the 4.5:1 threshold. After 
 
 ```css
 [data-theme="light"] .shiki span[style*="color:#E36209"] {
-  color: #B84D00 !important;
+  color: #A84400 !important;
 }
 [data-theme="light"] .shiki span[style*="color:#D73A49"] {
   color: #C92E3D !important;
@@ -160,7 +160,7 @@ I needed colors that look visually similar but cross the 4.5:1 threshold. After 
 
 | Color | Old | New | Ratio | Delta |
 |---|---|---|---|---|
-| Orange | `#E36209` | `#B84D00` | 3.85 → 4.76:1 | +0.91 |
+| Orange | `#E36209` | `#A84400` | 3.85 → 5.20:1 | +1.35 |
 | Red | `#D73A49` | `#C92E3D` | 4.31 → 5.33:1 | +1.02 |
 
 These overrides only apply in light mode. Dark mode is handled by Shiki's `--shiki-dark` CSS variables, which already pass WCAG AA against the dark background.

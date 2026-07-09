@@ -3,7 +3,7 @@ title: "$ cat ~/redesign-log: Terminal Theme, Amber Accent, and the Pursuit of C
 seoTitle: "Redesigning My Blog: Terminal Theme & Amber Accent"
 description: "A field log of transforming a blog to a terminal-themed space — JetBrains Mono, amber accents, and golden-ratio spacing with full design rationale."
 date: 2026-06-25
-updated: 2026-07-06
+updated: 2026-07-09
 pinned: true
 tags: [meta, design, css, terminal, golden-ratio]
 image: /assets/img/og/redesign-log-terminal-theme.png
@@ -40,14 +40,14 @@ Color was the hardest decision. Blue is the safe choice for web links — it's u
 
 I knew amber was the right hue from the start: it evokes terminals (green is the obvious alternative, but green-on-white is hard to read and green-on-black is cliché). The challenge was finding a specific shade that passes WCAG AA.
 
-The first candidate was `#F59E0B` — a warm, energetic amber. It looked great. But against a white background (`#ffffff`), its contrast ratio is only **3.19:1**. That fails WCAG AA for normal text (4.5:1) and barely passes for large text.
+The first candidate was `#F59E0B` — a warm, energetic amber. It looked great. But against a light background (`#f8f5f0`), its contrast ratio is only **3.19:1**. That fails WCAG AA for normal text (4.5:1) and barely passes for large text.
 
 After mapping every amber shade between `#D97706` and `#B45309` with a contrast calculator, I landed on two values:
 
-- **Light mode:** `#B45309` (5.02:1 against white) — passes WCAG AA for normal text
+- **Light mode:** `#B45309` (4.62:1 against `#f8f5f0`) — passes WCAG AA for normal text
 - **Dark mode:** `#FBBF24` (10.83:1 against `#161616`) — passes with room to spare
 
-Why not the same amber for both modes? Because perception changes with background. `#B45309` on `#161616` looks dull — it loses warmth. `#FBBF24` on `#ffffff` is unreadable. Two ambers, same brand feel, each in its own context.
+Why not the same amber for both modes? Because perception changes with background. `#B45309` on `#161616` looks dull — it loses warmth. `#FBBF24` on `#f8f5f0` is unreadable. Two ambers, same brand feel, each in its own context.
 
 For hover states, I went darker in light mode (`#92400E`, 3.19:1 — passes for large text / UI components) and lighter in dark mode (`#FCD34D`).
 
@@ -96,6 +96,12 @@ The original favicon was a standalone "S" in a rounded square — clean, minimal
 In the topbar, `>_` is amber (the prompt) and `S` is the text color (the program name). In the favicon, single-color works because at 16×16 pixels, nuance is lost anyway.
 
 The favicon family — SVG, ICO, Apple Touch, Android Chrome, maskable — was regenerated from a single SVG source. Consistency across platforms matters because the icon is often the first impression a reader has.
+
+### The Neofetch ASCII Frame
+
+The `>_S` logo sits inside a neofetch-style ASCII box in the topbar — `┏━━━━━┓` above and `┗━━━━━┛` below — rendered via `::before` and `::after` pseudo-elements on the site logo link. The box uses amber at 0.65 opacity by default, brightening to full opacity on hover. The heavy box-drawing characters (`┏`/`┗`/`━`/`┛`) were chosen over light ones (`┌`/`└`/`─`/`┘`) to match the terminal aesthetic — thick enough to frame the prompt without overpowering it.
+
+The frame serves two purposes: it visually anchors the logo in the topbar's double-border layout, and it signals "terminal" before the user reads a single word. Like a `neofetch` output at login — decorative, but identity-defining.
 
 ## What Was Rejected
 
