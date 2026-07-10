@@ -33,7 +33,7 @@ title: Posts
   {% set currentYear = "" %}
   <ol class="post-list">
     {% for post in collections.posts | sortPinned %}
-      {% set postYear = post.date | date("yyyy") %}
+      {% set postYear = post.date | getDate("yyyy") %}
       {% if not post.data.pinned and postYear !== currentYear %}
         <li class="year-label" aria-hidden="true">{{ postYear }}</li>
         {% set currentYear = postYear %}
@@ -45,12 +45,12 @@ title: Posts
           {% if post.data.tags %}
           <div class="post-tags">
             {% for tag in post.data.tags %}
-              {% if tag !== "posts" %}<span class="tag">{{ tag }}</span>{% endif %}
+              {% if tag not in ["all", "nav", "post", "posts"] %}<span class="tag">{{ tag }}</span>{% endif %}
             {% endfor %}
           </div>
           {% endif %}
         </div>
-        <span class="post-date">{{ post.date | date("yyyy-MM-dd") }}</span>
+        <span class="post-date">{{ post.date | getDate("yyyy-MM-dd") }}</span>
       </li>
     {% endfor %}
   </ol>

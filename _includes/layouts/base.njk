@@ -34,6 +34,7 @@
   <meta property="article:tag" content="{{ tag }}">
   {% endif %}{% endfor %}
   {% set ogImage = image or metadata.image or '/assets/img/og/home.png' %}
+  {% if ogImage[0] != '/' %}{% set ogImage = '/' + ogImage %}{% endif %}
   {% if image %}
     {% set ogAlt = image_alt or description %}
   {% else %}

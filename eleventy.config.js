@@ -162,16 +162,7 @@ export default async function (eleventyConfig) {
     return "";
   });
 
-  eleventyConfig.addNunjucksFilter("date", (dateObj, format) => {
-    if (!dateObj) return "";
-    if (dateObj.date instanceof Date) {
-      return DateTime.fromJSDate(dateObj.date, { zone: "utc" }).toFormat(format);
-    }
-    if (dateObj instanceof Date) {
-      return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(format);
-    }
-    return "";
-  });
+
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
@@ -194,8 +185,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addTransform("copy-code", function (content) {
     if (!this.page.outputPath?.endsWith(".html")) return content;
     const copyBtnHtml = `<button class="copy-btn" aria-label="Copy code" data-copy="${encodeURIComponent(copySvg)}" data-check="${encodeURIComponent(checkSvg)}">${copySvg}</button>`;
-    let result = content.replace(/(<pre[^>]*>)/g, "$1" + copyBtnHtml + '<div class="code-wrapper">');
-    return result.replace(/<\/pre>/g, '</div></pre>');
+    let result = content.replace(/(<pre[^>]*>)/g, "$1" + copyBtnHtml + '<span class="code-wrapper">');
+    return result.replace(/<\/pre>/g, '</span></pre>');
   });
 
   const svgSizeCache = new Map();
@@ -230,14 +221,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addTransform("rm-pre-tabindex", function (content) {
     if (!this.page.outputPath?.endsWith(".html")) return content;
     return content.replace(/<pre\s+/g, '<pre ').replace(/\s+tabindex="0"/g, '');
-  });
-
-  eleventyConfig.addTransform("fix-code-wrapper", function (content) {
-    if (!this.page.outputPath?.endsWith(".html")) return content;
-    // <div class="code-wrapper"> inside <pre> is invalid — change to <span>
-    return content
-      .replace(/<div class="code-wrapper">/g, '<span class="code-wrapper">')
-      .replace(/<\/div>\s*<\/pre>/g, '</span></pre>');
   });
 
   eleventyConfig.addTransform("fix-footnotes", function (content) {

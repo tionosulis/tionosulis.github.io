@@ -39,9 +39,9 @@ eleventyComputed:
   {% set currentYear = "" %}
   <ol class="post-list">
     {% for post in collections[tag] | reverse %}
-      {% set postYear = post.date | date("yyyy") %}
+      {% set postYear = post.date | getDate("yyyy") %}
       {% if postYear !== currentYear %}
-        <div class="year-label">{{ postYear }}</div>
+        <li class="year-label" aria-hidden="true">{{ postYear }}</li>
         {% set currentYear = postYear %}
       {% endif %}
       <li class="post-item">
@@ -49,7 +49,7 @@ eleventyComputed:
         <div class="post-content">
           <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
         </div>
-        <span class="post-date">{{ post.date | date("yyyy-MM-dd") }}</span>
+        <span class="post-date">{{ post.date | getDate("yyyy-MM-dd") }}</span>
       </li>
     {% endfor %}
   </ol>
