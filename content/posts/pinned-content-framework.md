@@ -1,17 +1,19 @@
 ---
 title: "Breaking Chronology: A Framework for Pinned Content ★"
-description: "When does a blog post deserve to break chronological order? A design framework for deciding, implementing, and styling pinned content — with a worked example."
-date: 2026-06-27
-draft: true
+seoTitle: "Breaking Chronology: A Framework for Pinned Content"
+description: "When does a blog post deserve to break chronological order? A framework for deciding, implementing, and styling pinned content — with a worked example."
+date: 2026-07-08
+draft: false
+pinned: true
 tags: [design, meta, tutorial, eleventy]
 image: /assets/img/og/pinned-content-framework.png
-image_alt: "A terminal window displaying a blog post list with a starred pinned item at the top, visually separated from the chronological entries below"
+image_alt: "A terminal-style post listing with a starred pinned item above the year label and numbered chronological entries below"
 pageHasCode: true
 ---
 
 ![A terminal window showing a post list with a ★ pinned item at the top, separated from the chronological listing below](../assets/img/pinned-content-framework.svg)
 
-*A terminal-style post listing: the pinned item sits above the year label with a ★, while the chronological list continues underneath with numbered counters.*
+*Terminal post listing: pinned ★ above year label, chronological entries with numbered counters below.*
 
 Every blog has one post that matters more than the rest. A getting-started guide. A design manifesto. A "what is this blog about" that reads like a mission statement.
 
@@ -154,4 +156,6 @@ Pinned posts are a compromise between two legitimate needs: chronology tells rea
 
 A framework helps you decide if the compromise is worth it. A frontmatter flag and 15 lines of code help you execute it cleanly. A `★` helps your readers see it at a glance.
 
-The post I have pinned right now is [the redesign log](/posts/redesign-log-terminal-theme) — a field log of transforming this blog into a terminal-themed space. It is not the newest post. But for a first-time visitor, it is the most important one. That is exactly the case a pinned post was made for.
+[The redesign log](/posts/redesign-log-terminal-theme) was the first post I pinned — a field log of transforming this blog into a terminal-themed space. It was not the newest post, but for a first-time visitor, it was the most important one. That is exactly the kind of case this framework was made for.
+
+*Complementary reading: [DIY Draft System for Eleventy v3](/posts/diy-draft-system-eleventy) — another way to extend your Eleventy blog beyond default behavior.*

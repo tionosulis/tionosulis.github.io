@@ -188,4 +188,4 @@ That's possible with GitHub Actions, but it adds complexity. For now, a manual `
 
 ---
 
-*This entire site is open source on [GitHub](https://github.com/tionosulis/tionosulis.github.io). The draft system is in `content/posts/posts.11tydata.js` — fork it, tweak it, make it yours.*
+*This entire site is open source on [GitHub](https://github.com/tionosulis/tionosulis.github.io). The draft system is in `content/posts/posts.11tydata.js` — fork it, tweak it, make it yours. Complementary reading: [the pinning framework](/posts/pinned-content-framework) that pairs with this draft system.*

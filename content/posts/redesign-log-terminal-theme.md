@@ -4,7 +4,6 @@ seoTitle: "Redesigning My Blog: Terminal Theme & Amber Accent"
 description: "A field log of transforming a blog to a terminal-themed space — JetBrains Mono, amber accents, and golden-ratio spacing with full design rationale."
 date: 2026-06-25
 updated: 2026-07-09
-pinned: true
 tags: [meta, design, css, terminal, golden-ratio]
 image: /assets/img/og/redesign-log-terminal-theme.png
 image_alt: "A terminal window showing the redesign deployment log with four tasks: JetBrains Mono font, amber accent, golden-ratio spacing, and terminal prompts — all marked with amber OK tags and a blinking cursor"
@@ -130,4 +129,4 @@ You might notice that some posts on this blog reference elements that no longer 
 
 ---
 
-*This entire site is open source on [GitHub](https://github.com/tionosulis/tionosulis.github.io). The favicon SVGs, the CSS architecture, and the Eleventy configuration are all there — fork, adapt, make it yours. Complementary reading: [why gray hue matters for dark mode](/posts/gray-hue-is-not-neutral) and [the optimization trap of color iteration](/posts/color-iteration-optimization-trap).*
+*This entire site is open source on [GitHub](https://github.com/tionosulis/tionosulis.github.io). The favicon SVGs, the CSS architecture, and the Eleventy configuration are all there — fork, adapt, make it yours. Complementary reading: [why gray hue matters for dark mode](/posts/gray-hue-is-not-neutral) and [the optimization trap of color iteration](/posts/color-iteration-optimization-trap). Previously pinned — see [the framework behind that decision](/posts/pinned-content-framework).*
