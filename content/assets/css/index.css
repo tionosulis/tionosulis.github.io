@@ -708,6 +708,12 @@ a.visually-hidden:focus {
   opacity: 1;
 }
 .posts-page .post-item.pinned .post-title {
+  color: var(--accent-hover);
+}
+@media (prefers-color-scheme: dark) {
+  .posts-page .post-item.pinned .post-title { color: var(--accent); }
+}
+[data-theme="dark"] .posts-page .post-item.pinned .post-title {
   color: var(--accent);
 }
 .posts-page .line-sep {
