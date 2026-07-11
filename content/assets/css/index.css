@@ -931,13 +931,46 @@ a.visually-hidden:focus {
   color: var(--text-secondary);
   font-size: 0.65rem;
 }
+.tree-line .recent-date {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+}
 .tree-prefix {
   color: inherit;
   display: inline-block;
   padding: 0.1rem 0;
 }
+.tree-line:not(.tree-line--recent) a {
+  translate: 0 -0.5px;
+}
 .tree-line--ext {
   color: var(--text-secondary);
+}
+.tree-line--recent {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 0.35rem;
+  align-items: baseline;
+  white-space: initial;
+  overflow-wrap: break-word;
+  margin-bottom: 0.618rem;
+}
+.tree-line--recent:last-child {
+  margin-bottom: 0;
+}
+.tree-line--recent .tree-line--meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  grid-column: 1;
+}
+.tree-line--recent a {
+  grid-column: 2;
+}
+.tree-line--recent .recent-date {
+  margin-right: 0;
+  translate: 0 -0.5px;
 }
 .tree-line--ext .tree-prefix {
 }
