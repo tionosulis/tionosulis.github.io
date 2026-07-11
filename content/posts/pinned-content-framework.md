@@ -7,13 +7,13 @@ draft: false
 pinned: true
 tags: [design, meta, tutorial, eleventy]
 image: /assets/img/og/pinned-content-framework.png
-image_alt: "A terminal-style post listing with a starred pinned item above the year label and numbered chronological entries below"
+image_alt: "Terminal post listing split view — left showing redesign-log buried at position four in chronological order, right showing it promoted to top with amber star and pinned label above the year group."
 pageHasCode: true
 ---
 
-![A terminal window showing a post list with a ★ pinned item at the top, separated from the chronological listing below](../assets/img/pinned-content-framework.svg)
+![Terminal post listing split view — left showing redesign-log buried at position four in chronological order, right showing it promoted to top with amber star and pinned label above the year group.](../assets/img/pinned-content-framework.svg)
 
-*Terminal post listing: pinned ★ above year label, chronological entries with numbered counters below.*
+*Before and after: one frontmatter flag moves the right post to the top.*
 
 Every blog has one post that matters more than the rest. A getting-started guide. A design manifesto. A "what is this blog about" that reads like a mission statement.
 

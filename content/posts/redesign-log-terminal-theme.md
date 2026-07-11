@@ -6,12 +6,12 @@ date: 2026-06-25
 updated: 2026-07-09
 tags: [meta, design, css, terminal, golden-ratio]
 image: /assets/img/og/redesign-log-terminal-theme.png
-image_alt: "A terminal window showing the redesign deployment log with four tasks: JetBrains Mono font, amber accent, golden-ratio spacing, and terminal prompts — all marked with amber OK tags and a blinking cursor"
+image_alt: "Terminal deployment log: four tasks — JetBrains Mono, amber accent, golden-ratio spacing, terminal prompts — each marked OK with amber tags and a blinking cursor"
 ---
 
-![A terminal window showing the redesign deployment log: four tasks executed successfully — JetBrains Mono font, amber accent, golden-ratio spacing, terminal prompts — with amber OK tags and a blinking cursor](../assets/img/redesign-log-terminal-theme.svg)
+![A terminal deployment log showing four completed tasks — JetBrains Mono font, amber color palette, golden-ratio spacing system, and terminal prompt conventions — each with an amber OK badge, plus a summary and blinking cursor prompt](../assets/img/redesign-log-terminal-theme.svg)
 
-*The deployment log of the terminal redesign — every change executed, every step confirmed.*
+*The full deployment log of the redesign — every change tracked, every step confirmed.*
 
 Every design system starts with a tension between what you have and what you want. This blog had a clean, conventional layout: IBM Plex Sans, a left sidebar with an "S" monogram, dot leaders between post titles and dates, and blue accent links. Nothing was broken. Everything was functional.
 
