@@ -44,7 +44,6 @@ The Nu HTML Checker flagged a handful of issues — none critical on their own, 
 
 - **`<div>` inside `<pre>`**: The copy-button wrapper used a `<div class="code-wrapper">` inside `<pre>`, which is invalid. A build-time transform replaced it with `<span>` — same layout, valid DOM.
 - **Missing `aria-label` on footnotes**: The `<section class="footnotes">` had no programmatic label. Added `aria-label="Footnotes"` via transform.
-- **URL-encoded font path**: `JetBrainsMono[wght].woff2` needed `[wght]` encoded as `%5Bwght%5D` in the preload link.
 - **Missing `sizes` on eleventy-img**: The image transform plugin processed `<img>` tags but omitted `sizes`, triggering a W3C warning. Added `sizes="100vw"` to the plugin defaults.
 - **Unescaped `&` in meta tags**: Content with `&` (e.g., open graph descriptions) needed the Nunjucks `| e` filter plus `decodeEntities: true` in the HTML minifier.
 
