@@ -940,9 +940,10 @@ a.visually-hidden:focus {
   color: inherit;
   display: inline-block;
   padding: 0.1rem 0;
+  vertical-align: -0.15em;
 }
-.tree-line:not(.tree-line--recent) a {
-  translate: 0 -0.5px;
+.tree-line:not(.tree-line--recent) .tree-prefix {
+  margin-right: 0.25rem;
 }
 .tree-line--ext {
   color: var(--text-secondary);
@@ -961,16 +962,16 @@ a.visually-hidden:focus {
 }
 .tree-line--recent .tree-line--meta {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.25rem;
   grid-column: 1;
 }
 .tree-line--recent a {
   grid-column: 2;
+  translate: 0 -0.1em;
 }
 .tree-line--recent .recent-date {
   margin-right: 0;
-  translate: 0 -0.5px;
 }
 .tree-line--ext .tree-prefix {
 }
@@ -984,6 +985,9 @@ a.visually-hidden:focus {
 }
 
 @media (max-width: 480px) {
+  .tree-listing {
+    line-height: 2;
+  }
   .tree-line a { padding: 0.1rem 0; }
   .tree-prefix { padding: 0.1rem 0; }
 }
