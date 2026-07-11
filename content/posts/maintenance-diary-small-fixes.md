@@ -1,8 +1,8 @@
 ---
 title: "Small Fixes, Big Impact: A Blog Maintenance Diary"
-description: "A log of incremental improvements — SEO warnings, W3C compliance, overflow-wrap, and image filenames — that quietly raised the quality bar for this static blog."
-date: 2026-07-03
-draft: true
+description: "A log of incremental improvements — SEO title warnings, W3C compliance, overflow-wrap, and image filenames — that quietly raised the quality bar for this static blog."
+date: 2026-07-10
+draft: false
 tags:
   - meta
   - css
