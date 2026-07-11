@@ -940,7 +940,6 @@ a.visually-hidden:focus {
   color: var(--text-secondary);
 }
 .tree-line--ext .tree-prefix {
-  opacity: 0.45;
 }
 .tree-line--ext a {
   color: var(--text-secondary);

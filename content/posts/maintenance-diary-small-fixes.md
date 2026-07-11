@@ -81,4 +81,4 @@ None of these changes is a blog post on its own. But they share a pattern worth 
 - **Tooling over discipline** — a build-time hook is more reliable than remembering to check a checklist.
 - **Cumulative quality** — no single fix transformed the site, but the sum of them raised the baseline.
 
-The next maintenance pass will find different issues. That is the point.
+The next maintenance pass will find different issues. That is the point — the same way [one point away from a perfect Lighthouse score taught me](/posts/chasing-100/) that quality is a moving target, not a finish line.
