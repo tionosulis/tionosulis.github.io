@@ -9,7 +9,7 @@ tags:
   - eleventy
 ---
 
-Not every improvement ships as a feature. Some arrive as a three-line CSS change, a config tweak, or a W3C validator error that you finally decide to fix.
+Not every improvement ships as a feature. Some arrive as a three-line CSS change, a config tweak, or a <a href="/posts/from-16-to-zero/">W3C validator error that you finally decide to fix</a>.
 
 This is a log of those changes. Small, independent, and cumulative.
 
