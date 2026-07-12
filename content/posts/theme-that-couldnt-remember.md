@@ -5,12 +5,12 @@ description: "How a back-navigation theme bug exposed a Chromium bug at the inte
 date: 2026-07-02
 draft: false
 tags:
-  - meta
   - javascript
   - performance
   - troubleshooting
   - css
   - pwa
+  - bfcache
 pageHasCode: true
 image: /assets/img/og/theme-that-couldnt-remember.png
 image_alt: "Navigation flow: homepage (light) → posts (light) → post detail (toggles dark), back arrow shows theme inconsistency on posts page"

@@ -7,7 +7,7 @@ draft: false
 tags:
   - css
   - troubleshooting
-  - meta
+  - layout
   - howto
 image: /assets/img/og/heading-anchor-fix.png
 image_alt: "Before-and-after comparison: heading anchor ghost spacing on mobile (left) vs clean spacing after position: absolute fix (right)"

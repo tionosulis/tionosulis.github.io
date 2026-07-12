@@ -2,29 +2,30 @@
 title: "From 16 Errors to Zero: How a Build-Time Transform Fixed What the W3C Couldn't"
 seoTitle: "16 CSS Errors to Zero: Build-Time Validator Fix"
 description: "Sixteen CSS parse errors turned to zero — without changing a line of CSS. How Lightning CSS closed the three-year gap between browsers and validators."
-date: 2026-07-02
-tags: [css, lightningcss, validation, build-tools, meta]
-draft: true
+date: 2026-07-12
+pinned: true
+tags: [css, lightningcss, validation, build-tools]
+draft: false
 pageHasCode: true
 image: /assets/img/og/from-16-to-zero.png
-image_alt: "W3C Nu HTML Checker results split in two panels — left side with 16 CSS parse errors marked in red, right side with zero errors in green after applying a Lightning CSS build-time transform"
+image_alt: "W3C validator results: 16 CSS parse errors on the left, zero on the right after a Lightning CSS build-time transform — no source CSS changed."
 ---
 
 ![W3C validator results comparison: 16 CSS parse errors reduced to zero using Lightning CSS build-time transform](../assets/img/from-16-to-zero.svg)
 
-*A side-by-side comparison of W3C validator output: 16 CSS parse errors on the left, zero errors on the right — with no source CSS changed.*
+*W3C validator comparison: 16 CSS parse errors to zero — no source CSS changed.*
 
 ${toc}
 
 ## The Validation Report Redux
 
-Three weeks ago, I published [a post](/posts/css-nesting-validator-false-errors) documenting 16 CSS parse errors in my blog — all false positives triggered by valid CSS Nesting syntax that the W3C validator couldn't parse.
+In [16 CSS Parse Errors — All False](/posts/css-nesting-validator-false-errors), I documented 16 CSS parse errors in my blog — all false positives triggered by valid CSS Nesting syntax that the W3C validator couldn't parse.
 
-The conclusion then was pragmatic: *test your CSS in browsers, not just validators.* If Chrome, Firefox, and Safari all handle nested selectors correctly, a validator false positive is noise, not signal.
+My conclusion then was pragmatic: *test your CSS in browsers, not just validators.* If Chrome, Firefox, and Safari all handle nested selectors correctly, a validator false positive is noise, not signal.
 
 That conclusion was correct. But it left a question unanswered: **can you have both modern CSS and clean validation?**
 
-The answer, it turns out, is yes — with one build-time transform.
+The answer is yes — with one build-time transform.
 
 ## The Root Cause
 
@@ -53,27 +54,23 @@ Unlike regex-based minifiers (like clean-css) that would strip or mangle nested 
 The Eleventy integration is minimal — a single transform in the build pipeline:
 
 ```js
-const lightningcss = require('lightningcss');
+import { transform as lightning } from "lightningcss";
 
 // Inside eleventyConfig.addTransform:
-if (outputPath && outputPath.endsWith('.html')) {
-  let content = inputContent;
+if (!this.page.outputPath?.endsWith(".html")) return content;
 
-  // Flatten CSS Nesting after render, before htmlmin
-  content = content.replace(
-    /<style[^>]*>([\s\S]*?)<\/style>/g,
-    (match, css) => {
-      const result = lightningcss.transform({
-        code: Buffer.from(css),
-        minify: true,
-        targets: { safari: (16 << 16) | (4 << 8) },
-      });
-      return match.replace(css, result.code.toString());
-    }
-  );
-
-  return content;
-}
+return content.replace(/<style>([\s\S]*?)<\/style>/g, (match, css) => {
+  const result = lightning({
+    code: Buffer.from(css),
+    minify: true,
+    targets: {
+      chrome: 100 << 16,
+      safari: 15 << 16,
+      firefox: 100 << 16,
+    },
+  });
+  return `<style>${result.code.toString()}</style>`;
+});
 ```
 
 This runs on every `<style>` block after the Nunjucks render but before the final HTML minification. The source CSS in my stylesheets stays nested and readable. The output delivered to browsers is flat and validator-compatible.

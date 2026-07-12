@@ -8,7 +8,7 @@ image: /assets/img/og/social-preview-invisible.png
 image_alt: "Three-panel illustration comparing SVG rendering: browser renders SVG correctly, social media card shows blank, PNG version restores the preview"
 tags:
   - svg
-  - meta
+  - open-graph
   - performance
   - howto
 ---

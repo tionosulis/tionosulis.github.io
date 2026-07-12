@@ -4,7 +4,7 @@ seoTitle: "Shiki Doesn't Know Nunjucks — And Why That's Fine"
 description: "The .njk language shiki error taught me a lesson about code block language tags in Eleventy — and how a simple fallback keeps things moving."
 date: 2026-06-20
 draft: false
-tags: [eleventy, troubleshooting, meta, highlighting]
+tags: [eleventy, troubleshooting, syntax-highlighting]
 pageHasCode: true
 image: /assets/img/og/shiki-njk-language-not-found.png
 image_alt: "Split terminal showing Shiki syntax highlighting error on a nunjucks language tag compared to the correct html tag solution"
