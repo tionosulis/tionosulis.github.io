@@ -19,5 +19,5 @@
     <tspan fill="#FBBF24">>_</tspan><tspan fill="#D6D6DA">S</tspan>
   </text>
   <text x="600" y="470.5" text-anchor="middle" dominant-baseline="central" class="b" font-size="99" fill="#FBBF24" opacity="0.65">└───┘</text>
-  <text x="600" y="562" text-anchor="middle" class="t" font-size="50" fill="#9BA3B1">Web Design &amp; Terminal Dev Notes</text>
+  <text x="600" y="562" text-anchor="middle" class="t" font-size="50" fill="#9BA3B1">Web Design &amp; Front-End Notes</text>
 </svg>
