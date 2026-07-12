@@ -1,25 +1,23 @@
 ---
 title: The Plugin That Was Never Running
 description: "Months of trusting that my Eleventy image plugin was optimizing images — wasted. A misnamed config option silently broke all image transformations on the site."
-date: 2026-07-01
+date: 2026-07-12
 tags: [debugging, eleventy, meta, web-development]
-draft: true
+draft: false
 pageHasCode: true
 image: /assets/img/og/the-plugin-that-was-never-running.png
-image_alt: "Split-panel terminal comparison: left panel BEFORE shows a bare img tag with no width or height; right panel AFTER shows the same image wrapped in a picture element with AVIF and WebP sources and proper dimensions"
+image_alt: "Split-panel BEFORE vs AFTER: left shows an untouched img tag; right shows picture element with AVIF sources and dimensions"
 ---
 
-![Split-panel terminal comparison: left panel "BEFORE" shows a bare <img> tag with no width, height, or srcset; right panel "AFTER" shows the same image wrapped in a <picture> element with AVIF and WebP sources, proper dimensions, and loading="eager"](../assets/img/the-plugin-that-was-never-running.svg)
+![BEFORE vs AFTER split-panel: left shows a bare img tag; right shows picture element with AVIF sources and dimensions](../assets/img/the-plugin-that-was-never-running.svg)
 
-*Before and after: bare `<img>` tag (left) vs `<picture>` with AVIF/WebP and eager loading (right)*
+*Before and after: bare `<img>` tag vs `<picture>` with AVIF sources and dimensions*
 
 ${toc}
 
-## Ignorance Is Bliss
+## The Silent Failure
 
-A few hours ago, I was proud of my blog. Every post had a hero image. Every build completed with zero errors. The Eleventy Image Transform Plugin was configured and ready to optimize every `<img>` tag on the site. I had checked all the boxes.
-
-Then I looked at the actual HTML.
+I was debugging a Lighthouse score when something caught my eye in the Network tab: images loading at their original sizes. No WebP, no AVIF, no resizing — every file served exactly as stored on disk. The Elements panel confirmed it: the `<img>` tags were untouched, as if the image plugin didn't exist.
 
 ```html
 <img src="/assets/img/hero.svg" alt="A terminal-themed header image">
@@ -202,7 +200,7 @@ Before, a 200KB PNG screenshot was served as-is. Now, that same image downloads 
 
 ## Bonus Round: Lighthouse LCP
 
-With the plugin working, I ran Lighthouse to see the impact. The score improved — but there was a new warning:
+With the plugin working, I ran Lighthouse to see the impact — picking up where [Chasing 100](/posts/chasing-100/) left off. The score improved — but there was a new warning:
 
 > `LCP image has loading="lazy"`
 
@@ -269,7 +267,7 @@ With `decoding="auto"`, the browser uses its own heuristic. For same-origin hero
 
 | Metric | Before | After |
 |--------|--------|-------|
-| Images with responsive formats | 0 | 45 |
+| Raster images with responsive formats | 0 | 45 |
 | AVIF/WebP generation | ❌ | ✅ (33 AVIF + 33 WebP auto-generated) |
 | Width/height on images | ❌ | ✅ (browser can reserve space) |
 | Hero loading strategy | `lazy` (wrong!) | `eager` + `fetchpriority=high` |
@@ -298,6 +296,7 @@ eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp"],
     defaultAttributes: {
 -     loading: "lazy",
+-     decoding: "async",
 +     decoding: "auto",
     },
 });
