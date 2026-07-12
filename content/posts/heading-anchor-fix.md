@@ -1,7 +1,7 @@
 ---
 title: "Invisible Character, Visible Problem: Fixing Heading Anchors Without Breaking Layout"
-seoTitle: "Invisible Character, Visible Problem: Heading Anchor Fix"
-description: "How a tiny # symbol broke my blog's mobile layout — and a clean CSS fix that took two iterations to get right."
+seoTitle: "Fixing Heading Anchors Without Breaking Layout"
+description: "How a tiny # symbol broke my blog's mobile layout — and a CSS fix that took three iterations to get right."
 date: 2026-07-04
 draft: false
 tags:
@@ -10,12 +10,12 @@ tags:
   - meta
   - howto
 image: /assets/img/og/heading-anchor-fix.png
-image_alt: "Before-and-after comparison: heading anchor ghost spacing on mobile (left) vs clean spacing after font-size: 0 fix (right)"
+image_alt: "Before-and-after comparison: heading anchor ghost spacing on mobile (left) vs clean spacing after position: absolute fix (right)"
 ---
 
-![Split-screen comparison showing a heading with the anchor # creating phantom spacing on mobile (left, labeled 'Before'), and the same heading with clean spacing after the font-size: 0 fix (right, labeled 'After').](../assets/img/heading-anchor-fix.svg)
+![Split-screen comparison showing a heading with the anchor # creating phantom spacing on mobile (left, labeled 'Before'), and the same heading with clean spacing after the position: absolute fix (right, labeled 'After').](../assets/img/heading-anchor-fix.svg)
 
-*One CSS property — `font-size: 0` — eliminates the phantom spacing with zero side effects.*
+*One CSS property — `position: absolute` — eliminates the phantom spacing by removing the anchor from the layout flow.*
 
 If you use a static site generator with markdown-it-anchor, eleventy-plugin-anchor, or any tool that auto-generates heading permalinks, you've probably seen this HTML pattern:
 
@@ -77,87 +77,100 @@ I had fixed the vertical spacing only to break horizontal alignment. Worse — t
 
 This approach introduced a new problem without cleanly solving the original one. Back to the drawing board.
 
-## The Fix: Zero Width
+## First Attempt: Zero Width
 
-The right answer isn't about where the anchor is positioned — it's about whether the anchor takes up space when it shouldn't.
+I was convinced the right answer was making the anchor **physically zero-dimensional** — no character width, no line-height contribution, nothing. CSS `font-size: 0` with `line-height: 0` seemed perfect:
 
-The key insight: the anchor should have **zero width** when hidden. Not invisible — physically zero-dimensional. No character width, no margin, no line-height contribution. Nothing.
+```css
+.header-anchor {
+  opacity: 0;
+  font-size: 0;
+  line-height: 0;
+  ...
+}
+```
 
-CSS `font-size: 0` does exactly this. When an inline element has `font-size: 0`, its text content has no width. The characters still exist in the DOM, but they occupy no visual space.
+On desktop, it worked. But on mobile, the phantom gap was still there. Not as large, but present. Here's why.
+
+### The Strut Problem
+
+Every line box in CSS starts with a zero-width inline box called the **strut** — it carries the parent element's `font-size` and `line-height`. When the anchor `#` wraps to its own orphan line, the strut is already there with the heading's full line-height.
+
+Even with `font-size: 0` and `line-height: 0`, the line box containing just the anchor still has the heading's line-height. The strut doesn't care about the anchor's font-size — it inherits from the heading. The orphan line might have zero-width content, but it still occupies full vertical space.
+
+The fix was correct in spirit but wrong in mechanism. Making the anchor zero-dimensional still leaves it in the line box, and the strut ensures every line box has the parent's line-height.
+
+## The Fix: Out of Flow
+
+The right answer isn't about shrinking the anchor — it's about **removing it from the layout flow entirely** while keeping it in the DOM.
+
+The key insight: if the anchor is `position: absolute`, it no longer participates in the line box calculation. The strut only sees the heading text. No orphan line, no phantom gap.
 
 Here's the final implementation:
 
 ```css
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+}
+
 .header-anchor {
+  position: absolute;
   color: var(--text-tertiary);
   text-decoration: none;
   margin-left: 0.25rem;
   opacity: 0;
-  font-size: 0;
-  line-height: 0;
-  transition: opacity 0.15s ease, font-size 0s 0.15s, line-height 0s 0.15s;
+  transition: opacity 0.15s ease;
 }
 
 :hover > .header-anchor,
 .header-anchor:focus {
   opacity: 1;
-  font-size: inherit;
-  line-height: inherit;
-  transition: opacity 0.15s ease, font-size 0s, line-height 0s;
+  transition: opacity 0.15s ease;
 }
 ```
 
-Let's break down what each part does.
+Let's break down what each part does:
 
-When the anchor is **hidden** (default state):
-- `opacity: 0` — invisible
-- `font-size: 0` — zero width
-- `line-height: 0` — zero height contribution, no phantom line box
-- `margin-left: 0.25rem` — still present, but at `font-size: 0` the margin is effectively negligible in layout
-- The `transition` includes a 0.15s delay on font-size and line-height so that when hiding, both snap to 0 *after* the opacity fades out
+**`position: relative` on headings** — Establishes a positioning context so the anchor's `absolute` position is relative to the heading, not the viewport or a higher ancestor.
 
-When the anchor is **shown** (hover or focus):
-- `opacity: 1` — fully visible
-- `font-size: inherit` — instantly matches the parent heading's font size
-- `line-height: inherit` — matches parent's line-height so the anchor participates in inline layout normally
-- The `transition` has no delay on font-size or line-height, so the anchor restores size instantly before fading in
+**`position: absolute` on anchor** — Removes the anchor from the inline flow. The heading's line box no longer sees it. Even if the `#` wraps to the end of a long heading, it exists outside the line box calculation. The strut only interacts with the heading text.
 
-The `transition` timing is the subtle detail that makes this feel polished:
+**`margin-left: 0.25rem`** — Adds a small gap between the heading text and the anchor when visible. Since the anchor is `position: absolute`, this margin shifts it right relative to its static position (the end of the text). The heading text itself is unaffected.
 
-| Transition | Showing | Hiding |
-|---|---|---|
-| **opacity** | 0 → 1 over 0.15s | 1 → 0 over 0.15s |
-| **font-size** | 0 → inherit instantly | inherit → 0 after 0.15s delay |
-| **line-height** | 0 → inherit instantly | inherit → 0 after 0.15s delay |
+**`opacity: 0` → `opacity: 1` on hover/focus** — Simple fade transition. No font-size or line-height gymnastics needed. The anchor is always at its natural size; it just fades in and out.
 
-When showing: font-size and line-height jump to normal first, then opacity fades in. The anchor appears at full size immediately, fading in smoothly.
+### Why This Works
 
-When hiding: opacity fades out over 0.15s, then font-size and line-height snap to zero. The anchor disappears smoothly, then becomes zero-dimensional after the fade completes.
+When the heading wraps on a narrow viewport, the text breaks across multiple lines naturally. The anchor is `position: absolute`, so it doesn't create its own line box. The strut on each line only sees the heading text — no orphan line, no phantom space.
 
-No flicker, no phantom space, no indentation.
+On desktop where the heading fits on one line, the anchor sits at the end of the text. `margin-left: 0.25rem` shifts it 4px to the right. On hover, it fades in. On unhover, it fades out. No reflow, no flicker.
 
 ## Why Not Alternatives?
 
-I considered other approaches before landing on this:
+Here's how other approaches stack up:
 
-**`display: none`** — Removes the element from layout entirely. But `display` can't be animated with CSS transitions, so the hover effect would be instant on/off with no fade. It also means the element can't receive focus (bad for keyboard navigation).
+**`font-size: 0` + `line-height: 0`** — My first attempt. Makes the anchor zero-dimensional but doesn't remove it from the line box. The CSS strut (inheriting the heading's line-height) still creates a full-height orphan line when the anchor wraps. The gap is smaller but not eliminated.
 
-**`visibility: hidden`** — Makes the element invisible but still takes up space. Same problem as `opacity: 0` — no layout benefit.
+**`display: none`** — Removes the element from layout entirely. Works, but `display` can't be animated with CSS transitions, so hovering feels abrupt. The element also can't receive focus when hidden, which hurts keyboard navigation.
 
-**`width: 0; overflow: hidden`** — Functional but requires `display: inline-block`, which changes how the element interacts with surrounding inline content. The `overflow: hidden` also prevents the anchor from being revealed on hover.
+**`visibility: hidden`** — Makes the element invisible but keeps it in the flow. Same strut problem as `opacity: 0` — no layout benefit.
 
-**`position: absolute`** — Removes from flow, but requires `position: relative` on every heading and explicit positioning. Over-engineered for what's supposed to be a simple anchor link.
+**`width: 0; overflow: hidden`** — Requires `display: inline-block`, which changes how the element interacts with surrounding inline content. The `overflow: hidden` prevents the anchor from being revealed on hover.
 
-`font-size: 0` paired with `line-height: 0` is the simplest solution with the fewest side effects. Two properties, zero layout impact when hidden, smooth transition when shown.
+`position: absolute` is the right tradeoff. It removes the anchor from the line box — solving the root cause — while keeping it in the DOM for hover, focus, and smooth opacity transitions.
 
 ## What This Taught Me
 
-The `#` anchor link is a tiny element — one character, invisible by default, easy to overlook. But in CSS, invisible doesn't mean absent. Every inline element participates in layout regardless of its opacity. When it wraps to its own line on a narrow viewport, it brings its parent's line-height with it, creating phantom space that looks like a layout bug.
+The `#` anchor link is a tiny element — one character, invisible by default, easy to overlook. But fixing its layout impact forced me through three iterations:
+
+1. **Move the anchor before the heading text** — broke horizontal alignment
+2. **Shrink the anchor to zero size** — the CSS strut still created orphan lines
+3. **Remove the anchor from flow** — finally eliminated the phantom space
+
+The lesson isn't about any single CSS property. It's about understanding how the **strut** interacts with line boxes. An invisible element can still affect layout through mechanisms that `opacity` and `font-size` don't control. The only way to stop an inline element from affecting its line box is to stop it from being in the line box — and `position: absolute` is the cleanest way to do that.
 
 This isn't the first time a deceptively simple CSS pattern needed multiple iterations to get right. The same thing happened while [building the dot leader pattern](/posts/dot-leader-pattern/): three edge cases, zero margin changes, and a `line-height: 1` fix to prevent exactly this kind of phantom vertical space.
 
-The fix — `font-size: 0` with `line-height: 0` — is almost too simple to believe. An invisible element should take no space. CSS gives us the tools to make that true, but only if we remember to use them.
+Not every layout bug needs a complex solution. Sometimes the right fix is asking: "if this element shouldn't affect layout, why is it still in the layout?"
 
-Not every layout bug needs a complex solution. Sometimes the right fix is asking: "if this element is invisible, why is it still here?"
-
-*This blog runs on Eleventy with markdown-it-anchor. The full source — including the fix above — is on [GitHub](https://github.com/tionosulis/tionosulis.github.io).*
+*This blog runs on Eleventy with markdown-it-anchor. The full source — including the final fix above — is on [GitHub](https://github.com/tionosulis/tionosulis.github.io).*

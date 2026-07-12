@@ -213,6 +213,7 @@ blockquote.twitter-tweet {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  position: relative;
   font-weight: 600;
   line-height: 1.2;
   margin: 2rem 0 0.5rem;
@@ -254,22 +255,19 @@ table {
 }
 
 .header-anchor {
+  position: absolute;
   color: var(--text-tertiary);
   text-decoration: none;
   margin-left: 0.25rem;
   opacity: 0;
-  font-size: 0;
-  line-height: 0;
-  transition: opacity 0.15s ease, font-size 0s 0.15s, line-height 0s 0.15s;
+  transition: opacity 0.15s ease;
   &:hover { color: var(--accent); }
 }
 
 :hover > .header-anchor,
 .header-anchor:focus {
   opacity: 1;
-  font-size: inherit;
-  line-height: inherit;
-  transition: opacity 0.15s ease, font-size 0s, line-height 0s;
+  transition: opacity 0.15s ease;
 }
 
 .toc {

@@ -96,7 +96,7 @@
 
     <!-- Label -->
     <text x="660" y="80" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="14" fill="#F5A623" font-weight="700"># After</text>
-    <text x="750" y="80" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#94a3b8" opacity="0.6">font-size: 0</text>
+    <text x="750" y="80" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#94a3b8" opacity="0.6">position: absolute</text>
 
     <!-- Viewport card -->
     <rect x="680" y="110" width="440" height="500" rx="8" fill="#1A2634" stroke="#3D536A" stroke-width="1"/>
@@ -128,29 +128,28 @@
     <rect x="700" y="336" width="400" height="190" rx="6" fill="#1A2634" stroke="#3D536A" stroke-width="0.5"/>
 
     <!-- CSS label -->
-    <text x="714" y="358" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#64748B">/* When hidden — zero width */</text>
-
-    <!-- CSS code lines -->
+    <text x="714" y="358" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#64748B">/* When hidden — removed from flow */</text>
+    
     <text x="714" y="376" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#d4d4d8">.header-anchor {</text>
-
+    
     <text x="714" y="396" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12">
-      <tspan fill="#F5A623">  font-size</tspan><tspan fill="#d4d4d8">:</tspan><tspan fill="#94a3b8"> 0</tspan><tspan fill="#d4d4d8">;</tspan>
+      <tspan fill="#F5A623">  position</tspan><tspan fill="#d4d4d8">:</tspan><tspan fill="#94a3b8"> absolute</tspan><tspan fill="#d4d4d8">;</tspan>
     </text>
-
+    
     <text x="714" y="416" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12">
       <tspan fill="#F5A623">  opacity</tspan><tspan fill="#d4d4d8">:</tspan><tspan fill="#94a3b8"> 0</tspan><tspan fill="#d4d4d8">;</tspan>
     </text>
-
+    
     <text x="714" y="436" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#d4d4d8">}</text>
-
-    <text x="714" y="462" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#64748B">/* On hover — visible again */</text>
-
+    
+    <text x="714" y="462" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#64748B">/* On hover — visible */</text>
+    
     <text x="714" y="480" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#d4d4d8">:hover > .header-anchor {</text>
-
+    
     <text x="714" y="500" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12">
-      <tspan fill="#F5A623">  font-size</tspan><tspan fill="#d4d4d8">:</tspan><tspan fill="#94a3b8"> inherit</tspan><tspan fill="#d4d4d8">;</tspan>
+      <tspan fill="#F5A623">  opacity</tspan><tspan fill="#d4d4d8">:</tspan><tspan fill="#94a3b8"> 1</tspan><tspan fill="#d4d4d8">;</tspan>
     </text>
-
+    
     <text x="714" y="518" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" fill="#d4d4d8">}</text>
 
     <!-- ───────────── BOTTOM LEGEND ───────────── -->
@@ -161,7 +160,7 @@
     <text x="112" y="634" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#94a3b8">phantom gap — anchor wraps to own line</text>
 
     <circle cx="700" cy="630" r="4" fill="#22c55e" opacity="0.8"/>
-    <text x="712" y="634" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#94a3b8">no gap — font-size: 0 hides anchor</text>
+    <text x="712" y="634" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="10" fill="#94a3b8">no gap — anchor out of flow</text>
 
   </g>
 
