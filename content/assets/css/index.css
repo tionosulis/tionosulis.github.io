@@ -890,6 +890,7 @@ a.visually-hidden:focus {
   color: var(--text-secondary);
   margin: 0.25rem 0 1.25rem 1.2rem;
   line-height: 1.8;
+  text-wrap: pretty;
 }
 .home-terminal .output a {
   color: var(--accent);

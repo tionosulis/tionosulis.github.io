@@ -18,17 +18,8 @@ image_alt: "Dark dotted background; $ whoami with name and social handles on lef
 <p class="output">Indonesian code-tinkerer and part-time plant whisperer.<br>
 Often found up late wrestling with messy code<br>
 and way too busy to brew my own coffee.</p>
-<p class="output">Can't pass a day without blues music — the kind<br>
-that makes you nod along without noticing. Also<br>
-unreasonably picky about design details. Back when<br>
-I started blogging, I spent more time switching<br>
-themes than actually writing posts. The irony is<br>
-not lost on me.</p>
-<p class="output">I write about the things I break and eventually fix —<br>
-color systems, typography, performance, and making static<br>
-sites punch above their weight. No frameworks, no fluff,<br>
-just notes from someone who ships code mainly from a<br>
-smartphone and still forgets to eat dinner.</p>
+<p class="output">Can't pass a day without blues music — the kind that makes you nod along without noticing. Also unreasonably picky about design details. Back when I started blogging, I spent more time switching themes than actually writing posts. The irony is not lost on me.</p>
+<p class="output">I write about the things I break and eventually fix — color systems, typography, performance, and making static sites punch above their weight. No frameworks, no fluff, just notes from someone who ships code mainly from a smartphone and still forgets to eat dinner.</p>
 
 <p><span class="prompt-char">$</span> <span class="cmd">ls</span> links/</p>
 <p class="output">
