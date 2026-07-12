@@ -56,17 +56,8 @@ image_alt: "Dark dotted background; $ whoami with name and social handles on lef
 </p>
 
 <p><span class="prompt-char">$</span> <span class="cmd">cat</span> funfact.txt</p>
-<p class="output">
-This entire site — every post, every CSS variable,<br>
-every typo — is maintained mainly via SSH from a smartphone.<br>
-I debug layout bugs on a 6-inch screen from a phone<br>
-that's older than some of my dependencies, and deploy<br>
-to production using nothing but a terminal emulator<br>
-and sheer stubbornness.</p>
-<p class="output">
-The future is here and it looks suspiciously like<br>
-a Nokia E71 with a really good keyboard.
-</p>
+<p class="output">This entire site — every post, every CSS variable, every typo — is maintained mainly via SSH from a smartphone. I debug layout bugs on a 6-inch screen from a phone that's older than some of my dependencies, and deploy to production using nothing but a terminal emulator and sheer stubbornness.</p>
+<p class="output">The future is here and it looks suspiciously like a Nokia E71 with a really good keyboard.</p>
 
 <p><span class="prompt-char">$</span> <span class="cmd">cat</span> ~/motto</p>
 <blockquote class="twitter-tweet">
