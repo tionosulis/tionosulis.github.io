@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 title: ./sulistiono
+seoTitle: "About Sulistiono — Front-End Developer"
 description: >-
   Sulistiono — web developer and blogger. Vanilla CSS, static sites, writes about
   frontend. Ships mainly from a phone via SSH and sheer stubbornness.
