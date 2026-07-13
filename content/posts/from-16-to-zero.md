@@ -3,7 +3,6 @@ title: "From 16 Errors to Zero: How a Build-Time Transform Fixed What the W3C Co
 seoTitle: "16 CSS Errors to Zero: Build-Time Validator Fix"
 description: "Sixteen CSS parse errors turned to zero — without changing a line of CSS. How Lightning CSS closed the three-year gap between browsers and validators."
 date: 2026-07-12
-pinned: true
 tags: [css, lightningcss, validation, build-tools]
 draft: false
 pageHasCode: true

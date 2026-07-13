@@ -2,17 +2,24 @@
 title: "Smooth Navigation for Static Sites: CSS Cross-Document View Transitions"
 seoTitle: "CSS Cross-Document View Transitions for Static Sites"
 description: "How three lines of CSS eliminate the white flash between page loads — with custom morphing animations, no JavaScript, no framework."
-date: 2026-07-01
+date: 2026-07-13
 draft: true
+pinned: true
 tags: [css, performance, standards, walkthrough]
 pageHasCode: true
+image: /assets/img/og/cross-document-view-transitions.png
+image_alt: "Sketched diagram showing three states of a cross-document view transition — Page A on the left, a ghosted mid-transition overlay in the center, and Page B on the right with amber highlights."
 ---
 
 `$ man view-transitions`
 
+![Three states of a view transition — Page A left, ghosted mid-transition overlay center, Page B right with amber highlights.](../assets/img/cross-document-view-transitions.svg)
+
+*Page A fades out, Page B fades in — the browser handles the rest with pure CSS.*
+
 Every static site shares the same friction point: the moment between clicking a link and seeing the next page. A white flash. A layout shift. That split-second disorientation that makes multi-page apps feel sluggish compared to SPAs.
 
-CSS Cross-Document View Transitions fix this. Not through JavaScript frameworks or client-side routing — through three lines of CSS that turn page navigations into smooth, animated transitions.
+CSS Cross-Document View Transitions fix this. Not through JavaScript frameworks or client-side routing — through [three lines of CSS](/posts/from-16-to-zero/) that turn page navigations into smooth, animated transitions.
 
 This is a technical walkthrough of how they work, how to use them, and what to watch out for.
 
@@ -71,6 +78,36 @@ When the user navigates from page A to page B, elements with matching `view-tran
 
 The rule is simple: **every `view-transition-name` must be unique within a page**. You cannot reuse the same name for multiple elements on the same document.
 
+Level 2 of the spec also introduces `view-transition-class`, which lets you group multiple elements under a single animation name — useful when a card grid or list section shares the same transition behavior without repeating `view-transition-name` values.
+
+## Respecting User Motion Preferences
+
+View transitions are a visual enhancement, not a functional requirement. For users with vestibular disorders or motion sensitivity, the default crossfade — even at 300ms — can cause discomfort.
+
+The `@view-transition` at-rule lives inside the CSS cascade, which means you can wrap it in a media query:
+
+```css
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+```
+
+With this wrapper, transitions only activate when the user has not requested reduced motion. Browsers that do not support `@view-transition` ignore the entire block. Browsers that support it but respect `prefers-reduced-motion: reduce` skip the transition and fall back to a standard navigation.
+
+You can also gate by viewport size, network conditions, or any media feature:
+
+```css
+@media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+```
+
+This keeps transitions off narrow screens where the animation feels less natural and consumes more of the viewport budget during navigation.
+
 ## How the Browser Runs the Transition
 
 The transition lifecycle has five phases:
@@ -80,6 +117,8 @@ The transition lifecycle has five phases:
 3. **Snapshot (again)**: Browser captures the new state of all named elements on the new page.
 4. **Merge**: Browser creates a pseudo-element tree under `::view-transition` with both old and new snapshots positioned to match.
 5. **Animate**: The default crossfade runs on the compositor. Old snapshots fade out, new snapshots fade in and morph to their final positions.
+
+For programmatic control, the `pageswap` and `pagereveal` events fire before and after the transition lifecycle — useful for analytics, conditional abort, or injecting custom styles per-navigation.
 
 ![Mid-transition between two views: old and new content blend frame-by-frame](../assets/img/posts/view-transitions/demo-morph.png)
 
@@ -145,8 +184,8 @@ With prerender enabled, the browser loads pages before the user clicks. When nav
 | Chrome 126+ | Full | Full |
 | Edge 126+ | Full | Full |
 | Safari 18.2+ | Full | None |
-| Firefox | In development | None |
-| Global | ~82.7% | ~72% |
+| Firefox 144+ | Partial (behind flag) | None |
+| Global | ~83.43% | ~72% |
 
 Cross-document view transitions are on the Interop 2026 focus area, meaning browser vendors are actively working toward compatibility. The feature degrades gracefully: browsers that do not support it perform a standard navigation with no visible effect. No polyfill is needed because the transition is a visual enhancement, not a functional requirement.
 
