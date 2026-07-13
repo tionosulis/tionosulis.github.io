@@ -19,7 +19,7 @@ image_alt: "Sketched diagram showing three states of a cross-document view trans
 
 Every static site shares the same friction point: the moment between clicking a link and seeing the next page. A white flash. A layout shift. That split-second disorientation that makes multi-page apps feel sluggish compared to SPAs.
 
-CSS Cross-Document View Transitions fix this. Not through JavaScript frameworks or client-side routing — through [three lines of CSS](/posts/from-16-to-zero/) that turn page navigations into smooth, animated transitions.
+CSS Cross-Document View Transitions fix this. Not through JavaScript frameworks or client-side routing — through three lines of CSS that turn page navigations into smooth, animated transitions.
 
 This is a technical walkthrough of how they work, how to use them, and what to watch out for.
 
