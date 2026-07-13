@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto-Flip — CSS Anchor Positioning</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.6;
+    min-height: 200vh;
+    padding: 2rem;
+  }
+
+  .intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+  }
+
+  .intro h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .intro p {
+    color: #555;
+    font-size: 0.9rem;
+  }
+
+  .spacer-top {
+    height: 40vh;
+  }
+
+  .anchor-area {
+    anchor-name: --flip-anchor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  .anchor {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #1d1d1f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .flip-tooltip {
+    position: fixed;
+    position-anchor: --flip-anchor;
+    position-area: bottom center;
+    position-try-fallbacks: flip-block;
+    background: #1d1d1f;
+    color: #f5f5f7;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.15s;
+  }
+
+  .flip-tooltip::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    border: 6px solid transparent;
+  }
+
+  /* Arrow points up when tooltip is below anchor */
+  .flip-tooltip::after {
+    bottom: 100%;
+    border-bottom-color: #1d1d1f;
+  }
+
+  /* When flipped (above), arrow points down via @position-try */
+  @position-try --flipped {
+    position-area: top center;
+  }
+
+  .flip-tooltip {
+    position-try-fallbacks: flip-block;
+  }
+
+  .hint {
+    margin-top: 2rem;
+    text-align: center;
+    color: #888;
+    font-size: 0.85rem;
+  }
+
+  .hint code {
+    background: #e8e8ed;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+
+  .tooltip-label {
+    font-size: 0.75rem;
+    color: #666;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Auto-Flip Demo</h1>
+  <p>The tooltip is positioned at <code>bottom center</code> with <code>position-try-fallbacks: flip-block</code>. Scroll down until the anchor nears the bottom edge — the tooltip flips above automatically.</p>
+  <p style="margin-top: 0.6rem; font-size: 0.8rem; color: #999; background: #f0f0f2; padding: 0.4rem 0.8rem; border-radius: 6px;">📱 On mobile: switch to <strong>landscape</strong> mode. Portrait viewport height may not give enough room for the tooltip to detect overflow and trigger the flip.</p>
+</div>
+
+<div class="spacer-top"></div>
+
+<div class="anchor-area">
+  <button class="anchor" id="anchorBtn">Scroll down →</button>
+  <span class="tooltip-label">anchor area — scroll to trigger flip</span>
+</div>
+
+<div class="flip-tooltip" id="flipTooltip">I flip when I don't fit</div>
+
+<div class="hint">
+  <p>Resize the viewport short or scroll the anchor near the bottom edge.</p>
+  <p>The browser flips the tooltip above <code>flip-block</code> : only when the default position overflows.</p>
+</div>
+
+<script>
+  const tooltip = document.getElementById('flipTooltip');
+  // show tooltip
+  tooltip.style.display = 'block';
+
+  // update tooltip position display
+  const checkPosition = () => {
+    const rect = tooltip.getBoundingClientRect();
+    const anchor = document.getElementById('anchorBtn');
+    const anchorRect = anchor.getBoundingClientRect();
+    const isBelow = rect.top >= anchorRect.bottom - 10;
+    tooltip.textContent = isBelow
+      ? 'I flip when I don\'t fit ↓'
+      : '↑ Flipped above!';
+  };
+
+  window.addEventListener('scroll', checkPosition);
+  window.addEventListener('resize', checkPosition);
+  checkPosition();
+</script>
+</body>
+</html>
