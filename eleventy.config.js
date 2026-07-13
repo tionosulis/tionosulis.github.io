@@ -12,6 +12,7 @@ import { DateTime } from "luxon";
 import { minify } from "html-minifier-terser";
 import { transform as lightning } from "lightningcss";
 import { readFileSync } from "fs";
+import { execSync } from "child_process";
 import path from "node:path";
 import { glob } from "tinyglobby";
 import matter from "gray-matter";
@@ -163,6 +164,24 @@ export default async function (eleventyConfig) {
   });
 
 
+
+  eleventyConfig.addGlobalData("lastCommitDate", () => {
+    try {
+      const date = execSync("git log -1 --format=%cI").toString().trim();
+      return new Date(date);
+    } catch {
+      return new Date();
+    }
+  });
+
+  eleventyConfig.addFilter("timeAgo", (date) => {
+    if (!date) return "";
+    const diff = DateTime.now().diff(DateTime.fromJSDate(date));
+    const parts = diff.shiftTo("days", "hours", "minutes");
+    if (parts.days >= 1) return `${Math.floor(parts.days)}d ago`;
+    if (parts.hours >= 1) return `${Math.floor(parts.hours)}h ago`;
+    return `${Math.floor(parts.minutes)}m ago`;
+  });
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 

@@ -12,8 +12,8 @@ image: /assets/img/og/home.png
 <h1 class="visually-hidden">Sulistiono — Web Design & Front-End Notes</h1>
 
 <div class="home-terminal">
-  <p><span class="prompt-char">$</span> <span class="cmd">whoami</span></p>
-  <p class="output">Sulistiono-blog</p>
+  <p><span class="prompt-char">$</span> <span class="cmd">hostname</span></p>
+  <p class="output">    sulistiono-blog</p>
 
   <p><span class="prompt-char">$</span> <span class="cmd">cat</span> about.md</p>
   <p class="output output--meta"><span class="file-meta"># last modified: 2026-07-09</span></p>
@@ -23,19 +23,19 @@ image: /assets/img/og/home.png
   <div class="tree-listing">
     <span class="tree-dir">links/</span>
     <span class="tree-line"><span class="tree-prefix">├──</span><a href="/about/">about/</a> <span class="entry-count">whoami</span></span>
-    <span class="tree-line"><span class="tree-prefix">├──</span><a href="/posts/">posts/</a> <span class="entry-count">{{ collections.posts | length }} entries</span></span>
     <span class="tree-line tree-line--ext"><span class="tree-prefix">├──</span><a href="https://github.com/tionosulis">github</a></span>
     <span class="tree-line tree-line--ext"><span class="tree-prefix">├──</span><a href="https://x.com/tionosulis_">x.com</a></span>
     <span class="tree-line tree-line--ext"><span class="tree-prefix">└──</span><a href="mailto:contact.sulistiono@gmail.com">email</a></span>
   </div>
 
-  <p><span class="prompt-char">$</span> <span class="cmd">ls -lt posts/ | head -3</span></p>
+  <p><span class="prompt-char">$</span> <span class="cmd">ls -lt</span> posts/ <span class="cmd">| head -3</span></p>
   <div class="tree-listing">
     {% for post in collections.posts | reverse %}
       {% if loop.index <= 3 %}
     <span class="tree-line tree-line--recent"><span class="tree-line--meta"><span class="tree-prefix">{% if loop.last %}└── {% else %}├── {% endif %}</span><span class="recent-date">{{ post.date | getDate("yyyy-MM-dd") }}</span></span><a href="{{ post.url }}">{{ post.data.title }}{% if post.data.pinned %} ★{% endif %}</a></span>
       {% endif %}
     {% endfor %}
+  <span class="tree-truncated">[truncated — {{ collections.posts | length - 3 }} more entries · ls <a href="/posts/">posts/</a>]</span>
   </div>
 
   <p class="cursor-line"><span class="prompt-char">$</span> <span class="blinking-cursor">&#9610;</span></p>

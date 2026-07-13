@@ -321,6 +321,14 @@ table {
   gap: 1rem;
   margin-bottom: 2.618rem;
   padding-bottom: 2rem;
+  position: relative;
+}
+.topbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 7rem;
+  right: 0;
   border-bottom: 2px double var(--border);
 }
 
@@ -549,6 +557,24 @@ footer.site-footer {
   font-size: 0.8rem;
   color: var(--text-secondary);
   text-align: center;
+}
+.status-bar {
+  margin-top: 0.6rem;
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+  user-select: none;
+}
+.status-bar .prompt-char {
+  color: var(--accent);
+  font-weight: 700;
+}
+.status-bar .cmd {
+  color: var(--accent);
 }
 
 /* Utility */
@@ -987,6 +1013,18 @@ a.visually-hidden:focus {
 }
 .tree-line--ext .entry-count {
   color: var(--text-secondary);
+}
+.tree-truncated {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--text-secondary);
+}
+.tree-truncated a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  &:hover { color: var(--accent-hover); }
 }
 
 @media (max-width: 480px) {

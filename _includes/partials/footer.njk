@@ -1,3 +1,8 @@
 <footer class="site-footer">
   <p>&copy; {% year %} {{ metadata.author.name }}. Powered by <a href="https://www.11ty.dev/">Eleventy</a> &amp; <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+  <div class="status-bar">
+    <span class="prompt-char">$</span> <span class="cmd">uptime</span> ·
+    <span class="status-item">{{ collections.posts | length }} posts</span> ·
+    <span class="status-item">last commit {{ lastCommitDate | timeAgo }}</span>
+  </div>
 </footer>
