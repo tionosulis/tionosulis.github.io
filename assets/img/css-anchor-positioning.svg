@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2A38"/>
+      <stop offset="100%" stop-color="#1A2430"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="0.9" fill="#2A4055" opacity="0.38"/>
+    </pattern>
+    <radialGradient id="amberGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#C08040" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#C08040" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sketchy">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="sketchyStrong">
+      <feTurbulence type="turbulence" baseFrequency="0.025" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <clipPath id="rounded">
+      <rect width="1200" height="630" rx="10" ry="10"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#rounded)">
+    <!-- Background -->
+    <rect width="1200" height="630" fill="url(#bg)"/>
+    <rect width="1200" height="630" fill="url(#dots)"/>
+    <rect width="1200" height="630" fill="url(#amberGlow)"/>
+
+    <!-- Inner frame -->
+    <rect x="32" y="32" width="1136" height="566" fill="none" stroke="#3A5068" stroke-width="1" stroke-opacity="0.3"/>
+
+    <!-- Corner accents -->
+    <path d="M 32 80 L 32 32 L 80 32"          fill="none" stroke="#C08040" stroke-width="2" stroke-opacity="0.7"/>
+    <path d="M 1120 32 L 1168 32 L 1168 80"    fill="none" stroke="#C08040" stroke-width="2" stroke-opacity="0.7"/>
+    <path d="M 32 550 L 32 598 L 80 598"       fill="none" stroke="#C08040" stroke-width="2" stroke-opacity="0.7"/>
+    <path d="M 1168 550 L 1168 598 L 1120 598" fill="none" stroke="#C08040" stroke-width="2" stroke-opacity="0.7"/>
+
+    <!-- Title bar -->
+    <rect x="0" y="0" width="1200" height="44" fill="#C08040" fill-opacity="0.08"/>
+    <line x1="0" y1="44" x2="1200" y2="44" stroke="#C08040" stroke-width="1" stroke-opacity="0.3"/>
+    <circle cx="50" cy="22" r="5.5" fill="#ff5f57" opacity="0.85"/>
+    <circle cx="72" cy="22" r="5.5" fill="#febc2e" opacity="0.85"/>
+    <circle cx="94" cy="22" r="5.5" fill="#28c840" opacity="0.85"/>
+    <text x="126" y="28" font-family="'JetBrains Mono', monospace" font-size="14" fill="#C08040" opacity="0.8" letter-spacing="0.3" dominant-baseline="middle">anchor-positioning.css</text>
+
+    <!-- ── LEFT PANEL: Visual diagram ── -->
+    <rect x="70" y="76" width="480" height="490" fill="#1A2634" rx="6" stroke="#3A5068" stroke-width="1" opacity="0.92"/>
+
+    <!-- Panel: anchor trigger button -->
+    <rect x="190" y="220" width="220" height="60" fill="#1E2A38" stroke="#C08040" stroke-width="2" rx="6" filter="url(#sketchy)"/>
+    <text x="300" y="256" font-family="'JetBrains Mono', monospace" font-size="18" fill="#C08040" text-anchor="middle" dominant-baseline="middle" font-weight="bold" filter="url(#sketchy)">Trigger</text>
+
+    <!-- anchor-name annotation -->
+    <rect x="165" y="170" width="180" height="28" fill="#1A2430" stroke="#3A5068" stroke-width="1" rx="3"/>
+    <text x="255" y="190" font-family="'JetBrains Mono', monospace" font-size="13" fill="#C08040" text-anchor="middle" dominant-baseline="middle">anchor-name: --btn</text>
+
+    <!-- Dashed connector line from anchor to tooltip -->
+    <line x1="300" y1="280" x2="300" y2="340" stroke="#C08040" stroke-width="2" stroke-dasharray="6 4" opacity="0.7"/>
+    <polygon points="300,346 294,336 306,336" fill="#C08040" opacity="0.8"/>
+
+    <!-- Tooltip rectangle -->
+    <rect x="190" y="350" width="220" height="48" fill="#16202E" stroke="#C08040" stroke-width="2" rx="4" filter="url(#sketchy)"/>
+    <text x="300" y="380" font-family="'JetBrains Mono', monospace" font-size="15" fill="#C08040" text-anchor="middle" dominant-baseline="middle" filter="url(#sketchy)">Tooltip label</text>
+
+    <!-- position-area annotation -->
+    <rect x="160" y="412" width="200" height="28" fill="#1A2430" stroke="#3A5068" stroke-width="1" rx="3"/>
+    <text x="260" y="432" font-family="'JetBrains Mono', monospace" font-size="13" fill="#C08040" text-anchor="middle" dominant-baseline="middle">position-area: bottom center</text>
+
+    <!-- ── 3×3 GRID ICON (bottom-left of left panel) ── -->
+    <rect x="120" y="458" width="135" height="135" fill="none" stroke="#7A9AB0" stroke-width="1.2" opacity="0.6"/>
+    <line x1="165" y1="458" x2="165" y2="593" stroke="#7A9AB0" stroke-width="1" opacity="0.5"/>
+    <line x1="210" y1="458" x2="210" y2="593" stroke="#7A9AB0" stroke-width="1" opacity="0.5"/>
+    <line x1="120" y1="503" x2="255" y2="503" stroke="#7A9AB0" stroke-width="1" opacity="0.5"/>
+    <line x1="120" y1="548" x2="255" y2="548" stroke="#7A9AB0" stroke-width="1" opacity="0.5"/>
+    <text x="142" y="496" font-family="'JetBrains Mono', monospace" font-size="10" fill="#7A9AB0" text-anchor="middle" dominant-baseline="middle">top</text>
+    <text x="187" y="496" font-family="'JetBrains Mono', monospace" font-size="10" fill="#7A9AB0" text-anchor="middle" dominant-baseline="middle">cen</text>
+    <text x="232" y="496" font-family="'JetBrains Mono', monospace" font-size="10" fill="#7A9AB0" text-anchor="middle" dominant-baseline="middle">bot</text>
+    <text x="142" y="531" font-family="'JetBrains Mono', monospace" font-size="10" fill="#7A9AB0" text-anchor="middle" dominant-baseline="middle">L</text>
+    <text x="187" y="531" font-family="'JetBrains Mono', monospace" font-size="10" fill="#7A9AB0" text-anchor="middle" dominant-baseline="middle">C</text>
+    <text x="232" y="531" font-family="'JetBrains Mono', monospace" font-size="10" fill="#7A9AB0" text-anchor="middle" dominant-baseline="middle">R</text>
+    <text x="106" y="490" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0" text-anchor="end" dominant-baseline="middle">col:</text>
+    <text x="106" y="536" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0" text-anchor="end" dominant-baseline="middle">row:</text>
+
+    <!-- Highlighted center cell -->
+    <rect x="165" y="503" width="45" height="45" fill="#C08040" opacity="0.18" rx="3"/>
+    <text x="187" y="531" font-family="'JetBrains Mono', monospace" font-size="13" fill="#C08040" text-anchor="middle" dominant-baseline="middle" font-weight="bold">✓</text>
+
+    <!-- Label for grid -->
+    <text x="187" y="566" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A9AB0" text-anchor="middle">position-area 3×3</text>
+
+    <!-- ── RIGHT PANEL: Code ── -->
+    <rect x="590" y="76" width="545" height="490" fill="#1A2634" rx="6" stroke="#3A5068" stroke-width="1" opacity="0.92"/>
+
+    <!-- Code panel title bar -->
+    <rect x="590" y="76" width="545" height="34" fill="#16202E" rx="6"/>
+    <rect x="590" y="98" width="545" height="12" fill="#16202E"/>
+    <text x="612" y="98" font-family="'JetBrains Mono', monospace" font-size="13" fill="#7A9AB0" dominant-baseline="middle">style.css</text>
+
+    <!-- CSS code lines -->
+    <text x="612" y="140" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">1  <tspan fill="#C08040">.trigger</tspan> <tspan fill="#7A9AB0">{</tspan></text>
+    <text x="612" y="166" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">2    <tspan fill="#C08040">anchor-name</tspan><tspan fill="#7A9AB0">:</tspan> <tspan fill="#60A8F0">--btn</tspan><tspan fill="#7A9AB0">;</tspan></text>
+    <text x="612" y="192" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">3  <tspan fill="#7A9AB0">}</tspan></text>
+    <text x="612" y="230" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">4</text>
+    <text x="612" y="256" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">5  <tspan fill="#C08040">.tooltip</tspan> <tspan fill="#7A9AB0">{</tspan></text>
+    <text x="612" y="282" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">6    <tspan fill="#C08040">position</tspan><tspan fill="#7A9AB0">:</tspan> <tspan fill="#60A8F0">fixed</tspan><tspan fill="#7A9AB0">;</tspan></text>
+    <text x="612" y="308" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">7    <tspan fill="#C08040">position-anchor</tspan><tspan fill="#7A9AB0">:</tspan> <tspan fill="#60A8F0">--btn</tspan><tspan fill="#7A9AB0">;</tspan></text>
+    <text x="612" y="334" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">8    <tspan fill="#C08040">position-area</tspan><tspan fill="#7A9AB0">:</tspan> <tspan fill="#60A8F0">bottom center</tspan><tspan fill="#7A9AB0">;</tspan></text>
+    <text x="612" y="360" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">9    <tspan fill="#C08040">position-try-fallbacks</tspan><tspan fill="#7A9AB0">:</tspan></text>
+    <text x="612" y="386" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">10     <tspan fill="#60A8F0">flip-block</tspan><tspan fill="#7A9AB0">;</tspan></text>
+    <text x="612" y="412" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">11  <tspan fill="#7A9AB0">}</tspan></text>
+
+    <!-- Highlight/annotation on line 8 -->
+    <rect x="586" y="322" width="5" height="26" fill="#C08040" rx="2" opacity="0.85"/>
+
+    <!-- Inline annotation -->
+    <text x="880" y="342" font-family="'JetBrains Mono', monospace" font-size="13" fill="#C08040" opacity="0.85">← 3×3 shorthand</text>
+
+    <!-- Divider -->
+    <line x1="612" y1="432" x2="1115" y2="432" stroke="#3A5068" stroke-width="0.8" opacity="0.5"/>
+
+    <!-- Auto-flip section -->
+    <text x="612" y="458" font-family="'JetBrains Mono', monospace" font-size="13" fill="#7A9AB0">/* Auto-flip on viewport overflow */</text>
+    <text x="612" y="488" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">├── <tspan fill="#10D9A8">flip-block</tspan><tspan fill="#7A9AB0">: top ↔ bottom</tspan></text>
+    <text x="612" y="516" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">├── <tspan fill="#10D9A8">flip-inline</tspan><tspan fill="#7A9AB0">: left ↔ right</tspan></text>
+    <text x="612" y="544" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7A9AB0">├── <tspan fill="#10D9A8">flip-block flip-inline</tspan><tspan fill="#7A9AB0">: both</tspan></text>
+
+    <!-- Status bar -->
+    <rect x="0" y="606" width="1200" height="24" fill="#16202E"/>
+    <line x1="0" y1="606" x2="1200" y2="606" stroke="#C08040" stroke-width="1" stroke-opacity="0.2"/>
+    <text x="20" y="620" font-family="'JetBrains Mono', monospace" font-size="12" fill="#C08040" opacity="0.6">NORMAL</text>
+    <text x="920" y="620" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A9AB0" opacity="0.8">anchor positioning · CSS only · July 2026</text>
+  </g>
+
+  <rect width="1200" height="630" rx="10" ry="10" fill="none" stroke="#C08040" stroke-width="1.5" stroke-opacity="0.4"/>
+</svg>

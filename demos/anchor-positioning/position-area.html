@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Position-Area Playground — CSS Anchor Positioning</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  .demo-area {
+    text-align: center;
+    max-width: 720px;
+  }
+
+  .demo-area h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .demo-area > p {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .anchor-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    margin-bottom: 2rem;
+  }
+
+  .anchor {
+    anchor-name: --playground-anchor;
+    display: inline-block;
+    padding: 2rem 3rem;
+    background: #1d1d1f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .anchor-label {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.6;
+    display: block;
+    margin-top: 0.3rem;
+  }
+
+  .positioned {
+    position: fixed;
+    position-anchor: --playground-anchor;
+    background: #1d1d1f;
+    color: #f5f5f7;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: all 0.25s ease;
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .controls button {
+    padding: 0.4rem 0.8rem;
+    background: #e8e8ed;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-family: 'SF Mono', 'JetBrains Mono', monospace;
+    transition: all 0.15s;
+  }
+
+  .controls button:hover { background: #d2d2d7; }
+  .controls button.active {
+    background: #1d1d1f;
+    color: #fff;
+    border-color: #1d1d1f;
+  }
+
+  .current-value {
+    font-family: 'SF Mono', 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    background: #e8e8ed;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-area">
+  <h1>position-area Playground</h1>
+  <p>Click a position to see how <code>position-area</code> tethers the tooltip. The browser handles placement automatically.</p>
+
+  <div class="current-value" id="currentValue">position-area: top center</div>
+
+  <div class="anchor-container">
+    <div class="anchor" id="anchor">
+      Anchor
+      <span class="anchor-label">anchor-name: --playground-anchor</span>
+    </div>
+    <div class="positioned" id="positioned" style="position-area: top center">positioned element</div>
+  </div>
+
+  <div class="controls" id="controls">
+    <button data-area="top left">top left</button>
+    <button data-area="top center" class="active">top center</button>
+    <button data-area="top right">top right</button>
+    <button data-area="center left">center left</button>
+    <button data-area="center center">center center</button>
+    <button data-area="center right">center right</button>
+    <button data-area="bottom left">bottom left</button>
+    <button data-area="bottom center">bottom center</button>
+    <button data-area="bottom right">bottom right</button>
+    <button data-area="top span-all">top span-all</button>
+    <button data-area="bottom span-all">bottom span-all</button>
+  </div>
+
+  <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #999;">
+    The tooltip re-positions live. Resize the viewport to see <code>flip-block</code> kick in.
+  </p>
+</div>
+
+<script>
+  const positioned = document.getElementById('positioned');
+  const currentValue = document.getElementById('currentValue');
+  const buttons = document.querySelectorAll('#controls button');
+
+  // Set position-try-fallbacks for all modes
+  positioned.style.positionTryFallbacks = 'flip-block';
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const area = btn.dataset.area;
+      positioned.style.positionArea = area;
+      currentValue.textContent = `position-area: ${area}`;
+    });
+  });
+</script>
+</body>
+</html>
