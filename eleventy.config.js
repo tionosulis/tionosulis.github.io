@@ -43,9 +43,10 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp"],
+    widths: [400, 618, 800],
     defaultAttributes: {
       decoding: "auto",
-      sizes: "100vw",
+      sizes: "(min-width: 680px) 618px, 92vw",
     },
     filenameFormat: (id, src, width, format) => {
       const srcName = path.parse(src).name;
