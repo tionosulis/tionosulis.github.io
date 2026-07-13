@@ -181,7 +181,8 @@ export default async function (eleventyConfig) {
     const parts = diff.shiftTo("days", "hours", "minutes");
     if (parts.days >= 1) return `${Math.floor(parts.days)}d ago`;
     if (parts.hours >= 1) return `${Math.floor(parts.hours)}h ago`;
-    return `${Math.floor(parts.minutes)}m ago`;
+    if (parts.minutes >= 1) return `${Math.floor(parts.minutes)}m ago`;
+    return "just now";
   });
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
