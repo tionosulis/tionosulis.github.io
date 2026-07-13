@@ -3,6 +3,7 @@
   <div class="status-bar">
     <span class="prompt-char">$</span> <span class="cmd">uptime</span> ·
     <span class="status-item">{{ collections.posts | length }} posts</span> ·
-    <span class="status-item">last commit {{ lastCommitDate | timeAgo }}</span>
+    <span class="status-item">last commit <time datetime="{{ lastCommitDate | dateToISO }}" class="relative-time">{{ lastCommitDate | timeAgo }}</time></span>
   </div>
 </footer>
+<script>(()=>{const e="relative-time";document.querySelectorAll("."+e).forEach(t=>{let o=t.getAttribute("datetime");if(!o)return;let n=new Date(o);function r(){let e=Date.now()-n.getTime(),o=Math.floor(e/864e5);if(o>=1)t.textContent=o+"d ago";else{let o=Math.floor(e/36e5);o>=1?t.textContent=o+"h ago":(o=Math.floor(e/6e4))>=1?t.textContent=o+"m ago":t.textContent="just now"}}r();setInterval(r,3e4)})})()</script>

@@ -185,6 +185,11 @@ export default async function (eleventyConfig) {
     return "just now";
   });
 
+  eleventyConfig.addFilter("dateToISO", (date) => {
+    if (!date) return "";
+    return DateTime.fromJSDate(date).toISO();
+  });
+
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   eleventyConfig.on("eleventy.before", async ({ dir }) => {
