@@ -34,11 +34,23 @@
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation-duration: 0.01ms; }
 }
 
 html.no-transition, html.no-transition *,
 html.no-transition *::before, html.no-transition *::after {
   transition: none !important;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 180ms;
+  animation-timing-function: ease;
 }
 
 [data-theme="dark"] {
@@ -331,6 +343,9 @@ table {
   right: 0;
   border-bottom: 2px double var(--border);
 }
+.topbar {
+  view-transition-name: topbar;
+}
 
 /* ── Site Logo ── */
 
@@ -351,6 +366,7 @@ table {
 }
 
 .site-logo-link:hover { color: var(--text); }
+.site-logo-link { view-transition-name: site-logo; }
 
 .site-logo-link .logo-prompt {
   color: var(--accent);

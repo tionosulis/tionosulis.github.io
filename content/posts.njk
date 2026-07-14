@@ -41,7 +41,7 @@ title: Posts
       <li class="post-item{% if post.data.pinned %} pinned{% endif %}">
         <div class="line-sep"></div>
         <div class="post-content">
-          <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
+          <a href="{{ post.url }}" class="post-title" style="view-transition-name: pt-{{ post.data.page.fileSlug }}">{{ post.data.title }}</a>
           {% if post.data.tags %}
           <div class="post-tags">
             {% for tag in post.data.tags %}
