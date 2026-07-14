@@ -343,10 +343,6 @@ table {
   right: 0;
   border-bottom: 2px double var(--border);
 }
-.topbar {
-  view-transition-name: topbar;
-}
-
 /* ── Site Logo ── */
 
 .site-logo-link {
@@ -366,7 +362,6 @@ table {
 }
 
 .site-logo-link:hover { color: var(--text); }
-.site-logo-link { view-transition-name: site-logo; }
 
 .site-logo-link .logo-prompt {
   color: var(--accent);
