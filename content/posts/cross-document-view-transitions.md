@@ -4,7 +4,7 @@ seoTitle: "CSS Cross-Document View Transitions for Static Sites"
 description: "How three lines of CSS eliminate the white flash between page loads — with custom morphing animations, no JavaScript, no framework."
 date: 2026-07-13
 draft: false
-pinned: true
+pinned: false
 tags: [css, performance, standards, walkthrough]
 pageHasCode: true
 image: /assets/img/og/cross-document-view-transitions.png
