@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@scope — Card Component Demo</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .demo-section {
+    margin-bottom: 3rem;
+  }
+
+  .demo-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* ── Global rule: leaks into ANY .card ── */
+  .card h3 {
+    color: #b91c1c;
+  }
+
+  /* ── Shared card styles ── */
+  .card, .card-scoped, .card-donut {
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .card h3, .card-scoped h3, .card-donut h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .card p, .card-scoped p, .card-donut p {
+    font-size: 0.9rem;
+  }
+
+  .card p {
+    color: #52525b;
+  }
+
+  .card img, .card-scoped img, .card-donut img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .card-footer {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e4e4e7;
+    font-size: 0.85rem;
+    color: #71717a;
+  }
+
+  .card-footer a {
+    color: #0066cc;
+  }
+
+  /* ── @scope: selectors stay contained inside the component ── */
+  @scope (.card-scoped) {
+    :scope {
+      border-color: #2563eb;
+    }
+
+    & h3 {
+      color: #1e40af;
+    }
+
+    & p {
+      color: #1e3a5f;
+    }
+  }
+
+  /* ── Donut scoping: @scope ... to (...) excludes footer ── */
+  @scope (.card-donut) to (.card-donut > .card-footer) {
+    :scope {
+      border-color: #d97706;
+    }
+
+    & h3 {
+      color: #92400e;
+    }
+
+    & p {
+      color: #78350f;
+    }
+  }
+
+  /* Footer is outside the donut scope — global styles apply instead */
+  .card-donut .card-footer {
+    border-top-color: #fde68a;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: #e4e4e7;
+    color: #52525b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  .badge-scope { background: #dbeafe; color: #1e40af; }
+  .badge-donut { background: #fef3c7; color: #92400e; }
+</style>
+</head>
+<body>
+
+<h1>@scope in Action</h1>
+<p class="subtitle">Three cards — unscoped, scoped with @scope, and donut-scoped</p>
+
+<div class="demo-section">
+  <h2>Unscoped (global selectors) <span class="badge">leak risk</span></h2>
+  <p style="color:#666;font-size:0.85rem;margin-bottom:1rem;">
+    The global rule <code>.card h3 { color: #b91c1c; }</code> leaks into this card — heading is red.
+  </p>
+
+  <div class="card">
+    <img src="https://placehold.co/600x300/1a2634/b91c1c?text=Card+Image" alt="Placeholder" width="600" height="300">
+    <h3>Card Title (red — leaked global rule)</h3>
+    <p>Styled with global descendant selectors. Any rule targeting <code>.card h3</code> anywhere in the stylesheet will affect this heading, even from unrelated components.</p>
+    <div class="card-footer">
+      <a href="#">Read more →</a>
+    </div>
+  </div>
+</div>
+
+<div class="demo-section">
+  <h2>@scope Isolated <span class="badge badge-scope">@scope</span></h2>
+  <p style="color:#666;font-size:0.85rem;margin-bottom:1rem;">
+    Selectors inside <code>@scope (.card-scoped)</code> stay contained — they cannot leak out to affect other components.
+  </p>
+
+  <div class="card-scoped">
+    <img src="https://placehold.co/600x300/16202e/2563eb?text=Scoped+Card" alt="Placeholder" width="600" height="300">
+    <h3>Scoped Card Title (blue)</h3>
+    <p>The <code>@scope</code> block sets heading and text colors without polluting the global namespace. No scoped selector can accidentally affect an element outside this card.</p>
+    <div class="card-footer">
+      <a href="#">Read more →</a>
+    </div>
+  </div>
+</div>
+
+<div class="demo-section">
+  <h2>Donut Scope <span class="badge badge-donut">@scope … to (…)</span></h2>
+  <p style="color:#666;font-size:0.85rem;margin-bottom:1rem;">
+    <code>to (.card-footer)</code> excludes the footer subtree — it uses global styles, not scoped ones.
+  </p>
+
+  <div class="card-donut">
+    <img src="https://placehold.co/600x300/1a2634/d97706?text=Donut+Card" alt="Placeholder" width="600" height="300">
+    <h3>Donut Scope Card (amber heading — scoped)</h3>
+    <p>The heading and body are styled by <code>@scope (.card-donut) to (.card-donut > .card-footer)</code>.</p>
+    <p>The footer below is <em>excluded</em> from the scope — its <code>&lt;a&gt;</code> link falls back to globally-defined styles instead of scoped ones.</p>
+    <div class="card-footer">
+      <a href="#">Independent footer →</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

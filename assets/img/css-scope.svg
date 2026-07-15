@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2A38"/>
+      <stop offset="100%" stop-color="#1A2430"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="0.9" fill="#2A4055" opacity="0.38"/>
+    </pattern>
+    <radialGradient id="amberGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#C08040" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#C08040" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sketchy">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <clipPath id="rounded">
+      <rect width="1200" height="630" rx="10" ry="10"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#rounded)">
+    <!-- Background -->
+    <rect width="1200" height="630" fill="url(#bg)"/>
+    <rect width="1200" height="630" fill="url(#dots)"/>
+    <rect width="1200" height="630" fill="url(#amberGlow)"/>
+
+    <!-- Inner frame -->
+    <rect x="32" y="32" width="1136" height="566" fill="none" stroke="#3A5068" stroke-width="1" stroke-opacity="0.3"/>
+
+    <!-- Corner accents -->
+    <path d="M 32 80 L 32 32 L 80 32"          fill="none" stroke="#C08040" stroke-width="2" stroke-opacity="0.7"/>
+    <path d="M 1120 32 L 1168 32 L 1168 80"    fill="none" stroke="#C08040" stroke-width="2" stroke-opacity="0.7"/>
+    <path d="M 32 550 L 32 598 L 80 598"       fill="none" stroke="#C08040" stroke-width="2" stroke-opacity="0.7"/>
+    <path d="M 1168 550 L 1168 598 L 1120 598" fill="none" stroke="#C08040" stroke-width="2" stroke-opacity="0.7"/>
+
+    <!-- Title bar -->
+    <rect x="0" y="0" width="1200" height="44" fill="#C08040" fill-opacity="0.08"/>
+    <line x1="0" y1="44" x2="1200" y2="44" stroke="#C08040" stroke-width="1" stroke-opacity="0.3"/>
+    <circle cx="50" cy="22" r="5.5" fill="#ff5f57" opacity="0.85"/>
+    <circle cx="72" cy="22" r="5.5" fill="#febc2e" opacity="0.85"/>
+    <circle cx="94" cy="22" r="5.5" fill="#28c840" opacity="0.85"/>
+    <text x="126" y="28" font-family="'JetBrains Mono', monospace" font-size="14" fill="#C08040" opacity="0.8" letter-spacing="0.3" dominant-baseline="middle">css-scope.css</text>
+
+    <!-- ── LEFT PANEL: Visual diagram ── -->
+    <rect x="70" y="76" width="480" height="490" fill="#1A2634" rx="6" stroke="#3A5068" stroke-width="1" opacity="0.92"/>
+
+    <!-- Scope boundary dashed rectangle -->
+    <rect x="100" y="100" width="420" height="390" fill="none" stroke="#C08040" stroke-width="2" stroke-dasharray="8 4" rx="8" opacity="0.6"/>
+
+    <!-- "scope (.card)" label -->
+    <rect x="120" y="82" width="180" height="26" fill="#1A2430" stroke="#C08040" stroke-width="1" rx="3"/>
+    <text x="210" y="100" font-family="'JetBrains Mono', monospace" font-size="13" fill="#C08040" text-anchor="middle" dominant-baseline="middle">@scope (.card)</text>
+
+    <!-- Card panel inside scope -->
+    <rect x="130" y="128" width="360" height="230" fill="#16202E" stroke="#3A5068" stroke-width="1" rx="6"/>
+
+    <!-- Card header -->
+    <rect x="150" y="148" width="320" height="40" fill="#1E2A38" rx="4"/>
+    <text x="310" y="174" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0" text-anchor="middle" dominant-baseline="middle">:scope { border; padding; }</text>
+
+    <!-- Card title (h3) -->
+    <rect x="150" y="202" width="240" height="20" fill="#3A5068" rx="3" opacity="0.5"/>
+    <text x="162" y="216" font-family="'JetBrains Mono', monospace" font-size="12" fill="#9AB8D0">h3 { font-weight: 600; }</text>
+
+    <!-- Card body text -->
+    <rect x="150" y="232" width="320" height="14" fill="#3A5068" rx="3" opacity="0.3"/>
+    <rect x="150" y="252" width="280" height="14" fill="#3A5068" rx="3" opacity="0.3"/>
+    <rect x="150" y="272" width="300" height="14" fill="#3A5068" rx="3" opacity="0.3"/>
+
+    <!-- Card image placeholder -->
+    <rect x="150" y="296" width="100" height="50" fill="#3A5068" rx="4" opacity="0.4"/>
+    <text x="200" y="324" font-family="'JetBrains Mono', monospace" font-size="10" fill="#9AB8D0" text-anchor="middle" dominant-baseline="middle">img { border-radius; }</text>
+
+    <!-- "Styles scoped here" annotation -->
+    <rect x="280" y="375" width="200" height="28" fill="#1A2430" stroke="#10D9A8" stroke-width="1" rx="3"/>
+    <text x="380" y="395" font-family="'JetBrains Mono', monospace" font-size="12" fill="#10D9A8" text-anchor="middle" dominant-baseline="middle">Styles stay inside scope</text>
+
+    <!-- Donut scoping section (bottom of left panel) -->
+    <rect x="130" y="418" width="360" height="70" fill="none" stroke="#60A8F0" stroke-width="1.5" stroke-dasharray="4 3" rx="6" opacity="0.7"/>
+
+    <text x="145" y="438" font-family="'JetBrains Mono', monospace" font-size="12" fill="#60A8F0">to (.card-footer)</text>
+    <rect x="145" y="448" width="330" height="28" fill="#1A2430" stroke="#3A5068" stroke-width="1" rx="3" opacity="0.6"/>
+    <text x="310" y="468" font-family="'JetBrains Mono', monospace" font-size="12" fill="#9AB8D0" text-anchor="middle" dominant-baseline="middle">Excluded from scope (donut hole)</text>
+
+    <!-- ── RIGHT PANEL: Code ── -->
+    <rect x="590" y="76" width="545" height="490" fill="#1A2634" rx="6" stroke="#3A5068" stroke-width="1" opacity="0.92"/>
+
+    <!-- Code panel title bar -->
+    <rect x="590" y="76" width="545" height="34" fill="#16202E" rx="6"/>
+    <rect x="590" y="98" width="545" height="12" fill="#16202E"/>
+    <text x="612" y="98" font-family="'JetBrains Mono', monospace" font-size="13" fill="#9AB8D0" dominant-baseline="middle">style.css</text>
+
+    <!-- CSS code lines -->
+    <text x="612" y="140" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">1  <tspan fill="#C08040">@scope</tspan> <tspan fill="#9AB8D0">(</tspan><tspan fill="#E0E0E0">.card</tspan><tspan fill="#9AB8D0">) {</tspan></text>
+    <text x="612" y="170" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">2    <tspan fill="#9AB8D0">:</tspan><tspan fill="#C08040">scope</tspan> <tspan fill="#9AB8D0">{</tspan></text>
+    <text x="612" y="196" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">3      <tspan fill="#C08040">border</tspan><tspan fill="#9AB8D0">:</tspan> <tspan fill="#60A8F0">1px solid var(--border)</tspan><tspan fill="#9AB8D0">;</tspan></text>
+    <text x="612" y="222" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">4      <tspan fill="#C08040">border-radius</tspan><tspan fill="#9AB8D0">:</tspan> <tspan fill="#60A8F0">8px</tspan><tspan fill="#9AB8D0">;</tspan></text>
+    <text x="612" y="248" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">5      <tspan fill="#C08040">padding</tspan><tspan fill="#9AB8D0">:</tspan> <tspan fill="#60A8F0">1rem</tspan><tspan fill="#9AB8D0">;</tspan></text>
+    <text x="612" y="274" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">6    <tspan fill="#9AB8D0">}</tspan></text>
+    <text x="612" y="304" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">7    <tspan fill="#9AB8D0">&amp; </tspan><tspan fill="#C08040">h3</tspan> <tspan fill="#9AB8D0">{</tspan> <tspan fill="#C08040">font-weight</tspan><tspan fill="#9AB8D0">:</tspan> <tspan fill="#60A8F0">600</tspan><tspan fill="#9AB8D0">; }</tspan></text>
+    <text x="612" y="334" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">8    <tspan fill="#9AB8D0">&amp; </tspan><tspan fill="#C08040">p</tspan> <tspan fill="#9AB8D0">{</tspan> <tspan fill="#C08040">color</tspan><tspan fill="#9AB8D0">:</tspan> <tspan fill="#60A8F0">var(--text-secondary)</tspan><tspan fill="#9AB8D0">; }</tspan></text>
+    <text x="612" y="364" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">9    <tspan fill="#9AB8D0">&amp; </tspan><tspan fill="#C08040">img</tspan> <tspan fill="#9AB8D0">{</tspan> <tspan fill="#C08040">border-radius</tspan><tspan fill="#9AB8D0">:</tspan> <tspan fill="#60A8F0">0.5rem</tspan><tspan fill="#9AB8D0">; }</tspan></text>
+    <text x="612" y="394" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">10 <tspan fill="#9AB8D0">}</tspan></text>
+
+    <!-- Divider -->
+    <line x1="612" y1="420" x2="1115" y2="420" stroke="#3A5068" stroke-width="0.8" opacity="0.5"/>
+
+    <!-- Donut scoping section -->
+    <text x="612" y="448" font-family="'JetBrains Mono', monospace" font-size="13" fill="#9AB8D0">/* Donut scoping — exclude subtree */</text>
+    <text x="612" y="478" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">11 <tspan fill="#C08040">@scope</tspan> <tspan fill="#9AB8D0">(</tspan><tspan fill="#E0E0E0">.card</tspan><tspan fill="#9AB8D0">) </tspan><tspan fill="#C08040">to</tspan> <tspan fill="#9AB8D0">(</tspan><tspan fill="#E0E0E0">.card-footer</tspan><tspan fill="#9AB8D0">) {</tspan></text>
+    <text x="612" y="508" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">12   <tspan fill="#9AB8D0">&amp; </tspan><tspan fill="#C08040">a</tspan> <tspan fill="#9AB8D0">{</tspan> <tspan fill="#C08040">color</tspan><tspan fill="#9AB8D0">:</tspan> <tspan fill="#60A8F0">var(--accent)</tspan><tspan fill="#9AB8D0">; }</tspan></text>
+    <text x="612" y="538" font-family="'JetBrains Mono', monospace" font-size="14" fill="#9AB8D0">13 <tspan fill="#9AB8D0">}</tspan></text>
+
+    <!-- Status bar -->
+    <rect x="0" y="606" width="1200" height="24" fill="#16202E"/>
+    <line x1="0" y1="606" x2="1200" y2="606" stroke="#C08040" stroke-width="1" stroke-opacity="0.2"/>
+    <text x="20" y="620" font-family="'JetBrains Mono', monospace" font-size="12" fill="#C08040" opacity="0.6">NORMAL</text>
+    <text x="900" y="620" font-family="'JetBrains Mono', monospace" font-size="12" fill="#9AB8D0" opacity="0.8">@scope · component isolation · July 2026</text>
+  </g>
+
+  <rect width="1200" height="630" rx="10" ry="10" fill="none" stroke="#C08040" stroke-width="1.5" stroke-opacity="0.4"/>
+</svg>
