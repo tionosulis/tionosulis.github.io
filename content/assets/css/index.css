@@ -24,7 +24,7 @@
   --error: #C53030;
 
   --radius: 6px;
-  --statusbar-bg: #E0DCD5;
+  --statusbar-bg: #E5E1D9;
   --statusbar-text: #2D3748;
   --statusbar-mode: #92400E;
 
@@ -69,7 +69,7 @@ html.no-transition *::before, html.no-transition *::after {
   --selection: rgba(251, 191, 36, 0.2);
   --syntax-bg: #262626;
   --error: #EF4444;
-  --statusbar-bg: #16202E;
+  --statusbar-bg: #1E1E1E;
   --statusbar-text: #9AB8D0;
   --statusbar-mode: #D49050;
 }
@@ -88,7 +88,7 @@ html.no-transition *::before, html.no-transition *::after {
     --selection: rgba(251, 191, 36, 0.2);
     --syntax-bg: #262626;
     --error: #EF4444;
-    --statusbar-bg: #16202E;
+    --statusbar-bg: #1E1E1E;
     --statusbar-text: #9AB8D0;
     --statusbar-mode: #D49050;
   }
