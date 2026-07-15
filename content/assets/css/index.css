@@ -24,6 +24,9 @@
   --error: #C53030;
 
   --radius: 6px;
+  --statusbar-bg: #E0DCD5;
+  --statusbar-text: #2D3748;
+  --statusbar-mode: #92400E;
 
   color-scheme: light dark;
 }
@@ -66,6 +69,9 @@ html.no-transition *::before, html.no-transition *::after {
   --selection: rgba(251, 191, 36, 0.2);
   --syntax-bg: #262626;
   --error: #EF4444;
+  --statusbar-bg: #16202E;
+  --statusbar-text: #9AB8D0;
+  --statusbar-mode: #D49050;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -82,6 +88,9 @@ html.no-transition *::before, html.no-transition *::after {
     --selection: rgba(251, 191, 36, 0.2);
     --syntax-bg: #262626;
     --error: #EF4444;
+    --statusbar-bg: #16202E;
+    --statusbar-text: #9AB8D0;
+    --statusbar-mode: #D49050;
   }
 }
 
@@ -92,7 +101,7 @@ html.no-transition *::before, html.no-transition *::after {
 [data-theme="dark"] .shiki {
   background-color: var(--shiki-dark-bg) !important;
 }
-[data-theme="dark"] .shiki span {
+[data-theme="dark"] .shiki span:not(.status-mode):not(.status-info) {
   color: var(--shiki-dark) !important;
 }
 
@@ -100,7 +109,7 @@ html.no-transition *::before, html.no-transition *::after {
   :root:not([data-theme]) .shiki {
     background-color: var(--shiki-dark-bg) !important;
   }
-  :root:not([data-theme]) .shiki span {
+  :root:not([data-theme]) .shiki span:not(.status-mode):not(.status-info) {
     color: var(--shiki-dark) !important;
   }
 }
@@ -179,7 +188,7 @@ pre code { background: none; padding: 0; }
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.2s ease, background 0.2s ease;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   &:hover { background: var(--border); color: var(--text); }
 }
 
@@ -193,6 +202,37 @@ pre:hover .copy-btn { opacity: 1; }
   pointer-events: none;
 }
 
+/* ── code block $ cat prompt ── */
+.prompt {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+/* ── code block vim-style status bar ── */
+.code-statusbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background: var(--statusbar-bg);
+  color: var(--statusbar-text);
+  border-top: 1px solid var(--border);
+  border-radius: 0 0 var(--radius) var(--radius);
+  user-select: none;
+}
+.status-mode {
+  color: var(--statusbar-mode);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.status-info {
+  color: var(--statusbar-text);
+}
+
 /* ── @scope: component-level isolation for code blocks ── */
 @scope (.shiki) {
   :scope {
@@ -201,6 +241,7 @@ pre:hover .copy-btn { opacity: 1; }
   }
   & .code-wrapper { display: block; padding: 1rem 1.25rem; overflow-x: auto; }
   & code { background: none; padding: 0; }
+  & .prompt { display: block; margin-bottom: 0.5rem; color: var(--text-secondary); user-select: none; }
   & .copy-btn {
     position: absolute;
     top: 0.5rem;
@@ -216,12 +257,27 @@ pre:hover .copy-btn { opacity: 1; }
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.2s ease, background 0.2s ease;
-    color: var(--text-tertiary);
+    color: var(--text-secondary);
     &:hover { background: var(--border); color: var(--text); }
   }
   &:hover .copy-btn { opacity: 1; }
   & .copy-btn svg { width: 16px; height: 16px; }
   & .copy-btn.copied { opacity: 1; color: var(--accent); pointer-events: none; }
+  & .code-statusbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    background: var(--statusbar-bg);
+    color: var(--statusbar-text);
+    border-top: 1px solid var(--border);
+    border-radius: 0 0 var(--radius) var(--radius);
+    user-select: none;
+  }
+  & .status-mode { color: var(--statusbar-mode); font-weight: 600; letter-spacing: 0.03em; }
+  & .status-info { color: var(--statusbar-text); }
 }
 
 blockquote {
@@ -299,7 +355,7 @@ table {
 
 .header-anchor {
   position: absolute;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   text-decoration: none;
   margin-left: 0.25rem;
   opacity: 0;
@@ -877,7 +933,7 @@ a.visually-hidden:focus {
 /* ───────────── Post content divider ───────────── */
 .post-divider {
   text-align: left;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   margin: 1.8rem 0 2.2rem;

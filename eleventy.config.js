@@ -208,11 +208,35 @@ export default async function (eleventyConfig) {
   const copySvg = '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
   const checkSvg = '<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
 
+  const FILENAME_MAP = {
+    js: 'script.js', javascript: 'script.js',
+    css: 'styles.css', html: 'index.html',
+    bash: 'setup.sh', sh: 'setup.sh', diff: 'changes.diff',
+    json: 'config.json', yml: 'config.yml', yaml: 'config.yml',
+    py: 'script.py', python: 'script.py',
+    ts: 'app.ts', tsx: 'app.tsx', jsx: 'app.jsx',
+    md: 'README.md', xml: 'config.xml', svg: 'icon.svg',
+    toml: 'config.toml', text: 'output.txt',
+    njk: 'template.njk', jinja: 'template.jinja'
+  };
+
   eleventyConfig.addTransform("copy-code", function (content) {
     if (!this.page.outputPath?.endsWith(".html")) return content;
     const copyBtnHtml = `<button class="copy-btn" aria-label="Copy code" data-copy="${encodeURIComponent(copySvg)}" data-check="${encodeURIComponent(checkSvg)}">${copySvg}</button>`;
-    let result = content.replace(/(<pre[^>]*>)/g, "$1" + copyBtnHtml + '<span class="code-wrapper">');
-    return result.replace(/<\/pre>/g, '</span></pre>');
+    return content.replace(/(<pre[^>]*>)([\s\S]*?)(<\/pre>)/g, (match, openTag, inner, closeTag) => {
+      const isShiki = /shiki/.test(openTag);
+      let statusBar = '';
+      let promptEl = '';
+      if (isShiki) {
+        const lang = (inner.match(/class="language-(\w+)"/) || [])[1] || '';
+        const lineCount = (inner.match(/<span class="line">/g) || []).length;
+        const info = lang ? lang + ' \u2502 ' + lineCount + 'L' : lineCount + 'L';
+        statusBar = '<div class="code-statusbar"><span class="status-mode">NORMAL</span><span class="status-info">' + info + '</span></div>';
+        const filename = FILENAME_MAP[lang] || 'untitled';
+        promptEl = '<span class="prompt" aria-hidden="true">$ cat ' + filename + '</span>';
+      }
+      return openTag + copyBtnHtml + '<span class="code-wrapper">' + promptEl + inner + '</span>' + statusBar + closeTag;
+    });
   });
 
   const svgSizeCache = new Map();
