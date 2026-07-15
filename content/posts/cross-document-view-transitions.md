@@ -177,6 +177,10 @@ The mitigation is [Speculation Rules](https://developer.chrome.com/docs/web-plat
 
 With prerender enabled, the browser loads pages before the user clicks. When navigation happens, the old snapshot captures instantly (no server wait), and the LCP cost drops to near zero. Speculation Rules are supported in Chrome and Edge; Safari and Firefox do not yet implement them.
 
+### Validator False Positives
+
+CSS features ship before validators catch up. The W3C CSS Validator flags `@view-transition`, `::view-transition-old()`, and `::view-transition-new()` as parse errors — but all target browsers (Chrome 126+, Safari 18.2+, Firefox 144+) support them without issue. This blog went from 16 CSS errors to zero with LightningCSS, but features this new pass through unmodified. [From 16 Errors to Zero: How a Build-Time Transform Fixed What the W3C Couldn't](/posts/from-16-to-zero/) covers the pattern.
+
 ## Browser Support
 
 | Browser | Cross-Document VT | Speculation Rules |

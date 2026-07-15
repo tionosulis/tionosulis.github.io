@@ -115,6 +115,8 @@ This is unique to `@scope` — no other CSS mechanism lets you define a top boun
 
 **Important caveat:** `@scope` provides **selector isolation, not style isolation**. Inherited properties like `color`, `font-family`, and `font-size` still pass through the donut hole. Only direct selector matching is blocked.
 
+[Open the demo →](/demos/css-scope/card-component.html)
+
 ## Proximity: A New Cascade Tier
 
 `@scope` introduces **scoping proximity** to the cascade — a new tiebreaker between specificity and source order:
@@ -197,6 +199,13 @@ More impactful — the blog's syntax-highlighted code blocks appear on every pos
 ```
 
 Global styles for `pre` (background, border, radius) stay as fallback for older browsers — progressive enhancement at work.
+
+The same `@scope` boundary also made it possible to layer terminal-UI elements inside code blocks without selector bloat:
+
+- **Vim status bar** (`.code-statusbar`, `.status-mode`, `.status-info`) — the amber `NORMAL` label and language │ line count info, scoped under `@scope (.shiki)`.
+- **`$ cat` prompt** (`.prompt`, `aria-hidden="true"`) — injected before `<code>`, isolated by the same scope boundary.
+
+Without `@scope`, each new element would need manual namespace prefixing (`.shiki .code-statusbar`, `.shiki .status-mode`) or risk style leakage. The scope boundary keeps all code-block chrome self-contained.
 
 Note: the 404 page's `.curl-block` component was intentionally left out of the refactor. Because it uses a `.curl-block--error` modifier to switch accent colors to red (`var(--error)`), the modifier rules need higher specificity than the base — something `@scope`'s zero-specificity `&` can't guarantee when competing with global overrides.
 
@@ -292,6 +301,8 @@ The `@supports at-rule(@scope)` syntax is still settling — for now, `@supports
 
 Without the `@supports` wrapper, `@scope` is **progressive by nature**: an unrecognized at-rule is silently ignored by older browsers, leaving the fallback selectors in place. The double declaration is harmless — both rules have equal specificity, and in supporting browsers the scoped version wins via proximity.
 
+One practical side effect of adopting bleeding-edge CSS: the W3C CSS Validator flags `@scope` (along with `@view-transition` and `::view-transition-*`) as unrecognized at-rules. This is a **validator gap**, not a browser gap — all target browsers support these features. This blog went from 16 CSS errors to zero with LightningCSS, but features this new pass through unmodified because no downleveling exists yet. [From 16 Errors to Zero](/posts/from-16-to-zero/) documents the approach.
+
 ## Browser Support
 
 `@scope` is **Baseline Newly Available** since December 2025 (~91% global coverage):
@@ -318,5 +329,3 @@ All major browsers ship it. No flags, no prefixes.
 The web platform finally has a built-in answer to CSS leaks. No more `!important` chains, no more BEM convention manuals, no more build-plugin configuration. Just `@scope` — and your styles stay where you put them.
 
 ---
-
-[Open the demo →](/demos/css-scope/card-component.html)
