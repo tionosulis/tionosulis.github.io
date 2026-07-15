@@ -257,7 +257,7 @@ pre:hover .copy-btn { opacity: 1; }
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.2s ease, background 0.2s ease;
-    color: var(--text-secondary);
+    color: var(--text-tertiary);
     &:hover { background: var(--border); color: var(--text); }
   }
   &:hover .copy-btn { opacity: 1; }
@@ -355,7 +355,7 @@ table {
 
 .header-anchor {
   position: absolute;
-  color: var(--text-secondary);
+  color: var(--text-tertiary);
   text-decoration: none;
   margin-left: 0.25rem;
   opacity: 0;
@@ -933,7 +933,7 @@ a.visually-hidden:focus {
 /* ───────────── Post content divider ───────────── */
 .post-divider {
   text-align: left;
-  color: var(--text-secondary);
+  color: var(--text-tertiary);
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   margin: 1.8rem 0 2.2rem;
