@@ -231,7 +231,7 @@ export default async function (eleventyConfig) {
         const lang = (inner.match(/class="language-(\w+)"/) || [])[1] || '';
         const lineCount = (inner.match(/<span class="line">/g) || []).length;
         const info = lang ? lang + ' \u2502 ' + lineCount + 'L' : lineCount + 'L';
-        statusBar = '<div class="code-statusbar"><span class="status-mode">NORMAL</span><span class="status-info">' + info + '</span></div>';
+        statusBar = '<span class="code-statusbar"><span class="status-mode">NORMAL</span><span class="status-info">' + info + '</span></span>';
         const filename = FILENAME_MAP[lang] || 'untitled';
         promptEl = '<span class="prompt" aria-hidden="true">$ cat ' + filename + '</span>';
       }
