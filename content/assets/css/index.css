@@ -193,6 +193,37 @@ pre:hover .copy-btn { opacity: 1; }
   pointer-events: none;
 }
 
+/* ── @scope: component-level isolation for code blocks ── */
+@scope (.shiki) {
+  :scope {
+    font-variant-ligatures: none;
+    box-shadow: 0 1px 3px color-mix(in srgb, var(--accent) 10%, transparent);
+  }
+  & .code-wrapper { display: block; padding: 1rem 1.25rem; overflow-x: auto; }
+  & code { background: none; padding: 0; }
+  & .copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease, background 0.2s ease;
+    color: var(--text-tertiary);
+    &:hover { background: var(--border); color: var(--text); }
+  }
+  &:hover .copy-btn { opacity: 1; }
+  & .copy-btn svg { width: 16px; height: 16px; }
+  & .copy-btn.copied { opacity: 1; color: var(--accent); pointer-events: none; }
+}
+
 blockquote {
   margin: 1.5rem 0;
   padding: 0.75rem 1.25rem;
@@ -912,37 +943,39 @@ a.visually-hidden:focus {
 @media (prefers-reduced-motion: reduce) {
   .notice-redesign p::after { animation: none; }
 }
-.home-terminal {
-  font-family: "JetBrains Mono", monospace;
-  max-width: 618px;
-  margin: 0 auto;
-}
-.home-terminal .prompt-char {
-  color: var(--accent);
-  font-weight: 700;
-  user-select: none;
-}
-.home-terminal .cmd { color: var(--accent); }
-.home-terminal .output {
-  color: var(--text-secondary);
-  margin: 0.25rem 0 1.25rem 1.2rem;
-  line-height: 1.8;
-  text-wrap: pretty;
-}
-.home-terminal .output a {
-  color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-  text-decoration-color: var(--accent);
-  &:hover { color: var(--accent-hover); }
-}
-.home-terminal .cursor-line {
-  margin-top: 0.5rem;
-}
-.home-terminal .blinking-cursor {
-  color: var(--accent);
-  animation: cursor-blink 1.1s step-end infinite;
+@scope (.home-terminal) {
+  :scope {
+    font-family: "JetBrains Mono", monospace;
+    max-width: 618px;
+    margin: 0 auto;
+  }
+  & .prompt-char {
+    color: var(--accent);
+    font-weight: 700;
+    user-select: none;
+  }
+  & .cmd { color: var(--accent); }
+  & .output {
+    color: var(--text-secondary);
+    margin: 0.25rem 0 1.25rem 1.2rem;
+    line-height: 1.8;
+    text-wrap: pretty;
+  }
+  & .output a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--accent);
+    &:hover { color: var(--accent-hover); }
+  }
+  & .cursor-line {
+    margin-top: 0.5rem;
+  }
+  & .blinking-cursor {
+    color: var(--accent);
+    animation: cursor-blink 1.1s step-end infinite;
+  }
 }
 
 /* Tree listing */

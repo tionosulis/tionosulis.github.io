@@ -140,10 +140,10 @@ When two `@scope` blocks produce conflicting declarations for the same element, 
 ```
 
 ```html
-<div class="light">           <!-- 1 hop -->
+<div class="light">           <!-- scope root → 1 hop to <a> -->
   <a href="#">Link 1</a>      <!-- → light wins -->
-  <div class="dark">          <!-- 2 hops -->
-    <a href="#">Link 2</a>    <!-- → light wins (1 hop vs 2) -->
+  <div class="dark">          <!-- scope root → 2 hops to <a> -->
+    <a href="#">Link 2</a>    <!-- → dark wins (1 hop vs 2) -->
   </div>
 </div>
 ```
@@ -152,45 +152,53 @@ Proximity is a **tiebreaker** — it only activates when specificity and layers 
 
 This makes nested theme switching declarative: the nearest scope root determines the styles, without `!important` or specificity hacks.
 
-## Real-World Refactor: This Blog's Homepage Terminal
+## Real-World Refactor: Applied to This Blog
 
-This blog's homepage has a terminal component with prompt characters, command text, output lines, and a blinking cursor — all grouped under `.home-terminal`:
+After writing this post, I applied `@scope` to three components in this blog's CSS. Here's what the refactor looks like.
+
+### Homepage Terminal
+
+The homepage terminal has prompt characters, command text, output lines, and a blinking cursor — all grouped under `.home-terminal`:
 
 ```css
+/* Before: every selector repeats the parent */
 .home-terminal .cmd { color: var(--accent); }
+.home-terminal .output { color: var(--text-secondary); margin: ...; line-height: 1.8; }
+.home-terminal .output a { color: var(--accent); text-decoration: underline; }
 
-.home-terminal .output {
-  color: var(--text-secondary);
-  margin: 0.25rem 0 1.25rem 1.2rem;
-  line-height: 1.8;
-}
-
-.home-terminal .output a {
-  color: var(--accent);
-  text-decoration: underline;
+/* After: co-located inside @scope */
+@scope (.home-terminal) {
+  :scope { font-family: "JetBrains Mono", monospace; max-width: 618px; margin: 0 auto; }
+  & .cmd { color: var(--accent); }
+  & .output { color: var(--text-secondary); margin: ...; line-height: 1.8; }
+  & .output a { color: var(--accent); text-decoration: underline; }
+  & .blinking-cursor { color: var(--accent); animation: cursor-blink 1.1s step-end infinite; }
 }
 ```
 
-Each `.home-terminal .<child>` selector repeats the parent prefix. With `@scope`, the relationship is explicit and DRY:
+Seven separate global rules consolidated into one self-contained block.
+
+### Code Blocks (Every Post)
+
+More impactful — the blog's syntax-highlighted code blocks appear on every post. The `@scope` block organizes all the scattered styles for `.shiki`, `.code-wrapper`, and `.copy-btn` into a single component boundary:
 
 ```css
-@scope (.home-terminal) {
-  & .cmd { color: var(--accent); }
-
-  & .output {
-    color: var(--text-secondary);
-    margin: 0.25rem 0 1.25rem 1.2rem;
-    line-height: 1.8;
+@scope (.shiki) {
+  :scope {
+    font-variant-ligatures: none;
+    box-shadow: 0 1px 3px color-mix(in srgb, var(--accent) 10%, transparent);
   }
-
-  & .output a {
-    color: var(--accent);
-    text-decoration: underline;
-  }
+  & .code-wrapper { display: block; padding: 1rem 1.25rem; overflow-x: auto; }
+  & code { background: none; padding: 0; }
+  & .copy-btn { position: absolute; top: 0.5rem; right: 0.5rem; ... }
+  &:hover .copy-btn { opacity: 1; }
+  & .copy-btn.copied { opacity: 1; color: var(--accent); pointer-events: none; }
 }
 ```
 
-The improvement isn't just fewer keystrokes — a developer reading this file knows immediately that everything inside belongs to the terminal component. No mental namespace mapping needed.
+Global styles for `pre` (background, border, radius) stay as fallback for older browsers — progressive enhancement at work.
+
+Note: the 404 page's `.curl-block` component was intentionally left out of the refactor. Because it uses a `.curl-block--error` modifier to switch accent colors to red (`var(--error)`), the modifier rules need higher specificity than the base — something `@scope`'s zero-specificity `&` can't guarantee when competing with global overrides.
 
 ## @scope + & (Nesting) Specificity
 
@@ -198,7 +206,7 @@ Inside `@scope`, `&` and `:scope` behave differently:
 
 | Selector | Specificity | Desugars to |
 |---|---|---|
-| `& h3` | `(0,0,1)` | `:is(.card) h3` — root contributes zero via `:where()` |
+| `& h3` | `(0,0,1)` | `:where(.card) h3` — root contributes zero via `:where()` |
 | `:scope h3` | `(0,1,1)` | Class + element |
 | Bare `h3` | `(0,0,1)` | Implicit `:where(:scope)` prepended |
 | `& &` | Valid | Nested `.card` inside `.card` |
