@@ -5,9 +5,9 @@
   <rect x="0" y="0" width="1200" height="44" fill="#1E1E1E"/>
 
   <!-- Window controls (left) -->
-  <circle cx="25" cy="22" r="7" fill="#EF4444"/>
-  <circle cx="50" cy="22" r="7" fill="#F59E0B"/>
-  <circle cx="75" cy="22" r="7" fill="#10B981"/>
+  <circle cx="35" cy="22" r="7" fill="#EF4444"/>
+  <circle cx="60" cy="22" r="7" fill="#F59E0B"/>
+  <circle cx="85" cy="22" r="7" fill="#10B981"/>
 
   <!-- File tab -->
   <rect x="110" y="56" width="170" height="36" rx="8" fill="#363330"/>
@@ -17,7 +17,7 @@
   <line x1="0" y1="84" x2="1200" y2="84" stroke="#3D3A37" stroke-width="1.5"/>
 
   <!-- ── LEFT PANEL ── -->
-  <rect x="30" y="100" width="530" height="435" fill="#2A2826" rx="8"/>
+  <rect x="30" y="100" width="530" height="455" fill="#2A2826" rx="8"/>
 
   <!-- Scope boundary -->
   <rect x="47" y="128" width="496" height="383" fill="none" stroke="#3D3A37" stroke-width="1.5" stroke-dasharray="8 4" rx="8"/>
@@ -55,7 +55,7 @@
   <text x="297" y="431" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle" dominant-baseline="middle">Excluded from scope (donut hole)</text>
 
   <!-- ── RIGHT PANEL ── -->
-  <rect x="585" y="100" width="585" height="435" fill="#2A2826" rx="8"/>
+  <rect x="585" y="100" width="585" height="455" fill="#2A2826" rx="8"/>
 
   <rect x="585" y="100" width="585" height="34" fill="#363330" rx="8"/>
   <rect x="585" y="127" width="585" height="7" fill="#363330"/>
@@ -83,8 +83,8 @@
   <text x="605" y="525" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">13 <tspan fill="#F8F5F0">}</tspan></text>
 
   <!-- ── STATUS BAR ── -->
-  <rect x="0" y="535" width="1200" height="25" fill="#1E1E1E"/>
-  <line x1="0" y1="535" x2="1200" y2="535" stroke="#3D3A37" stroke-width="1"/>
-  <text x="20" y="553" font-family="'JetBrains Mono', monospace" font-size="11" fill="#E0A868" font-weight="600">NORMAL</text>
-  <text x="1180" y="553" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="end">style.css  13L</text>
+  <rect x="0" y="555" width="1200" height="25" fill="#1E1E1E"/>
+  <line x1="0" y1="555" x2="1200" y2="555" stroke="#3D3A37" stroke-width="1"/>
+  <text x="50" y="573" font-family="'JetBrains Mono', monospace" font-size="11" fill="#E0A868" font-weight="600">NORMAL</text>
+  <text x="1155" y="573" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="end">style.css  13L</text>
 </svg>
