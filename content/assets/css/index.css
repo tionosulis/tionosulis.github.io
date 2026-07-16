@@ -28,6 +28,9 @@
   --statusbar-text: #2D3748;
   --statusbar-mode: #92400E;
 
+  --img-glow:  0 2px 8px color-mix(in srgb, var(--accent) 15%, transparent),
+               0 0 24px color-mix(in srgb, var(--accent) 6%, transparent);
+
   color-scheme: light dark;
 }
 
@@ -71,7 +74,10 @@ html.no-transition *::before, html.no-transition *::after {
   --error: #EF4444;
   --statusbar-bg: #1E1E1E;
   --statusbar-text: #9ba3b1;
-  --statusbar-mode: #D49050;
+  --statusbar-mode: #E0A868;
+
+  --img-glow:  0 1px 4px color-mix(in srgb, var(--accent) 5%, transparent),
+               0 0 14px color-mix(in srgb, var(--accent) 2%, transparent);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -90,7 +96,10 @@ html.no-transition *::before, html.no-transition *::after {
     --error: #EF4444;
     --statusbar-bg: #1E1E1E;
     --statusbar-text: #9ba3b1;
-    --statusbar-mode: #D49050;
+    --statusbar-mode: #E0A868;
+
+    --img-glow:  0 1px 4px color-mix(in srgb, var(--accent) 5%, transparent),
+                 0 0 14px color-mix(in srgb, var(--accent) 2%, transparent);
   }
 }
 
@@ -555,10 +564,8 @@ article .footnotes p, article .footnotes li { color: inherit; }
 
 
 article img {
-  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
-  box-shadow:
-    0 2px 8px color-mix(in srgb, var(--accent) 15%, transparent),
-    0 0 24px color-mix(in srgb, var(--accent) 6%, transparent);
+  border: 1px solid var(--border);
+  box-shadow: var(--img-glow);
 }
 
 article p:has(img) { margin-top: 1.5rem; }

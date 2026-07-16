@@ -17,18 +17,15 @@
   </defs>
 
   <g clip-path="url(#rounded)">
-    <rect width="1200" height="630" fill="#161616"/>
+    <rect width="1200" height="630" fill="#1A1A1A"/>
     <rect width="1200" height="630" fill="url(#dots)"/>
     <rect width="1200" height="630" fill="url(#amberGlow)"/>
 
-    <!-- Inner frame -->
-    <rect x="32" y="32" width="1136" height="566" fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
-
     <!-- Corner accents -->
-    <path d="M 32 80 L 32 32 L 80 32"          fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1120 32 L 1168 32 L 1168 80"    fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 32 550 L 32 598 L 80 598"       fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1168 550 L 1168 598 L 1120 598" fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+    <path d="M 32 80 L 32 32 L 80 32"          fill="none" stroke="#505050" stroke-width="2" stroke-opacity="0.25"/>
+    <path d="M 1120 32 L 1168 32 L 1168 80"    fill="none" stroke="#505050" stroke-width="2" stroke-opacity="0.25"/>
+    <path d="M 32 550 L 32 598 L 80 598"       fill="none" stroke="#505050" stroke-width="2" stroke-opacity="0.25"/>
+    <path d="M 1168 550 L 1168 598 L 1120 598" fill="none" stroke="#505050" stroke-width="2" stroke-opacity="0.25"/>
 
     <!-- Title bar -->
     <rect x="0" y="0" width="1200" height="44" fill="#B45309" fill-opacity="0.07"/>
@@ -115,5 +112,4 @@
     <text x="900" y="620" font-family="'JetBrains Mono', monospace" font-size="12" fill="#b8c4d4" opacity="0.5">@scope · component isolation · July 2026</text>
   </g>
 
-  <rect width="1200" height="630" rx="10" ry="10" fill="none" stroke="#B45309" stroke-width="1.5" stroke-opacity="0.35"/>
 </svg>
