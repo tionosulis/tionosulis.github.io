@@ -629,6 +629,7 @@ article p:has(img) + p em:only-child {
 .links-nextprev {
   margin-top: 3rem;
   padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;

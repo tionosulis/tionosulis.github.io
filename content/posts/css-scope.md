@@ -115,7 +115,7 @@ This is unique to `@scope` — no other CSS mechanism lets you define a top boun
 
 **Important caveat:** `@scope` provides **selector isolation, not style isolation**. Inherited properties like `color`, `font-family`, and `font-size` still pass through the donut hole. Only direct selector matching is blocked.
 
-[Open the demo →](/demos/css-scope/card-component.html)
+Try it: [@scope demo](/demos/css-scope/card-component.html)
 
 ## Proximity: A New Cascade Tier
 
@@ -327,5 +327,3 @@ All major browsers ship it. No flags, no prefixes.
 - **Progressive enhancement** — fallback selectors work in older browsers
 
 The web platform finally has a built-in answer to CSS leaks. No more `!important` chains, no more BEM convention manuals, no more build-plugin configuration. Just `@scope` — and your styles stay where you put them.
-
----
