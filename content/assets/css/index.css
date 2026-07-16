@@ -70,7 +70,7 @@ html.no-transition *::before, html.no-transition *::after {
   --syntax-bg: #262626;
   --error: #EF4444;
   --statusbar-bg: #1E1E1E;
-  --statusbar-text: #9AB8D0;
+  --statusbar-text: #9ba3b1;
   --statusbar-mode: #D49050;
 }
 
@@ -89,7 +89,7 @@ html.no-transition *::before, html.no-transition *::after {
     --syntax-bg: #262626;
     --error: #EF4444;
     --statusbar-bg: #1E1E1E;
-    --statusbar-text: #9AB8D0;
+    --statusbar-text: #9ba3b1;
     --statusbar-mode: #D49050;
   }
 }
@@ -99,7 +99,7 @@ html.no-transition *::before, html.no-transition *::after {
   background-color: var(--syntax-bg) !important;
 }
 [data-theme="dark"] .shiki {
-  background-color: var(--shiki-dark-bg) !important;
+  background-color: #1A1A1A !important;
 }
 [data-theme="dark"] .shiki span:not(.status-mode):not(.status-info) {
   color: var(--shiki-dark) !important;
@@ -107,7 +107,7 @@ html.no-transition *::before, html.no-transition *::after {
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) .shiki {
-    background-color: var(--shiki-dark-bg) !important;
+    background-color: #1A1A1A !important;
   }
   :root:not([data-theme]) .shiki span:not(.status-mode):not(.status-info) {
     color: var(--shiki-dark) !important;
