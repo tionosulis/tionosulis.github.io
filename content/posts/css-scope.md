@@ -3,7 +3,7 @@ title: "@scope: Component Styles Without BEM, CSS Modules, or Shadow DOM"
 seoTitle: "@scope CSS: Component Scoping Without Build Tools"
 description: "@scope hit Baseline 2026. Scoped styles without build tools, verbose class names, or JavaScript — with donut scoping and proximity-based cascade."
 date: 2026-07-17
-draft: true
+draft: false
 pinned: false
 tags: [css, performance, standards, walkthrough]
 pageHasCode: true
