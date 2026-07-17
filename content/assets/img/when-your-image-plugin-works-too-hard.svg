@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="0.8" fill="#453E38" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#332D28"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="44" fill="#29241F"/>
+  <circle cx="50" cy="22" r="7" fill="#EF4444"/>
+  <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
+  <circle cx="100" cy="22" r="7" fill="#10B981"/>
+  <text x="125" y="27" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" font-weight="600" dominant-baseline="middle">build — optimized</text>
+
+  <!-- File tab -->
+  <rect x="125" y="48" width="220" height="36" rx="8" fill="#3D3630"/>
+  <text x="145" y="71" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">eleventy.config.js</text>
+
+  <!-- Title divider -->
+  <line x1="0" y1="84" x2="1200" y2="84" stroke="#453E38" stroke-width="1.5"/>
+
+  <!-- Prompt -->
+  <text x="50" y="82" font-family="'JetBrains Mono', monospace" font-size="15" fill="#F59E0B">$ npx @11ty/eleventy</text>
+
+  <!-- LEFT PANEL: BEFORE -->
+  <rect x="30" y="100" width="555" height="440" fill="#2E2924" rx="8"/>
+  <rect x="30" y="100" width="555" height="36" fill="#3D3630" rx="8"/>
+  <rect x="30" y="128" width="555" height="8" fill="#3D3630"/>
+  <rect x="30" y="100" width="4" height="36" fill="#E05050"/>
+  <text x="50" y="123" font-family="'JetBrains Mono', monospace" font-size="16" fill="#E05050" font-weight="700">&#10007; BEFORE — no svgShortCircuit</text>
+
+  <!-- Build log — many Processing lines -->
+  <rect x="50" y="150" width="515" height="220" fill="#352F2A" rx="4"/>
+  <text x="66" y="172" font-family="'JetBrains Mono', monospace" font-size="12" fill="#453E38">[eleventy-img] Processing ./content/hero.svg</text>
+  <text x="66" y="192" font-family="'JetBrains Mono', monospace" font-size="12" fill="#453E38">[eleventy-img] Processing ./content/diagram.svg</text>
+  <text x="66" y="212" font-family="'JetBrains Mono', monospace" font-size="12" fill="#453E38">[eleventy-img] Processing ./content/icon.svg</text>
+  <text x="66" y="232" font-family="'JetBrains Mono', monospace" font-size="12" fill="#453E38">[eleventy-img] Processing ./content/chart.svg</text>
+  <text x="66" y="252" font-family="'JetBrains Mono', monospace" font-size="12" fill="#453E38">[eleventy-img] Processing ./content/logo.svg</text>
+  <text x="66" y="272" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">[eleventy-img] Processing ./content/screenshot.png</text>
+  <text x="66" y="292" font-family="'JetBrains Mono', monospace" font-size="12" fill="#453E38">[eleventy-img] Processing ./content/hero2.svg</text>
+  <text x="66" y="312" font-family="'JetBrains Mono', monospace" font-size="12" fill="#C08040">  ◀ generating webp 400 / avif 400</text>
+  <text x="66" y="332" font-family="'JetBrains Mono', monospace" font-size="12" fill="#C08040">  ◀ generating webp 618 / avif 618</text>
+  <text x="66" y="352" font-family="'JetBrains Mono', monospace" font-size="12" fill="#C08040">  ◀ generating webp 800 / avif 800</text>
+
+  <!-- 6 generated files illustration -->
+  <rect x="50" y="385" width="515" height="55" fill="#352F2A" rx="4" stroke="#453E38" stroke-width="0.5"/>
+  <rect x="66" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
+  <text x="99" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#453E38" text-anchor="middle">400.webp</text>
+  <rect x="141" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
+  <text x="174" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#453E38" text-anchor="middle">618.webp</text>
+  <rect x="216" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
+  <text x="249" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#453E38" text-anchor="middle">800.webp</text>
+  <rect x="296" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
+  <text x="329" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#453E38" text-anchor="middle">400.avif</text>
+  <rect x="371" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
+  <text x="404" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#453E38" text-anchor="middle">618.avif</text>
+  <rect x="446" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
+  <text x="479" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#453E38" text-anchor="middle">800.avif</text>
+
+  <!-- Build time -->
+  <rect x="50" y="455" width="515" height="45" fill="#E05050" fill-opacity="0.06" rx="4"/>
+  <text x="308" y="485" font-family="'JetBrains Mono', monospace" font-size="28" fill="#E05050" font-weight="700" text-anchor="middle">171s · 56 images</text>
+
+  <!-- RIGHT PANEL: AFTER -->
+  <rect x="615" y="100" width="555" height="440" fill="#2E2924" rx="8"/>
+  <rect x="615" y="100" width="555" height="36" fill="#3D3630" rx="8"/>
+  <rect x="615" y="128" width="555" height="8" fill="#3D3630"/>
+  <rect x="615" y="100" width="4" height="36" fill="#10D9A8"/>
+  <text x="635" y="123" font-family="'JetBrains Mono', monospace" font-size="16" fill="#10D9A8" font-weight="700">&#10003; AFTER — svgShortCircuit: true</text>
+
+  <!-- Build log — clean, no SVG processing -->
+  <rect x="635" y="150" width="515" height="220" fill="#352F2A" rx="4"/>
+  <text x="651" y="172" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">[eleventy-img] Processing ./content/screenshot.png</text>
+  <text x="651" y="192" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">[eleventy-img] Processing ./content/demo-before.png</text>
+  <text x="651" y="212" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">[eleventy-img] Processing ./content/demo-after.png</text>
+  <text x="651" y="232" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">[eleventy-img] Processing ./content/demo-morph.png</text>
+  <text x="651" y="260" font-family="'JetBrains Mono', monospace" font-size="12" fill="#453E38">— SVG skipped via svgShortCircuit —</text>
+  <text x="651" y="280" font-family="'JetBrains Mono', monospace" font-size="12" fill="#453E38">— SVG skipped via svgShortCircuit —</text>
+  <text x="651" y="300" font-family="'JetBrains Mono', monospace" font-size="12" fill="#453E38">— SVG skipped via svgShortCircuit —</text>
+
+  <!-- Native SVG -->
+  <rect x="635" y="385" width="515" height="55" fill="#352F2A" rx="4" stroke="#453E38" stroke-width="0.5"/>
+  <rect x="651" y="395" width="200" height="32" rx="4" fill="#10D9A8" fill-opacity="0.1"/>
+  <text x="751" y="415" font-family="'JetBrains Mono', monospace" font-size="13" fill="#10D9A8" text-anchor="middle" font-weight="700">hero.svg — native, animated</text>
+  <text x="865" y="415" font-family="'JetBrains Mono', monospace" font-size="20" fill="#F59E0B">→</text>
+  <rect x="880" y="395" width="200" height="32" rx="4" fill="#453E38" fill-opacity="0.2"/>
+  <text x="980" y="415" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" text-anchor="middle">&lt;img src="…svg"&gt;</text>
+
+  <!-- Build time -->
+  <rect x="635" y="455" width="515" height="45" fill="#10D9A8" fill-opacity="0.06" rx="4"/>
+  <text x="893" y="485" font-family="'JetBrains Mono', monospace" font-size="28" fill="#10D9A8" font-weight="700" text-anchor="middle">39s · 13 SVGs short-circuited</text>
+
+  <!-- Arrow between panels -->
+  <text x="600" y="340" font-family="'JetBrains Mono', monospace" font-size="36" fill="#F59E0B" text-anchor="middle">→</text>
+
+  <!-- Bottom hint -->
+  <rect x="60" y="555" width="1080" height="1" fill="#453E38"/>
+  <text x="600" y="575" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC" text-anchor="middle">One option. No rasterization. Native SVGs. Animated cursors. 4× faster builds.</text>
+
+  <!-- Status bar -->
+  <rect x="0" y="585" width="1200" height="45" fill="#29241F"/>
+  <line x1="0" y1="585" x2="1200" y2="585" stroke="#453E38" stroke-width="1"/>
+  <rect x="30" y="596" width="80" height="24" rx="3" fill="#F59E0B"/>
+  <text x="70" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
+  <text x="1170" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">the second most impactful fix was adding 2 lines</text>
+</svg>

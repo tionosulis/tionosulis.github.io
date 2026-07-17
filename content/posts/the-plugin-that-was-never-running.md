@@ -2,6 +2,7 @@
 title: The Plugin That Was Never Running
 description: "Months of trusting that my Eleventy image plugin was optimizing images — wasted. A misnamed config option silently broke all image transformations on the site."
 date: 2026-07-11
+updated: 2026-07-17
 tags: [debugging, eleventy, meta, web-development]
 draft: false
 pageHasCode: true
@@ -267,12 +268,28 @@ With `decoding="auto"`, the browser uses its own heuristic. For same-origin hero
 
 | Metric | Before | After |
 |--------|--------|-------|
-| Raster images with responsive formats | 0 | 45 |
-| AVIF/WebP generation | ❌ | ✅ (33 AVIF + 33 WebP auto-generated) |
+| Images with responsive formats | 0 | 45 (plus 13 SVGs served natively) |
+| AVIF/WebP generation | ❌ | ✅ for raster images; SVGs skip Sharp entirely |
 | Width/height on images | ❌ | ✅ (browser can reserve space) |
 | Hero loading strategy | `lazy` (wrong!) | `eager` + `fetchpriority=high` |
 | Non-hero lazy loading | ❌ (not applied) | ✅ (applied correctly) |
-| Build output image processing | none | `45 images optimized` |
+| Build output image processing | none | `43 images optimized` — SVGs excluded via `svgShortCircuit` |
+
+---
+
+> **Updated 17 Jul 2026:** The story continues below. After publishing the original fix, I discovered SVGs were still being rasterized unnecessarily — each one generating six WebP/AVIF variants. `svgShortCircuit` solved it. Details in the follow-up post linked at the bottom.
+
+### The Hidden Shortcut
+
+If the story ended here, it would be satisfying enough: plugin broken → plugin fixed → images optimized → Lighthouse happy. And for raster images — PNG screenshots, JPEG photos — the job *was* done.
+
+But there was a category of images I hadn't thought to check: SVGs.
+
+Hero images. Diagrams. Icons. Every single SVG on the site was going through the same Sharp pipeline — being decoded, resized, and re-encoded into WebP and AVIF at three different widths. A 5KB SVG was generating six raster variants totaling 180KB. Vector sharpness was lost to compression artifacts. And the `<animate>` cursor blinks I'd carefully crafted? Gone. Raster images don't blink.
+
+This wasn't a bug. The plugin was working exactly as designed. But it was working too hard.
+
+The fix — a single option called `svgShortCircuit` — cut my build time by 75% and brought native SVG rendering back to every page. The full story is in [When Your Image Plugin Works Too Hard](/posts/when-your-image-plugin-works-too-hard/).
 
 ## Key Takeaways
 
@@ -288,12 +305,14 @@ With `decoding="auto"`, the browser uses its own heuristic. For same-origin hero
 
 ## TL;DR
 
-The `eleventyImageTransformPlugin`'s `extensions` parameter refers to **template output file types** (like `"html"`), not image formats (like `"png"`). Setting it to image formats caused the plugin to never run on any page. Months later, a source-code dive and a directory restructure finally fixed it. Forty-five images are now optimized. The hero gets `fetchpriority="high"`. The rest get `loading="lazy"`. All is well.
+The `eleventyImageTransformPlugin`'s `extensions` parameter refers to **template output file types** (like `"html"`), not image formats (like `"png"`). Setting it to image formats caused the plugin to never run on any page. Months later, a source-code dive and a directory restructure finally fixed it. Raster images are now optimized with AVIF and WebP. SVGs serve natively with `svgShortCircuit` — no unnecessary rasterization, no lost animations. The hero gets `fetchpriority="high"`. The rest get `loading="lazy"`. Build time dropped from 171s to 39s.
 
 ```diff
 eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 -   extensions: "jpg,jpeg,png,gif,webp,avif",
-    formats: ["avif", "webp"],
+-   formats: ["avif", "webp"],
++   formats: ["svg", "avif", "webp"],
++   svgShortCircuit: true,
     defaultAttributes: {
 -     loading: "lazy",
 -     decoding: "async",
@@ -302,4 +321,4 @@ eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 });
 ```
 
-The most impactful bug fix I'll make this year was deleting eight words.
+The most impactful bug fix I'll make this year was deleting eight words. The second most impactful was adding two lines.
