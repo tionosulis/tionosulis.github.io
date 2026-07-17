@@ -1,109 +1,150 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle cx="13" cy="13" r="0.8" fill="#453E38" opacity="0.3"/>
+    <style>
+      .canvas-bg { fill: #f8f5f0; }
+      .grid-dots { fill: #332D28; opacity: 0.15; }
+      .title-bar { fill: #332D28; }
+      .ui-tab { fill: #E5DFD9; }
+      .ui-tab-text { fill: #332D28; }
+      .ui-border { stroke: #D1C9C0; }
+      .panel-bg { fill: #FFFFFF; }
+      .log-bg { fill: #F4F1ED; }
+      .text-base { fill: #F8F5F0; }
+      .text-dark { fill: #332D28; }
+      .text-muted { fill: #8A8075; }
+      .text-prompt { fill: #D97706; font-weight: 700; }
+      .text-hint { fill: #332D28; font-weight: 600; }
+      .arrow { fill: #D97706; }
+      .status-fail { fill: #DC2626; }
+      .status-success { fill: #059669; }
+      .accent-amber { fill: #D97706; }
+      .badge-success { fill: #059669; fill-opacity: 0.08; }
+      .badge-muted { fill: #332D28; fill-opacity: 0.05; }
+      .statusbar-bg { fill: #332D28; }
+      .statusbar-border { stroke: #4A423B; }
+      .statusbar-badge { fill: #D97706; }
+      .statusbar-badge-text { fill: #F8F5F0; }
+      .statusbar-info { fill: #E5DFD9; }
+
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg { fill: #161616; }
+        .grid-dots { fill: #453E38; opacity: 0.3; }
+        .title-bar { fill: #29241F; }
+        .ui-tab { fill: #3D3630; }
+        .ui-tab-text { fill: #F8F5F0; }
+        .ui-border { stroke: #453E38; }
+        .panel-bg { fill: #2E2924; }
+        .log-bg { fill: #352F2A; }
+        .text-base { fill: #F8F5F0; }
+        .text-dark { fill: #D1D6CC; }
+        .text-muted { fill: #7A6A5C; }
+        .text-prompt { fill: #F59E0B; font-weight: normal; }
+        .text-hint { fill: #D1D6CC; font-weight: normal; }
+        .arrow { fill: #F59E0B; }
+        .status-fail { fill: #E05050; }
+        .status-success { fill: #10D9A8; }
+        .accent-amber { fill: #F59E0B; }
+        .badge-success { fill: #10D9A8; fill-opacity: 0.1; }
+        .badge-muted { fill: #453E38; fill-opacity: 0.3; }
+        .statusbar-bg { fill: #29241F; }
+        .statusbar-border { stroke: #453E38; }
+        .statusbar-badge { fill: #F59E0B; }
+        .statusbar-badge-text { fill: #1C1917; }
+        .statusbar-info { fill: #D1D6CC; }
+      }
+    </style>
+
+    <pattern id="dynamic-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle class="grid-dots" cx="13" cy="13" r="0.8"/>
     </pattern>
   </defs>
 
-  <rect width="1200" height="630" fill="#332D28"/>
-  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect class="canvas-bg" width="1200" height="630"/>
+  <rect width="1200" height="630" fill="url(#dynamic-dots)"/>
 
-  <!-- Title bar -->
-  <rect x="0" y="0" width="1200" height="44" fill="#29241F"/>
+  <rect class="title-bar" x="0" y="0" width="1200" height="44"/>
   <circle cx="50" cy="22" r="7" fill="#EF4444"/>
   <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
   <circle cx="100" cy="22" r="7" fill="#10B981"/>
-  <text x="125" y="27" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" font-weight="600" dominant-baseline="middle">build — optimized</text>
+  <text class="statusbar-info" x="125" y="24" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" dominant-baseline="middle">build — optimized</text>
 
-  <!-- File tab -->
-  <rect x="125" y="48" width="220" height="36" rx="8" fill="#3D3630"/>
-  <text x="145" y="71" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">eleventy.config.js</text>
+  <rect class="ui-tab" x="125" y="44" width="220" height="36" rx="8"/>
+  <text class="ui-tab-text" x="145" y="71" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600">eleventy.config.js</text>
 
-  <!-- Title divider -->
-  <line x1="0" y1="84" x2="1200" y2="84" stroke="#453E38" stroke-width="1.5"/>
+  <line class="ui-border" x1="0" y1="80" x2="1200" y2="80" stroke-width="1.5"/>
 
-  <!-- Prompt -->
-  <text x="50" y="82" font-family="'JetBrains Mono', monospace" font-size="15" fill="#F59E0B">$ npx @11ty/eleventy</text>
+  <text class="text-prompt" x="50" y="108" font-family="'JetBrains Mono', monospace" font-size="15">$ npx @11ty/eleventy</text>
 
-  <!-- LEFT PANEL: BEFORE -->
-  <rect x="30" y="100" width="555" height="440" fill="#2E2924" rx="8"/>
-  <rect x="30" y="100" width="555" height="36" fill="#3D3630" rx="8"/>
-  <rect x="30" y="128" width="555" height="8" fill="#3D3630"/>
-  <rect x="30" y="100" width="4" height="36" fill="#E05050"/>
-  <text x="50" y="123" font-family="'JetBrains Mono', monospace" font-size="16" fill="#E05050" font-weight="700">&#10007; BEFORE — no svgShortCircuit</text>
+  <!-- PANEL KIRI: BEFORE -->
+  <rect class="panel-bg ui-border" x="30" y="135" width="555" height="410" rx="8" stroke-width="1"/>
+  <rect class="ui-tab" x="30" y="135" width="555" height="36" rx="8"/>
+  <rect class="ui-tab" x="30" y="163" width="555" height="8"/>
+  <rect class="status-fail" x="30" y="135" width="4" height="36"/>
+  <text class="status-fail" x="50" y="158" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700">✗ BEFORE — no svgShortCircuit</text>
 
-  <!-- Build log — many Processing lines -->
-  <rect x="50" y="150" width="515" height="220" fill="#352F2A" rx="4"/>
-  <text x="66" y="172" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A6A5C">[eleventy-img] Processing ./content/hero.svg</text>
-  <text x="66" y="192" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A6A5C">[eleventy-img] Processing ./content/diagram.svg</text>
-  <text x="66" y="212" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A6A5C">[eleventy-img] Processing ./content/icon.svg</text>
-  <text x="66" y="232" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A6A5C">[eleventy-img] Processing ./content/chart.svg</text>
-  <text x="66" y="252" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A6A5C">[eleventy-img] Processing ./content/logo.svg</text>
-  <text x="66" y="272" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">[eleventy-img] Processing ./content/screenshot.png</text>
-  <text x="66" y="292" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A6A5C">[eleventy-img] Processing ./content/hero2.svg</text>
-  <text x="66" y="312" font-family="'JetBrains Mono', monospace" font-size="12" fill="#C08040">  ◀ generating webp 400 / avif 400</text>
-  <text x="66" y="332" font-family="'JetBrains Mono', monospace" font-size="12" fill="#C08040">  ◀ generating webp 618 / avif 618</text>
-  <text x="66" y="352" font-family="'JetBrains Mono', monospace" font-size="12" fill="#C08040">  ◀ generating webp 800 / avif 800</text>
+  <rect class="log-bg" x="50" y="185" width="515" height="220" rx="4"/>
+  <g font-family="'JetBrains Mono', monospace" font-size="12">
+    <text class="text-muted" x="66" y="207">[eleventy-img] Processing ./content/hero.svg</text>
+    <text class="text-muted" x="66" y="227">[eleventy-img] Processing ./content/diagram.svg</text>
+    <text class="text-muted" x="66" y="247">[eleventy-img] Processing ./content/icon.svg</text>
+    <text class="text-muted" x="66" y="267">[eleventy-img] Processing ./content/chart.svg</text>
+    <text class="text-muted" x="66" y="287">[eleventy-img] Processing ./content/logo.svg</text>
+    <text class="text-dark" x="66" y="307" font-weight="600">[eleventy-img] Processing ./content/screenshot.png</text>
+    <text class="text-muted" x="66" y="327">[eleventy-img] Processing ./content/hero2.svg</text>
+    <text x="66" y="347" fill="#C08040">  ◀ generating webp 400 / avif 400</text>
+    <text x="66" y="367" fill="#C08040">  ◀ generating webp 618 / avif 618</text>
+    <text x="66" y="387" fill="#C08040">  ◀ generating webp 800 / avif 800</text>
+  </g>
 
-  <!-- 6 generated files illustration -->
-  <rect x="50" y="385" width="515" height="55" fill="#352F2A" rx="4" stroke="#453E38" stroke-width="0.5"/>
-  <rect x="66" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
-  <text x="99" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#8A7A6A" text-anchor="middle">400.webp</text>
-  <rect x="141" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
-  <text x="174" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#8A7A6A" text-anchor="middle">618.webp</text>
-  <rect x="216" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
-  <text x="249" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#8A7A6A" text-anchor="middle">800.webp</text>
-  <rect x="296" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
-  <text x="329" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#8A7A6A" text-anchor="middle">400.avif</text>
-  <rect x="371" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
-  <text x="404" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#8A7A6A" text-anchor="middle">618.avif</text>
-  <rect x="446" y="395" width="65" height="32" rx="4" fill="#453E38" fill-opacity="0.3"/>
-  <text x="479" y="415" font-family="'JetBrains Mono', monospace" font-size="11" fill="#8A7A6A" text-anchor="middle">800.avif</text>
+  <rect class="log-bg ui-border" x="50" y="420" width="515" height="55" rx="4" stroke-width="0.5"/>
+  <g font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">
+    <rect class="ui-border badge-muted" x="66" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="99" y="451">400.webp</text>
+    <rect class="ui-border badge-muted" x="141" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="174" y="451">618.webp</text>
+    <rect class="ui-border badge-muted" x="216" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="249" y="451">800.webp</text>
+    <rect class="ui-border badge-muted" x="296" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="329" y="451">400.avif</text>
+    <rect class="ui-border badge-muted" x="371" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="404" y="451">618.avif</text>
+    <rect class="ui-border badge-muted" x="446" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="479" y="451">800.avif</text>
+  </g>
 
-  <!-- Build time -->
-  <rect x="50" y="455" width="515" height="45" fill="#E05050" fill-opacity="0.06" rx="4"/>
-  <text x="308" y="485" font-family="'JetBrains Mono', monospace" font-size="28" fill="#E05050" font-weight="700" text-anchor="middle">171s · 56 images</text>
+  <rect class="status-fail" x="50" y="485" width="515" height="45" fill-opacity="0.06" rx="4"/>
+  <text class="status-fail" x="308" y="517" font-family="'JetBrains Mono', monospace" font-size="28" font-weight="700" text-anchor="middle">171s · 56 images</text>
 
-  <!-- RIGHT PANEL: AFTER -->
-  <rect x="615" y="100" width="555" height="440" fill="#2E2924" rx="8"/>
-  <rect x="615" y="100" width="555" height="36" fill="#3D3630" rx="8"/>
-  <rect x="615" y="128" width="555" height="8" fill="#3D3630"/>
-  <rect x="615" y="100" width="4" height="36" fill="#10D9A8"/>
-  <text x="635" y="123" font-family="'JetBrains Mono', monospace" font-size="16" fill="#10D9A8" font-weight="700">&#10003; AFTER — svgShortCircuit: true</text>
+  <!-- PANEL KANAN: AFTER -->
+  <rect class="panel-bg ui-border" x="615" y="135" width="555" height="410" rx="8" stroke-width="1"/>
+  <rect class="ui-tab" x="615" y="135" width="555" height="36" rx="8"/>
+  <rect class="ui-tab" x="615" y="163" width="555" height="8"/>
+  <rect class="status-success" x="615" y="135" width="4" height="36"/>
+  <text class="status-success" x="635" y="158" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700">✓ AFTER — svgShortCircuit: true</text>
 
-  <!-- Build log — clean, no SVG processing -->
-  <rect x="635" y="150" width="515" height="220" fill="#352F2A" rx="4"/>
-  <text x="651" y="172" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">[eleventy-img] Processing ./content/screenshot.png</text>
-  <text x="651" y="192" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">[eleventy-img] Processing ./content/demo-before.png</text>
-  <text x="651" y="212" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">[eleventy-img] Processing ./content/demo-after.png</text>
-  <text x="651" y="232" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">[eleventy-img] Processing ./content/demo-morph.png</text>
-  <text x="651" y="260" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A6A5C">— SVG skipped via svgShortCircuit —</text>
-  <text x="651" y="280" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A6A5C">— SVG skipped via svgShortCircuit —</text>
-  <text x="651" y="300" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A6A5C">— SVG skipped via svgShortCircuit —</text>
+  <rect class="log-bg" x="635" y="185" width="515" height="220" rx="4"/>
+  <g font-family="'JetBrains Mono', monospace" font-size="12">
+    <text class="text-dark" x="651" y="207" font-weight="600">[eleventy-img] Processing ./content/screenshot.png</text>
+    <text class="text-dark" x="651" y="227" font-weight="600">[eleventy-img] Processing ./content/demo-before.png</text>
+    <text class="text-dark" x="651" y="247" font-weight="600">[eleventy-img] Processing ./content/demo-after.png</text>
+    <text class="text-dark" x="651" y="267" font-weight="600">[eleventy-img] Processing ./content/demo-morph.png</text>
+    <text class="text-muted" x="651" y="295">— SVG skipped via svgShortCircuit —</text>
+    <text class="text-muted" x="651" y="315">— Curve skipped via svgShortCircuit —</text>
+    <text class="text-muted" x="651" y="335">— Logo skipped via svgShortCircuit —</text>
+  </g>
 
-  <!-- Native SVG -->
-  <rect x="635" y="385" width="515" height="55" fill="#352F2A" rx="4" stroke="#453E38" stroke-width="0.5"/>
-  <rect x="651" y="395" width="200" height="32" rx="4" fill="#10D9A8" fill-opacity="0.1"/>
-  <text x="751" y="415" font-family="'JetBrains Mono', monospace" font-size="13" fill="#10D9A8" text-anchor="middle" font-weight="700">hero.svg — native, animated</text>
-  <text x="865" y="415" font-family="'JetBrains Mono', monospace" font-size="20" fill="#F59E0B">→</text>
-  <rect x="880" y="395" width="200" height="32" rx="4" fill="#453E38" fill-opacity="0.2"/>
-  <text x="980" y="415" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" text-anchor="middle">&lt;img src="…svg"&gt;</text>
+  <rect class="log-bg ui-border" x="635" y="420" width="515" height="55" rx="4" stroke-width="0.5"/>
+  <rect class="badge-success" x="651" y="431" width="200" height="32" rx="4"/>
+  <text class="status-success" x="751" y="451" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="700">hero.svg — native, animated</text>
+  <text class="arrow" x="865" y="452" font-family="'JetBrains Mono', monospace" font-size="20" text-anchor="middle">→</text>
+  <rect class="ui-border badge-muted" x="880" y="431" width="200" height="32" rx="4" stroke-width="0.5"/>
+  <text class="text-dark" x="980" y="451" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">&lt;img src="…svg"&gt;</text>
 
-  <!-- Build time -->
-  <rect x="635" y="455" width="515" height="45" fill="#10D9A8" fill-opacity="0.06" rx="4"/>
-  <text x="893" y="485" font-family="'JetBrains Mono', monospace" font-size="28" fill="#10D9A8" font-weight="700" text-anchor="middle">39s · 13 SVGs short-circuited</text>
+  <rect class="status-success" x="635" y="485" width="515" height="45" fill-opacity="0.06" rx="4"/>
+  <text class="status-success" x="893" y="517" font-family="'JetBrains Mono', monospace" font-size="28" font-weight="700" text-anchor="middle">39s · 13 SVGs bypassed</text>
 
-  <!-- Arrow between panels -->
-  <text x="600" y="340" font-family="'JetBrains Mono', monospace" font-size="36" fill="#F59E0B" text-anchor="middle">→</text>
+  <text class="arrow" x="600" y="340" font-family="'JetBrains Mono', monospace" font-size="36" text-anchor="middle">→</text>
 
-  <!-- Bottom hint -->
-  <rect x="60" y="555" width="1080" height="1" fill="#453E38"/>
-  <text x="600" y="575" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC" text-anchor="middle">One option. No rasterization. Native SVGs. Animated cursors. 4× faster builds.</text>
+  <rect class="ui-border" x="60" y="555" width="1080" height="0.5" fill="none"/>
+  <text class="text-hint" x="600" y="575" font-family="'JetBrains Mono', monospace" font-size="15" text-anchor="middle">One option. No rasterization. Native SVGs. Animated cursors. 4× faster builds.</text>
 
-  <!-- Status bar -->
-  <rect x="0" y="585" width="1200" height="45" fill="#29241F"/>
-  <line x1="0" y1="585" x2="1200" y2="585" stroke="#453E38" stroke-width="1"/>
-  <rect x="30" y="596" width="80" height="24" rx="3" fill="#F59E0B"/>
-  <text x="70" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
-  <text x="1170" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">the second most impactful fix was adding 2 lines</text>
+  <rect class="statusbar-bg" x="0" y="595" width="1200" height="45"/>
+  <line class="statusbar-border" x1="0" y1="595" x2="1200" y2="595" stroke-width="1"/>
+  <rect class="statusbar-badge" x="30" y="601" width="80" height="23" rx="3"/>
+  <text class="statusbar-badge-text" x="70" y="617" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" text-anchor="middle">NORMAL</text>
+  <text class="statusbar-info" x="600" y="617" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="middle">the second most impactful fix was adding 2 lines</text>
 </svg>
