@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2A4053"/>
+      <stop offset="100%" style="stop-color:#243846"/>
+    </linearGradient>
+
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="0.8" fill="#35556B" opacity="0.6"/>
+    </pattern>
+
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="16" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="outerLift" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <filter id="greenGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="orangeGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fixShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="8" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#dots)"/>
+
+  <!-- Ambient glow -->
+  <ellipse cx="300" cy="260" rx="300" ry="200" fill="#1A3A20" opacity="0.10"/>
+  <ellipse cx="900" cy="260" rx="300" ry="200" fill="#1A3A20" opacity="0.12"/>
+  <ellipse cx="600" cy="500" rx="400" ry="150" fill="#1A4070" opacity="0.08"/>
+
+  <!-- Outer frame -->
+  <rect x="1" y="1" width="1198" height="673" rx="12" ry="12"
+        fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.8"
+        filter="url(#outerLift)"/>
+  <path d="M 1 20 L 1 1 L 20 1" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.7"/>
+  <path d="M 1180 1 L 1199 1 L 1199 20" fill="none" stroke="#0FCC50" stroke-width="2" opacity="0.7"/>
+  <path d="M 1 655 L 1 674 L 20 674" fill="none" stroke="#10D9A8" stroke-width="2" opacity="0.6"/>
+  <path d="M 1180 674 L 1199 674 L 1199 655" fill="none" stroke="#10D9A8" stroke-width="2" opacity="0.6"/>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- TOP LABEL                              -->
+  <!-- ══════════════════════════════════════ -->
+  <text x="600" y="46" font-family="Georgia, serif" font-size="15"
+        fill="#7A9AB0" text-anchor="middle" letter-spacing="3">LIGHTHOUSE SCORE AUDIT</text>
+  <line x1="180" y1="56" x2="480" y2="56" stroke="#3D536A" stroke-width="1"/>
+  <circle cx="600" cy="56" r="3" fill="#3B82F6" opacity="0.6"/>
+  <line x1="720" y1="56" x2="1020" y2="56" stroke="#3D536A" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- BEFORE — LEFT SECTION                  -->
+  <!-- ══════════════════════════════════════ -->
+  <text x="270" y="90" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#D09040" text-anchor="middle"
+        letter-spacing="3" font-weight="bold">BEFORE</text>
+
+  <!-- Score circle: Performance 99 (orange) -->
+  <g transform="translate(110, 200)">
+    <circle cx="0" cy="0" r="72" fill="#1E1A0A" stroke="#5A3A20" stroke-width="2"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#2A2015" stroke-width="8"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#F5A623" stroke-width="8"
+            stroke-dasharray="382 32" stroke-dashoffset="105"
+            stroke-linecap="round" opacity="0.9" filter="url(#orangeGlow)"/>
+    <text x="0" y="8" font-family="Georgia, serif" font-size="36"
+          fill="#F5A623" text-anchor="middle" font-weight="bold">99</text>
+    <text x="0" y="98" font-family="'Courier New', Courier, monospace"
+          font-size="11" fill="#D09040" text-anchor="middle" letter-spacing="1">Performance</text>
+  </g>
+
+  <!-- Score circle: Accessibility 97 (orange) -->
+  <g transform="translate(290, 200)">
+    <circle cx="0" cy="0" r="72" fill="#1E1A0A" stroke="#5A3A20" stroke-width="2"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#2A2015" stroke-width="8"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#F5A623" stroke-width="8"
+            stroke-dasharray="369 45" stroke-dashoffset="105"
+            stroke-linecap="round" opacity="0.9" filter="url(#orangeGlow)"/>
+    <text x="0" y="8" font-family="Georgia, serif" font-size="36"
+          fill="#F5A623" text-anchor="middle" font-weight="bold">97</text>
+    <text x="0" y="98" font-family="'Courier New', Courier, monospace"
+          font-size="11" fill="#D09040" text-anchor="middle" letter-spacing="1">Accessibility</text>
+  </g>
+
+  <!-- Score circle: Best Practices 100 (green) -->
+  <g transform="translate(110, 370)">
+    <circle cx="0" cy="0" r="72" fill="#0A1A0E" stroke="#0D3A12" stroke-width="2"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#0D2A12" stroke-width="8"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#0FCC50" stroke-width="8"
+            stroke-dasharray="414 0" stroke-dashoffset="105"
+            stroke-linecap="round" opacity="0.85"/>
+    <text x="0" y="8" font-family="Georgia, serif" font-size="36"
+          fill="#0FCC50" text-anchor="middle" font-weight="bold">100</text>
+    <text x="0" y="98" font-family="'Courier New', Courier, monospace"
+          font-size="11" fill="#3AB85A" text-anchor="middle" letter-spacing="1">Best Practices</text>
+  </g>
+
+  <!-- Score circle: SEO 100 (green) -->
+  <g transform="translate(290, 370)">
+    <circle cx="0" cy="0" r="72" fill="#0A1A0E" stroke="#0D3A12" stroke-width="2"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#0D2A12" stroke-width="8"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#0FCC50" stroke-width="8"
+            stroke-dasharray="414 0" stroke-dashoffset="105"
+            stroke-linecap="round" opacity="0.85"/>
+    <text x="0" y="8" font-family="Georgia, serif" font-size="36"
+          fill="#0FCC50" text-anchor="middle" font-weight="bold">100</text>
+    <text x="0" y="98" font-family="'Courier New', Courier, monospace"
+          font-size="11" fill="#3AB85A" text-anchor="middle" letter-spacing="1">SEO</text>
+  </g>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- CENTER ARROW                           -->
+  <!-- ══════════════════════════════════════ -->
+  <g transform="translate(600, 285)">
+    <line x1="-48" y1="0" x2="48" y2="0" stroke="#4A8AE0" stroke-width="2.5" stroke-dasharray="6,4"/>
+    <polygon points="38,-8 54,0 38,8" fill="#4A8AE0" opacity="0.8"/>
+    <text x="0" y="-16" font-family="'Courier New', Courier, monospace"
+          font-size="11" fill="#5A8ABA" text-anchor="middle" letter-spacing="1">fix</text>
+    <!-- 3 fixes stacked -->
+    <rect x="-52" y="16" width="104" height="22" rx="4" fill="#1A2634" stroke="#3D536A" stroke-width="1"/>
+    <text x="0" y="31" font-family="'Courier New', Courier, monospace"
+          font-size="9" fill="#8ABCE0" text-anchor="middle">reflow</text>
+    <rect x="-52" y="44" width="104" height="22" rx="4" fill="#1A2634" stroke="#3D536A" stroke-width="1"/>
+    <text x="0" y="59" font-family="'Courier New', Courier, monospace"
+          font-size="9" fill="#8ABCE0" text-anchor="middle">CLS</text>
+    <rect x="-52" y="72" width="104" height="22" rx="4" fill="#1A2634" stroke="#3D536A" stroke-width="1"/>
+    <text x="0" y="87" font-family="'Courier New', Courier, monospace"
+          font-size="9" fill="#8ABCE0" text-anchor="middle">contrast</text>
+  </g>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- AFTER — RIGHT SECTION                  -->
+  <!-- ══════════════════════════════════════ -->
+  <text x="930" y="90" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#10D9A8" text-anchor="middle"
+        letter-spacing="3" font-weight="bold" filter="url(#greenGlow)">AFTER</text>
+
+  <!-- All four 100s — green, glowing -->
+  <!-- Performance 100 -->
+  <g transform="translate(760, 200)">
+    <circle cx="0" cy="0" r="72" fill="#0A1A0E" stroke="#0D3A12" stroke-width="2"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#0D2A12" stroke-width="8"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#10D9A8" stroke-width="8"
+            stroke-dasharray="414 0" stroke-dashoffset="105"
+            stroke-linecap="round" filter="url(#greenGlow)"/>
+    <text x="0" y="8" font-family="Georgia, serif" font-size="36"
+          fill="#10D9A8" text-anchor="middle" font-weight="bold"
+          filter="url(#greenGlow)">100</text>
+    <text x="0" y="98" font-family="'Courier New', Courier, monospace"
+          font-size="11" fill="#2AD9A8" text-anchor="middle" letter-spacing="1">Performance</text>
+  </g>
+
+  <!-- Accessibility 100 -->
+  <g transform="translate(940, 200)">
+    <circle cx="0" cy="0" r="72" fill="#0A1A0E" stroke="#0D3A12" stroke-width="2"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#0D2A12" stroke-width="8"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#10D9A8" stroke-width="8"
+            stroke-dasharray="414 0" stroke-dashoffset="105"
+            stroke-linecap="round" filter="url(#greenGlow)"/>
+    <text x="0" y="8" font-family="Georgia, serif" font-size="36"
+          fill="#10D9A8" text-anchor="middle" font-weight="bold"
+          filter="url(#greenGlow)">100</text>
+    <text x="0" y="98" font-family="'Courier New', Courier, monospace"
+          font-size="11" fill="#2AD9A8" text-anchor="middle" letter-spacing="1">Accessibility</text>
+  </g>
+
+  <!-- Best Practices 100 -->
+  <g transform="translate(760, 370)">
+    <circle cx="0" cy="0" r="72" fill="#0A1A0E" stroke="#0D3A12" stroke-width="2"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#0D2A12" stroke-width="8"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#10D9A8" stroke-width="8"
+            stroke-dasharray="414 0" stroke-dashoffset="105"
+            stroke-linecap="round" filter="url(#greenGlow)"/>
+    <text x="0" y="8" font-family="Georgia, serif" font-size="36"
+          fill="#10D9A8" text-anchor="middle" font-weight="bold"
+          filter="url(#greenGlow)">100</text>
+    <text x="0" y="98" font-family="'Courier New', Courier, monospace"
+          font-size="11" fill="#2AD9A8" text-anchor="middle" letter-spacing="1">Best Practices</text>
+  </g>
+
+  <!-- SEO 100 -->
+  <g transform="translate(940, 370)">
+    <circle cx="0" cy="0" r="72" fill="#0A1A0E" stroke="#0D3A12" stroke-width="2"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#0D2A12" stroke-width="8"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#10D9A8" stroke-width="8"
+            stroke-dasharray="414 0" stroke-dashoffset="105"
+            stroke-linecap="round" filter="url(#greenGlow)"/>
+    <text x="0" y="8" font-family="Georgia, serif" font-size="36"
+          fill="#10D9A8" text-anchor="middle" font-weight="bold"
+          filter="url(#greenGlow)">100</text>
+    <text x="0" y="98" font-family="'Courier New', Courier, monospace"
+          font-size="11" fill="#2AD9A8" text-anchor="middle" letter-spacing="1">SEO</text>
+  </g>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- BOTTOM FIX CARDS                       -->
+  <!-- ══════════════════════════════════════ -->
+  <rect x="80" y="490" width="320" height="110" rx="10"
+        fill="#1A2634" stroke="#3D536A" stroke-width="1.5"
+        filter="url(#fixShadow)"/>
+  <rect x="80" y="490" width="320" height="3" rx="2" fill="#F5A623" opacity="0.7"/>
+  <text x="240" y="522" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#F5A623" text-anchor="middle" letter-spacing="2">FORCED REFLOW</text>
+  <text x="240" y="548" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#A0B8D0" text-anchor="middle">offsetWidth triggers layout</text>
+  <text x="240" y="568" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#4DC896" text-anchor="middle">→ move to build-time</text>
+  <text x="240" y="586" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#4DC896" text-anchor="middle">→ CSS transform instead</text>
+
+  <rect x="440" y="490" width="320" height="110" rx="10"
+        fill="#1A2634" stroke="#3D536A" stroke-width="1.5"
+        filter="url(#fixShadow)"/>
+  <rect x="440" y="490" width="320" height="3" rx="2" fill="#F5A623" opacity="0.7"/>
+  <text x="600" y="522" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#F5A623" text-anchor="middle" letter-spacing="2">CLS SHIFT</text>
+  <text x="600" y="548" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#A0B8D0" text-anchor="middle">element size unknown</text>
+  <text x="600" y="568" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#4DC896" text-anchor="middle">→ explicit width + height</text>
+  <text x="600" y="586" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#4DC896" text-anchor="middle">→ layout stable ✔</text>
+
+  <rect x="800" y="490" width="320" height="110" rx="10"
+        fill="#1A2634" stroke="#3D536A" stroke-width="1.5"
+        filter="url(#fixShadow)"/>
+  <rect x="800" y="490" width="320" height="3" rx="2" fill="#F5A623" opacity="0.7"/>
+  <text x="960" y="522" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#F5A623" text-anchor="middle" letter-spacing="2">CONTRAST FAIL</text>
+  <text x="960" y="548" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#A0B8D0" text-anchor="middle">ratio below 4.5:1 WCAG</text>
+  <text x="960" y="568" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#4DC896" text-anchor="middle">→ WCAG-safe color override</text>
+  <text x="960" y="586" font-family="'Courier New', Courier, monospace"
+        font-size="11" fill="#4DC896" text-anchor="middle">→ ratio 4.5:1 ✔</text>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- BOTTOM STRIP                           -->
+  <!-- ══════════════════════════════════════ -->
+  <rect x="0" y="628" width="1200" height="47" fill="#1A2634" opacity="0.9"/>
+  <line x1="0" y1="628" x2="1200" y2="628" stroke="#35556B" stroke-width="1"/>
+  <circle cx="84" cy="651" r="5" fill="#F5A623" opacity="0.7"/>
+  <text x="100" y="656" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#D09040">99 · 97 · 100 · 100</text>
+  <text x="600" y="656" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#6A8AAA" text-anchor="middle"
+        letter-spacing="3">LIGHTHOUSE · PERFORMANCE · ACCESSIBILITY · SEO</text>
+  <circle cx="960" cy="651" r="5" fill="#10D9A8" opacity="0.7"/>
+  <text x="976" y="656" font-family="'Courier New', Courier, monospace"
+        font-size="13" fill="#2AD9A8">100 · 100 · 100 · 100</text>
+
+</svg>

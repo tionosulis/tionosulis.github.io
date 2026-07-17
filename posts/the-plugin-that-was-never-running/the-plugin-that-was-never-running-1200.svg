@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="0.8" fill="#453E38" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#332D28"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="44" fill="#29241F"/>
+  <circle cx="50" cy="22" r="7" fill="#EF4444"/>
+  <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
+  <circle cx="100" cy="22" r="7" fill="#10B981"/>
+  <text x="125" y="27" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" font-weight="600" dominant-baseline="middle">eleventy.config.js</text>
+
+  <!-- File tab -->
+  <rect x="125" y="48" width="200" height="36" rx="8" fill="#3D3630"/>
+  <text x="145" y="71" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">eleventy.config.js</text>
+
+  <!-- Title divider -->
+  <line x1="0" y1="84" x2="1200" y2="84" stroke="#453E38" stroke-width="1.5"/>
+
+  <!-- Prompt -->
+  <text x="50" y="82" font-family="'JetBrains Mono', monospace" font-size="15" fill="#F59E0B">$ diff before.html after.html</text>
+
+  <!-- LEFT PANEL: BEFORE -->
+  <rect x="30" y="100" width="555" height="430" fill="#2E2924" rx="8"/>
+
+  <!-- Panel header -->
+  <rect x="30" y="100" width="555" height="36" fill="#3D3630" rx="8"/>
+  <rect x="30" y="128" width="555" height="8" fill="#3D3630"/>
+  <rect x="30" y="100" width="4" height="36" fill="#E05050"/>
+  <text x="50" y="123" font-family="'JetBrains Mono', monospace" font-size="16" fill="#E05050" font-weight="700">&#10007; BEFORE — extensions: "jpg,png,gif"</text>
+
+  <!-- Config block -->
+  <rect x="50" y="150" width="515" height="120" fill="#352F2A" rx="6" stroke="#453E38" stroke-width="0.5"/>
+  <text x="66" y="172" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">1</text>
+  <text x="66" y="194" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">2</text>
+  <text x="66" y="216" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">3</text>
+  <text x="66" y="238" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">4</text>
+  <text x="66" y="260" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">5</text>
+  <text x="80" y="172" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">addPlugin(imageTransform, {</text>
+  <rect x="50" y="180" width="515" height="24" fill="#E05050" fill-opacity="0.08"/>
+  <text x="80" y="194" font-family="'JetBrains Mono', monospace" font-size="15" fill="#E05050">  extensions: <tspan fill="#F8F5F0">"jpg,png,gif"</tspan>,</text>
+  <text x="80" y="216" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">  formats: <tspan fill="#F8F5F0">["avif","webp"]</tspan>,</text>
+  <text x="80" y="238" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">  defaultAttributes: {</text>
+  <text x="80" y="260" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">    loading: <tspan fill="#F8F5F0">"lazy"</tspan>,</text>
+
+  <!-- Output HTML — broken -->
+  <rect x="50" y="285" width="515" height="95" fill="#352F2A" rx="6" stroke="#E05050" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="70" y="306" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">output HTML</text>
+  <line x1="50" y1="314" x2="565" y2="314" stroke="#453E38" stroke-width="1"/>
+  <text x="70" y="338" font-family="'JetBrains Mono', monospace" font-size="15" fill="#E05050">&lt;img src="/hero.svg"</text>
+  <text x="90" y="360" font-family="'JetBrains Mono', monospace" font-size="15" fill="#E05050">     alt="..."&gt;</text>
+  <text x="70" y="370" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">no width · no srcset · no avif</text>
+
+  <!-- Counter -->
+  <rect x="50" y="395" width="515" height="45" fill="#E05050" fill-opacity="0.06" rx="4"/>
+  <text x="308" y="425" font-family="'JetBrains Mono', monospace" font-size="28" fill="#E05050" font-weight="700" text-anchor="middle">0 builds</text>
+
+  <!-- RIGHT PANEL: AFTER -->
+  <rect x="615" y="100" width="555" height="430" fill="#2E2924" rx="8"/>
+
+  <!-- Panel header -->
+  <rect x="615" y="100" width="555" height="36" fill="#3D3630" rx="8"/>
+  <rect x="615" y="128" width="555" height="8" fill="#3D3630"/>
+  <rect x="615" y="100" width="4" height="36" fill="#10D9A8"/>
+  <text x="635" y="123" font-family="'JetBrains Mono', monospace" font-size="16" fill="#10D9A8" font-weight="700">&#10003; AFTER — extensions: "html"</text>
+
+  <!-- Config block -->
+  <rect x="635" y="150" width="515" height="120" fill="#352F2A" rx="6" stroke="#453E38" stroke-width="0.5"/>
+  <text x="651" y="172" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">1</text>
+  <text x="651" y="194" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">2</text>
+  <text x="651" y="216" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">3</text>
+  <text x="651" y="238" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">4</text>
+  <text x="651" y="260" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">5</text>
+  <text x="665" y="172" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">addPlugin(imageTransform, {</text>
+  <rect x="635" y="180" width="515" height="24" fill="#10D9A8" fill-opacity="0.06"/>
+  <text x="665" y="194" font-family="'JetBrains Mono', monospace" font-size="15" fill="#10D9A8">  extensions: <tspan fill="#F8F5F0">"html"</tspan>,</text>
+  <text x="665" y="216" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">  formats: <tspan fill="#F8F5F0">["avif","webp"]</tspan>,</text>
+  <text x="665" y="238" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">  defaultAttributes: {</text>
+  <text x="665" y="260" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">    decoding: <tspan fill="#F8F5F0">"auto"</tspan>,</text>
+
+  <!-- Output HTML — fixed -->
+  <rect x="635" y="285" width="515" height="95" fill="#352F2A" rx="6" stroke="#10D9A8" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="655" y="306" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">output HTML</text>
+  <line x1="635" y1="314" x2="1150" y2="314" stroke="#453E38" stroke-width="1"/>
+  <text x="655" y="338" font-family="'JetBrains Mono', monospace" font-size="15" fill="#10D9A8">&lt;picture&gt;</text>
+  <text x="670" y="360" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0">&lt;source type="image/avif" srcset="..."&gt;</text>
+  <text x="670" y="370" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0">&lt;img width="1200" height="630" loading=...</text>
+
+  <!-- Counter -->
+  <rect x="635" y="395" width="515" height="45" fill="#10D9A8" fill-opacity="0.06" rx="4"/>
+  <text x="893" y="425" font-family="'JetBrains Mono', monospace" font-size="28" fill="#10D9A8" font-weight="700" text-anchor="middle">45 images optimized</text>
+
+  <!-- Arrow between panels -->
+  <text x="600" y="322" font-family="'JetBrains Mono', monospace" font-size="36" fill="#F59E0B" text-anchor="middle">→</text>
+
+  <!-- Bottom hint -->
+  <rect x="60" y="545" width="1080" height="1" fill="#453E38"/>
+  <text x="600" y="565" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC" text-anchor="middle">extensions maps to output file types, not image formats · one word fixed everything</text>
+  <text x="600" y="580" font-family="'JetBrains Mono', monospace" font-size="13" fill="#F59E0B" text-anchor="middle">200KB PNG → 19KB AVIF · 90% reduction · zero visual difference</text>
+
+  <!-- Status bar -->
+  <rect x="0" y="585" width="1200" height="45" fill="#29241F"/>
+  <line x1="0" y1="585" x2="1200" y2="585" stroke="#453E38" stroke-width="1"/>
+  <rect x="30" y="596" width="80" height="24" rx="3" fill="#F59E0B"/>
+  <text x="70" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
+  <text x="1170" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">the most impactful fix was deleting 8 words</text>
+</svg>

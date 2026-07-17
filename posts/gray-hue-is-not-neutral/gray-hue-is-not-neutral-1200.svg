@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Main flat background -->
+  <rect x="0" y="0" width="1200" height="630" fill="#332D28" />
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="44" fill="#29241F" />
+
+  <!-- Window controls -->
+  <circle cx="50" cy="22" r="7" fill="#EF4444" />
+  <circle cx="75" cy="22" r="7" fill="#F59E0B" />
+  <circle cx="100" cy="22" r="7" fill="#10B981" />
+
+  <!-- File tab -->
+  <rect x="125" y="48" width="170" height="36" rx="8" fill="#3D3630" />
+  <text x="145" y="73" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">gray-hue.sh</text>
+
+  <!-- Title divider -->
+  <line x1="0" y1="84" x2="1200" y2="84" stroke="#453E38" stroke-width="1.5" />
+
+  <!-- ── MAIN CONTENT (shifted from original 675→630 layout) ── -->
+  <g transform="translate(0, -20)" font-family="'JetBrains Mono', monospace">
+    <text x="66" y="110" font-size="16" fill="#D1D6CC">~/blog</text>
+    <text x="140" y="110" font-size="16" fill="#D1D6CC"> $</text>
+    <text x="168" y="110" font-size="16" fill="#F59E0B"> ./hue --check --secondary</text>
+
+    <line x1="66" y1="145" x2="1134" y2="145" stroke="#453E38" stroke-width="0.5" opacity="0.4" />
+
+    <text x="310" y="180" font-size="14" fill="#a78bfa" text-anchor="middle" letter-spacing="2" font-weight="600">PURPLE-GRAY</text>
+    <text x="890" y="180" font-size="14" fill="#94a3b8" text-anchor="middle" letter-spacing="2" font-weight="600">BLUE-GRAY</text>
+
+    <text x="310" y="205" font-size="13" fill="#D1D6CC" text-anchor="middle">HSL 265° 10% 65%</text>
+    <text x="890" y="205" font-size="13" fill="#D1D6CC" text-anchor="middle">HSL 215° 16% 65%</text>
+
+    <text x="600" y="260" font-size="14" fill="#D1D6CC" opacity="0.5" text-anchor="middle">vs</text>
+
+    <rect x="120" y="248" width="380" height="72" rx="6" fill="#9a8fac" />
+    <text x="310" y="290" font-size="15" fill="#1a1a1a" text-anchor="middle" font-weight="600" letter-spacing="1">#9A8FAC  —  purple-gray</text>
+
+    <rect x="700" y="248" width="380" height="72" rx="6" fill="#94a3b8" />
+    <text x="890" y="290" font-size="15" fill="#1a1a1a" text-anchor="middle" font-weight="600" letter-spacing="1">#94A3B8  —  slate-400</text>
+
+    <line x1="600" y1="155" x2="600" y2="510" stroke="#F59E0B" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="4 4" />
+
+    <rect x="120" y="345" width="380" height="28" rx="4" fill="#2d1512" />
+    <text x="140" y="363" font-size="13" fill="#F59E0B">&#9888;</text>
+    <text x="162" y="363" font-size="13" fill="#D1D6CC">hue orphaned — no purple anchor in system</text>
+
+    <rect x="120" y="382" width="380" height="28" rx="4" fill="#2d1512" />
+    <text x="140" y="400" font-size="13" fill="#F59E0B">&#9888;</text>
+    <text x="162" y="400" font-size="13" fill="#D1D6CC">warm accent + purple-gray = 3 competing hues</text>
+
+    <rect x="700" y="345" width="380" height="28" rx="4" fill="#183023" />
+    <text x="720" y="363" font-size="13" fill="#10D9A8">&#10003;</text>
+    <text x="742" y="363" font-size="13" fill="#D1D6CC">warm accent + cool gray = temperature harmony</text>
+
+    <rect x="700" y="382" width="380" height="28" rx="4" fill="#183023" />
+    <text x="720" y="400" font-size="13" fill="#10D9A8">&#10003;</text>
+    <text x="742" y="400" font-size="13" fill="#D1D6CC">consistent hue family across light &amp; dark mode</text>
+
+    <line x1="66" y1="440" x2="1134" y2="440" stroke="#453E38" stroke-width="0.5" opacity="0.4" />
+
+    <text x="310" y="480" font-size="13" fill="#a78bfa" text-anchor="middle" opacity="0.6">&#10230; violet quadrant · requires purple accent</text>
+    <text x="890" y="480" font-size="13" fill="#94a3b8" text-anchor="middle" opacity="0.6">&#10230; blue quadrant · works with any warm accent</text>
+
+    <text x="600" y="535" font-size="14" fill="#D1D6CC" opacity="0.4" text-anchor="middle">─────────────────────────────────</text>
+
+    <text x="600" y="575" font-size="16" fill="#F8F5F0" text-anchor="middle">Gray carries a hue. Make it a deliberate one.</text>
+  </g>
+
+  <!-- >_S monogram -->
+  <text x="1134" y="580" font-family="'JetBrains Mono', monospace" font-size="34" fill="#F59E0B" text-anchor="end" font-weight="bold">&gt;_S</text>
+
+  <!-- Hamburger menu -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M 1184 296" stroke="#453E38" stroke-width="6" />
+    <path d="M 1184 318" stroke="#453E38" stroke-width="6" />
+    <path d="M 1184 340" stroke="#453E38" stroke-width="6" />
+  </g>
+
+  <!-- ── STATUS BAR (45px) ── -->
+  <rect x="0" y="555" width="1200" height="45" fill="#29241F" />
+  <line x1="0" y1="555" x2="1200" y2="555" stroke="#453E38" stroke-width="1" />
+
+  <!-- NORMAL mode badge -->
+  <rect x="30" y="566" width="80" height="24" rx="3" fill="#F59E0B" />
+  <text x="70" y="583" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
+
+  <!-- File info -->
+  <text x="1170" y="583" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">gray-hue.sh  12L</text>
+</svg>

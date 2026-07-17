@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <rect width="800" height="200" fill="#fafafa" rx="12"/>
+  <circle cx="130" cy="90" r="60" fill="#0d8b3e"/>
+  <text x="130" y="98" font-family="system-ui,sans-serif" font-size="34" font-weight="700" fill="#fff" text-anchor="middle">100</text>
+  <text x="130" y="172" font-family="system-ui,sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="600">Performance</text>
+
+  <circle cx="310" cy="90" r="60" fill="#0d8b3e"/>
+  <text x="310" y="98" font-family="system-ui,sans-serif" font-size="34" font-weight="700" fill="#fff" text-anchor="middle">100</text>
+  <text x="310" y="172" font-family="system-ui,sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="600">Accessibility</text>
+
+  <circle cx="490" cy="90" r="60" fill="#0d8b3e"/>
+  <text x="490" y="98" font-family="system-ui,sans-serif" font-size="34" font-weight="700" fill="#fff" text-anchor="middle">100</text>
+  <text x="490" y="172" font-family="system-ui,sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="600">Best Practices</text>
+
+  <circle cx="670" cy="90" r="60" fill="#0d8b3e"/>
+  <text x="670" y="98" font-family="system-ui,sans-serif" font-size="34" font-weight="700" fill="#fff" text-anchor="middle">100</text>
+  <text x="670" y="172" font-family="system-ui,sans-serif" font-size="13" fill="#1a1a1a" text-anchor="middle" font-weight="600">SEO</text>
+</svg>

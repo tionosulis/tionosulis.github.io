@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="0.8" fill="#453E38" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#332D28"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="44" fill="#29241F"/>
+  <circle cx="50" cy="22" r="7" fill="#EF4444"/>
+  <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
+  <circle cx="100" cy="22" r="7" fill="#10B981"/>
+  <text x="125" y="27" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" font-weight="600" dominant-baseline="middle">posts/index.njk</text>
+
+  <!-- File tab -->
+  <rect x="125" y="48" width="160" height="36" rx="8" fill="#3D3630"/>
+  <text x="145" y="71" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">index.njk</text>
+
+  <!-- Title divider -->
+  <line x1="0" y1="84" x2="1200" y2="84" stroke="#453E38" stroke-width="1.5"/>
+
+  <!-- Column headers -->
+  <text x="310" y="98" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="middle">$ ls posts/ | reverse</text>
+  <text x="890" y="98" font-family="'JetBrains Mono', monospace" font-size="16" fill="#F59E0B" text-anchor="middle">$ ls posts/ | sortPinned</text>
+
+  <!-- Left panel -->
+  <rect x="40" y="100" width="545" height="425" fill="#2E2924" rx="8"/>
+
+  <!-- Right panel -->
+  <rect x="615" y="100" width="545" height="425" fill="#2E2924" rx="8"/>
+
+  <!-- Vertical divider -->
+  <line x1="600" y1="100" x2="600" y2="525" stroke="#453E38" stroke-width="1"/>
+
+  <!-- Arrow -->
+  <text x="600" y="320" font-family="'JetBrains Mono', monospace" font-size="28" fill="#F59E0B" text-anchor="middle">→</text>
+
+  <!-- ══ LEFT — before (chronological) ══ -->
+
+  <!-- year label -->
+  <text x="60" y="138" font-family="'JetBrains Mono', monospace" font-size="18" fill="#D1D6CC">── 2026 ──────────────────</text>
+
+  <!-- post 1 -->
+  <text x="60" y="183" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">01</text>
+  <line x1="88" y1="176" x2="88" y2="188" stroke="#453E38" stroke-width="1"/>
+  <text x="100" y="183" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F8F5F0">social-preview-spiral</text>
+  <text x="565" y="183" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="end">2026-07-08</text>
+
+  <!-- post 2 -->
+  <text x="60" y="226" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">02</text>
+  <line x1="88" y1="219" x2="88" y2="231" stroke="#453E38" stroke-width="1"/>
+  <text x="100" y="226" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F8F5F0">pinned-content-framework</text>
+  <text x="565" y="226" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="end">2026-07-08</text>
+
+  <!-- post 3 -->
+  <text x="60" y="269" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">03</text>
+  <line x1="88" y1="262" x2="88" y2="274" stroke="#453E38" stroke-width="1"/>
+  <text x="100" y="269" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F8F5F0">heading-anchor-fix</text>
+  <text x="565" y="269" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="end">2026-07-04</text>
+
+  <!-- post 4 — buried -->
+  <text x="60" y="312" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">04</text>
+  <line x1="88" y1="305" x2="88" y2="317" stroke="#453E38" stroke-width="1"/>
+  <text x="100" y="312" font-family="'JetBrains Mono', monospace" font-size="22" fill="#D1D6CC">redesign-log-terminal-theme</text>
+  <text x="565" y="312" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="end">2026-06-25</text>
+
+  <!-- post 5 -->
+  <text x="60" y="355" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">05</text>
+  <line x1="88" y1="348" x2="88" y2="360" stroke="#453E38" stroke-width="1"/>
+  <text x="100" y="355" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F8F5F0">all-in-monospace</text>
+  <text x="565" y="355" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="end">2026-06-26</text>
+
+  <!-- post 6 -->
+  <text x="60" y="398" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">06</text>
+  <line x1="88" y1="391" x2="88" y2="403" stroke="#453E38" stroke-width="1"/>
+  <text x="100" y="398" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F8F5F0">responsive-tables</text>
+  <text x="565" y="398" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="end">2026-06-27</text>
+
+  <!-- problem annotation -->
+  <line x1="60" y1="320" x2="60" y2="365" stroke="#E05050" stroke-width="2"/>
+  <text x="50" y="376" font-family="'JetBrains Mono', monospace" font-size="13" fill="#E05050" text-anchor="middle">↑ buried</text>
+
+  <!-- ══ RIGHT — after (sortPinned) ══ -->
+
+  <!-- pinned item -->
+  <rect x="615" y="108" width="545" height="46" fill="#F59E0B" fill-opacity="0.06"/>
+  <rect x="615" y="108" width="4" height="46" fill="#F59E0B"/>
+  <path d="M 0 -12 L 2.7 -3.7 L 11.4 -3.7 L 4.4 1.4 L 7.1 9.7 L 0 4.6 L -7.1 9.7 L -4.4 1.4 L -11.4 -3.7 L -2.7 -3.7 Z" fill="#F59E0B" transform="translate(635, 128)"/>
+  <line x1="662" y1="121" x2="662" y2="148" stroke="#F59E0B" stroke-width="1" opacity="0.4"/>
+  <text x="670" y="137" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F59E0B" font-weight="700">redesign-log-terminal-theme</text>
+  <text x="1150" y="137" font-family="'JetBrains Mono', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif" font-size="14" fill="#F59E0B" text-anchor="end">pinned ★</text>
+
+  <!-- year label -->
+  <text x="635" y="185" font-family="'JetBrains Mono', monospace" font-size="18" fill="#D1D6CC">── 2026 ──────────────────</text>
+
+  <!-- post 1 after pinned -->
+  <text x="635" y="230" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">01</text>
+  <line x1="663" y1="223" x2="663" y2="237" stroke="#453E38" stroke-width="1"/>
+  <text x="675" y="230" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F8F5F0">social-preview-spiral</text>
+  <text x="1150" y="230" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="end">2026-07-08</text>
+
+  <!-- post 2 -->
+  <text x="635" y="273" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">02</text>
+  <line x1="663" y1="266" x2="663" y2="278" stroke="#453E38" stroke-width="1"/>
+  <text x="675" y="273" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F8F5F0">pinned-content-framework</text>
+  <text x="1150" y="273" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="end">2026-07-08</text>
+
+  <!-- post 3 -->
+  <text x="635" y="316" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">03</text>
+  <line x1="663" y1="309" x2="663" y2="321" stroke="#453E38" stroke-width="1"/>
+  <text x="675" y="316" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F8F5F0">heading-anchor-fix</text>
+  <text x="1150" y="316" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="end">2026-07-04</text>
+
+  <!-- post 4 -->
+  <text x="635" y="359" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">04</text>
+  <line x1="663" y1="352" x2="663" y2="364" stroke="#453E38" stroke-width="1"/>
+  <text x="675" y="359" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F8F5F0">all-in-monospace</text>
+  <text x="1150" y="359" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="end">2026-06-26</text>
+
+  <!-- post 5 -->
+  <text x="635" y="402" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">05</text>
+  <line x1="663" y1="395" x2="663" y2="407" stroke="#453E38" stroke-width="1"/>
+  <text x="675" y="402" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F8F5F0">responsive-tables</text>
+  <text x="1150" y="402" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC" text-anchor="end">2026-06-27</text>
+
+  <!-- success annotation -->
+  <text x="1150" y="148" font-family="'JetBrains Mono', monospace" font-size="13" fill="#10D9A8" text-anchor="end">↑ always visible</text>
+
+  <!-- Bottom code hint -->
+  <rect x="60" y="540" width="1080" height="1" fill="#453E38"/>
+  <text x="600" y="560" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC" text-anchor="middle">pinned: true  →  sortPinned filter  →  ★  +  counter-increment: none</text>
+  <text x="600" y="578" font-family="'JetBrains Mono', monospace" font-size="13" fill="#F59E0B" text-anchor="middle">one frontmatter flag · 15 lines of code · zero duplicates</text>
+
+  <!-- Status bar -->
+  <rect x="0" y="585" width="1200" height="45" fill="#29241F"/>
+  <line x1="0" y1="585" x2="1200" y2="585" stroke="#453E38" stroke-width="1"/>
+  <rect x="30" y="596" width="80" height="24" rx="3" fill="#F59E0B"/>
+  <text x="70" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
+  <text x="1170" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">breaking chronology · Eleventy</text>
+</svg>

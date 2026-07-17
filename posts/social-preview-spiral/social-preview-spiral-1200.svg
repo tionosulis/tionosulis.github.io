@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="0.8" fill="#453E38" opacity="0.3"/>
+    </pattern>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.4"/>
+    </filter>
+    <filter id="shadowWarn">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#E05050" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#332D28"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="44" fill="#29241F"/>
+  <circle cx="50" cy="22" r="7" fill="#EF4444"/>
+  <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
+  <circle cx="100" cy="22" r="7" fill="#10B981"/>
+  <text x="125" y="27" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" font-weight="600" dominant-baseline="middle">git log --oneline</text>
+
+  <!-- Title divider -->
+  <line x1="0" y1="44" x2="1200" y2="44" stroke="#453E38" stroke-width="1.5"/>
+
+  <!-- Subtitle -->
+  <text x="600" y="80" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" text-anchor="middle" font-weight="600">$ git log --oneline · 8 commits · not linear</text>
+
+  <!-- Connector lines -->
+  <line x1="180" y1="165" x2="420" y2="245" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <line x1="420" y1="245" x2="680" y2="165" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <line x1="680" y1="165" x2="920" y2="285" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <line x1="920" y1="285" x2="680" y2="390" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <line x1="680" y1="390" x2="420" y2="320" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <line x1="420" y1="320" x2="220" y2="420" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <line x1="220" y1="420" x2="520" y2="490" stroke="#F59E0B" stroke-width="2" stroke-dasharray="5 3"/>
+
+  <!-- COMMIT 01 — WARN -->
+  <circle cx="180" cy="165" r="26" fill="#2E2924" stroke="#E05050" stroke-width="2" filter="url(#shadowWarn)"/>
+  <text x="180" y="159" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">01</text>
+  <text x="180" y="174" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E05050" text-anchor="middle" font-weight="700">WARN</text>
+  <text x="180" y="204" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">ef58136</text>
+  <text x="180" y="220" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">add og:image</text>
+
+  <!-- COMMIT 02 — WARN -->
+  <circle cx="420" cy="245" r="26" fill="#2E2924" stroke="#E05050" stroke-width="2" filter="url(#shadowWarn)"/>
+  <text x="420" y="239" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">02</text>
+  <text x="420" y="254" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E05050" text-anchor="middle" font-weight="700">WARN</text>
+  <text x="420" y="284" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">0570209</text>
+  <text x="420" y="300" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">fix path</text>
+
+  <!-- COMMIT 03 — INFO -->
+  <circle cx="680" cy="165" r="26" fill="#2E2924" stroke="#F59E0B" stroke-width="2"/>
+  <text x="680" y="159" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">03</text>
+  <text x="680" y="174" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F59E0B" text-anchor="middle" font-weight="700">INFO</text>
+  <text x="680" y="204" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">a3f1c22</text>
+  <text x="680" y="220" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">add twitter:card</text>
+
+  <!-- COMMIT 04 — WARN -->
+  <circle cx="920" cy="285" r="26" fill="#2E2924" stroke="#E05050" stroke-width="2" filter="url(#shadowWarn)"/>
+  <text x="920" y="279" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">04</text>
+  <text x="920" y="294" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E05050" text-anchor="middle" font-weight="700">WARN</text>
+  <text x="920" y="324" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">b8d4e91</text>
+  <text x="920" y="340" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">fix dimensions</text>
+
+  <!-- COMMIT 05 — INFO -->
+  <circle cx="680" cy="390" r="26" fill="#2E2924" stroke="#F59E0B" stroke-width="2"/>
+  <text x="680" y="384" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">05</text>
+  <text x="680" y="399" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F59E0B" text-anchor="middle" font-weight="700">INFO</text>
+  <text x="680" y="429" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">c2a8f44</text>
+  <text x="680" y="445" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">add og:alt</text>
+
+  <!-- COMMIT 06 — INFO -->
+  <circle cx="420" cy="320" r="26" fill="#2E2924" stroke="#F59E0B" stroke-width="2"/>
+  <text x="420" y="314" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">06</text>
+  <text x="420" y="329" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F59E0B" text-anchor="middle" font-weight="700">INFO</text>
+  <text x="420" y="359" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">d9b3c17</text>
+  <text x="420" y="375" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">structured data</text>
+
+  <!-- COMMIT 07 — INFO -->
+  <circle cx="220" cy="420" r="26" fill="#2E2924" stroke="#F59E0B" stroke-width="2"/>
+  <text x="220" y="414" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">07</text>
+  <text x="220" y="429" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F59E0B" text-anchor="middle" font-weight="700">INFO</text>
+  <text x="220" y="459" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">f1e6a83</text>
+  <text x="220" y="475" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">seoTitle fix</text>
+
+  <!-- COMMIT 08 — DONE -->
+  <circle cx="520" cy="490" r="30" fill="#2E2924" stroke="#F59E0B" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="520" y="483" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F59E0B" text-anchor="middle" font-weight="700">08</text>
+  <text x="520" y="499" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F59E0B" text-anchor="middle" font-weight="700">&#10003; STOP</text>
+  <text x="520" y="533" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F59E0B" opacity="0.7" text-anchor="middle">3d9c2f1</text>
+  <text x="520" y="549" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F59E0B" opacity="0.6" text-anchor="middle">all tags valid</text>
+
+  <!-- Legend -->
+  <circle cx="820" cy="555" r="6" fill="#2E2924" stroke="#E05050" stroke-width="1.5"/>
+  <text x="834" y="560" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0">WARN</text>
+  <circle cx="908" cy="555" r="6" fill="#2E2924" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="922" y="560" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0">INFO</text>
+  <circle cx="992" cy="555" r="6" fill="#2E2924" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="1006" y="560" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0">DONE</text>
+
+  <!-- Status bar -->
+  <rect x="0" y="585" width="1200" height="45" fill="#29241F"/>
+  <line x1="0" y1="585" x2="1200" y2="585" stroke="#453E38" stroke-width="1"/>
+  <rect x="30" y="596" width="80" height="24" rx="3" fill="#F59E0B"/>
+  <text x="70" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
+  <text x="1170" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">8 commits</text>
+</svg>
