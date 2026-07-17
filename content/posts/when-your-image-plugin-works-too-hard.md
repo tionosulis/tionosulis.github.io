@@ -4,7 +4,7 @@ seoTitle: "When Your Image Plugin Works Too Hard"
 description: "The plugin was finally running — but it was rasterizing every SVG into six WebP/AVIF variants. One option cut build time 75% and brought native SVGs back."
 date: 2026-07-17
 tags: [eleventy, performance, debugging, svg, meta]
-draft: true
+draft: false
 pageHasCode: true
 image: /assets/img/og/when-your-image-plugin-works-too-hard.png
 image_alt: "Split-panel BEFORE vs AFTER: left shows SVG rasterization to six WebP/AVIF variants at 171s; right shows clean build at 39s with svgShortCircuit"
