@@ -18,7 +18,7 @@ ${toc}
 
 ## The Sequel
 
-[Last time](/posts/the-plugin-that-was-never-running/), I told the story of how the Eleventy image transform plugin had never actually run on my site — eight months of builds, zero image optimization. The culprit was a misnamed `extensions` option that registered the plugin for file extensions that didn't exist in my output.
+[Last time](/posts/the-plugin-that-was-never-running/), I told the story of how the Eleventy image transform plugin had never actually run on my site. The culprit was a misnamed `extensions` option that registered the plugin for file extensions that didn't exist in my output.
 
 When I finally fixed it, the build spat out this:
 
