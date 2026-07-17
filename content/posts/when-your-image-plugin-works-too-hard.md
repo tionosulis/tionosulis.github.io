@@ -7,10 +7,10 @@ tags: [eleventy, performance, debugging, svg, meta]
 draft: false
 pageHasCode: true
 image: /assets/img/og/when-your-image-plugin-works-too-hard.png
-image_alt: "Split-panel BEFORE vs AFTER: left shows SVG rasterization to six WebP/AVIF variants at 171s; right shows clean build at 39s with svgShortCircuit"
+image_alt: "Split-panel BEFORE vs AFTER: SVG rasterized to WebP/AVIF at 171s vs clean build at 39s with svgShortCircuit"
 ---
 
-![Split-panel comparison: left shows SVG rasterization to six WebP/AVIF variants at 171s; right shows clean build at 39s with svgShortCircuit](../assets/img/when-your-image-plugin-works-too-hard.svg)
+![Split-panel comparison: SVG rasterization at 171s vs clean build at 39s with svgShortCircuit](../assets/img/when-your-image-plugin-works-too-hard.svg)
 
 *Before vs after: 171 seconds of unnecessary SVG rasterization versus 39 seconds with svgShortCircuit*
 
@@ -179,7 +179,7 @@ For the PNG screenshots and other raster images, nothing changed. They still get
 
 This was the moment it really hit me.
 
-I opened one of the posts I'd rewritten the hero SVG for — the one with the blinking terminal cursor, the pulsing accent in the corner, the entire design built on the idea that *vectors can move*. I had written the SVG months ago, carefully timing the `<animate>` durations so the cursor blinked at the same rhythm as a real terminal.
+I opened one of the posts I'd rewritten the hero SVG for — the one with the blinking terminal cursor. I had timed the `<animate>` durations so the cursor blinked at the same rhythm as a real terminal.
 
 With the plugin processing everything through Sharp, that cursor was frozen. Sharp doesn't animate. It captures the first frame and outputs a static image.
 
@@ -252,4 +252,4 @@ The `eleventyImageTransformPlugin` processes every image format you specify for 
   });
 ```
 
-The most impactful fix I'll make this year was adding two lines.
+The most impactful fix I made today was adding two lines.

@@ -339,6 +339,7 @@ export default async function (eleventyConfig) {
   });
 
   eleventyConfig.addTransform("htmlmin", async function (content) {
+    if (process.env.ELEVENTY_RUN_MODE === "serve") return content;
     if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
       return minify(content, {
         collapseBooleanAttributes: true,
