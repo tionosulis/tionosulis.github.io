@@ -1,108 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
-  <defs>
-    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="14" cy="14" r="0.9" fill="#B45309" opacity="0.14"/>
-    </pattern>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E2A38"/>
-      <stop offset="100%" stop-color="#1A2430"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Main flat background -->
+  <rect x="0" y="0" width="1200" height="630" fill="#332D28" />
 
-  <rect width="1200" height="675" fill="url(#bg)"/>
-  <rect width="1200" height="675" fill="url(#dots)"/>
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="44" fill="#29241F" />
 
-  <rect x="38" y="38" width="1124" height="599" rx="10" fill="#000" opacity="0.25"/>
+  <!-- Window controls -->
+  <circle cx="50" cy="22" r="7" fill="#EF4444" />
+  <circle cx="75" cy="22" r="7" fill="#F59E0B" />
+  <circle cx="100" cy="22" r="7" fill="#10B981" />
 
-  <rect x="36" y="36" width="1128" height="603" rx="10" fill="#1A2634" stroke="#3D536A" stroke-width="1.5"/>
+  <!-- File tab -->
+  <rect x="125" y="48" width="180" height="36" rx="8" fill="#3D3630" />
+  <text x="145" y="73" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">notice-redesign.md</text>
 
-  <rect x="36" y="36" width="1128" height="38" rx="10" fill="#16202E"/>
-  <rect x="36" y="56" width="1128" height="18" fill="#16202E"/>
+  <!-- Title divider -->
+  <line x1="0" y1="84" x2="1200" y2="84" stroke="#453E38" stroke-width="1.5" />
 
-  <circle cx="62" cy="55" r="4.5" fill="#B45309"/>
-  <circle cx="82" cy="55" r="4.5" fill="#B45309" opacity="0.55"/>
-  <circle cx="102" cy="55" r="4.5" fill="#B45309" opacity="0.25"/>
+  <!-- ── MAIN CONTENT ── -->
+  <g transform="translate(0, -15)" font-family="'JetBrains Mono', monospace">
 
-  <text x="600" y="60" font-family="ui-monospace,SFMono-Regular,monospace" font-size="13" fill="#878f9d" text-anchor="middle" dominant-baseline="middle">~/notice-redesign.md — bash</text>
+    <!-- Prompt 1 -->
+    <text x="80" y="105" font-size="19" fill="#F59E0B" font-weight="700">$</text>
+    <text x="102" y="105" font-size="19" fill="#F8F5F0">cat posts/golden.md | grep redesign</text>
 
-  <text x="80" y="105"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#B45309" font-weight="700">$</text>
-  <text x="102" y="105"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#d4d4d8">cat posts/golden.md | grep redesign</text>
+    <!-- Result -->
+    <text x="80" y="145" font-size="19" fill="#D1D6CC">redesign_notice: true</text>
 
-  <text x="80" y="145"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#94a3b8">redesign_notice: true</text>
+    <!-- Prompt 2 -->
+    <text x="80" y="185" font-size="19" fill="#F59E0B" font-weight="700">$</text>
+    <text x="102" y="185" font-size="19" fill="#F8F5F0">./build --preview</text>
 
-  <text x="80" y="185"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#B45309" font-weight="700">$</text>
-  <text x="102" y="185"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#d4d4d8">./build --preview</text>
+    <!-- Callout box -->
+    <rect x="230" y="240" width="740" height="165" rx="6" fill="#1a1a1a" stroke="#F59E0B" stroke-width="0.75" stroke-opacity="0.35" />
+    <rect x="230" y="242" width="3" height="161" fill="#F59E0B" opacity="0.8" />
 
-  <rect x="230" y="240" width="740" height="165" rx="6"
-        fill="#1a1a1a" stroke="#B45309" stroke-width="0.75" stroke-opacity="0.35"/>
-  <rect x="230" y="242" width="3" height="161" fill="#B45309" opacity="0.8"/>
+    <!-- NOTE badge -->
+    <rect x="254" y="232" width="47" height="18" fill="#332D28" />
+    <text x="259" y="246" font-size="12" fill="#F59E0B" font-weight="700" letter-spacing="1">NOTE</text>
 
-  <rect x="254" y="232" width="47" height="18" fill="#1A2634"/>
-  <text x="259" y="246"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="12" fill="#B45309" font-weight="700" letter-spacing="1">NOTE</text>
+    <text x="267" y="293" font-size="18" fill="#F59E0B">&gt;</text>
+    <text x="290" y="293" font-size="18" fill="#F8F5F0">This post describes the previous blog design.</text>
 
-  <text x="267" y="293"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="18" fill="#B45309">&gt;</text>
-  <text x="290" y="293"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="18" fill="#d4d4d8">This post describes the previous blog design.</text>
+    <text x="267" y="327" font-size="18" fill="#F8F5F0">  The site has since been redesigned.</text>
 
-  <text x="267" y="327"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="18" fill="#d4d4d8">  The site has since been redesigned.</text>
+    <!-- Prompt 3 -->
+    <text x="80" y="460" font-size="19" fill="#F59E0B" font-weight="700">$</text>
+    <text x="102" y="460" font-size="19" fill="#F8F5F0">echo "done"</text>
+    <text x="216" y="460" font-size="19" fill="#D1D6CC" opacity="0.6">// one line, zero JS</text>
 
-  <text x="80" y="460"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#B45309" font-weight="700">$</text>
-  <text x="102" y="460"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#d4d4d8">echo "done"</text>
-  <text x="216" y="460"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#4a5568">// one line, zero JS</text>
+    <!-- Divider -->
+    <rect x="80" y="497" width="380" height="1" fill="#F59E0B" opacity="0.2" />
 
-  <rect x="80" y="497" width="380" height="1" fill="#B45309" opacity="0.2"/>
+    <!-- Prompt 4 -->
+    <text x="80" y="537" font-size="19" fill="#F59E0B" font-weight="700">$</text>
+    <text x="102" y="537" font-size="19" fill="#F8F5F0">find . -name "*.md" | xargs grep redesign_notice | wc -l</text>
 
-  <text x="80" y="537"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#B45309" font-weight="700">$</text>
-  <text x="102" y="537"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#d4d4d8">find . -name "*.md" | xargs grep redesign_notice | wc -l</text>
+    <!-- Result -->
+    <text x="80" y="580" font-size="19" fill="#10D9A8" font-weight="700">3</text>
 
-  <text x="80" y="580"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#22c55e" font-weight="700">3</text>
+    <!-- Blinking cursor -->
+    <text x="80" y="620" font-size="19" fill="#F59E0B" font-weight="700">$</text>
+    <text x="102" y="621" font-size="20" fill="#F59E0B" opacity="0.7">
+      &#9607;
+      <animate attributeName="opacity" values="0.85;0;0.85" dur="1.1s" repeatCount="indefinite" />
+    </text>
 
-  <text x="80" y="620"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="19" fill="#B45309" font-weight="700">$</text>
-  <text x="102" y="621"
-        font-family="'JetBrains Mono', 'Courier New', monospace"
-        font-size="20" fill="#B45309" opacity="0.7">▋
-    <animate attributeName="opacity" values="0.85;0;0.85" dur="1.1s" repeatCount="indefinite"/>
-  </text>
-
-  <g stroke-linecap="round" fill="none">
-    <path d="M 2 22 L 2 2 L 22 2" stroke="#F5A623" stroke-width="2.5"/>
-    <path d="M 1178 2 L 1198 2 L 1198 22" stroke="#F5A623" stroke-width="2.5"/>
-    <path d="M 2 653 L 2 673 L 22 673" stroke="#10D9A8" stroke-width="2.5"/>
-    <path d="M 1178 673 L 1198 673 L 1198 653" stroke="#10D9A8" stroke-width="2.5"/>
-
-    <path d="M 1184 316" stroke="#3D536A" stroke-width="6" stroke-linecap="round"/>
-    <path d="M 1184 338" stroke="#3D536A" stroke-width="6" stroke-linecap="round"/>
-    <path d="M 1184 360" stroke="#3D536A" stroke-width="6" stroke-linecap="round"/>
   </g>
+
+  <!-- ── STATUS BAR (45px) ── -->
+  <rect x="0" y="555" width="1200" height="45" fill="#29241F" />
+  <line x1="0" y1="555" x2="1200" y2="555" stroke="#453E38" stroke-width="1" />
+
+  <!-- NORMAL mode badge -->
+  <rect x="30" y="566" width="80" height="24" rx="3" fill="#F59E0B" />
+  <text x="70" y="583" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
+
+  <!-- File info -->
+  <text x="1170" y="583" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">notice-redesign.md  10L</text>
 </svg>

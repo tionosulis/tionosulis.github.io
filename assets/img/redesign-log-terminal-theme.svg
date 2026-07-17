@@ -1,178 +1,131 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <defs>
-    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="14" cy="14" r="0.8" fill="#B45309" opacity="0.08"/>
-    </pattern>
-    <radialGradient id="amberGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#B45309" stop-opacity="0.07"/>
-      <stop offset="100%" stop-color="#B45309" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    <clipPath id="rounded">
-      <rect width="1200" height="630" rx="10" ry="10"/>
-    </clipPath>
-  </defs>
+  <!-- Main flat background -->
+  <rect x="0" y="0" width="1200" height="630" fill="#332D28" />
 
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="44" fill="#29241F" />
 
-  <g clip-path="url(#rounded)">
-    <rect width="1200" height="630" fill="#161616"/>
-    <rect width="1200" height="630" fill="url(#dots)"/>
-    <rect width="1200" height="630" fill="url(#amberGlow)"/>
+  <!-- Window controls -->
+  <circle cx="50" cy="22" r="7" fill="#EF4444" />
+  <circle cx="75" cy="22" r="7" fill="#F59E0B" />
+  <circle cx="100" cy="22" r="7" fill="#10B981" />
 
+  <!-- File tab -->
+  <rect x="125" y="48" width="170" height="36" rx="8" fill="#3D3630" />
+  <text x="145" y="73" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">redesign-log.md</text>
 
-    <!-- Inner frame -->
-    <rect x="32" y="32" width="1136" height="566" fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
+  <!-- Title divider -->
+  <line x1="0" y1="84" x2="1200" y2="84" stroke="#453E38" stroke-width="1.5" />
 
+  <!-- ── LEFT PANEL: Terminal Log ── -->
+  <rect x="30" y="100" width="555" height="455" fill="#2E2924" rx="8" />
 
-    <!-- Corner accents -->
-    <path d="M 32 80 L 32 32 L 80 32"          fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1120 32 L 1168 32 L 1168 80"    fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 32 550 L 32 598 L 80 598"       fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1168 550 L 1168 598 L 1120 598" fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+  <!-- Prompt -->
+  <text x="50" y="132" font-family="'JetBrains Mono', monospace" font-size="15" fill="#F59E0B">$ cat ~/redesign-log</text>
 
+  <!-- Deployment log header -->
+  <text x="50" y="162" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">── deployment log ──────────────────────────</text>
 
-    <!-- Title bar -->
-    <rect x="0" y="0" width="1200" height="40" fill="#B45309" fill-opacity="0.07"/>
-    <line x1="0" y1="40" x2="1200" y2="40" stroke="#B45309" stroke-width="1" stroke-opacity="0.25"/>
-    <circle cx="50" cy="20" r="5" fill="#ff5f57" opacity="0.75"/>
-    <circle cx="70" cy="20" r="5" fill="#febc2e" opacity="0.75"/>
-    <circle cx="90" cy="20" r="5" fill="#28c840" opacity="0.75"/>
-    <text x="120" y="26" font-family="'JetBrains Mono', monospace" font-size="12" fill="#B45309" opacity="0.55" letter-spacing="0.3" dominant-baseline="middle">redesign-log-terminal-theme.md</text>
+  <!-- Task 1: Typeface -->
+  <rect x="50" y="180" width="515" height="40" fill="#352F2A" rx="4" />
+  <rect x="50" y="180" width="3" height="40" fill="#F59E0B" />
+  <text x="68" y="193" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" dominant-baseline="middle">[1/4] typeface</text>
+  <text x="68" y="210" font-family="'JetBrains Mono', monospace" font-size="17" fill="#F8F5F0" font-weight="700" dominant-baseline="middle">JetBrains Mono</text>
+  <text x="545" y="210" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F59E0B" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
 
+  <!-- Task 2: Accent -->
+  <rect x="50" y="230" width="515" height="40" fill="#352F2A" rx="4" />
+  <rect x="50" y="230" width="3" height="40" fill="#F59E0B" />
+  <text x="68" y="243" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" dominant-baseline="middle">[2/4] accent color</text>
+  <text x="68" y="260" font-family="'JetBrains Mono', monospace" font-size="17" fill="#FBBF24" font-weight="700" dominant-baseline="middle">#B45309 · #FBBF24</text>
+  <text x="545" y="260" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F59E0B" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
 
-    <!-- ── Prompt ── -->
-    <text x="80" y="82" font-family="'JetBrains Mono', monospace" font-size="15" fill="#FBBF24" opacity="0.8">$ cat ~/redesign-log</text>
+  <!-- Task 3: Spacing -->
+  <rect x="50" y="280" width="515" height="40" fill="#352F2A" rx="4" />
+  <rect x="50" y="280" width="3" height="40" fill="#F59E0B" />
+  <text x="68" y="293" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" dominant-baseline="middle">[3/4] spacing system</text>
+  <text x="68" y="310" font-family="'JetBrains Mono', monospace" font-size="17" fill="#F8F5F0" font-weight="700" dominant-baseline="middle">φ = 1.618 · golden ratio</text>
+  <text x="545" y="310" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F59E0B" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
 
+  <!-- Task 4: Brand -->
+  <rect x="50" y="330" width="515" height="40" fill="#352F2A" rx="4" />
+  <rect x="50" y="330" width="3" height="40" fill="#F59E0B" />
+  <text x="68" y="343" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" dominant-baseline="middle">[4/4] brand · prompts</text>
+  <text x="68" y="360" font-family="'JetBrains Mono', monospace" font-size="17" fill="#F8F5F0" font-weight="700" dominant-baseline="middle">&gt;_S · $ · :q · ★</text>
+  <text x="545" y="360" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F59E0B" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
 
-    <!-- ══════════════════════════════════
-         LEFT COLUMN — deployment log
-    ══════════════════════════════════ -->
+  <!-- Summary -->
+  <text x="50" y="402" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">── summary ─────────────────────────────</text>
+  <text x="50" y="428" font-family="'JetBrains Mono', monospace" font-size="16" fill="#10D9A8">✓ 4/4 tasks complete · zero frameworks · vanilla CSS</text>
 
+  <!-- Blinking cursor -->
+  <text x="50" y="462" font-family="'JetBrains Mono', monospace" font-size="20" fill="#F59E0B">$</text>
+  <rect x="74" y="442" width="14" height="22" fill="#F59E0B">
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
 
-    <!-- Section header -->
-    <text x="80" y="118" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">── deployment log ─────────────────</text>
+  <!-- ── RIGHT PANEL: Design System ── -->
+  <rect x="615" y="100" width="555" height="455" fill="#2E2924" rx="8" />
 
+  <!-- Panel header -->
+  <rect x="615" y="100" width="555" height="34" fill="#3D3630" rx="8" />
+  <rect x="615" y="127" width="555" height="7" fill="#3D3630" />
+  <text x="635" y="121" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" dominant-baseline="middle">design-system.md</text>
 
-    <!-- Task 1: Typeface -->
-    <rect x="80" y="128" width="500" height="52" fill="#FBBF24" fill-opacity="0.04" rx="2"/>
-    <rect x="80" y="128" width="3" height="52" fill="#FBBF24" opacity="0.6"/>
-    <text x="94" y="150" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">[1/4] typeface</text>
-    <text x="94" y="170" font-family="'JetBrains Mono', monospace" font-size="20" fill="#d4d4d8" font-weight="700">JetBrains Mono</text>
-    <text x="556" y="170" font-family="'JetBrains Mono', monospace" font-size="14" fill="#FBBF24" font-weight="700" text-anchor="end">[ OK ]</text>
+  <!-- Design system header -->
+  <text x="635" y="155" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">── design system ────────────────────────────</text>
 
+  <!-- Logo preview -->
+  <text x="635" y="185" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" opacity="0.6">┌─────┐</text>
+  <text x="635" y="218" font-family="'JetBrains Mono', monospace" font-size="32" font-weight="700">
+    <tspan fill="#F59E0B">&gt;_</tspan><tspan fill="#F8F5F0">S</tspan>
+  </text>
+  <text x="635" y="238" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" opacity="0.6">└─────┘</text>
 
-    <!-- Task 2: Accent -->
-    <rect x="80" y="190" width="500" height="52" fill="#FBBF24" fill-opacity="0.04" rx="2"/>
-    <rect x="80" y="190" width="3" height="52" fill="#FBBF24" opacity="0.6"/>
-    <text x="94" y="212" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">[2/4] accent color</text>
-    <text x="94" y="232" font-family="'JetBrains Mono', monospace" font-size="20" fill="#FBBF24" font-weight="700">#B45309 · #FBBF24</text>
-    <text x="556" y="232" font-family="'JetBrains Mono', monospace" font-size="14" fill="#FBBF24" font-weight="700" text-anchor="end">[ OK ]</text>
+  <!-- Toggle preview -->
+  <text x="780" y="218" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="700">
+    <tspan fill="#F59E0B">[</tspan><tspan fill="#F8F5F0">--dark</tspan><tspan fill="#F59E0B">]</tspan>
+  </text>
 
+  <!-- Color swatches -->
+  <text x="635" y="270" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">accent ·</text>
+  <rect x="716" y="256" width="28" height="20" fill="#F59E0B" rx="2" />
+  <text x="750" y="270" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">#F59E0B</text>
 
-    <!-- Task 3: Spacing -->
-    <rect x="80" y="252" width="500" height="52" fill="#FBBF24" fill-opacity="0.04" rx="2"/>
-    <rect x="80" y="252" width="3" height="52" fill="#FBBF24" opacity="0.6"/>
-    <text x="94" y="274" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">[3/4] spacing system</text>
-    <text x="94" y="294" font-family="'JetBrains Mono', monospace" font-size="20" fill="#d4d4d8" font-weight="700">φ = 1.618 · golden ratio</text>
-    <text x="556" y="294" font-family="'JetBrains Mono', monospace" font-size="14" fill="#FBBF24" font-weight="700" text-anchor="end">[ OK ]</text>
+  <!-- WCAG badges -->
+  <text x="635" y="302" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">WCAG ·</text>
+  <rect x="710" y="288" width="78" height="22" fill="#10D9A8" fill-opacity="0.15" rx="3" />
+  <text x="749" y="303" font-family="'JetBrains Mono', monospace" font-size="13" fill="#10D9A8" text-anchor="middle">AA 4.62</text>
+  <rect x="800" y="288" width="78" height="22" fill="#10D9A8" fill-opacity="0.15" rx="3" />
+  <text x="839" y="303" font-family="'JetBrains Mono', monospace" font-size="13" fill="#10D9A8" text-anchor="middle">AAA 10.8</text>
 
+  <!-- Spacing system -->
+  <text x="635" y="334" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">spacing ·</text>
+  <text x="728" y="334" font-family="'JetBrains Mono', monospace" font-size="15" fill="#F8F5F0">1rem → 1.618 → 2.618 → 4.236</text>
 
-    <!-- Task 4: Brand -->
-    <rect x="80" y="314" width="500" height="52" fill="#FBBF24" fill-opacity="0.04" rx="2"/>
-    <rect x="80" y="314" width="3" height="52" fill="#FBBF24" opacity="0.6"/>
-    <text x="94" y="336" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">[4/4] brand · prompts</text>
-    <text x="94" y="356" font-family="'JetBrains Mono', monospace" font-size="20" fill="#d4d4d8" font-weight="700">&gt;_S · $ · :q · ★</text>
-    <text x="556" y="356" font-family="'JetBrains Mono', monospace" font-size="14" fill="#FBBF24" font-weight="700" text-anchor="end">[ OK ]</text>
+  <!-- Prompts -->
+  <text x="635" y="368" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">── prompts ────────────────────────────</text>
+  <text x="635" y="396" font-family="'JetBrains Mono', monospace" font-size="16" fill="#F59E0B">$ whoami</text>
+  <text x="635" y="422" font-family="'JetBrains Mono', monospace" font-size="16" fill="#F59E0B">$ cat about.md</text>
+  <text x="635" y="448" font-family="'JetBrains Mono', monospace" font-size="16" fill="#F59E0B">$ tree links/</text>
+  <text x="880" y="396" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC">:q back</text>
+  <text x="880" y="422" font-family="'JetBrains Mono', monospace" font-size="16" fill="#D1D6CC">:prev · :next</text>
+  <text x="880" y="448" font-family="'JetBrains Mono', monospace" font-size="16" fill="#F59E0B" opacity="0.6">★ pinned</text>
 
+  <!-- Rejected items -->
+  <text x="635" y="482" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">── rejected ───────────────────────────</text>
+  <text x="635" y="506" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">
+    <tspan fill="#E05050">✗</tspan> sidebar  <tspan fill="#E05050">✗</tspan> green accent  <tspan fill="#E05050">✗</tspan> dot leaders  <tspan fill="#E05050">✗</tspan> icon toggle
+  </text>
 
-    <!-- Summary -->
-    <text x="80" y="398" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">── summary ────────────────────────</text>
-    <text x="80" y="422" font-family="'JetBrains Mono', monospace" font-size="16" fill="#28c840">✓ 4/4 tasks complete · zero frameworks · vanilla CSS</text>
+  <!-- ── STATUS BAR (45px) ── -->
+  <rect x="0" y="555" width="1200" height="45" fill="#29241F" />
+  <line x1="0" y1="555" x2="1200" y2="555" stroke="#453E38" stroke-width="1" />
 
+  <!-- NORMAL mode badge -->
+  <rect x="30" y="566" width="80" height="24" rx="3" fill="#F59E0B" />
+  <text x="70" y="583" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
 
-    <!-- Blinking cursor -->
-    <text x="80" y="455" font-family="'JetBrains Mono', monospace" font-size="20" fill="#FBBF24" opacity="0.9">$</text>
-    <rect x="102" y="437" width="14" height="22" fill="#FBBF24" opacity="0.8">
-      <animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite"/>
-    </rect>
-
-
-    <!-- ══════════════════════════════════
-         VERTICAL DIVIDER
-    ══════════════════════════════════ -->
-    <line x1="620" y1="56" x2="620" y2="570" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
-
-
-    <!-- ══════════════════════════════════
-         RIGHT COLUMN — design system
-    ══════════════════════════════════ -->
-
-
-    <text x="660" y="118" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">── design system ──────────────────────────</text>
-
-
-    <!-- Logo preview -->
-    <text x="660" y="152" font-family="'JetBrains Mono', monospace" font-size="11" fill="#B45309" opacity="0.65">┌─────┐</text>
-    <text x="660" y="185" font-family="'JetBrains Mono', monospace" font-size="32" font-weight="700">
-      <tspan fill="#FBBF24">&gt;_</tspan><tspan fill="#d4d4d8">S</tspan>
-    </text>
-    <text x="660" y="205" font-family="'JetBrains Mono', monospace" font-size="11" fill="#B45309" opacity="0.65">└─────┘</text>
-
-
-    <!-- Toggle preview -->
-    <text x="800" y="185" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="700">
-      <tspan fill="#FBBF24">[</tspan><tspan fill="#d4d4d8">--dark</tspan><tspan fill="#FBBF24">]</tspan>
-    </text>
-
-
-    <!-- Color swatches -->
-    <text x="660" y="238" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">accent ·</text>
-    <rect x="736" y="222" width="28" height="20" fill="#B45309" rx="2"/>
-    <text x="770" y="236" font-family="'JetBrains Mono', monospace" font-size="13" fill="#94a3b8">#B45309</text>
-    <rect x="860" y="222" width="28" height="20" fill="#FBBF24" rx="2"/>
-    <text x="894" y="236" font-family="'JetBrains Mono', monospace" font-size="13" fill="#94a3b8">#FBBF24</text>
-
-
-    <!-- WCAG badges -->
-    <text x="660" y="268" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">WCAG ·</text>
-    <rect x="730" y="252" width="72" height="22" fill="#28c840" fill-opacity="0.15" rx="3"/>
-    <text x="766" y="267" font-family="'JetBrains Mono', monospace" font-size="13" fill="#28c840" text-anchor="middle">AA 4.62</text>
-    <rect x="814" y="252" width="72" height="22" fill="#28c840" fill-opacity="0.15" rx="3"/>
-    <text x="850" y="267" font-family="'JetBrains Mono', monospace" font-size="13" fill="#28c840" text-anchor="middle">AAA 10.8</text>
-
-
-    <!-- Spacing system -->
-    <text x="660" y="300" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">spacing ·</text>
-    <text x="745" y="300" font-family="'JetBrains Mono', monospace" font-size="15" fill="#d4d4d8">1rem → 1.618 → 2.618 → 4.236</text>
-
-
-    <!-- Terminal prompts -->
-    <text x="660" y="338" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">── prompts ──────────────────────────</text>
-    <text x="660" y="364" font-family="'JetBrains Mono', monospace" font-size="16" fill="#FBBF24">$ whoami</text>
-    <text x="660" y="388" font-family="'JetBrains Mono', monospace" font-size="16" fill="#FBBF24">$ cat about.md</text>
-    <text x="660" y="412" font-family="'JetBrains Mono', monospace" font-size="16" fill="#FBBF24">$ tree links/</text>
-    <text x="900" y="364" font-family="'JetBrains Mono', monospace" font-size="16" fill="#6b7280">:q back</text>
-    <text x="900" y="388" font-family="'JetBrains Mono', monospace" font-size="16" fill="#6b7280">:prev · :next</text>
-    <text x="900" y="412" font-family="'JetBrains Mono', monospace" font-size="16" fill="#FBBF24" opacity="0.6">★ pinned</text>
-
-
-    <!-- Rejected items -->
-    <text x="660" y="445" font-family="'JetBrains Mono', monospace" font-size="13" fill="#6b7280">── rejected ────────────────────────</text>
-    <text x="660" y="466" font-family="'JetBrains Mono', monospace" font-size="14" fill="#505050">
-      <tspan fill="#ef4444" opacity="0.6">✗</tspan> sidebar  <tspan fill="#ef4444" opacity="0.6">✗</tspan> green accent  <tspan fill="#ef4444" opacity="0.6">✗</tspan> dot leaders  <tspan fill="#ef4444" opacity="0.6">✗</tspan> icon toggle
-    </text>
-
-
-    <!-- Status bar -->
-    <rect x="0" y="606" width="1200" height="24" fill="#B45309" fill-opacity="0.05"/>
-    <line x1="0" y1="606" x2="1200" y2="606" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
-    <text x="20" y="620" font-family="'JetBrains Mono', monospace" font-size="10" fill="#B45309" opacity="0.35">NORMAL</text>
-    <text x="870" y="620" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8" opacity="0.5">terminal vibe · not terminal replica</text>
-  </g>
-
-
-  <rect width="1200" height="630" rx="10" ry="10" fill="none" stroke="#B45309" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- File info -->
+  <text x="1170" y="583" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">redesign-log.md  21L</text>
 </svg>
