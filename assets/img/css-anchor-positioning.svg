@@ -1,30 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <rect x="0" y="0" width="1200" height="630" fill="#23211F"/>
+  <rect x="0" y="0" width="1200" height="630" fill="#332D28"/>
 
   <!-- Title bar -->
-  <rect x="0" y="0" width="1200" height="44" fill="#1E1E1E"/>
+  <rect x="0" y="0" width="1200" height="44" fill="#29241F"/>
 
   <!-- Window controls (left) -->
-  <circle cx="35" cy="22" r="7" fill="#EF4444"/>
-  <circle cx="60" cy="22" r="7" fill="#F59E0B"/>
-  <circle cx="85" cy="22" r="7" fill="#10B981"/>
+  <circle cx="50" cy="22" r="7" fill="#EF4444"/>
+  <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
+  <circle cx="100" cy="22" r="7" fill="#10B981"/>
 
   <!-- File tab -->
-  <rect x="110" y="56" width="240" height="36" rx="8" fill="#363330"/>
-  <text x="130" y="81" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">anchor-positioning.css</text>
+  <rect x="125" y="48" width="240" height="36" rx="8" fill="#3D3630"/>
+  <text x="145" y="73" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">anchor-positioning.css</text>
 
   <!-- Title divider -->
-  <line x1="0" y1="84" x2="1200" y2="84" stroke="#3D3A37" stroke-width="1.5"/>
+  <line x1="0" y1="84" x2="1200" y2="84" stroke="#453E38" stroke-width="1.5"/>
 
   <!-- ── LEFT PANEL ── -->
-  <rect x="30" y="100" width="530" height="455" fill="#2A2826" rx="8"/>
+  <rect x="30" y="100" width="530" height="455" fill="#2E2924" rx="8"/>
 
   <!-- anchor-name annotation -->
-  <rect x="195" y="120" width="200" height="26" fill="#363330" stroke="#3D3A37" stroke-width="1" rx="4"/>
+  <rect x="195" y="120" width="200" height="26" fill="#3D3630" stroke="#453E38" stroke-width="1" rx="4"/>
   <text x="295" y="138" font-family="'JetBrains Mono', monospace" font-size="13" fill="#F59E0B" text-anchor="middle" dominant-baseline="middle">anchor-name: --anchor-btn</text>
 
   <!-- Trigger button -->
-  <rect x="185" y="165" width="220" height="55" fill="#32302D" stroke="#F59E0B" stroke-width="2" rx="6"/>
+  <rect x="185" y="165" width="220" height="55" fill="#352F2A" stroke="#F59E0B" stroke-width="2" rx="6"/>
   <text x="295" y="198" font-family="'JetBrains Mono', monospace" font-size="18" fill="#F8F5F0" text-anchor="middle" dominant-baseline="middle" font-weight="600">Trigger</text>
 
   <!-- Connector line -->
@@ -32,20 +32,20 @@
   <polygon points="295,273 288,263 302,263" fill="#F59E0B" opacity="0.8"/>
 
   <!-- Tooltip -->
-  <rect x="185" y="277" width="220" height="45" fill="#32302D" stroke="#F59E0B" stroke-width="2" rx="4"/>
+  <rect x="185" y="277" width="220" height="45" fill="#352F2A" stroke="#F59E0B" stroke-width="2" rx="4"/>
   <text x="295" y="306" font-family="'JetBrains Mono', monospace" font-size="15" fill="#F8F5F0" text-anchor="middle" dominant-baseline="middle">Tooltip label</text>
 
   <!-- position-area annotation -->
-  <rect x="195" y="336" width="200" height="26" fill="#363330" stroke="#3D3A37" stroke-width="1" rx="4"/>
+  <rect x="195" y="336" width="200" height="26" fill="#3D3630" stroke="#453E38" stroke-width="1" rx="4"/>
   <text x="295" y="354" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" text-anchor="middle" dominant-baseline="middle">position-area: bottom center</text>
 
   <!-- 3×3 position-area grid -->
-  <rect x="228" y="380" width="135" height="135" fill="none" stroke="#3D3A37" rx="2"/>
+  <rect x="228" y="380" width="135" height="135" fill="none" stroke="#453E38" rx="2"/>
 
-  <line x1="273" y1="380" x2="273" y2="515" stroke="#3D3A37" stroke-width="1" opacity="0.5"/>
-  <line x1="318" y1="380" x2="318" y2="515" stroke="#3D3A37" stroke-width="1" opacity="0.5"/>
-  <line x1="228" y1="425" x2="363" y2="425" stroke="#3D3A37" stroke-width="1" opacity="0.5"/>
-  <line x1="228" y1="470" x2="363" y2="470" stroke="#3D3A37" stroke-width="1" opacity="0.5"/>
+  <line x1="273" y1="380" x2="273" y2="515" stroke="#453E38" stroke-width="1" opacity="0.5"/>
+  <line x1="318" y1="380" x2="318" y2="515" stroke="#453E38" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="425" x2="363" y2="425" stroke="#453E38" stroke-width="1" opacity="0.5"/>
+  <line x1="228" y1="470" x2="363" y2="470" stroke="#453E38" stroke-width="1" opacity="0.5"/>
 
   <!-- Column headers -->
   <text x="250" y="402" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D1D6CC" text-anchor="middle" dominant-baseline="middle">top</text>
@@ -68,11 +68,11 @@
   <text x="295" y="522" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">position-area 3×3</text>
 
   <!-- ── RIGHT PANEL ── -->
-  <rect x="585" y="100" width="585" height="455" fill="#2A2826" rx="8"/>
+  <rect x="585" y="100" width="585" height="455" fill="#2E2924" rx="8"/>
 
   <!-- Code panel title -->
-  <rect x="585" y="100" width="585" height="34" fill="#363330" rx="8"/>
-  <rect x="585" y="127" width="585" height="7" fill="#363330"/>
+  <rect x="585" y="100" width="585" height="34" fill="#3D3630" rx="8"/>
+  <rect x="585" y="127" width="585" height="7" fill="#3D3630"/>
   <text x="605" y="125" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" dominant-baseline="middle">style.css</text>
 
   <!-- Code lines -->
@@ -88,7 +88,7 @@
   <text x="605" y="382" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D1D6CC">10 <tspan fill="#F8F5F0">}</tspan></text>
 
   <!-- Divider -->
-  <line x1="605" y1="402" x2="1155" y2="402" stroke="#3D3A37" stroke-width="1"/>
+  <line x1="605" y1="402" x2="1155" y2="402" stroke="#453E38" stroke-width="1"/>
 
   <!-- Auto-flip section -->
   <text x="605" y="426" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">/* Auto-flip on viewport overflow */</text>
@@ -102,9 +102,14 @@
   <!-- Inline annotation -->
   <text x="885" y="318" font-family="'JetBrains Mono', monospace" font-size="13" fill="#10B981" dominant-baseline="middle">← 3×3 shorthand</text>
 
-  <!-- ── STATUS BAR ── -->
-  <rect x="0" y="555" width="1200" height="25" fill="#1E1E1E"/>
-  <line x1="0" y1="555" x2="1200" y2="555" stroke="#3D3A37" stroke-width="1"/>
-  <text x="50" y="573" font-family="'JetBrains Mono', monospace" font-size="11" fill="#E0A868" font-weight="600">NORMAL</text>
-  <text x="1155" y="573" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="end">style.css  14L</text>
+  <!-- ── STATUS BAR (45px) ── -->
+  <rect x="0" y="555" width="1200" height="45" fill="#29241F"/>
+  <line x1="0" y1="555" x2="1200" y2="555" stroke="#453E38" stroke-width="1"/>
+
+  <!-- NORMAL mode badge -->
+  <rect x="30" y="566" width="80" height="24" rx="3" fill="#F59E0B"/>
+  <text x="70" y="583" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
+
+  <!-- File info -->
+  <text x="1170" y="583" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">style.css  14L</text>
 </svg>
