@@ -1,12 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="14" cy="14" r="0.8" fill="#B45309" opacity="0.08"/>
+    <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="0.8" fill="#453E38" opacity="0.3"/>
     </pattern>
-    <radialGradient id="amberGlow" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#B45309" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#B45309" stop-opacity="0"/>
-    </radialGradient>
     <filter id="sketchy">
       <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="noise"/>
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
@@ -15,118 +11,77 @@
       <feTurbulence type="turbulence" baseFrequency="0.025" numOctaves="3" result="noise"/>
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
-    <filter id="blur">
-      <feGaussianBlur stdDeviation="8"/>
-    </filter>
-    <clipPath id="rounded">
-      <rect width="1200" height="630" rx="10" ry="10"/>
-    </clipPath>
   </defs>
 
+  <rect width="1200" height="630" fill="#332D28"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
 
-  <g clip-path="url(#rounded)">
-    <rect width="1200" height="630" fill="#161616"/>
-    <rect width="1200" height="630" fill="url(#dots)"/>
-    <rect width="1200" height="630" fill="url(#amberGlow)"/>
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="44" fill="#29241F"/>
+  <circle cx="50" cy="22" r="7" fill="#EF4444"/>
+  <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
+  <circle cx="100" cy="22" r="7" fill="#10B981"/>
+  <text x="125" y="27" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" font-weight="600" dominant-baseline="middle">view-transition.css</text>
 
+  <!-- Title divider -->
+  <line x1="0" y1="44" x2="1200" y2="44" stroke="#453E38" stroke-width="1.5"/>
 
-    <!-- Inner frame -->
-    <rect x="32" y="32" width="1136" height="566" fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.2"/>
+  <!-- CSS snippet hint -->
+  <text x="600" y="82" font-family="'JetBrains Mono', monospace" font-size="13" fill="#F59E0B" text-anchor="middle">@media (prefers-reduced-motion: no-preference) {</text>
 
+  <!-- ── PAGE A — left, solid ── -->
+  <rect x="110" y="100" width="300" height="400" fill="#2E2924" stroke="#F8F5F0" stroke-width="2" rx="3" filter="url(#sketchy)"/>
+  <rect x="130" y="130" width="180" height="16" fill="#F59E0B" opacity="0.7" rx="2" filter="url(#sketchy)"/>
+  <rect x="130" y="160" width="240" height="8" fill="#D1D6CC" opacity="0.6" rx="1" filter="url(#sketchy)"/>
+  <rect x="130" y="176" width="200" height="8" fill="#D1D6CC" opacity="0.4" rx="1" filter="url(#sketchy)"/>
+  <rect x="130" y="192" width="220" height="8" fill="#D1D6CC" opacity="0.4" rx="1" filter="url(#sketchy)"/>
+  <rect x="130" y="220" width="260" height="120" fill="#3D3630" rx="3" filter="url(#sketchy)"/>
+  <rect x="130" y="356" width="160" height="8" fill="#D1D6CC" opacity="0.3" rx="1" filter="url(#sketchy)"/>
+  <rect x="130" y="372" width="200" height="8" fill="#D1D6CC" opacity="0.3" rx="1" filter="url(#sketchy)"/>
+  <rect x="130" y="388" width="140" height="8" fill="#D1D6CC" opacity="0.3" rx="1" filter="url(#sketchy)"/>
+  <text x="260" y="520" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" text-anchor="middle" filter="url(#sketchy)">Page A</text>
+  <text x="260" y="538" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">::view-transition-old</text>
 
-    <!-- Corner accents -->
-    <path d="M 32 80 L 32 32 L 80 32"          fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1120 32 L 1168 32 L 1168 80"    fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 32 550 L 32 598 L 80 598"       fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
-    <path d="M 1168 550 L 1168 598 L 1120 598" fill="none" stroke="#B45309" stroke-width="2" stroke-opacity="0.45"/>
+  <!-- ── MIDDLE — ghost/crossfade overlay ── -->
+  <rect x="430" y="120" width="300" height="400" fill="#2E2924" stroke="#F8F5F0" stroke-width="1.5" rx="3" opacity="0.35" filter="url(#sketchyStrong)"/>
+  <rect x="450" y="150" width="180" height="16" fill="#F59E0B" opacity="0.25" rx="2"/>
+  <rect x="450" y="178" width="240" height="8" fill="#D1D6CC" opacity="0.2" rx="1"/>
+  <rect x="450" y="194" width="200" height="8" fill="#D1D6CC" opacity="0.15" rx="1"/>
 
+  <rect x="470" y="110" width="300" height="400" fill="#2E2924" stroke="#F59E0B" stroke-width="1.5" rx="3" opacity="0.45" filter="url(#sketchyStrong)"/>
+  <rect x="490" y="140" width="180" height="16" fill="#F59E0B" opacity="0.3" rx="2"/>
+  <rect x="490" y="168" width="240" height="8" fill="#D1D6CC" opacity="0.25" rx="1"/>
+  <rect x="490" y="184" width="200" height="8" fill="#D1D6CC" opacity="0.2" rx="1"/>
 
-    <!-- Title bar -->
-    <rect x="0" y="0" width="1200" height="40" fill="#B45309" fill-opacity="0.07"/>
-    <line x1="0" y1="40" x2="1200" y2="40" stroke="#B45309" stroke-width="1" stroke-opacity="0.25"/>
-    <circle cx="50" cy="20" r="5" fill="#ff5f57" opacity="0.75"/>
-    <circle cx="70" cy="20" r="5" fill="#febc2e" opacity="0.75"/>
-    <circle cx="90" cy="20" r="5" fill="#28c840" opacity="0.75"/>
-    <text x="120" y="26" font-family="'JetBrains Mono', monospace" font-size="12" fill="#B45309" opacity="0.55" letter-spacing="0.3" dominant-baseline="middle">view-transition.css</text>
+  <rect x="420" y="100" width="340" height="420" fill="none" stroke="#F59E0B" stroke-width="1" stroke-dasharray="6 4" rx="4" opacity="0.3" filter="url(#sketchy)"/>
 
+  <text x="590" y="552" font-family="'JetBrains Mono', monospace" font-size="13" fill="#F59E0B" text-anchor="middle">mid-transition</text>
+  <text x="590" y="570" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">::view-transition-image-pair</text>
 
-    <!-- ── PAGE A — left, solid ── -->
-    <!-- Page rectangle sketchy -->
-    <rect x="110" y="100" width="300" height="400" fill="#1e1e1e" stroke="#d4d4d8" stroke-width="2" rx="3" filter="url(#sketchy)"/>
-    <!-- Page A content lines -->
-    <rect x="130" y="130" width="180" height="16" fill="#B45309" opacity="0.7" rx="2" filter="url(#sketchy)"/>
-    <rect x="130" y="160" width="240" height="8" fill="#6b7280" opacity="0.6" rx="1" filter="url(#sketchy)"/>
-    <rect x="130" y="176" width="200" height="8" fill="#6b7280" opacity="0.4" rx="1" filter="url(#sketchy)"/>
-    <rect x="130" y="192" width="220" height="8" fill="#6b7280" opacity="0.4" rx="1" filter="url(#sketchy)"/>
-    <rect x="130" y="220" width="260" height="120" fill="#262626" rx="3" filter="url(#sketchy)"/>
-    <rect x="130" y="356" width="160" height="8" fill="#6b7280" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-    <rect x="130" y="372" width="200" height="8" fill="#6b7280" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-    <rect x="130" y="388" width="140" height="8" fill="#6b7280" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-    <!-- Label A -->
-    <text x="260" y="520" font-family="'JetBrains Mono', monospace" font-size="13" fill="#94a3b8" text-anchor="middle" filter="url(#sketchy)">Page A</text>
-    <text x="260" y="538" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6b7280" text-anchor="middle">::view-transition-old</text>
+  <!-- ── PAGE B — right, solid ── -->
+  <rect x="800" y="100" width="300" height="400" fill="#2E2924" stroke="#F59E0B" stroke-width="2" rx="3" filter="url(#sketchy)"/>
+  <rect x="820" y="130" width="180" height="16" fill="#F59E0B" opacity="0.8" rx="2" filter="url(#sketchy)"/>
+  <rect x="820" y="160" width="240" height="8" fill="#D1D6CC" opacity="0.6" rx="1" filter="url(#sketchy)"/>
+  <rect x="820" y="176" width="200" height="8" fill="#D1D6CC" opacity="0.4" rx="1" filter="url(#sketchy)"/>
+  <rect x="820" y="192" width="220" height="8" fill="#D1D6CC" opacity="0.4" rx="1" filter="url(#sketchy)"/>
+  <rect x="820" y="220" width="260" height="120" fill="#3D3630" rx="3" filter="url(#sketchy)"/>
+  <rect x="820" y="356" width="160" height="8" fill="#D1D6CC" opacity="0.3" rx="1" filter="url(#sketchy)"/>
+  <rect x="820" y="372" width="200" height="8" fill="#D1D6CC" opacity="0.3" rx="1" filter="url(#sketchy)"/>
+  <rect x="820" y="388" width="140" height="8" fill="#D1D6CC" opacity="0.3" rx="1" filter="url(#sketchy)"/>
+  <text x="950" y="520" font-family="'JetBrains Mono', monospace" font-size="13" fill="#F59E0B" text-anchor="middle" filter="url(#sketchy)">Page B</text>
+  <text x="950" y="538" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">::view-transition-new</text>
 
+  <!-- ── Arrows A → mid → B ── -->
+  <path d="M 415 305 C 430 295 440 305 455 300" stroke="#F59E0B" stroke-width="2" fill="none" filter="url(#sketchy)"/>
+  <polygon points="455,295 465,300 455,305" fill="#F59E0B"/>
 
-    <!-- ── MIDDLE — ghost/crossfade overlay ── -->
-    <!-- Ghost page A fading out -->
-    <rect x="430" y="120" width="300" height="400" fill="#1e1e1e" stroke="#d4d4d8" stroke-width="1.5" rx="3" opacity="0.35" filter="url(#sketchyStrong)"/>
-    <rect x="450" y="150" width="180" height="16" fill="#B45309" opacity="0.25" rx="2"/>
-    <rect x="450" y="178" width="240" height="8" fill="#6b7280" opacity="0.2" rx="1"/>
-    <rect x="450" y="194" width="200" height="8" fill="#6b7280" opacity="0.15" rx="1"/>
+  <path d="M 775 305 C 790 295 800 305 815 300" stroke="#F59E0B" stroke-width="2" fill="none" filter="url(#sketchy)"/>
+  <polygon points="815,295 825,300 815,305" fill="#F59E0B"/>
 
-
-    <!-- Ghost page B appearing -->
-    <rect x="470" y="110" width="300" height="400" fill="#1e1e1e" stroke="#FBBF24" stroke-width="1.5" rx="3" opacity="0.45" filter="url(#sketchyStrong)"/>
-    <rect x="490" y="140" width="180" height="16" fill="#FBBF24" opacity="0.3" rx="2"/>
-    <rect x="490" y="168" width="240" height="8" fill="#94a3b8" opacity="0.25" rx="1"/>
-    <rect x="490" y="184" width="200" height="8" fill="#94a3b8" opacity="0.2" rx="1"/>
-
-
-    <!-- Crossfade blur zone -->
-    <rect x="420" y="100" width="340" height="420" fill="none" stroke="#FBBF24" stroke-width="1" stroke-dasharray="6 4" rx="4" opacity="0.3" filter="url(#sketchy)"/>
-
-
-    <!-- Mid label -->
-    <text x="590" y="552" font-family="'JetBrains Mono', monospace" font-size="13" fill="#FBBF24" text-anchor="middle" opacity="0.8">mid-transition</text>
-    <text x="590" y="570" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6b7280" text-anchor="middle">::view-transition-image-pair</text>
-
-
-    <!-- ── PAGE B — right, solid ── -->
-    <rect x="800" y="100" width="300" height="400" fill="#1e1e1e" stroke="#FBBF24" stroke-width="2" rx="3" filter="url(#sketchy)"/>
-    <!-- Page B content — different layout -->
-    <rect x="820" y="130" width="180" height="16" fill="#FBBF24" opacity="0.8" rx="2" filter="url(#sketchy)"/>
-    <rect x="820" y="160" width="240" height="8" fill="#94a3b8" opacity="0.6" rx="1" filter="url(#sketchy)"/>
-    <rect x="820" y="176" width="200" height="8" fill="#94a3b8" opacity="0.4" rx="1" filter="url(#sketchy)"/>
-    <rect x="820" y="192" width="220" height="8" fill="#94a3b8" opacity="0.4" rx="1" filter="url(#sketchy)"/>
-    <rect x="820" y="220" width="260" height="120" fill="#262626" rx="3" filter="url(#sketchy)"/>
-    <rect x="820" y="356" width="160" height="8" fill="#94a3b8" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-    <rect x="820" y="372" width="200" height="8" fill="#94a3b8" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-    <rect x="820" y="388" width="140" height="8" fill="#94a3b8" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-    <!-- Label B -->
-    <text x="950" y="520" font-family="'JetBrains Mono', monospace" font-size="13" fill="#FBBF24" text-anchor="middle" filter="url(#sketchy)">Page B</text>
-    <text x="950" y="538" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6b7280" text-anchor="middle">::view-transition-new</text>
-
-
-    <!-- ── Arrows A → mid → B ── -->
-    <path d="M 415 305 C 430 295 440 305 455 300" stroke="#6b7280" stroke-width="2" fill="none" filter="url(#sketchy)"/>
-    <polygon points="455,295 465,300 455,305" fill="#6b7280" opacity="0.8"/>
-
-
-    <path d="M 775 305 C 790 295 800 305 815 300" stroke="#FBBF24" stroke-width="2" fill="none" filter="url(#sketchy)" opacity="0.8"/>
-    <polygon points="815,295 825,300 815,305" fill="#FBBF24" opacity="0.7"/>
-
-
-    <!-- ── CSS snippet hint ── -->
-    <text x="600" y="88" font-family="'JetBrains Mono', monospace" font-size="13" fill="#FBBF24" opacity="0.8" text-anchor="middle">@media (prefers-reduced-motion: no-preference) {</text>
-
-
-    <!-- Status bar -->
-    <rect x="0" y="606" width="1200" height="24" fill="#B45309" fill-opacity="0.05"/>
-    <line x1="0" y1="606" x2="1200" y2="606" stroke="#B45309" stroke-width="1" stroke-opacity="0.15"/>
-    <text x="20" y="620" font-family="'JetBrains Mono', monospace" font-size="10" fill="#B45309" opacity="0.35">NORMAL</text>
-    <text x="960" y="620" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8" opacity="0.5">cross-document · CSS only</text>
-  </g>
-
-
-  <rect width="1200" height="630" rx="10" ry="10" fill="none" stroke="#B45309" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- Status bar -->
+  <rect x="0" y="585" width="1200" height="45" fill="#29241F"/>
+  <line x1="0" y1="585" x2="1200" y2="585" stroke="#453E38" stroke-width="1"/>
+  <rect x="30" y="596" width="80" height="24" rx="3" fill="#F59E0B"/>
+  <text x="70" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
+  <text x="1170" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">cross-document · CSS only</text>
 </svg>
