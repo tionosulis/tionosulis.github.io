@@ -1,212 +1,181 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
-  <defs>
-    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.04"/>
-    </pattern>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Main flat background -->
+  <rect x="0" y="0" width="1200" height="630" fill="#332D28" />
 
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E2A38"/>
-      <stop offset="100%" stop-color="#1A2430"/>
-    </linearGradient>
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="44" fill="#29241F" />
 
-    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="108%">
-      <feDropShadow dx="0" dy="3" stdDeviation="8" flood-color="#000000" flood-opacity="0.2"/>
-    </filter>
+  <!-- Window controls -->
+  <circle cx="50" cy="22" r="7" fill="#EF4444" />
+  <circle cx="75" cy="22" r="7" fill="#F59E0B" />
+  <circle cx="100" cy="22" r="7" fill="#10B981" />
 
-    <clipPath id="rounded">
-      <rect width="1200" height="675" rx="10" ry="10"/>
-    </clipPath>
-  </defs>
+  <!-- File tab -->
+  <rect x="125" y="48" width="200" height="36" rx="8" fill="#3D3630" />
+  <text x="145" y="73" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">dark-mode-debug.log</text>
 
-  <rect width="1200" height="675" rx="10" ry="10" fill="#000000" opacity="0.15" transform="translate(0, 4)" filter="url(#cardShadow)"/>
+  <!-- Title divider -->
+  <line x1="0" y1="84" x2="1200" y2="84" stroke="#453E38" stroke-width="1.5" />
 
-  <g clip-path="url(#rounded)">
-    <rect width="1200" height="675" fill="url(#bg)"/>
-    <rect width="1200" height="675" fill="url(#dots)"/>
+  <!-- ── MAIN CONTENT (compressed from 675→630 viewBox) ── -->
+  <g font-family="'JetBrains Mono', monospace">
 
-    <!-- Outer border frame -->
-    <rect x="24" y="24" width="1152" height="627" fill="none" stroke="#3A5068" stroke-width="1" stroke-opacity="0.5"/>
+    <!-- HEADER -->
+    <text x="148" y="95" font-size="16" fill="#D1D6CC" font-weight="700">$ cat bug-repro.log</text>
 
-    <!-- Corner accents -->
-    <line x1="24" y1="24" x2="72" y2="24" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="24" y1="24" x2="24" y2="72" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="1176" y1="24" x2="1128" y2="24" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="1176" y1="24" x2="1176" y2="72" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="24" y1="651" x2="72" y2="651" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="24" y1="651" x2="24" y2="603" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="1176" y1="651" x2="1128" y2="651" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="1176" y1="651" x2="1176" y2="603" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
+    <line x1="148" y1="108" x2="1152" y2="108" stroke="#453E38" stroke-width="1" opacity="0.3" />
 
-    <!-- Top bar -->
-    <rect x="0" y="0" width="1200" height="40" fill="#3B82F6" fill-opacity="0.07"/>
-    <line x1="0" y1="40" x2="1200" y2="40" stroke="#3A5068" stroke-width="1" stroke-opacity="0.3"/>
+    <!-- ══ LEFT SIDE: FORWARD ══ -->
 
-    <!-- Terminal dots -->
-    <circle cx="50" cy="20" r="5" fill="#ff5f57" opacity="0.8"/>
-    <circle cx="72" cy="20" r="5" fill="#febc2e" opacity="0.8"/>
-    <circle cx="94" cy="20" r="5" fill="#28c840" opacity="0.8"/>
+    <text x="148" y="128" font-size="12" fill="#F59E0B" font-weight="600">Forward  (initial navigation)</text>
 
-    <!-- Tab label -->
-    <text x="130" y="26" font-family="'JetBrains Mono', monospace" font-size="12" fill="#3B82F6" opacity="0.6" dominant-baseline="middle">dark-mode-debug.log</text>
+    <!-- Step 1: Home -->
+    <rect x="148" y="142" width="330" height="74" rx="6" fill="#2E2924" stroke="#453E38" stroke-width="0.5" />
+    <rect x="148" y="142" width="4" height="74" rx="2" fill="#10D9A8" />
 
-    <!-- Main content shifted right 100px to center the layout -->
-    <g transform="translate(100, 0)">
+    <text x="168" y="162" font-size="11" fill="#D1D6CC" opacity="0.7">Step 1</text>
+    <text x="220" y="162" font-size="11" fill="#D1D6CC">/ (homepage)</text>
+    <circle cx="420" cy="158" r="4" fill="#F59E0B" />
+    <text x="430" y="162" font-size="10" fill="#F59E0B">LIGHT</text>
 
-      <!-- ════════ HEADER ════════ -->
+    <rect x="168" y="174" width="140" height="16" rx="3" fill="#F8F5F0" fill-opacity="0.05" />
+    <text x="176" y="186" font-size="9" fill="#D1D6CC" opacity="0.7">data-theme="light"</text>
+    <rect x="320" y="174" width="80" height="16" rx="3" fill="#10D9A8" fill-opacity="0.12" />
+    <text x="340" y="186" font-size="9" fill="#10D9A8">localStorage &#10003;</text>
 
-      <text x="48" y="82" font-family="'JetBrains Mono', monospace" font-size="16" fill="#7A9AB0" font-weight="700">$ cat bug-repro.log</text>
+    <rect x="168" y="196" width="130" height="16" rx="3" fill="#10D9A8" fill-opacity="0.08" />
+    <text x="176" y="208" font-size="9" fill="#10D9A8">DOM matches storage</text>
 
-      <line x1="48" y1="98" x2="1152" y2="98" stroke="#3A5068" stroke-width="1" opacity="0.3"/>
+    <!-- Forward arrow 1→2 -->
+    <line x1="313" y1="216" x2="313" y2="232" stroke="#F59E0B" stroke-width="2" stroke-opacity="0.6" />
+    <polygon points="313,236 309,228 317,228" fill="#F59E0B" opacity="0.6" />
 
-      <!-- ════════ LEFT SIDE: FORWARD ════════ -->
+    <!-- Step 2: Posts -->
+    <rect x="148" y="240" width="330" height="74" rx="6" fill="#2E2924" stroke="#453E38" stroke-width="0.5" />
+    <rect x="148" y="240" width="4" height="74" rx="2" fill="#10D9A8" />
 
-      <text x="48" y="130" font-family="'JetBrains Mono', monospace" font-size="12" fill="#3B82F6" font-weight="600">Forward  (initial navigation)</text>
+    <text x="168" y="260" font-size="11" fill="#D1D6CC" opacity="0.7">Step 2</text>
+    <text x="220" y="260" font-size="11" fill="#D1D6CC">/posts/</text>
+    <circle cx="420" cy="256" r="4" fill="#F59E0B" />
+    <text x="430" y="260" font-size="10" fill="#F59E0B">LIGHT</text>
 
-      <!-- Step 1: Home -->
-      <rect x="48" y="148" width="330" height="90" rx="6" fill="#1A2634" stroke="#3A5068" stroke-width="0.5"/>
-      <rect x="48" y="148" width="4" height="90" rx="2" fill="#10D9A8"/>
+    <rect x="168" y="272" width="140" height="16" rx="3" fill="#F8F5F0" fill-opacity="0.05" />
+    <text x="176" y="284" font-size="9" fill="#D1D6CC" opacity="0.7">data-theme="light"</text>
+    <rect x="320" y="272" width="80" height="16" rx="3" fill="#10D9A8" fill-opacity="0.12" />
+    <text x="340" y="284" font-size="9" fill="#10D9A8">localStorage &#10003;</text>
 
-      <text x="68" y="172" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">Step 1</text>
-      <text x="120" y="172" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">/ (homepage)</text>
-      <circle cx="320" cy="168" r="4" fill="#E0A020"/>
-      <text x="330" y="172" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E0A020">LIGHT</text>
+    <rect x="168" y="294" width="130" height="16" rx="3" fill="#10D9A8" fill-opacity="0.08" />
+    <text x="176" y="306" font-size="9" fill="#10D9A8">DOM matches storage</text>
 
-      <rect x="68" y="184" width="140" height="16" rx="3" fill="#ffffff" fill-opacity="0.05"/>
-      <text x="76" y="195" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6A8AAA">data-theme="light"</text>
-      <rect x="220" y="184" width="80" height="16" rx="3" fill="#10D9A8" fill-opacity="0.12"/>
-      <text x="240" y="195" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10D9A8">localStorage ✓</text>
+    <!-- Forward arrow 2→3 -->
+    <line x1="313" y1="314" x2="313" y2="330" stroke="#F59E0B" stroke-width="2" stroke-opacity="0.6" />
+    <polygon points="313,334 309,326 317,326" fill="#F59E0B" opacity="0.6" />
 
-      <rect x="68" y="206" width="130" height="16" rx="3" fill="#10D9A8" fill-opacity="0.08"/>
-      <text x="76" y="217" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10D9A8">DOM matches storage</text>
+    <!-- Step 3: Post (toggle here) -->
+    <rect x="148" y="338" width="330" height="90" rx="6" fill="#2E2924" stroke="#F59E0B" stroke-width="0.5" />
+    <rect x="148" y="338" width="4" height="90" rx="2" fill="#F59E0B" />
 
-      <!-- Forward arrow 1→2 -->
-      <line x1="213" y1="238" x2="213" y2="258" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.6"/>
-      <polygon points="213,260 209,252 217,252" fill="#3B82F6" opacity="0.6"/>
+    <text x="168" y="358" font-size="11" fill="#D1D6CC" opacity="0.7">Step 3</text>
+    <text x="220" y="358" font-size="11" fill="#D1D6CC">/posts/... (toggle)</text>
 
-      <!-- Step 2: Posts -->
-      <rect x="48" y="264" width="330" height="90" rx="6" fill="#1A2634" stroke="#3A5068" stroke-width="0.5"/>
-      <rect x="48" y="264" width="4" height="90" rx="2" fill="#10D9A8"/>
+    <rect x="168" y="370" width="80" height="18" rx="4" fill="#F59E0B" fill-opacity="0.15" />
+    <text x="176" y="384" font-size="9" fill="#F59E0B">toggleTheme()</text>
 
-      <text x="68" y="288" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">Step 2</text>
-      <text x="120" y="288" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">/posts/</text>
-      <circle cx="320" cy="284" r="4" fill="#E0A020"/>
-      <text x="330" y="288" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E0A020">LIGHT</text>
+    <line x1="260" y1="379" x2="300" y2="379" stroke="#453E38" stroke-width="1" stroke-opacity="0.3" />
 
-      <rect x="68" y="300" width="140" height="16" rx="3" fill="#ffffff" fill-opacity="0.05"/>
-      <text x="76" y="311" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6A8AAA">data-theme="light"</text>
-      <rect x="220" y="300" width="80" height="16" rx="3" fill="#10D9A8" fill-opacity="0.12"/>
-      <text x="240" y="311" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10D9A8">localStorage ✓</text>
+    <rect x="310" y="370" width="80" height="18" rx="3" fill="#F8F5F0" fill-opacity="0.05" />
+    <text x="318" y="384" font-size="9" fill="#D1D6CC" opacity="0.7">&#8594; dark</text>
 
-      <rect x="68" y="322" width="130" height="16" rx="3" fill="#10D9A8" fill-opacity="0.08"/>
-      <text x="76" y="333" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10D9A8">DOM matches storage</text>
+    <rect x="168" y="396" width="200" height="16" rx="3" fill="#10D9A8" fill-opacity="0.12" />
+    <text x="176" y="408" font-size="9" fill="#10D9A8">localStorage.setItem("theme","dark") &#10003;</text>
 
-      <!-- Forward arrow 2→3 -->
-      <line x1="213" y1="354" x2="213" y2="374" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.6"/>
-      <polygon points="213,376 209,368 217,368" fill="#3B82F6" opacity="0.6"/>
+    <rect x="168" y="418" width="220" height="16" rx="3" fill="#10D9A8" fill-opacity="0.08" />
+    <text x="176" y="430" font-size="9" fill="#10D9A8">DOM &amp; storage now "dark" &#10003;</text>
 
-      <!-- Step 3: Post (toggle here) -->
-      <rect x="48" y="380" width="330" height="110" rx="6" fill="#1A2634" stroke="#3B82F6" stroke-width="0.5"/>
-      <rect x="48" y="380" width="4" height="110" rx="2" fill="#3B82F6"/>
+    <!-- ══ RIGHT SIDE: BACK NAV ══ -->
 
-      <text x="68" y="404" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">Step 3</text>
-      <text x="120" y="404" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">/posts/... (toggle)</text>
+    <text x="700" y="128" font-size="12" fill="#F59E0B" font-weight="600">Back  (back button navigation)</text>
 
-      <rect x="68" y="416" width="80" height="18" rx="4" fill="#3B82F6" fill-opacity="0.15"/>
-      <text x="76" y="428" font-family="'JetBrains Mono', monospace" font-size="9" fill="#3B82F6">toggleTheme()</text>
+    <!-- Back arrow 3→4 (connects left column to right column) -->
+    <path d="M 478 424 L 610 424 L 610 298 L 696 298" fill="none" stroke="#F59E0B" stroke-width="2" stroke-opacity="0.7" />
+    <polygon points="700,294 692,298 700,302" fill="#F59E0B" opacity="0.7" />
 
-      <line x1="160" y1="425" x2="200" y2="425" stroke="#3A5068" stroke-width="1" stroke-opacity="0.3"/>
+    <!-- Step 4: Back to posts (WRONG!) -->
+    <rect x="700" y="240" width="330" height="74" rx="6" fill="#2E2924" stroke="#E05050" stroke-width="1" />
+    <rect x="700" y="240" width="4" height="74" rx="2" fill="#E05050" />
 
-      <rect x="210" y="416" width="80" height="18" rx="3" fill="#ffffff" fill-opacity="0.05"/>
-      <text x="218" y="428" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6A8AAA">→ dark</text>
+    <text x="720" y="260" font-size="11" fill="#D1D6CC" opacity="0.7">Step 4 &#8592; back</text>
+    <text x="800" y="260" font-size="11" fill="#D1D6CC">/posts/ (bfcache)</text>
+    <circle cx="978" cy="256" r="4" fill="#F59E0B" />
+    <text x="988" y="260" font-size="10" fill="#F59E0B">LIGHT</text>
 
-      <rect x="68" y="442" width="200" height="16" rx="3" fill="#10D9A8" fill-opacity="0.12"/>
-      <text x="76" y="453" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10D9A8">localStorage.setItem("theme","dark") ✓</text>
+    <rect x="720" y="272" width="140" height="16" rx="3" fill="#F8F5F0" fill-opacity="0.05" />
+    <text x="728" y="284" font-size="9" fill="#D1D6CC" opacity="0.7">data-theme="light"</text>
+    <rect x="870" y="272" width="80" height="16" rx="3" fill="#10D9A8" fill-opacity="0.12" />
+    <text x="890" y="284" font-size="9" fill="#10D9A8">storage = dark</text>
 
-      <rect x="68" y="464" width="220" height="16" rx="3" fill="#10D9A8" fill-opacity="0.08"/>
-      <text x="76" y="475" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10D9A8">DOM &amp; storage now "dark" ✓</text>
+    <rect x="720" y="294" width="160" height="16" rx="3" fill="#E05050" fill-opacity="0.15" stroke="#E05050" stroke-width="0.5" stroke-opacity="0.3" />
+    <text x="728" y="306" font-size="9" fill="#E05050">&#10007; DOM != localStorage</text>
 
-      <!-- ════════ RIGHT SIDE: BACK NAV ════════ -->
+    <!-- Warning icon -->
+    <circle cx="992" cy="296" r="10" fill="#E05050" opacity="0.2" />
+    <text x="992" y="300" font-size="12" fill="#E05050" font-weight="700" text-anchor="middle">!</text>
 
-      <text x="600" y="130" font-family="'JetBrains Mono', monospace" font-size="12" fill="#3B82F6" font-weight="600">Back  (back button navigation)</text>
+    <!-- Back arrow 4→5 -->
+    <line x1="863" y1="234" x2="863" y2="216" stroke="#10D9A8" stroke-width="2" stroke-dasharray="5 3" stroke-opacity="0.7" />
+    <polygon points="863,212 859,220 867,220" fill="#10D9A8" opacity="0.7" />
 
-      <!-- Back arrow 3→4 (connects left column to right column) -->
-      <path d="M 378 435 L 510 435 L 510 309 L 596 309" fill="none" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-      <polygon points="600,305 592,309 600,313" fill="#3B82F6" opacity="0.7"/>
+    <!-- Step 5: Back to home (CORRECT) -->
+    <rect x="700" y="142" width="330" height="74" rx="6" fill="#2E2924" stroke="#10D9A8" stroke-width="0.5" />
+    <rect x="700" y="142" width="4" height="74" rx="2" fill="#10D9A8" />
 
-      <!-- Step 4: Back to posts (WRONG!) -->
-      <rect x="600" y="264" width="330" height="90" rx="6" fill="#1A2634" stroke="#E05050" stroke-width="1"/>
-      <rect x="600" y="264" width="4" height="90" rx="2" fill="#E05050"/>
+    <text x="720" y="162" font-size="11" fill="#D1D6CC" opacity="0.7">Step 5 &#8592; back</text>
+    <text x="800" y="162" font-size="11" fill="#D1D6CC">/ (fresh load)</text>
+    <circle cx="978" cy="158" r="4" fill="#F59E0B" />
+    <text x="988" y="162" font-size="10" fill="#F59E0B">DARK</text>
 
-      <text x="620" y="288" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">Step 4 ← back</text>
-      <text x="700" y="288" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">/posts/ (bfcache)</text>
-      <circle cx="878" cy="284" r="4" fill="#E0A020"/>
-      <text x="888" y="288" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E0A020">LIGHT</text>
+    <rect x="720" y="174" width="140" height="16" rx="3" fill="#F8F5F0" fill-opacity="0.05" />
+    <text x="728" y="186" font-size="9" fill="#D1D6CC" opacity="0.7">data-theme="dark"</text>
+    <rect x="870" y="174" width="80" height="16" rx="3" fill="#10D9A8" fill-opacity="0.12" />
+    <text x="890" y="186" font-size="9" fill="#10D9A8">storage = dark</text>
 
-      <rect x="620" y="300" width="140" height="16" rx="3" fill="#ffffff" fill-opacity="0.05"/>
-      <text x="628" y="311" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6A8AAA">data-theme="light"</text>
-      <rect x="770" y="300" width="80" height="16" rx="3" fill="#10D9A8" fill-opacity="0.12"/>
-      <text x="790" y="311" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10D9A8">storage = dark</text>
+    <rect x="720" y="196" width="130" height="16" rx="3" fill="#10D9A8" fill-opacity="0.08" />
+    <text x="728" y="208" font-size="9" fill="#10D9A8">DOM matches storage</text>
 
-      <rect x="620" y="322" width="160" height="16" rx="3" fill="#E05050" fill-opacity="0.15" stroke="#E05050" stroke-width="0.5" stroke-opacity="0.3"/>
-      <text x="628" y="333" font-family="'JetBrains Mono', monospace" font-size="9" fill="#E05050">✗ DOM != localStorage</text>
+    <!-- ══ DIVIDER ══ -->
+    <line x1="148" y1="448" x2="1152" y2="448" stroke="#453E38" stroke-width="1" opacity="0.2" />
 
-      <!-- Warning icon -->
-      <circle cx="892" cy="324" r="10" fill="#E05050" opacity="0.2"/>
-      <text x="892" y="328" font-family="'JetBrains Mono', monospace" font-size="12" fill="#E05050" font-weight="700" text-anchor="middle">!</text>
+    <!-- ══ BOTTOM EXPLANATION ══ -->
+    <text x="148" y="472" font-size="11" fill="#D1D6CC">* inline &lt;script&gt; in &lt;head&gt; runs once — not on bfcache restore</text>
+    <text x="148" y="490" font-size="11" fill="#D1D6CC">* "Dark Mode Done Right" needed one more thing: pageshow event listener</text>
+    <text x="148" y="508" font-size="11" fill="#D1D6CC">* SW update &#8594; clients.claim() &#8594; Chromium bug #504335759 &#8594; bfcache eviction</text>
 
-      <!-- Back arrow 4→5 -->
-      <line x1="763" y1="240" x2="763" y2="218" stroke="#10D9A8" stroke-width="2" stroke-dasharray="5 3" stroke-opacity="0.7"/>
-      <polygon points="763,216 759,224 767,224" fill="#10D9A8" opacity="0.7"/>
+    <!-- Stats bar -->
+    <rect x="148" y="524" width="954" height="28" rx="6" fill="#29241F" stroke="#453E38" stroke-width="0.5" />
 
-      <!-- Step 5: Back to home (CORRECT) -->
-      <rect x="600" y="148" width="330" height="90" rx="6" fill="#1A2634" stroke="#10D9A8" stroke-width="0.5"/>
-      <rect x="600" y="148" width="4" height="90" rx="2" fill="#10D9A8"/>
+    <circle cx="180" cy="538" r="3" fill="#10D9A8" />
+    <text x="192" y="542" font-size="11" fill="#D1D6CC">pageshow + persisted detect bfcache restore</text>
 
-      <text x="620" y="172" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">Step 5 ← back</text>
-      <text x="700" y="172" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">/ (fresh load)</text>
-      <circle cx="878" cy="168" r="4" fill="#3B82F6"/>
-      <text x="888" y="172" font-family="'JetBrains Mono', monospace" font-size="10" fill="#3B82F6">DARK</text>
+    <line x1="530" y1="526" x2="530" y2="550" stroke="#453E38" stroke-width="1" opacity="0.3" />
 
-      <rect x="620" y="184" width="140" height="16" rx="3" fill="#ffffff" fill-opacity="0.05"/>
-      <text x="628" y="195" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6A8AAA">data-theme="dark"</text>
-      <rect x="770" y="184" width="80" height="16" rx="3" fill="#10D9A8" fill-opacity="0.12"/>
-      <text x="790" y="195" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10D9A8">storage = dark</text>
+    <circle cx="550" cy="538" r="3" fill="#E05050" />
+    <text x="562" y="542" font-size="11" fill="#D1D6CC">no-transition guard prevents CSS flash</text>
 
-      <rect x="620" y="206" width="130" height="16" rx="3" fill="#10D9A8" fill-opacity="0.08"/>
-      <text x="628" y="217" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10D9A8">DOM matches storage</text>
+    <line x1="880" y1="526" x2="880" y2="550" stroke="#453E38" stroke-width="1" opacity="0.3" />
 
-    </g>
+    <circle cx="900" cy="538" r="3" fill="#F59E0B" />
+    <text x="912" y="542" font-size="11" fill="#D1D6CC">3 files changed for the fix</text>
 
-    <!-- ════════ DIVIDER (full width, not shifted) ════════ -->
-
-    <line x1="48" y1="510" x2="1152" y2="510" stroke="#3A5068" stroke-width="1" opacity="0.2"/>
-
-    <!-- ════════ BOTTOM: EXPLANATION (shifted) ════════ -->
-
-    <g transform="translate(100, 0)">
-
-      <text x="48" y="540" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">* inline &lt;script&gt; in &lt;head&gt; runs once — not on bfcache restore</text>
-      <text x="48" y="560" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">* "Dark Mode Done Right" needed one more thing: pageshow event listener</text>
-      <text x="48" y="580" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">* SW update → clients.claim() → Chromium bug #504335759 → bfcache eviction</text>
-
-      <!-- Stats bar (width reduced to compensate for the x shift) -->
-      <rect x="48" y="604" width="1004" height="36" rx="6" fill="#16202E" stroke="#3A5068" stroke-width="0.5"/>
-
-      <circle cx="80" cy="622" r="3" fill="#10D9A8"/>
-      <text x="92" y="626" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">pageshow + persisted detect bfcache restore</text>
-
-      <line x1="480" y1="608" x2="480" y2="636" stroke="#3A5068" stroke-width="1" opacity="0.3"/>
-
-      <circle cx="500" cy="622" r="3" fill="#E05050"/>
-      <text x="512" y="626" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">no-transition guard prevents CSS flash</text>
-
-      <line x1="880" y1="608" x2="880" y2="636" stroke="#3A5068" stroke-width="1" opacity="0.3"/>
-
-      <circle cx="900" cy="622" r="3" fill="#C08040"/>
-      <text x="912" y="626" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">3 files changed for the fix</text>
-
-    </g>
   </g>
 
-  <rect width="1200" height="675" rx="10" ry="10" fill="none" stroke="#3A5068" stroke-width="1" opacity="0.8"/>
+  <!-- ── STATUS BAR (45px) ── -->
+  <rect x="0" y="555" width="1200" height="45" fill="#29241F" />
+  <line x1="0" y1="555" x2="1200" y2="555" stroke="#453E38" stroke-width="1" />
+
+  <!-- NORMAL mode badge -->
+  <rect x="30" y="566" width="80" height="24" rx="3" fill="#F59E0B" />
+  <text x="70" y="583" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
+
+  <!-- File info -->
+  <text x="1170" y="583" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">dark-mode-debug.log  15L</text>
 </svg>
