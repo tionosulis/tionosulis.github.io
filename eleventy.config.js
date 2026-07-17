@@ -42,8 +42,9 @@ export default async function (eleventyConfig) {
   });
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["avif", "webp"],
+    formats: ["svg", "avif", "webp"],
     widths: [400, 618, 800],
+    svgShortCircuit: true,
     defaultAttributes: {
       decoding: "auto",
       sizes: "(min-width: 680px) 618px, 92vw",
@@ -241,31 +242,48 @@ export default async function (eleventyConfig) {
 
   const svgSizeCache = new Map();
 
+  function getSvgDims(filePath) {
+    let dims = svgSizeCache.get(filePath);
+    if (dims) return dims;
+    try {
+      const svgContent = readFileSync(filePath, "utf-8");
+      const wMatch = svgContent.match(/width="(\d+)"/);
+      const hMatch = svgContent.match(/height="(\d+)"/);
+      const vbMatch = svgContent.match(/viewBox="\d+\s+\d+\s+(\d+)\s+(\d+)"/);
+      if (wMatch && hMatch) {
+        dims = { w: wMatch[1], h: hMatch[1] };
+      } else if (vbMatch) {
+        dims = { w: vbMatch[1], h: vbMatch[2] };
+      }
+      if (dims) svgSizeCache.set(filePath, dims);
+    } catch {}
+    return dims;
+  }
+
+  function makeSvgImgTag(svgSrc, dims, alt) {
+    let tag = `<img src="${svgSrc}" width="${dims.w}" height="${dims.h}"`;
+    if (alt) tag += ` alt="${alt}"`;
+    return tag + '>';
+  }
+
   eleventyConfig.addTransform("fix-svg-imgs", function (content) {
     if (!this.page.outputPath?.endsWith(".html")) return content;
-    return content.replace(/<img[^>]+src="([^"]+\.svg)"[^>]*>/gi, (match, src) => {
+
+    content = content.replace(/<img[^>]+src="([^"]+\.svg)"[^>]*>/gi, (match, src) => {
       if (/width="[^"]+"/i.test(match) || /height="[^"]+"/i.test(match)) return match;
-      const filePath = "content/" + src.replace(/^\//, "");
-      let dims = svgSizeCache.get(filePath);
-      if (!dims) {
-        try {
-          const svgContent = readFileSync(filePath, "utf-8");
-          const wMatch = svgContent.match(/width="(\d+)"/);
-          const hMatch = svgContent.match(/height="(\d+)"/);
-          const vbMatch = svgContent.match(/viewBox="\d+\s+\d+\s+(\d+)\s+(\d+)"/);
-          if (wMatch && hMatch) {
-            dims = { w: wMatch[1], h: hMatch[1] };
-          } else if (vbMatch) {
-            dims = { w: vbMatch[1], h: vbMatch[2] };
-          }
-          if (dims) svgSizeCache.set(filePath, dims);
-        } catch {}
+      let filePath;
+      if (src.startsWith("/")) {
+        filePath = path.join(process.cwd(), "content", src.replace(/^\//, ""));
+      } else {
+        filePath = path.resolve(path.dirname(this.page.inputPath), src);
       }
-      if (dims) {
-        return match.replace(/^<img /, `<img width="${dims.w}" height="${dims.h}" `);
-      }
-      return match;
+      const dims = getSvgDims(filePath);
+      if (!dims) return match;
+      const alt = match.match(/alt="([^"]*)"/i)?.[1] || '';
+      return makeSvgImgTag(src, dims, alt);
     });
+
+    return content;
   });
 
   eleventyConfig.addTransform("rm-pre-tabindex", function (content) {
