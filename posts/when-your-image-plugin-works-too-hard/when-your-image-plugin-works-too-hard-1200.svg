@@ -1,5 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
     <style>
       .canvas-bg { fill: #f8f5f0; }
       .grid-dots { fill: #332D28; opacity: 0.15; }
@@ -11,7 +10,7 @@
       .log-bg { fill: #F4F1ED; }
       .text-base { fill: #F8F5F0; }
       .text-dark { fill: #332D28; }
-      .text-muted { fill: #8A8075; }
+      .text-muted { fill: #6B6059; }
       .text-prompt { fill: #D97706; font-weight: 700; }
       .text-hint { fill: #332D28; font-weight: 600; }
       .arrow { fill: #D97706; }
@@ -25,6 +24,7 @@
       .statusbar-badge { fill: #D97706; }
       .statusbar-badge-text { fill: #F8F5F0; }
       .statusbar-info { fill: #E5DFD9; }
+
 
       @media (prefers-color-scheme: dark) {
         .canvas-bg { fill: #161616; }
@@ -54,97 +54,140 @@
       }
     </style>
 
+
     <pattern id="dynamic-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
       <circle class="grid-dots" cx="13" cy="13" r="0.8"/>
     </pattern>
   </defs>
 
+
+  <!-- Canvas -->
   <rect class="canvas-bg" width="1200" height="630"/>
   <rect width="1200" height="630" fill="url(#dynamic-dots)"/>
 
+
+  <!-- Title bar: 44px -->
   <rect class="title-bar" x="0" y="0" width="1200" height="44"/>
   <circle cx="50" cy="22" r="7" fill="#EF4444"/>
   <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
   <circle cx="100" cy="22" r="7" fill="#10B981"/>
   <text class="statusbar-info" x="125" y="24" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" dominant-baseline="middle">build — optimized</text>
 
+
+  <!-- File tab -->
   <rect class="ui-tab" x="125" y="44" width="220" height="36" rx="8"/>
   <text class="ui-tab-text" x="145" y="71" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600">eleventy.config.js</text>
 
+
+  <!-- Title divider -->
   <line class="ui-border" x1="0" y1="80" x2="1200" y2="80" stroke-width="1.5"/>
 
-  <text class="text-prompt" x="50" y="108" font-family="'JetBrains Mono', monospace" font-size="15">$ npx @11ty/eleventy</text>
 
-  <!-- PANEL KIRI: BEFORE -->
-  <rect class="panel-bg ui-border" x="30" y="135" width="555" height="410" rx="8" stroke-width="1"/>
-  <rect class="ui-tab" x="30" y="135" width="555" height="36" rx="8"/>
-  <rect class="ui-tab" x="30" y="163" width="555" height="8"/>
-  <rect class="status-fail" x="30" y="135" width="4" height="36"/>
-  <text class="status-fail" x="50" y="158" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700">✗ BEFORE — no svgShortCircuit</text>
+  <!-- Prompt -->
+  <text class="text-prompt" x="50" y="104" font-family="'JetBrains Mono', monospace" font-size="14">$ npx @11ty/eleventy</text>
 
-  <rect class="log-bg" x="50" y="185" width="515" height="220" rx="4"/>
+
+  <!-- ── PANEL KIRI: BEFORE — y=118, height=390, ends y=508 ── -->
+  <rect class="panel-bg ui-border" x="30" y="118" width="555" height="390" rx="8" stroke-width="1"/>
+  <rect class="ui-tab" x="30" y="118" width="555" height="34" rx="8"/>
+  <rect class="ui-tab" x="30" y="144" width="555" height="8"/>
+  <rect class="status-fail" x="30" y="118" width="4" height="34"/>
+  <text class="status-fail" x="50" y="140" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="700">✗ BEFORE — no svgShortCircuit</text>
+
+
+  <!-- Log area -->
+  <rect class="log-bg" x="50" y="165" width="515" height="210" rx="4"/>
   <g font-family="'JetBrains Mono', monospace" font-size="12">
-    <text class="text-muted" x="66" y="207">[eleventy-img] Processing ./content/hero.svg</text>
-    <text class="text-muted" x="66" y="227">[eleventy-img] Processing ./content/diagram.svg</text>
-    <text class="text-muted" x="66" y="247">[eleventy-img] Processing ./content/icon.svg</text>
-    <text class="text-muted" x="66" y="267">[eleventy-img] Processing ./content/chart.svg</text>
-    <text class="text-muted" x="66" y="287">[eleventy-img] Processing ./content/logo.svg</text>
-    <text class="text-dark" x="66" y="307" font-weight="600">[eleventy-img] Processing ./content/screenshot.png</text>
-    <text class="text-muted" x="66" y="327">[eleventy-img] Processing ./content/hero2.svg</text>
-    <text x="66" y="347" fill="#C08040">  ◀ generating webp 400 / avif 400</text>
-    <text x="66" y="367" fill="#C08040">  ◀ generating webp 618 / avif 618</text>
-    <text x="66" y="387" fill="#C08040">  ◀ generating webp 800 / avif 800</text>
+    <text class="text-muted" x="66" y="186">[eleventy-img] Processing ./content/hero.svg</text>
+    <text class="text-muted" x="66" y="204">[eleventy-img] Processing ./content/diagram.svg</text>
+    <text class="text-muted" x="66" y="222">[eleventy-img] Processing ./content/icon.svg</text>
+    <text class="text-muted" x="66" y="240">[eleventy-img] Processing ./content/chart.svg</text>
+    <text class="text-muted" x="66" y="258">[eleventy-img] Processing ./content/logo.svg</text>
+    <text class="text-dark" x="66" y="276" font-weight="600">[eleventy-img] Processing ./content/screenshot.png</text>
+    <text class="text-muted" x="66" y="294">[eleventy-img] Processing ./content/hero2.svg</text>
+    <text x="66" y="312" fill="#C08040">  ◀ generating webp 400 / avif 400</text>
+    <text x="66" y="330" fill="#C08040">  ◀ generating webp 618 / avif 618</text>
+    <text x="66" y="348" fill="#C08040">  ◀ generating webp 800 / avif 800</text>
   </g>
 
-  <rect class="log-bg ui-border" x="50" y="420" width="515" height="55" rx="4" stroke-width="0.5"/>
-  <g font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">
-    <rect class="ui-border badge-muted" x="66" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="99" y="451">400.webp</text>
-    <rect class="ui-border badge-muted" x="141" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="174" y="451">618.webp</text>
-    <rect class="ui-border badge-muted" x="216" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="249" y="451">800.webp</text>
-    <rect class="ui-border badge-muted" x="296" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="329" y="451">400.avif</text>
-    <rect class="ui-border badge-muted" x="371" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="404" y="451">618.avif</text>
-    <rect class="ui-border badge-muted" x="446" y="431" width="65" height="32" rx="4" stroke-width="0.5"/> <text x="479" y="451">800.avif</text>
+
+  <!-- File badges -->
+  <rect class="log-bg ui-border" x="50" y="388" width="515" height="48" rx="4" stroke-width="0.5"/>
+  <g font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">
+    <rect class="ui-border badge-muted" x="66" y="397" width="65" height="28" rx="4" stroke-width="0.5"/>
+    <text class="text-muted" x="99" y="415">400.webp</text>
+    <rect class="ui-border badge-muted" x="141" y="397" width="65" height="28" rx="4" stroke-width="0.5"/>
+    <text class="text-muted" x="174" y="415">618.webp</text>
+    <rect class="ui-border badge-muted" x="216" y="397" width="65" height="28" rx="4" stroke-width="0.5"/>
+    <text class="text-muted" x="249" y="415">800.webp</text>
+    <rect class="ui-border badge-muted" x="296" y="397" width="65" height="28" rx="4" stroke-width="0.5"/>
+    <text class="text-muted" x="329" y="415">400.avif</text>
+    <rect class="ui-border badge-muted" x="371" y="397" width="65" height="28" rx="4" stroke-width="0.5"/>
+    <text class="text-muted" x="404" y="415">618.avif</text>
+    <rect class="ui-border badge-muted" x="446" y="397" width="65" height="28" rx="4" stroke-width="0.5"/>
+    <text class="text-muted" x="479" y="415">800.avif</text>
   </g>
 
-  <rect class="status-fail" x="50" y="485" width="515" height="45" fill-opacity="0.06" rx="4"/>
-  <text class="status-fail" x="308" y="517" font-family="'JetBrains Mono', monospace" font-size="28" font-weight="700" text-anchor="middle">171s · 56 images</text>
 
-  <!-- PANEL KANAN: AFTER -->
-  <rect class="panel-bg ui-border" x="615" y="135" width="555" height="410" rx="8" stroke-width="1"/>
-  <rect class="ui-tab" x="615" y="135" width="555" height="36" rx="8"/>
-  <rect class="ui-tab" x="615" y="163" width="555" height="8"/>
-  <rect class="status-success" x="615" y="135" width="4" height="36"/>
-  <text class="status-success" x="635" y="158" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700">✓ AFTER — svgShortCircuit: true</text>
+  <!-- Build time -->
+  <rect class="status-fail" x="50" y="448" width="515" height="42" fill-opacity="0.06" rx="4"/>
+  <text class="status-fail" x="308" y="476" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="700" text-anchor="middle">171s · 56 images</text>
 
-  <rect class="log-bg" x="635" y="185" width="515" height="220" rx="4"/>
+
+  <!-- ── PANEL KANAN: AFTER — y=118, height=390, ends y=508 ── -->
+  <rect class="panel-bg ui-border" x="615" y="118" width="555" height="390" rx="8" stroke-width="1"/>
+  <rect class="ui-tab" x="615" y="118" width="555" height="34" rx="8"/>
+  <rect class="ui-tab" x="615" y="144" width="555" height="8"/>
+  <rect class="status-success" x="615" y="118" width="4" height="34"/>
+  <text class="status-success" x="635" y="140" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="700">✓ AFTER — svgShortCircuit: true</text>
+
+
+  <!-- Log area -->
+  <rect class="log-bg" x="635" y="165" width="515" height="210" rx="4"/>
   <g font-family="'JetBrains Mono', monospace" font-size="12">
-    <text class="text-dark" x="651" y="207" font-weight="600">[eleventy-img] Processing ./content/screenshot.png</text>
-    <text class="text-dark" x="651" y="227" font-weight="600">[eleventy-img] Processing ./content/demo-before.png</text>
-    <text class="text-dark" x="651" y="247" font-weight="600">[eleventy-img] Processing ./content/demo-after.png</text>
-    <text class="text-dark" x="651" y="267" font-weight="600">[eleventy-img] Processing ./content/demo-morph.png</text>
-    <text class="text-muted" x="651" y="295">— SVG skipped via svgShortCircuit —</text>
-    <text class="text-muted" x="651" y="315">— Curve skipped via svgShortCircuit —</text>
-    <text class="text-muted" x="651" y="335">— Logo skipped via svgShortCircuit —</text>
+    <text class="text-dark" x="651" y="186" font-weight="600">[eleventy-img] Processing ./content/screenshot.png</text>
+    <text class="text-dark" x="651" y="204" font-weight="600">[eleventy-img] Processing ./content/demo-before.png</text>
+    <text class="text-dark" x="651" y="222" font-weight="600">[eleventy-img] Processing ./content/demo-after.png</text>
+    <text class="text-dark" x="651" y="240" font-weight="600">[eleventy-img] Processing ./content/demo-morph.png</text>
+    <text class="text-muted" x="651" y="268">— SVG skipped via svgShortCircuit —</text>
+    <text class="text-muted" x="651" y="286">— Curve skipped via svgShortCircuit —</text>
+    <text class="text-muted" x="651" y="304">— Logo skipped via svgShortCircuit —</text>
   </g>
 
-  <rect class="log-bg ui-border" x="635" y="420" width="515" height="55" rx="4" stroke-width="0.5"/>
-  <rect class="badge-success" x="651" y="431" width="200" height="32" rx="4"/>
-  <text class="status-success" x="751" y="451" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="700">hero.svg — native, animated</text>
-  <text class="arrow" x="865" y="452" font-family="'JetBrains Mono', monospace" font-size="20" text-anchor="middle">→</text>
-  <rect class="ui-border badge-muted" x="880" y="431" width="200" height="32" rx="4" stroke-width="0.5"/>
-  <text class="text-dark" x="980" y="451" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">&lt;img src="…svg"&gt;</text>
 
-  <rect class="status-success" x="635" y="485" width="515" height="45" fill-opacity="0.06" rx="4"/>
-  <text class="status-success" x="893" y="517" font-family="'JetBrains Mono', monospace" font-size="28" font-weight="700" text-anchor="middle">39s · 13 SVGs bypassed</text>
+  <!-- Native SVG row -->
+  <rect class="log-bg ui-border" x="635" y="388" width="515" height="48" rx="4" stroke-width="0.5"/>
+  <rect class="badge-success" x="651" y="397" width="200" height="28" rx="4"/>
+  <text class="status-success" x="751" y="415" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle" font-weight="700">hero.svg — native, animated</text>
+  <text class="arrow" x="865" y="416" font-family="'JetBrains Mono', monospace" font-size="20" text-anchor="middle">→</text>
+  <rect class="ui-border badge-muted" x="880" y="397" width="200" height="28" rx="4" stroke-width="0.5"/>
+  <text class="text-dark" x="980" y="415" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">&lt;img src="…svg"&gt;</text>
 
-  <text class="arrow" x="600" y="340" font-family="'JetBrains Mono', monospace" font-size="36" text-anchor="middle">→</text>
 
-  <rect class="ui-border" x="60" y="555" width="1080" height="0.5" fill="none"/>
-  <text class="text-hint" x="600" y="575" font-family="'JetBrains Mono', monospace" font-size="15" text-anchor="middle">One option. No rasterization. Native SVGs. Animated cursors. 4× faster builds.</text>
+  <!-- Build time -->
+  <rect class="status-success" x="635" y="448" width="515" height="42" fill-opacity="0.06" rx="4"/>
+  <text class="status-success" x="893" y="476" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="700" text-anchor="middle">39s · 13 SVGs bypassed</text>
 
-  <rect class="statusbar-bg" x="0" y="595" width="1200" height="45"/>
-  <line class="statusbar-border" x1="0" y1="595" x2="1200" y2="595" stroke-width="1"/>
-  <rect class="statusbar-badge" x="30" y="601" width="80" height="23" rx="3"/>
-  <text class="statusbar-badge-text" x="70" y="617" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" text-anchor="middle">NORMAL</text>
-  <text class="statusbar-info" x="600" y="617" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="middle">the second most impactful fix was adding 2 lines</text>
+
+  <!-- Center arrow -->
+  <text class="arrow" x="600" y="315" font-family="'JetBrains Mono', monospace" font-size="36" text-anchor="middle">→</text>
+
+
+  <!-- Hint text: y=508–535 -->
+  <line class="ui-border" x1="60" y1="515" x2="1140" y2="515" stroke-width="0.5"/>
+  <text class="text-hint" x="600" y="538" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">One option. No rasterization. Native SVGs. Animated cursors. 4× faster builds.</text>
+
+
+  <!-- ── STATUS BAR: y=560, height=30 ── -->
+  <rect class="statusbar-bg" x="0" y="560" width="1200" height="30"/>
+  <line class="statusbar-border" x1="0" y1="560" x2="1200" y2="560" stroke-width="1"/>
+
+
+  <!-- NORMAL badge -->
+  <rect class="statusbar-badge" x="30" y="566" width="80" height="18" rx="3"/>
+  <text class="statusbar-badge-text" x="70" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
+
+
+  <!-- Status info -->
+  <text class="statusbar-info" x="600" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">the second most impactful fix was adding 2 lines</text>
 </svg>
