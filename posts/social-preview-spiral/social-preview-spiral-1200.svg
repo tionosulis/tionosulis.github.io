@@ -1,7 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <defs>
-    <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle cx="13" cy="13" r="0.8" fill="#453E38" opacity="0.3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
+    <!-- CAKUPAN STYLESHEET INTERNAL: OPTIMALISASI READABILITY &amp; DISTINGSI STATUS -->
+    <style>
+      /* ── 1. TEMA ASLI MURNI: LIGHT MODE (Latar Blog Cream #f8f5f0) ── */
+      .canvas-bg { fill: #f8f5f0; }
+      .grid-dots { fill: #332D28; opacity: 0.15; }
+      .title-bar { fill: #332D28; }
+      .ui-border { stroke: #D1C9C0; }
+      
+      /* Elemen Bulatan Node Dinamis */
+      .node-bg { fill: #FFFFFF; }
+      .line-connector { stroke: #A49A90; }
+      
+      /* Teks &amp; Sintaks Light */
+      .text-base { fill: #F8F5F0; }
+      .text-dark { fill: #332D28; }
+      .text-muted { fill: #8A8075; }
+      .text-prompt { fill: #D97706; font-weight: 700; }
+      .node-number { fill: #332D28; font-weight: 800; font-size: 14px; }
+      
+      /* REVISI ELEMEN STATUS: INFO menggunakan Biru, DONE menggunakan Amber */
+      .status-fail { stroke: #DC2626; fill: #DC2626; }
+      .status-info { stroke: #0284C7; fill: #0284C7; }
+      .accent-amber { fill: #D97706; stroke: #D97706; stroke-width: 2.5; }
+      
+      /* Status Bar Light */
+      .statusbar-bg { fill: #332D28; }
+      .statusbar-border { stroke: #4A423B; }
+      .statusbar-badge { fill: #D97706; }
+      .statusbar-badge-text { fill: #F8F5F0; }
+      .statusbar-info { fill: #E5DFD9; }
+
+
+      /* ── 2. TEMA ASLI MURNI: DARK MODE (Latar Blog Charcoal #161616) ── */
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg { fill: #161616; }
+        .grid-dots { fill: #453E38; opacity: 0.3; }
+        .title-bar { fill: #29241F; }
+        .ui-border { stroke: #453E38; }
+        
+        .node-bg { fill: #2E2924; }
+        .line-connector { stroke: #7A6A5C; }
+        
+        .text-dark { fill: #F8F5F0; }
+        .text-muted { fill: #D1D6CC; }
+        .text-prompt { fill: #F8F5F0; font-weight: 600; }
+        .node-number { fill: #F8F5F0; font-weight: 700; font-size: 14px; }
+        
+        .status-fail { stroke: #E05050; fill: #E05050; }
+        .status-info { stroke: #38BDF8; fill: #38BDF8; }
+        .accent-amber { fill: #F59E0B; stroke: #F59E0B; stroke-width: 2.5; }
+        
+        .statusbar-bg { fill: #29241F; }
+        .statusbar-border { stroke: #453E38; }
+        .statusbar-badge { fill: #F59E0B; }
+        .statusbar-badge-text { fill: #1C1917; }
+        .statusbar-info { fill: #D1D6CC; }
+      }
+    </style>
+
+
+    <pattern id="dynamic-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle class="grid-dots" cx="13" cy="13" r="0.8"/>
     </pattern>
     <filter id="shadow">
       <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.4"/>
@@ -11,99 +70,131 @@
     </filter>
   </defs>
 
-  <rect width="1200" height="630" fill="#332D28"/>
-  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Latar belakang kanvas adaptif -->
+  <rect class="canvas-bg" width="1200" height="630"/>
+  <rect width="1200" height="630" fill="url(#dynamic-dots)"/>
+
 
   <!-- Title bar -->
-  <rect x="0" y="0" width="1200" height="44" fill="#29241F"/>
+  <rect class="title-bar" x="0" y="0" width="1200" height="44"/>
   <circle cx="50" cy="22" r="7" fill="#EF4444"/>
   <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
   <circle cx="100" cy="22" r="7" fill="#10B981"/>
-  <text x="125" y="27" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" font-weight="600" dominant-baseline="middle">git log --oneline</text>
+  <text class="statusbar-info" x="125" y="24" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" dominant-baseline="middle">git log --oneline</text>
+
 
   <!-- Title divider -->
-  <line x1="0" y1="44" x2="1200" y2="44" stroke="#453E38" stroke-width="1.5"/>
+  <line class="ui-border" x1="0" y1="44" x2="1200" y2="44" stroke-width="1.5"/>
 
-  <!-- Subtitle -->
-  <text x="600" y="80" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" text-anchor="middle" font-weight="600">$ git log --oneline · 8 commits · not linear</text>
+
+  <!-- Subtitle Prompt Terminal -->
+  <text class="text-prompt" x="600" y="82" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">$ git log --oneline · 8 commits · not linear</text>
+
 
   <!-- Connector lines -->
-  <line x1="180" y1="165" x2="420" y2="245" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
-  <line x1="420" y1="245" x2="680" y2="165" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
-  <line x1="680" y1="165" x2="920" y2="285" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
-  <line x1="920" y1="285" x2="680" y2="390" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
-  <line x1="680" y1="390" x2="420" y2="320" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
-  <line x1="420" y1="320" x2="220" y2="420" stroke="#D1D6CC" stroke-width="1.5" stroke-dasharray="5 3"/>
-  <line x1="220" y1="420" x2="520" y2="490" stroke="#F59E0B" stroke-width="2" stroke-dasharray="5 3"/>
+  <g class="line-connector" stroke-width="1.5" stroke-dasharray="5 3">
+    <line x1="180" y1="165" x2="420" y2="245" />
+    <line x1="420" y1="245" x2="680" y2="165" />
+    <line x1="680" y1="165" x2="920" y2="285" />
+    <line x1="920" y1="285" x2="680" y2="390" />
+    <line x1="680" y1="390" x2="420" y2="320" />
+    <line x1="420" y1="320" x2="220" y2="420" />
+    <!-- Garis Akhir Dinamis Mengikuti Kelas .status-info Baru -->
+    <line x1="220" y1="420" x2="520" y2="490" class="status-info" stroke-width="2" />
+  </g>
+
 
   <!-- COMMIT 01 — WARN -->
-  <circle cx="180" cy="165" r="26" fill="#2E2924" stroke="#E05050" stroke-width="2" filter="url(#shadowWarn)"/>
-  <text x="180" y="159" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">01</text>
-  <text x="180" y="174" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E05050" text-anchor="middle" font-weight="700">WARN</text>
-  <text x="180" y="204" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">ef58136</text>
-  <text x="180" y="220" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">add og:image</text>
+  <circle class="node-bg status-fail" cx="180" cy="165" r="26" stroke-width="2" filter="url(#shadowWarn)"/>
+  <!-- REVISI KONTRAST: Angka di dalam lingkaran menggunakan kelas khusus .node-number agar tebal dan pop-out -->
+  <text x="180" y="159" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">01</text>
+  <text x="180" y="174" font-family="'JetBrains Mono', monospace" font-size="10" class="status-fail" text-anchor="middle" font-weight="700">WARN</text>
+  <text x="180" y="204" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">ef58136</text>
+  <text x="180" y="220" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">add og:image</text>
+
 
   <!-- COMMIT 02 — WARN -->
-  <circle cx="420" cy="245" r="26" fill="#2E2924" stroke="#E05050" stroke-width="2" filter="url(#shadowWarn)"/>
-  <text x="420" y="239" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">02</text>
-  <text x="420" y="254" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E05050" text-anchor="middle" font-weight="700">WARN</text>
-  <text x="420" y="284" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">0570209</text>
-  <text x="420" y="300" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">fix path</text>
+  <circle class="node-bg status-fail" cx="420" cy="245" r="26" stroke-width="2" filter="url(#shadowWarn)"/>
+  <text x="420" y="239" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">02</text>
+  <text x="420" y="254" font-family="'JetBrains Mono', monospace" font-size="10" class="status-fail" text-anchor="middle" font-weight="700">WARN</text>
+  <text x="420" y="284" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">0570209</text>
+  <text x="420" y="300" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">fix path</text>
 
-  <!-- COMMIT 03 — INFO -->
-  <circle cx="680" cy="165" r="26" fill="#2E2924" stroke="#F59E0B" stroke-width="2"/>
-  <text x="680" y="159" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">03</text>
-  <text x="680" y="174" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F59E0B" text-anchor="middle" font-weight="700">INFO</text>
-  <text x="680" y="204" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">a3f1c22</text>
-  <text x="680" y="220" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">add twitter:card</text>
+
+  <!-- COMMIT 03 — INFO (REVISI: Garis deskripsi dinaikkan ke y=112 agar bebas tabrakan) -->
+  <text x="680" y="112" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">add twitter:card</text>
+  <text x="680" y="126" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">a3f1c22</text>
+  <circle class="node-bg status-info" cx="680" cy="165" r="26" stroke-width="2"/>
+  <text x="680" y="159" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">03</text>
+  <text x="680" y="174" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
+
 
   <!-- COMMIT 04 — WARN -->
-  <circle cx="920" cy="285" r="26" fill="#2E2924" stroke="#E05050" stroke-width="2" filter="url(#shadowWarn)"/>
-  <text x="920" y="279" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">04</text>
-  <text x="920" y="294" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E05050" text-anchor="middle" font-weight="700">WARN</text>
-  <text x="920" y="324" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">b8d4e91</text>
-  <text x="920" y="340" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">fix dimensions</text>
+  <circle class="node-bg status-fail" cx="920" cy="285" r="26" stroke-width="2" filter="url(#shadowWarn)"/>
+  <text x="920" y="279" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">04</text>
+  <text x="920" y="294" font-family="'JetBrains Mono', monospace" font-size="10" class="status-fail" text-anchor="middle" font-weight="700">WARN</text>
+  <text x="920" y="324" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">b8d4e91</text>
+  <text x="920" y="340" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">fix dimensions</text>
+    <!-- COMMIT 05 — INFO -->
+  <circle class="node-bg status-info" cx="680" cy="390" r="26" stroke-width="2"/>
+  <text x="680" y="384" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">05</text>
+  <text x="680" y="399" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
+  <text x="680" y="432" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">c2a8f44</text>
+  <text x="680" y="448" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">add og:alt</text>
 
-  <!-- COMMIT 05 — INFO -->
-  <circle cx="680" cy="390" r="26" fill="#2E2924" stroke="#F59E0B" stroke-width="2"/>
-  <text x="680" y="384" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">05</text>
-  <text x="680" y="399" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F59E0B" text-anchor="middle" font-weight="700">INFO</text>
-  <text x="680" y="429" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">c2a8f44</text>
-  <text x="680" y="445" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">add og:alt</text>
 
   <!-- COMMIT 06 — INFO -->
-  <circle cx="420" cy="320" r="26" fill="#2E2924" stroke="#F59E0B" stroke-width="2"/>
-  <text x="420" y="314" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">06</text>
-  <text x="420" y="329" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F59E0B" text-anchor="middle" font-weight="700">INFO</text>
-  <text x="420" y="359" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">d9b3c17</text>
-  <text x="420" y="375" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">structured data</text>
+  <circle class="node-bg status-info" cx="420" cy="320" r="26" stroke-width="2"/>
+  <text x="420" y="314" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">06</text>
+  <text x="420" y="329" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
+  <text x="420" y="359" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">d9b3c17</text>
+  <text x="420" y="375" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">structured data</text>
+
 
   <!-- COMMIT 07 — INFO -->
-  <circle cx="220" cy="420" r="26" fill="#2E2924" stroke="#F59E0B" stroke-width="2"/>
-  <text x="220" y="414" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0" text-anchor="middle" font-weight="700">07</text>
-  <text x="220" y="429" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F59E0B" text-anchor="middle" font-weight="700">INFO</text>
-  <text x="220" y="459" font-family="'JetBrains Mono', monospace" font-size="11" fill="#D1D6CC" text-anchor="middle">f1e6a83</text>
-  <text x="220" y="475" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F8F5F0" text-anchor="middle">seoTitle fix</text>
+  <circle class="node-bg status-info" cx="220" cy="420" r="26" stroke-width="2"/>
+  <text x="220" y="414" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">07</text>
+  <text x="220" y="429" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
+  <text x="220" y="459" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">f1e6a83</text>
+  <text x="220" y="475" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">seoTitle fix</text>
+
 
   <!-- COMMIT 08 — DONE -->
-  <circle cx="520" cy="490" r="30" fill="#2E2924" stroke="#F59E0B" stroke-width="2.5" filter="url(#shadow)"/>
-  <text x="520" y="483" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F59E0B" text-anchor="middle" font-weight="700">08</text>
-  <text x="520" y="499" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F59E0B" text-anchor="middle" font-weight="700">&#10003; STOP</text>
-  <text x="520" y="533" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F59E0B" opacity="0.7" text-anchor="middle">3d9c2f1</text>
-  <text x="520" y="549" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F59E0B" opacity="0.6" text-anchor="middle">all tags valid</text>
+  <circle class="node-bg accent-amber" cx="520" cy="490" r="30" filter="url(#shadow)"/>
+  <text x="520" y="483" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">08</text>
+  <text x="520" y="499" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">✓ STOP</text>
+  <text x="520" y="533" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">3d9c2f1</text>
+  <text x="520" y="549" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">all tags valid</text>
 
-  <!-- Legend -->
-  <circle cx="820" cy="555" r="6" fill="#2E2924" stroke="#E05050" stroke-width="1.5"/>
-  <text x="834" y="560" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0">WARN</text>
-  <circle cx="908" cy="555" r="6" fill="#2E2924" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="922" y="560" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0">INFO</text>
-  <circle cx="992" cy="555" r="6" fill="#2E2924" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="1006" y="560" font-family="'JetBrains Mono', monospace" font-size="12" fill="#F8F5F0">DONE</text>
 
-  <!-- Status bar -->
-  <rect x="0" y="585" width="1200" height="45" fill="#29241F"/>
-  <line x1="0" y1="585" x2="1200" y2="585" stroke="#453E38" stroke-width="1"/>
-  <rect x="30" y="596" width="80" height="24" rx="3" fill="#F59E0B"/>
-  <text x="70" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
-  <text x="1170" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">8 commits</text>
+  <!-- ── REVISI UTAMA: KOORDINAT LEGENDA DINAIKKAN KE y=535 AGAR LONGGAR &amp; SEMPURNA ── -->
+  <!-- Legend WARN -->
+  <circle cx="790" cy="535" r="10" class="node-bg status-fail" stroke-width="2"/>
+  <text class="text-dark" x="808" y="539" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">WARN</text>
+  
+  <!-- Legend INFO -->
+  <circle cx="890" cy="535" r="10" class="node-bg status-info" stroke-width="2"/>
+  <text class="text-dark" x="908" y="539" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">INFO</text>
+  
+  <!-- Legend DONE -->
+  <circle cx="990" cy="535" r="10" class="node-bg accent-amber"/>
+  <text class="text-dark" x="1008" y="539" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">DONE</text>
+
+
+  <!-- ── VIM STATUS BAR ── -->
+  <g id="statusbar-section">
+    <rect class="statusbar-bg" x="0" y="555" width="1200" height="45"/>
+    <line class="statusbar-border" x1="0" y1="555" x2="1200" y2="555" stroke-width="1"/>
+    
+    <!-- Lencana NORMAL Mode -->
+    <rect class="statusbar-badge" x="30" y="566" width="80" height="24" rx="3"/>
+    <text class="statusbar-badge-text" x="70" y="582" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" text-anchor="middle">NORMAL</text>
+    
+    <!-- Informasi Kesimpulan Tengah Simetris -->
+    <text class="statusbar-info" x="600" y="582" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="middle">git log history · 8 commits graph</text>
+    
+    <!-- Keterangan File Kanan Bawah -->
+    <text class="statusbar-info" x="1170" y="582" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="end">8 commits</text>
+  </g>
 </svg>

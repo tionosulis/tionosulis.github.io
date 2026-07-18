@@ -1,112 +1,205 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <defs>
-    <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle cx="13" cy="13" r="0.8" fill="#453E38" opacity="0.3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
+    <!-- CAKUPAN STYLESHEET INTERNAL: MAKSIMALISASI DUA TEMA ASLI BLOG -->
+    <style>
+      /* ── 1. TEMA ASLI MURNI: LIGHT MODE (Latar Blog Cream #f8f5f0) ── */
+      .canvas-bg { fill: #f8f5f0; }
+      .grid-dots { fill: #332D28; opacity: 0.15; }
+      .title-bar { fill: #332D28; }
+      .ui-tab { fill: #E5DFD9; }
+      .ui-tab-text { fill: #332D28; }
+      .ui-border { stroke: #D1C9C0; }
+      .panel-bg { fill: #FFFFFF; }
+      .log-bg { fill: #F4F1ED; }
+      
+      /* Teks &amp; Sintaks Light (Kontras Tinggi) */
+      .text-base { fill: #F8F5F0; }
+      .text-dark { fill: #332D28; }
+      .text-muted { fill: #8A8075; }
+      .text-prompt { fill: #D97706; font-weight: 700; }
+      .text-hint { fill: #332D28; font-weight: 600; }
+      .arrow { fill: #D97706; }
+      
+      /* Indikator Status Light */
+      .status-fail { fill: #DC2626; }
+      .status-success { fill: #059669; }
+      .accent-amber { fill: #D97706; }
+      .badge-success { fill: #059669; fill-opacity: 0.08; }
+      .badge-muted { fill: #332D28; fill-opacity: 0.05; }
+      
+      /* Status Bar Light */
+      .statusbar-bg { fill: #332D28; }
+      .statusbar-border { stroke: #4A423B; }
+      .statusbar-badge { fill: #D97706; }
+      .statusbar-badge-text { fill: #F8F5F0; }
+      .statusbar-info { fill: #E5DFD9; }
+
+
+      /* ── 2. TEMA ASLI MURNI: DARK MODE (Latar Blog Charcoal #161616) ── */
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg { fill: #161616; }
+        .grid-dots { fill: #453E38; opacity: 0.3; }
+        .title-bar { fill: #29241F; }
+        .ui-tab { fill: #3D3630; }
+        .ui-tab-text { fill: #F8F5F0; }
+        .ui-border { stroke: #453E38; }
+        .panel-bg { fill: #2E2924; }
+        .log-bg { fill: #352F2A; }
+        
+        /* Teks &amp; Sintaks Dark (Glow Lembut) */
+        .text-base { fill: #F8F5F0; }
+        .text-dark { fill: #D1D6CC; }
+        .text-muted { fill: #7A6A5C; }
+        .text-prompt { fill: #F59E0B; font-weight: normal; }
+        .text-hint { fill: #D1D6CC; font-weight: normal; }
+        .arrow { fill: #F59E0B; }
+        
+        /* Indikator Status Dark */
+        .status-fail { fill: #E05050; }
+        .status-success { fill: #10D9A8; }
+        .accent-amber { fill: #F59E0B; }
+        .badge-success { fill: #10D9A8; fill-opacity: 0.1; }
+        .badge-muted { fill: #453E38; fill-opacity: 0.3; }
+        
+        /* Status Bar Dark */
+        .statusbar-bg { fill: #29241F; }
+        .statusbar-border { stroke: #453E38; }
+        .statusbar-badge { fill: #F59E0B; }
+        .statusbar-badge-text { fill: #1C1917; }
+        .statusbar-info { fill: #D1D6CC; }
+      }
+    </style>
+
+
+    <pattern id="dynamic-dots-diff" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle class="grid-dots" cx="13" cy="13" r="0.8"/>
     </pattern>
   </defs>
 
-  <rect width="1200" height="630" fill="#332D28"/>
-  <rect width="1200" height="630" fill="url(#dots)"/>
 
-  <!-- Title bar -->
-  <rect x="0" y="0" width="1200" height="44" fill="#29241F"/>
+  <!-- Latar belakang kanvas adaptif murni -->
+  <rect class="canvas-bg" width="1200" height="630"/>
+  <rect width="1200" height="630" fill="url(#dynamic-dots-diff)"/>
+
+
+  <!-- Title bar jendela OS -->
+  <rect class="title-bar" x="0" y="0" width="1200" height="44"/>
   <circle cx="50" cy="22" r="7" fill="#EF4444"/>
   <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
   <circle cx="100" cy="22" r="7" fill="#10B981"/>
-  <text x="125" y="27" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" font-weight="600" dominant-baseline="middle">eleventy.config.js</text>
+  <text class="statusbar-info" x="125" y="24" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" dominant-baseline="middle">build — optimized</text>
+
 
   <!-- File tab -->
-  <rect x="125" y="48" width="200" height="36" rx="8" fill="#3D3630"/>
-  <text x="145" y="71" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">eleventy.config.js</text>
+  <rect class="ui-tab" x="125" y="44" width="220" height="36" rx="8"/>
+  <text class="ui-tab-text" x="145" y="71" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600">eleventy.config.js</text>
+
 
   <!-- Title divider -->
-  <line x1="0" y1="84" x2="1200" y2="84" stroke="#453E38" stroke-width="1.5"/>
+  <line class="ui-border" x1="0" y1="80" x2="1200" y2="80" stroke-width="1.5"/>
 
-  <!-- Prompt -->
-  <text x="50" y="82" font-family="'JetBrains Mono', monospace" font-size="15" fill="#F59E0B">$ diff before.html after.html</text>
 
-  <!-- LEFT PANEL: BEFORE -->
-  <rect x="30" y="100" width="555" height="430" fill="#2E2924" rx="8"/>
+  <!-- Prompt Terminal (Diberi ruang vertikal aman agar tidak menabrak tab) -->
+  <text class="text-prompt" x="50" y="108" font-family="'JetBrains Mono', monospace" font-size="15">$ diff before.html after.html</text>
+
+
+  <!-- ── PANEL KIRI: BEFORE ── -->
+  <rect class="panel-bg ui-border" x="30" y="135" width="555" height="410" rx="8" stroke-width="1"/>
+
 
   <!-- Panel header -->
-  <rect x="30" y="100" width="555" height="36" fill="#3D3630" rx="8"/>
-  <rect x="30" y="128" width="555" height="8" fill="#3D3630"/>
-  <rect x="30" y="100" width="4" height="36" fill="#E05050"/>
-  <text x="50" y="123" font-family="'JetBrains Mono', monospace" font-size="16" fill="#E05050" font-weight="700">&#10007; BEFORE — extensions: "jpg,png,gif"</text>
+  <rect class="ui-tab" x="30" y="135" width="555" height="36" rx="8"/>
+  <rect class="ui-tab" x="30" y="163" width="555" height="8"/>
+  <rect class="status-fail" x="30" y="135" width="4" height="36"/>
+  <text class="status-fail" x="50" y="158" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700">✗ BEFORE — extensions: "jpg,png,gif"</text>
+
 
   <!-- Config block -->
-  <rect x="50" y="150" width="515" height="120" fill="#352F2A" rx="6" stroke="#453E38" stroke-width="0.5"/>
-  <text x="66" y="172" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">1</text>
-  <text x="66" y="194" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">2</text>
-  <text x="66" y="216" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">3</text>
-  <text x="66" y="238" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">4</text>
-  <text x="66" y="260" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">5</text>
-  <text x="80" y="172" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">addPlugin(imageTransform, {</text>
-  <rect x="50" y="180" width="515" height="24" fill="#E05050" fill-opacity="0.08"/>
-  <text x="80" y="194" font-family="'JetBrains Mono', monospace" font-size="15" fill="#E05050">  extensions: <tspan fill="#F8F5F0">"jpg,png,gif"</tspan>,</text>
-  <text x="80" y="216" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">  formats: <tspan fill="#F8F5F0">["avif","webp"]</tspan>,</text>
-  <text x="80" y="238" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">  defaultAttributes: {</text>
-  <text x="80" y="260" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">    loading: <tspan fill="#F8F5F0">"lazy"</tspan>,</text>
+  <rect class="log-bg ui-border" x="50" y="185" width="515" height="120" rx="6" stroke-width="0.5"/>
+  <g font-family="'JetBrains Mono', monospace" font-size="13" fill="#8A8075">
+    <text x="66" y="207">1</text> <text x="66" y="229">2</text> <text x="66" y="251">3</text> <text x="66" y="273">4</text> <text x="66" y="295">5</text>
+  </g>
+  <g font-family="'JetBrains Mono', monospace" font-size="15">
+    <text x="86" y="207" class="text-dark">addPlugin(imageTransform, {</text>
+    <rect x="51" y="215" width="513" height="22" class="status-fail" fill-opacity="0.08"/>
+    <text x="86" y="229" class="status-fail">  extensions: <tspan class="text-dark">"jpg,png,gif"</tspan>,</text>
+    <text x="86" y="251" class="text-dark">  formats: <tspan class="text-dark">["avif","webp"]</tspan>,</text>
+    <text x="86" y="273" class="text-dark">  defaultAttributes: {</text>
+    <text x="86" y="295" class="text-dark">    loading: <tspan class="text-dark">"lazy"</tspan>,</text>
+  </g>
+
 
   <!-- Output HTML — broken -->
-  <rect x="50" y="285" width="515" height="95" fill="#352F2A" rx="6" stroke="#E05050" stroke-width="0.5" stroke-opacity="0.3"/>
-  <text x="70" y="306" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">output HTML</text>
-  <line x1="50" y1="314" x2="565" y2="314" stroke="#453E38" stroke-width="1"/>
-  <text x="70" y="338" font-family="'JetBrains Mono', monospace" font-size="15" fill="#E05050">&lt;img src="/hero.svg"</text>
-  <text x="90" y="360" font-family="'JetBrains Mono', monospace" font-size="15" fill="#E05050">     alt="..."&gt;</text>
-  <text x="70" y="370" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC">no width · no srcset · no avif</text>
+  <rect class="log-bg ui-border" x="50" y="320" width="515" height="95" rx="6" stroke-width="0.5" stroke-opacity="0.3"/>
+  <rect class="status-fail" x="50" y="320" width="4" height="95" rx="2" fill-opacity="0.5"/>
+  <text x="70" y="341" font-family="'JetBrains Mono', monospace" font-size="13" class="text-dark">output HTML</text>
+  <line class="ui-border" x1="50" y1="349" x2="565" y2="349" stroke-width="1"/>
+  <text x="70" y="373" font-family="'JetBrains Mono', monospace" font-size="15" class="text-dark">&lt;img src="/hero.svg"</text>
+  <text x="90" y="395" font-family="'JetBrains Mono', monospace" font-size="15" class="text-dark">     alt="..."&gt;</text>
+  <text x="70" y="405" font-family="'JetBrains Mono', monospace" font-size="12" class="text-dark">no width · no srcset · no avif</text>
+
 
   <!-- Counter -->
-  <rect x="50" y="395" width="515" height="45" fill="#E05050" fill-opacity="0.06" rx="4"/>
-  <text x="308" y="425" font-family="'JetBrains Mono', monospace" font-size="28" fill="#E05050" font-weight="700" text-anchor="middle">0 builds</text>
+  <rect class="status-fail" x="50" y="430" width="515" height="45" fill-opacity="0.06" rx="4"/>
+  <text x="308" y="462" font-family="'JetBrains Mono', monospace" font-size="28" class="status-fail" font-weight="700" text-anchor="middle">0 builds</text>
 
-  <!-- RIGHT PANEL: AFTER -->
-  <rect x="615" y="100" width="555" height="430" fill="#2E2924" rx="8"/>
+
+
+
+  <!-- ── PANEL KANAN: AFTER ── -->
+  <rect class="panel-bg ui-border" x="615" y="135" width="555" height="410" rx="8" stroke-width="1"/>
+
 
   <!-- Panel header -->
-  <rect x="615" y="100" width="555" height="36" fill="#3D3630" rx="8"/>
-  <rect x="615" y="128" width="555" height="8" fill="#3D3630"/>
-  <rect x="615" y="100" width="4" height="36" fill="#10D9A8"/>
-  <text x="635" y="123" font-family="'JetBrains Mono', monospace" font-size="16" fill="#10D9A8" font-weight="700">&#10003; AFTER — extensions: "html"</text>
+  <rect class="ui-tab" x="615" y="135" width="555" height="36" rx="8"/>
+  <rect class="ui-tab" x="615" y="163" width="555" height="8"/>
+  <rect class="status-success" x="615" y="135" width="4" height="36"/>
+  <text class="status-success" x="635" y="158" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700">✓ AFTER — extensions: "html"</text>
+
 
   <!-- Config block -->
-  <rect x="635" y="150" width="515" height="120" fill="#352F2A" rx="6" stroke="#453E38" stroke-width="0.5"/>
-  <text x="651" y="172" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">1</text>
-  <text x="651" y="194" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">2</text>
-  <text x="651" y="216" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">3</text>
-  <text x="651" y="238" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">4</text>
-  <text x="651" y="260" font-family="'JetBrains Mono', monospace" font-size="13" fill="#453E38">5</text>
-  <text x="665" y="172" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">addPlugin(imageTransform, {</text>
-  <rect x="635" y="180" width="515" height="24" fill="#10D9A8" fill-opacity="0.06"/>
-  <text x="665" y="194" font-family="'JetBrains Mono', monospace" font-size="15" fill="#10D9A8">  extensions: <tspan fill="#F8F5F0">"html"</tspan>,</text>
-  <text x="665" y="216" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">  formats: <tspan fill="#F8F5F0">["avif","webp"]</tspan>,</text>
-  <text x="665" y="238" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">  defaultAttributes: {</text>
-  <text x="665" y="260" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC">    decoding: <tspan fill="#F8F5F0">"auto"</tspan>,</text>
+  <rect class="log-bg ui-border" x="635" y="185" width="515" height="120" rx="6" stroke-width="0.5"/>
+  <g font-family="'JetBrains Mono', monospace" font-size="13" fill="#8A8075">
+    <text x="651" y="207">1</text> <text x="651" y="229">2</text> <text x="651" y="251">3</text> <text x="651" y="273">4</text> <text x="651" y="295">5</text>
+  </g>
+  <g font-family="'JetBrains Mono', monospace" font-size="15">
+    <text x="671" y="207" class="text-dark">addPlugin(imageTransform, {</text>
+    <rect x="636" y="215" width="513" height="22" class="status-success" fill-opacity="0.06"/>
+    <text x="671" y="229" class="status-success">  extensions: <tspan class="text-dark">"html"</tspan>,</text>
+    <text x="671" y="251" class="text-dark">  formats: <tspan class="text-dark">["avif","webp"]</tspan>,</text>
+    <text x="671" y="273" class="text-dark">  defaultAttributes: {</text>
+    <text x="671" y="295" class="text-dark">    decoding: <tspan class="text-dark">"auto"</tspan>,</text>
+  </g>
+
 
   <!-- Output HTML — fixed -->
-  <rect x="635" y="285" width="515" height="95" fill="#352F2A" rx="6" stroke="#10D9A8" stroke-width="0.5" stroke-opacity="0.3"/>
-  <text x="655" y="306" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">output HTML</text>
-  <line x1="635" y1="314" x2="1150" y2="314" stroke="#453E38" stroke-width="1"/>
-  <text x="655" y="338" font-family="'JetBrains Mono', monospace" font-size="15" fill="#10D9A8">&lt;picture&gt;</text>
-  <text x="670" y="360" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0">&lt;source type="image/avif" srcset="..."&gt;</text>
-  <text x="670" y="370" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0">&lt;img width="1200" height="630" loading=...</text>
+  <rect class="log-bg ui-border" x="635" y="320" width="515" height="95" rx="6" stroke-width="0.5" stroke-opacity="0.3"/>
+  <rect class="status-success" x="635" y="320" width="4" height="95" rx="2" fill-opacity="0.5"/>
+  <text x="655" y="341" font-family="'JetBrains Mono', monospace" font-size="13" class="text-dark">output HTML</text>
+  <line class="ui-border" x1="635" y1="349" x2="1150" y2="349" stroke-width="1"/>
+  <text x="655" y="369" font-family="'JetBrains Mono', monospace" font-size="14" class="text-dark">&lt;picture&gt;</text>
+  <text x="670" y="387" font-family="'JetBrains Mono', monospace" font-size="13" class="text-dark">&lt;source type="image/avif" srcset="..."&gt;</text>
+  <text x="670" y="404" font-family="'JetBrains Mono', monospace" font-size="13" class="text-dark">&lt;img width="1200" height="630" loading=...</text>
+
 
   <!-- Counter -->
-  <rect x="635" y="395" width="515" height="45" fill="#10D9A8" fill-opacity="0.06" rx="4"/>
-  <text x="893" y="425" font-family="'JetBrains Mono', monospace" font-size="28" fill="#10D9A8" font-weight="700" text-anchor="middle">45 images optimized</text>
+  <rect class="status-success" x="635" y="430" width="515" height="45" fill-opacity="0.06" rx="4"/>
+  <text x="893" y="462" font-family="'JetBrains Mono', monospace" font-size="28" class="status-success" font-weight="700" text-anchor="middle">45 images optimized</text>
 
-  <!-- Arrow between panels -->
-  <text x="600" y="322" font-family="'JetBrains Mono', monospace" font-size="36" fill="#F59E0B" text-anchor="middle">→</text>
+
+  <!-- Arrow/Panah Tengah -->
+  <text class="arrow" x="600" y="340" font-family="'JetBrains Mono', monospace" font-size="36" text-anchor="middle">→</text>
+
 
   <!-- Bottom hint -->
-  <rect x="60" y="545" width="1080" height="1" fill="#453E38"/>
-  <text x="600" y="565" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC" text-anchor="middle">extensions maps to output file types, not image formats · one word fixed everything</text>
-  <text x="600" y="580" font-family="'JetBrains Mono', monospace" font-size="13" fill="#F59E0B" text-anchor="middle">200KB PNG → 19KB AVIF · 90% reduction · zero visual difference</text>
+  <rect class="ui-border" x="60" y="555" width="1080" height="0.5" fill="none"/>
+  <text class="text-hint" x="600" y="575" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">extensions maps to output file types, not image formats · one word fixed everything</text>
+  <text x="600" y="590" font-family="'JetBrains Mono', monospace" font-size="13" class="arrow" text-anchor="middle">200KB PNG → 19KB AVIF · 90% reduction · zero visual difference</text>
+
 
   <!-- Status bar -->
-  <rect x="0" y="585" width="1200" height="45" fill="#29241F"/>
-  <line x1="0" y1="585" x2="1200" y2="585" stroke="#453E38" stroke-width="1"/>
-  <rect x="30" y="596" width="80" height="24" rx="3" fill="#F59E0B"/>
-  <text x="70" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
-  <text x="1170" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">the most impactful fix was deleting 8 words</text>
+  <rect class="statusbar-bg" x="0" y="600" width="1200" height="30"/>
+  <line class="statusbar-border" x1="0" y1="600" x2="1200" y2="600" stroke-width="1"/>
+  <rect class="statusbar-badge" x="30" y="606" width="80" height="18" rx="2"/>
+  <text class="statusbar-badge-text" x="70" y="620" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
+  <text class="statusbar-info" x="600" y="620" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">the most impactful fix was deleting 8 words</text>
 </svg>
