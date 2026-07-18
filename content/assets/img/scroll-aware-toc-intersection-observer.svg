@@ -1,117 +1,225 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <defs>
-    <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle cx="13" cy="13" r="0.8" fill="#453E38" opacity="0.3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
+    <style>
+      /* ── LIGHT MODE (Blog bg: #f8f5f0) ── */
+      .canvas-bg        { fill: #f8f5f0; }
+      .grid-dots        { fill: #332D28; opacity: 0.15; }
+      .title-bar        { fill: #332D28; }
+      .ui-tab           { fill: #E5DFD9; }
+      .ui-tab-text      { fill: #332D28; }
+      .ui-border        { stroke: #D1C9C0; }
+      .panel-bg         { fill: #FFFFFF; }
+      .panel-header     { fill: #E5DFD9; }
+      .gutter-line      { stroke: #D1C9C0; stroke-width: 1; }
+      .text-title-bar   { fill: #E5DFD9; }
+      .text-base        { fill: #F8F5F0; }
+      .text-code        { fill: #332D28; }
+      .text-muted       { fill: #6B6059; }
+      .text-heading     { fill: #1C1917; }
+      .text-accent      { fill: #D97706; }
+      .text-active      { fill: #D97706; }
+      .fill-muted       { fill: #D1C9C0; }
+      .fill-block       { fill: #E5DFD9; }
+      .active-bg        { fill: #D97706; fill-opacity: 0.06; }
+      .active-bar       { fill: #D97706; }
+      .active-badge     { fill: #D97706; }
+      .active-badge-text{ fill: #F8F5F0; }
+      .reading-zone     { fill: #D97706; opacity: 0.35; }
+      .reading-label    { fill: #D97706; }
+      .divider-line     { stroke: #D1C9C0; }
+      .code-hint-line   { fill: #D1C9C0; }
+      .code-hint-text   { fill: #332D28; }
+      .code-hint-accent { fill: #D97706; }
+      .statusbar-bg     { fill: #332D28; }
+      .statusbar-line   { stroke: #4A423B; }
+      .statusbar-badge  { fill: #D97706; }
+      .statusbar-badge-text { fill: #F8F5F0; }
+      .statusbar-text   { fill: #E5DFD9; }
+
+
+      /* ── DARK MODE (Blog bg: #161616) ── */
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg        { fill: #161616; }
+        .grid-dots        { fill: #453E38; opacity: 0.3; }
+        .title-bar        { fill: #29241F; }
+        .ui-tab           { fill: #3D3630; }
+        .ui-tab-text      { fill: #F8F5F0; }
+        .ui-border        { stroke: #453E38; }
+        .panel-bg         { fill: #2E2924; }
+        .panel-header     { fill: #3D3630; }
+        .gutter-line      { stroke: #453E38; stroke-width: 1; }
+        .text-title-bar   { fill: #D1D6CC; }
+        .text-base        { fill: #F8F5F0; }
+        .text-code        { fill: #D1D6CC; }
+        .text-muted       { fill: #7A6A5C; }
+        .text-heading     { fill: #F8F5F0; }
+        .text-accent      { fill: #F59E0B; }
+        .text-active      { fill: #F59E0B; }
+        .fill-muted       { fill: #453E38; }
+        .fill-block       { fill: #453E38; }
+        .active-bg        { fill: #F59E0B; fill-opacity: 0.06; }
+        .active-bar       { fill: #F59E0B; }
+        .active-badge     { fill: #F59E0B; }
+        .active-badge-text{ fill: #1C1917; }
+        .reading-zone     { fill: #F59E0B; opacity: 0.35; }
+        .reading-label    { fill: #F59E0B; }
+        .divider-line     { stroke: #453E38; }
+        .code-hint-line   { fill: #453E38; }
+        .code-hint-text   { fill: #D1D6CC; }
+        .code-hint-accent { fill: #F59E0B; }
+        .statusbar-bg     { fill: #29241F; }
+        .statusbar-line   { stroke: #453E38; }
+        .statusbar-badge  { fill: #F59E0B; }
+        .statusbar-badge-text { fill: #1C1917; }
+        .statusbar-text   { fill: #D1D6CC; }
+      }
+    </style>
+
+
+    <pattern id="grid-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle class="grid-dots" cx="13" cy="13" r="0.8"/>
     </pattern>
   </defs>
 
-  <rect width="1200" height="630" fill="#332D28"/>
-  <rect width="1200" height="630" fill="url(#dots)"/>
 
-  <!-- Title bar -->
-  <rect x="0" y="0" width="1200" height="44" fill="#29241F"/>
+  <!-- Canvas -->
+  <rect class="canvas-bg" width="1200" height="630"/>
+  <rect width="1200" height="630" fill="url(#grid-dots)"/>
+
+
+  <!-- Title bar: 44px -->
+  <rect class="title-bar" x="0" y="0" width="1200" height="44"/>
   <circle cx="50" cy="22" r="7" fill="#EF4444"/>
   <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
   <circle cx="100" cy="22" r="7" fill="#10B981"/>
-  <text x="125" y="27" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC" font-weight="600" dominant-baseline="middle">scroll-aware-toc.js</text>
+  <text class="text-title-bar" x="125" y="27" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" dominant-baseline="middle">scroll-aware-toc.js</text>
+
 
   <!-- File tab -->
-  <rect x="125" y="48" width="230" height="36" rx="8" fill="#3D3630"/>
-  <text x="150" y="71" font-family="'JetBrains Mono', monospace" font-size="14" fill="#F8F5F0" font-weight="600">scroll-aware-toc.js</text>
+  <rect class="ui-tab" x="125" y="48" width="230" height="36" rx="8"/>
+  <text class="ui-tab-text" x="150" y="71" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600">scroll-aware-toc.js</text>
+
 
   <!-- Title divider -->
-  <line x1="0" y1="84" x2="1200" y2="84" stroke="#453E38" stroke-width="1.5"/>
+  <line class="ui-border" x1="0" y1="84" x2="1200" y2="84" stroke-width="1.5"/>
 
-  <!-- Article panel -->
-  <rect x="30" y="95" width="700" height="400" fill="#2E2924" rx="8"/>
+
+  <!-- ── ARTICLE PANEL: y=95, height=430 → berakhir y=525 ── -->
+  <rect class="panel-bg" x="30" y="95" width="700" height="430" rx="8"/>
+
 
   <!-- Article header -->
-  <rect x="30" y="95" width="700" height="36" fill="#3D3630" rx="8"/>
-  <rect x="30" y="115" width="700" height="16" fill="#3D3630"/>
-  <text x="55" y="119" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">$ observe headings · rootMargin: '-80px 0px -100px'</text>
+  <rect class="panel-header" x="30" y="95" width="700" height="36" rx="8"/>
+  <rect class="panel-header" x="30" y="115" width="700" height="16"/>
+  <text class="text-code" x="55" y="119" font-family="'JetBrains Mono', monospace" font-size="13">$ observe headings · rootMargin: '-80px 0px -100px'</text>
+
 
   <!-- Article title -->
-  <text x="55" y="162" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F8F5F0" font-weight="700">Where Are You Reading?</text>
+  <text class="text-heading" x="55" y="162" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="700">Where Are You Reading?</text>
 
-  <!-- Article body content lines -->
-  <rect x="55" y="179" width="320" height="8" fill="#453E38" rx="1"/>
-  <rect x="55" y="193" width="280" height="8" fill="#453E38" rx="1"/>
-  <rect x="55" y="207" width="300" height="8" fill="#453E38" rx="1"/>
+
+  <!-- Article body lines -->
+  <rect class="fill-block" x="55" y="179" width="320" height="8" rx="1"/>
+  <rect class="fill-block" x="55" y="193" width="280" height="8" rx="1"/>
+  <rect class="fill-block" x="55" y="207" width="300" height="8" rx="1"/>
+
 
   <!-- Section heading 1 — passed -->
-  <text x="55" y="242" font-family="'JetBrains Mono', monospace" font-size="18" fill="#D1D6CC">## The Problem</text>
-  <rect x="55" y="252" width="290" height="7" fill="#453E38" rx="1"/>
-  <rect x="55" y="265" width="260" height="7" fill="#453E38" rx="1"/>
-  <rect x="55" y="278" width="310" height="7" fill="#453E38" rx="1"/>
+  <text class="text-muted" x="55" y="242" font-family="'JetBrains Mono', monospace" font-size="18">## The Problem</text>
+  <rect class="fill-muted" x="55" y="252" width="290" height="7" rx="1"/>
+  <rect class="fill-muted" x="55" y="265" width="260" height="7" rx="1"/>
+  <rect class="fill-muted" x="55" y="278" width="310" height="7" rx="1"/>
+
 
   <!-- Section heading 2 — passed -->
-  <text x="55" y="310" font-family="'JetBrains Mono', monospace" font-size="18" fill="#D1D6CC">## Why Scroll Events</text>
-  <rect x="55" y="320" width="270" height="7" fill="#453E38" rx="1"/>
-  <rect x="55" y="333" width="240" height="7" fill="#453E38" rx="1"/>
+  <text class="text-muted" x="55" y="310" font-family="'JetBrains Mono', monospace" font-size="18">## Why Scroll Events</text>
+  <rect class="fill-muted" x="55" y="320" width="270" height="7" rx="1"/>
+  <rect class="fill-muted" x="55" y="333" width="240" height="7" rx="1"/>
 
-  <!-- Reading zone indicator top -->
-  <rect x="30" y="355" width="700" height="2" fill="#F59E0B" opacity="0.35"/>
-  <text x="725" y="352" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F59E0B" text-anchor="end">reading zone ↓</text>
 
-  <!-- Section heading 3 — ACTIVE (in reading zone) -->
-  <rect x="30" y="362" width="700" height="40" fill="#F59E0B" fill-opacity="0.06"/>
-  <rect x="30" y="362" width="4" height="40" fill="#F59E0B"/>
-  <text x="55" y="389" font-family="'JetBrains Mono', monospace" font-size="20" fill="#F59E0B" font-weight="700">## The Setup</text>
-  <rect x="55" y="398" width="290" height="7" fill="#453E38" rx="1"/>
+  <!-- Reading zone top -->
+  <rect class="reading-zone" x="30" y="355" width="700" height="2"/>
+  <text class="reading-label" x="720" y="352" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">reading zone ↓</text>
 
-  <!-- Reading zone indicator bottom -->
-  <rect x="30" y="450" width="700" height="2" fill="#F59E0B" opacity="0.35"/>
-  <text x="725" y="447" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F59E0B" text-anchor="end">reading zone ↑</text>
 
-  <!-- Section heading 4 — not yet -->
-  <text x="55" y="475" font-family="'JetBrains Mono', monospace" font-size="18" fill="#D1D6CC">## The Click Problem</text>
+  <!-- Section heading 3 — ACTIVE -->
+  <rect class="active-bg" x="30" y="362" width="700" height="40"/>
+  <rect class="active-bar" x="30" y="362" width="4" height="40"/>
+  <text class="text-active" x="55" y="389" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700">## The Setup</text>
+  <rect class="fill-muted" x="55" y="398" width="290" height="7" rx="1"/>
 
-  <!-- TOC panel -->
-  <rect x="750" y="95" width="420" height="400" fill="#2E2924" rx="8"/>
+
+  <!-- Reading zone bottom -->
+  <rect class="reading-zone" x="30" y="450" width="700" height="2"/>
+  <text class="reading-label" x="720" y="447" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">reading zone ↑</text>
+
+
+  <!-- Section heading 4 — upcoming -->
+  <text class="text-code" x="55" y="475" font-family="'JetBrains Mono', monospace" font-size="18">## The Click Problem</text>
+
+
+  <!-- ── TOC PANEL: y=95, height=430 → berakhir y=525 ── -->
+  <rect class="panel-bg" x="750" y="95" width="420" height="430" rx="8"/>
+
 
   <!-- TOC header -->
-  <rect x="750" y="95" width="420" height="36" fill="#3D3630" rx="8"/>
-  <rect x="750" y="115" width="420" height="16" fill="#3D3630"/>
-  <text x="775" y="119" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D1D6CC">toc · IntersectionObserver</text>
+  <rect class="panel-header" x="750" y="95" width="420" height="36" rx="8"/>
+  <rect class="panel-header" x="750" y="115" width="420" height="16"/>
+  <text class="text-code" x="775" y="119" font-family="'JetBrains Mono', monospace" font-size="13">toc · IntersectionObserver</text>
+
 
   <!-- TOC title -->
-  <text x="775" y="160" font-family="'JetBrains Mono', monospace" font-size="16" fill="#F8F5F0">Contents</text>
-  <line x1="775" y1="168" x2="1150" y2="168" stroke="#453E38" stroke-width="1"/>
+  <text class="text-heading" x="775" y="160" font-family="'JetBrains Mono', monospace" font-size="16">Contents</text>
+  <line class="divider-line" x1="775" y1="168" x2="1150" y2="168" stroke-width="1"/>
+
 
   <!-- TOC item 1 — passed -->
-  <text x="785" y="202" font-family="'JetBrains Mono', monospace" font-size="18" fill="#D1D6CC">The Problem</text>
+  <text class="text-muted" x="785" y="202" font-family="'JetBrains Mono', monospace" font-size="18">The Problem</text>
+
 
   <!-- TOC item 2 — passed -->
-  <text x="785" y="245" font-family="'JetBrains Mono', monospace" font-size="18" fill="#D1D6CC">Why Scroll Events</text>
+  <text class="text-muted" x="785" y="245" font-family="'JetBrains Mono', monospace" font-size="18">Why Scroll Events</text>
+
 
   <!-- TOC item 3 — ACTIVE -->
-  <rect x="750" y="260" width="420" height="46" fill="#F59E0B" fill-opacity="0.06"/>
-  <rect x="750" y="260" width="4" height="46" fill="#F59E0B"/>
-  <text x="770" y="289" font-family="'JetBrains Mono', monospace" font-size="22" fill="#F59E0B" font-weight="700">The Setup</text>
-  <rect x="990" y="269" width="120" height="24" rx="3" fill="#F59E0B"/>
-  <text x="1050" y="286" font-family="'JetBrains Mono', monospace" font-size="13" fill="#1C1917" font-weight="800" text-anchor="middle">is-active</text>
+  <rect class="active-bg" x="750" y="260" width="420" height="46"/>
+  <rect class="active-bar" x="750" y="260" width="4" height="46"/>
+  <text class="text-active" x="770" y="289" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="700">The Setup</text>
+  <rect class="active-badge" x="990" y="269" width="120" height="24" rx="3"/>
+  <text class="active-badge-text" x="1050" y="286" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="800" text-anchor="middle">is-active</text>
+
 
   <!-- TOC item 4 — upcoming -->
-  <text x="785" y="332" font-family="'JetBrains Mono', monospace" font-size="18" fill="#D1D6CC">The Click Problem</text>
+  <text class="text-code" x="785" y="332" font-family="'JetBrains Mono', monospace" font-size="18">The Click Problem</text>
+
 
   <!-- TOC item 5 — upcoming -->
-  <text x="785" y="375" font-family="'JetBrains Mono', monospace" font-size="18" fill="#D1D6CC">CSS: Active State</text>
+  <text class="text-code" x="785" y="375" font-family="'JetBrains Mono', monospace" font-size="18">CSS: Active State</text>
+
 
   <!-- TOC item 6 — upcoming -->
-  <text x="785" y="418" font-family="'JetBrains Mono', monospace" font-size="18" fill="#D1D6CC">Putting It Together</text>
+  <text class="text-code" x="785" y="418" font-family="'JetBrains Mono', monospace" font-size="18">Putting It Together</text>
+
 
   <!-- TOC item 7 — upcoming -->
-  <text x="785" y="461" font-family="'JetBrains Mono', monospace" font-size="18" fill="#D1D6CC">The Takeaway</text>
+  <text class="text-code" x="785" y="461" font-family="'JetBrains Mono', monospace" font-size="18">The Takeaway</text>
 
-  <!-- Code hint bottom -->
-  <rect x="50" y="525" width="1100" height="1" fill="#453E38"/>
-  <text x="600" y="548" font-family="'JetBrains Mono', monospace" font-size="15" fill="#D1D6CC" text-anchor="middle">new IntersectionObserver(entries =&gt; { ... }, { rootMargin: '-80px 0px -100px' })</text>
-  <text x="600" y="568" font-family="'JetBrains Mono', monospace" font-size="13" fill="#F59E0B" text-anchor="middle">30 lines of JS · 4 lines of CSS · zero scroll listeners</text>
 
-  <!-- Status bar -->
-  <rect x="0" y="585" width="1200" height="45" fill="#29241F"/>
-  <line x1="0" y1="585" x2="1200" y2="585" stroke="#453E38" stroke-width="1"/>
-  <rect x="30" y="596" width="80" height="24" rx="3" fill="#F59E0B"/>
-  <text x="70" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#1C1917" font-weight="800" text-anchor="middle">NORMAL</text>
-  <text x="1170" y="613" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D1D6CC" font-weight="600" text-anchor="end">IntersectionObserver · not scroll events</text>
+  <!-- Code hint zone: y=525–555 -->
+  <rect class="code-hint-line" x="50" y="530" width="1100" height="1"/>
+  <text class="code-hint-text" x="600" y="548" font-family="'JetBrains Mono', monospace" font-size="15" text-anchor="middle">new IntersectionObserver(entries =&gt; { ... }, { rootMargin: '-80px 0px -100px' })</text>
+  <text class="code-hint-accent" x="600" y="568" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">30 lines of JS · 4 lines of CSS · zero scroll listeners</text>
+
+
+  <!-- ── STATUS BAR: y=560, height=30 ── -->
+  <rect class="statusbar-bg" x="0" y="560" width="1200" height="30"/>
+  <line class="statusbar-line" x1="0" y1="560" x2="1200" y2="560" stroke-width="1"/>
+
+
+  <!-- NORMAL badge -->
+  <rect class="statusbar-badge" x="30" y="566" width="80" height="18" rx="3"/>
+  <text class="statusbar-badge-text" x="70" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
+
+
+  <!-- Status info -->
+  <text class="statusbar-text" x="1170" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="end">IntersectionObserver · not scroll events</text>
 </svg>
