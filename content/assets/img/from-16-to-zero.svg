@@ -1,14 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E2A38"/>
-      <stop offset="100%" stop-color="#1A2430"/>
-    </linearGradient>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">  <defs>
+    <!-- CAKUPAN STYLESHEET INTERNAL: OTOMATISASI INFOGRAFIS W3C AUDIT LIGHTNING CSS -->
+    <style>
+      /* ── 1. TEMA ASLI MURNI: LIGHT MODE (Latar Blog Cream #f8f5f0) ── */
+      .canvas-bg { fill: #f8f5f0; }
+      .grid-dots { fill: #332D28; opacity: 0.15; }
+      .outer-frame { stroke: #D1C9C0; }
+      
+      /* Elemen Kontainer Aplikasi (Light Mode) */
+      .panel-bg { fill: #FFFFFF; }
+      .panel-border-left { stroke: #D1C9C0; }
+      .panel-border-right { stroke: #D1C9C0; }
+      .strip-bg { fill: #F4F1ED; stroke: #E5DFD9; }
+      .center-badge-bg { fill: #E5DFD9; stroke: #3B82F6; }
+      
+      /* Teks &amp; Sintaks Light */
+      .text-title { fill: #8A8075; font-weight: bold; }
+      .text-dark { fill: #332D28; }
+      .text-muted { fill: #8A8075; }
+      .text-code-fail { fill: #DC2626; }
+      .text-code-success { fill: #059669; }
+      .text-center-badge { fill: #0284C7; font-weight: bold; }
+      
+      /* Indikator Status &amp; Aksen */
+      .glow-fail { fill: #DC2626; }
+      .glow-success { fill: #059669; }
+      .status-fail { stroke: #DC2626; fill: #DC2626; }
+      .status-success { stroke: #059669; fill: #059669; }
+      .accent-blue { stroke: #0284C7; fill: #0284C7; }
+
+
+      /* ── 2. TEMA ASLI MURNI: DARK MODE (Latar Blog Charcoal #161616) ── */
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg { fill: #161616; }
+        .grid-dots { fill: #2A4055; opacity: 0.5; }
+        .outer-frame { stroke: #3A5068; }
+        
+        .panel-bg { fill: #1A2634; }
+        .panel-border-left { stroke: #4A3A3A; }
+        .panel-border-right { stroke: #1A4A2A; }
+        .strip-bg { fill: #2A1A1A; stroke: #4A2A2A; }
+        .center-badge-bg { fill: #1A2A40; stroke: #3B82F6; }
+        
+        .text-title { fill: #7A9AB0; font-weight: normal; }
+        .text-dark { fill: #F8F5F0; }
+        .text-muted { fill: #B08080; }
+        .text-code-fail { fill: #C07070; }
+        .text-code-success { fill: #50C070; }
+        .text-center-badge { fill: #60A8F0; font-weight: normal; }
+        
+        .glow-fail { fill: #E05050; }
+        .glow-success { fill: #10D9A8; }
+        .status-fail { stroke: #E05050; fill: #E05050; }
+        .status-success { stroke: #10D9A8; fill: #10D9A8; }
+        .accent-blue { stroke: #4A8AE0; fill: #4A8AE0; }
+      }
+    </style>
+
+
     <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="12" cy="12" r="0.8" fill="#2A4055" opacity="0.5"/>
+      <circle class="grid-dots" cx="12" cy="12" r="0.8"/>
     </pattern>
     <filter id="panelShadow">
-      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.5"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.3"/>
     </filter>
     <filter id="redGlow">
       <feGaussianBlur stdDeviation="12" result="blur"/>
@@ -21,199 +74,177 @@
     <filter id="arrowGlow">
       <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#3B82F6" flood-opacity="0.4"/>
     </filter>
-    <linearGradient id="dividerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#E05050" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#E05050" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#E05050" stop-opacity="0"/>
-    </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Latar belakang kanvas adaptif asli murni -->
+  <rect class="canvas-bg" width="1200" height="675"/>
   <rect width="1200" height="675" fill="url(#dots)"/>
+
+
+  <!-- Outer frame dekoratif (removed — distracting red/green corners) -->
+
+
+  <!-- Top label -->
+  <text class="text-title" x="600" y="46" font-family="Georgia, serif" font-size="15" text-anchor="middle" letter-spacing="3">W3C VALIDATION AUDIT</text>
+  <line class="outer-frame" x1="200" y1="56" x2="460" y2="56" stroke-width="1"/>
+  <circle cx="600" cy="56" r="3" fill="#3B82F6" opacity="0.6"/>
+  <line class="outer-frame" x1="740" y1="56" x2="1000" y2="56" stroke-width="1"/>
+
 
   <!-- Ambient glows -->
   <ellipse cx="280" cy="300" rx="320" ry="280" fill="#3A1010" opacity="0.08"/>
   <ellipse cx="920" cy="300" rx="320" ry="280" fill="#103A20" opacity="0.10"/>
 
-  <!-- Outer frame -->
-  <rect x="1" y="1" width="1198" height="673" rx="12" ry="12"
-        fill="none" stroke="#3A5068" stroke-width="1.5" opacity="0.8"/>
-  <path d="M 1 20 L 1 1 L 20 1" fill="none" stroke="#E05050" stroke-width="2" opacity="0.6"/>
-  <path d="M 1180 1 L 1199 1 L 1199 20" fill="none" stroke="#10D9A8" stroke-width="2" opacity="0.6"/>
-  <path d="M 1 655 L 1 674 L 20 674" fill="none" stroke="#6A8AAA" stroke-width="2" opacity="0.5"/>
-  <path d="M 1180 674 L 1199 674 L 1199 655" fill="none" stroke="#6A8AAA" stroke-width="2" opacity="0.5"/>
 
-  <!-- Top label -->
-  <text x="600" y="46" font-family="Georgia, serif" font-size="15"
-        fill="#7A9AB0" text-anchor="middle" letter-spacing="3">W3C VALIDATION AUDIT</text>
-  <line x1="200" y1="56" x2="460" y2="56" stroke="#3A5068" stroke-width="1"/>
-  <circle cx="600" cy="56" r="3" fill="#3B82F6" opacity="0.6"/>
-  <line x1="740" y1="56" x2="1000" y2="56" stroke="#3A5068" stroke-width="1"/>
+  <!-- ── PANEL KIRI: BEFORE ── -->
+  <text x="270" y="90" font-family="'Courier New', Courier, monospace" font-size="13" class="status-fail" text-anchor="middle" letter-spacing="3" font-weight="bold">BEFORE</text>
 
-  <!-- ══════════════════════════════════════ -->
-  <!-- BEFORE — LEFT PANEL                    -->
-  <!-- ══════════════════════════════════════ -->
-  <text x="270" y="90" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#E05050" text-anchor="middle"
-        letter-spacing="3" font-weight="bold">BEFORE</text>
 
   <!-- Left panel background -->
-  <rect x="60" y="108" width="420" height="440" rx="10"
-        fill="#1A2634" stroke="#4A3A3A" stroke-width="1.5"
-        filter="url(#panelShadow)"/>
-  <rect x="60" y="108" width="420" height="3" rx="2" fill="#E05050" opacity="0.5"/>
+  <rect class="panel-bg panel-border-left" x="60" y="108" width="420" height="440" rx="10" stroke-width="1.5" filter="url(#panelShadow)"/>
+  <rect x="60" y="108" width="420" height="3" rx="2" class="status-fail" opacity="0.5"/>
+
 
   <!-- Error count — big 16 -->
-  <text x="270" y="230" font-family="Georgia, serif" font-size="80"
-        fill="#E05050" text-anchor="middle" font-weight="bold"
-        filter="url(#redGlow)">16</text>
+  <text class="glow-fail" x="270" y="230" font-family="Georgia, serif" font-size="80" text-anchor="middle" font-weight="bold" filter="url(#redGlow)">16</text>
+
 
   <!-- ERRORS label -->
-  <text x="270" y="270" font-family="'Courier New', Courier, monospace"
-        font-size="18" fill="#E05050" text-anchor="middle"
-        letter-spacing="5" font-weight="bold">ERRORS</text>
+  <text class="status-fail" x="270" y="270" font-family="'Courier New', Courier, monospace" font-size="18" text-anchor="middle" letter-spacing="5" font-weight="bold">ERRORS</text>
+
 
   <!-- Divider line -->
-  <line x1="100" y1="295" x2="440" y2="295" stroke="#4A3A3A" stroke-width="1"/>
+  <line class="panel-border-left" x1="100" y1="295" x2="440" y2="295" stroke-width="1"/>
+
 
   <!-- Parse error details -->
-  <text x="270" y="328" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#B08080" text-anchor="middle">CSS: Parse Error × 16</text>
+  <text class="text-muted" x="270" y="328" font-family="'Courier New', Courier, monospace" font-size="11" text-anchor="middle">CSS: Parse Error × 16</text>
+
 
   <!-- Error lines representing selectors -->
-  <rect x="110" y="352" width="320" height="26" rx="4" fill="#2A1A1A" stroke="#4A2A2A" stroke-width="1"/>
-  <text x="125" y="369" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#C07070">&amp;:hover { color: var(--accent-hover); }</text>
+  <rect class="strip-bg" x="110" y="352" width="320" height="26" rx="4" stroke-width="1"/>
+  <text x="125" y="369" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-fail">&amp;:hover { color: var(--accent-hover); }</text>
 
-  <rect x="110" y="384" width="320" height="26" rx="4" fill="#2A1A1A" stroke="#4A2A2A" stroke-width="1"/>
-  <text x="125" y="401" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#C07070">&amp;::before { content: &quot;— &quot;; }</text>
 
-  <rect x="110" y="416" width="320" height="26" rx="4" fill="#2A1A1A" stroke="#4A2A2A" stroke-width="1"/>
-  <text x="125" y="433" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#C07070">&amp;:focus-visible { outline: 2px solid; }</text>
+  <rect class="strip-bg" x="110" y="384" width="320" height="26" rx="4" stroke-width="1"/>
+  <text x="125" y="401" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-fail">&amp;::before { content: &quot;— &quot;; }</text>
 
-  <rect x="110" y="448" width="320" height="26" rx="4" fill="#2A1A1A" stroke="#4A2A2A" stroke-width="1"/>
-  <text x="125" y="465" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#C07070">&amp;:first-child { margin-top: 0; }</text>
+
+  <rect class="strip-bg" x="110" y="416" width="320" height="26" rx="4" stroke-width="1"/>
+  <text x="125" y="433" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-fail">&amp;:focus-visible { outline: 2px solid; }</text>
+
+
+  <rect class="strip-bg" x="110" y="448" width="320" height="26" rx="4" stroke-width="1"/>
+  <text x="125" y="465" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-fail">&amp;:first-child { margin-top: 0; }</text>
+
 
   <!-- More errors indicator -->
-  <text x="270" y="498" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#7A5A5A" text-anchor="middle">+ 12 more...</text>
+  <text x="270" y="498" font-family="'Courier New', Courier, monospace" font-size="11" class="text-muted" opacity="0.8" text-anchor="middle">+ 12 more...</text>
+
 
   <!-- Red X mark -->
-  <circle cx="420" cy="140" r="16" fill="none" stroke="#E05050" stroke-width="2.5" opacity="0.7"/>
-  <line x1="412" y1="132" x2="428" y2="148" stroke="#E05050" stroke-width="2.5" opacity="0.7"/>
-  <line x1="428" y1="132" x2="412" y2="148" stroke="#E05050" stroke-width="2.5" opacity="0.7"/>
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- CENTER LIGHTNING CSS TRANSFORM         -->
-  <!-- ══════════════════════════════════════ -->
+  <circle cx="420" cy="140" r="16" fill="none" class="status-fail" stroke-width="2.5" opacity="0.7"/>
+  <line x1="412" y1="132" x2="428" y2="148" class="status-fail" stroke-width="2.5" opacity="0.7"/>
+  <line x1="428" y1="132" x2="412" y2="148" class="status-fail" stroke-width="2.5" opacity="0.7"/>
+  <!-- ── CENTER: LIGHTNING CSS TRANSFORM ── -->
   <g transform="translate(600, 300)">
     <!-- Arrow line -->
-    <line x1="-48" y1="0" x2="48" y2="0" stroke="#4A8AE0" stroke-width="2.5"
-          stroke-dasharray="6,4" filter="url(#arrowGlow)"/>
-    <polygon points="38,-8 54,0 38,8" fill="#4A8AE0" opacity="0.9"/>
+    <line x1="-48" y1="0" x2="48" y2="0" class="accent-blue" stroke-width="2.5" stroke-dasharray="6,4" filter="url(#arrowGlow)"/>
+    <polygon points="38,-8 54,0 38,8" class="accent-blue" opacity="0.9"/>
+
 
     <!-- Lightning CSS label -->
-    <rect x="-76" y="-44" width="152" height="26" rx="5" fill="#1A2A40" stroke="#3B82F6" stroke-width="1.5"/>
-    <text x="0" y="-27" font-family="'Courier New', Courier, monospace"
-          font-size="11" fill="#60A8F0" text-anchor="middle" letter-spacing="2">LIGHTNING CSS</text>
+    <rect class="center-badge-bg" x="-76" y="-44" width="152" height="26" rx="5" stroke-width="1.5"/>
+    <text x="0" y="-27" font-family="'Courier New', Courier, monospace" font-size="11" class="text-center-badge" text-anchor="middle" letter-spacing="2">LIGHTNING CSS</text>
+
 
     <!-- Transform label -->
-    <rect x="-64" y="16" width="128" height="22" rx="4" fill="#1A2634" stroke="#3A5068" stroke-width="1"/>
-    <text x="0" y="31" font-family="'Courier New', Courier, monospace"
-          font-size="10" fill="#8ABCE0" text-anchor="middle">CSS Nesting → Flat</text>
+    <rect class="strip-bg" x="-64" y="16" width="128" height="22" rx="4" stroke-width="1"/>
+    <text x="0" y="31" font-family="'Courier New', Courier, monospace" font-size="10" class="text-dark" text-anchor="middle">CSS Nesting → Flat</text>
+
 
     <!-- Minify label -->
-    <rect x="-64" y="44" width="128" height="22" rx="4" fill="#1A2634" stroke="#3A5068" stroke-width="1"/>
-    <text x="0" y="59" font-family="'Courier New', Courier, monospace"
-          font-size="10" fill="#8ABCE0" text-anchor="middle">Minify · Targets</text>
+    <rect class="strip-bg" x="-64" y="44" width="128" height="22" rx="4" stroke-width="1"/>
+    <text x="0" y="59" font-family="'Courier New', Courier, monospace" font-size="10" class="text-dark" text-anchor="middle">Minify · Targets</text>
   </g>
 
-  <!-- ══════════════════════════════════════ -->
-  <!-- AFTER — RIGHT PANEL                    -->
-  <!-- ══════════════════════════════════════ -->
-  <text x="930" y="90" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#10D9A8" text-anchor="middle"
-        letter-spacing="3" font-weight="bold">AFTER</text>
+
+  <!-- ── PANEL KANAN: AFTER ── -->
+  <text x="930" y="90" font-family="'Courier New', Courier, monospace" font-size="13" class="status-success" text-anchor="middle" letter-spacing="3" font-weight="bold">AFTER</text>
+
 
   <!-- Right panel background -->
-  <rect x="720" y="108" width="420" height="440" rx="10"
-        fill="#1A2634" stroke="#1A4A2A" stroke-width="1.5"
-        filter="url(#panelShadow)"/>
-  <rect x="720" y="108" width="420" height="3" rx="2" fill="#10D9A8" opacity="0.6"/>
+  <rect class="panel-bg panel-border-right" x="720" y="108" width="420" height="440" rx="10" stroke-width="1.5" filter="url(#panelShadow)"/>
+  <rect x="720" y="108" width="420" height="3" rx="2" class="status-success" opacity="0.6"/>
+
 
   <!-- Error count — big 0 -->
-  <text x="930" y="230" font-family="Georgia, serif" font-size="80"
-        fill="#10D9A8" text-anchor="middle" font-weight="bold"
-        filter="url(#greenGlow)">0</text>
+  <text class="glow-success" x="930" y="230" font-family="Georgia, serif" font-size="80" text-anchor="middle" font-weight="bold" filter="url(#greenGlow)">0</text>
+
 
   <!-- ERRORS label -->
-  <text x="930" y="270" font-family="'Courier New', Courier, monospace"
-        font-size="18" fill="#10D9A8" text-anchor="middle"
-        letter-spacing="5" font-weight="bold">ERRORS</text>
+  <text class="status-success" x="930" y="270" font-family="'Courier New', Courier, monospace" font-size="18" text-anchor="middle" letter-spacing="5" font-weight="bold">ERRORS</text>
+
 
   <!-- Divider line -->
-  <line x1="760" y1="295" x2="1100" y2="295" stroke="#1A4A2A" stroke-width="1"/>
-
+  <line class="panel-border-right" x1="760" y1="295" x2="1100" y2="295" stroke-width="1"/>
+  
   <!-- Clean status -->
-  <text x="930" y="328" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#80B090" text-anchor="middle">No errors · No warnings</text>
+  <text x="930" y="328" font-family="'Courier New', Courier, monospace" font-size="11" class="status-success" text-anchor="middle" font-weight="bold">No errors · No warnings</text>
+
 
   <!-- Green success state — clean selectors -->
-  <rect x="770" y="352" width="320" height="26" rx="4" fill="#0A1A10" stroke="#0D3A16" stroke-width="1"/>
-  <text x="785" y="369" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#50C070">.nav a: hover { color: ... }</text>
+  <rect class="strip-bg" x="770" y="352" width="320" height="26" rx="4" stroke-width="1"/>
+  <text x="785" y="369" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-success">.nav a:hover { color: ... }</text>
 
-  <rect x="770" y="384" width="320" height="26" rx="4" fill="#0A1A10" stroke="#0D3A16" stroke-width="1"/>
-  <text x="785" y="401" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#50C070">a::before { content: &quot;— &quot;; }</text>
 
-  <rect x="770" y="416" width="320" height="26" rx="4" fill="#0A1A10" stroke="#0D3A16" stroke-width="1"/>
-  <text x="785" y="433" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#50C070">.nav a: focus-visible { outline: ... }</text>
+  <rect class="strip-bg" x="770" y="384" width="320" height="26" rx="4" stroke-width="1"/>
+  <text x="785" y="401" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-success">a::before { content: &quot;— &quot;; }</text>
 
-  <rect x="770" y="448" width="320" height="26" rx="4" fill="#0A1A10" stroke="#0D3A16" stroke-width="1"/>
-  <text x="785" y="465" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#50C070">.blockquote p: first-child { ... }</text>
+
+  <rect class="strip-bg" x="770" y="416" width="320" height="26" rx="4" stroke-width="1"/>
+  <text x="785" y="433" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-success">.nav a:focus-visible { outline: ... }</text>
+
+
+  <rect class="strip-bg" x="770" y="448" width="320" height="26" rx="4" stroke-width="1"/>
+  <text x="785" y="465" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-success">.blockquote p:first-child { ... }</text>
+
 
   <!-- Valid badge indicator -->
-  <text x="930" y="498" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#3AB85A" text-anchor="middle">W3C Valid ✔</text>
+  <text x="930" y="498" font-family="'Courier New', Courier, monospace" font-size="11" class="status-success" text-anchor="middle" font-weight="bold">W3C Valid ✔</text>
+
 
   <!-- Green checkmark -->
-  <circle cx="1060" cy="140" r="16" fill="none" stroke="#10D9A8" stroke-width="2.5" opacity="0.7"/>
-  <polyline points="1050,140 1056,148 1070,132" fill="none" stroke="#10D9A8" stroke-width="2.5" opacity="0.7"/>
+  <circle cx="1060" cy="140" r="16" fill="none" class="status-success" stroke-width="2.5" opacity="0.7"/>
+  <polyline points="1050,140 1056,148 1070,132" fill="none" class="status-success" stroke-width="2.5" opacity="0.7"/>
 
-  <!-- ══════════════════════════════════════ -->
-  <!-- BOTTOM CONFIG STRIP                    -->
-  <!-- ══════════════════════════════════════ -->
-  <rect x="0" y="618" width="1200" height="57" fill="#16202E" opacity="0.95"/>
-  <line x1="0" y1="618" x2="1200" y2="618" stroke="#2A4055" stroke-width="1"/>
 
-  <!-- Config line visualization -->
-  <rect x="80" y="630" width="200" height="32" rx="4" fill="#1A2634" stroke="#3A5068" stroke-width="1"/>
-  <text x="120" y="650" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#C08040">eleventy.config.js</text>
+  <!-- ── BOTTOM CONFIG STRIP ── -->
+  <rect class="title-bar" x="0" y="618" width="1200" height="57"/>
+  <line class="outer-frame" x1="0" y1="618" x2="1200" y2="618" stroke-width="1"/>
 
-  <text x="310" y="650" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#6A8AAA">lightningcss.transform({</text>
 
-  <text x="480" y="650" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#60A8F0">code</text>
-  <text x="510" y="650" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#7A9AB0">: css,</text>
+  <!-- Config file box -->
+  <rect class="center-badge-bg" x="80" y="630" width="150" height="32" rx="4" stroke-width="1"/>
+  <text x="155" y="650" font-family="'Courier New', Courier, monospace" font-size="10" fill="#C08040" text-anchor="middle" font-weight="bold">eleventy.config.js</text>
 
-  <text x="640" y="650" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#60A8F0">minify</text>
-  <text x="672" y="650" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#7A9AB0">: true });</text>
 
-  <!-- Terminal prompt -->
-  <text x="850" y="650" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#4DC896">$ npm run build &amp;&amp; validate</text>
+  <!-- Config code line -->
+  <text x="255" y="650" font-family="'Courier New', Courier, monospace" font-size="11" class="text-title">lightningcss.transform({</text>
 
-  <circle cx="80" cy="646" r="4" fill="#3B82F6" opacity="0.6"/>
+
+  <text x="425" y="650" font-family="'Courier New', Courier, monospace" font-size="11" class="text-center-badge">code</text>
+  <text x="455" y="650" font-family="'Courier New', Courier, monospace" font-size="11" class="text-title">: css,</text>
+
+
+  <text x="515" y="650" font-family="'Courier New', Courier, monospace" font-size="11" class="text-center-badge">minify</text>
+  <text x="562" y="650" font-family="'Courier New', Courier, monospace" font-size="11" class="text-title">: true });</text>
+
+
+  <!-- Terminal prompt command execution -->
+  <text class="status-success" x="800" y="650" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold">$ npm run build &amp;&amp; validate</text>
+
+
+  <circle cx="95" cy="646" r="4" fill="#3B82F6" opacity="0.6"/>
 </svg>
