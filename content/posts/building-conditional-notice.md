@@ -68,7 +68,7 @@ notice: redesign
 **The partial (`notice.njk`):**
 
 ```html
-{% set noticeType = _notice.type %}
+{% raw %}{% set noticeType = _notice.type %}
 {% set noticeDefaults = {
   redesign: "This post describes the previous blog design. The site has since been redesigned.",
   warning: "The information in this post may be outdated. Proceed with caution.",
@@ -77,7 +77,7 @@ notice: redesign
 {% set noticeText = _notice.text if _notice.text else noticeDefaults[noticeType] %}
 <div class="notice notice--{{ noticeType }}" data-label="{{ noticeType }}">
   <p>{{ noticeText }}</p>
-</div>
+</div>{% endraw %}
 ```
 
 That's the entire pipeline. A frontmatter key, a Nunjucks conditional, a three-line partial. Zero overhead for posts that don't need it. One-line activation for posts that do.
