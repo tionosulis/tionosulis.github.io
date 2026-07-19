@@ -4,6 +4,7 @@ seoTitle: "Git Shallow Clone: Pushing from --depth 1"
 description: When your mobile Git clone saves bandwidth but costs you an hour debugging a rejected push — and how to fix it for good.
 date: 2026-06-11
 draft: false
+image: /assets/img/og/git-shallow-clone.png
 tags: [git, troubleshooting, mobile, dev-tools]
 pageHasCode: true
 ---
@@ -61,7 +62,7 @@ The culprit was right there in my original clone command: `--depth 1`.
 
 A shallow clone (`--depth 1`) downloads only the tip commit. The parent pointer still exists in Git's object model, but the actual parent commit data — the blob, the tree, the author info — simply isn't there. Your local Git knows *of* the parent, but doesn't *have* it.
 
-![Shallow clone vs full clone — missing ancestors that Git needs to verify ancestry](../assets/img/shallow-clone.svg)
+![Shallow clone vs full clone — missing ancestors that Git needs to verify ancestry](../assets/img/git-shallow-clone.svg)
 
 When you push, the remote performs an ancestry check on every commit in your local branch. If any ancestor is missing from the shallow graft, the remote can't verify that your commit descends from its current tip. And without that assurance, it rejects the push outright. It's not a permission issue — it's a verification failure.
 

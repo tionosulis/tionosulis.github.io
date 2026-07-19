@@ -14,7 +14,7 @@ image_alt: "Split terminal showing Shiki syntax highlighting error on a nunjucks
 
 *The fix was one word: switching the code fence tag from `njk` to `html` eliminated the Shiki error and restored syntax highlighting with zero configuration changes.*
 
-I was writing a post about [SVG hero images and social media previews](/posts/svg-og-image-social-media/). Everything was flowing — the introduction, the technical breakdown, the code samples. Then I hit a Nunjucks code block and Eleventy threw this at me:
+I was writing a post about [SVG hero images and social media previews](/posts/social-preview-invisible/). Everything was flowing — the introduction, the technical breakdown, the code samples. Then I hit a Nunjucks code block and Eleventy threw this at me:
 
 ```text
 [11ty] Language `njk` not found, you may need to load it first

@@ -4,11 +4,11 @@ description: "Three real-world Lighthouse performance bottlenecks that cost one 
 date: 2026-06-10
 tags: [meta, performance, lighthouse, eleventy]
 pageHasCode: true
-image: /assets/img/og/chasing-100-lighthouse.png
+image: /assets/img/og/chasing-100.png
 image_alt: "Lighthouse performance scores comparison showing 99s on the left and perfect 100s on the right across Performance, Accessibility, Best Practices, and SEO"
 ---
 
-![Lighthouse scores before (99s) and after (100s) across four categories](../assets/img/chasing-100-lighthouse.svg)
+![Lighthouse scores before (99s) and after (100s) across four categories](../assets/img/chasing-100.svg)
 
 *A before-and-after breakdown of Lighthouse scores: orange 99s become glowing green 100s after targeting forced reflow, CLS, and contrast failures.*
 

@@ -3,6 +3,7 @@ title: "When position: absolute Meets overflow-x: auto — A Copy Button Debuggi
 seoTitle: "When position: absolute Meets overflow-x: auto"
 description: A small UI bug leads to an enlightening exploration of CSS scroll containers, positioning contexts, and why the simplest fix is often the most architectural.
 date: 2026-06-12
+image: /assets/img/og/copy-button-overflow-fix.png
 tags: [css, debugging, design, positioning, eleventy]
 draft: false
 pageHasCode: true
@@ -16,7 +17,7 @@ Everything worked fine until someone scrolled a code block horizontally.
 
 On hover, the copy button appeared at the top-right corner — exactly where it should be. But when the code was long enough to trigger `overflow-x: auto`, the button drifted. Not far, but enough to look broken. Instead of hugging the top-right corner of the code block, it sat somewhere in the middle.
 
-![Before and after comparison of the copy button position with overflow-x](../assets/img/copy-btn-overflow-fix.svg)
+![Before and after comparison of the copy button position with overflow-x](../assets/img/copy-button-overflow-fix.svg)
 
 The button wasn't broken. It was behaving exactly as instructed — just not as intended.
 
