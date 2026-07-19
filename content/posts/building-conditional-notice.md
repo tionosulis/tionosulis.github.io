@@ -68,13 +68,14 @@ notice: redesign
 **The partial (`notice.njk`):**
 
 ```html
-{% set noticeType = notice.type or "redesign" %}
+{% set noticeType = _notice.type %}
 {% set noticeDefaults = {
-  redesign: "This post describes the previous blog design. The site has since been redesigned."
+  redesign: "This post describes the previous blog design. The site has since been redesigned.",
+  warning: "The information in this post may be outdated. Proceed with caution.",
+  info: ""
 } %}
-{% set noticeText = notice.text if notice.text else noticeDefaults[noticeType] %}
-{% set noticeLabel = noticeType %}
-<div class="notice notice--{{ noticeType }}" data-label="{{ noticeLabel }}">
+{% set noticeText = _notice.text if _notice.text else noticeDefaults[noticeType] %}
+<div class="notice notice--{{ noticeType }}" data-label="{{ noticeType }}">
   <p>{{ noticeText }}</p>
 </div>
 ```
@@ -129,12 +130,12 @@ Error messages use a red left border. Warning banners use yellow. Success alerts
 I replaced the equal border with a 3px accent left border:
 
 ```css
-.notice-redesign {
+.notice.notice--redesign {
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
 }
-.notice-redesign p::before { content: "> "; color: var(--accent); }
+.notice.notice--redesign p::before { content: "> "; color: var(--accent); }
 ```
 
 Three pixels of amber transformed the box. The `>` beam prefix tied it back to the terminal theme. The rest of the border faded into the background as it should. The notice finally did what a notice is supposed to do: caught attention without demanding it.
