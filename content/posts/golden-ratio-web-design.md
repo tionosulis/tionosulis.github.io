@@ -4,7 +4,7 @@ description: What happens when you apply φ (1.618) to a blog's UI elements — 
 date: 2026-06-10
 tags: [meta, design, css, golden-ratio]
 pageHasCode: true
-redesign_notice: true
+notice: redesign
 image: /assets/img/og/golden-ratio-web-design.png
 image_alt: "Golden ratio φ=1.618 applied to blog UI components: formula annotations, case study screenshots of the S monogram, and verdict highlights"
 ---

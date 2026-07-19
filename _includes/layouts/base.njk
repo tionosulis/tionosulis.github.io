@@ -27,7 +27,7 @@
   <meta property="og:type" content="{% if page.url != '/' %}article{% else %}website{% endif %}">
   {% if page.url != '/' and page.date %}
   <meta property="article:published_time" content="{{ page.date | isoDateTime }}">
-  <meta property="article:modified_time" content="{% if updated %}{{ updated | isoDateTime }}{% else %}{{ page.date | isoDateTime }}{% endif %}">
+  <meta property="article:modified_time" content="{% if updates.length %}{{ updates[0].date | isoDateTime }}{% else %}{{ page.date | isoDateTime }}{% endif %}">
   <meta property="article:author" content="{{ metadata.author.url }}">
   {% endif %}
   {% for tag in tags | default([]) %}{% if tag != 'posts' %}

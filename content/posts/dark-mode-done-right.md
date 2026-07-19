@@ -1,11 +1,12 @@
 ---
 title: "Dark Mode Done Right: Zero Flicker, CSS Architecture, and the Devil in the Details"
 seoTitle: "Dark Mode Done Right: Zero Flicker, CSS Architecture"
-description: "Zero-flicker dark mode with inline script, CSS custom properties, and localStorage persistence. A production implementation with an accessible toggle tooltip."
+description: "Zero-flicker dark mode with inline script, CSS custom properties, and localStorage persistence. A production implementation with action-based bracket labels."
 date: 2026-06-13
+updated: 2026-07-19
 draft: false
 image: /assets/img/og/dark-mode-done-right.png
-image_alt: "Three pillars of dark mode: Zero Flicker (inline script icon), CSS Architecture (custom properties diagram), and The Devil in the Details (toggle tooltip)"
+image_alt: "Three pillars of dark mode: Zero Flicker (inline script icon), CSS Architecture (custom properties diagram), and The Devil in the Details (action-based bracket labels)"
 tags:
   - css
   - javascript
@@ -40,6 +41,7 @@ The fix is brutally simple: run your theme logic in a `<script>` tag in `<head>`
         ? "dark" : "light";
     }
     document.documentElement.setAttribute("data-theme", t);
+    document.documentElement.style.colorScheme = t;
   </script>
   <link rel="stylesheet" href="/styles.css">
 </head>
@@ -51,19 +53,21 @@ Here's the sequence of events:
 2. Hits the `<script>` tag — runs it synchronously
 3. Reads `localStorage`, falls back to `prefers-color-scheme`
 4. Sets `data-theme` on `<html>`
-5. Browser continues parsing, eventually hits `<link rel="stylesheet">`
-6. CSS loads and evaluates with the correct `[data-theme]` value
+5. Sets `style.colorScheme` on `<html>` — tells the browser which native UI to render (scrollbars, form controls, selection colors)
+6. Browser continues parsing, eventually hits `<link rel="stylesheet">`
+7. CSS loads and evaluates with the correct `[data-theme]` value
 
 The script runs before any CSS applies. There's no repaint, no flicker, no flash of wrong theme.
 
-That's it. Fifteen lines, minified to 190 bytes. No framework, no JavaScript library, no runtime dependency after page load.
+That's it. Sixteen lines, minified to under 200 bytes. No framework, no JavaScript library, no runtime dependency after page load.
 
 ## CSS Variable Architecture
 
-With the toggle attribute in place, the stylesheet defines two sets of custom properties:
+With the toggle attribute in place, the stylesheet defines two sets of custom properties at `:root`. The `color-scheme` declaration is critical — it tells the browser this page supports both schemes, so native elements (scrollbars, form controls, selection highlights) use the correct palette:
 
 ```css
 :root {
+  color-scheme: light dark;
   --bg: #f8f5f0;
   --text: #1b1e23;
   --accent: #2563eb;
@@ -112,37 +116,149 @@ This gives users the best of both worlds. The site automatically matches their O
 
 ### Toggle Implementation
 
-The toggle button reads the current `data-theme` attribute and inverts it:
+The toggle button reads the current `data-theme` attribute and inverts it, updating the UI label and native color scheme:
 
 ```javascript
 function toggleTheme() {
   var html = document.documentElement;
   var current = html.getAttribute("data-theme");
   var next = current === "dark" ? "light" : "dark";
+  var toggleEls = document.querySelectorAll(".theme-toggle,.theme-toggle-posts");
   html.setAttribute("data-theme", next);
   localStorage.setItem("theme", next);
+  toggleEls.forEach(function(el) {
+    el.querySelector(".toggle-label").textContent =
+      next === "dark" ? "--light" : "--dark";
+  });
+  setTimeout(function() {
+    html.style.colorScheme = next;
+  }, 200);
 }
 ```
 
-No class toggling, no framework-state management, no body-class swapping. One attribute, two values, done.
+Beyond the attribute swap and `localStorage` save, two things happen:
 
-## The Tooltip: Devil in the Details
+1. **Label update** — every toggle button on the page updates its text to show the *action* the user just took. When switching to dark mode, the label shows `[--light]` (click to switch to light). This is the action-based label pattern (detailed below).
 
-This is the detail most dark mode implementations get wrong — or more commonly, ignore entirely.
+2. **Delayed `colorScheme`** — the native UI scheme changes 200ms after the color transition starts, so scrollbars and form controls snap in sync when the CSS transition finishes.
 
-When I first built the toggle, I used `🌙` for dark mode and `☀️` for light mode. Universally understood iconography, right? But there's a UX gap: the icon shows the *current state*, not the *action*. A moon icon tells you "it's dark mode," not "click to switch to light mode."
+## Action-Based Labels
 
-I added a `title` attribute that updates dynamically:
+The label pattern replaces the common icon approach (`🌙`/`☀️`) with a design that shows actions instead of state:
+
+```html
+<button class="theme-toggle" aria-label="Toggle theme">
+  <span class="toggle-bracket">[</span>
+  <span class="toggle-label">--dark</span>
+  <span class="toggle-bracket">]</span>
+</button>
+```
+
+The label is set to the *target* state, not the current one. When it's dark mode, the label says `[--light]` — click here to switch to light. When it's light mode, it says `[--dark]`.
+
+An icon approach (`🌙` = "it's dark mode") requires the user to map the icon to the action. The bracket label removes that cognitive step entirely: it tells you what will happen when you click. It's two characters of affordance that replace an entire reasoning chain.
+
+The initialization script (right after `toggleTheme()` is defined) sets the label based on the current `data-theme`:
 
 ```javascript
-function updateTooltip() {
-  var btn = document.getElementById("theme-toggle");
-  var theme = document.documentElement.getAttribute("data-theme");
-  btn.title = theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+document.querySelectorAll(".theme-toggle,.theme-toggle-posts")
+  .forEach(function(el) {
+    el.querySelector(".toggle-label").textContent =
+      document.documentElement.getAttribute("data-theme") === "dark"
+        ? "--light" : "--dark";
+  });
+```
+
+This runs before the user has ever interacted with the toggle, ensuring the initial label matches the OS-determined theme.
+
+## Native UI Sync
+
+The `color-scheme` CSS property controls how the browser renders native UI elements — scrollbar thumbs, form control highlights, text selection backgrounds, and the `@media (prefers-color-scheme)` value that `<input>` and `<textarea>` elements read internally.
+
+The `:root` declaration sets up support for both modes:
+
+```css
+:root { color-scheme: light dark; }
+```
+
+But declaring support isn't enough — you need to tell the browser *which one is active*. The inline script in `<head>` handles initial load:
+
+```javascript
+document.documentElement.style.colorScheme = t;
+```
+
+For the toggle, there's a deliberate 200ms delay:
+
+```javascript
+setTimeout(function() {
+  html.style.colorScheme = next;
+}, 200);
+```
+
+Why 200ms? The CSS transition on all elements is `0.2s ease`. If `colorScheme` changed at the same moment, native UI elements would snap to the new scheme instantly while page colors are still transitioning. The delay synchronizes the two — the native UI swaps exactly when the color transition finishes, making the entire theme change feel unified.
+
+## OS Preference Listener
+
+When the user changes their system dark/light setting (e.g., toggling macOS appearance), a `matchMedia` listener keeps the blog in sync:
+
+```javascript
+window.matchMedia("(prefers-color-scheme:dark)")
+  .addEventListener("change", function(e) {
+    var t = e.matches ? "dark" : "light";
+    var toggleEls = document.querySelectorAll(".theme-toggle,.theme-toggle-posts");
+    document.documentElement.setAttribute("data-theme", t);
+    localStorage.setItem("theme", t);
+    toggleEls.forEach(function(el) {
+      el.querySelector(".toggle-label").textContent =
+        t === "dark" ? "--light" : "--dark";
+    });
+    document.documentElement.style.colorScheme = t;
+  });
+```
+
+Unlike the toggle handler, the `colorScheme` update here is **immediate** — there's no ongoing CSS transition to synchronize with, so the native UI swaps at the same moment as the colors.
+
+Important behavior note: once the user manually toggles, `localStorage` has a value. On subsequent page loads, the init script reads `localStorage` first, so the OS setting is no longer authoritative. The only way to reset to system preference is to clear `localStorage`.
+
+## bfcache Restore
+
+The "no runtime dependency after page load" claim has one blind spot: bfcache (Back-Forward Cache). When a user navigates back, the browser may restore the page from an in-memory snapshot — the inline `<head>` script does NOT re-execute. If the user toggled the theme, navigated away, and came back, the DOM snapshot has a stale `data-theme` while `localStorage` has the updated value.
+
+The fix runs on `pageshow`:
+
+```javascript
+window.addEventListener("pageshow", function(e) {
+  if (!e.persisted) return;
+  var t = localStorage.getItem("theme");
+  if (!t) {
+    t = window.matchMedia("(prefers-color-scheme:dark)").matches
+      ? "dark" : "light";
+  }
+  document.documentElement.classList.add("no-transition");
+  document.documentElement.setAttribute("data-theme", t);
+  // ... update labels, colorScheme ...
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      document.documentElement.classList.remove("no-transition");
+    });
+  });
+});
+```
+
+The `no-transition` class suppresses the global `0.2s` CSS transition to prevent a visible flash of the wrong theme being "corrected" on screen:
+
+```css
+html.no-transition,
+html.no-transition *,
+html.no-transition *::before,
+html.no-transition *::after {
+  transition: none !important;
 }
 ```
 
-This runs on page load (when the theme is already set by the inline script) and on every toggle click. It's two lines of JavaScript. But it turns an ambiguous icon into a clear affordance.
+The double `requestAnimationFrame` ensures the class exists for approximately 16ms — long enough to apply the correct theme without any animated transition, but short enough to not interfere with subsequent interactions.
+
+*This fix is detailed further in [The Theme That Couldn't Remember](/posts/theme-that-couldnt-remember/).*
 
 
 ## Syntax Highlighting in Both Themes
@@ -191,11 +307,9 @@ A CSS-only approach is fine for a landing page. For a blog where users spend min
 - **Inline scripts are fast.** 190 bytes. Less than a single HTTP request. The performance impact is literally unmeasurable on modern hardware.
 - **`localStorage` before `matchMedia`.** The saved preference always wins. System preference is the default, not the dictator.
 - **`@media` fallback is non-negotiable.** Script blockers exist. Private browsing exists. Airplane mode exists. The CSS fallback handles them all silently.
-- **Tooltips matter.** An ambiguous icon is a failure of affordance. The tooltip is free UX.
+- **Label actions, not states.** The bracket label `[--dark]`/`[--light]` removes the cognitive step of mapping an icon to an action. It tells the user what will happen, not what is.
 - **Accessibility is continuous.** Even with a "correct" dark mode, token colors in syntax highlighting can fail contrast checks. Measure everything.
 
-The entire dark mode system on this blog — inline script, CSS variables, persistence, toggle, tooltip, Shiki integration, WCAG overrides — is about 50 lines of code total. It's one of the highest-ROI features on the site.
-
-*Follow-up: The "no runtime dependency after page load" claim has one blind spot — bfcache restores. The fix is documented in [The Theme That Couldn't Remember](/posts/theme-that-couldnt-remember/).*
+The entire dark mode system on this blog — inline script, CSS variables, persistence, toggle, bracket labels, Shiki integration, OS listener, bfcache guard, WCAG overrides — is about 80 lines of code total. For a feature that touches every page view, that's a reasonable tradeoff.
 
 [What does your dark mode implementation handle? I'd love to hear about it.]({{ metadata.url }}/about/)

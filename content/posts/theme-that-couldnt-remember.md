@@ -174,8 +174,10 @@ window.addEventListener("pageshow", function(e) {
 
   document.documentElement.classList.add("no-transition");
   document.documentElement.setAttribute("data-theme", t);
-  document.querySelectorAll(".theme-toggle").forEach(function(n) {
-    n.textContent = t === "dark" ? "[light]" : "[dark]";
+  document.documentElement.style.colorScheme = t;
+  document.querySelectorAll(".theme-toggle,.theme-toggle-posts").forEach(function(n) {
+    n.querySelector(".toggle-label").textContent =
+      t === "dark" ? "--light" : "--dark";
   });
 
   requestAnimationFrame(function() {

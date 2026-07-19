@@ -971,8 +971,8 @@ a.visually-hidden:focus {
 }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* ───────────── Redesign notice ───────────── */
-.notice-redesign {
+/* ───────────── Notice system ───────────── */
+.notice {
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
@@ -983,8 +983,8 @@ a.visually-hidden:focus {
   line-height: 1.8;
   position: relative;
 }
-.notice-redesign::before {
-  content: "note";
+.notice::before {
+  content: attr(data-label);
   position: absolute;
   top: -0.45rem;
   left: 0.75rem;
@@ -996,16 +996,24 @@ a.visually-hidden:focus {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-.notice-redesign p { margin: 0; }
-.notice-redesign p::before { content: "> "; color: var(--accent); }
-.notice-redesign p::after {
+.notice p { margin: 0; }
+.notice p::before { content: "> "; color: var(--accent); }
+.notice p::after {
   content: "▊";
   color: var(--accent);
   margin-left: 0.15em;
   animation: cursor-blink 1.3s step-end infinite;
 }
+.notice--warning {
+  border-left-color: var(--error);
+}
+.notice--warning::before {
+  color: var(--error);
+}
+.notice--warning p::before { color: var(--error); }
+.notice--warning p::after { color: var(--error); }
 @media (prefers-reduced-motion: reduce) {
-  .notice-redesign p::after { animation: none; }
+  .notice p::after { animation: none; }
 }
 @scope (.home-terminal) {
   :scope {

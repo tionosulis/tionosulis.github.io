@@ -1,0 +1,10 @@
+{% set noticeType = _notice.type %}
+{% set noticeDefaults = {
+  redesign: "This post describes the previous blog design. The site has since been redesigned.",
+  warning: "The information in this post may be outdated. Proceed with caution.",
+  info: ""
+} %}
+{% set noticeText = _notice.text if _notice.text else noticeDefaults[noticeType] %}
+<div class="notice notice--{{ noticeType }}" data-label="{{ noticeType }}">
+  <p>{{ noticeText }}</p>
+</div>

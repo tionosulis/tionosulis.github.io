@@ -53,23 +53,29 @@ Small enough to show in full.
 ```yaml
 ---
 title: "Monogram S 55×55"
-redesign_notice: true
+notice: redesign
 ---
 ```
 
 **The conditional include in `post.njk`:**
 
 ```html
-{% raw %}{% if redesign_notice %}
-{% include "partials/notice-redesign.njk" %}
+{% raw %}{% if _notice %}
+{% include "partials/notice.njk" %}
 {% endif %}{% endraw %}
 ```
 
-**The partial (`notice-redesign.njk`):**
+**The partial (`notice.njk`):**
 
 ```html
-<div class="notice-redesign">
-  <p>This post describes the previous blog design. The site has since been redesigned.</p>
+{% set noticeType = notice.type or "redesign" %}
+{% set noticeDefaults = {
+  redesign: "This post describes the previous blog design. The site has since been redesigned."
+} %}
+{% set noticeText = notice.text if notice.text else noticeDefaults[noticeType] %}
+{% set noticeLabel = noticeType %}
+<div class="notice notice--{{ noticeType }}" data-label="{{ noticeLabel }}">
+  <p>{{ noticeText }}</p>
 </div>
 ```
 
@@ -145,7 +151,7 @@ Three things this process confirmed:
 
 ## Back to the Reader
 
-Remember the reader who arrived at the golden ratio post and saw a screenshot of a different blog? With `redesign_notice: true` in the frontmatter, they now see a notice box with an amber left border and a `>` prefix. They read "This post describes the previous blog design. The site has since been redesigned." in three seconds flat. They scroll down, understand the context, and engage with the content.
+Remember the reader who arrived at the golden ratio post and saw a screenshot of a different blog? With `notice: redesign` in the frontmatter, they now see a notice box with an amber left border and a `>` prefix. They read "This post describes the previous blog design. The site has since been redesigned." in three seconds flat. They scroll down, understand the context, and engage with the content.
 
 They never think about the 3px border. They never need to. That's the point.
 
