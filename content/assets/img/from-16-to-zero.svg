@@ -1,14 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
-    <style>
-      .canvas-bg { fill: #f8f5f0; }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><defs><style> .canvas-bg { fill: #f8f5f0; }
       .grid-dots { fill: #332D28; opacity: 0.15; }
       .outer-frame { stroke: #D1C9C0; }
-      .panel-bg { fill: #FFFFFF; }
+      .panel-bg-left { fill: #FFFFFF; }
+      .panel-bg-right { fill: #FFFFFF; }
       .panel-border-left { stroke: #D1C9C0; }
       .panel-border-right { stroke: #D1C9C0; }
       .strip-bg { fill: #F4F1ED; stroke: #E5DFD9; }
       .center-badge-bg { fill: #E5DFD9; stroke: #3B82F6; }
-      .text-title { fill: #8A8075; font-weight: bold; }
+      .text-title { fill: #D97706; font-weight: bold; }
       .text-dark { fill: #332D28; }
       .text-muted { fill: #6B6059; }
       .text-code-fail { fill: #DC2626; }
@@ -25,17 +24,18 @@
       .config-text { fill: #E5DFD9; }
       @media (prefers-color-scheme: dark) {
         .canvas-bg { fill: #161616; }
-        .grid-dots { fill: #2A4055; opacity: 0.5; }
+        .grid-dots { fill: #2A4055; opacity: 0.3; }
         .outer-frame { stroke: #3A5068; }
-        .panel-bg { fill: #1A2634; }
+        .panel-bg-left { fill: #241E1A; }
+        .panel-bg-right { fill: #14261C; }
         .panel-border-left { stroke: #4A3A3A; }
-        .panel-border-right { stroke: #1A4A2A; }
-        .strip-bg { fill: #2A1A1A; stroke: #4A2A2A; }
+        .panel-border-right { stroke: #1D462B; }
+        .strip-bg { fill: #1E1A17; stroke: #3A2F28; }
         .center-badge-bg { fill: #1A2A40; stroke: #3B82F6; }
-        .text-title { fill: #7A9AB0; font-weight: normal; }
+        .text-title { fill: #F59E0B; font-weight: bold; }
         .text-dark { fill: #F8F5F0; }
-        .text-muted { fill: #B08080; }
-        .text-code-fail { fill: #C07070; }
+        .text-muted { fill: #A09088; }
+        .text-code-fail { fill: #E06060; }
         .text-code-success { fill: #50C070; }
         .text-center-badge { fill: #60A8F0; font-weight: normal; }
         .glow-fail { fill: #E05050; }
@@ -43,94 +43,8 @@
         .status-fail { stroke: #E05050; fill: #E05050; }
         .status-success { stroke: #10D9A8; fill: #10D9A8; }
         .accent-blue { stroke: #4A8AE0; fill: #4A8AE0; }
-        .config-bg { fill: #29241F; }
-        .config-border { stroke: #453E38; }
+        .config-bg { fill: #222222; }
+        .config-border { stroke: #333333; }
         .config-badge { fill: #1A2A40; stroke: #3B82F6; }
         .config-text { fill: #D1D6CC; }
-      }
-    </style>
-    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle class="grid-dots" cx="12" cy="12" r="0.8"/>
-    </pattern>
-    <filter id="panelShadow">
-      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.25"/>
-    </filter>
-    <filter id="redGlow">
-      <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="greenGlow">
-      <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="arrowGlow">
-      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#3B82F6" flood-opacity="0.4"/>
-    </filter>
-  </defs>
-  <rect class="canvas-bg" width="1200" height="630"/>
-  <rect width="1200" height="630" fill="url(#dots)"/>
-  <text class="text-title" x="600" y="34" font-family="Georgia, serif" font-size="15" text-anchor="middle" letter-spacing="3">W3C VALIDATION AUDIT</text>
-  <line class="outer-frame" x1="200" y1="44" x2="460" y2="44" stroke-width="1"/>
-  <circle cx="600" cy="44" r="3" fill="#3B82F6" opacity="0.6"/>
-  <line class="outer-frame" x1="740" y1="44" x2="1000" y2="44" stroke-width="1"/>
-  <ellipse cx="280" cy="275" rx="300" ry="240" fill="#3A1010" opacity="0.08"/>
-  <ellipse cx="920" cy="275" rx="300" ry="240" fill="#103A20" opacity="0.10"/>
-  <text x="270" y="72" font-family="'Courier New', Courier, monospace" font-size="13" class="status-fail" text-anchor="middle" letter-spacing="3" font-weight="bold">BEFORE</text>
-  <rect class="panel-bg panel-border-left" x="60" y="82" width="420" height="450" rx="10" stroke-width="1.5" filter="url(#panelShadow)"/>
-  <rect x="60" y="82" width="420" height="3" rx="2" class="status-fail" opacity="0.5"/>
-  <text class="glow-fail" x="270" y="196" font-family="Georgia, serif" font-size="80" text-anchor="middle" font-weight="bold" filter="url(#redGlow)">16</text>
-  <text class="status-fail" x="270" y="234" font-family="'Courier New', Courier, monospace" font-size="18" text-anchor="middle" letter-spacing="5" font-weight="bold">ERRORS</text>
-  <line class="panel-border-left" x1="100" y1="256" x2="440" y2="256" stroke-width="1"/>
-  <text class="text-muted" x="270" y="284" font-family="'Courier New', Courier, monospace" font-size="11" text-anchor="middle">CSS: Parse Error &#xD7; 16</text>
-  <rect class="strip-bg" x="110" y="302" width="320" height="24" rx="4" stroke-width="1"/>
-  <text x="125" y="318" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-fail">&amp;:hover { color: var(--accent-hover); }</text>
-  <rect class="strip-bg" x="110" y="332" width="320" height="24" rx="4" stroke-width="1"/>
-  <text x="125" y="348" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-fail">&amp;::before { content: "&#x2014; "; }</text>
-  <rect class="strip-bg" x="110" y="362" width="320" height="24" rx="4" stroke-width="1"/>
-  <text x="125" y="378" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-fail">&amp;:focus-visible { outline: 2px solid; }</text>
-  <rect class="strip-bg" x="110" y="392" width="320" height="24" rx="4" stroke-width="1"/>
-  <text x="125" y="408" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-fail">&amp;:first-child { margin-top: 0; }</text>
-  <text x="270" y="446" font-family="'Courier New', Courier, monospace" font-size="11" class="text-muted" opacity="0.8" text-anchor="middle">+ 12 more...</text>
-  <circle cx="420" cy="112" r="16" fill="none" class="status-fail" stroke-width="2.5" opacity="0.7"/>
-  <line x1="412" y1="104" x2="428" y2="120" class="status-fail" stroke-width="2.5" opacity="0.7"/>
-  <line x1="428" y1="104" x2="412" y2="120" class="status-fail" stroke-width="2.5" opacity="0.7"/>
-  <g transform="translate(600, 268)">
-    <line x1="-48" y1="0" x2="48" y2="0" class="accent-blue" stroke-width="2.5" stroke-dasharray="6,4" filter="url(#arrowGlow)"/>
-    <polygon points="38,-8 54,0 38,8" class="accent-blue" opacity="0.9"/>
-    <rect class="center-badge-bg" x="-76" y="-42" width="152" height="26" rx="5" stroke-width="1.5"/>
-    <text x="0" y="-25" font-family="'Courier New', Courier, monospace" font-size="11" class="text-center-badge" text-anchor="middle" letter-spacing="2">LIGHTNING CSS</text>
-    <rect class="strip-bg" x="-64" y="16" width="128" height="22" rx="4" stroke-width="1"/>
-    <text x="0" y="31" font-family="'Courier New', Courier, monospace" font-size="10" class="text-dark" text-anchor="middle">CSS Nesting &#x2192; Flat</text>
-    <rect class="strip-bg" x="-64" y="44" width="128" height="22" rx="4" stroke-width="1"/>
-    <text x="0" y="59" font-family="'Courier New', Courier, monospace" font-size="10" class="text-dark" text-anchor="middle">Minify &#xB7; Targets</text>
-  </g>
-  <text x="930" y="72" font-family="'Courier New', Courier, monospace" font-size="13" class="status-success" text-anchor="middle" letter-spacing="3" font-weight="bold">AFTER</text>
-  <rect class="panel-bg panel-border-right" x="720" y="82" width="420" height="450" rx="10" stroke-width="1.5" filter="url(#panelShadow)"/>
-  <rect x="720" y="82" width="420" height="3" rx="2" class="status-success" opacity="0.6"/>
-  <text class="glow-success" x="930" y="196" font-family="Georgia, serif" font-size="80" text-anchor="middle" font-weight="bold" filter="url(#greenGlow)">0</text>
-  <text class="status-success" x="930" y="234" font-family="'Courier New', Courier, monospace" font-size="18" text-anchor="middle" letter-spacing="5" font-weight="bold">ERRORS</text>
-  <line class="panel-border-right" x1="760" y1="256" x2="1100" y2="256" stroke-width="1"/>
-  <text x="930" y="284" font-family="'Courier New', Courier, monospace" font-size="11" class="status-success" text-anchor="middle" font-weight="bold">No errors &#xB7; No warnings</text>
-  <rect class="strip-bg" x="770" y="302" width="320" height="24" rx="4" stroke-width="1"/>
-  <text x="785" y="318" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-success">.nav a:hover { color: ... }</text>
-  <rect class="strip-bg" x="770" y="332" width="320" height="24" rx="4" stroke-width="1"/>
-  <text x="785" y="348" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-success">a::before { content: "&#x2014; "; }</text>
-  <rect class="strip-bg" x="770" y="362" width="320" height="24" rx="4" stroke-width="1"/>
-  <text x="785" y="378" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-success">.nav a:focus-visible { outline: ... }</text>
-  <rect class="strip-bg" x="770" y="392" width="320" height="24" rx="4" stroke-width="1"/>
-  <text x="785" y="408" font-family="'Courier New', Courier, monospace" font-size="10" class="text-code-success">.blockquote p:first-child { ... }</text>
-  <text x="930" y="446" font-family="'Courier New', Courier, monospace" font-size="11" class="status-success" text-anchor="middle" font-weight="bold">W3C Valid &#x2714;</text>
-  <circle cx="1060" cy="112" r="16" fill="none" class="status-success" stroke-width="2.5" opacity="0.7"/>
-  <polyline points="1050,112 1056,120 1070,104" fill="none" class="status-success" stroke-width="2.5" opacity="0.7"/>
-  <rect class="config-bg" x="0" y="543" width="1200" height="32"/>
-  <line class="config-border" x1="0" y1="543" x2="1200" y2="543" stroke-width="1"/>
-  <rect class="config-badge" x="80" y="550" width="148" height="20" rx="4" stroke-width="1"/>
-  <text x="154" y="564" font-family="'Courier New', Courier, monospace" font-size="10" fill="#C08040" text-anchor="middle" font-weight="bold">eleventy.config.js</text>
-  <text x="250" y="564" font-family="'Courier New', Courier, monospace" font-size="11" class="config-text">lightningcss.transform({</text>
-  <text x="418" y="564" font-family="'Courier New', Courier, monospace" font-size="11" class="text-center-badge">code</text>
-  <text x="448" y="564" font-family="'Courier New', Courier, monospace" font-size="11" class="config-text">: css,</text>
-  <text x="506" y="564" font-family="'Courier New', Courier, monospace" font-size="11" class="text-center-badge">minify</text>
-  <text x="552" y="564" font-family="'Courier New', Courier, monospace" font-size="11" class="config-text">: true });</text>
-  <text class="status-success" x="790" y="564" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="bold">$ npm run build &amp;&amp; validate</text>
-  <circle cx="95" cy="559" r="4" fill="#3B82F6" opacity="0.6"/>
-</svg>
+      }</style><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle class="grid-dots" cx="12" cy="12" r="0.8"/></pattern><filter id="panelShadow"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.25"/></filter><filter id="redGlow"><feGaussianBlur stdDeviation="10" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="greenGlow"><feGaussianBlur stdDeviation="10" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="arrowGlow"><feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#3B82F6" flood-opacity="0.4"/></filter></defs><rect class="canvas-bg" width="1200" height="630"/><rect width="1200" height="630" fill="url(#dots)"/><text class="text-title" x="600" y="34" font-family="'JetBrains Mono', monospace" font-size="15" text-anchor="middle" letter-spacing="3">W3C VALIDATION AUDIT</text><line class="outer-frame" x1="200" y1="44" x2="440" y2="44" stroke-width="1"/><circle cx="600" cy="44" r="3" fill="#F59E0B" opacity="0.8"/><line class="outer-frame" x1="760" y1="44" x2="1000" y2="44" stroke-width="1"/><ellipse cx="280" cy="275" rx="300" ry="240" fill="#3A1010" opacity="0.04"/><ellipse cx="920" cy="275" rx="300" ry="240" fill="#103A20" opacity="0.05"/><text x="270" y="72" font-family="'JetBrains Mono', monospace" font-size="13" class="status-fail" text-anchor="middle" letter-spacing="3" font-weight="bold">BEFORE</text><rect class="panel-bg-left panel-border-left" x="60" y="82" width="420" height="430" rx="10" stroke-width="1.5" filter="url(#panelShadow)"/><rect x="60" y="82" width="420" height="3" rx="2" class="status-fail" opacity="0.5"/><text class="glow-fail" x="270" y="196" font-family="'JetBrains Mono', monospace" font-size="80" text-anchor="middle" font-weight="bold" filter="url(#redGlow)">16</text><text class="status-fail" x="270" y="234" font-family="'JetBrains Mono', monospace" font-size="18" text-anchor="middle" letter-spacing="5" font-weight="bold">ERRORS</text><line class="panel-border-left" x1="100" y1="256" x2="440" y2="256" stroke-width="1"/><text class="text-muted" x="270" y="284" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">CSS: Parse Error × 16</text><rect class="strip-bg" x="110" y="302" width="320" height="24" rx="4" stroke-width="1"/><text x="125" y="318" font-family="'JetBrains Mono', monospace" font-size="10" class="text-code-fail">&amp;:hover { color: var(--accent-hover); }</text><rect class="strip-bg" x="110" y="332" width="320" height="24" rx="4" stroke-width="1"/><text x="125" y="348" font-family="'JetBrains Mono', monospace" font-size="10" class="text-code-fail">&amp;::before { content: "— "; }</text><rect class="strip-bg" x="110" y="362" width="320" height="24" rx="4" stroke-width="1"/><text x="125" y="378" font-family="'JetBrains Mono', monospace" font-size="10" class="text-code-fail">&amp;:focus-visible { outline: 2px solid; }</text><rect class="strip-bg" x="110" y="392" width="320" height="24" rx="4" stroke-width="1"/><text x="125" y="408" font-family="'JetBrains Mono', monospace" font-size="10" class="text-code-fail">&amp;:first-child { margin-top: 0; }</text><text x="270" y="446" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" opacity="0.8" text-anchor="middle">+ 12 more...</text><circle cx="420" cy="112" r="16" fill="none" class="status-fail" stroke-width="2.5" opacity="0.7"/><line x1="412" y1="104" x2="428" y2="120" class="status-fail" stroke-width="2.5" opacity="0.7"/><line x1="428" y1="104" x2="412" y2="120" class="status-fail" stroke-width="2.5" opacity="0.7"/><g transform="translate(600, 268)"><line x1="-48" y1="0" x2="48" y2="0" class="accent-blue" stroke-width="2.5" stroke-dasharray="6,4" filter="url(#arrowGlow)"/><polygon points="38,-8 54,0 38,8" class="accent-blue" opacity="0.9"/><rect class="center-badge-bg" x="-76" y="-42" width="152" height="26" rx="5" stroke-width="1.5"/><text x="0" y="-25" font-family="'JetBrains Mono', monospace" font-size="11" class="text-center-badge" text-anchor="middle" letter-spacing="2">LIGHTNING CSS</text><rect class="strip-bg" x="-64" y="16" width="128" height="22" rx="4" stroke-width="1"/><text x="0" y="31" font-family="'JetBrains Mono', monospace" font-size="10" class="text-dark" text-anchor="middle">CSS Nesting → Flat</text><rect class="strip-bg" x="-64" y="44" width="128" height="22" rx="4" stroke-width="1"/><text x="0" y="59" font-family="'JetBrains Mono', monospace" font-size="10" class="text-dark" text-anchor="middle">Minify · Targets</text></g><text x="930" y="72" font-family="'JetBrains Mono', monospace" font-size="13" class="status-success" text-anchor="middle" letter-spacing="3" font-weight="bold">AFTER</text><rect class="panel-bg-right panel-border-right" x="720" y="82" width="420" height="430" rx="10" stroke-width="1.5" filter="url(#panelShadow)"/><rect x="720" y="82" width="420" height="3" rx="2" class="status-success" opacity="0.6"/><text class="glow-success" x="930" y="196" font-family="'JetBrains Mono', monospace" font-size="80" text-anchor="middle" font-weight="bold" filter="url(#greenGlow)">0</text><text class="status-success" x="930" y="234" font-family="'JetBrains Mono', monospace" font-size="18" text-anchor="middle" letter-spacing="5" font-weight="bold">ERRORS</text><line class="panel-border-right" x1="760" y1="256" x2="1100" y2="256" stroke-width="1"/><text x="930" y="284" font-family="'JetBrains Mono', monospace" font-size="11" class="status-success" text-anchor="middle" font-weight="bold">No errors · No warnings</text><rect class="strip-bg" x="770" y="302" width="320" height="24" rx="4" stroke-width="1"/><text x="785" y="318" font-family="'JetBrains Mono', monospace" font-size="10" class="text-code-success">.nav a:hover { color: ... }</text><rect class="strip-bg" x="770" y="332" width="320" height="24" rx="4" stroke-width="1"/><text x="785" y="348" font-family="'JetBrains Mono', monospace" font-size="10" class="text-code-success">a::before { content: "— "; }</text><rect class="strip-bg" x="770" y="362" width="320" height="24" rx="4" stroke-width="1"/><text x="785" y="378" font-family="'JetBrains Mono', monospace" font-size="10" class="text-code-success">.nav a:focus-visible { outline: ... }</text><rect class="strip-bg" x="770" y="392" width="320" height="24" rx="4" stroke-width="1"/><text x="785" y="408" font-family="'JetBrains Mono', monospace" font-size="10" class="text-code-success">.blockquote p:first-child { ... }</text><text x="930" y="446" font-family="'JetBrains Mono', monospace" font-size="11" class="status-success" text-anchor="middle" font-weight="bold">W3C Valid ✔</text><circle cx="1060" cy="112" r="16" fill="none" class="status-success" stroke-width="2.5" opacity="0.7"/><polyline points="1050,112 1056,120 1070,104" fill="none" class="status-success" stroke-width="2.5" opacity="0.7"/><rect class="config-bg" x="0" y="548" width="1200" height="32"/><line class="config-border" x1="0" y1="548" x2="1200" y2="548" stroke-width="1"/><rect class="config-badge" x="80" y="554" width="148" height="20" rx="4" stroke-width="1"/><text x="154" y="568" font-family="'JetBrains Mono', monospace" font-size="10" fill="#C08040" text-anchor="middle" font-weight="bold">eleventy.config.js</text><text x="250" y="568" font-family="'JetBrains Mono', monospace" font-size="11" class="config-text">lightningcss.transform({</text><text x="418" y="568" font-family="'JetBrains Mono', monospace" font-size="11" class="text-center-badge">code</text><text x="448" y="568" font-family="'JetBrains Mono', monospace" font-size="11" class="config-text">: css,</text><text x="506" y="568" font-family="'JetBrains Mono', monospace" font-size="11" class="text-center-badge">minify</text><text x="552" y="568" font-family="'JetBrains Mono', monospace" font-size="11" class="config-text">: true });</text><text class="status-success" x="790" y="568" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold">$ npm run build &amp;&amp; validate</text><circle cx="95" cy="563" r="4" fill="#3B82F6" opacity="0.6"/></svg>
