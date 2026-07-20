@@ -1,281 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2A4053"/>
-      <stop offset="100%" style="stop-color:#1E2D3D"/>
-    </linearGradient>
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1C2A3A"/>
-      <stop offset="100%" style="stop-color:#182436"/>
-    </linearGradient>
-    <linearGradient id="finalCard" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1A2E20"/>
-      <stop offset="100%" style="stop-color:#162818"/>
-    </linearGradient>
-
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
+    <style>
+      .canvas-bg { fill: #f8f5f0; }
+      .grid-dots { fill: #332D28; opacity: 0.15; }
+      .frame-border { stroke: #D1C9C0; opacity: 0.8; }
+      .card-bg-01 { fill: #FFFFFF; stroke: #D1C9C0; }
+      .panel-bg-ok { fill: #F0FDF4; stroke: #16A34A; }
+      .badge-bg-01 { fill: #FEE2E2; stroke: #FCA5A5; }
+      .text-badge-01 { fill: #B91C1C; }
+      .text-primary { fill: #332D28; }
+      .text-title { fill: #B45309; }
+      .text-muted { fill: #8A8075; }
+      .text-comment { fill: #8A8075; font-style: italic; }
+      .leader-dots-err { fill: #DC2626; opacity: 0.8; }
+      .indicator-err { fill: #B91C1C; stroke: #B91C1C; }
+      .text-pill-ok { fill: #16A34A; }
+      .pill-bg-ok { fill: #DCFCE7; stroke: #BBF7D0; }
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg { fill: #161616; }
+        .grid-dots { fill: #453E38; opacity: 0.3; }
+        .frame-border { stroke: #453E38; opacity: 0.6; }
+        .card-bg-01 { fill: #2E2924; stroke: #453E38; }
+        .panel-bg-ok { fill: #14261C; stroke: #1E462B; }
+        .badge-bg-01 { fill: #3A1E1E; stroke: #5A2A2A; }
+        .text-badge-01 { fill: #FF8F82; }
+        .text-primary { fill: #F8F5F0; }
+        .text-title { fill: #F59E0B; }
+        .text-muted { fill: #A3978E; }
+        .text-comment { fill: #7A6A5C; }
+        .leader-dots-err { fill: #F59E0B; opacity: 0.9; }
+        .indicator-err { fill: #E07070; stroke: #E05050; }
+        .text-pill-ok { fill: #34D399; }
+        .pill-bg-ok { fill: #1B3324; stroke: #22543D; }
+      }
+    </style>
     <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="12" cy="12" r="0.7" fill="#3A5068" opacity="0.7"/>
+      <circle class="grid-dots" cx="12" cy="12" r="0.8"/>
     </pattern>
-
-
-    <filter id="cardShadow">
-      <feDropShadow dx="0" dy="5" stdDeviation="14" flood-color="#000" flood-opacity="0.38"/>
+    <filter id="cardShadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000000" flood-opacity="0.15"/>
     </filter>
-    <filter id="outerLift" x="-2%" y="-2%" width="104%" height="104%">
-      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.18"/>
-    </filter>
-    <filter id="amberGlow" x="-20%" y="-60%" width="140%" height="220%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="greenGlow" x="-20%" y="-60%" width="140%" height="220%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="fixShadow">
-      <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000" flood-opacity="0.3"/>
-    </filter>
-
-
-    <!-- Clip path for overflow demo -->
     <clipPath id="rowClip1">
-      <rect x="80" y="130" width="1040" height="36"/>
-    </clipPath>
-    <clipPath id="rowClip2">
-      <rect x="80" y="248" width="1040" height="36"/>
-    </clipPath>
-    <clipPath id="rowClip3">
-      <rect x="80" y="366" width="1040" height="36"/>
+      <rect x="80" y="127" width="1040" height="36"/>
     </clipPath>
   </defs>
-
-
-  <!-- Background -->
-  <rect width="1200" height="675" fill="url(#bg)"/>
-  <rect width="1200" height="675" fill="url(#dots)"/>
-
-
-  <!-- Ambient glow -->
-  <ellipse cx="200" cy="300" rx="300" ry="220" fill="#E8B84B" opacity="0.04"/>
-  <ellipse cx="1000" cy="350" rx="280" ry="200" fill="#7EB8D4" opacity="0.05"/>
-  <ellipse cx="600" cy="560" rx="400" ry="120" fill="#2A9A5A" opacity="0.05"/>
-
-
-  <!-- Outer frame -->
-  <rect x="1" y="1" width="1198" height="673" rx="12" ry="12"
-        fill="none" stroke="#3A5470" stroke-width="1.5" opacity="0.9"
-        filter="url(#outerLift)"/>
-  <!-- Corner accents: amber top, slate blue bottom -->
-  <path d="M 1 20 L 1 1 L 20 1" fill="none" stroke="#E8B84B" stroke-width="2" opacity="0.8"/>
-  <path d="M 1180 1 L 1199 1 L 1199 20" fill="none" stroke="#E8B84B" stroke-width="2" opacity="0.8"/>
-  <path d="M 1 655 L 1 674 L 20 674" fill="none" stroke="#7EB8D4" stroke-width="2" opacity="0.7"/>
-  <path d="M 1180 674 L 1199 674 L 1199 655" fill="none" stroke="#7EB8D4" stroke-width="2" opacity="0.7"/>
-
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- TOP LABEL                              -->
-  <!-- ══════════════════════════════════════ -->
-  <text x="600" y="44" font-family="Georgia, serif" font-size="14"
-        fill="#7EB8D4" text-anchor="middle" letter-spacing="3">THE DOT LEADER — 3 CSS CHALLENGES</text>
-  <line x1="160" y1="54" x2="460" y2="54" stroke="#3A5470" stroke-width="1"/>
-  <circle cx="600" cy="54" r="3" fill="#E8B84B" opacity="0.7"/>
-  <line x1="740" y1="54" x2="1040" y2="54" stroke="#3A5470" stroke-width="1"/>
-
-
-  <!-- ══════════════════════════════════════════════════════════ -->
-  <!-- CHALLENGE 1 — OVERFLOW                                     -->
-  <!-- ══════════════════════════════════════════════════════════ -->
-  <rect x="48" y="70" width="1104" height="96" rx="10"
-        fill="url(#cardGrad)" stroke="#2E4560" stroke-width="1.5"
-        filter="url(#cardShadow)"/>
-  <rect x="48" y="70" width="1104" height="3" rx="2" fill="#E05050" opacity="0.8"/>
-
-
-  <!-- Challenge badge -->
-  <rect x="68" y="84" width="130" height="22" rx="5" fill="#2A1515" stroke="#5A2A2A" stroke-width="1"/>
-  <text x="133" y="99" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#E07070" text-anchor="middle" letter-spacing="1">Challenge 01</text>
-
-
-  <text x="218" y="99" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#A07070" letter-spacing="1">dots overflow container bounds</text>
-
-
-  <!-- Row content — clipped to show overflow problem -->
+  <rect class="canvas-bg" width="1200" height="630"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect class="frame-border" x="1" y="1" width="1198" height="628" fill="none" stroke-width="1" rx="2"/>
+  <text class="text-title" x="600" y="50" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="3">THE DOT LEADER — 3 CSS CHALLENGES</text>
+  <line class="frame-border" x1="60" y1="62" x2="360" y2="62" stroke-width="0.5"/>
+  <circle cx="600" cy="62" r="3" fill="#D97706" opacity="0.7"/>
+  <line class="frame-border" x1="840" y1="62" x2="1140" y2="62" stroke-width="0.5"/>
+  <rect class="card-bg-01" x="48" y="80" width="1104" height="82" rx="10" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="48" y="80" width="1104" height="3" rx="2" fill="#E05050" opacity="0.8"/>
+  <rect class="badge-bg-01" x="68" y="92" width="130" height="22" rx="5" stroke-width="1"/>
+  <text class="text-badge-01" x="133" y="107" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle" font-weight="bold" letter-spacing="1">Challenge 01</text>
+  <text class="text-muted" x="218" y="107" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="1">dots overflow container bounds</text>
   <g clip-path="url(#rowClip1)">
-    <text x="80" y="158" font-family="Georgia, serif" font-size="20"
-          fill="#C8D8E8" font-weight="bold">Chasing 100: A Field Guide to Perfect Lighthouse Scores</text>
-    <!-- Dots overflowing — rendered past title into date area -->
-    <text x="680" y="158" font-family="Georgia, serif" font-size="20"
-          fill="#E8B84B" opacity="0.9" filter="url(#amberGlow)"
-          letter-spacing="4">· · · · · · · · · · · · · · · · · · · · · ·</text>
-    <text x="1080" y="158" font-family="Georgia, serif" font-size="20"
-          fill="#C8D8E8">Jun 2026</text>
+    <text class="text-primary" x="80" y="144" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="bold">Chasing 100: A Field Guide to Perfect Lighthouse Scores</text>
+    <text class="leader-dots-err" x="680" y="144" font-family="'JetBrains Mono', monospace" font-size="17" letter-spacing="4">· · · · · · · · · · · · · · · · · · · · · ·</text>
+    <text class="text-primary" x="1040" y="144" font-family="'JetBrains Mono', monospace" font-size="17">Jun 2026</text>
   </g>
-
-
-  <!-- Overflow indicator arrows -->
-  <line x1="1048" y1="118" x2="1048" y2="158" stroke="#E05050" stroke-width="1" stroke-dasharray="3,2"/>
-  <text x="1056" y="136" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#E07070">overflow</text>
-  <!-- Red clip marker line -->
-  <line x1="1148" y1="112" x2="1148" y2="162" stroke="#E05050" stroke-width="1.5" opacity="0.6"/>
-
-
-  <!-- ══════════════════════════════════════════════════════════ -->
-  <!-- CHALLENGE 2 — BASELINE MISALIGNMENT                        -->
-  <!-- ══════════════════════════════════════════════════════════ -->
-  <rect x="48" y="188" width="1104" height="96" rx="10"
-        fill="url(#cardGrad)" stroke="#2E4560" stroke-width="1.5"
-        filter="url(#cardShadow)"/>
-  <rect x="48" y="188" width="1104" height="3" rx="2" fill="#E8A030" opacity="0.8"/>
-
-
-  <!-- Challenge badge -->
-  <rect x="68" y="202" width="130" height="22" rx="5" fill="#201808" stroke="#5A4010" stroke-width="1"/>
-  <text x="133" y="217" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#E8A030" text-anchor="middle" letter-spacing="1">Challenge 02</text>
-
-
-  <text x="218" y="217" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#A08050" letter-spacing="1">dots float above text baseline</text>
-
-
-  <!-- Row content — dots misaligned upward -->
-  <g clip-path="url(#rowClip2)">
-    <text x="80" y="276" font-family="Georgia, serif" font-size="20"
-          fill="#C8D8E8" font-weight="bold">DIY Draft System for Eleventy v3</text>
-    <!-- Dots rendered higher — misaligned baseline -->
-    <text x="520" y="268" font-family="Georgia, serif" font-size="20"
-          fill="#E8B84B" opacity="0.9" filter="url(#amberGlow)"
-          letter-spacing="4">· · · · · · · · · · · · · · · · ·</text>
-    <text x="1080" y="276" font-family="Georgia, serif" font-size="20"
-          fill="#C8D8E8">Jun 2026</text>
+  <line class="indicator-err" x1="1025" y1="110" x2="1025" y2="148" stroke-width="1" stroke-dasharray="3 2"/>
+  <text class="indicator-err" x="1033" y="128" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold">overflow</text>
+  <line class="indicator-err" x1="1132" y1="106" x2="1132" y2="152" stroke-width="1.5" opacity="0.6"/>
+  <rect class="card-bg-01" x="48" y="174" width="1104" height="82" rx="10" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="48" y="174" width="1104" height="3" rx="2" fill="#E8A030" opacity="0.8"/>
+  <rect class="badge-bg-01" x="68" y="186" width="130" height="22" rx="5" stroke-width="1"/>
+  <text class="text-badge-01" x="133" y="201" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle" font-weight="bold" letter-spacing="1">Challenge 02</text>
+  <text class="text-muted" x="218" y="201" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="1">dots float above text baseline</text>
+  <g>
+    <text class="text-primary" x="80" y="238" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="bold">DIY Draft System for Eleventy v3</text>
+    <text class="leader-dots-err" x="520" y="228" font-family="'JetBrains Mono', monospace" font-size="17" letter-spacing="4">· · · · · · · · · · · · · · · · ·</text>
+    <text class="text-primary" x="1040" y="238" font-family="'JetBrains Mono', monospace" font-size="17">Jun 2026</text>
   </g>
-
-
-  <!-- Baseline indicators -->
-  <line x1="80" y1="280" x2="1120" y2="280" stroke="#E8A030" stroke-width="0.8"
-        stroke-dasharray="4,3" opacity="0.4"/>
-  <!-- Arrow pointing to misalignment — moved above dots -->
-  <line x1="680" y1="232" x2="680" y2="248" stroke="#E8A030" stroke-width="1.5"/>
-  <polygon points="676,248 680,256 684,248" fill="#E8A030" opacity="0.8"/>
-  <text x="694" y="243" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#E8A030">↑ floats up</text>
-
-
-  <!-- ══════════════════════════════════════════════════════════ -->
-  <!-- CHALLENGE 3 — TITLE SQUEEZE                                -->
-  <!-- ══════════════════════════════════════════════════════════ -->
-  <rect x="48" y="306" width="1104" height="96" rx="10"
-        fill="url(#cardGrad)" stroke="#2E4560" stroke-width="1.5"
-        filter="url(#cardShadow)"/>
-  <rect x="48" y="306" width="1104" height="3" rx="2" fill="#7EB8D4" opacity="0.8"/>
-
-
-  <!-- Challenge badge -->
-  <rect x="68" y="320" width="130" height="22" rx="5" fill="#081820" stroke="#1E4060" stroke-width="1"/>
-  <text x="133" y="335" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#7EB8D4" text-anchor="middle" letter-spacing="1">Challenge 03</text>
-
-
-  <text x="218" y="335" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#5A8AA0" letter-spacing="1">long title squeezes dots to zero</text>
-
-
-  <!-- Row content — long title, dots nearly gone -->
-  <g clip-path="url(#rowClip3)">
-    <text x="80" y="394" font-family="Georgia, serif" font-size="20"
-          fill="#C8D8E8" font-weight="bold">PWA with Vanilla JS: Why I Ditched Workbox for a 1KB Service Worker</text>
-    <!-- Only 2-3 dots visible — squeezed -->
-    <text x="1000" y="394" font-family="Georgia, serif" font-size="20"
-          fill="#E8B84B" opacity="0.5" filter="url(#amberGlow)"
-          letter-spacing="2">· ·</text>
-    <text x="1080" y="394" font-family="Georgia, serif" font-size="20"
-          fill="#C8D8E8">Jun 2026</text>
+  <line class="indicator-err" x1="80" y1="242" x2="1120" y2="242" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.4"/>
+  <line class="indicator-err" x1="680" y1="190" x2="680" y2="210" stroke-width="1.5"/>
+  <polygon class="indicator-err" points="676,210 680,218 684,210" opacity="0.8"/>
+  <text class="indicator-err" x="694" y="206" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold">↑ floats up</text>
+  <rect class="card-bg-01" x="48" y="268" width="1104" height="82" rx="10" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="48" y="268" width="1104" height="3" rx="2" fill="#3B82F6" opacity="0.8"/>
+  <rect class="badge-bg-01" x="68" y="280" width="130" height="22" rx="5" stroke-width="1"/>
+  <text class="text-badge-01" x="133" y="295" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle" font-weight="bold" letter-spacing="1">Challenge 03</text>
+  <text class="text-muted" x="218" y="295" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="1">long title squeezes dots to zero</text>
+  <g>
+    <text class="text-primary" x="80" y="332" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="bold">PWA with Vanilla JS: Why I Ditched Workbox for a 1KB Service Worker</text>
+    <text class="leader-dots-err" x="975" y="332" font-family="'JetBrains Mono', monospace" font-size="17" letter-spacing="2">· ·</text>
+    <text class="text-primary" x="1040" y="332" font-family="'JetBrains Mono', monospace" font-size="17">Jun 2026</text>
   </g>
-
-
-  <!-- Squeeze indicator -->
-  <line x1="988" y1="350" x2="988" y2="400" stroke="#7EB8D4" stroke-width="1" stroke-dasharray="3,2"/>
-  <text x="870" y="346" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#7EB8D4">title too long → min-width: 0 needed</text>
-
-
-  <!-- ══════════════════════════════════════════════════════════ -->
-  <!-- DIVIDER                                                    -->
-  <!-- ══════════════════════════════════════════════════════════ -->
-  <line x1="48" y1="424" x2="1152" y2="424" stroke="#3A5470" stroke-width="1" stroke-dasharray="5,4"/>
-  <rect x="540" y="414" width="120" height="20" rx="5" fill="#2A4053" stroke="#3A5470" stroke-width="1"/>
-  <text x="600" y="428" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#7EB8D4" text-anchor="middle" letter-spacing="2">FIXED ✔</text>
-
-
-  <!-- ══════════════════════════════════════════════════════════ -->
-  <!-- FINAL RESULT — PIXEL PERFECT                               -->
-  <!-- ══════════════════════════════════════════════════════════ -->
-  <rect x="48" y="442" width="1104" height="148" rx="12"
-        fill="url(#finalCard)" stroke="#1A5A30" stroke-width="2"
-        filter="url(#cardShadow)"/>
-  <rect x="48" y="442" width="1104" height="4" rx="2" fill="#2AD878" opacity="0.9"/>
-
-
-  <!-- Final label -->
-  <rect x="68" y="456" width="180" height="22" rx="5" fill="#0A2A14" stroke="#1A5A2A" stroke-width="1"/>
-  <text x="158" y="471" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#2AD878" text-anchor="middle"
-        letter-spacing="1" filter="url(#greenGlow)">✔ Final Result</text>
-
-
-  <text x="262" y="471" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#2A8A4A" letter-spacing="1">pixel-perfect dot leader, all edge cases handled</text>
-
-
-  <!-- Perfect row 1 -->
-  <text x="80" y="516" font-family="Georgia, serif" font-size="22"
-        fill="#E8F4F8" font-weight="bold">The Dot Leader: 3 CSS Challenges</text>
-  <text x="660" y="516" font-family="Georgia, serif" font-size="22"
-        fill="#E8B84B" letter-spacing="6" filter="url(#amberGlow)"
-        >· · · · · · · · · · · ·</text>
-  <text x="1040" y="516" font-family="Georgia, serif" font-size="22"
-        fill="#E8F4F8">Jun 2026</text>
-
-
-  <!-- Perfect row 2 — long title, ellipsis, minimal dots -->
-  <text x="80" y="554" font-family="Georgia, serif" font-size="22"
-        fill="#A8C8D8" font-weight="bold">PWA with Vanilla JS: Why I Ditched Workbox…</text>
-  <text x="890" y="554" font-family="Georgia, serif" font-size="22"
-        fill="#E8B84B" letter-spacing="6" filter="url(#amberGlow)"
-        opacity="0.8">· · · ·</text>
-  <text x="1040" y="554" font-family="Georgia, serif" font-size="22"
-        fill="#A8C8D8">Jun 2026</text>
-
-
-  <!-- CSS snippet hint -->
-  <text x="80" y="578" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#2A6A3A">flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis;</text>
-
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- BOTTOM STRIP                           -->
-  <!-- ══════════════════════════════════════ -->
-  <rect x="0" y="628" width="1200" height="47" fill="#111E2C" opacity="0.95"/>
-  <line x1="0" y1="628" x2="1200" y2="628" stroke="#3A5470" stroke-width="1"/>
-
-
-  <circle cx="84" cy="651" r="5" fill="#E05050" opacity="0.7"/>
-  <text x="100" y="656" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#7A5050">overflow · baseline · squeeze</text>
-
-
-  <text x="600" y="656" font-family="'Courier New', Courier, monospace"
-        font-size="12" fill="#3A5470" text-anchor="middle"
-        letter-spacing="3">CSS · FLEXBOX · DOT LEADER · TYPOGRAPHY</text>
-
-
-  <circle cx="960" cy="651" r="5" fill="#2AD878" opacity="0.7"/>
-  <text x="976" y="656" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#2A7A4A">3 challenges · 1 elegant solution</text>
-
-
+  <line class="indicator-err" x1="965" y1="288" x2="965" y2="338" stroke-width="1" stroke-dasharray="3 2"/>
+  <text class="text-muted" x="955" y="284" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="end" font-weight="bold">title too long → flex-shrink adjustment required</text>
+  <line class="frame-border" x1="48" y1="366" x2="1152" y2="366" stroke-width="1" stroke-dasharray="5 4"/>
+  <rect class="badge-bg-01" x="540" y="355" width="120" height="22" rx="5" stroke-width="1"/>
+  <text class="text-title" x="600" y="370" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="2">FIXED ✔</text>
+  <rect class="panel-bg-ok frame-border" x="48" y="392" width="1104" height="136" rx="12" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="48" y="392" width="1104" height="4" rx="2" fill="#16A34A" opacity="0.9"/>
+  <rect class="pill-bg-ok frame-border" x="68" y="406" width="180" height="22" rx="5" stroke-width="1"/>
+  <text class="text-pill-ok" x="158" y="421" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="1">✔ Final Result</text>
+  <text class="text-pill-ok" x="262" y="421" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="1">pixel-perfect dot leader, all edge cases handled securely</text>
+  <text class="text-primary" x="80" y="454" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="bold">The Dot Leader: 3 CSS Challenges</text>
+  <text class="leader-dots-err" x="660" y="454" font-family="'JetBrains Mono', monospace" font-size="17" letter-spacing="6">· · · · · · · · · · · ·</text>
+  <text class="text-primary" x="1040" y="454" font-family="'JetBrains Mono', monospace" font-size="17">Jun 2026</text>
+  <text class="text-muted" x="80" y="486" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="bold">PWA with Vanilla JS: Why I Ditched Workbox…</text>
+  <text class="leader-dots-err" x="890" y="486" font-family="'JetBrains Mono', monospace" font-size="17" letter-spacing="6" opacity="0.8">· · · ·</text>
+  <text class="text-muted" x="1040" y="486" font-family="'JetBrains Mono', monospace" font-size="17">Jun 2026</text>
+  <text class="text-comment" x="80" y="514" font-family="'JetBrains Mono', monospace" font-size="11">flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: baseline;</text>
+  <line class="frame-border" x1="60" y1="565" x2="1140" y2="565" stroke-width="0.5"/>
+  <g font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">
+    <circle cx="84" cy="593" r="5" fill="#EF4444" opacity="0.85"/>
+    <text class="text-muted" x="96" y="597" font-weight="bold">overflow · baseline · squeeze</text>
+    <circle cx="985" cy="593" r="5" fill="#10B981" opacity="0.85"/>
+    <text class="text-pill-ok" x="1000" y="597" font-weight="bold" text-anchor="start">3 challenges · 1 elegant solution</text>
+  </g>
+  <text class="text-title" x="600" y="597" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">CSS · FLEXBOX · DOT LEADER · TYPOGRAPHY</text>
 </svg>

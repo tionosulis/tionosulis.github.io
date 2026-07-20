@@ -1,231 +1,171 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
-  <defs>
-    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.04"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
+    <style>
+      .canvas-bg       { fill: #f8f5f0; }
+      .grid-dots       { fill: #332D28; opacity: 0.15; }
+      .title-bar       { fill: #332D28; }
+      .ui-tab          { fill: #E5DFD9; }
+      .ui-tab-text     { fill: #332D28; }
+      .ui-border       { stroke: #D1C9C0; }
+      .panel-bg        { fill: #FFFFFF; }
+      .panel-stroke    { stroke: #D1C9C0; }
+      .inner-line      { stroke: #D1C9C0; opacity: 0.4; }
+      .bar-track       { fill: #332D28; fill-opacity: 0.05; }
+      .center-divider  { stroke: #D1C9C0; opacity: 0.2; }
+      .text-label-cmd  { fill: #D97706; font-weight: 700; }
+      .text-filepath   { fill: #6B6059; opacity: 0.8; }
+      .text-muted      { fill: #6B6059; }
+      .text-dark       { fill: #332D28; }
+      .text-fail       { fill: #DC2626; }
+      .text-success    { fill: #059669; }
+      .text-blue       { fill: #0284C7; }
+      .text-amber      { fill: #D97706; }
+      .size-fail       { fill: #DC2626; }
+      .size-success    { fill: #059669; }
+      .badge-fail-bg   { fill: #DC2626; fill-opacity: 0.10; stroke: #DC2626; stroke-opacity: 0.3; stroke-width: 0.5; }
+      .badge-ok-bg     { fill: #059669; fill-opacity: 0.10; stroke: #059669; stroke-opacity: 0.3; stroke-width: 0.5; }
+      .verdict-fail    { fill: #DC2626; fill-opacity: 0.06; stroke: #DC2626; stroke-opacity: 0.3; stroke-width: 0.5; }
+      .verdict-ok      { fill: #059669; fill-opacity: 0.06; stroke: #059669; stroke-opacity: 0.3; stroke-width: 0.5; }
+      .preload-bg      { fill: #332D28; fill-opacity: 0.04; }
+      .stat-bar-bg     { fill: #E5DFD9; stroke: #D1C9C0; stroke-width: 0.5; }
+      .legend-bg       { fill: #332D28; fill-opacity: 0.03; }
+      .block-marker    { stroke: #0284C7; stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
+      .block-label     { fill: #0284C7; }
+      .dot-success     { fill: #059669; }
+      .dot-fail        { fill: #DC2626; }
+      .dot-blue        { fill: #0284C7; }
+      .dot-amber       { fill: #D97706; }
+      .statusbar-bg    { fill: #332D28; }
+      .statusbar-line  { stroke: #4A423B; }
+      .statusbar-badge { fill: #D97706; }
+      .statusbar-badge-text { fill: #F8F5F0; }
+      .statusbar-text  { fill: #E5DFD9; }
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg       { fill: #161616; }
+        .grid-dots       { fill: #2A4055; opacity: 0.5; }
+        .title-bar       { fill: #29241F; }
+        .ui-tab          { fill: #3D3630; }
+        .ui-tab-text     { fill: #F8F5F0; }
+        .ui-border       { stroke: #3A5068; }
+        .panel-bg        { fill: #1A2634; }
+        .panel-stroke    { stroke: #3A5068; }
+        .inner-line      { stroke: #3A5068; opacity: 0.4; }
+        .bar-track       { fill: #ffffff; fill-opacity: 0.04; }
+        .center-divider  { stroke: #ffffff; opacity: 0.04; }
+        .text-label-cmd  { fill: #3B82F6; font-weight: 700; }
+        .text-filepath   { fill: #6A8AAA; opacity: 0.8; }
+        .text-muted      { fill: #6A8AAA; }
+        .text-dark       { fill: #F8F5F0; }
+        .text-fail       { fill: #E05050; }
+        .text-success    { fill: #10D9A8; }
+        .text-blue       { fill: #60A8F0; }
+        .text-amber      { fill: #C08040; }
+        .size-fail       { fill: #E05050; }
+        .size-success    { fill: #10D9A8; }
+        .badge-fail-bg   { fill: #E05050; fill-opacity: 0.12; stroke: #E05050; stroke-opacity: 0.3; stroke-width: 0.5; }
+        .badge-ok-bg     { fill: #10D9A8; fill-opacity: 0.12; stroke: #10D9A8; stroke-opacity: 0.3; stroke-width: 0.5; }
+        .verdict-fail    { fill: #E05050; fill-opacity: 0.08; stroke: #E05050; stroke-opacity: 0.3; stroke-width: 0.5; }
+        .verdict-ok      { fill: #10D9A8; fill-opacity: 0.08; stroke: #10D9A8; stroke-opacity: 0.3; stroke-width: 0.5; }
+        .preload-bg      { fill: #ffffff; fill-opacity: 0.04; }
+        .stat-bar-bg     { fill: #16202E; stroke: #3A5068; stroke-width: 0.5; }
+        .legend-bg       { fill: #ffffff; fill-opacity: 0.03; }
+        .block-marker    { stroke: #60A8F0; stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
+        .block-label     { fill: #60A8F0; }
+        .dot-success     { fill: #10D9A8; }
+        .dot-fail        { fill: #E05050; }
+        .dot-blue        { fill: #3B82F6; }
+        .dot-amber       { fill: #C08040; }
+        .statusbar-bg    { fill: #29241F; }
+        .statusbar-line  { stroke: #453E38; }
+        .statusbar-badge { fill: #F59E0B; }
+        .statusbar-badge-text { fill: #1C1917; }
+        .statusbar-text  { fill: #D1D6CC; }
+      }
+    </style>
+    <pattern id="foit-dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle class="grid-dots" cx="12" cy="12" r="0.8"/>
     </pattern>
-
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E2A38"/>
-      <stop offset="100%" stop-color="#1A2430"/>
-    </linearGradient>
-
-    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="108%">
-      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000000" flood-opacity="0.2"/>
-    </filter>
-
-    <clipPath id="rounded">
-      <rect width="1200" height="675" rx="10" ry="10"/>
-    </clipPath>
-
     <linearGradient id="barBefore" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#E05050"/>
       <stop offset="100%" stop-color="#E05050" stop-opacity="0.4"/>
     </linearGradient>
-
     <linearGradient id="barAfter" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#10D9A8"/>
       <stop offset="100%" stop-color="#10D9A8" stop-opacity="0.4"/>
     </linearGradient>
   </defs>
-
-  <rect width="1200" height="675" rx="10" ry="10" fill="#000000" opacity="0.15" transform="translate(0, 4)" filter="url(#cardShadow)"/>
-
-  <g clip-path="url(#rounded)">
-    <rect width="1200" height="675" fill="url(#bg)"/>
-    <rect width="1200" height="675" fill="url(#dots)"/>
-
-    <!-- Outer border frame -->
-    <rect x="24" y="24" width="1152" height="627" fill="none" stroke="#3A5068" stroke-width="1" stroke-opacity="0.5"/>
-
-    <!-- Corner accents -->
-    <line x1="24" y1="24" x2="72" y2="24" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="24" y1="24" x2="24" y2="72" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="1176" y1="24" x2="1128" y2="24" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="1176" y1="24" x2="1176" y2="72" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="24" y1="651" x2="72" y2="651" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="24" y1="651" x2="24" y2="603" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="1176" y1="651" x2="1128" y2="651" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-    <line x1="1176" y1="651" x2="1176" y2="603" stroke="#3B82F6" stroke-width="2" stroke-opacity="0.7"/>
-
-    <!-- Top bar -->
-    <rect x="0" y="0" width="1200" height="40" fill="#3B82F6" fill-opacity="0.07"/>
-    <line x1="0" y1="40" x2="1200" y2="40" stroke="#3A5068" stroke-width="1" stroke-opacity="0.3"/>
-
-    <!-- Terminal dots -->
-    <circle cx="50" cy="20" r="5" fill="#ff5f57" opacity="0.8"/>
-    <circle cx="72" cy="20" r="5" fill="#febc2e" opacity="0.8"/>
-    <circle cx="94" cy="20" r="5" fill="#28c840" opacity="0.8"/>
-
-    <!-- Tab label -->
-    <text x="130" y="26" font-family="'JetBrains Mono', monospace" font-size="12" fill="#3B82F6" opacity="0.6" dominant-baseline="middle">foit-debug.log</text>
-
-    <!-- Center divider -->
-    <line x1="600" y1="40" x2="600" y2="675" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
-
-    <!-- ════════ LEFT: BEFORE ════════ -->
-
-    <!-- Label -->
-    <text x="48" y="72" font-family="'JetBrains Mono', monospace" font-size="13" fill="#3B82F6" font-weight="700">$ cat _before.log</text>
-
-    <!-- Card background -->
-    <rect x="48" y="90" width="508" height="460" rx="8" fill="#1A2634" stroke="#3A5068" stroke-width="1"/>
-
-    <!-- File path -->
-    <text x="72" y="120" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA" opacity="0.7">~/assets/fonts/JetBrainsMono[wght].woff2</text>
-    <line x1="48" y1="133" x2="556" y2="133" stroke="#3A5068" stroke-width="1" opacity="0.3"/>
-
-    <!-- File size — prominent -->
-    <text x="72" y="178" font-family="'JetBrains Mono', monospace" font-size="36" font-weight="700" fill="#E05050">113 KB</text>
-    <text x="200" y="178" font-family="'JetBrains Mono', monospace" font-size="14" fill="#6A8AAA" dominant-baseline="middle">— woff2 variable font</text>
-
-    <!-- Subset coverage label -->
-    <rect x="72" y="198" width="96" height="20" rx="4" fill="#E05050" fill-opacity="0.12" stroke="#E05050" stroke-width="0.5" stroke-opacity="0.3"/>
-    <text x="82" y="212" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E05050">full charset</text>
-
-    <!-- Download time visualization -->
-    <text x="72" y="260" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A9AB0">$ curl -w "%{time_total}" -so /dev/null</text>
-
-    <!-- Bar label -->
-    <text x="72" y="295" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">3G (~1.5 Mbps):</text>
-
-    <!-- Bar background -->
-    <rect x="72" y="308" width="460" height="24" rx="4" fill="#ffffff" fill-opacity="0.04"/>
-    <!-- Bar fill — full width representing long download -->
-    <rect x="72" y="308" width="460" height="24" rx="4" fill="url(#barBefore)"/>
-
-    <!-- Time label on bar -->
-    <text x="260" y="324" font-family="'JetBrains Mono', monospace" font-size="11" fill="#ffffff" font-weight="600" text-anchor="middle">≈ 600 ms</text>
-
-    <!-- Block period marker -->
-    <rect x="72" y="308" width="76" height="24" rx="4" fill="none" stroke="#60A8F0" stroke-width="1.5" stroke-dasharray="4 3"/>
-    <text x="110" y="299" font-family="'JetBrains Mono', monospace" font-size="9" fill="#60A8F0" text-anchor="middle">block 100ms</text>
-
-    <!-- 4G line -->
-    <text x="72" y="355" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">4G (12 Mbps):</text>
-    <rect x="72" y="368" width="460" height="20" rx="4" fill="#ffffff" fill-opacity="0.04"/>
-    <rect x="72" y="368" width="58" height="20" rx="4" fill="url(#barBefore)"/>
-    <text x="100" y="383" font-family="'JetBrains Mono', monospace" font-size="10" fill="#ffffff" font-weight="600">≈ 75 ms</text>
-
-    <!-- FOIT verdict box -->
-    <rect x="72" y="416" width="460" height="48" rx="6" fill="#E05050" fill-opacity="0.08" stroke="#E05050" stroke-width="0.5" stroke-opacity="0.3"/>
-    <text x="86" y="440" font-family="'JetBrains Mono', monospace" font-size="13" fill="#E05050" font-weight="700">✗ FOIT on 3G</text>
-    <text x="86" y="456" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">Block period expires before font arrives</text>
-
-    <!-- Preload status -->
-    <rect x="72" y="476" width="460" height="26" rx="4" fill="#ffffff" fill-opacity="0.04"/>
-    <text x="86" y="493" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">preload href: </text>
-    <text x="174" y="493" font-family="'JetBrains Mono', monospace" font-size="11" fill="#C08040">JetBrainsMono%5Bwght%5D.woff2</text>
-    <text x="86" y="506" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">CSS src: </text>
-    <text x="158" y="506" font-family="'JetBrains Mono', monospace" font-size="11" fill="#C08040">JetBrainsMono[wght].woff2</text>
-    <text x="340" y="506" font-family="'JetBrains Mono', monospace" font-size="11" fill="#E05050">✗ mismatch → 2 downloads</text>
-
-    <!-- ════════ RIGHT: AFTER ════════ -->
-
-    <!-- Label -->
-    <text x="648" y="72" font-family="'JetBrains Mono', monospace" font-size="13" fill="#3B82F6" font-weight="700">$ cat _after.log</text>
-
-    <!-- Card background -->
-    <rect x="648" y="90" width="508" height="460" rx="8" fill="#1A2634" stroke="#3A5068" stroke-width="1"/>
-
-    <!-- File path -->
-    <text x="672" y="120" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA" opacity="0.7">~/assets/fonts/JetBrainsMono-variable-subset.woff2</text>
-    <line x1="648" y1="133" x2="1156" y2="133" stroke="#3A5068" stroke-width="1" opacity="0.3"/>
-
-    <!-- File size — prominent -->
-    <text x="672" y="178" font-family="'JetBrains Mono', monospace" font-size="36" font-weight="700" fill="#10D9A8">63 KB</text>
-    <text x="800" y="178" font-family="'JetBrains Mono', monospace" font-size="14" fill="#6A8AAA" dominant-baseline="middle">— woff2 variable font</text>
-
-    <!-- Subset coverage label -->
-    <rect x="672" y="198" width="96" height="20" rx="4" fill="#10D9A8" fill-opacity="0.12" stroke="#10D9A8" stroke-width="0.5" stroke-opacity="0.3"/>
-    <text x="682" y="212" font-family="'JetBrains Mono', monospace" font-size="10" fill="#10D9A8">Latin subset</text>
-
-    <!-- Percentage badge -->
-    <rect x="780" y="194" width="72" height="28" rx="14" fill="#10D9A8" fill-opacity="0.15" stroke="#10D9A8" stroke-width="1" stroke-opacity="0.3"/>
-    <text x="816" y="212" font-family="'JetBrains Mono', monospace" font-size="12" fill="#10D9A8" font-weight="700" text-anchor="middle">44% less</text>
-
-    <!-- Download time visualization -->
-    <text x="672" y="260" font-family="'JetBrains Mono', monospace" font-size="12" fill="#7A9AB0">$ curl -w "%{time_total}" -so /dev/null</text>
-
-    <!-- Bar label -->
-    <text x="672" y="295" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">3G (~1.5 Mbps):</text>
-
-    <!-- Bar background -->
-    <rect x="672" y="308" width="460" height="24" rx="4" fill="#ffffff" fill-opacity="0.04"/>
-    <!-- Bar fill — shorter than left -->
-    <rect x="672" y="308" width="262" height="24" rx="4" fill="url(#barAfter)"/>
-
-    <!-- Time label on bar -->
-    <text x="800" y="324" font-family="'JetBrains Mono', monospace" font-size="11" fill="#ffffff" font-weight="600" text-anchor="middle">≈ 340 ms</text>
-
-    <!-- Block period marker — bar is now shorter than block period -->
-    <rect x="672" y="308" width="76" height="24" rx="4" fill="none" stroke="#60A8F0" stroke-width="1.5" stroke-dasharray="4 3"/>
-    <text x="710" y="299" font-family="'JetBrains Mono', monospace" font-size="9" fill="#60A8F0" text-anchor="middle">block 100ms</text>
-
-    <!-- 4G line -->
-    <text x="672" y="355" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">4G (12 Mbps):</text>
-    <rect x="672" y="368" width="460" height="20" rx="4" fill="#ffffff" fill-opacity="0.04"/>
-    <rect x="672" y="368" width="32" height="20" rx="4" fill="url(#barAfter)"/>
-    <text x="688" y="383" font-family="'JetBrains Mono', monospace" font-size="10" fill="#ffffff" font-weight="600">≈ 42 ms</text>
-
-    <!-- FOIT verdict box -->
-    <rect x="672" y="416" width="460" height="48" rx="6" fill="#10D9A8" fill-opacity="0.08" stroke="#10D9A8" stroke-width="0.5" stroke-opacity="0.3"/>
-    <text x="686" y="440" font-family="'JetBrains Mono', monospace" font-size="13" fill="#10D9A8" font-weight="700">✓ FOIT eliminated</text>
-    <text x="686" y="456" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">Font arrives within block period on 4G, near-miss on 3G</text>
-
-    <!-- Preload status -->
-    <rect x="672" y="476" width="460" height="26" rx="4" fill="#ffffff" fill-opacity="0.04"/>
-    <text x="686" y="493" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">preload href: </text>
-    <text x="786" y="493" font-family="'JetBrains Mono', monospace" font-size="11" fill="#10D9A8">JetBrainsMono-variable-subset.woff2</text>
-    <text x="686" y="506" font-family="'JetBrains Mono', monospace" font-size="11" fill="#6A8AAA">CSS src: </text>
-    <text x="768" y="506" font-family="'JetBrains Mono', monospace" font-size="11" fill="#10D9A8">JetBrainsMono-variable-subset.woff2</text>
-    <text x="950" y="506" font-family="'JetBrains Mono', monospace" font-size="11" fill="#10D9A8">✓ match → 1 download</text>
-
-    <!-- ════════ BOTTOM LEGEND ════════ -->
-
-    <rect x="48" y="566" width="1104" height="28" rx="6" fill="#ffffff" fill-opacity="0.03"/>
-
-    <circle cx="72" cy="580" r="4" fill="#E05050" opacity="0.8"/>
-    <text x="84" y="584" font-family="'JetBrains Mono', monospace" font-size="10" fill="#6A8AAA">Before: 113KB full charset, URL mismatch → FOIT + double download</text>
-
-    <circle cx="460" cy="580" r="4" fill="#10D9A8" opacity="0.8"/>
-    <text x="472" y="584" font-family="'JetBrains Mono', monospace" font-size="10" fill="#6A8AAA">After: 63KB Latin subset, URL match → FOIT fixed</text>
-
-    <!-- Saving arrow summary -->
-    <line x1="520" y1="636" x2="680" y2="636" stroke="#3B82F6" stroke-width="1.5" stroke-opacity="0.5"/>
-    <polygon points="680,636 674,632 674,640" fill="#3B82F6" opacity="0.5"/>
-    <text x="600" y="636" font-family="'JetBrains Mono', monospace" font-size="10" fill="#3B82F6" text-anchor="middle" dominant-baseline="middle" transform="translate(0, -10)">50KB saved</text>
-
-    <!-- Bottom stat bar -->
-    <rect x="48" y="600" width="1104" height="36" rx="6" fill="#16202E" stroke="#3A5068" stroke-width="0.5"/>
-
-    <!-- Stat 1 -->
-    <circle cx="80" cy="618" r="3" fill="#10D9A8"/>
-    <text x="92" y="622" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">63 KB total font weight</text>
-
-    <line x1="260" y1="604" x2="260" y2="632" stroke="#3A5068" stroke-width="1" opacity="0.3"/>
-
-    <!-- Stat 2 -->
-    <circle cx="280" cy="618" r="3" fill="#10D9A8"/>
-    <text x="292" y="622" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">1 fetch (not 2)</text>
-
-    <line x1="420" y1="604" x2="420" y2="632" stroke="#3A5068" stroke-width="1" opacity="0.3"/>
-
-    <!-- Stat 3 -->
-    <circle cx="440" cy="618" r="3" fill="#60A8F0"/>
-    <text x="452" y="622" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">FOIT free on 4G</text>
-
-    <line x1="600" y1="604" x2="600" y2="632" stroke="#3A5068" stroke-width="1" opacity="0.3"/>
-
-    <!-- Stat 4 -->
-    <circle cx="620" cy="618" r="3" fill="#C08040"/>
-    <text x="632" y="622" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">pyftsubset Latin</text>
-
-    <line x1="780" y1="604" x2="780" y2="632" stroke="#3A5068" stroke-width="1" opacity="0.3"/>
-
-    <!-- Stat 5 -->
-    <circle cx="800" cy="618" r="3" fill="#C08040"/>
-    <text x="812" y="622" font-family="'JetBrains Mono', monospace" font-size="11" fill="#7A9AB0">preload matches CSS</text>
-  </g>
-
-  <rect width="1200" height="675" rx="10" ry="10" fill="none" stroke="#3A5068" stroke-width="1" opacity="0.8"/>
+  <rect class="canvas-bg" width="1200" height="630"/>
+  <rect width="1200" height="630" fill="url(#foit-dots)"/>
+  <rect class="title-bar" x="0" y="0" width="1200" height="44"/>
+  <circle cx="50" cy="22" r="7" fill="#EF4444"/>
+  <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
+  <circle cx="100" cy="22" r="7" fill="#10B981"/>
+  <text class="statusbar-text" x="125" y="24" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" dominant-baseline="middle">foit-debug.log</text>
+  <rect class="ui-tab" x="125" y="44" width="180" height="36" rx="8"/>
+  <text class="ui-tab-text" x="145" y="69" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600">foit-debug.log</text>
+  <line class="ui-border" x1="0" y1="80" x2="1200" y2="80" stroke-width="1.5"/>
+  <line class="center-divider" x1="600" y1="80" x2="600" y2="540" stroke-width="1"/>
+  <text class="text-label-cmd" x="48" y="102" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">$ cat _before.log</text>
+  <rect class="panel-bg panel-stroke" x="48" y="112" width="508" height="418" rx="8" stroke-width="1"/>
+  <text class="text-filepath" x="72" y="136" font-family="'JetBrains Mono', monospace" font-size="11">~/assets/fonts/JetBrainsMono[wght].woff2</text>
+  <line class="inner-line" x1="48" y1="146" x2="556" y2="146" stroke-width="1"/>
+  <text class="size-fail" x="72" y="188" font-family="'JetBrains Mono', monospace" font-size="34" font-weight="700">113 KB</text>
+  <text class="text-muted" x="196" y="188" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">— woff2 variable font</text>
+  <rect class="badge-fail-bg" x="72" y="204" width="96" height="18" rx="4"/>
+  <text class="text-fail" x="82" y="217" font-family="'JetBrains Mono', monospace" font-size="10">full charset</text>
+  <text class="text-muted" x="72" y="256" font-family="'JetBrains Mono', monospace" font-size="11">$ curl -w "%{time_total}" -so /dev/null</text>
+  <text class="text-muted" x="72" y="282" font-family="'JetBrains Mono', monospace" font-size="11">3G (~1.5 Mbps):</text>
+  <rect class="bar-track" x="72" y="292" width="460" height="22" rx="4"/>
+  <rect x="72" y="292" width="460" height="22" rx="4" fill="url(#barBefore)"/>
+  <text x="260" y="307" font-family="'JetBrains Mono', monospace" font-size="11" fill="#ffffff" font-weight="600" text-anchor="middle">&#x2248; 600 ms</text>
+  <rect class="block-marker" x="72" y="292" width="76" height="22" rx="4"/>
+  <text class="block-label" x="110" y="285" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">block 100ms</text>
+  <text class="text-muted" x="72" y="330" font-family="'JetBrains Mono', monospace" font-size="11">4G (12 Mbps):</text>
+  <rect class="bar-track" x="72" y="340" width="460" height="18" rx="4"/>
+  <rect x="72" y="340" width="58" height="18" rx="4" fill="url(#barBefore)"/>
+  <text x="100" y="353" font-family="'JetBrains Mono', monospace" font-size="10" fill="#ffffff" font-weight="600">&#x2248; 75 ms</text>
+  <rect class="verdict-fail" x="72" y="374" width="460" height="44" rx="6"/>
+  <text class="text-fail" x="86" y="396" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">&#x2717; FOIT on 3G</text>
+  <text class="text-muted" x="86" y="410" font-family="'JetBrains Mono', monospace" font-size="11">Block period expires before font arrives</text>
+  <rect class="preload-bg" x="72" y="430" width="460" height="44" rx="4"/>
+  <text class="text-muted" x="86" y="448" font-family="'JetBrains Mono', monospace" font-size="11">preload href: <tspan class="text-amber">JetBrainsMono%5Bwght%5D.woff2</tspan></text>
+  <text class="text-muted" x="86" y="466" font-family="'JetBrains Mono', monospace" font-size="11">CSS src: <tspan class="text-amber">JetBrainsMono[wght].woff2</tspan> <tspan class="text-fail">&#x2717; 2 downloads</tspan></text>
+  <text class="text-label-cmd" x="648" y="102" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">$ cat _after.log</text>
+  <rect class="panel-bg panel-stroke" x="648" y="112" width="508" height="418" rx="8" stroke-width="1"/>
+  <text class="text-filepath" x="672" y="136" font-family="'JetBrains Mono', monospace" font-size="11">~/assets/fonts/JetBrainsMono-variable-subset.woff2</text>
+  <line class="inner-line" x1="648" y1="146" x2="1156" y2="146" stroke-width="1"/>
+  <text class="size-success" x="672" y="188" font-family="'JetBrains Mono', monospace" font-size="34" font-weight="700">63 KB</text>
+  <text class="text-muted" x="790" y="188" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">— woff2 variable font</text>
+  <rect class="badge-ok-bg" x="672" y="204" width="96" height="18" rx="4"/>
+  <text class="text-success" x="682" y="217" font-family="'JetBrains Mono', monospace" font-size="10">Latin subset</text>
+  <rect class="badge-ok-bg" x="780" y="200" width="72" height="26" rx="13"/>
+  <text class="text-success" x="816" y="217" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" text-anchor="middle">44% less</text>
+  <text class="text-muted" x="672" y="256" font-family="'JetBrains Mono', monospace" font-size="11">$ curl -w "%{time_total}" -so /dev/null</text>
+  <text class="text-muted" x="672" y="282" font-family="'JetBrains Mono', monospace" font-size="11">3G (~1.5 Mbps):</text>
+  <rect class="bar-track" x="672" y="292" width="460" height="22" rx="4"/>
+  <rect x="672" y="292" width="262" height="22" rx="4" fill="url(#barAfter)"/>
+  <text x="800" y="307" font-family="'JetBrains Mono', monospace" font-size="11" fill="#ffffff" font-weight="600" text-anchor="middle">&#x2248; 340 ms</text>
+  <rect class="block-marker" x="672" y="292" width="76" height="22" rx="4"/>
+  <text class="block-label" x="710" y="285" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">block 100ms</text>
+  <text class="text-muted" x="672" y="330" font-family="'JetBrains Mono', monospace" font-size="11">4G (12 Mbps):</text>
+  <rect class="bar-track" x="672" y="340" width="460" height="18" rx="4"/>
+  <rect x="672" y="340" width="32" height="18" rx="4" fill="url(#barAfter)"/>
+  <text x="688" y="353" font-family="'JetBrains Mono', monospace" font-size="10" fill="#ffffff" font-weight="600">&#x2248; 42 ms</text>
+  <rect class="verdict-ok" x="672" y="374" width="460" height="44" rx="6"/>
+  <text class="text-success" x="686" y="396" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">&#x2713; FOIT eliminated</text>
+  <text class="text-muted" x="686" y="410" font-family="'JetBrains Mono', monospace" font-size="11">Font arrives within block period on 4G</text>
+  <rect class="preload-bg" x="672" y="430" width="460" height="44" rx="4"/>
+  <text class="text-muted" x="686" y="448" font-family="'JetBrains Mono', monospace" font-size="11">preload href: <tspan class="text-success">JetBrainsMono-variable-subset.woff2</tspan></text>
+  <text class="text-muted" x="686" y="466" font-family="'JetBrains Mono', monospace" font-size="11">CSS src: <tspan class="text-success">JetBrainsMono-variable-subset.woff2</tspan> <tspan class="text-success">&#x2713;</tspan></text>
+  <rect class="stat-bar-bg" x="48" y="534" width="1104" height="22" rx="6"/>
+  <circle class="dot-fail" cx="72" cy="545" r="3"/>
+  <text class="text-muted" x="84" y="549" font-family="'JetBrains Mono', monospace" font-size="10">113KB full charset · 2 fetches · FOIT on 3G</text>
+  <line class="inner-line" x1="370" y1="544" x2="370" y2="562" stroke-width="1"/>
+  <circle class="dot-success" cx="390" cy="545" r="3"/>
+  <text class="text-muted" x="402" y="549" font-family="'JetBrains Mono', monospace" font-size="10">63KB Latin subset · 1 fetch · FOIT free on 4G · pyftsubset · preload matches CSS</text>
+  <rect class="statusbar-bg" x="0" y="562" width="1200" height="30"/>
+  <line class="statusbar-line" x1="0" y1="574" x2="1200" y2="574" stroke-width="1"/>
+  <rect class="statusbar-badge" x="30" y="568" width="80" height="18" rx="3"/>
+  <text class="statusbar-badge-text" x="70" y="581" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
+  <text class="statusbar-text" x="600" y="581" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">foit-debug.log &#xB7; font subset optimization</text>
+  <text class="statusbar-text" x="1170" y="581" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="end">113KB &#x2192; 63KB &#xB7; 44% saved</text>
 </svg>

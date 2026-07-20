@@ -1,127 +1,105 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1E2A38"/>
-      <stop offset="100%" stop-color="#1A2430"/>
-    </linearGradient>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">  <defs>
+    <style>
+      .canvas-bg { fill: #f8f5f0; }
+      .grid-dots { fill: #332D28; opacity: 0.15; }
+      .frame-border { stroke: #D1C9C0; opacity: 0.8; }
+      .text-primary { fill: #332D28; }
+      .text-title { fill: #B45309; }
+      .text-muted { fill: #8A8075; }
+      .spiral-track { stroke: #D97706; opacity: 0.65; stroke-width: 1.5; }
+      .axis-line { stroke: #8A8075; opacity: 0.3; }
+      .bracket-line { stroke: #8A8075; opacity: 0.5; }
+      .node-txt { fill: #332D28; font-weight: 700; }
+      .node-fill-01 { fill: #D97706; stroke: #332D28; }
+      .node-fill-02 { fill: #E68A00; stroke: #332D28; }
+      .node-fill-03 { fill: #F59E0B; stroke: #332D28; }
+      .node-fill-04 { fill: #FBBF24; stroke: #332D28; }
+      .node-fill-05 { fill: #FCD34D; stroke: #332D28; }
+      .node-fill-06 { fill: #FDE68A; stroke: #332D28; }
+      .node-fill-07 { fill: #FEF3C7; stroke: #332D28; }
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg { fill: #161616; }
+        .grid-dots { fill: #453E38; opacity: 0.3; }
+        .frame-border { stroke: #453E38; opacity: 0.6; }
+        .text-primary { fill: #F8F5F0; }
+        .text-title { fill: #F59E0B; }
+        .text-muted { fill: #7A6A5C; }
+        .spiral-track { stroke: #F59E0B; opacity: 0.7; stroke-width: 1.5; }
+        .axis-line { stroke: #453E38; opacity: 0.5; }
+        .bracket-line { stroke: #7A6A5C; opacity: 0.5; }
+        .node-txt { fill: #F8F5F0; font-weight: 600; }
+        .node-fill-01 { fill: #B45309; stroke: #F8F5F0; }
+        .node-fill-02 { fill: #D97706; stroke: #F8F5F0; }
+        .node-fill-03 { fill: #F59E0B; stroke: #F8F5F0; }
+        .node-fill-04 { fill: #FBBF24; stroke: #F8F5F0; }
+        .node-fill-05 { fill: #FCD34D; stroke: #F8F5F0; }
+        .node-fill-06 { fill: #FDE68A; stroke: #F8F5F0; }
+        .node-fill-07 { fill: #FEF3C7; stroke: #F8F5F0; }
+      }
+    </style>
     <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle cx="13" cy="13" r="0.9" fill="#2A4055" opacity="0.4"/>
+      <circle class="grid-dots" cx="13" cy="13" r="0.8"/>
     </pattern>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
-
-  <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect class="canvas-bg" width="1200" height="630"/>
   <rect width="1200" height="630" fill="url(#dots)"/>
-
-  <!-- Border frame -->
-  <rect x="1" y="1" width="1198" height="628" fill="none" stroke="#3A5068" stroke-width="1" opacity="0.8" rx="2"/>
-
-  <!-- Title block -->
-  <text x="600" y="48" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" letter-spacing="4" text-anchor="middle">THE OPTIMIZATION TRAP</text>
-  <text x="600" y="68" fill="#6A8AAA" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="1.5" text-anchor="middle">When Good Enough Is Better Than Perfect</text>
-
-  <!-- Spiral connecting path -->
-  <polyline points="
+  <rect class="frame-border" x="1" y="1" width="1198" height="628" fill="none" stroke-width="1" rx="2"/>
+  <text class="text-title" x="600" y="58" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="700" letter-spacing="3" text-anchor="middle">THE OPTIMIZATION TRAP</text>
+  <text class="text-muted" x="600" y="82" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="500" letter-spacing="0.5" text-anchor="middle">When Good Enough Is Better Than Perfect</text>
+  <polyline class="spiral-track" points="
     600,315 835,315 761,471 607,528 465,465 410,328
     463,200 582,148 697,191 745,295 709,394
     622,437 537,408 501,336 523,267 581,238
     634,256 655,299 641,337 611,348
-  " fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.25" stroke-linejoin="round" stroke-dasharray="3 3"/>
-
-  <!-- Center convergence axis -->
-  <line x1="580" y1="370" x2="660" y2="230" stroke="#3A5068" stroke-width="0.5" opacity="0.4" stroke-dasharray="2 4"/>
-
-  <!-- R1 -->
-  <circle cx="835" cy="315" r="20" fill="#000000" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="860" y="310" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">R1</text>
-
-  <!-- R2 -->
-  <circle cx="761" cy="471" r="19" fill="#1b1e23" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="770" y="494" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">R2</text>
-
-  <!-- R3 -->
-  <circle cx="607" cy="528" r="18" fill="#2d323c" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="615" y="552" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" text-anchor="middle">R3</text>
-
-  <!-- R4 -->
-  <circle cx="465" cy="465" r="17" fill="#58606e" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="440" y="470" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" text-anchor="end">R4</text>
-
-  <!-- R5 -->
-  <circle cx="410" cy="328" r="16" fill="#7e8695" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="388" y="333" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" text-anchor="end">R5</text>
-
-  <!-- R6 -->
-  <circle cx="463" cy="200" r="15" fill="#9ba3b1" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="450" y="183" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" text-anchor="end">R6</text>
-
-  <!-- R7 -->
-  <circle cx="582" cy="148" r="14" fill="#b0b8c4" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="590" y="132" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" text-anchor="middle">R7</text>
-
-  <!-- R8 -->
-  <circle cx="697" cy="191" r="13" fill="#b6bac4" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="715" y="184" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500">R8</text>
-
-  <!-- R9 -->
-  <circle cx="745" cy="295" r="12" fill="#c0c6ce" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="762" y="292" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500">R9</text>
-
-  <!-- R10 -->
-  <circle cx="709" cy="394" r="12" fill="#c8ccd4" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="726" y="408" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500">R10</text>
-
-  <!-- R11 -->
-  <circle cx="622" cy="437" r="11" fill="#ced2dc" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="638" y="452" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500">R11</text>
-
-  <!-- Dense cluster bracket -->
-  <path d="M 485 400 Q 530 440 560 410" fill="none" stroke="#6A8AAA" stroke-width="0.8" opacity="0.5"/>
-  <text x="485" y="412" fill="#6A8AAA" font-family="'JetBrains Mono', monospace" font-size="8" letter-spacing="0.5" text-anchor="end">diminishing returns →</text>
-
-  <!-- R12 -->
-  <circle cx="537" cy="408" r="11" fill="#c8ccd4" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="522" y="422" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="end">R12</text>
-
-  <!-- R13 -->
-  <circle cx="501" cy="336" r="11" fill="#c0c6ce" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="486" y="340" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="end">R13</text>
-
-  <!-- R14 -->
-  <circle cx="523" cy="267" r="11" fill="#b6bac4" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="508" y="253" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="end">R14</text>
-
-  <!-- R15 -->
-  <circle cx="581" cy="238" r="11" fill="#ced2dc" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="595" y="224" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="9">R15</text>
-
-  <!-- R16 -->
-  <circle cx="634" cy="256" r="11" fill="#b6bac4" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="650" y="248" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="9">R16</text>
-
-  <!-- R17 -->
-  <circle cx="655" cy="299" r="11" fill="#b6bac4" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
-  <text x="672" y="296" fill="#7A9AB0" font-family="'JetBrains Mono', monospace" font-size="9">R17</text>
-
-  <!-- Annotation: Round 1 start -->
-  <text x="835" cy="280" fill="#C08040" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle" letter-spacing="1">
-    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+  " fill="none" stroke-linejoin="round"/>
+  <line class="axis-line" x1="580" y1="370" x2="660" y2="230" stroke-width="0.5" stroke-dasharray="2 4"/>
+  <circle class="node-fill-01" cx="835" cy="315" r="20" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="864" y="319" font-family="'JetBrains Mono', monospace" font-size="11">R1</text>
+  <circle class="node-fill-02" cx="761" cy="471" r="19" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="770" y="496" font-family="'JetBrains Mono', monospace" font-size="11">R2</text>
+  <circle class="node-fill-03" cx="607" cy="528" r="18" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="607" y="556" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">R3</text>
+  <circle class="node-fill-04" cx="465" cy="465" r="17" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="438" y="469" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">R4</text>
+  <circle class="node-fill-05" cx="410" cy="328" r="16" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="384" y="332" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">R5</text>
+  <circle class="node-fill-06" cx="463" cy="200" r="15" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="448" y="185" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">R6</text>
+  <circle class="node-fill-07" cx="582" cy="148" r="14" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="582" y="126" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">R7</text>
+  <circle class="node-fill-07" cx="697" cy="191" r="13" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="718" y="195" font-family="'JetBrains Mono', monospace" font-size="10">R8</text>
+  <circle class="node-fill-07" cx="745" cy="295" r="12" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="765" y="299" font-family="'JetBrains Mono', monospace" font-size="10">R9</text>
+  <circle class="node-fill-07" cx="709" cy="394" r="12" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="729" y="402" font-family="'JetBrains Mono', monospace" font-size="10">R10</text>
+  <circle class="node-fill-07" cx="622" cy="437" r="11" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="638" y="452" font-family="'JetBrains Mono', monospace" font-size="10">R11</text>
+  <path class="bracket-line" d="M 485 400 Q 530 440 560 410" fill="none" stroke-width="0.8"/>
+  <text class="text-muted" x="481" y="411" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="0.5" text-anchor="end">diminishing returns →</text>
+  <circle class="node-fill-07" cx="537" cy="408" r="11" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="522" y="422" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="end">R12</text>
+  <circle class="node-fill-07" cx="501" cy="336" r="11" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="486" y="340" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="end">R13</text>
+  <circle class="node-fill-07" cx="523" cy="267" r="11" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="508" y="253" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="end">R14</text>
+  <circle class="node-fill-07" cx="581" cy="238" r="11" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="595" y="243" font-family="'JetBrains Mono', monospace" font-size="9">R15</text>
+  <circle class="node-fill-07" cx="634" cy="256" r="11" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="650" y="252" font-family="'JetBrains Mono', monospace" font-size="9">R16</text>
+  <circle class="node-fill-07" cx="655" cy="299" r="11" stroke-width="1" opacity="0.95"/>
+  <text class="node-txt" x="672" y="296" font-family="'JetBrains Mono', monospace" font-size="9">R17</text>
+  <text class="text-title" x="835" y="280" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle" letter-spacing="0.8">iteration start<animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/></text>
+  <path class="bracket-line" d="M 660 340 L 680 355" fill="none" stroke-width="1"/>
+  <text class="text-muted" x="685" y="360" font-family="'JetBrains Mono', monospace" font-size="8" letter-spacing="0.5">two grays · Δ 0.15</text>
+  <circle cx="611" cy="348" r="12" fill="#3B82F6" stroke="#60A8F0" stroke-width="2"/>
+  <text class="canvas-bg" x="611" y="351.5" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">✓</text>
+  <text class="text-title" x="611" y="374" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1">STOP</text>
+  <line class="frame-border" x1="100" y1="570" x2="1100" y2="570" stroke-width="0.5"/>
+  <text class="text-primary" x="100" y="594" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="start">
+    Iterative Development · Diminishing Value of Perfection
   </text>
-  <text x="835" y="280" fill="#C08040" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle" letter-spacing="0.8">iteration start</text>
-
-  <!-- Final gray annotation -->
-  <path d="M 660 340 L 680 355" fill="none" stroke="#60A8F0" stroke-width="1" opacity="0.6"/>
-  <text x="685" y="360" fill="#60A8F0" font-family="'JetBrains Mono', monospace" font-size="8" letter-spacing="0.5">two grays · Δ 0.15</text>
-
-  <!-- Stop: blue accent -->
-  <circle cx="611" cy="348" r="12" fill="#3B82F6" stroke="#60A8F0" stroke-width="2" filter="url(#glow)"/>
-  <text x="612" y="352" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">✓</text>
-  <text x="611" y="374" fill="#60A8F0" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" text-anchor="middle" letter-spacing="1">STOP</text>
-
-  <!-- Caption bottom-right -->
-  <text x="1150" y="615" fill="#3A5068" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="end" opacity="0.6">17 iterations · Δ diminishing</text>
+  <text class="text-muted" x="1100" y="594" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="end">
+    17 iterations · Δ diminishing
+  </text>
 </svg>

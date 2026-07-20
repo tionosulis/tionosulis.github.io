@@ -1,392 +1,155 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
-  <defs>
-
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   style="stop-color:#2A4053"/>
-      <stop offset="100%" style="stop-color:#243846"/>
-    </linearGradient>
-
-    <!-- Glow halos behind each pillar -->
-    <radialGradient id="haloA" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   style="stop-color:#6366F1;stop-opacity:0.2"/>
-      <stop offset="100%" style="stop-color:#6366F1;stop-opacity:0"/>
-    </radialGradient>
-    <radialGradient id="haloB" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   style="stop-color:#10B981;stop-opacity:0.2"/>
-      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0"/>
-    </radialGradient>
-    <radialGradient id="haloC" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   style="stop-color:#F59E0B;stop-opacity:0.2"/>
-      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:0"/>
-    </radialGradient>
-
-    <linearGradient id="cardA" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   style="stop-color:#1C2840"/>
-      <stop offset="100%" style="stop-color:#1A2634"/>
-    </linearGradient>
-    <linearGradient id="cardB" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   style="stop-color:#1C2840"/>
-      <stop offset="100%" style="stop-color:#1A2634"/>
-    </linearGradient>
-    <linearGradient id="cardC" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   style="stop-color:#1C2840"/>
-      <stop offset="100%" style="stop-color:#1A2634"/>
-    </linearGradient>
-
-    <!-- Code block fills: very dark (same in both modes) -->
-    <!-- keeps contrast regardless of host page mode -->
-
-    <!-- Beam horizontal gradient -->
-    <linearGradient id="beamH" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   style="stop-color:#6366F1;stop-opacity:0.8"/>
-      <stop offset="50%"  style="stop-color:#818CF8;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:0.8"/>
-    </linearGradient>
-
-    <!-- Drop shadow for cards -->
-    <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="116%">
-      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000000" flood-opacity="0.4"/>
-    </filter>
-
-    <!-- Soft glow filter for icons -->
-    <filter id="iconGlow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-
-    <!-- Outer lift -->
-    <filter id="outerLift" x="-2%" y="-2%" width="104%" height="104%">
-      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.18"/>
-    </filter>
-
-    <!-- Vertical line gradients (beam down to card) -->
-    <linearGradient id="dropA" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   style="stop-color:#6366F1;stop-opacity:0.9"/>
-      <stop offset="100%" style="stop-color:#6366F1;stop-opacity:0.2"/>
-    </linearGradient>
-    <linearGradient id="dropB" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   style="stop-color:#10B981;stop-opacity:0.9"/>
-      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0.2"/>
-    </linearGradient>
-    <linearGradient id="dropC" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   style="stop-color:#F59E0B;stop-opacity:0.9"/>
-      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:0.2"/>
-    </linearGradient>
-
-  </defs>
-
-  <!-- ─── Background ─── -->
-  <rect width="1200" height="675" fill="url(#bgGrad)"/>
-
-  <!-- Subtle dot grid -->
-  <g opacity="1">
-    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-      <circle cx="20" cy="20" r="0.8" fill="#35556B" opacity="0.8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" fill="none">  <defs>
+    <style>
+      .canvas-bg { fill: #f8f5f0; }
+      .grid-dots { fill: #332D28; opacity: 0.15; }
+      .frame-border { stroke: #D1C9C0; opacity: 0.8; }
+      .panel-card { fill: #FFFFFF; stroke: #D1C9C0; }
+      .text-primary { fill: #332D28; }
+      .text-title { fill: #B45309; }
+      .text-muted { fill: #8A8075; }
+      .text-comment { fill: #8A8075; font-style: italic; }
+      .halo-a { fill: #6366F1; fill-opacity: 0.08; }
+      .halo-b { fill: #10B981; fill-opacity: 0.08; }
+      .halo-c { fill: #F59E0B; fill-opacity: 0.08; }
+      .axis-beam { stroke: #D1C9C0; opacity: 0.5; }
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg { fill: #161616; }
+        .grid-dots { fill: #453E38; opacity: 0.3; }
+        .frame-border { stroke: #453E38; opacity: 0.6; }
+        .panel-card { fill: #2E2924; stroke: #453E38; }
+        .text-primary { fill: #F8F5F0; }
+        .text-title { fill: #F59E0B; }
+        .text-muted { fill: #A3978E; }
+        .text-comment { fill: #7A6A5C; }
+        .halo-a { fill: #6366F1; fill-opacity: 0.14; }
+        .halo-b { fill: #10B981; fill-opacity: 0.14; }
+        .halo-c { fill: #F59E0B; fill-opacity: 0.14; }
+        .axis-beam { stroke: #453E38; opacity: 0.6; }
+      }
+    </style>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle class="grid-dots" cx="20" cy="20" r="0.8"/>
     </pattern>
-    <rect width="1200" height="675" fill="url(#dots)"/>
+    <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+    <linearGradient id="dropA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <rect class="canvas-bg" width="1200" height="630"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect class="frame-border" x="1" y="1" width="1198" height="628" fill="none" stroke-width="1" rx="2"/>
+  <ellipse class="halo-a" cx="237" cy="320" rx="180" ry="140"/>
+  <circle cx="600" cy="75" r="5" fill="#818CF8"/>
+  <circle cx="600" cy="75" r="12" fill="#6366F1" fill-opacity="0.15"/>
+  <line class="axis-beam" x1="237" y1="75" x2="963" y2="75" stroke-width="1.5"/>
+  <circle cx="237" cy="75" r="3.5" fill="#6366F1"/>
+  <line x1="237" y1="75" x2="237" y2="132" stroke="url(#dropA)" stroke-width="1.5"/>
+  <rect class="panel-card" x="68" y="130" width="338" height="410" rx="14" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="68" y="130" width="338" height="4" rx="2" fill="#6366F1"/>
+  <text x="98" y="174" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" fill="#6366F1" letter-spacing="2">01</text>
+  <text x="374" y="174" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#6366F1" letter-spacing="1" opacity="0.6">ZERO FLICKER</text>
+  <g transform="translate(178,190)">
+    <circle cx="59" cy="40" r="34" fill="#6366F1" fill-opacity="0.12" stroke="#6366F1" stroke-width="1" stroke-opacity="0.3"/>
+    <path d="M66 16 L48 44 L62 44 L56 64 L78 32 L64 32 Z" fill="#6366F1" opacity="0.85"/>
+    <line x1="30" y1="12" x2="88" y2="68" stroke="#6366F1" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
   </g>
-
-  <!-- Large ambient color washes (very subtle) -->
-  <ellipse cx="237" cy="340" rx="260" ry="200" fill="url(#haloA)" opacity="0.9"/>
-  <ellipse cx="600" cy="340" rx="260" ry="200" fill="url(#haloB)" opacity="0.9"/>
-  <ellipse cx="963" cy="340" rx="260" ry="200" fill="url(#haloC)" opacity="0.9"/>
-
-  <!-- ─── Central beam node ─── -->
-  <circle cx="600" cy="90" r="6"  fill="#818CF8"/>
-  <circle cx="600" cy="90" r="14" fill="#6366F1" fill-opacity="0.15"/>
-  <circle cx="600" cy="90" r="26" fill="#6366F1" fill-opacity="0.07"/>
-
-  <!-- Horizontal beam -->
-  <line x1="237" y1="90" x2="963" y2="90"
-        stroke="url(#beamH)" stroke-width="1.5" opacity="0.6"/>
-
-  <!-- Tap points on beam -->
-  <circle cx="237" cy="90" r="3.5" fill="#6366F1"/>
-  <circle cx="600" cy="90" r="3.5" fill="#10B981"/>
-  <circle cx="963" cy="90" r="3.5" fill="#F59E0B"/>
-
-  <!-- Drop lines beam → card top -->
-  <line x1="237" y1="90"  x2="237" y2="152"
-        stroke="url(#dropA)" stroke-width="1.5"/>
-  <line x1="600" y1="90"  x2="600" y2="152"
-        stroke="url(#dropB)" stroke-width="1.5"/>
-  <line x1="963" y1="90"  x2="963" y2="152"
-        stroke="url(#dropC)" stroke-width="1.5"/>
-
-
-  <!-- ══════════════════════════════════════
-       PILLAR 1 — ZERO FLICKER  (indigo)
-  ══════════════════════════════════════ -->
-   <rect x="68" y="150" width="338" height="478" rx="14"
-         fill="url(#cardA)" filter="url(#cardShadow)"
-         stroke="#3D536A" stroke-width="1.5"/>
-  <!-- Top accent bar -->
-  <rect x="68" y="150" width="338" height="4" rx="2" fill="#6366F1"/>
-
-  <!-- Pillar index -->
-  <text x="98"  y="194" font-family="'Courier New',monospace" font-size="10"
-        fill="#6366F1" letter-spacing="2" opacity="0.7">01</text>
-  <text x="374" y="194" text-anchor="end" font-family="'Courier New',monospace"
-        font-size="10" fill="#6366F1" letter-spacing="1" opacity="0.5">ZERO FLICKER</text>
-
-  <!-- Icon: crossed-out flash (no flicker) -->
-  <g transform="translate(178,204)" filter="url(#iconGlow)">
-    <!-- Circle bg -->
-    <circle cx="59" cy="40" r="34" fill="#6366F1" fill-opacity="0.12"
-            stroke="#6366F1" stroke-width="1" stroke-opacity="0.3"/>
-    <!-- Lightning bolt -->
-    <path d="M66 16 L48 44 L62 44 L56 64 L78 32 L64 32 Z"
-          fill="#6366F1" opacity="0.85"/>
-    <!-- Diagonal no-entry slash -->
-    <line x1="30" y1="12" x2="88" y2="68"
-          stroke="#6366F1" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
-    <line x1="32" y1="10" x2="90" y2="66"
-          stroke="#1A2634" stroke-width="1" stroke-linecap="round" opacity="0.9"/>
+  <text class="text-primary" x="237" y="302" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700">Zero Flicker</text>
+  <line class="frame-border" x1="108" y1="316" x2="366" y2="316" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text class="text-muted" x="237" y="342" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">Block render until theme</text>
+  <text class="text-muted" x="237" y="362" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">resolves. Inline script before</text>
+  <text class="text-muted" x="237" y="382" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">body tag reads localStorage.</text>
+  <rect class="canvas-bg frame-border" x="98" y="400" width="278" height="98" rx="8" stroke-width="0.5"/>
+  <circle cx="116" cy="414" r="4" fill="#EF4444" fill-opacity="0.7"/>
+  <circle cx="130" cy="414" r="4" fill="#F59E0B" fill-opacity="0.7"/>
+  <circle cx="144" cy="414" r="4" fill="#10B981" fill-opacity="0.7"/>
+  <text class="text-comment" x="116" y="434" font-family="'JetBrains Mono', monospace" font-size="10.5">// inline injection</text>
+  <text class="text-primary" x="116" y="452" font-family="'JetBrains Mono', monospace" font-size="10.5">const t = localStorage</text>
+  <text class="text-primary" x="116" y="468" font-family="'JetBrains Mono', monospace" font-size="10.5">  .getItem('theme');</text>
+  <text class="text-primary" x="116" y="484" font-family="'JetBrains Mono', monospace" font-size="10.5">document.item = t;</text>
+  <rect class="canvas-bg frame-border" x="102" y="512" width="72" height="20" rx="10" stroke="#6366F1" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text x="138" y="525" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#6366F1" font-weight="bold">SSR-safe</text>
+  <rect class="canvas-bg frame-border" x="184" y="512" width="82" height="20" rx="10" stroke="#6366F1" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text x="225" y="525" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#6366F1" font-weight="bold">0ms delay</text>
+  <rect class="canvas-bg frame-border" x="276" y="512" width="102" height="20" rx="10" stroke="#6366F1" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text x="327" y="525" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#6366F1" font-weight="bold">no FOUC</text>
+  <circle cx="600" cy="75" r="3.5" fill="#10B981"/>
+  <line class="axis-beam" x1="600" y1="75" x2="600" y2="132" stroke-width="1.5"/>
+  <ellipse class="halo-b" cx="600" cy="320" rx="180" ry="140"/>
+  <rect class="panel-card" x="431" y="130" width="338" height="410" rx="14" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="431" y="130" width="338" height="4" rx="2" fill="#10B981"/>
+  <text x="461" y="174" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" fill="#10B981" letter-spacing="2">02</text>
+  <text x="737" y="174" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#10B981" letter-spacing="1" opacity="0.6">CSS ARCH</text>
+  <g transform="translate(531,186)">
+    <circle cx="69" cy="42" r="34" fill="#10B981" fill-opacity="0.12" stroke="#10B981" stroke-width="1" stroke-opacity="0.3"/>
+    <rect x="26" y="18" width="86" height="18" rx="4" fill="none" stroke="#10B981" stroke-width="1.2" stroke-opacity="0.3"/>
+    <text x="36" y="30" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10B981" opacity="0.4">--color-bg</text>
+    <rect x="20" y="32" width="86" height="18" rx="4" fill="none" stroke="#10B981" stroke-width="1.2" stroke-opacity="0.55"/>
+    <text x="30" y="44" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10B981" opacity="0.65">--color-text</text>
+    <rect class="canvas-bg frame-border" x="14" y="46" width="86" height="18" rx="4" stroke="#10B981" stroke-width="1.2"/>
+    <text x="24" y="58" font-family="'JetBrains Mono', monospace" font-size="9" fill="#10B981" font-weight="bold">--surface</text>
   </g>
-
-  <!-- Title -->
-  <text x="237" y="322" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif"
-        font-size="23" font-weight="700" fill="#C8D8E8" letter-spacing="-0.4">Zero Flicker</text>
-
-  <!-- Rule -->
-  <line x1="108" y1="336" x2="366" y2="336"
-        stroke="#6366F1" stroke-width="0.6" stroke-opacity="0.25"/>
-
-  <!-- Description -->
-  <text x="237" y="358" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif" font-size="13.5" fill="#7A9AB0">Block render until theme</text>
-  <text x="237" y="376" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif" font-size="13.5" fill="#7A9AB0">resolves. Inline script before</text>
-  <text x="237" y="394" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif" font-size="13.5" fill="#7A9AB0">&lt;body&gt; reads localStorage.</text>
-
-  <!-- Code block -->
-  <rect x="98"  y="414" width="278" height="98" rx="8"
-        fill="#0A0C10" stroke="#3D536A" stroke-width="0.5"/>
-  <!-- Window dots -->
-  <circle cx="116" cy="428" r="4" fill="#FF5F56" fill-opacity="0.7"/>
-  <circle cx="130" cy="428" r="4" fill="#FFBD2E" fill-opacity="0.7"/>
-  <circle cx="144" cy="428" r="4" fill="#27C93F" fill-opacity="0.7"/>
-
-  <text x="116" y="450" font-family="'Courier New',monospace" font-size="10.5"
-        fill="#6366F1" opacity="0.55">// before &lt;body&gt;</text>
-  <text x="116" y="466" font-family="'Courier New',monospace" font-size="10.5" fill="#94A3B8">const t = </text>
-  <text x="180" y="466" font-family="'Courier New',monospace" font-size="10.5" fill="#A78BFA">localStorage</text>
-  <text x="116" y="482" font-family="'Courier New',monospace" font-size="10.5" fill="#A78BFA">  .getItem</text>
-  <text x="178" y="482" font-family="'Courier New',monospace" font-size="10.5" fill="#94A3B8">('theme');</text>
-  <text x="116" y="498" font-family="'Courier New',monospace" font-size="10.5" fill="#94A3B8">root.dataset.</text>
-  <text x="200" y="498" font-family="'Courier New',monospace" font-size="10.5" fill="#10B981">theme</text>
-  <text x="238" y="498" font-family="'Courier New',monospace" font-size="10.5" fill="#94A3B8">= t;</text>
-
-  <!-- Tags -->
-  <rect x="102" y="524" width="72" height="20" rx="10"
-        fill="#6366F1" fill-opacity="0.15" stroke="#6366F1" stroke-width="0.6" stroke-opacity="0.5"/>
-  <text x="138" y="538" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9.5" fill="#818CF8" letter-spacing="0.4">SSR-safe</text>
-
-  <rect x="184" y="524" width="82" height="20" rx="10"
-        fill="#6366F1" fill-opacity="0.15" stroke="#6366F1" stroke-width="0.6" stroke-opacity="0.5"/>
-  <text x="225" y="538" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9.5" fill="#818CF8" letter-spacing="0.4">0ms delay</text>
-
-  <rect x="276" y="524" width="102" height="20" rx="10"
-        fill="#6366F1" fill-opacity="0.15" stroke="#6366F1" stroke-width="0.6" stroke-opacity="0.5"/>
-  <text x="327" y="538" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9.5" fill="#818CF8" letter-spacing="0.4">no FOUC</text>
-
-  <!-- Bottom label bar -->
-  <rect x="68" y="598" width="338" height="30" rx="0"
-        fill="#6366F1" fill-opacity="0.12"/>
-  <rect x="68" y="624" width="338" height="4"  rx="0"
-        fill="#6366F1" fill-opacity="0.12"/>
-  <text x="237" y="617" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9" fill="#818CF8" letter-spacing="2" opacity="0.7">RENDERING · TIMING · SSR</text>
-
-
-  <!-- ══════════════════════════════════════
-       PILLAR 2 — CSS ARCHITECTURE  (emerald)
-  ══════════════════════════════════════ -->
-   <rect x="431" y="150" width="338" height="478" rx="14"
-         fill="url(#cardB)" filter="url(#cardShadow)"
-         stroke="#3D536A" stroke-width="1.5"/>
-  <rect x="431" y="150" width="338" height="4" rx="2" fill="#10B981"/>
-
-  <text x="461" y="194" font-family="'Courier New',monospace" font-size="10"
-        fill="#10B981" letter-spacing="2" opacity="0.7">02</text>
-  <text x="737" y="194" text-anchor="end" font-family="'Courier New',monospace"
-        font-size="10" fill="#10B981" letter-spacing="1" opacity="0.5">CSS ARCH</text>
-
-  <!-- Icon: stacked token layers -->
-  <g transform="translate(531,200)">
-    <circle cx="69" cy="42" r="34" fill="#10B981" fill-opacity="0.12"
-            stroke="#10B981" stroke-width="1" stroke-opacity="0.3"/>
-    <!-- Layer 1 (back) -->
-    <rect x="26" y="18" width="86" height="18" rx="4"
-          fill="none" stroke="#10B981" stroke-width="1.2" stroke-opacity="0.3"/>
-    <text x="36" y="31" font-family="'Courier New',monospace" font-size="9"
-          fill="#10B981" opacity="0.4">--color-bg</text>
-    <!-- Layer 2 (mid) -->
-    <rect x="20" y="32" width="86" height="18" rx="4"
-          fill="none" stroke="#10B981" stroke-width="1.2" stroke-opacity="0.55"/>
-    <text x="30" y="45" font-family="'Courier New',monospace" font-size="9"
-          fill="#10B981" opacity="0.65">--color-text</text>
-    <!-- Layer 3 (front) -->
-    <rect x="14" y="46" width="86" height="18" rx="4"
-          fill="#10B981" fill-opacity="0.12" stroke="#10B981" stroke-width="1.2"/>
-    <text x="24" y="59" font-family="'Courier New',monospace" font-size="9"
-          fill="#10B981">--color-surface</text>
-  </g>
-
-  <text x="600" y="322" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif"
-        font-size="23" font-weight="700" fill="#C0E8D8" letter-spacing="-0.4">CSS Architecture</text>
-
-  <line x1="471" y1="336" x2="729" y2="336"
-        stroke="#10B981" stroke-width="0.6" stroke-opacity="0.25"/>
-
-  <text x="600" y="358" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif" font-size="13.5" fill="#7A9AB0">Semantic tokens as CSS custom</text>
-  <text x="600" y="376" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif" font-size="13.5" fill="#7A9AB0">properties. One selector swap,</text>
-  <text x="600" y="394" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif" font-size="13.5" fill="#7A9AB0">every value inherits.</text>
-
-  <!-- Code block -->
-  <rect x="461" y="414" width="278" height="98" rx="8"
-        fill="#0A0C10" stroke="#3D536A" stroke-width="0.5"/>
-  <circle cx="479" cy="428" r="4" fill="#FF5F56" fill-opacity="0.7"/>
-  <circle cx="493" cy="428" r="4" fill="#FFBD2E" fill-opacity="0.7"/>
-  <circle cx="507" cy="428" r="4" fill="#27C93F" fill-opacity="0.7"/>
-
-  <text x="479" y="450" font-family="'Courier New',monospace" font-size="10.5"
-        fill="#10B981" opacity="0.55">/* semantic token swap */</text>
-  <text x="479" y="466" font-family="'Courier New',monospace" font-size="10.5" fill="#94A3B8">:root       </text>
-  <text x="537" y="466" font-family="'Courier New',monospace" font-size="10.5" fill="#94A3B8">{ --bg: </text>
-  <text x="591" y="466" font-family="'Courier New',monospace" font-size="10.5" fill="#10B981">#fff</text>
-  <text x="618" y="466" font-family="'Courier New',monospace" font-size="10.5" fill="#94A3B8">}</text>
-  <text x="479" y="482" font-family="'Courier New',monospace" font-size="10.5" fill="#A78BFA">[data-theme=dark]</text>
-  <text x="479" y="498" font-family="'Courier New',monospace" font-size="10.5" fill="#94A3B8">            { --bg: </text>
-  <text x="574" y="498" font-family="'Courier New',monospace" font-size="10.5" fill="#10B981">#0d1117</text>
-  <text x="626" y="498" font-family="'Courier New',monospace" font-size="10.5" fill="#94A3B8">}</text>
-
-  <!-- Tags -->
-  <rect x="465" y="524" width="92" height="20" rx="10"
-        fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="0.6" stroke-opacity="0.5"/>
-  <text x="511" y="538" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9.5" fill="#4DC896" letter-spacing="0.4">tokens first</text>
-
-  <rect x="567" y="524" width="92" height="20" rx="10"
-        fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="0.6" stroke-opacity="0.5"/>
-  <text x="613" y="538" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9.5" fill="#4DC896" letter-spacing="0.4">one selector</text>
-
-  <rect x="668" y="524" width="76" height="20" rx="10"
-        fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="0.6" stroke-opacity="0.5"/>
-  <text x="706" y="538" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9.5" fill="#4DC896" letter-spacing="0.4">cascade</text>
-
-  <rect x="431" y="598" width="338" height="30" rx="0"
-        fill="#10B981" fill-opacity="0.12"/>
-  <rect x="431" y="624" width="338" height="4" rx="0"
-        fill="#10B981" fill-opacity="0.12"/>
-  <text x="600" y="617" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9" fill="#4DC896" letter-spacing="2" opacity="0.7">TOKENS · VARIABLES · CASCADE</text>
-
-
-  <!-- ══════════════════════════════════════
-       PILLAR 3 — THE DEVIL IN THE DETAILS  (amber)
-  ══════════════════════════════════════ -->
-   <rect x="794" y="150" width="338" height="478" rx="14"
-         fill="url(#cardC)" filter="url(#cardShadow)"
-         stroke="#3D536A" stroke-width="1.5"/>
-  <rect x="794" y="150" width="338" height="4" rx="2" fill="#F59E0B"/>
-
-  <text x="824" y="194" font-family="'Courier New',monospace" font-size="10"
-        fill="#F59E0B" letter-spacing="2" opacity="0.7">03</text>
-  <text x="1100" y="194" text-anchor="end" font-family="'Courier New',monospace"
-        font-size="10" fill="#F59E0B" letter-spacing="1" opacity="0.5">DETAILS</text>
-
-  <!-- Icon: magnifier with crosshair -->
-  <g transform="translate(895,200)" filter="url(#iconGlow)">
-    <circle cx="69" cy="42" r="34" fill="#F59E0B" fill-opacity="0.12"
-            stroke="#F59E0B" stroke-width="1" stroke-opacity="0.3"/>
-    <!-- Magnifier glass -->
-    <circle cx="62" cy="35" r="20" fill="none"
-            stroke="#F59E0B" stroke-width="1.8" stroke-opacity="0.8"/>
-    <!-- Handle -->
-    <line x1="76" y1="49" x2="88" y2="62"
-          stroke="#F59E0B" stroke-width="2.8" stroke-linecap="round" stroke-opacity="0.8"/>
-    <!-- Crosshair inside -->
-    <line x1="55" y1="35" x2="69" y2="35"
-          stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"/>
-    <line x1="62" y1="28" x2="62" y2="42"
-          stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"/>
-    <!-- Small warning pip -->
+  <text class="text-primary" x="600" y="302" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700">CSS Architecture</text>
+  <line class="frame-border" x1="471" y1="316" x2="729" y2="316" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text class="text-muted" x="600" y="342" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">Semantic tokens as CSS custom</text>
+  <text class="text-muted" x="600" y="362" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">properties. One selector swap,</text>
+  <text class="text-muted" x="600" y="382" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">every child value inherits.</text>
+  <rect class="canvas-bg frame-border" x="461" y="400" width="278" height="98" rx="8" stroke-width="0.5"/>
+  <circle cx="479" cy="414" r="4" fill="#EF4444" fill-opacity="0.7"/>
+  <circle cx="493" cy="414" r="4" fill="#F59E0B" fill-opacity="0.7"/>
+  <circle cx="507" cy="414" r="4" fill="#10B981" fill-opacity="0.7"/>
+  <text class="text-comment" x="479" y="434" font-family="'JetBrains Mono', monospace" font-size="10.5">/* token variable swap */</text>
+  <text class="text-primary" x="479" y="452" font-family="'JetBrains Mono', monospace" font-size="10.5">:root { --bg: #fff; }</text>
+  <text class="text-primary" x="479" y="470" font-family="'JetBrains Mono', monospace" font-size="10.5">[data-theme=dark] {</text>
+  <text class="text-primary" x="479" y="486" font-family="'JetBrains Mono', monospace" font-size="10.5">  --bg: #0d1117; }</text>
+  <rect class="canvas-bg frame-border" x="465" y="512" width="92" height="20" rx="10" stroke="#10B981" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text x="511" y="525" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#10B981" font-weight="bold">tokens first</text>
+  <rect class="canvas-bg frame-border" x="567" y="512" width="92" height="20" rx="10" stroke="#10B981" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text x="613" y="525" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#10B981" font-weight="bold">one selector</text>
+  <rect class="canvas-bg frame-border" x="668" y="512" width="76" height="20" rx="10" stroke="#10B981" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text x="706" y="525" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#10B981" font-weight="bold">cascade</text>
+  <circle cx="963" cy="75" r="3.5" fill="#F59E0B"/>
+  <line class="axis-beam" x1="963" y1="75" x2="963" y2="132" stroke-width="1.5"/>
+  <ellipse class="halo-c" cx="963" cy="320" rx="180" ry="140"/>
+  <rect class="panel-card" x="794" y="130" width="338" height="410" rx="14" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="794" y="130" width="338" height="4" rx="2" fill="#F59E0B"/>
+  <text x="824" y="174" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" fill="#F59E0B" letter-spacing="2">03</text>
+  <text x="1100" y="174" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F59E0B" letter-spacing="1" opacity="0.6">DETAILS</text>
+  <g transform="translate(895,186)">
+    <circle cx="69" cy="42" r="34" fill="#F59E0B" fill-opacity="0.12" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.3"/>
+    <circle cx="62" cy="35" r="20" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-opacity="0.8"/>
+    <line x1="76" y1="49" x2="88" y2="62" stroke="#F59E0B" stroke-width="2.8" stroke-linecap="round" stroke-opacity="0.8"/>
+    <line x1="55" y1="35" x2="69" y2="35" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="62" y1="28" x2="62" y2="42" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"/>
     <circle cx="44" cy="16" r="3.5" fill="#F59E0B" opacity="0.9"/>
-    <text x="44" y="20" text-anchor="middle" font-family="sans-serif"
-          font-size="6" fill="#FFF8E8" font-weight="700">!</text>
   </g>
-
-  <text x="963" y="322" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif"
-        font-size="23" font-weight="700" fill="#F0D8B0" letter-spacing="-0.4">The Devil in Details</text>
-
-  <line x1="834" y1="336" x2="1092" y2="336"
-        stroke="#F59E0B" stroke-width="0.6" stroke-opacity="0.25"/>
-
-  <text x="963" y="358" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif" font-size="13.5" fill="#7A9AB0">Scrollbar colors, SVG fills,</text>
-  <text x="963" y="376" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif" font-size="13.5" fill="#7A9AB0">iframes, color-scheme meta.</text>
-  <text x="963" y="394" text-anchor="middle"
-        font-family="Georgia,'Times New Roman',serif" font-size="13.5" fill="#7A9AB0">The gaps that break polish.</text>
-
-  <!-- Code block -->
-  <rect x="824" y="414" width="278" height="98" rx="8"
-        fill="#0A0C10" stroke="#3D536A" stroke-width="0.5"/>
-  <circle cx="842" cy="428" r="4" fill="#FF5F56" fill-opacity="0.7"/>
-  <circle cx="856" cy="428" r="4" fill="#FFBD2E" fill-opacity="0.7"/>
-  <circle cx="870" cy="428" r="4" fill="#27C93F" fill-opacity="0.7"/>
-
-  <text x="842" y="450" font-family="'Courier New',monospace" font-size="10.5"
-        fill="#F59E0B" opacity="0.55">/* oft-missed pieces */</text>
-  <text x="842" y="466" font-family="'Courier New',monospace" font-size="10.5" fill="#A78BFA">::scrollbar-thumb</text>
-  <text x="842" y="482" font-family="'Courier New',monospace" font-size="10.5" fill="#94A3B8">  { bg: </text>
-  <text x="892" y="482" font-family="'Courier New',monospace" font-size="10.5" fill="#F59E0B">var(--scrollbar) }</text>
-  <text x="842" y="498" font-family="'Courier New',monospace" font-size="10.5" fill="#A78BFA">color-scheme</text>
-  <text x="940" y="498" font-family="'Courier New',monospace" font-size="10.5" fill="#94A3B8">: dark;</text>
-
-  <!-- Tags -->
-  <rect x="828" y="524" width="80" height="20" rx="10"
-        fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="0.6" stroke-opacity="0.5"/>
-  <text x="868" y="538" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9.5" fill="#F5A623" letter-spacing="0.4">scrollbar</text>
-
-  <rect x="918" y="524" width="72" height="20" rx="10"
-        fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="0.6" stroke-opacity="0.5"/>
-  <text x="954" y="538" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9.5" fill="#F5A623" letter-spacing="0.4">SVG fill</text>
-
-  <rect x="1000" y="524" width="88" height="20" rx="10"
-        fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="0.6" stroke-opacity="0.5"/>
-  <text x="1044" y="538" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9.5" fill="#F5A623" letter-spacing="0.4">meta tag</text>
-
-  <rect x="794" y="598" width="338" height="30" rx="0"
-        fill="#F59E0B" fill-opacity="0.12"/>
-  <rect x="794" y="624" width="338" height="4" rx="0"
-        fill="#F59E0B" fill-opacity="0.12"/>
-  <text x="963" y="617" text-anchor="middle" font-family="'Courier New',monospace"
-        font-size="9" fill="#F5A623" letter-spacing="2" opacity="0.8">POLISH · EDGE CASES · QA</text>
-
-  <!-- Outer frame -->
-  <rect x="1" y="1" width="1198" height="673" rx="12" ry="12"
-        fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.8"
-        filter="url(#outerLift)"/>
-  <path d="M 1 20 L 1 1 L 20 1" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.7"/>
-  <path d="M 1180 1 L 1199 1 L 1199 20" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.7"/>
-  <path d="M 1 655 L 1 674 L 20 674" fill="none" stroke="#10D9A8" stroke-width="2" opacity="0.6"/>
-  <path d="M 1180 674 L 1199 674 L 1199 655" fill="none" stroke="#10D9A8" stroke-width="2" opacity="0.6"/>
-
+  <text class="text-primary" x="963" y="302" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700">The Devil in Details</text>
+  <line class="frame-border" x1="834" y1="316" x2="1092" y2="316" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text class="text-muted" x="963" y="342" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">Scrollbar colors, SVG fills,</text>
+  <text class="text-muted" x="963" y="362" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">iframes, color-scheme meta.</text>
+  <text class="text-muted" x="963" y="382" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">The gaps that break polish.</text>
+  <rect class="canvas-bg frame-border" x="824" y="400" width="278" height="98" rx="8" stroke-width="0.5"/>
+  <circle cx="842" cy="414" r="4" fill="#EF4444" fill-opacity="0.7"/>
+  <circle cx="856" cy="414" r="4" fill="#F59E0B" fill-opacity="0.7"/>
+  <circle cx="870" cy="414" r="4" fill="#10B981" fill-opacity="0.7"/>
+  <text class="text-comment" x="842" y="434" font-family="'JetBrains Mono', monospace" font-size="10.5">/* oft-missed scopes */</text>
+  <text class="text-primary" x="842" y="452" font-family="'JetBrains Mono', monospace" font-size="10.5">::scrollbar-thumb {</text>
+  <text class="text-primary" x="842" y="468" font-family="'JetBrains Mono', monospace" font-size="10.5">  bg: var(--scrollbar); }</text>
+  <text class="text-primary" x="842" y="484" font-family="'JetBrains Mono', monospace" font-size="10.5">color-scheme: dark;</text>
+  <rect class="canvas-bg frame-border" x="828" y="512" width="80" height="20" rx="10" stroke="#F59E0B" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text x="868" y="525" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#F59E0B" font-weight="bold">scrollbar</text>
+  <rect class="canvas-bg frame-border" x="918" y="512" width="72" height="20" rx="10" stroke="#F59E0B" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text x="954" y="525" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#F59E0B" font-weight="bold">SVG fill</text>
+  <rect class="canvas-bg frame-border" x="1000" y="512" width="88" height="20" rx="10" stroke="#F59E0B" stroke-width="0.6" stroke-opacity="0.5"/>
+  <text x="1044" y="525" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#F59E0B" font-weight="bold">meta tag</text>
+  <line class="frame-border" x1="60" y1="560" x2="1140" y2="560" stroke-width="0.5"/>
+  <g font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">
+    <circle cx="84" cy="592" r="5" fill="#6366F1" opacity="0.85"/>
+    <text class="text-muted" x="96" y="596" font-weight="bold">Rendering &amp; Timing</text>
+    <circle cx="985" cy="592" r="5" fill="#F59E0B" opacity="0.85"/>
+    <text x="1000" y="596" font-weight="bold" fill="#F59E0B" text-anchor="start">Polish Edge-Cases Fixed</text>
+  </g>
+  <text class="text-title" x="600" y="596" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="3">DARK MODE · SYSTEM ARCHITECTURE · WEB PERF</text>
 </svg>

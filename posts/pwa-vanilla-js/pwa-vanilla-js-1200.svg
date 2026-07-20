@@ -1,123 +1,92 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2A4053"/>
-      <stop offset="100%" stop-color="#243846"/>
-    </linearGradient>
-    <linearGradient id="leftCard" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1A2634"/>
-      <stop offset="100%" stop-color="#1A2634"/>
-    </linearGradient>
-    <linearGradient id="rightCard" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0E1E16"/>
-      <stop offset="100%" stop-color="#0E1E16"/>
-    </linearGradient>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
+    <style>
+      .canvas-bg { fill: #f8f5f0; }
+      .grid-dots { fill: #332D28; opacity: 0.15; }
+      .frame-border { stroke: #D1C9C0; opacity: 0.8; }
+      .panel-bg-left { fill: #FFFFFF; stroke: #4A8AE0; }
+      .panel-bg-right { fill: #FFFFFF; stroke: #16A34A; }
+      .inner-badge-bg { fill: #E5DFD9; stroke: #D1C9C0; }
+      .text-primary { fill: #332D28; }
+      .text-title { fill: #B45309; }
+      .text-muted { fill: #8A8075; }
+      .text-comment { fill: #8A8075; font-style: italic; }
+      .accent-blue-txt { fill: #0284C7; }
+      .accent-ok-txt { fill: #16A34A; }
+      .center-vs-bg { fill: #E5DFD9; stroke: #D1C9C0; }
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg { fill: #161616; }
+        .grid-dots { fill: #453E38; opacity: 0.3; }
+        .frame-border { stroke: #453E38; opacity: 0.6; }
+        .panel-bg-left { fill: #1A2634; stroke: #3D536A; }
+        .panel-bg-right { fill: #0E1E16; stroke: #2A5A3A; }
+        .inner-badge-bg { fill: #35556B; stroke: #3D536A; }
+        .text-primary { fill: #F8F5F0; }
+        .text-title { fill: #F59E0B; }
+        .text-muted { fill: #A3978E; }
+        .text-comment { fill: #7A6A5C; }
+        .accent-blue-txt { fill: #4A8AE0; }
+        .accent-ok-txt { fill: #10D9A8; }
+        .center-vs-bg { fill: #2A4053; stroke: #3D536A; }
+      }
+    </style>
     <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#35556B" stroke-width="0.6"/>
+      <circle class="grid-dots" cx="24" cy="24" r="0.8"/>
     </pattern>
-    <filter id="blueGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="18" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="mintGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="18" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
     <filter id="softShadow">
-      <feDropShadow dx="0" dy="6" stdDeviation="20" flood-color="#000" flood-opacity="0.5"/>
-    </filter>
-    <filter id="labelGlow" x="-10%" y="-30%" width="120%" height="160%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      <feDropShadow dx="0" dy="6" stdDeviation="15" flood-color="#000" flood-opacity="0.25"/>
     </filter>
   </defs>
-  <rect width="1200" height="675" fill="url(#bg)"/>
-  <rect width="1200" height="675" fill="url(#grid)"/>
-  <ellipse cx="280" cy="338" rx="320" ry="260" fill="#35556B" opacity="0.18"/>
-  <ellipse cx="920" cy="338" rx="300" ry="240" fill="#1A4A30" opacity="0.22"/>
-  <rect x="0" y="0" width="1200" height="3" fill="#35556B" opacity="0.8"/>
-  <rect x="60" y="80" width="480" height="515" rx="12"
-        fill="url(#leftCard)" stroke="#3D536A" stroke-width="2"
-        filter="url(#softShadow)"/>
-  <rect x="60" y="80" width="480" height="4" rx="2" fill="#4A8AE0" opacity="0.7"/>
-  <text x="300" y="148" font-family="Courier New, Courier, monospace"
-        font-size="18" font-weight="bold" fill="#A0B8D0"
-        text-anchor="middle" letter-spacing="5">WORKBOX</text>
-  <line x1="100" y1="165" x2="500" y2="165" stroke="#3D536A" stroke-width="1"/>
-  <text x="300" y="300" font-family="Courier New, Courier, monospace"
-        font-size="110" font-weight="bold" fill="#4A8AE0"
-        text-anchor="middle" filter="url(#blueGlow)">~50</text>
-  <text x="300" y="370" font-family="Courier New, Courier, monospace"
-        font-size="48" font-weight="bold" fill="#4A8AE0"
-        text-anchor="middle" opacity="0.9">KB</text>
-  <rect x="118" y="415" width="164" height="38" rx="6" fill="#35556B" stroke="#3D536A" stroke-width="1.5"/>
-  <text x="200" y="439" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#7A9AB0" text-anchor="middle">build tooling</text>
-  <rect x="318" y="415" width="164" height="38" rx="6" fill="#35556B" stroke="#3D536A" stroke-width="1.5"/>
-  <text x="400" y="439" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#7A9AB0" text-anchor="middle">10+ strategies</text>
-  <rect x="118" y="468" width="164" height="38" rx="6" fill="#35556B" stroke="#3D536A" stroke-width="1.5"/>
-  <text x="200" y="492" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#7A9AB0" text-anchor="middle">~1000 LOC</text>
-  <rect x="318" y="468" width="164" height="38" rx="6" fill="#35556B" stroke="#3D536A" stroke-width="1.5"/>
-  <text x="400" y="492" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#7A9AB0" text-anchor="middle">high complexity</text>
-  <text x="300" y="558" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#4A8AE0" text-anchor="middle"
-        opacity="0.8" letter-spacing="2">GOOGLE'S OFFICIAL SW LIBRARY</text>
-  <circle cx="600" cy="338" r="42" fill="#2A4053" stroke="#3D536A" stroke-width="2"/>
-  <circle cx="600" cy="338" r="36" fill="#243846" stroke="#35556B" stroke-width="1"/>
-  <text x="600" y="347" font-family="Georgia, Times New Roman, serif"
-        font-size="22" font-weight="bold" fill="#A0B8D0"
-        text-anchor="middle">vs</text>
-  <rect x="660" y="80" width="480" height="515" rx="12"
-        fill="url(#rightCard)" stroke="#2A5A3A" stroke-width="2"
-        filter="url(#softShadow)"/>
-  <rect x="660" y="80" width="480" height="4" rx="2" fill="#10D9A8" opacity="0.8"/>
-  <text x="900" y="148" font-family="Courier New, Courier, monospace"
-        font-size="18" font-weight="bold" fill="#10D9A8"
-        text-anchor="middle" letter-spacing="5"
-        filter="url(#labelGlow)">VANILLA SW</text>
-  <line x1="700" y1="165" x2="1100" y2="165" stroke="#2A5A3A" stroke-width="1"/>
-  <text x="900" y="300" font-family="Courier New, Courier, monospace"
-        font-size="110" font-weight="bold" fill="#10D9A8"
-        text-anchor="middle" filter="url(#mintGlow)">~1</text>
-  <text x="900" y="370" font-family="Courier New, Courier, monospace"
-        font-size="48" font-weight="bold" fill="#10D9A8"
-        text-anchor="middle" opacity="0.9">KB</text>
-  <rect x="718" y="415" width="164" height="38" rx="6" fill="#0E1E16" stroke="#2A5A3A" stroke-width="1.5"/>
-  <text x="800" y="439" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#10D9A8" text-anchor="middle" opacity="0.85">no build step</text>
-  <rect x="918" y="415" width="164" height="38" rx="6" fill="#0E1E16" stroke="#2A5A3A" stroke-width="1.5"/>
-  <text x="1000" y="439" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#10D9A8" text-anchor="middle" opacity="0.85">3 strategies</text>
-  <rect x="718" y="468" width="164" height="38" rx="6" fill="#0E1E16" stroke="#2A5A3A" stroke-width="1.5"/>
-  <text x="800" y="492" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#10D9A8" text-anchor="middle" opacity="0.85">~50 LOC</text>
-  <rect x="918" y="468" width="164" height="38" rx="6" fill="#0E1E16" stroke="#2A5A3A" stroke-width="1.5"/>
-  <text x="1000" y="492" font-family="Courier New, Courier, monospace"
-        font-size="14" fill="#10D9A8" text-anchor="middle" opacity="0.85">zero deps</text>
-  <text x="900" y="558" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#10D9A8" text-anchor="middle"
-        opacity="0.7" letter-spacing="2" filter="url(#labelGlow)">HAND-WRITTEN &#xB7; OFFLINE-FIRST</text>
-  <rect x="0" y="628" width="1200" height="47" fill="#1A2634" opacity="0.9"/>
-  <line x1="0" y1="628" x2="1200" y2="628" stroke="#35556B" stroke-width="1"/>
-  <circle cx="84" cy="651" r="5" fill="#10D9A8" opacity="0.7"/>
-  <text x="100" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#7A9AB0">install</text>
-  <text x="158" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#6A8AAA">&#xB7;</text>
-  <circle cx="178" cy="651" r="5" fill="#4A8AE0" opacity="0.5"/>
-  <text x="194" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#7A9AB0">fetch</text>
-  <text x="238" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#6A8AAA">&#xB7;</text>
-  <circle cx="258" cy="651" r="5" fill="#10D9A8" opacity="0.4"/>
-  <text x="274" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#7A9AB0">activate</text>
-  <text x="600" y="656" font-family="Courier New, Courier, monospace"
-        font-size="12" fill="#6A8AAA" text-anchor="middle"
-        letter-spacing="3">PWA &#xB7; VANILLA JS &#xB7; SERVICE WORKERS</text>
-  <text x="1116" y="656" font-family="Courier New, Courier, monospace"
-        font-size="13" fill="#4A8AE0" text-anchor="end" opacity="0.8">No Build Step</text>
+  <rect class="canvas-bg" width="1200" height="630"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect class="frame-border" x="1" y="1" width="1198" height="628" fill="none" stroke-width="1" rx="2"/>
+  <text class="text-title" x="600" y="44" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" letter-spacing="3" text-anchor="middle">SERVICE WORKER WEIGHT COMPARISON</text>
+  <text class="text-muted" x="600" y="68" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" text-anchor="middle">PWA Optimization · Boilerplate Libraries vs Micro-Optimization Scripts</text>
+  <line class="frame-border" x1="60" y1="84" x2="1140" y2="84" stroke-width="0.5"/>
+  <ellipse cx="280" cy="310" rx="260" ry="200" fill="#35556B" opacity="0.12"/>
+  <ellipse cx="920" cy="310" rx="260" ry="200" fill="#1A4A30" opacity="0.14"/>
+  <rect class="panel-bg-left" x="60" y="105" width="480" height="415" rx="12" stroke-width="2" filter="url(#softShadow)"/>
+  <rect x="60" y="105" width="480" height="4" rx="2" fill="#4A8AE0" opacity="0.7"/>
+  <text class="accent-blue-txt" x="300" y="155" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="bold" text-anchor="middle" letter-spacing="5">WORKBOX</text>
+  <line class="frame-border" x1="100" y1="172" x2="500" y2="172" stroke-width="1"/>
+  <text class="accent-blue-txt" x="300" y="295" font-family="'JetBrains Mono', monospace" font-size="100" font-weight="bold" text-anchor="middle">~50</text>
+  <text class="accent-blue-txt" x="300" y="352" font-family="'JetBrains Mono', monospace" font-size="42" font-weight="bold" text-anchor="middle" opacity="0.9">KB</text>
+  <rect class="inner-badge-bg" x="110" y="385" width="168" height="34" rx="6" stroke-width="1"/>
+  <text class="text-muted" x="194" y="406" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="bold">build tooling</text>
+  <rect class="inner-badge-bg" x="322" y="385" width="168" height="34" rx="6" stroke-width="1"/>
+  <text class="text-muted" x="406" y="406" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="bold">10+ strategies</text>
+  <rect class="inner-badge-bg" x="110" y="432" width="168" height="34" rx="6" stroke-width="1"/>
+  <text class="text-muted" x="194" y="453" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="bold">~1000 LOC</text>
+  <rect class="inner-badge-bg" x="322" y="432" width="168" height="34" rx="6" stroke-width="1"/>
+  <text class="text-muted" x="406" y="453" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="bold">high complexity</text>
+  <text class="accent-blue-txt" x="300" y="498" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle" opacity="0.8" letter-spacing="2" font-weight="bold">GOOGLE'S OFFICIAL SW LIBRARY</text>
+  <circle class="center-vs-bg" cx="600" cy="312" r="38" stroke-width="2"/>
+  <text class="text-muted" x="600" y="320" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="bold" text-anchor="middle">vs</text>
+  <rect class="panel-bg-right" x="660" y="105" width="480" height="415" rx="12" stroke-width="2" filter="url(#softShadow)"/>
+  <rect x="660" y="105" width="480" height="4" rx="2" fill="#10B981" opacity="0.8"/>
+  <text class="accent-ok-txt" x="900" y="155" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="bold" text-anchor="middle" letter-spacing="5">VANILLA SW</text>
+  <line class="frame-border" x1="700" y1="172" x2="1100" y2="172" stroke-width="1"/>
+  <text class="accent-ok-txt" x="900" y="295" font-family="'JetBrains Mono', monospace" font-size="100" font-weight="bold" text-anchor="middle">~1</text>
+  <text class="accent-ok-txt" x="900" y="352" font-family="'JetBrains Mono', monospace" font-size="42" font-weight="bold" text-anchor="middle" opacity="0.9">KB</text>
+  <rect class="inner-badge-bg" x="710" y="385" width="168" height="34" rx="6" stroke-width="1"/>
+  <text class="accent-ok-txt" x="794" y="406" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="bold" opacity="0.85">no build step</text>
+  <rect class="inner-badge-bg" x="922" y="385" width="168" height="34" rx="6" stroke-width="1"/>
+  <text class="accent-ok-txt" x="1006" y="406" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="bold" opacity="0.85">3 strategies</text>
+  <rect class="inner-badge-bg" x="710" y="432" width="168" height="34" rx="6" stroke-width="1"/>
+  <text class="accent-ok-txt" x="794" y="453" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="bold" opacity="0.85">~50 LOC</text>
+  <rect class="inner-badge-bg" x="922" y="432" width="168" height="34" rx="6" stroke-width="1"/>
+  <text class="accent-ok-txt" x="1006" y="453" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" font-weight="bold" opacity="0.85">zero deps</text>
+  <text class="accent-ok-txt" x="900" y="498" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle" opacity="0.7" letter-spacing="2" font-weight="bold">HAND-WRITTEN · OFFLINE-FIRST</text>
+  <line class="frame-border" x1="60" y1="560" x2="1140" y2="560" stroke-width="0.5"/>
+  <g font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">
+    <circle cx="84" cy="592" r="5" fill="#10B981" opacity="0.7"/>
+    <text class="text-muted" x="96" y="596" font-weight="bold">install</text>
+    <text class="text-comment" x="156" y="596">·</text>
+    <circle cx="176" cy="592" r="5" fill="#4A8AE0" opacity="0.5"/>
+    <text class="text-muted" x="188" y="596" font-weight="bold">fetch</text>
+    <text class="text-comment" x="232" y="596">·</text>
+    <circle cx="252" cy="592" r="5" fill="#10B981" opacity="0.4"/>
+    <text class="text-muted" x="264" y="596" font-weight="bold">activate</text>
+    <text class="accent-blue-txt" x="1140" y="596" font-weight="bold" text-anchor="end">No Extra Compilation Step Required</text>
+  </g>
+  <text class="text-title" x="600" y="596" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="3">PWA · VANILLA JS · SERVICE WORKERS</text>
 </svg>

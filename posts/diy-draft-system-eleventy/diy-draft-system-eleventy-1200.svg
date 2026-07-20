@@ -1,250 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2A4053"/>
-      <stop offset="100%" style="stop-color:#243846"/>
-    </linearGradient>
-    <linearGradient id="cardOld" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1E1414"/>
-      <stop offset="100%" style="stop-color:#1E1414"/>
-    </linearGradient>
-    <linearGradient id="cardNew" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#0E1E16"/>
-      <stop offset="100%" style="stop-color:#0E1E16"/>
-    </linearGradient>
-
-
-    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="12" cy="12" r="0.8" fill="#35556B" opacity="0.8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
+    <style>
+      .canvas-bg { fill: #f8f5f0; }
+      .grid-dots { fill: #332D28; opacity: 0.15; }
+      .frame-border { stroke: #D1C9C0; opacity: 0.8; }
+      .panel-bg-left { fill: #FFFFFF; stroke: #DC2626; }
+      .panel-bg-right { fill: #FFFFFF; stroke: #16A34A; }
+      .inner-badge-bg { fill: #E5DFD9; stroke: #D1C9C0; }
+      .text-primary { fill: #332D28; }
+      .text-title { fill: #B45309; }
+      .text-muted { fill: #8A8075; }
+      .text-comment { fill: #8A8075; font-style: italic; }
+      .accent-err-txt { fill: #B91C1C; }
+      .accent-ok-txt { fill: #16A34A; }
+      .folder-highlight { fill: #FEE2E2; }
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg { fill: #161616; }
+        .grid-dots { fill: #453E38; opacity: 0.3; }
+        .frame-border { stroke: #453E38; opacity: 0.6; }
+        .panel-bg-left { fill: #1E1414; stroke: #4A2020; }
+        .panel-bg-right { fill: #0E1E16; stroke: #2A5A3A; }
+        .inner-badge-bg { fill: #26221F; stroke: #453E38; }
+        .text-primary { fill: #F8F5F0; }
+        .text-title { fill: #F59E0B; }
+        .text-muted { fill: #A3978E; }
+        .text-comment { fill: #7A6A5C; }
+        .accent-err-txt { fill: #E07060; }
+        .accent-ok-txt { fill: #34D399; }
+        .folder-highlight { fill: #1E1414; opacity: 0.7; }
+      }
+    </style>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle class="grid-dots" cx="12" cy="12" r="0.8"/>
     </pattern>
-
-
-    <filter id="cardShadow">
-      <feDropShadow dx="0" dy="6" stdDeviation="18" flood-color="#000" flood-opacity="0.45"/>
-    </filter>
-    <filter id="outerLift" x="-2%" y="-2%" width="104%" height="104%">
-      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.18"/>
-    </filter>
-    <filter id="badgeShadow">
-      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000" flood-opacity="0.4"/>
-    </filter>
-    <filter id="mintGlow" x="-20%" y="-40%" width="140%" height="180%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="redGlow" x="-20%" y="-40%" width="140%" height="180%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feFlood flood-color="#E06050" flood-opacity="0.7" result="color"/>
-      <feComposite in="color" in2="blur" operator="in" result="tintedBlur"/>
-      <feMerge><feMergeNode in="tintedBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="cardShadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="15" flood-color="#000000" flood-opacity="0.18"/>
     </filter>
   </defs>
-
-
-  <!-- Background -->
-  <rect width="1200" height="675" fill="url(#bg)"/>
-  <rect width="1200" height="675" fill="url(#dots)"/>
-
-
-  <!-- Soft ambient -->
-  <ellipse cx="280" cy="300" rx="320" ry="250" fill="#1A3A20" opacity="0.10"/>
-  <ellipse cx="920" cy="320" rx="320" ry="250" fill="#1A4A30" opacity="0.12"/>
-
-
-  <!-- Outer frame -->
-  <rect x="1" y="1" width="1198" height="673" rx="12" ry="12"
-        fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.8"
-        filter="url(#outerLift)"/>
-  <path d="M 1 20 L 1 1 L 20 1" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.7"/>
-  <path d="M 1180 1 L 1199 1 L 1199 20" fill="none" stroke="#F5A623" stroke-width="2" opacity="0.7"/>
-  <path d="M 1 655 L 1 674 L 20 674" fill="none" stroke="#10D9A8" stroke-width="2" opacity="0.6"/>
-  <path d="M 1180 674 L 1199 674 L 1199 655" fill="none" stroke="#10D9A8" stroke-width="2" opacity="0.6"/>
-
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- TOP LABEL                              -->
-  <!-- ══════════════════════════════════════ -->
-  <text x="600" y="46" font-family="Georgia, serif" font-size="15"
-        fill="#7A9AB0" text-anchor="middle" letter-spacing="3">ELEVENTY DRAFT SYSTEM COMPARISON</text>
-  <line x1="200" y1="56" x2="500" y2="56" stroke="#3D536A" stroke-width="1"/>
-  <circle cx="600" cy="56" r="3" fill="#4A8AE0" opacity="0.6"/>
-  <line x1="700" y1="56" x2="1000" y2="56" stroke="#3D536A" stroke-width="1"/>
-
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- LEFT CARD — THE OLD WAY               -->
-  <!-- ══════════════════════════════════════ -->
-  <rect x="52" y="76" width="500" height="458" rx="14"
-        fill="url(#cardOld)" stroke="#4A2020" stroke-width="1.5"
-        filter="url(#cardShadow)"/>
-  <!-- Card top accent -->
-  <rect x="52" y="76" width="500" height="4" rx="2" fill="#E06050" opacity="0.9"/>
-
-
-  <!-- Card header -->
-  <text x="302" y="114" font-family="Georgia, serif" font-size="17"
-        fill="#E07060" text-anchor="middle" font-weight="bold">The Old Way</text>
-  <text x="302" y="134" font-family="'Courier New', Courier, monospace" font-size="11"
-        fill="#B05040" text-anchor="middle" letter-spacing="2">_drafts folder approach</text>
-  <line x1="80" y1="146" x2="524" y2="146" stroke="#4A2020" stroke-width="1"/>
-
-
-  <!-- File tree -->
-  <text x="100" y="182" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#A0B8D0">📁 your-eleventy-site/</text>
-  <text x="120" y="206" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#7A9AB0">├── 📁 _drafts/</text>
-  <!-- Highlighted folder — the problem -->
-  <rect x="136" y="214" width="200" height="24" rx="4" fill="#1E1414" opacity="0.7"/>
-  <text x="144" y="230" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#E07060">│   └── 📄 my-post.md</text>
-  <text x="120" y="254" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#7A9AB0">├── 📁 posts/</text>
-  <text x="120" y="278" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#7A9AB0">└── 📄 .eleventy.js</text>
-
-
-  <!-- Divider -->
-  <line x1="80" y1="300" x2="524" y2="300" stroke="#4A2020" stroke-width="1" stroke-dasharray="4,3"/>
-
-
-  <!-- Pain points -->
-  <text x="100" y="328" font-family="'Courier New', Courier, monospace"
-        font-size="12" fill="#B05040" letter-spacing="1">LIMITATIONS</text>
-
-
-  <rect x="80" y="340" width="444" height="40" rx="7" fill="#1E1414" stroke="#4A2020" stroke-width="1"/>
-  <text x="104" y="365" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#E07060">❌  requires a separate _drafts/ folder</text>
-
-
-  <rect x="80" y="388" width="444" height="40" rx="7" fill="#1E1414" stroke="#4A2020" stroke-width="1"/>
-  <text x="104" y="413" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#E07060">❌  no live preview URL</text>
-
-
-  <rect x="80" y="436" width="444" height="40" rx="7" fill="#1E1414" stroke="#4A2020" stroke-width="1"/>
-  <text x="104" y="461" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#E07060">❌  extra eleventy.js config needed</text>
-
-
-  <!-- URL preview — blocked -->
-  <rect x="80" y="492" width="444" height="22" rx="5" fill="#1E1414" stroke="#4A2020" stroke-width="1"/>
-  <text x="302" y="507" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#B05040" text-anchor="middle">🔗  no preview URL available</text>
-
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- VS DIVIDER                             -->
-  <!-- ══════════════════════════════════════ -->
-  <circle cx="600" cy="305" r="32" fill="#141828" stroke="#3D536A" stroke-width="1.5"/>
-  <text x="600" y="312" font-family="Georgia, serif" font-size="20"
-        fill="#A0B8D0" text-anchor="middle" font-weight="bold">vs</text>
-
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- RIGHT CARD — THE DIY WAY              -->
-  <!-- ══════════════════════════════════════ -->
-  <rect x="648" y="76" width="500" height="458" rx="14"
-        fill="url(#cardNew)" stroke="#2A5A3A" stroke-width="1.5"
-        filter="url(#cardShadow)"/>
-  <!-- Card top accent -->
-  <rect x="648" y="76" width="500" height="4" rx="2" fill="#10D9A8" opacity="0.9"/>
-
-
-  <!-- Card header -->
-  <text x="898" y="114" font-family="Georgia, serif" font-size="17"
-        fill="#10D9A8" text-anchor="middle" font-weight="bold"
-        filter="url(#mintGlow)">The DIY Way</text>
-  <text x="898" y="134" font-family="'Courier New', Courier, monospace" font-size="11"
-        fill="#4DC896" text-anchor="middle" letter-spacing="2">frontmatter flag approach</text>
-  <line x1="676" y1="146" x2="1120" y2="146" stroke="#2A5A3A" stroke-width="1"/>
-
-
-  <!-- File tree — clean, no _drafts folder -->
-  <text x="696" y="182" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#A0B8D0">📁 your-eleventy-site/</text>
-  <text x="716" y="206" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#7A9AB0">├── 📁 posts/</text>
-  <!-- Highlighted file — the hero -->
-  <rect x="732" y="214" width="240" height="24" rx="4" fill="#0E1E16" opacity="0.8"/>
-  <text x="740" y="230" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#4DC896">│   └── 📄 my-post.md ✦</text>
-  <text x="716" y="254" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#7A9AB0">└── 📄 .eleventy.js</text>
-  <!-- No _drafts folder — intentionally absent, shown as comment -->
-  <text x="716" y="278" font-family="'Courier New', Courier, monospace"
-        font-size="12" fill="#2A5A3A" opacity="0.8"># no _drafts/ needed 🎉</text>
-
-
-  <!-- Divider -->
-  <line x1="676" y1="300" x2="1120" y2="300" stroke="#2A5A3A" stroke-width="1" stroke-dasharray="4,3"/>
-
-
-  <!-- Benefits -->
-  <text x="696" y="328" font-family="'Courier New', Courier, monospace"
-        font-size="12" fill="#4DC896" letter-spacing="1">BENEFITS</text>
-
-
-  <rect x="676" y="340" width="444" height="40" rx="7" fill="#0E1E16" stroke="#2A5A3A" stroke-width="1"/>
-  <text x="700" y="365" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#4DC896">✅  just one frontmatter flag</text>
-
-
-  <rect x="676" y="388" width="444" height="40" rx="7" fill="#0E1E16" stroke="#2A5A3A" stroke-width="1"/>
-  <text x="700" y="413" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#4DC896">✅  live preview via /drafts/ slug</text>
-
-
-  <rect x="676" y="436" width="444" height="40" rx="7" fill="#0E1E16" stroke="#2A5A3A" stroke-width="1"/>
-  <text x="700" y="461" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#4DC896">✅  zero extra config in eleventy.js</text>
-
-
-  <!-- URL preview badge — the killer feature -->
-  <rect x="676" y="488" width="444" height="36" rx="8"
-        fill="#0E1E16" stroke="#10D9A8" stroke-width="1.5"
-        filter="url(#badgeShadow)"/>
-  <circle cx="700" cy="506" r="5" fill="#10D9A8" opacity="0.8"/>
-  <text x="714" y="511" font-family="'Courier New', Courier, monospace"
-        font-size="12" fill="#10D9A8" filter="url(#mintGlow)">localhost:8080/drafts/my-post-slug/</text>
-
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- BOTTOM BADGE — KEY INSIGHT             -->
-  <!-- ══════════════════════════════════════ -->
-  <rect x="200" y="554" width="800" height="88" rx="12"
-        fill="#1A2634" stroke="#3D536A" stroke-width="1.5"
-        filter="url(#badgeShadow)"/>
-  <rect x="200" y="554" width="800" height="3" rx="2" fill="#4A8AE0" opacity="0.5"/>
-
-
-  <!-- Frontmatter snippet — the whole trick -->
-  <text x="260" y="588" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#7A9AB0">---</text>
-  <text x="290" y="588" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#8AB0C8">draft<tspan fill="#A0B8D0">:</tspan>
-        <tspan fill="#F5A623"> true</tspan>
-        <tspan fill="#3AB85A">  # remove this line to publish</tspan></text>
-  <text x="260" y="608" font-family="'Courier New', Courier, monospace"
-        font-size="13" fill="#7A9AB0">---</text>
-
-
-  <!-- Right side of badge -->
-  <line x1="820" y1="566" x2="820" y2="630" stroke="#3D536A" stroke-width="1"/>
-  <text x="992" y="591" font-family="Georgia, serif" font-size="14"
-        fill="#A0B8D0" text-anchor="middle">one line to hide</text>
-  <text x="992" y="613" font-family="Georgia, serif" font-size="14"
-        fill="#A0B8D0" text-anchor="middle">one line to publish</text>
-
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- BOTTOM STRIP                           -->
-  <!-- ══════════════════════════════════════ -->
-  <rect x="0" y="650" width="1200" height="25" fill="#1A2634" opacity="0.9"/>
-  <line x1="0" y1="650" x2="1200" y2="650" stroke="#35556B" stroke-width="1"/>
-  <text x="600" y="664" font-family="'Courier New', Courier, monospace"
-        font-size="11" fill="#6A8AAA" text-anchor="middle"
-        letter-spacing="3">ELEVENTY v3 · DIY DRAFT SYSTEM · FRONTMATTER · NO PLUGINS</text>
-
-
+  <rect class="canvas-bg" width="1200" height="630"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect class="frame-border" x="1" y="1" width="1198" height="628" fill="none" stroke-width="1" rx="2"/>
+  <text class="text-title" x="600" y="38" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="3">ELEVENTY DRAFT SYSTEM COMPARISON</text>
+  <line class="frame-border" x1="230" y1="50" x2="500" y2="50" stroke-width="0.5"/>
+  <circle cx="600" cy="50" r="3" fill="#D97706" opacity="0.6"/>
+  <line class="frame-border" x1="700" y1="50" x2="970" y2="50" stroke-width="0.5"/>
+  <rect class="panel-bg-left" x="52" y="85" width="500" height="370" rx="14" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="52" y="85" width="500" height="4" rx="2" fill="#E06050" opacity="0.9"/>
+  <text class="accent-err-txt" x="302" y="120" font-family="'JetBrains Mono', monospace" font-size="16" text-anchor="middle" font-weight="bold">The Old Way</text>
+  <text class="text-comment" x="302" y="140" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">_drafts folder approach</text>
+  <line class="frame-border" x1="82" y1="154" x2="522" y2="154" stroke-width="1"/>
+  <text class="text-primary" x="90" y="184" font-family="'JetBrains Mono', monospace" font-size="13">📁 your-eleventy-site/</text>
+  <text class="text-muted" x="110" y="208" font-family="'JetBrains Mono', monospace" font-size="13">├── 📁 _drafts/</text>
+  <rect class="folder-highlight" x="126" y="218" width="200" height="24" rx="4"/>
+  <text class="accent-err-txt" x="134" y="234" font-family="'JetBrains Mono', monospace" font-size="13">│   └── 📄 my-post.md</text>
+  <text class="text-muted" x="110" y="260" font-family="'JetBrains Mono', monospace" font-size="13">├── 📁 posts/</text>
+  <text class="text-muted" x="110" y="284" font-family="'JetBrains Mono', monospace" font-size="13">└── 📄 .eleventy.js</text>
+  <line class="frame-border" x1="82" y1="308" x2="522" y2="308" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect class="inner-badge-bg" x="72" y="324" width="460" height="26" rx="5" stroke-width="1"/>
+  <text class="accent-err-txt" x="84" y="341" font-family="'JetBrains Mono', monospace" font-size="12">❌ requires a separate _drafts/ folder structure</text>
+  <rect class="inner-badge-bg" x="72" y="358" width="460" height="26" rx="5" stroke-width="1"/>
+  <text class="accent-err-txt" x="84" y="375" font-family="'JetBrains Mono', monospace" font-size="12">❌ no live hot-reload preview URL path available</text>
+  <rect class="inner-badge-bg" x="72" y="392" width="460" height="24" rx="5" stroke-width="1"/>
+  <text class="accent-err-txt" x="302" y="408" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">🔗 no preview url link activation supported</text>
+  <circle class="canvas-bg frame-border" cx="600" cy="270" r="32" stroke-width="1.5"/>
+  <text class="text-muted" x="600" y="278" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="bold" text-anchor="middle">vs</text>
+  <rect class="panel-bg-right" x="648" y="85" width="500" height="370" rx="14" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="648" y="85" width="500" height="4" rx="2" fill="#10D9A8" opacity="0.9"/>
+  <text class="accent-ok-txt" x="898" y="120" font-family="'JetBrains Mono', monospace" font-size="17" text-anchor="middle" font-weight="bold">The DIY Way</text>
+  <text class="text-comment" x="898" y="140" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle" letter-spacing="2">frontmatter flag approach</text>
+  <line class="frame-border" x1="676" y1="154" x2="1120" y2="154" stroke-width="1"/>
+  <text class="text-primary" x="686" y="184" font-family="'JetBrains Mono', monospace" font-size="13">📁 your-eleventy-site/</text>
+  <text class="text-muted" x="706" y="208" font-family="'JetBrains Mono', monospace" font-size="13">├── 📁 posts/</text>
+  <rect class="folder-highlight" x="722" y="218" width="240" height="24" rx="4"/>
+  <text class="accent-ok-txt" x="730" y="234" font-family="'JetBrains Mono', monospace" font-size="13">│   └── 📄 my-post.md ✦</text>
+  <text class="text-muted" x="706" y="260" font-family="'JetBrains Mono', monospace" font-size="13">└── 📄 .eleventy.js</text>
+  <text class="text-comment" x="706" y="284" font-family="'JetBrains Mono', monospace" font-size="12"># no _drafts/ needed 🎉</text>
+  <line class="frame-border" x1="676" y1="308" x2="1120" y2="308" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect class="inner-badge-bg" x="668" y="324" width="460" height="26" rx="5" stroke-width="1"/>
+  <text class="accent-ok-txt" x="680" y="341" font-family="'JetBrains Mono', monospace" font-size="12">✅ just one simple core frontmatter boolean flag</text>
+  <rect class="inner-badge-bg" x="668" y="358" width="460" height="26" rx="5" stroke-width="1"/>
+  <text class="accent-ok-txt" x="680" y="375" font-family="'JetBrains Mono', monospace" font-size="12">✅ isolated staging URLs via custom /drafts/ slugs</text>
+  <rect class="inner-badge-bg" x="668" y="392" width="460" height="24" rx="5" stroke-width="1.5" stroke="#10B981"/>
+  <circle cx="684" cy="404" r="4" fill="#10B981" opacity="0.8"/>
+  <text class="accent-ok-txt" x="696" y="408" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold">localhost:8080/drafts/my-post-slug/</text>
+  <rect class="inner-badge-bg" x="200" y="475" width="800" height="86" rx="12" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="200" y="475" width="800" height="3" rx="2" fill="#4A8AE0" opacity="0.5"/>
+  <text class="text-comment" x="245" y="507" font-family="'JetBrains Mono', monospace" font-size="13">---</text>
+  <text class="text-primary" x="245" y="525" font-family="'JetBrains Mono', monospace" font-size="13">draft:<tspan class="text-title" font-weight="bold"> true</tspan> <tspan class="text-comment">  # remove this to publish</tspan></text>
+  <text class="text-comment" x="245" y="543" font-family="'JetBrains Mono', monospace" font-size="13">---</text>
+  <line class="frame-border" x1="600" y1="487" x2="600" y2="549" stroke-width="1"/>
+  <text class="text-primary" x="625" y="507" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">➔ <tspan class="accent-err-txt">One line</tspan> to isolate drafts cleanly</text>
+  <text class="text-primary" x="625" y="531" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">➔ <tspan class="accent-ok-txt">One line</tspan> to trigger live production</text>
+  <line class="frame-border" x1="60" y1="585" x2="1140" y2="585" stroke-width="0.5"/>
+  <text class="text-title" x="600" y="605" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="2">ELEVENTY v3 · DIY DRAFT SYSTEM · FRONTMATTER CONFIGS · ZERO DEPENDENCIES</text>
 </svg>
