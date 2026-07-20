@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
-    <!-- CAKUPAN STYLESHEET INTERNAL: OPTIMALISASI KONTRAST UTUH DUA TEMA ASLI BLOG -->
     <style>
-      /* ── 1. TEMA UTUH HARMONIS: LIGHT MODE (Latar Blog Cream #f8f5f0) ── */
       .canvas-bg { fill: #f8f5f0; }
       .grid-dots { fill: #332D28; opacity: 0.15; }
       .title-bar { fill: #332D28; }
@@ -9,37 +7,26 @@
       .ui-tab-text { fill: #332D28; }
       .ui-border { stroke: #D1C9C0; }
       .panel-bg { fill: #FFFFFF; }
-      
-      /* PERBAIKAN UTAMA: Mengganti dalaman boks cokelat menjadi warna terang estetik */
       .log-bg { fill: #F4F1ED; }
       .diagram-bg { fill: #F4F1ED; }
       .diagram-strip { fill: #E5DFD9; }
       .badge-bg { fill: #E5DFD9; }
-      
-      /* Pembalikan Warna Teks Sintaks menjadi Gelap (Readability Tinggi) */
       .text-base { fill: #F8F5F0; }
       .text-dark { fill: #332D28; }
-      .text-muted { fill: #332D28; }
+      .text-muted { fill: #8A8075; }
       .text-comment { fill: #8A8075; font-style: italic; }
       .arrow { fill: #D97706; }
-      
-      /* Indikator Status Light */
       .status-fail { fill: #DC2626; }
       .status-success { fill: #059669; }
       .accent-amber { fill: #D97706; }
       .accent-blue { stroke: #0284C7; }
       .accent-blue-text { fill: #0284C7; }
       .badge-success { fill: #059669; fill-opacity: 0.08; }
-      
-      /* Status Bar Light */
       .statusbar-bg { fill: #332D28; }
       .statusbar-border { stroke: #4A423B; }
       .statusbar-badge { fill: #D97706; }
       .statusbar-badge-text { fill: #F8F5F0; }
       .statusbar-info { fill: #E5DFD9; }
-
-
-      /* ── 2. TEMA UTUH HARMONIS: DARK MODE (Latar Blog Charcoal #161616) ── */
       @media (prefers-color-scheme: dark) {
         .canvas-bg { fill: #161616; }
         .grid-dots { fill: #453E38; opacity: 0.3; }
@@ -52,20 +39,17 @@
         .diagram-bg { fill: #352F2A; }
         .diagram-strip { fill: #453E38; }
         .badge-bg { fill: #3D3630; }
-        
         .text-base { fill: #F8F5F0; }
         .text-dark { fill: #D1D6CC; }
-        .text-muted { fill: #D1D6CC; }
+        .text-muted { fill: #7A6A5C; }
         .text-comment { fill: #8E857D; }
         .arrow { fill: #F59E0B; }
-        
         .status-fail { fill: #E05050; }
         .status-success { fill: #10D9A8; }
         .accent-amber { fill: #F59E0B; }
         .accent-blue { stroke: #38BDF8; }
         .accent-blue-text { fill: #38BDF8; }
         .badge-success { fill: #10D9A8; fill-opacity: 0.1; }
-        
         .statusbar-bg { fill: #29241F; }
         .statusbar-border { stroke: #453E38; }
         .statusbar-badge { fill: #F59E0B; }
@@ -73,92 +57,47 @@
         .statusbar-info { fill: #D1D6CC; }
       }
     </style>
-
-
     <pattern id="dynamic-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
       <circle class="grid-dots" cx="13" cy="13" r="0.8"/>
     </pattern>
   </defs>
-
-
-  <!-- Latar belakang kanvas adaptif -->
   <rect class="canvas-bg" width="1200" height="630"/>
   <rect width="1200" height="630" fill="url(#dynamic-dots)"/>
-
-
-  <!-- Title bar jendela OS -->
   <rect class="title-bar" x="0" y="0" width="1200" height="44"/>
   <circle cx="50" cy="22" r="7" fill="#EF4444"/>
   <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
   <circle cx="100" cy="22" r="7" fill="#10B981"/>
   <text class="statusbar-info" x="125" y="24" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" dominant-baseline="middle">build — optimized</text>
-
-
-  <!-- File tab -->
   <rect class="ui-tab" x="125" y="44" width="170" height="36" rx="8"/>
   <text class="ui-tab-text" x="145" y="71" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600">css-scope.css</text>
-
-
-  <!-- Title divider -->
   <line class="ui-border" x1="0" y1="80" x2="1200" y2="80" stroke-width="1.5"/>
-
-
-  <!-- ── PANEL KIRI: DIAGRAM VISUAL ── -->
   <rect class="panel-bg ui-border" x="30" y="100" width="530" height="440" rx="8" stroke-width="1"/>
-
-
-  <!-- Scope boundary -->
   <rect class="ui-border" x="47" y="128" width="496" height="368" fill="none" stroke-width="1.5" stroke-dasharray="8 4" rx="8"/>
-
-
-  <!-- @scope label -->
   <rect class="badge-bg ui-border" x="62" y="110" width="190" height="26" stroke-width="1" rx="4"/>
   <text class="accent-amber" x="157" y="124" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" dominant-baseline="middle">@scope (.card)</text>
-
-
-  <!-- Card diagram container -->
   <rect class="diagram-bg" x="65" y="155" width="464" height="160" rx="6"/>
-
-
   <rect class="diagram-strip" x="80" y="170" width="434" height="32" rx="4"/>
   <text class="text-dark" x="297" y="187" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle" dominant-baseline="middle">:scope { border; padding; }</text>
-
-
   <rect class="diagram-strip" x="80" y="215" width="250" height="16" rx="3"/>
-  <text class="text-muted" x="93" y="228" font-family="'JetBrains Mono', monospace" font-size="12">h3 { font-weight: 600; }</text>
-
-
+  <text class="text-dark" x="93" y="228" font-family="'JetBrains Mono', monospace" font-size="12">h3 { font-weight: 600; }</text>
   <rect class="diagram-strip" x="80" y="241" width="394" height="7" rx="2" opacity="0.6"/>
   <rect class="diagram-strip" x="80" y="257" width="340" height="7" rx="2" opacity="0.6"/>
   <rect class="diagram-strip" x="80" y="273" width="360" height="7" rx="2" opacity="0.6"/>
-
-
   <rect class="diagram-strip" x="80" y="293" width="110" height="22" rx="4"/>
-  <text class="text-muted" x="135" y="305" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle" dominant-baseline="middle">img { border-radius; }</text>
-
-
-  <!-- Annotation Badge -->
+  <text class="text-dark" x="135" y="305" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle" dominant-baseline="middle">img { border-radius; }</text>
   <rect class="badge-bg" x="205" y="340" width="250" height="26" stroke="#10B981" stroke-width="1" rx="4"/>
   <text x="330" y="354" font-family="'JetBrains Mono', monospace" font-size="12" fill="#10B981" text-anchor="middle" dominant-baseline="middle">Styles stay inside scope</text>
-
-
-  <!-- Donut scoping layout -->
   <rect class="accent-blue" x="65" y="390" width="464" height="55" fill="none" stroke-width="1.5" stroke-dasharray="4 3" rx="6"/>
   <text x="80" y="407" font-family="'JetBrains Mono', monospace" font-size="12" class="accent-blue-text">
     <tspan class="accent-amber">to</tspan> (.card-footer)
   </text>
   <rect class="diagram-bg" x="80" y="414" width="434" height="23" rx="3"/>
-  <text class="text-muted" x="297" y="426" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle" dominant-baseline="middle">Excluded from scope (donut hole)</text>
-
-
-  <!-- ── PANEL KANAN: CODE EDITOR ── -->
+  <text class="text-dark" x="297" y="426" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle" dominant-baseline="middle">Excluded from scope (donut hole)</text>
   <rect class="panel-bg ui-border" x="585" y="100" width="585" height="440" rx="8" stroke-width="1"/>
   <rect class="badge-bg" x="585" y="100" width="585" height="34" rx="8"/>
   <rect class="badge-bg" x="585" y="127" width="585" height="7"/>
-  <text class="text-muted" x="605" y="121" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">style.css</text>
-
-
-  <!-- Baris Kode -->
+  <text class="text-dark" x="605" y="121" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">style.css</text>
+  <text class="arrow" x="575" y="320" font-family="'JetBrains Mono', monospace" font-size="24" text-anchor="middle">⇄</text>
   <g font-family="'JetBrains Mono', monospace" font-size="14">
     <text x="605" y="162" class="text-muted">1  <tspan class="accent-amber">@scope</tspan> <tspan class="text-dark">(</tspan><tspan class="text-muted">.card</tspan><tspan class="text-dark">) {</tspan></text>
     <text x="605" y="190" class="text-muted">2    <tspan class="text-dark">:</tspan><tspan class="accent-amber">scope</tspan> <tspan class="text-dark">{</tspan></text>
@@ -169,35 +108,16 @@
     <text x="605" y="330" class="text-muted">7    <tspan class="text-dark">&amp; </tspan><tspan class="accent-amber">p</tspan> <tspan class="text-dark">{</tspan> <tspan class="accent-amber">color</tspan><tspan class="text-dark">:</tspan> <tspan class="text-dark">var(--text-secondary)</tspan><tspan class="text-dark">; }</tspan></text>
     <text x="605" y="358" class="text-muted">8    <tspan class="text-dark">&amp; </tspan><tspan class="accent-amber">img</tspan> <tspan class="text-dark">{</tspan> <tspan class="accent-amber">border-radius</tspan><tspan class="text-dark">:</tspan> <tspan class="text-dark">0.5rem</tspan><tspan class="text-dark">; }</tspan></text>
     <text x="605" y="386" class="text-muted">9  <tspan class="text-dark">}</tspan></text>
-
-
-    <!-- Right panel divider -->
-    <line class="ui-border" x1="605" y1="416" x2="1155" y2="416" stroke-width="1" />
-
-
-    <!-- Donut comment -->
-    <text x="605" y="441" class="text-comment">/* Donut scoping — exclude subtree */</text>
-
-
-    <text x="605" y="469" class="text-muted">11 <tspan class="accent-amber">@scope</tspan> <tspan class="text-dark">(</tspan><tspan class="text-muted">.card</tspan><tspan class="text-dark">) </tspan><tspan class="accent-amber">to</tspan> <tspan class="text-dark">(</tspan><tspan class="text-muted">.card-footer</tspan><tspan class="text-dark">) {</tspan></text>
-    <text x="605" y="497" class="text-muted">12   <tspan class="text-dark">&amp; </tspan><tspan class="accent-amber">a</tspan> <tspan class="text-dark">{</tspan> <tspan class="accent-amber">color</tspan><tspan class="text-dark">:</tspan> <tspan class="text-dark">var(--accent)</tspan><tspan class="text-dark">; }</tspan></text>
-    <text x="605" y="525" class="text-muted">13 <tspan class="text-dark">}</tspan></text>
+    <line class="ui-border" x1="605" y1="410" x2="1155" y2="410" stroke-width="1" />
+    <text x="605" y="432" class="text-comment">/* Donut scoping — exclude subtree */</text>
+    <text x="605" y="457" class="text-muted">11 <tspan class="accent-amber">@scope</tspan> <tspan class="text-dark">(</tspan><tspan class="text-muted">.card</tspan><tspan class="text-dark">) </tspan><tspan class="accent-amber">to</tspan> <tspan class="text-dark">(</tspan><tspan class="text-muted">.card-footer</tspan><tspan class="text-dark">) {</tspan></text>
+    <text x="605" y="482" class="text-muted">12   <tspan class="text-dark">&amp; </tspan><tspan class="accent-amber">a</tspan> <tspan class="text-dark">{</tspan> <tspan class="accent-amber">color</tspan><tspan class="text-dark">:</tspan> <tspan class="text-dark">var(--accent)</tspan><tspan class="text-dark">; }</tspan></text>
+    <text x="605" y="507" class="text-muted">13 <tspan class="text-dark">}</tspan></text>
   </g>
-
-
-  <!-- ── VIM STATUS BAR ── -->
-  <g id="statusbar-section">
-    <rect class="statusbar-bg" x="0" y="555" width="1200" height="45"/>
-    <line class="statusbar-border" x1="0" y1="555" x2="1200" y2="555" stroke-width="1"/>
-    
-    <!-- Lencana NORMAL Mode -->
-    <rect class="statusbar-badge" x="30" y="566" width="80" height="24" rx="3"/>
-    <text class="statusbar-badge-text" x="70" y="583" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" text-anchor="middle">NORMAL</text>
-    
-    <!-- Kesimpulan Tengah -->
-    <text class="statusbar-info" x="600" y="583" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="middle">the most impactful fix was deleting 8 words</text>
-    
-    <!-- Keterangan File Kanan Bawah -->
-    <text class="statusbar-info" x="1170" y="583" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="end">style.css  13L</text>
-  </g>
+  <rect class="statusbar-bg" x="0" y="560" width="1200" height="30"/>
+  <line class="statusbar-border" x1="0" y1="560" x2="1200" y2="560" stroke-width="1"/>
+  <rect class="statusbar-badge" x="30" y="566" width="80" height="18" rx="3"/>
+  <text class="statusbar-badge-text" x="70" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
+  <text class="statusbar-info" x="600" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">the most impactful fix was deleting 8 words</text>
+  <text class="statusbar-info" x="1170" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="end">style.css  13L</text>
 </svg>

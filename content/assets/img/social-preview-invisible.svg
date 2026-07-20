@@ -1,136 +1,146 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#EEF0F6"/>
-      <stop offset="100%" style="stop-color:#E4E8F2"/>
-    </linearGradient>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">  <defs>
+    <style>
+      .canvas-bg { fill: #f8f5f0; }
+      .grid-dots { fill: #332D28; opacity: 0.15; }
+      .frame-border { stroke: #D1C9C0; opacity: 0.8; }
+      .panel-bg { fill: #FFFFFF; stroke: #D1C9C0; }
+      .panel-hdr { fill: #F8FAFC; }
+      .inner-screen { fill: #F1F4F9; stroke: #E2E8F0; }
+      .mock-page-bg { fill: #FFFFFF; stroke: #D1D5DB; }
+      .text-primary { fill: #1E1B4B; }
+      .text-title { fill: #B45309; }
+      .text-muted { fill: #475569; }
+      .text-sub { fill: #94A3B8; }
+      .arrow-shaft { stroke: #94A3B8; }
+      .pill-bg-err { fill: #FEE2E2; }
+      .pill-bg-ok { fill: #DCFCE7; }
+      .text-pill-err { fill: #EF4444; }
+      .text-pill-ok { fill: #10B981; }
+      .ui-block-mute { fill: #E2E8F0; }
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg { fill: #161616; }
+        .grid-dots { fill: #453E38; opacity: 0.3; }
+        .frame-border { stroke: #453E38; opacity: 0.6; }
+        .panel-bg { fill: #2E2924; stroke: #453E38; }
+        .panel-hdr { fill: #211D19; }
+        .inner-screen { fill: #1A1714; stroke: #2E2924; }
+        .mock-page-bg { fill: #2E2924; stroke: #453E38; }
+        .text-primary { fill: #F8F5F0; }
+        .text-title { fill: #F59E0B; }
+        .text-muted { fill: #D1D6CC; }
+        .text-sub { fill: #7A6A5C; }
+        .arrow-shaft { stroke: #7A6A5C; }
+        .pill-bg-err { fill: #3A1E1E; }
+        .pill-bg-ok { fill: #14261C; }
+        .text-pill-err { fill: #FF8F82; }
+        .text-pill-ok { fill: #34D399; }
+        .ui-block-mute { fill: #453E38; }
+      }
+    </style>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle class="grid-dots" cx="20" cy="20" r="0.8"/>
+    </pattern>
     <filter id="cardShadow" x="-8%" y="-8%" width="116%" height="116%">
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#94A3B8" flood-opacity="0.15"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.18"/>
     </filter>
   </defs>
-
-  <rect width="1200" height="675" fill="url(#bgGrad)"/>
-  <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-    <circle cx="20" cy="20" r="1" fill="#9CA3B8" fill-opacity="0.2"/>
-  </pattern>
-  <rect width="1200" height="675" fill="url(#grid)"/>
-
-  <text x="600" y="44" text-anchor="middle" font-family="Georgia,'Times New Roman',serif"
-        font-size="20" font-weight="700" fill="#1E1B4B" letter-spacing="-0.3">Why SVGs Break Social Media Previews</text>
-
-  <!-- PANEL 1: BROWSER -->
-  <g transform="translate(28,68)">
-    <rect x="0" y="0" width="354" height="560" rx="12" fill="#FFFFFF" filter="url(#cardShadow)"/>
-    <rect x="0" y="0" width="354" height="4" rx="2" fill="#6366F1"/>
-    <rect x="0" y="0" width="354" height="40" rx="12" fill="#F8FAFC"/>
-    <rect x="0" y="20" width="354" height="20" fill="#F8FAFC"/>
-    <circle cx="20" cy="20" r="4.5" fill="#FF5F56" opacity="0.8"/>
-    <circle cx="36" cy="20" r="4.5" fill="#FFBD2E" opacity="0.8"/>
-    <circle cx="52" cy="20" r="4.5" fill="#27C93F" opacity="0.8"/>
-    <rect x="72" y="13" width="260" height="14" rx="7" fill="#E8ECF4"/>
-    <rect x="20" y="56" width="314" height="200" rx="6" fill="#F1F4F9"/>
-    <rect x="40" y="70" width="274" height="172" rx="4" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1"/>
-    <line x1="60" y1="200" x2="120" y2="170" stroke="#6366F1" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="120" y1="170" x2="180" y2="180" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="180" y1="180" x2="240" y2="140" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="240" y1="140" x2="300" y2="155" stroke="#6366F1" stroke-width="2.5" stroke-linecap="round"/>
-    <rect x="55" y="75" width="40" height="18" rx="4" fill="#6366F1" opacity="0.15"/>
-    <text x="75" y="88" text-anchor="middle" font-family="'Courier New',monospace" font-size="9" fill="#6366F1" font-weight="700">SVG</text>
-    <text x="285" y="88" text-anchor="end" font-family="'Courier New',monospace" font-size="8" fill="#9CA3AF">hero.svg — 21KB</text>
-    <rect x="60" y="274" width="100" height="6" rx="3" fill="#D1D5DB"/>
-    <rect x="60" y="288" width="180" height="6" rx="3" fill="#D1D5DB"/>
-    <rect x="60" y="302" width="160" height="6" rx="3" fill="#D1D5DB"/>
-    <rect x="60" y="316" width="140" height="6" rx="3" fill="#D1D5DB"/>
-    <rect x="60" y="330" width="200" height="6" rx="3" fill="#D1D5DB"/>
-    <rect x="60" y="344" width="120" height="6" rx="3" fill="#D1D5DB"/>
-    <rect x="90" y="380" width="174" height="34" rx="17" fill="#10B981" opacity="0.12"/>
-    <text x="151" y="402" text-anchor="middle" font-family="'Courier New',monospace" font-size="13" fill="#10B981" font-weight="700">&#10003; Renders perfectly</text>
-    <text x="177" y="430" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="12" fill="#475569">SVG works great in browsers</text>
-    <text x="177" y="446" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="10" fill="#94A3B8">But social media is not a browser</text>
-    <rect x="0" y="530" width="354" height="30" fill="#6366F1" opacity="0.06"/>
-    <text x="177" y="550" text-anchor="middle" font-family="'Courier New',monospace" font-size="9" fill="#6366F1" letter-spacing="1.5" opacity="0.7">BROWSER</text>
+  <rect class="canvas-bg" width="1200" height="630"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect class="frame-border" x="1" y="1" width="1198" height="628" fill="none" stroke-width="1" rx="2"/>
+  <text class="text-title" x="600" y="44" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" letter-spacing="1">WHY SVGS BREAK SOCIAL MEDIA PREVIEWS</text>
+  <text class="text-muted" x="600" y="68" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500">Vector Rendering Lifespans · Viewport Injections vs Static Raster Images</text>
+  <line class="frame-border" x1="40" y1="84" x2="1160" y2="84" stroke-width="0.5"/>
+  <g transform="translate(40,105)">
+    <rect class="panel-bg" x="0" y="0" width="340" height="420" rx="12" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="340" height="4" rx="2" fill="#6366F1"/>
+    <rect class="panel-hdr" x="0" y="4" width="340" height="36"/>
+    <circle cx="20" cy="22" r="4.5" fill="#EF4444" opacity="0.8"/>
+    <circle cx="36" cy="22" r="4.5" fill="#F59E0B" opacity="0.8"/>
+    <circle cx="52" cy="22" r="4.5" fill="#10B981" opacity="0.8"/>
+    <rect class="ui-block-mute" x="72" y="15" width="248" height="14" rx="7"/>
+    <rect class="inner-screen" x="16" y="56" width="308" height="170" rx="6" stroke-width="1"/>
+    <rect class="mock-page-bg" x="32" y="70" width="276" height="142" rx="4" stroke-width="1"/>
+    <line x1="52" y1="180" x2="112" y2="140" stroke="#6366F1" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="112" y1="140" x2="172" y2="155" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="172" y1="155" x2="232" y2="110" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="232" y1="110" x2="288" y2="125" stroke="#6366F1" stroke-width="2.5" stroke-linecap="round"/>
+    <rect class="ui-block-mute" x="44" y="78" width="40" height="16" rx="4" opacity="0.2"/>
+    <text class="text-title" x="64" y="90" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">SVG</text>
+    <text class="text-sub" x="296" y="90" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8">hero.svg — 21KB</text>
+    <rect class="ui-block-mute" x="32" y="242" width="100" height="6" rx="3"/>
+    <rect class="ui-block-mute" x="32" y="254" width="220" height="6" rx="3"/>
+    <rect class="ui-block-mute" x="32" y="266" width="180" height="6" rx="3"/>
+    <rect class="ui-block-mute" x="32" y="278" width="140" height="6" rx="3"/>
+    <rect class="pill-bg-ok" x="78" y="306" width="184" height="30" rx="15"/>
+    <text class="text-pill-ok" x="170" y="325" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">✓ Renders Perfectly</text>
+    <text class="text-muted" x="170" y="356" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">SVG works great in browsers</text>
+    <text class="text-sub" x="170" y="372" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10.5">Built-in document tree engines parse vectors</text>
+    <rect class="panel-hdr" x="0" y="394" width="340" height="26" rx="12"/>
+    <rect class="panel-hdr" x="0" y="394" width="340" height="12"/>
+    <text class="text-title" x="170" y="411" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" letter-spacing="1.5" opacity="0.8">01 · CLIENT-SIDE BROWSER ENGINE</text>
   </g>
-
-  <!-- Arrow 1&#8594;2 -->
-  <g transform="translate(390,325)">
-    <path d="M0 0 L12 0 L6 -8 M12 0 L6 8" stroke="#94A3B8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="arrow-shaft" transform="translate(400,315)">
+    <path d="M0 0 L24 0 L18 -6 M24 0 L18 6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
-
-  <!-- PANEL 2: SOCIAL MEDIA BROKEN -->
-  <g transform="translate(423,68)">
-    <rect x="0" y="0" width="354" height="560" rx="12" fill="#FFFFFF" filter="url(#cardShadow)"/>
-    <rect x="0" y="0" width="354" height="4" rx="2" fill="#EF4444"/>
-    <!-- Avatar + name row -->
-    <circle cx="30" cy="26" r="14" fill="#E8ECF4"/>
-    <rect x="52" y="17" width="80" height="8" rx="4" fill="#D1D5DB"/>
-    <rect x="52" y="29" width="50" height="6" rx="3" fill="#E8ECF4"/>
-    <!-- "Sharing my latest post..." text inline with avatar -->
-    <text x="52" y="52" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#475569">Sharing my latest post...</text>
-    <!-- Card preview — broken image -->
-    <rect x="15" y="68" width="324" height="280" rx="8" fill="#F8FAFC" stroke="#E8ECF4" stroke-width="1"/>
-    <!-- Image area — empty/broken -->
-    <rect x="15" y="68" width="324" height="160" rx="8" fill="#FAFAFA"/>
-    <line x1="140" y1="118" x2="160" y2="143" stroke="#D1D5DB" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="160" y1="118" x2="140" y2="143" stroke="#D1D5DB" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="195" y1="118" x2="215" y2="143" stroke="#D1D5DB" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="215" y1="118" x2="195" y2="143" stroke="#D1D5DB" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="162" y1="133" x2="198" y2="133" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round"/>
-    <text x="177" y="158" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" fill="#9CA3AF">No image</text>
-    <!-- Card text -->
-    <text x="30" y="252" font-family="Georgia,'Times New Roman',serif" font-size="12" font-weight="600" fill="#1E1B4B">Dark Mode Done Right</text>
-    <text x="30" y="270" font-family="Georgia,'Times New Roman',serif" font-size="10" fill="#64748B">tionosulis.github.io</text>
-    <rect x="30" y="280" width="294" height="6" rx="3" fill="#D1D5DB"/>
-    <rect x="30" y="292" width="200" height="6" rx="3" fill="#E8ECF4"/>
-    <!-- Status -->
-    <rect x="90" y="380" width="174" height="34" rx="17" fill="#EF4444" opacity="0.12"/>
-    <text x="151" y="402" text-anchor="middle" font-family="'Courier New',monospace" font-size="13" fill="#EF4444" font-weight="700">&#10007; No og:image</text>
-    <text x="177" y="430" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="12" fill="#475569">SVG is not a supported format</text>
-    <text x="177" y="446" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="10" fill="#94A3B8">Platforms require JPEG, PNG, or WebP</text>
-    <rect x="0" y="530" width="354" height="30" fill="#EF4444" opacity="0.06"/>
-    <text x="177" y="550" text-anchor="middle" font-family="'Courier New',monospace" font-size="9" fill="#EF4444" letter-spacing="1.5" opacity="0.7">SOCIAL MEDIA SHARE</text>
+  <g transform="translate(420,105)">
+    <rect class="panel-bg" x="0" y="0" width="340" height="420" rx="12" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="340" height="4" rx="2" fill="#EF4444"/>
+    <circle cx="30" cy="26" r="14" class="ui-block-mute"/>
+    <rect class="ui-block-mute" x="52" y="17" width="80" height="8" rx="4"/>
+    <rect class="ui-block-mute" x="52" y="29" width="50" height="6" rx="3" opacity="0.5"/>
+    <text class="text-muted" x="32" y="54" font-family="'JetBrains Mono', monospace" font-size="11">Sharing my latest post...</text>
+    <rect class="inner-screen" x="16" y="68" width="308" height="220" rx="8" stroke-width="1"/>
+    <rect class="canvas-bg" x="16" y="68" width="308" height="120" rx="8"/>
+    <line x1="130" y1="110" x2="150" y2="135" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="150" y1="110" x2="130" y2="135" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="185" y1="110" x2="205" y2="135" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="205" y1="110" x2="185" y2="135" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="152" y1="125" x2="188" y2="125" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+    <text class="text-pill-err" x="167" y="152" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">No Image Preview</text>
+    <text class="text-primary" x="30" y="210" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">Dark Mode Done Right</text>
+    <text class="text-sub" x="30" y="226" font-family="'JetBrains Mono', monospace" font-size="10">tionosulis.github.io</text>
+    <rect class="ui-block-mute" x="30" y="240" width="276" height="6" rx="3"/>
+    <rect class="ui-block-mute" x="30" y="252" width="180" height="6" rx="3" opacity="0.5"/>
+    <rect class="pill-bg-err" x="78" y="306" width="184" height="30" rx="15"/>
+    <text class="text-pill-err" x="170" y="325" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">✗ No og:image</text>
+    <text class="text-muted" x="170" y="356" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">SVG is not supported</text>
+    <text class="text-sub" x="170" y="372" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10.5">Scrapers require JPEG, PNG, or WebP</text>
+    <rect class="panel-hdr" x="0" y="394" width="340" height="26" rx="12"/>
+    <rect class="panel-hdr" x="0" y="394" width="340" height="12"/>
+    <text class="text-pill-err" x="170" y="411" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" letter-spacing="1.5" opacity="0.8">02 · EXTERNAL REQUISITE INJECTION FAULT</text>
   </g>
-
-  <!-- Arrow 2&#8594;3 -->
-  <g transform="translate(785,325)">
-    <path d="M0 0 L12 0 L6 -8 M12 0 L6 8" stroke="#94A3B8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="arrow-shaft" transform="translate(780,315)">
+    <path d="M0 0 L24 0 L18 -6 M24 0 L18 6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
-
-  <!-- PANEL 3: SOCIAL MEDIA FIXED -->
-  <g transform="translate(818,68)">
-    <rect x="0" y="0" width="354" height="560" rx="12" fill="#FFFFFF" filter="url(#cardShadow)"/>
-    <rect x="0" y="0" width="354" height="4" rx="2" fill="#10B981"/>
-    <!-- Avatar + name row -->
-    <circle cx="30" cy="26" r="14" fill="#E8ECF4"/>
-    <rect x="52" y="17" width="80" height="8" rx="4" fill="#D1D5DB"/>
-    <rect x="52" y="29" width="50" height="6" rx="3" fill="#E8ECF4"/>
-    <!-- "Sharing my latest post..." text inline with avatar -->
-    <text x="52" y="52" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#475569">Sharing my latest post...</text>
-    <!-- Card preview — with image -->
-    <rect x="15" y="68" width="324" height="280" rx="8" fill="#F8FAFC" stroke="#E8ECF4" stroke-width="1"/>
-    <!-- Image area — visible PNG -->
-    <rect x="15" y="68" width="324" height="160" rx="8" fill="#EEF0F6"/>
-    <line x1="50" y1="188" x2="110" y2="158" stroke="#6366F1" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="110" y1="158" x2="170" y2="168" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="170" y1="168" x2="230" y2="128" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="230" y1="128" x2="290" y2="143" stroke="#6366F1" stroke-width="2.5" stroke-linecap="round"/>
-    <!-- PNG badge -->
-    <rect x="30" y="73" width="44" height="18" rx="4" fill="#10B981" opacity="0.15"/>
-    <text x="52" y="86" text-anchor="middle" font-family="'Courier New',monospace" font-size="9" fill="#10B981" font-weight="700">PNG</text>
-    <text x="290" y="86" text-anchor="end" font-family="'Courier New',monospace" font-size="8" fill="#9CA3AF">og:image — 141KB</text>
-    <!-- Card text -->
-    <text x="30" y="252" font-family="Georgia,'Times New Roman',serif" font-size="12" font-weight="600" fill="#1E1B4B">Dark Mode Done Right</text>
-    <text x="30" y="270" font-family="Georgia,'Times New Roman',serif" font-size="10" fill="#64748B">tionosulis.github.io</text>
-    <rect x="30" y="280" width="294" height="6" rx="3" fill="#D1D5DB"/>
-    <rect x="30" y="292" width="200" height="6" rx="3" fill="#E8ECF4"/>
-    <!-- Status -->
-    <rect x="90" y="380" width="174" height="34" rx="17" fill="#10B981" opacity="0.12"/>
-    <text x="151" y="402" text-anchor="middle" font-family="'Courier New',monospace" font-size="13" fill="#10B981" font-weight="700">&#10003; og:image set</text>
-    <text x="177" y="430" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="12" fill="#475569">PNG fallback renders everywhere</text>
-    <text x="177" y="446" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="10" fill="#94A3B8">Same sharp, same image — just rasterized</text>
-    <rect x="0" y="530" width="354" height="30" fill="#10B981" opacity="0.06"/>
-    <text x="177" y="550" text-anchor="middle" font-family="'Courier New',monospace" font-size="9" fill="#10B981" letter-spacing="1.5" opacity="0.7">SOCIAL MEDIA SHARE — FIXED</text>
+  <g transform="translate(820,105)">
+    <rect class="panel-bg" x="0" y="0" width="340" height="420" rx="12" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="340" height="4" rx="2" fill="#10B981"/>
+    <circle cx="30" cy="26" r="14" class="ui-block-mute"/>
+    <rect class="ui-block-mute" x="52" y="17" width="80" height="8" rx="4"/>
+    <rect class="ui-block-mute" x="52" y="29" width="50" height="6" rx="3" opacity="0.5"/>
+    <text class="text-muted" x="32" y="54" font-family="'JetBrains Mono', monospace" font-size="11">Sharing my latest post...</text>
+    <rect class="inner-screen" x="16" y="68" width="308" height="220" rx="8" stroke-width="1"/>
+    <rect class="canvas-bg" x="16" y="68" width="308" height="120" rx="8"/>
+    <line x1="45" y1="150" x2="95" y2="120" stroke="#6366F1" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="95" y1="120" x2="145" y2="130" stroke="#10B981" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="145" y1="130" x2="195" y2="95" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="195" y1="95" x2="245" y2="105" stroke="#6366F1" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <rect class="pill-bg-ok" x="30" y="76" width="40" height="16" rx="4" opacity="0.8"/>
+    <text class="text-pill-ok" x="50" y="88" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">PNG</text>
+    <text class="text-sub" x="306" y="88" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8">og:image — 141KB</text>
+    <text class="text-primary" x="30" y="210" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">Dark Mode Done Right</text>
+    <text class="text-sub" x="30" y="226" font-family="'JetBrains Mono', monospace" font-size="10">tionosulis.github.io</text>
+    <rect class="ui-block-mute" x="30" y="240" width="276" height="6" rx="3"/>
+    <rect class="ui-block-mute" x="30" y="252" width="180" height="6" rx="3" opacity="0.5"/>
+    <rect class="pill-bg-ok" x="78" y="306" width="184" height="30" rx="15"/>
+    <text class="text-pill-ok" x="170" y="325" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">✓ og:image Set</text>
+    <text class="text-muted" x="170" y="356" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">PNG fallback renders fine</text>
+    <text class="text-sub" x="170" y="372" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10.5">Same clean vector look — rasterized output</text>
+    <rect class="panel-hdr" x="0" y="394" width="340" height="26" rx="12"/>
+    <rect class="panel-hdr" x="0" y="394" width="340" height="12"/>
+    <text class="text-pill-ok" x="170" y="411" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" letter-spacing="1.5" opacity="0.8">03 · SERVER-SIDE SCRAPER PARSING COMPLETE</text>
   </g>
-
-  <!-- Bottom note -->
-  <text x="600" y="660" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#94A3B8" font-style="italic">The fix: render SVG to PNG at 1200&#215;630, set og:image meta tag, add frontmatter fallback.</text>
+  <line class="frame-border" x1="40" y1="560" x2="1160" y2="560" stroke-width="0.5"/>
+  <text class="text-comment" x="600" y="585" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">/* The fix: Automate SVG to PNG compilation at 1200×630, then declare explicit frontmatter og:image tags */</text>
+  <text class="text-title" x="600" y="604" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">Open Graph Protocol · Vector Rasterization · Content Scrapers · 50px Space Reserved</text>
 </svg>

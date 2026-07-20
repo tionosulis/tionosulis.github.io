@@ -1,55 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
     <style>
-      /* ── LIGHT MODE ── */
       .canvas-bg { fill: #f8f5f0; }
       .grid-dots { fill: #332D28; opacity: 0.15; }
-      .title-bar { fill: #332D28; }
-      .ui-tab { fill: #E5DFD9; }
-      .ui-tab-text { fill: #332D28; }
-      .ui-border { stroke: #D1C9C0; }
+      .frame-border { stroke: #D1C9C0; opacity: 0.8; }
       .node-bg { fill: #FFFFFF; }
       .line-connector { stroke: #A49A90; }
-      .text-base { fill: #F8F5F0; }
-      .text-dark { fill: #332D28; }
+      .text-primary { fill: #332D28; }
+      .text-title { fill: #B45309; }
       .text-muted { fill: #6B6059; }
-      .text-prompt { fill: #D97706; font-weight: 700; }
       .node-number { fill: #332D28; font-weight: 800; font-size: 14px; }
       .status-fail { stroke: #DC2626; fill: #DC2626; }
       .status-info { stroke: #0284C7; fill: #0284C7; }
       .accent-amber { fill: #D97706; stroke: #D97706; stroke-width: 2.5; }
-      .statusbar-bg { fill: #332D28; }
-      .statusbar-border { stroke: #4A423B; }
-      .statusbar-badge { fill: #D97706; }
-      .statusbar-badge-text { fill: #F8F5F0; }
-      .statusbar-info { fill: #E5DFD9; }
-
-
-      /* ── DARK MODE ── */
       @media (prefers-color-scheme: dark) {
         .canvas-bg { fill: #161616; }
         .grid-dots { fill: #453E38; opacity: 0.3; }
-        .title-bar { fill: #29241F; }
-        .ui-tab { fill: #3D3630; }
-        .ui-tab-text { fill: #F8F5F0; }
-        .ui-border { stroke: #453E38; }
+        .frame-border { stroke: #453E38; opacity: 0.6; }
         .node-bg { fill: #2E2924; }
         .line-connector { stroke: #7A6A5C; }
-        .text-dark { fill: #F8F5F0; }
-        .text-muted { fill: #D1D6CC; }
-        .text-prompt { fill: #F8F5F0; font-weight: 600; }
+        .text-primary { fill: #F8F5F0; }
+        .text-title { fill: #F59E0B; }
+        .text-muted { fill: #A3978E; }
         .node-number { fill: #F8F5F0; font-weight: 700; font-size: 14px; }
         .status-fail { stroke: #E05050; fill: #E05050; }
         .status-info { stroke: #38BDF8; fill: #38BDF8; }
         .accent-amber { fill: #F59E0B; stroke: #F59E0B; stroke-width: 2.5; }
-        .statusbar-bg { fill: #29241F; }
-        .statusbar-border { stroke: #453E38; }
-        .statusbar-badge { fill: #F59E0B; }
-        .statusbar-badge-text { fill: #1C1917; }
-        .statusbar-info { fill: #D1D6CC; }
       }
     </style>
-
-
     <pattern id="dynamic-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
       <circle class="grid-dots" cx="13" cy="13" r="0.8"/>
     </pattern>
@@ -60,128 +37,67 @@
       <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#E05050" flood-opacity="0.3"/>
     </filter>
   </defs>
-
-
-  <!-- Canvas -->
   <rect class="canvas-bg" width="1200" height="630"/>
   <rect width="1200" height="630" fill="url(#dynamic-dots)"/>
-
-
-  <!-- Title bar: 44px -->
-  <rect class="title-bar" x="0" y="0" width="1200" height="44"/>
-  <circle cx="50" cy="22" r="7" fill="#EF4444"/>
-  <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
-  <circle cx="100" cy="22" r="7" fill="#10B981"/>
-  <text class="statusbar-info" x="125" y="24" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" dominant-baseline="middle">git log --oneline</text>
-
-
-  <!-- File tab -->
-  <rect class="ui-tab" x="125" y="44" width="210" height="36" rx="8"/>
-  <text class="ui-tab-text" x="145" y="69" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600">git-log.sh</text>
-
-
-  <!-- Title divider -->
-  <line class="ui-border" x1="0" y1="80" x2="1200" y2="80" stroke-width="1.5"/>
-
-
-  <!-- Prompt -->
-  <text class="text-prompt" x="600" y="102" font-family="'JetBrains Mono', monospace" font-size="14" text-anchor="middle">$ git log --oneline · 8 commits · not linear</text>
-
-
-  <!-- Connector lines -->
+  <rect class="frame-border" x="1" y="1" width="1198" height="628" fill="none" stroke-width="1" rx="2"/>
+  <text class="text-title" x="600" y="52" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" letter-spacing="2" text-anchor="middle">GIT COMMIT HISTORY PATH</text>
+  <text class="text-muted" x="600" y="78" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" text-anchor="middle">git log --oneline · 8 commits · non-linear branching</text>
+  <line class="frame-border" x1="230" y1="96" x2="970" y2="96" stroke-width="0.5"/>
   <g class="line-connector" stroke-width="1.5" stroke-dasharray="5 3">
-    <line x1="180" y1="178" x2="420" y2="253"/>
-    <line x1="420" y1="253" x2="680" y2="178"/>
-    <line x1="680" y1="178" x2="920" y2="293"/>
-    <line x1="920" y1="293" x2="680" y2="393"/>
-    <line x1="680" y1="393" x2="420" y2="328"/>
-    <line x1="420" y1="328" x2="220" y2="423"/>
-    <line x1="220" y1="423" x2="520" y2="490" class="status-info" stroke-width="2"/>
+    <line x1="230" y1="178" x2="470" y2="253"/>
+    <line x1="470" y1="253" x2="730" y2="178"/>
+    <line x1="730" y1="178" x2="970" y2="293"/>
+    <line x1="970" y1="293" x2="730" y2="393"/>
+    <line x1="730" y1="393" x2="470" y2="328"/>
+    <line x1="470" y1="328" x2="270" y2="423"/>
+    <line x1="270" y1="423" x2="570" y2="490" class="status-info" stroke-width="2"/>
   </g>
-
-
-  <!-- COMMIT 01 — WARN -->
-  <circle class="node-bg status-fail" cx="180" cy="178" r="26" stroke-width="2" filter="url(#shadowWarn)"/>
-  <text x="180" y="172" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">01</text>
-  <text x="180" y="187" font-family="'JetBrains Mono', monospace" font-size="10" class="status-fail" text-anchor="middle" font-weight="700">WARN</text>
-  <text x="180" y="215" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">ef58136</text>
-  <text x="180" y="230" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">add og:image</text>
-
-
-  <!-- COMMIT 02 — WARN -->
-  <circle class="node-bg status-fail" cx="420" cy="253" r="26" stroke-width="2" filter="url(#shadowWarn)"/>
-  <text x="420" y="247" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">02</text>
-  <text x="420" y="262" font-family="'JetBrains Mono', monospace" font-size="10" class="status-fail" text-anchor="middle" font-weight="700">WARN</text>
-  <text x="420" y="290" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">0570209</text>
-  <text x="420" y="305" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">fix path</text>
-
-
-  <!-- COMMIT 03 — INFO (label di atas node) -->
-  <text x="680" y="122" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">add twitter:card</text>
-  <text x="680" y="136" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">a3f1c22</text>
-  <circle class="node-bg status-info" cx="680" cy="178" r="26" stroke-width="2"/>
-  <text x="680" y="172" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">03</text>
-  <text x="680" y="187" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
-
-
-  <!-- COMMIT 04 — WARN -->
-  <circle class="node-bg status-fail" cx="920" cy="293" r="26" stroke-width="2" filter="url(#shadowWarn)"/>
-  <text x="920" y="287" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">04</text>
-  <text x="920" y="302" font-family="'JetBrains Mono', monospace" font-size="10" class="status-fail" text-anchor="middle" font-weight="700">WARN</text>
-  <text x="920" y="330" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">b8d4e91</text>
-  <text x="920" y="345" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">fix dimensions</text>
-
-
-  <!-- COMMIT 05 — INFO -->
-  <circle class="node-bg status-info" cx="680" cy="393" r="26" stroke-width="2"/>
-  <text x="680" y="387" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">05</text>
-  <text x="680" y="402" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
-  <text x="680" y="430" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">c2a8f44</text>
-  <text x="680" y="445" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">add og:alt</text>
-
-
-  <!-- COMMIT 06 — INFO -->
-  <circle class="node-bg status-info" cx="420" cy="328" r="26" stroke-width="2"/>
-  <text x="420" y="322" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">06</text>
-  <text x="420" y="337" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
-  <text x="420" y="365" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">d9b3c17</text>
-  <text x="420" y="380" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">structured data</text>
-
-
-  <!-- COMMIT 07 — INFO -->
-  <circle class="node-bg status-info" cx="220" cy="423" r="26" stroke-width="2"/>
-  <text x="220" y="417" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">07</text>
-  <text x="220" y="432" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
-  <text x="220" y="460" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">f1e6a83</text>
-  <text x="220" y="475" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">seoTitle fix</text>
-
-
-  <!-- COMMIT 08 — DONE -->
-  <circle class="node-bg accent-amber" cx="520" cy="490" r="30" filter="url(#shadow)"/>
-  <text x="520" y="484" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">08</text>
-  <text x="520" y="499" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">✓ STOP</text>
-  <text x="520" y="530" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">3d9c2f1</text>
-  <text x="520" y="545" font-family="'JetBrains Mono', monospace" font-size="11" class="text-dark" text-anchor="middle">all tags valid</text>
-
-
-  <!-- Legend: y=520, sebelum statusbar y=560 — cukup ruang -->
-  <circle cx="790" cy="518" r="9" class="node-bg status-fail" stroke-width="2"/>
-  <text class="text-dark" x="807" y="522" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">WARN</text>
-
-
-  <circle cx="880" cy="518" r="9" class="node-bg status-info" stroke-width="2"/>
-  <text class="text-dark" x="897" y="522" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">INFO</text>
-
-
-  <circle cx="970" cy="518" r="9" class="node-bg accent-amber"/>
-  <text class="text-dark" x="987" y="522" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">DONE</text>
-
-
-  <!-- STATUS BAR: y=560, height=30 -->
-  <rect class="statusbar-bg" x="0" y="560" width="1200" height="30"/>
-  <line class="statusbar-border" x1="0" y1="560" x2="1200" y2="560" stroke-width="1"/>
-  <rect class="statusbar-badge" x="30" y="566" width="80" height="18" rx="3"/>
-  <text class="statusbar-badge-text" x="70" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
-  <text class="statusbar-info" x="600" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">git log history · 8 commits graph</text>
-  <text class="statusbar-info" x="1170" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="end">8 commits</text>
+  <circle class="node-bg status-fail" cx="230" cy="178" r="26" stroke-width="2" filter="url(#shadowWarn)"/>
+  <text x="230" y="172" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">01</text>
+  <text x="230" y="179" font-family="'JetBrains Mono', monospace" font-size="10" class="status-fail" text-anchor="middle" font-weight="700">WARN</text>
+  <text x="230" y="215" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">ef58136</text>
+  <text x="230" y="230" font-family="'JetBrains Mono', monospace" font-size="11" class="text-primary" text-anchor="middle">add og:image</text>
+  <circle class="node-bg status-fail" cx="470" cy="253" r="26" stroke-width="2" filter="url(#shadowWarn)"/>
+  <text x="470" y="247" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">02</text>
+  <text x="470" y="262" font-family="'JetBrains Mono', monospace" font-size="10" class="status-fail" text-anchor="middle" font-weight="700">WARN</text>
+  <text x="470" y="290" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">0570209</text>
+  <text x="470" y="305" font-family="'JetBrains Mono', monospace" font-size="11" class="text-primary" text-anchor="middle">fix path</text>
+  <text x="730" y="122" font-family="'JetBrains Mono', monospace" font-size="11" class="text-primary" text-anchor="middle">add twitter:card</text>
+  <text x="730" y="136" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">a3f1c22</text>
+  <circle class="node-bg status-info" cx="730" cy="178" r="26" stroke-width="2"/>
+  <text x="730" y="164" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">03</text>
+  <text x="730" y="179" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
+  <circle class="node-bg status-fail" cx="970" cy="293" r="26" stroke-width="2" filter="url(#shadowWarn)"/>
+  <text x="970" y="287" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">04</text>
+  <text x="970" y="302" font-family="'JetBrains Mono', monospace" font-size="10" class="status-fail" text-anchor="middle" font-weight="700">WARN</text>
+  <text x="970" y="330" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">b8d4e91</text>
+  <text x="970" y="345" font-family="'JetBrains Mono', monospace" font-size="11" class="text-primary" text-anchor="middle">fix dimensions</text>
+  <circle class="node-bg status-info" cx="730" cy="393" r="26" stroke-width="2"/>
+  <text x="730" y="387" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">05</text>
+  <text x="730" y="402" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
+  <text x="730" y="430" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">c2a8f44</text>
+  <text x="730" y="445" font-family="'JetBrains Mono', monospace" font-size="11" class="text-primary" text-anchor="middle">add og:alt</text>
+  <circle class="node-bg status-info" cx="470" cy="328" r="26" stroke-width="2"/>
+  <text x="470" y="322" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">06</text>
+  <text x="470" y="337" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
+  <text x="470" y="365" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">d9b3c17</text>
+  <text x="470" y="380" font-family="'JetBrains Mono', monospace" font-size="11" class="text-primary" text-anchor="middle">structured data</text>
+  <circle class="node-bg status-info" cx="270" cy="423" r="26" stroke-width="2"/>
+  <text x="270" y="417" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">07</text>
+  <text x="270" y="432" font-family="'JetBrains Mono', monospace" font-size="10" class="status-info" text-anchor="middle" font-weight="700">INFO</text>
+  <text x="270" y="460" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">f1e6a83</text>
+  <text x="270" y="475" font-family="'JetBrains Mono', monospace" font-size="11" class="text-primary" text-anchor="middle">seoTitle fix</text>
+  <circle class="node-bg accent-amber" cx="570" cy="490" r="30" filter="url(#shadow)"/>
+  <text x="570" y="484" font-family="'JetBrains Mono', monospace" class="node-number" text-anchor="middle">08</text>
+  <text x="570" y="499" font-family="'JetBrains Mono', monospace" font-size="11" class="text-primary" text-anchor="middle">✓ STOP</text>
+  <text x="570" y="530" font-family="'JetBrains Mono', monospace" font-size="11" class="text-muted" text-anchor="middle">3d9c2f1</text>
+  <text x="570" y="545" font-family="'JetBrains Mono', monospace" font-size="11" class="text-primary" text-anchor="middle">all tags valid</text>
+  <line class="frame-border" x1="230" y1="575" x2="970" y2="575" stroke-width="0.5"/>
+  <circle cx="730" cy="596" r="6" class="node-bg status-fail" stroke-width="1.5"/>
+  <text class="text-primary" x="744" y="600" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">WARN</text>
+  <circle cx="810" cy="596" r="6" class="node-bg status-info" stroke-width="1.5"/>
+  <text class="text-primary" x="824" y="600" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">INFO</text>
+  <circle cx="890" cy="596" r="6" class="node-bg accent-amber"/>
+  <text class="text-primary" x="904" y="600" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">DONE</text>
+  <text class="text-muted" x="230" y="600" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">git branch view · 8 revisions</text>
 </svg>
