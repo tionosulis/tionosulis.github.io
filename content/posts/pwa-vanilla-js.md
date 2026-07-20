@@ -9,7 +9,7 @@ image: /assets/img/og/pwa-vanilla-js.png
 image_alt: "Size comparison between Workbox (~50KB) and a vanilla JavaScript service worker (~1KB)"
 ---
 
-![Workbox vs Vanilla JS Service Worker size comparison: ~50KB vs ~1KB](../assets/img/workbox-vs-vanilla-size.svg)
+![Workbox vs Vanilla JS Service Worker size comparison: ~50KB vs ~1KB](../assets/img/pwa-vanilla-js.svg)
 
 *A 50KB framework vs 1KB of vanilla JavaScript — the size difference tells you everything about the tradeoffs between Workbox and a hand-written service worker.*
 
