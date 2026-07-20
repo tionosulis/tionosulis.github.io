@@ -109,7 +109,7 @@
     <circle cx="84" cy="593" r="5" fill="#EF4444" opacity="0.85"/>
     <text class="text-muted" x="96" y="597" font-weight="bold">overflow · baseline · squeeze</text>
     <circle cx="985" cy="593" r="5" fill="#10B981" opacity="0.85"/>
-    <text class="text-pill-ok" x="1000" y="597" font-weight="bold" text-anchor="start">3 challenges · 1 elegant solution</text>
+    <text class="text-pill-ok" x="1130" y="597" font-weight="bold" text-anchor="end">3 challenges · 1 elegant solution</text>
   </g>
   <text class="text-title" x="600" y="597" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" text-anchor="middle">CSS · FLEXBOX · DOT LEADER · TYPOGRAPHY</text>
 </svg>

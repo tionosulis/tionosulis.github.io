@@ -1,235 +1,153 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
-    <style>
-      /* ── LIGHT MODE (Blog bg: #f8f5f0) ── */
-      .canvas-bg          { fill: #f8f5f0; }
-      .grid-dots          { fill: #332D28; opacity: 0.15; }
-      .title-bar          { fill: #332D28; }
-      .ui-tab             { fill: #E5DFD9; }
-      .ui-tab-text        { fill: #332D28; }
-      .ui-border          { stroke: #D1C9C0; }
-      .panel-bg           { fill: #FFFFFF; }
-      .panel-header       { fill: #E5DFD9; }
-      .text-title-bar     { fill: #E5DFD9; }
-      .text-heading       { fill: #1C1917; }
-      .text-code          { fill: #332D28; }
-      .text-muted         { fill: #6B6059; }
-      .text-accent        { fill: #D97706; }
-      .text-accent-dim    { fill: #D97706; opacity: 0.6; }
-      .text-base          { fill: #1C1917; }
-      .text-success       { fill: #059669; }
-      .text-error         { fill: #DC2626; }
-      .task-bg            { fill: #F4F1ED; }
-      .task-bar           { fill: #D97706; }
-      .task-ok            { fill: #D97706; }
-      .logo-bracket       { fill: #D97706; }
-      .logo-letter        { fill: #1C1917; }
-      .swatch-amber       { fill: #D97706; }
-      .badge-success-bg   { fill: #059669; fill-opacity: 0.12; }
-      .badge-success-text { fill: #059669; }
-      .divider-line       { stroke: #D1C9C0; }
-      .box-muted          { fill: #6B6059; opacity: 0.4; }
-      .statusbar-bg       { fill: #332D28; }
-      .statusbar-line     { stroke: #4A423B; }
-      .statusbar-badge    { fill: #D97706; }
-      .statusbar-badge-text { fill: #F8F5F0; }
-      .statusbar-text     { fill: #E5DFD9; }
-
-
-      /* ── DARK MODE (Blog bg: #161616) ── */
-      @media (prefers-color-scheme: dark) {
-        .canvas-bg          { fill: #161616; }
-        .grid-dots          { fill: #453E38; opacity: 0.3; }
-        .title-bar          { fill: #29241F; }
-        .ui-tab             { fill: #3D3630; }
-        .ui-tab-text        { fill: #F8F5F0; }
-        .ui-border          { stroke: #453E38; }
-        .panel-bg           { fill: #2E2924; }
-        .panel-header       { fill: #3D3630; }
-        .text-title-bar     { fill: #D1D6CC; }
-        .text-heading       { fill: #F8F5F0; }
-        .text-code          { fill: #D1D6CC; }
-        .text-muted         { fill: #7A6A5C; }
-        .text-accent        { fill: #F59E0B; }
-        .text-accent-dim    { fill: #F59E0B; opacity: 0.6; }
-        .text-base          { fill: #F8F5F0; }
-        .text-success       { fill: #10D9A8; }
-        .text-error         { fill: #E05050; }
-        .task-bg            { fill: #352F2A; }
-        .task-bar           { fill: #F59E0B; }
-        .task-ok            { fill: #F59E0B; }
-        .logo-bracket       { fill: #F59E0B; }
-        .logo-letter        { fill: #F8F5F0; }
-        .swatch-amber       { fill: #F59E0B; }
-        .badge-success-bg   { fill: #10D9A8; fill-opacity: 0.12; }
-        .badge-success-text { fill: #10D9A8; }
-        .divider-line       { stroke: #453E38; }
-        .box-muted          { fill: #D1D6CC; opacity: 0.4; }
-        .statusbar-bg       { fill: #29241F; }
-        .statusbar-line     { stroke: #453E38; }
-        .statusbar-badge    { fill: #F59E0B; }
-        .statusbar-badge-text { fill: #1C1917; }
-        .statusbar-text     { fill: #D1D6CC; }
-      }
-    </style>
-
-
-    <pattern id="grid-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle class="grid-dots" cx="13" cy="13" r="0.8"/>
-    </pattern>
-  </defs>
-
-
-  <!-- Canvas -->
-  <rect class="canvas-bg" width="1200" height="630"/>
-  <rect width="1200" height="630" fill="url(#grid-dots)"/>
-
-
-  <!-- Title bar: 44px -->
-  <rect class="title-bar" x="0" y="0" width="1200" height="44"/>
-  <circle cx="50" cy="22" r="7" fill="#EF4444"/>
-  <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
-  <circle cx="100" cy="22" r="7" fill="#10B981"/>
-
-
-  <!-- File tab -->
-  <rect class="ui-tab" x="125" y="48" width="200" height="36" rx="8"/>
-  <text class="ui-tab-text" x="145" y="73" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600">redesign-log.md</text>
-
-
-  <!-- Title divider -->
-  <line class="ui-border" x1="0" y1="84" x2="1200" y2="84" stroke-width="1.5"/>
-
-
-  <!-- ── LEFT PANEL: Terminal Log — y=100, height=430, ends y=530 ── -->
-  <rect class="panel-bg" x="30" y="100" width="555" height="430" rx="8"/>
-
-
-  <!-- Prompt -->
-  <text class="text-accent" x="50" y="132" font-family="'JetBrains Mono', monospace" font-size="15">$ cat ~/redesign-log</text>
-
-
-  <!-- Deployment log header -->
-  <text class="text-muted" x="50" y="162" font-family="'JetBrains Mono', monospace" font-size="13">── deployment log ──────────────────────────</text>
-
-
-  <!-- Task 1: Typeface -->
-  <rect class="task-bg" x="50" y="178" width="515" height="40" rx="4"/>
-  <rect class="task-bar" x="50" y="178" width="3" height="40"/>
-  <text class="text-muted" x="68" y="193" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">[1/4] typeface</text>
-  <text class="text-base" x="68" y="210" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="700" dominant-baseline="middle">JetBrains Mono</text>
-  <text class="task-ok" x="545" y="210" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
-
-
-  <!-- Task 2: Accent -->
-  <rect class="task-bg" x="50" y="228" width="515" height="40" rx="4"/>
-  <rect class="task-bar" x="50" y="228" width="3" height="40"/>
-  <text class="text-muted" x="68" y="243" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">[2/4] accent color</text>
-  <text class="text-accent" x="68" y="260" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="700" dominant-baseline="middle">#B45309 · #FBBF24</text>
-  <text class="task-ok" x="545" y="260" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
-
-
-  <!-- Task 3: Spacing -->
-  <rect class="task-bg" x="50" y="278" width="515" height="40" rx="4"/>
-  <rect class="task-bar" x="50" y="278" width="3" height="40"/>
-  <text class="text-muted" x="68" y="293" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">[3/4] spacing system</text>
-  <text class="text-base" x="68" y="310" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="700" dominant-baseline="middle">φ = 1.618 · golden ratio</text>
-  <text class="task-ok" x="545" y="310" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
-
-
-  <!-- Task 4: Brand -->
-  <rect class="task-bg" x="50" y="328" width="515" height="40" rx="4"/>
-  <rect class="task-bar" x="50" y="328" width="3" height="40"/>
-  <text class="text-muted" x="68" y="343" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">[4/4] brand · prompts</text>
-  <text class="text-base" x="68" y="360" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="700" dominant-baseline="middle">&gt;_S · $ · :q · ★</text>
-  <text class="task-ok" x="545" y="360" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
-
-
-  <!-- Summary -->
-  <text class="text-muted" x="50" y="400" font-family="'JetBrains Mono', monospace" font-size="13">── summary ─────────────────────────────</text>
-  <text class="text-success" x="50" y="426" font-family="'JetBrains Mono', monospace" font-size="16">✓ 4/4 tasks complete · zero frameworks · vanilla CSS</text>
-
-
-  <!-- Blinking cursor -->
-  <text class="text-accent" x="50" y="460" font-family="'JetBrains Mono', monospace" font-size="20">$</text>
-  <rect class="task-bar" x="74" y="440" width="14" height="22">
-    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite"/>
-  </rect>
-
-
-  <!-- ── RIGHT PANEL: Design System — y=100, height=430, ends y=530 ── -->
-  <rect class="panel-bg" x="615" y="100" width="555" height="430" rx="8"/>
-
-
-  <!-- Panel header -->
-  <rect class="panel-header" x="615" y="100" width="555" height="34" rx="8"/>
-  <rect class="panel-header" x="615" y="127" width="555" height="7"/>
-  <text class="text-muted" x="635" y="121" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">design-system.md</text>
-
-
-  <!-- Design system header -->
-  <text class="text-muted" x="635" y="155" font-family="'JetBrains Mono', monospace" font-size="13">── design system ────────────────────────────</text>
-
-
-  <!-- Logo preview -->
-  <text class="box-muted" x="635" y="185" font-family="'JetBrains Mono', monospace" font-size="11">┌─────┐</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"> <defs>
+<style>
+/* ── LIGHT MODE (Blog bg: #f8f5f0) ── */
+.canvas-bg { fill: #f8f5f0; }
+.grid-dots { fill: #332D28; opacity: 0.15; }
+.title-bar { fill: #332D28; }
+.ui-tab { fill: #E5DFD9; }
+.ui-tab-text { fill: #332D28; }
+.ui-border { stroke: #D1C9C0; }
+.panel-bg { fill: #FFFFFF; }
+.panel-header { fill: #E5DFD9; }
+.text-title-bar { fill: #E5DFD9; }
+.text-heading { fill: #1C1917; }
+.text-code { fill: #332D28; }
+.text-muted { fill: #6B6059; }
+.text-accent { fill: #D97706; }
+.text-accent-dim { fill: #D97706; opacity: 0.6; }
+.text-base { fill: #1C1917; }
+.text-success { fill: #059669; }
+.text-error { fill: #DC2626; }
+.task-bg { fill: #F4F1ED; }
+.task-bar { fill: #D97706; }
+.task-ok { fill: #D97706; }
+.logo-bracket { fill: #D97706; }
+.logo-letter { fill: #1C1917; }
+.swatch-amber { fill: #D97706; }
+.badge-success-bg { fill: #059669; fill-opacity: 0.12; }
+.badge-success-text { fill: #059669; }
+.divider-line { stroke: #D1C9C0; }
+.box-muted { fill: #6B6059; opacity: 0.4; }
+.statusbar-bg { fill: #332D28; }
+.statusbar-line { stroke: #4A423B; }
+.statusbar-badge { fill: #D97706; }
+.statusbar-badge-text { fill: #F8F5F0; }
+.statusbar-text { fill: #E5DFD9; }
+/* ── DARK MODE (Blog bg: #161616) ── */
+@media (prefers-color-scheme: dark) {
+.canvas-bg { fill: #161616; }
+.grid-dots { fill: #453E38; opacity: 0.3; }
+.title-bar { fill: #29241F; }
+.ui-tab { fill: #3D3630; }
+.ui-tab-text { fill: #F8F5F0; }
+.ui-border { stroke: #453E38; }
+.panel-bg { fill: #2E2924; }
+.panel-header { fill: #3D3630; }
+.text-title-bar { fill: #D1D6CC; }
+.text-heading { fill: #F8F5F0; }
+.text-code { fill: #D1D6CC; }
+.text-muted { fill: #7A6A5C; }
+.text-accent { fill: #F59E0B; }
+.text-accent-dim { fill: #F59E0B; opacity: 0.6; }
+.text-base { fill: #F8F5F0; }
+.text-success { fill: #10D9A8; }
+.text-error { fill: #E05050; }
+.task-bg { fill: #352F2A; }
+.task-bar { fill: #F59E0B; }
+.task-ok { fill: #F59E0B; }
+.logo-bracket { fill: #F59E0B; }
+.logo-letter { fill: #F8F5F0; }
+.swatch-amber { fill: #F59E0B; }
+.badge-success-bg { fill: #10D9A8; fill-opacity: 0.12; }
+.badge-success-text { fill: #10D9A8; }
+.divider-line { stroke: #453E38; }
+.box-muted { fill: #D1D6CC; opacity: 0.4; }
+.statusbar-bg { fill: #29241F; }
+.statusbar-line { stroke: #453E38; }
+.statusbar-badge { fill: #F59E0B; }
+.statusbar-badge-text { fill: #1C1917; }
+.statusbar-text { fill: #D1D6CC; }
+}
+</style>
+<pattern id="grid-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+<circle class="grid-dots" cx="13" cy="13" r="0.8"/>
+</pattern>
+</defs>
+<rect class="canvas-bg" width="1200" height="630"/>
+<rect width="1200" height="630" fill="url(#grid-dots)"/>
+<rect class="title-bar" x="0" y="0" width="1200" height="44"/>
+<circle cx="50" cy="22" r="7" fill="#EF4444"/>
+<circle cx="75" cy="22" r="7" fill="#F59E0B"/>
+<circle cx="100" cy="22" r="7" fill="#10B981"/>
+<rect class="ui-tab" x="125" y="48" width="200" height="36" rx="8"/>
+<text class="ui-tab-text" x="145" y="73" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600">redesign-log.md</text>
+<line class="ui-border" x1="0" y1="84" x2="1200" y2="84" stroke-width="1.5"/>
+<rect class="panel-bg" x="30" y="100" width="555" height="430" rx="8"/>
+<text class="text-accent" x="50" y="132" font-family="'JetBrains Mono', monospace" font-size="15">$ cat ~/redesign-log</text>
+<text class="text-muted" x="50" y="162" font-family="'JetBrains Mono', monospace" font-size="13">── deployment log ──────────────────────────</text>
+<rect class="task-bg" x="50" y="178" width="515" height="40" rx="4"/>
+<rect class="task-bar" x="50" y="178" width="3" height="40"/>
+<text class="text-muted" x="68" y="193" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">[1/4] typeface</text>
+<text class="text-base" x="68" y="210" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="700" dominant-baseline="middle">JetBrains Mono</text>
+<text class="task-ok" x="545" y="210" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
+<rect class="task-bg" x="50" y="228" width="515" height="40" rx="4"/>
+<rect class="task-bar" x="50" y="228" width="3" height="40"/>
+<text class="text-muted" x="68" y="243" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">[2/4] accent color</text>
+<text class="text-accent" x="68" y="260" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="700" dominant-baseline="middle">#B45309 · #FBBF24</text>
+<text class="task-ok" x="545" y="260" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
+<rect class="task-bg" x="50" y="278" width="515" height="40" rx="4"/>
+<rect class="task-bar" x="50" y="278" width="3" height="40"/>
+<text class="text-muted" x="68" y="293" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">[3/4] spacing system</text>
+<text class="text-base" x="68" y="310" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="700" dominant-baseline="middle">φ = 1.618 · golden ratio</text>
+<text class="task-ok" x="545" y="310" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
+<rect class="task-bg" x="50" y="328" width="515" height="40" rx="4"/>
+<rect class="task-bar" x="50" y="328" width="3" height="40"/>
+<text class="text-muted" x="68" y="343" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">[4/4] brand · prompts</text>
+<text class="text-base" x="68" y="360" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="700" dominant-baseline="middle">&gt;_S · $ · :q · ★</text>
+<text class="task-ok" x="545" y="360" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" text-anchor="end" dominant-baseline="middle">[ OK ]</text>
+<text class="text-muted" x="50" y="400" font-family="'JetBrains Mono', monospace" font-size="13">── summary ─────────────────────────────</text>
+<text class="text-success" x="50" y="426" font-family="'JetBrains Mono', monospace" font-size="16">✓ 4/4 tasks complete · zero frameworks · vanilla CSS</text>
+<text class="text-accent" x="50" y="460" font-family="'JetBrains Mono', monospace" font-size="20">$</text>
+<rect class="task-bar" x="74" y="440" width="14" height="22">
+<animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite"/>
+</rect>
+<rect class="panel-bg" x="615" y="100" width="555" height="430" rx="8"/>
+<rect class="panel-header" x="615" y="100" width="555" height="34" rx="8"/>
+<rect class="panel-header" x="615" y="127" width="555" height="7"/>
+<text class="text-muted" x="635" y="121" font-family="'JetBrains Mono', monospace" font-size="13" dominant-baseline="middle">design-system.md</text>
+<text class="text-muted" x="635" y="155" font-family="'JetBrains Mono', monospace" font-size="13">── design system ────────────────────────────</text>
+<text class="box-muted" x="635" y="185" font-family="'JetBrains Mono', monospace" font-size="11">┌─────┐</text>
   <text x="635" y="218" font-family="'JetBrains Mono', monospace" font-size="32" font-weight="700">
-    <tspan class="logo-bracket">&gt;_</tspan><tspan class="logo-letter">S</tspan>
-  </text>
-  <text class="box-muted" x="635" y="238" font-family="'JetBrains Mono', monospace" font-size="11">└─────┘</text>
-
-
-  <!-- Toggle preview -->
+<tspan class="logo-bracket">&gt;_</tspan><tspan class="logo-letter">S</tspan>
+</text>
+<text class="box-muted" x="635" y="238" font-family="'JetBrains Mono', monospace" font-size="11">└─────┘</text>
   <text x="780" y="218" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="700">
-    <tspan class="logo-bracket">[</tspan><tspan class="text-base">--dark</tspan><tspan class="logo-bracket">]</tspan>
-  </text>
-
-
-  <!-- Color swatches -->
-  <text class="text-code" x="635" y="270" font-family="'JetBrains Mono', monospace" font-size="14">accent ·</text>
-  <rect class="swatch-amber" x="716" y="256" width="28" height="20" rx="2"/>
-  <text class="text-code" x="750" y="270" font-family="'JetBrains Mono', monospace" font-size="14">#F59E0B</text>
-
-
-  <!-- WCAG badges -->
-  <text class="text-code" x="635" y="302" font-family="'JetBrains Mono', monospace" font-size="14">WCAG ·</text>
-  <rect class="badge-success-bg" x="710" y="288" width="78" height="22" rx="3"/>
-  <text class="badge-success-text" x="749" y="303" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">AA 4.62</text>
-  <rect class="badge-success-bg" x="800" y="288" width="78" height="22" rx="3"/>
-  <text class="badge-success-text" x="839" y="303" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">AAA 10.8</text>
-
-
-  <!-- Spacing system -->
-  <text class="text-code" x="635" y="334" font-family="'JetBrains Mono', monospace" font-size="14">spacing ·</text>
-  <text class="text-base" x="728" y="334" font-family="'JetBrains Mono', monospace" font-size="15">1rem → 1.618 → 2.618 → 4.236</text>
-
-
-  <!-- Prompts -->
-  <text class="text-muted" x="635" y="368" font-family="'JetBrains Mono', monospace" font-size="13">── prompts ────────────────────────────</text>
-  <text class="text-accent" x="635" y="396" font-family="'JetBrains Mono', monospace" font-size="16">$ whoami</text>
-  <text class="text-accent" x="635" y="422" font-family="'JetBrains Mono', monospace" font-size="16">$ cat about.md</text>
-  <text class="text-accent" x="635" y="448" font-family="'JetBrains Mono', monospace" font-size="16">$ tree links/</text>
-  <text class="text-code" x="880" y="396" font-family="'JetBrains Mono', monospace" font-size="16">:q back</text>
-  <text class="text-code" x="880" y="422" font-family="'JetBrains Mono', monospace" font-size="16">:prev · :next</text>
-  <text class="text-accent-dim" x="880" y="448" font-family="'JetBrains Mono', monospace" font-size="16">★ pinned</text>
-
-
-  <!-- Rejected items -->
-  <text class="text-muted" x="635" y="482" font-family="'JetBrains Mono', monospace" font-size="13">── rejected ───────────────────────────</text>
+<tspan class="logo-bracket">[</tspan><tspan class="text-base">--dark</tspan><tspan class="logo-bracket">]</tspan>
+</text>
+<text class="text-code" x="635" y="270" font-family="'JetBrains Mono', monospace" font-size="14">accent ·</text>
+<rect class="swatch-amber" x="716" y="256" width="28" height="20" rx="2"/>
+<text class="text-code" x="750" y="270" font-family="'JetBrains Mono', monospace" font-size="14">#F59E0B</text>
+<text class="text-code" x="635" y="302" font-family="'JetBrains Mono', monospace" font-size="14">WCAG ·</text>
+<rect class="badge-success-bg" x="710" y="288" width="78" height="22" rx="3"/>
+<text class="badge-success-text" x="749" y="303" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">AA 4.62</text>
+<rect class="badge-success-bg" x="800" y="288" width="78" height="22" rx="3"/>
+<text class="badge-success-text" x="839" y="303" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">AAA 10.8</text>
+<text class="text-code" x="635" y="334" font-family="'JetBrains Mono', monospace" font-size="14">spacing ·</text>
+<text class="text-base" x="728" y="334" font-family="'JetBrains Mono', monospace" font-size="15">1rem → 1.618 → 2.618 → 4.236</text>
+<text class="text-muted" x="635" y="368" font-family="'JetBrains Mono', monospace" font-size="13">── prompts ────────────────────────────</text>
+<text class="text-accent" x="635" y="396" font-family="'JetBrains Mono', monospace" font-size="16">$ whoami</text>
+<text class="text-accent" x="635" y="422" font-family="'JetBrains Mono', monospace" font-size="16">$ cat about.md</text>
+<text class="text-accent" x="635" y="448" font-family="'JetBrains Mono', monospace" font-size="16">$ tree links/</text>
+<text class="text-code" x="880" y="396" font-family="'JetBrains Mono', monospace" font-size="16">:q back</text>
+<text class="text-code" x="880" y="422" font-family="'JetBrains Mono', monospace" font-size="16">:prev · :next</text>
+<text class="text-accent-dim" x="880" y="448" font-family="'JetBrains Mono', monospace" font-size="16">★ pinned</text>
+<text class="text-muted" x="635" y="482" font-family="'JetBrains Mono', monospace" font-size="13">── rejected ───────────────────────────</text>
   <text x="635" y="506" font-family="'JetBrains Mono', monospace" font-size="14">
-    <tspan class="text-error">✗</tspan><tspan class="text-code"> sidebar  </tspan><tspan class="text-error">✗</tspan><tspan class="text-code"> green accent  </tspan><tspan class="text-error">✗</tspan><tspan class="text-code"> dot leaders  </tspan><tspan class="text-error">✗</tspan><tspan class="text-code"> icon toggle</tspan>
-  </text>
-
-
-  <!-- ── STATUS BAR: y=560, height=30 ── -->
-  <rect class="statusbar-bg" x="0" y="560" width="1200" height="30"/>
-  <line class="statusbar-line" x1="0" y1="560" x2="1200" y2="560" stroke-width="1"/>
-
-
-  <!-- NORMAL badge -->
-  <rect class="statusbar-badge" x="30" y="566" width="80" height="18" rx="3"/>
-  <text class="statusbar-badge-text" x="70" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
-
-
-  <!-- File info -->
-  <text class="statusbar-text" x="1170" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="end">redesign-log.md  21L</text>
+<tspan class="text-error">✗</tspan><tspan class="text-code"> sidebar </tspan><tspan class="text-error">✗</tspan><tspan class="text-code"> green accent </tspan><tspan class="text-error">✗</tspan><tspan class="text-code"> dot leaders </tspan><tspan class="text-error">✗</tspan><tspan class="text-code"> icon toggle</tspan>
+</text>
+<rect class="statusbar-bg" x="0" y="560" width="1200" height="30"/>
+<line class="statusbar-line" x1="0" y1="560" x2="1200" y2="560" stroke-width="1"/>
+<rect class="statusbar-badge" x="30" y="566" width="80" height="18" rx="3"/>
+<text class="statusbar-badge-text" x="70" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
+<text class="statusbar-text" x="1170" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="end">redesign-log.md 21L</text>
 </svg>

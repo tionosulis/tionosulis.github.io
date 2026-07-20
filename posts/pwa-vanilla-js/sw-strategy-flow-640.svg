@@ -1,68 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480">
-  <rect width="640" height="480" fill="#fafafa" rx="12"/>
-  <text x="320" y="28" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1a1a1a" text-anchor="middle">Service Worker — Caching Strategies</text>
-
-  <!-- Install step -->
-  <rect x="220" y="50" width="200" height="40" fill="#e0f2fe" stroke="#2563eb" stroke-width="1.5" rx="6"/>
-  <text x="320" y="74" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">install: precache core assets</text>
-
-  <line x1="320" y1="90" x2="320" y2="110" stroke="#2563eb" stroke-width="1.5"/>
-  <polygon points="315,105 320,115 325,105" fill="#2563eb"/>
-
-  <!-- Activate step -->
-  <rect x="220" y="115" width="200" height="40" fill="#e0f2fe" stroke="#2563eb" stroke-width="1.5" rx="6"/>
-  <text x="320" y="139" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">activate: cleanup old caches</text>
-
-  <line x1="320" y1="155" x2="320" y2="175" stroke="#2563eb" stroke-width="1.5"/>
-  <polygon points="315,170 320,180 325,170" fill="#2563eb"/>
-
-  <!-- Fetch step -->
-  <rect x="220" y="180" width="200" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" rx="6"/>
-  <text x="320" y="204" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#b45309" text-anchor="middle">fetch: intercept every request</text>
-
-  <line x1="320" y1="220" x2="320" y2="240" stroke="#f59e0b" stroke-width="1.5"/>
-  <polygon points="315,235 320,245 325,235" fill="#f59e0b"/>
-
-  <!-- Decision diamond: what type? -->
-  <rect x="220" y="245" width="200" height="40" fill="#f0f0f0" stroke="#d1d5db" stroke-width="1" rx="6"/>
-  <text x="320" y="269" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#1a1a1a" text-anchor="middle">What type of request?</text>
-
-  <!-- Three branches -->
-  <line x1="320" y1="285" x2="320" y2="300" stroke="#d1d5db" stroke-width="1"/>
-  <!-- Left: to fonts/style -->
-  <line x1="320" y1="300" x2="100" y2="300" stroke="#22c55e" stroke-width="1.5"/>
-  <line x1="100" y1="300" x2="100" y2="320" stroke="#22c55e" stroke-width="1.5"/>
-  <polygon points="95,315 100,325 105,315" fill="#22c55e"/>
-  <!-- Center: to images -->
-  <line x1="320" y1="300" x2="320" y2="320" stroke="#2563eb" stroke-width="1.5"/>
-  <polygon points="315,315 320,325 325,315" fill="#2563eb"/>
-  <!-- Right: to documents -->
-  <line x1="320" y1="300" x2="540" y2="300" stroke="#f59e0b" stroke-width="1.5"/>
-  <line x1="540" y1="300" x2="540" y2="320" stroke="#f59e0b" stroke-width="1.5"/>
-  <polygon points="535,315 540,325 545,315" fill="#f59e0b"/>
-
-  <!-- Strategy 1: cacheFirst for fonts/style -->
-  <rect x="25" y="325" width="150" height="80" fill="#bbf7d0" stroke="#22c55e" stroke-width="1.5" rx="6"/>
-  <text x="100" y="345" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#15803d" text-anchor="middle">cacheFirst</text>
-  <text x="100" y="362" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">fonts, CSS, JS</text>
-  <text x="100" y="378" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Check cache first</text>
-  <text x="100" y="394" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Miss → fetch + cache</text>
-
-  <!-- Strategy 2: staleWhileRevalidate for images -->
-  <rect x="245" y="325" width="150" height="80" fill="#e0f2fe" stroke="#2563eb" stroke-width="1.5" rx="6"/>
-  <text x="320" y="345" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">staleWhileRevalidate</text>
-  <text x="320" y="362" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">images, SVGs</text>
-  <text x="320" y="378" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Serve cached instantly</text>
-  <text x="320" y="394" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Update cache in bg</text>
-
-  <!-- Strategy 3: networkFirst for documents -->
-  <rect x="465" y="325" width="150" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" rx="6"/>
-  <text x="540" y="345" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#b45309" text-anchor="middle">networkFirst</text>
-  <text x="540" y="362" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">HTML pages</text>
-  <text x="540" y="378" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Fetch from network first</text>
-  <text x="540" y="394" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Fail → serve cached</text>
-
-  <!-- Summary bar -->
-  <rect x="25" y="425" width="590" height="35" fill="#f0f0f0" rx="6"/>
-  <text x="320" y="447" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#1a1a1a" text-anchor="middle">Cache v2 — changed image strategy from cacheFirst to staleWhileRevalidate (after SVG cache bug)</text>
+<rect width="640" height="480" fill="#fafafa" rx="12"/>
+<text x="320" y="28" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1a1a1a" text-anchor="middle">Service Worker — Caching Strategies</text>
+<rect x="220" y="50" width="200" height="40" fill="#e0f2fe" stroke="#2563eb" stroke-width="1.5" rx="6"/>
+<text x="320" y="74" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">install: precache core assets</text>
+<line x1="320" y1="90" x2="320" y2="110" stroke="#2563eb" stroke-width="1.5"/>
+<polygon points="315,105 320,115 325,105" fill="#2563eb"/>
+<rect x="220" y="115" width="200" height="40" fill="#e0f2fe" stroke="#2563eb" stroke-width="1.5" rx="6"/>
+<text x="320" y="139" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">activate: cleanup old caches</text>
+<line x1="320" y1="155" x2="320" y2="175" stroke="#2563eb" stroke-width="1.5"/>
+<polygon points="315,170 320,180 325,170" fill="#2563eb"/>
+<rect x="220" y="180" width="200" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" rx="6"/>
+<text x="320" y="204" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#b45309" text-anchor="middle">fetch: intercept every request</text>
+<line x1="320" y1="220" x2="320" y2="240" stroke="#f59e0b" stroke-width="1.5"/>
+<polygon points="315,235 320,245 325,235" fill="#f59e0b"/>
+<rect x="220" y="245" width="200" height="40" fill="#f0f0f0" stroke="#d1d5db" stroke-width="1" rx="6"/>
+<text x="320" y="269" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#1a1a1a" text-anchor="middle">What type of request?</text>
+<line x1="320" y1="285" x2="320" y2="300" stroke="#d1d5db" stroke-width="1"/>
+<line x1="320" y1="300" x2="100" y2="300" stroke="#22c55e" stroke-width="1.5"/>
+<line x1="100" y1="300" x2="100" y2="320" stroke="#22c55e" stroke-width="1.5"/>
+<polygon points="95,315 100,325 105,315" fill="#22c55e"/>
+<line x1="320" y1="300" x2="320" y2="320" stroke="#2563eb" stroke-width="1.5"/>
+<polygon points="315,315 320,325 325,315" fill="#2563eb"/>
+<line x1="320" y1="300" x2="540" y2="300" stroke="#f59e0b" stroke-width="1.5"/>
+<line x1="540" y1="300" x2="540" y2="320" stroke="#f59e0b" stroke-width="1.5"/>
+<polygon points="535,315 540,325 545,315" fill="#f59e0b"/>
+<rect x="25" y="325" width="150" height="80" fill="#bbf7d0" stroke="#22c55e" stroke-width="1.5" rx="6"/>
+<text x="100" y="345" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#15803d" text-anchor="middle">cacheFirst</text>
+<text x="100" y="362" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">fonts, CSS, JS</text>
+<text x="100" y="378" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Check cache first</text>
+<text x="100" y="394" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Miss → fetch + cache</text>
+<rect x="245" y="325" width="150" height="80" fill="#e0f2fe" stroke="#2563eb" stroke-width="1.5" rx="6"/>
+<text x="320" y="345" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">staleWhileRevalidate</text>
+<text x="320" y="362" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">images, SVGs</text>
+<text x="320" y="378" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Serve cached instantly</text>
+<text x="320" y="394" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Update cache in bg</text>
+<rect x="465" y="325" width="150" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" rx="6"/>
+<text x="540" y="345" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#b45309" text-anchor="middle">networkFirst</text>
+<text x="540" y="362" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">HTML pages</text>
+<text x="540" y="378" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Fetch from network first</text>
+<text x="540" y="394" font-family="system-ui,sans-serif" font-size="9" fill="#636b78" text-anchor="middle">Fail → serve cached</text>
+<rect x="25" y="425" width="590" height="35" fill="#f0f0f0" rx="6"/>
+<text x="320" y="447" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#1a1a1a" text-anchor="middle">Cache v2 — changed image strategy from cacheFirst to staleWhileRevalidate (after SVG cache bug)</text>
 </svg>
