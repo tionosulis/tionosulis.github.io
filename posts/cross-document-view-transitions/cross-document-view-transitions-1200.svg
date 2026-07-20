@@ -1,111 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"> <defs>
-<style>
-/* ── 1. TEMA ASLI MURNI: LIGHT MODE (Latar Blog Cream #f8f5f0) ── */
-.canvas-bg { fill: #f8f5f0; }
-.grid-dots { fill: #332D28; opacity: 0.15; }
-.title-bar { fill: #332D28; }
-.ui-border { stroke: #D1C9C0; }
-.panel-bg { fill: #FFFFFF; stroke: #332D28; }
-.panel-bg-alt { fill: #FFFFFF; stroke: #D97706; }
-.diagram-bg { fill: #F4F1ED; }
-.diagram-strip { fill: #E5DFD9; }
-/* Teks &amp; Sintaks Light */
-.text-base { fill: #F8F5F0; }
-.text-dark { fill: #332D28; }
-.text-muted { fill: #8A8075; }
-/* Aksen Jalur &amp; Indikator */
-.accent-amber { fill: #D97706; }
-.accent-amber-stroke { stroke: #D97706; }
-.accent-amber-text { fill: #D97706; }
-/* Status Bar Light */
-.statusbar-bg { fill: #332D28; }
-.statusbar-border { stroke: #4A423B; }
-.statusbar-badge { fill: #D97706; }
-.statusbar-badge-text { fill: #F8F5F0; }
-.statusbar-info { fill: #E5DFD9; }
-/* ── 2. TEMA ASLI MURNI: DARK MODE (Latar Blog Charcoal #161616) ── */
-@media (prefers-color-scheme: dark) {
-.canvas-bg { fill: #161616; }
-.grid-dots { fill: #453E38; opacity: 0.3; }
-.title-bar { fill: #29241F; }
-.ui-border { stroke: #453E38; }
-.panel-bg { fill: #2E2924; stroke: #F8F5F0; }
-.panel-bg-alt { fill: #2E2924; stroke: #F59E0B; }
-.diagram-bg { fill: #3D3630; }
-.diagram-strip { fill: #D1D6CC; }
-.text-dark { fill: #D1D6CC; }
-.text-muted { fill: #D1D6CC; }
-.accent-amber { fill: #F59E0B; }
-.accent-amber-stroke { stroke: #F59E0B; }
-.accent-amber-text { fill: #F59E0B; }
-.statusbar-bg { fill: #29241F; }
-.statusbar-border { stroke: #453E38; }
-.statusbar-badge { fill: #F59E0B; }
-.statusbar-badge-text { fill: #1C1917; }
-.statusbar-info { fill: #D1D6CC; }
-}
-</style>
-<pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
-<circle class="grid-dots" cx="13" cy="13" r="0.8"/>
-</pattern>
-<filter id="sketchy">
-<feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="noise"/>
-<feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
-</filter>
-<filter id="sketchyStrong">
-<feTurbulence type="turbulence" baseFrequency="0.025" numOctaves="3" result="noise"/>
-<feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
-</filter>
-</defs>
-<rect class="canvas-bg" width="1200" height="630"/>
-<rect width="1200" height="630" fill="url(#dots)"/>
-<rect class="title-bar" x="0" y="0" width="1200" height="44"/>
-<circle cx="50" cy="22" r="7" fill="#EF4444"/>
-<circle cx="75" cy="22" r="7" fill="#F59E0B"/>
-<circle cx="100" cy="22" r="7" fill="#10B981"/>
-<text class="statusbar-info" x="125" y="24" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" dominant-baseline="middle">view-transition.css</text>
-<line class="ui-border" x1="0" y1="44" x2="1200" y2="44" stroke-width="1.5"/>
-<text class="accent-amber-text" x="600" y="82" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">@media (prefers-reduced-motion: no-preference) {</text>
-<rect class="panel-bg" x="110" y="100" width="300" height="400" stroke-width="2" rx="3" filter="url(#sketchy)"/>
-<rect class="accent-amber" x="130" y="130" width="180" height="16" opacity="0.7" rx="2" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="130" y="160" width="240" height="8" opacity="0.6" rx="1" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="130" y="176" width="200" height="8" opacity="0.4" rx="1" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="130" y="192" width="220" height="8" opacity="0.4" rx="1" filter="url(#sketchy)"/>
-<rect class="diagram-bg" x="130" y="220" width="260" height="120" rx="3" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="130" y="356" width="160" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="130" y="372" width="200" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="130" y="388" width="140" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-<text class="text-dark" x="260" y="520" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" filter="url(#sketchy)">Page A</text>
-<text class="text-muted" x="260" y="538" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">::view-transition-old</text>
-<rect class="panel-bg" x="430" y="120" width="300" height="400" stroke-width="1.5" rx="3" opacity="0.35" filter="url(#sketchyStrong)"/>
-<rect class="accent-amber" x="450" y="150" width="180" height="16" opacity="0.25" rx="2"/>
-<rect class="diagram-strip" x="450" y="178" width="240" height="8" opacity="0.2" rx="1"/>
-<rect class="diagram-strip" x="450" y="194" width="200" height="8" opacity="0.15" rx="1"/>
-<rect class="panel-bg-alt" x="470" y="110" width="300" height="400" stroke-width="1.5" rx="3" opacity="0.45" filter="url(#sketchyStrong)"/>
-<rect class="accent-amber" x="490" y="140" width="180" height="16" opacity="0.3" rx="2"/>
-<rect class="diagram-strip" x="490" y="168" width="240" height="8" opacity="0.25" rx="1"/>
-<rect class="diagram-strip" x="490" y="184" width="200" height="8" opacity="0.2" rx="1"/>
-<rect x="420" y="100" width="340" height="420" fill="none" class="accent-amber-stroke" stroke-width="1" stroke-dasharray="6 4" rx="4" opacity="0.3" filter="url(#sketchy)"/>
-<text class="accent-amber-text" x="590" y="552" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">mid-transition</text>
-<text class="text-muted" x="590" y="570" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">::view-transition-image-pair</text>
-<rect class="panel-bg-alt" x="800" y="100" width="300" height="400" stroke-width="2" rx="3" filter="url(#sketchy)"/>
-<rect class="accent-amber" x="820" y="130" width="180" height="16" opacity="0.8" rx="2" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="820" y="160" width="240" height="8" opacity="0.6" rx="1" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="820" y="176" width="200" height="8" opacity="0.4" rx="1" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="820" y="192" width="220" height="8" opacity="0.4" rx="1" filter="url(#sketchy)"/>
-<rect class="diagram-bg" x="820" y="220" width="260" height="120" rx="3" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="820" y="356" width="160" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="820" y="372" width="200" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-<rect class="diagram-strip" x="820" y="388" width="140" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/>
-<text class="accent-amber-text" x="950" y="520" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" filter="url(#sketchy)">Page B</text>
-<text class="text-muted" x="950" y="538" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">::view-transition-new</text>
-<path d="M 415 305 C 430 295 440 305 455 300" class="accent-amber-stroke" stroke-width="2" fill="none" filter="url(#sketchy)"/>
-<polygon points="455,295 465,300 455,305" class="accent-amber"/>
-<path d="M 775 305 C 790 295 800 305 815 300" class="accent-amber-stroke" stroke-width="2" fill="none" filter="url(#sketchy)"/>
-<polygon points="815,295 825,300 815,305" class="accent-amber"/>
-<rect class="statusbar-bg" x="0" y="585" width="1200" height="45"/>
-<line class="statusbar-border" x1="0" y1="585" x2="1200" y2="585" stroke-width="1"/>
-<rect class="statusbar-badge" x="30" y="596" width="80" height="24" rx="3"/>
-<text class="statusbar-badge-text" x="70" y="613" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" text-anchor="middle">NORMAL</text>
-<text class="statusbar-info" x="1170" y="613" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="end">cross-document · CSS only</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><defs><style> .canvas-bg { fill: #f8f5f0; }
+      .grid-dots { fill: #332D28; opacity: 0.15; }
+      .title-bar { fill: #332D28; }
+      .ui-border { stroke: #D1C9C0; }
+      .panel-bg { fill: #FFFFFF; stroke: #332D28; }
+      .panel-bg-alt { fill: #FFFFFF; stroke: #D97706; }
+      .diagram-bg { fill: #F4F1ED; }
+      .diagram-strip { fill: #E5DFD9; }
+      .text-base { fill: #F8F5F0; }
+      .text-dark { fill: #332D28; }
+      .text-muted { fill: #8A8075; }
+      .accent-amber { fill: #D97706; }
+      .accent-amber-stroke { stroke: #D97706; }
+      .accent-amber-text { fill: #D97706; }
+      .statusbar-bg { fill: #332D28; }
+      .statusbar-border { stroke: #4A423B; }
+      .statusbar-badge { fill: #D97706; }
+      .statusbar-badge-text { fill: #F8F5F0; }
+      .statusbar-info { fill: #E5DFD9; }
+      @media (prefers-color-scheme: dark) {
+        .canvas-bg { fill: #161616; }
+        .grid-dots { fill: #453E38; opacity: 0.3; }
+        .title-bar { fill: #29241F; }
+        .ui-border { stroke: #453E38; }
+        .panel-bg { fill: #241E1A; stroke: #F8F5F0; }
+        .panel-bg-alt { fill: #2E2924; stroke: #F59E0B; }
+        .diagram-bg { fill: #3D3630; }
+        .diagram-strip { fill: #A09088; }
+        .text-dark { fill: #D1D6CC; }
+        .text-muted { fill: #A09088; }
+        .accent-amber { fill: #F59E0B; }
+        .accent-amber-stroke { stroke: #F59E0B; }
+        .accent-amber-text { fill: #F59E0B; }
+        .statusbar-bg { fill: #222222; }
+        .statusbar-border { stroke: #333333; }
+        .statusbar-badge { fill: #F59E0B; }
+        .statusbar-badge-text { fill: #1C1917; }
+        .statusbar-info { fill: #D1D6CC; }
+      }</style><pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse"><circle class="grid-dots" cx="13" cy="13" r="0.8"/></pattern><filter id="sketchy"><feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="sketchyStrong"><feTurbulence type="turbulence" baseFrequency="0.025" numOctaves="3" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/></filter></defs><rect class="canvas-bg" width="1200" height="630"/><rect width="1200" height="630" fill="url(#dots)"/><rect class="title-bar" x="0" y="0" width="1200" height="44"/><circle cx="50" cy="22" r="7" fill="#EF4444"/><circle cx="75" cy="22" r="7" fill="#F59E0B"/><circle cx="100" cy="22" r="7" fill="#10B981"/><text class="statusbar-info" x="125" y="24" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" dominant-baseline="middle">view-transition.css</text><line class="ui-border" x1="0" y1="44" x2="1200" y2="44" stroke-width="1.5"/><text class="accent-amber-text" x="600" y="74" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">@media (prefers-reduced-motion: no-preference) {</text><rect class="panel-bg" x="110" y="80" width="300" height="400" stroke-width="2" rx="3" filter="url(#sketchy)"/><rect class="accent-amber" x="130" y="110" width="180" height="16" opacity="0.7" rx="2" filter="url(#sketchy)"/><rect class="diagram-strip" x="130" y="140" width="240" height="8" opacity="0.6" rx="1" filter="url(#sketchy)"/><rect class="diagram-strip" x="130" y="156" width="200" height="8" opacity="0.4" rx="1" filter="url(#sketchy)"/><rect class="diagram-strip" x="130" y="172" width="220" height="8" opacity="0.4" rx="1" filter="url(#sketchy)"/><rect class="diagram-bg" x="130" y="200" width="260" height="120" rx="3" filter="url(#sketchy)"/><rect class="diagram-strip" x="130" y="336" width="160" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/><rect class="diagram-strip" x="130" y="352" width="200" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/><rect class="diagram-strip" x="130" y="368" width="140" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/><text class="text-dark" x="260" y="500" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" filter="url(#sketchy)">Page A</text><text class="text-muted" x="260" y="518" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">::view-transition-old</text><rect class="panel-bg" x="430" y="100" width="300" height="400" stroke-width="1.5" rx="3" opacity="0.35" filter="url(#sketchyStrong)"/><rect class="accent-amber" x="450" y="130" width="180" height="16" opacity="0.25" rx="2"/><rect class="diagram-strip" x="450" y="158" width="240" height="8" opacity="0.2" rx="1"/><rect class="diagram-strip" x="450" y="174" width="200" height="8" opacity="0.15" rx="1"/><rect class="panel-bg-alt" x="470" y="90" width="300" height="400" stroke-width="1.5" rx="3" opacity="0.45" filter="url(#sketchyStrong)"/><rect class="accent-amber" x="490" y="120" width="180" height="16" opacity="0.3" rx="2"/><rect class="diagram-strip" x="490" y="148" width="240" height="8" opacity="0.25" rx="1"/><rect class="diagram-strip" x="490" y="164" width="200" height="8" opacity="0.2" rx="1"/><rect x="420" y="80" width="340" height="420" fill="none" class="accent-amber-stroke" stroke-width="1" stroke-dasharray="6 4" rx="4" opacity="0.3" filter="url(#sketchy)"/><text class="accent-amber-text" x="590" y="532" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle">mid-transition</text><text class="text-muted" x="590" y="550" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">::view-transition-image-pair</text><rect class="panel-bg-alt" x="800" y="80" width="300" height="400" stroke-width="2" rx="3" filter="url(#sketchy)"/><rect class="accent-amber" x="820" y="110" width="180" height="16" opacity="0.8" rx="2" filter="url(#sketchy)"/><rect class="diagram-strip" x="820" y="140" width="240" height="8" opacity="0.6" rx="1" filter="url(#sketchy)"/><rect class="diagram-strip" x="820" y="156" width="200" height="8" opacity="0.4" rx="1" filter="url(#sketchy)"/><rect class="diagram-strip" x="820" y="172" width="220" height="8" opacity="0.4" rx="1" filter="url(#sketchy)"/><rect class="diagram-bg" x="820" y="200" width="260" height="120" rx="3" filter="url(#sketchy)"/><rect class="diagram-strip" x="820" y="336" width="160" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/><rect class="diagram-strip" x="820" y="352" width="200" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/><rect class="diagram-strip" x="820" y="368" width="140" height="8" opacity="0.3" rx="1" filter="url(#sketchy)"/><text class="accent-amber-text" x="950" y="500" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="middle" filter="url(#sketchy)">Page B</text><text class="text-muted" x="950" y="518" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">::view-transition-new</text><path d="M 415 285 C 430 275 440 285 455 280" class="accent-amber-stroke" stroke-width="2" fill="none" filter="url(#sketchy)"/><polygon points="455,275 465,280 455,285" class="accent-amber"/><path d="M 775 285 C 790 275 800 285 815 280" class="accent-amber-stroke" stroke-width="2" fill="none" filter="url(#sketchy)"/><polygon points="815,275 825,280 815,285" class="accent-amber"/><rect class="statusbar-bg" x="0" y="560" width="1200" height="30" rx="2"/><line class="statusbar-border" x1="0" y1="560" x2="1200" y2="560" stroke-width="1"/><rect class="statusbar-badge" x="30" y="565" width="70" height="20" rx="3"/><text class="statusbar-badge-text" x="65" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text><text class="statusbar-info" x="1170" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="end">cross-document · CSS only</text></svg>
