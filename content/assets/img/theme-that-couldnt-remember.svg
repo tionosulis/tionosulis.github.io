@@ -1,269 +1,194 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">  <defs>
-    <style>
-      /* ── LIGHT MODE ── */
-      .canvas-bg        { fill: #f8f5f0; }
-      .grid-dots        { fill: #332D28; opacity: 0.15; }
-      .title-bar        { fill: #332D28; }
-      .ui-tab           { fill: #E5DFD9; }
-      .ui-tab-text      { fill: #332D28; }
-      .ui-border        { stroke: #D1C9C0; }
-      .divider-line     { stroke: #D1C9C0; opacity: 0.3; }
-      .panel-bg         { fill: #FFFFFF; }
-      .step-bg          { fill: #F4F1ED; }
-      .step-border      { stroke: #D1C9C0; }
-      .text-heading     { fill: #332D28; font-weight: 700; }
-      .text-code        { fill: #332D28; }
-      .text-muted       { fill: #6B6059; opacity: 0.7; }
-      .text-accent      { fill: #D97706; }
-      .text-success     { fill: #059669; }
-      .text-error       { fill: #DC2626; }
-      .text-dim         { fill: #332D28; opacity: 0.7; }
-      .bar-success      { fill: #059669; }
-      .bar-error        { fill: #DC2626; }
-      .bar-amber        { fill: #D97706; }
-      .badge-dim        { fill: #332D28; fill-opacity: 0.05; }
-      .badge-success    { fill: #059669; fill-opacity: 0.10; }
-      .badge-error      { fill: #DC2626; fill-opacity: 0.12; }
-      .badge-amber      { fill: #D97706; fill-opacity: 0.12; }
-      .dot-success      { fill: #059669; }
-      .dot-error        { fill: #DC2626; }
-      .dot-amber        { fill: #D97706; }
-      .arrow-amber      { fill: #D97706; }
-      .arrow-success    { fill: #059669; }
-      .stroke-amber     { stroke: #D97706; }
-      .stroke-success   { stroke: #059669; }
-      .stroke-error     { stroke: #DC2626; }
-      .stats-bg         { fill: #E5DFD9; stroke: #D1C9C0; }
-      .stats-divider    { stroke: #D1C9C0; opacity: 0.5; }
-      .statusbar-bg     { fill: #332D28; }
-      .statusbar-line   { stroke: #4A423B; }
-      .statusbar-badge  { fill: #D97706; }
-      .statusbar-badge-text { fill: #F8F5F0; }
-      .statusbar-text   { fill: #E5DFD9; }
-
-
-      /* ── DARK MODE ── */
-      @media (prefers-color-scheme: dark) {
-        .canvas-bg        { fill: #161616; }
-        .grid-dots        { fill: #453E38; opacity: 0.3; }
-        .title-bar        { fill: #29241F; }
-        .ui-tab           { fill: #3D3630; }
-        .ui-tab-text      { fill: #F8F5F0; }
-        .ui-border        { stroke: #453E38; }
-        .divider-line     { stroke: #453E38; opacity: 0.3; }
-        .panel-bg         { fill: #2E2924; }
-        .step-bg          { fill: #2E2924; }
-        .step-border      { stroke: #453E38; }
-        .text-heading     { fill: #D1D6CC; font-weight: 700; }
-        .text-code        { fill: #D1D6CC; }
-        .text-muted       { fill: #7A6A5C; opacity: 0.7; }
-        .text-accent      { fill: #F59E0B; }
-        .text-success     { fill: #10D9A8; }
-        .text-error       { fill: #E05050; }
-        .text-dim         { fill: #D1D6CC; opacity: 0.7; }
-        .bar-success      { fill: #10D9A8; }
-        .bar-error        { fill: #E05050; }
-        .bar-amber        { fill: #F59E0B; }
-        .badge-dim        { fill: #F8F5F0; fill-opacity: 0.05; }
-        .badge-success    { fill: #10D9A8; fill-opacity: 0.10; }
-        .badge-error      { fill: #E05050; fill-opacity: 0.12; }
-        .badge-amber      { fill: #F59E0B; fill-opacity: 0.12; }
-        .dot-success      { fill: #10D9A8; }
-        .dot-error        { fill: #E05050; }
-        .dot-amber        { fill: #F59E0B; }
-        .arrow-amber      { fill: #F59E0B; }
-        .arrow-success    { fill: #10D9A8; }
-        .stroke-amber     { stroke: #F59E0B; }
-        .stroke-success   { stroke: #10D9A8; }
-        .stroke-error     { stroke: #E05050; }
-        .stats-bg         { fill: #29241F; stroke: #453E38; }
-        .stats-divider    { stroke: #453E38; opacity: 0.5; }
-        .statusbar-bg     { fill: #29241F; }
-        .statusbar-line   { stroke: #453E38; }
-        .statusbar-badge  { fill: #F59E0B; }
-        .statusbar-badge-text { fill: #1C1917; }
-        .statusbar-text   { fill: #D1D6CC; }
-      }
-    </style>
-
-
-    <pattern id="grid-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle class="grid-dots" cx="13" cy="13" r="0.8"/>
-    </pattern>
-  </defs>
-
-
-  <!-- Canvas -->
-  <rect class="canvas-bg" width="1200" height="630"/>
-  <rect width="1200" height="630" fill="url(#grid-dots)"/>
-
-
-  <!-- Title bar: 44px -->
-  <rect class="title-bar" x="0" y="0" width="1200" height="44"/>
-  <circle cx="50" cy="22" r="7" fill="#EF4444"/>
-  <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
-  <circle cx="100" cy="22" r="7" fill="#10B981"/>
-
-
-  <!-- File tab -->
-  <rect class="ui-tab" x="125" y="48" width="220" height="36" rx="8"/>
-  <text class="ui-tab-text" x="145" y="73" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600">dark-mode-debug.log</text>
-
-
-  <!-- Title divider -->
-  <line class="ui-border" x1="0" y1="84" x2="1200" y2="84" stroke-width="1.5"/>
-
-
-  <!-- ── CONTENT ── -->
-  <g font-family="'JetBrains Mono', monospace">
-
-
-    <!-- Header -->
-    <text class="text-heading" x="148" y="102" font-size="15">$ cat bug-repro.log</text>
-    <line class="divider-line" x1="148" y1="112" x2="1152" y2="112" stroke-width="1"/>
-
-
-    <!-- ══ LEFT: FORWARD ══ -->
-    <text class="text-accent" x="148" y="130" font-size="12" font-weight="600">Forward  (initial navigation)</text>
-
-
-    <!-- Step 1 -->
-    <rect class="step-bg step-border" x="148" y="142" width="330" height="72" rx="6" stroke-width="0.5"/>
-    <rect class="bar-success" x="148" y="142" width="4" height="72" rx="2"/>
-    <text class="text-muted" x="168" y="160" font-size="11">Step 1</text>
-    <text class="text-code" x="220" y="160" font-size="11">/ (homepage)</text>
-    <circle class="dot-amber" cx="420" cy="157" r="4"/>
-    <text class="text-accent" x="430" y="161" font-size="10">LIGHT</text>
-    <rect class="badge-dim" x="168" y="170" width="140" height="15" rx="3"/>
-    <text class="text-muted" x="176" y="182" font-size="9">data-theme="light"</text>
-    <rect class="badge-success" x="320" y="170" width="80" height="15" rx="3"/>
-    <text class="text-success" x="340" y="182" font-size="9">localStorage ✓</text>
-    <rect class="badge-success" x="168" y="191" width="130" height="14" rx="3"/>
-    <text class="text-success" x="176" y="202" font-size="9">DOM matches storage</text>
-
-
-    <!-- Arrow 1→2 -->
-    <line class="stroke-amber" x1="313" y1="214" x2="313" y2="228" stroke-width="2" stroke-opacity="0.6"/>
-    <polygon class="arrow-amber" points="313,232 309,224 317,224" opacity="0.6"/>
-
-
-    <!-- Step 2 -->
-    <rect class="step-bg step-border" x="148" y="236" width="330" height="72" rx="6" stroke-width="0.5"/>
-    <rect class="bar-success" x="148" y="236" width="4" height="72" rx="2"/>
-    <text class="text-muted" x="168" y="254" font-size="11">Step 2</text>
-    <text class="text-code" x="220" y="254" font-size="11">/posts/</text>
-    <circle class="dot-amber" cx="420" cy="251" r="4"/>
-    <text class="text-accent" x="430" y="255" font-size="10">LIGHT</text>
-    <rect class="badge-dim" x="168" y="264" width="140" height="15" rx="3"/>
-    <text class="text-muted" x="176" y="276" font-size="9">data-theme="light"</text>
-    <rect class="badge-success" x="320" y="264" width="80" height="15" rx="3"/>
-    <text class="text-success" x="340" y="276" font-size="9">localStorage ✓</text>
-    <rect class="badge-success" x="168" y="285" width="130" height="14" rx="3"/>
-    <text class="text-success" x="176" y="296" font-size="9">DOM matches storage</text>
-
-
-    <!-- Arrow 2→3 -->
-    <line class="stroke-amber" x1="313" y1="308" x2="313" y2="322" stroke-width="2" stroke-opacity="0.6"/>
-    <polygon class="arrow-amber" points="313,326 309,318 317,318" opacity="0.6"/>
-
-
-    <!-- Step 3 -->
-    <rect class="step-bg stroke-amber" x="148" y="330" width="330" height="88" rx="6" stroke-width="0.5"/>
-    <rect class="bar-amber" x="148" y="330" width="4" height="88" rx="2"/>
-    <text class="text-muted" x="168" y="348" font-size="11">Step 3</text>
-    <text class="text-code" x="220" y="348" font-size="11">/posts/... (toggle)</text>
-    <rect class="badge-amber" x="168" y="358" width="80" height="17" rx="4"/>
-    <text class="text-accent" x="176" y="371" font-size="9">toggleTheme()</text>
-    <line class="divider-line" x1="260" y1="367" x2="300" y2="367" stroke-width="1"/>
-    <rect class="badge-dim" x="310" y="358" width="80" height="17" rx="3"/>
-    <text class="text-dim" x="318" y="371" font-size="9">→ dark</text>
-    <rect class="badge-success" x="168" y="382" width="200" height="15" rx="3"/>
-    <text class="text-success" x="176" y="394" font-size="9">localStorage.setItem("theme","dark") ✓</text>
-    <rect class="badge-success" x="168" y="403" width="220" height="14" rx="3"/>
-    <text class="text-success" x="176" y="414" font-size="9">DOM &amp; storage now "dark" ✓</text>
-
-
-    <!-- ══ RIGHT: BACK NAV ══ -->
-    <text class="text-accent" x="700" y="130" font-size="12" font-weight="600">Back  (back button navigation)</text>
-
-
-    <!-- Back path 3→4 -->
-    <path d="M 478 418 L 610 418 L 610 296 L 696 296" fill="none" class="stroke-amber" stroke-width="2" stroke-opacity="0.7"/>
-    <polygon class="arrow-amber" points="700,292 692,296 700,300" opacity="0.7"/>
-
-
-    <!-- Step 4: Back to posts WRONG -->
-    <rect class="step-bg stroke-error" x="700" y="236" width="330" height="72" rx="6" stroke-width="1"/>
-    <rect class="bar-error" x="700" y="236" width="4" height="72" rx="2"/>
-    <text class="text-muted" x="720" y="254" font-size="11">Step 4 ← back</text>
-    <text class="text-code" x="800" y="254" font-size="11">/posts/ (bfcache)</text>
-    <circle class="dot-amber" cx="978" cy="251" r="4"/>
-    <text class="text-accent" x="988" y="255" font-size="10">LIGHT</text>
-    <rect class="badge-dim" x="720" y="264" width="140" height="15" rx="3"/>
-    <text class="text-muted" x="728" y="276" font-size="9">data-theme="light"</text>
-    <rect class="badge-success" x="870" y="264" width="80" height="15" rx="3"/>
-    <text class="text-success" x="890" y="276" font-size="9">storage = dark</text>
-    <rect class="badge-error stroke-error" x="720" y="285" width="160" height="14" rx="3" stroke-width="0.5"/>
-    <text class="text-error" x="728" y="296" font-size="9">✗ DOM != localStorage</text>
-    <circle class="badge-error" cx="992" cy="290" r="10" fill-opacity="0.2"/>
-    <text class="text-error" x="992" y="294" font-size="12" font-weight="700" text-anchor="middle">!</text>
-
-
-    <!-- Arrow 4→5 -->
-    <line class="stroke-success" x1="863" y1="236" x2="863" y2="220" stroke-width="2" stroke-dasharray="5 3" stroke-opacity="0.7"/>
-    <polygon class="arrow-success" points="863,216 859,224 867,224" opacity="0.7"/>
-
-
-    <!-- Step 5: Back to home CORRECT -->
-    <rect class="step-bg step-border" x="700" y="142" width="330" height="72" rx="6" stroke-width="0.5"/>
-    <rect class="bar-success" x="700" y="142" width="4" height="72" rx="2"/>
-    <text class="text-muted" x="720" y="160" font-size="11">Step 5 ← back</text>
-    <text class="text-code" x="800" y="160" font-size="11">/ (fresh load)</text>
-    <circle class="dot-amber" cx="978" cy="157" r="4"/>
-    <text class="text-accent" x="988" y="161" font-size="10">DARK</text>
-    <rect class="badge-dim" x="720" y="170" width="140" height="15" rx="3"/>
-    <text class="text-muted" x="728" y="182" font-size="9">data-theme="dark"</text>
-    <rect class="badge-success" x="870" y="170" width="80" height="15" rx="3"/>
-    <text class="text-success" x="890" y="182" font-size="9">storage = dark</text>
-    <rect class="badge-success" x="720" y="191" width="130" height="14" rx="3"/>
-    <text class="text-success" x="728" y="202" font-size="9">DOM matches storage</text>
-
-
-    <!-- Divider -->
-    <line class="divider-line" x1="148" y1="430" x2="1152" y2="430" stroke-width="1"/>
-
-
-    <!-- Bottom explanation -->
-    <text class="text-code" x="148" y="450" font-size="11">* inline &lt;script&gt; in &lt;head&gt; runs once — not on bfcache restore</text>
-    <text class="text-code" x="148" y="466" font-size="11">* "Dark Mode Done Right" needed one more thing: pageshow event listener</text>
-    <text class="text-code" x="148" y="482" font-size="11">* SW update → clients.claim() → Chromium bug #504335759 → bfcache eviction</text>
-
-
-    <!-- Stats bar -->
-    <rect class="stats-bg" x="148" y="496" width="954" height="26" rx="6" stroke-width="0.5"/>
-    <circle class="dot-success" cx="176" cy="509" r="3"/>
-    <text class="text-code" x="188" y="513" font-size="11">pageshow + persisted detect bfcache restore</text>
-    <line class="stats-divider" x1="510" y1="498" x2="510" y2="520" stroke-width="1"/>
-    <circle class="dot-error" cx="528" cy="509" r="3"/>
-    <text class="text-code" x="540" y="513" font-size="11">no-transition guard prevents CSS flash</text>
-    <line class="stats-divider" x1="858" y1="498" x2="858" y2="520" stroke-width="1"/>
-    <circle class="dot-amber" cx="876" cy="509" r="3"/>
-    <text class="text-code" x="888" y="513" font-size="11">3 files changed for the fix</text>
-
-
-  </g>
-
-
-  <!-- ── STATUS BAR: y=560, height=30 ── -->
-  <rect class="statusbar-bg" x="0" y="560" width="1200" height="30"/>
-  <line class="statusbar-line" x1="0" y1="560" x2="1200" y2="560" stroke-width="1"/>
-
-
-  <!-- NORMAL badge -->
-  <rect class="statusbar-badge" x="30" y="566" width="80" height="18" rx="3"/>
-  <text class="statusbar-badge-text" x="70" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
-
-
-  <!-- File info -->
-  <text class="statusbar-text" x="1170" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="end">dark-mode-debug.log  15L</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"> <defs>
+<style>
+/* ── LIGHT MODE ── */
+.canvas-bg { fill: #f8f5f0; }
+.grid-dots { fill: #332D28; opacity: 0.15; }
+.title-bar { fill: #332D28; }
+.ui-tab { fill: #E5DFD9; }
+.ui-tab-text { fill: #332D28; }
+.ui-border { stroke: #D1C9C0; }
+.divider-line { stroke: #D1C9C0; opacity: 0.3; }
+.panel-bg { fill: #FFFFFF; }
+.step-bg { fill: #F4F1ED; }
+.step-border { stroke: #D1C9C0; }
+.text-heading { fill: #332D28; font-weight: 700; }
+.text-code { fill: #332D28; }
+.text-muted { fill: #6B6059; opacity: 0.7; }
+.text-accent { fill: #D97706; }
+.text-success { fill: #059669; }
+.text-error { fill: #DC2626; }
+.text-dim { fill: #332D28; opacity: 0.7; }
+.bar-success { fill: #059669; }
+.bar-error { fill: #DC2626; }
+.bar-amber { fill: #D97706; }
+.badge-dim { fill: #332D28; fill-opacity: 0.05; }
+.badge-success { fill: #059669; fill-opacity: 0.10; }
+.badge-error { fill: #DC2626; fill-opacity: 0.12; }
+.badge-amber { fill: #D97706; fill-opacity: 0.12; }
+.dot-success { fill: #059669; }
+.dot-error { fill: #DC2626; }
+.dot-amber { fill: #D97706; }
+.arrow-amber { fill: #D97706; }
+.arrow-success { fill: #059669; }
+.stroke-amber { stroke: #D97706; }
+.stroke-success { stroke: #059669; }
+.stroke-error { stroke: #DC2626; }
+.stats-bg { fill: #E5DFD9; stroke: #D1C9C0; }
+.stats-divider { stroke: #D1C9C0; opacity: 0.5; }
+.statusbar-bg { fill: #332D28; }
+.statusbar-line { stroke: #4A423B; }
+.statusbar-badge { fill: #D97706; }
+.statusbar-badge-text { fill: #F8F5F0; }
+.statusbar-text { fill: #E5DFD9; }
+/* ── DARK MODE ── */
+@media (prefers-color-scheme: dark) {
+.canvas-bg { fill: #161616; }
+.grid-dots { fill: #453E38; opacity: 0.3; }
+.title-bar { fill: #29241F; }
+.ui-tab { fill: #3D3630; }
+.ui-tab-text { fill: #F8F5F0; }
+.ui-border { stroke: #453E38; }
+.divider-line { stroke: #453E38; opacity: 0.3; }
+.panel-bg { fill: #2E2924; }
+.step-bg { fill: #2E2924; }
+.step-border { stroke: #453E38; }
+.text-heading { fill: #D1D6CC; font-weight: 700; }
+.text-code { fill: #D1D6CC; }
+.text-muted { fill: #7A6A5C; opacity: 0.7; }
+.text-accent { fill: #F59E0B; }
+.text-success { fill: #10D9A8; }
+.text-error { fill: #E05050; }
+.text-dim { fill: #D1D6CC; opacity: 0.7; }
+.bar-success { fill: #10D9A8; }
+.bar-error { fill: #E05050; }
+.bar-amber { fill: #F59E0B; }
+.badge-dim { fill: #F8F5F0; fill-opacity: 0.05; }
+.badge-success { fill: #10D9A8; fill-opacity: 0.10; }
+.badge-error { fill: #E05050; fill-opacity: 0.12; }
+.badge-amber { fill: #F59E0B; fill-opacity: 0.12; }
+.dot-success { fill: #10D9A8; }
+.dot-error { fill: #E05050; }
+.dot-amber { fill: #F59E0B; }
+.arrow-amber { fill: #F59E0B; }
+.arrow-success { fill: #10D9A8; }
+.stroke-amber { stroke: #F59E0B; }
+.stroke-success { stroke: #10D9A8; }
+.stroke-error { stroke: #E05050; }
+.stats-bg { fill: #29241F; stroke: #453E38; }
+.stats-divider { stroke: #453E38; opacity: 0.5; }
+.statusbar-bg { fill: #29241F; }
+.statusbar-line { stroke: #453E38; }
+.statusbar-badge { fill: #F59E0B; }
+.statusbar-badge-text { fill: #1C1917; }
+.statusbar-text { fill: #D1D6CC; }
+}
+</style>
+<pattern id="grid-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+<circle class="grid-dots" cx="13" cy="13" r="0.8"/>
+</pattern>
+</defs>
+<rect class="canvas-bg" width="1200" height="630"/>
+<rect width="1200" height="630" fill="url(#grid-dots)"/>
+<rect class="title-bar" x="0" y="0" width="1200" height="44"/>
+<circle cx="50" cy="22" r="7" fill="#EF4444"/>
+<circle cx="75" cy="22" r="7" fill="#F59E0B"/>
+<circle cx="100" cy="22" r="7" fill="#10B981"/>
+<rect class="ui-tab" x="125" y="48" width="220" height="36" rx="8"/>
+<text class="ui-tab-text" x="145" y="73" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600">dark-mode-debug.log</text>
+<line class="ui-border" x1="0" y1="84" x2="1200" y2="84" stroke-width="1.5"/>
+<g font-family="'JetBrains Mono', monospace">
+<text class="text-heading" x="148" y="102" font-size="15">$ cat bug-repro.log</text>
+<line class="divider-line" x1="148" y1="112" x2="1152" y2="112" stroke-width="1"/>
+<text class="text-accent" x="148" y="130" font-size="12" font-weight="600">Forward (initial navigation)</text>
+<rect class="step-bg step-border" x="148" y="142" width="330" height="72" rx="6" stroke-width="0.5"/>
+<rect class="bar-success" x="148" y="142" width="4" height="72" rx="2"/>
+<text class="text-muted" x="168" y="160" font-size="11">Step 1</text>
+<text class="text-code" x="220" y="160" font-size="11">/ (homepage)</text>
+<circle class="dot-amber" cx="420" cy="157" r="4"/>
+<text class="text-accent" x="430" y="161" font-size="10">LIGHT</text>
+<rect class="badge-dim" x="168" y="170" width="140" height="15" rx="3"/>
+<text class="text-muted" x="176" y="182" font-size="9">data-theme="light"</text>
+<rect class="badge-success" x="320" y="170" width="80" height="15" rx="3"/>
+<text class="text-success" x="340" y="182" font-size="9">localStorage ✓</text>
+<rect class="badge-success" x="168" y="191" width="130" height="14" rx="3"/>
+<text class="text-success" x="176" y="202" font-size="9">DOM matches storage</text>
+<line class="stroke-amber" x1="313" y1="214" x2="313" y2="228" stroke-width="2" stroke-opacity="0.6"/>
+<polygon class="arrow-amber" points="313,232 309,224 317,224" opacity="0.6"/>
+<rect class="step-bg step-border" x="148" y="236" width="330" height="72" rx="6" stroke-width="0.5"/>
+<rect class="bar-success" x="148" y="236" width="4" height="72" rx="2"/>
+<text class="text-muted" x="168" y="254" font-size="11">Step 2</text>
+<text class="text-code" x="220" y="254" font-size="11">/posts/</text>
+<circle class="dot-amber" cx="420" cy="251" r="4"/>
+<text class="text-accent" x="430" y="255" font-size="10">LIGHT</text>
+<rect class="badge-dim" x="168" y="264" width="140" height="15" rx="3"/>
+<text class="text-muted" x="176" y="276" font-size="9">data-theme="light"</text>
+<rect class="badge-success" x="320" y="264" width="80" height="15" rx="3"/>
+<text class="text-success" x="340" y="276" font-size="9">localStorage ✓</text>
+<rect class="badge-success" x="168" y="285" width="130" height="14" rx="3"/>
+<text class="text-success" x="176" y="296" font-size="9">DOM matches storage</text>
+<line class="stroke-amber" x1="313" y1="308" x2="313" y2="322" stroke-width="2" stroke-opacity="0.6"/>
+<polygon class="arrow-amber" points="313,326 309,318 317,318" opacity="0.6"/>
+<rect class="step-bg stroke-amber" x="148" y="330" width="330" height="88" rx="6" stroke-width="0.5"/>
+<rect class="bar-amber" x="148" y="330" width="4" height="88" rx="2"/>
+<text class="text-muted" x="168" y="348" font-size="11">Step 3</text>
+<text class="text-code" x="220" y="348" font-size="11">/posts/... (toggle)</text>
+<rect class="badge-amber" x="168" y="358" width="80" height="17" rx="4"/>
+<text class="text-accent" x="176" y="371" font-size="9">toggleTheme()</text>
+<line class="divider-line" x1="260" y1="367" x2="300" y2="367" stroke-width="1"/>
+<rect class="badge-dim" x="310" y="358" width="80" height="17" rx="3"/>
+<text class="text-dim" x="318" y="371" font-size="9">→ dark</text>
+<rect class="badge-success" x="168" y="382" width="200" height="15" rx="3"/>
+<text class="text-success" x="176" y="394" font-size="9">localStorage.setItem("theme","dark") ✓</text>
+<rect class="badge-success" x="168" y="403" width="220" height="14" rx="3"/>
+<text class="text-success" x="176" y="414" font-size="9">DOM &amp; storage now "dark" ✓</text>
+<text class="text-accent" x="700" y="130" font-size="12" font-weight="600">Back (back button navigation)</text>
+<path d="M 478 418 L 610 418 L 610 296 L 696 296" fill="none" class="stroke-amber" stroke-width="2" stroke-opacity="0.7"/>
+<polygon class="arrow-amber" points="700,292 692,296 700,300" opacity="0.7"/>
+<rect class="step-bg stroke-error" x="700" y="236" width="330" height="72" rx="6" stroke-width="1"/>
+<rect class="bar-error" x="700" y="236" width="4" height="72" rx="2"/>
+<text class="text-muted" x="720" y="254" font-size="11">Step 4 ← back</text>
+<text class="text-code" x="800" y="254" font-size="11">/posts/ (bfcache)</text>
+<circle class="dot-amber" cx="978" cy="251" r="4"/>
+<text class="text-accent" x="988" y="255" font-size="10">LIGHT</text>
+<rect class="badge-dim" x="720" y="264" width="140" height="15" rx="3"/>
+<text class="text-muted" x="728" y="276" font-size="9">data-theme="light"</text>
+<rect class="badge-success" x="870" y="264" width="80" height="15" rx="3"/>
+<text class="text-success" x="890" y="276" font-size="9">storage = dark</text>
+<rect class="badge-error stroke-error" x="720" y="285" width="160" height="14" rx="3" stroke-width="0.5"/>
+<text class="text-error" x="728" y="296" font-size="9">✗ DOM != localStorage</text>
+<circle class="badge-error" cx="992" cy="290" r="10" fill-opacity="0.2"/>
+<text class="text-error" x="992" y="294" font-size="12" font-weight="700" text-anchor="middle">!</text>
+<line class="stroke-success" x1="863" y1="236" x2="863" y2="220" stroke-width="2" stroke-dasharray="5 3" stroke-opacity="0.7"/>
+<polygon class="arrow-success" points="863,216 859,224 867,224" opacity="0.7"/>
+<rect class="step-bg step-border" x="700" y="142" width="330" height="72" rx="6" stroke-width="0.5"/>
+<rect class="bar-success" x="700" y="142" width="4" height="72" rx="2"/>
+<text class="text-muted" x="720" y="160" font-size="11">Step 5 ← back</text>
+<text class="text-code" x="800" y="160" font-size="11">/ (fresh load)</text>
+<circle class="dot-amber" cx="978" cy="157" r="4"/>
+<text class="text-accent" x="988" y="161" font-size="10">DARK</text>
+<rect class="badge-dim" x="720" y="170" width="140" height="15" rx="3"/>
+<text class="text-muted" x="728" y="182" font-size="9">data-theme="dark"</text>
+<rect class="badge-success" x="870" y="170" width="80" height="15" rx="3"/>
+<text class="text-success" x="890" y="182" font-size="9">storage = dark</text>
+<rect class="badge-success" x="720" y="191" width="130" height="14" rx="3"/>
+<text class="text-success" x="728" y="202" font-size="9">DOM matches storage</text>
+<line class="divider-line" x1="148" y1="430" x2="1152" y2="430" stroke-width="1"/>
+<text class="text-code" x="148" y="450" font-size="11">* inline &lt;script&gt; in &lt;head&gt; runs once — not on bfcache restore</text>
+<text class="text-code" x="148" y="466" font-size="11">* "Dark Mode Done Right" needed one more thing: pageshow event listener</text>
+<text class="text-code" x="148" y="482" font-size="11">* SW update → clients.claim() → Chromium bug #504335759 → bfcache eviction</text>
+<rect class="stats-bg" x="148" y="496" width="954" height="26" rx="6" stroke-width="0.5"/>
+<circle class="dot-success" cx="176" cy="509" r="3"/>
+<text class="text-code" x="188" y="513" font-size="11">pageshow + persisted detect bfcache restore</text>
+<line class="stats-divider" x1="510" y1="498" x2="510" y2="520" stroke-width="1"/>
+<circle class="dot-error" cx="528" cy="509" r="3"/>
+<text class="text-code" x="540" y="513" font-size="11">no-transition guard prevents CSS flash</text>
+<line class="stats-divider" x1="858" y1="498" x2="858" y2="520" stroke-width="1"/>
+<circle class="dot-amber" cx="876" cy="509" r="3"/>
+<text class="text-code" x="888" y="513" font-size="11">3 files changed for the fix</text>
+</g>
+<rect class="statusbar-bg" x="0" y="560" width="1200" height="30"/>
+<line class="statusbar-line" x1="0" y1="560" x2="1200" y2="560" stroke-width="1"/>
+<rect class="statusbar-badge" x="30" y="566" width="80" height="18" rx="3"/>
+<text class="statusbar-badge-text" x="70" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
+<text class="statusbar-text" x="1170" y="579" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="end">dark-mode-debug.log 15L</text>
 </svg>

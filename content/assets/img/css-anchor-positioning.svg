@@ -1,207 +1,157 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <defs>
-    <style>
-      /* ── LIGHT MODE ── */
-      .canvas-bg        { fill: #f8f5f0; }
-      .grid-dots        { fill: #332D28; opacity: 0.15; }
-      .title-bar        { fill: #332D28; }
-      .ui-tab           { fill: #E5DFD9; }
-      .ui-tab-text      { fill: #332D28; }
-      .ui-border        { stroke: #D1C9C0; }
-      .panel-bg         { fill: #FFFFFF; }
-      .panel-header     { fill: #E5DFD9; }
-      .log-bg           { fill: #F4F1ED; }
-      .text-dark        { fill: #332D28; }
-      .text-code        { fill: #332D28; }
-      .text-muted       { fill: #6B6059; }
-      .text-accent      { fill: #D97706; }
-      .text-success     { fill: #059669; }
-      .text-hint        { fill: #332D28; font-weight: 600; }
-      .accent-amber     { fill: #D97706; }
-      .accent-stroke    { stroke: #D97706; }
-      .badge-bg         { fill: #332D28; fill-opacity: 0.05; }
-      .badge-accent     { fill: #D97706; fill-opacity: 0.12; }
-      .grid-line        { stroke: #D1C9C0; }
-      .code-hint-line   { fill: #D1C9C0; }
-      .statusbar-bg     { fill: #332D28; }
-      .statusbar-line   { stroke: #4A423B; }
-      .statusbar-badge  { fill: #D97706; }
-      .statusbar-badge-text { fill: #F8F5F0; }
-      .statusbar-text   { fill: #E5DFD9; }
-
-      @media (prefers-color-scheme: dark) {
-        .canvas-bg        { fill: #161616; }
-        .grid-dots        { fill: #453E38; opacity: 0.3; }
-        .title-bar        { fill: #29241F; }
-        .ui-tab           { fill: #3D3630; }
-        .ui-tab-text      { fill: #F8F5F0; }
-        .ui-border        { stroke: #453E38; }
-        .panel-bg         { fill: #2E2924; }
-        .panel-header     { fill: #3D3630; }
-        .log-bg           { fill: #352F2A; }
-        .text-dark        { fill: #D1D6CC; }
-        .text-code        { fill: #D1D6CC; }
-        .text-muted       { fill: #7A6A5C; }
-        .text-accent      { fill: #F59E0B; }
-        .text-success     { fill: #10D9A8; }
-        .text-hint        { fill: #D1D6CC; font-weight: normal; }
-        .accent-amber     { fill: #F59E0B; }
-        .accent-stroke    { stroke: #F59E0B; }
-        .badge-bg         { fill: #F8F5F0; fill-opacity: 0.05; }
-        .badge-accent     { fill: #F59E0B; fill-opacity: 0.12; }
-        .grid-line        { stroke: #453E38; }
-        .code-hint-line   { fill: #453E38; }
-        .statusbar-bg     { fill: #29241F; }
-        .statusbar-line   { stroke: #453E38; }
-        .statusbar-badge  { fill: #F59E0B; }
-        .statusbar-badge-text { fill: #1C1917; }
-        .statusbar-text   { fill: #D1D6CC; }
-      }
-    </style>
-    <pattern id="grid-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle class="grid-dots" cx="13" cy="13" r="0.8"/>
-    </pattern>
-  </defs>
-
-  <!-- Canvas -->
-  <rect class="canvas-bg" width="1200" height="630"/>
-  <rect width="1200" height="630" fill="url(#grid-dots)"/>
-
-  <!-- Title bar: 44px -->
-  <rect class="title-bar" x="0" y="0" width="1200" height="44"/>
-  <circle cx="50" cy="22" r="7" fill="#EF4444"/>
-  <circle cx="75" cy="22" r="7" fill="#F59E0B"/>
-  <circle cx="100" cy="22" r="7" fill="#10B981"/>
-
-  <!-- File tab -->
-  <rect class="ui-tab" x="125" y="48" width="220" height="36" rx="8"/>
+<defs>
+<style>
+/* ── LIGHT MODE ── */
+.canvas-bg { fill: #f8f5f0; }
+.grid-dots { fill: #332D28; opacity: 0.15; }
+.title-bar { fill: #332D28; }
+.ui-tab { fill: #E5DFD9; }
+.ui-tab-text { fill: #332D28; }
+.ui-border { stroke: #D1C9C0; }
+.panel-bg { fill: #FFFFFF; }
+.panel-header { fill: #E5DFD9; }
+.log-bg { fill: #F4F1ED; }
+.text-dark { fill: #332D28; }
+.text-code { fill: #332D28; }
+.text-muted { fill: #6B6059; }
+.text-accent { fill: #D97706; }
+.text-success { fill: #059669; }
+.text-hint { fill: #332D28; font-weight: 600; }
+.accent-amber { fill: #D97706; }
+.accent-stroke { stroke: #D97706; }
+.badge-bg { fill: #332D28; fill-opacity: 0.05; }
+.badge-accent { fill: #D97706; fill-opacity: 0.12; }
+.grid-line { stroke: #D1C9C0; }
+.code-hint-line { fill: #D1C9C0; }
+.statusbar-bg { fill: #332D28; }
+.statusbar-line { stroke: #4A423B; }
+.statusbar-badge { fill: #D97706; }
+.statusbar-badge-text { fill: #F8F5F0; }
+.statusbar-text { fill: #E5DFD9; }
+@media (prefers-color-scheme: dark) {
+.canvas-bg { fill: #161616; }
+.grid-dots { fill: #453E38; opacity: 0.3; }
+.title-bar { fill: #29241F; }
+.ui-tab { fill: #3D3630; }
+.ui-tab-text { fill: #F8F5F0; }
+.ui-border { stroke: #453E38; }
+.panel-bg { fill: #2E2924; }
+.panel-header { fill: #3D3630; }
+.log-bg { fill: #352F2A; }
+.text-dark { fill: #D1D6CC; }
+.text-code { fill: #D1D6CC; }
+.text-muted { fill: #7A6A5C; }
+.text-accent { fill: #F59E0B; }
+.text-success { fill: #10D9A8; }
+.text-hint { fill: #D1D6CC; font-weight: normal; }
+.accent-amber { fill: #F59E0B; }
+.accent-stroke { stroke: #F59E0B; }
+.badge-bg { fill: #F8F5F0; fill-opacity: 0.05; }
+.badge-accent { fill: #F59E0B; fill-opacity: 0.12; }
+.grid-line { stroke: #453E38; }
+.code-hint-line { fill: #453E38; }
+.statusbar-bg { fill: #29241F; }
+.statusbar-line { stroke: #453E38; }
+.statusbar-badge { fill: #F59E0B; }
+.statusbar-badge-text { fill: #1C1917; }
+.statusbar-text { fill: #D1D6CC; }
+}
+</style>
+<pattern id="grid-dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+<circle class="grid-dots" cx="13" cy="13" r="0.8"/>
+</pattern>
+</defs>
+<rect class="canvas-bg" width="1200" height="630"/>
+<rect width="1200" height="630" fill="url(#grid-dots)"/>
+<rect class="title-bar" x="0" y="0" width="1200" height="44"/>
+<circle cx="50" cy="22" r="7" fill="#EF4444"/>
+<circle cx="75" cy="22" r="7" fill="#F59E0B"/>
+<circle cx="100" cy="22" r="7" fill="#10B981"/>
+<rect class="ui-tab" x="125" y="48" width="220" height="36" rx="8"/>
   <text class="ui-tab-text" x="145" y="73" font-family="'JetBrains Mono', monospace" font-size="14"
-        font-weight="600">anchor-positioning.css</text>
-
-  <!-- Title divider -->
-  <line class="ui-border" x1="0" y1="84" x2="1200" y2="84" stroke-width="1.5"/>
-
-  <!-- ══ LEFT PANEL (y=100 → y=530, 430px) ══ -->
-  <rect class="panel-bg" x="30" y="100" width="555" height="430" rx="8"/>
-
-  <rect class="panel-header" x="30" y="100" width="555" height="34" rx="8"/>
-  <rect class="panel-header" x="30" y="127" width="555" height="7"/>
+font-weight="600">anchor-positioning.css</text>
+<line class="ui-border" x1="0" y1="84" x2="1200" y2="84" stroke-width="1.5"/>
+<rect class="panel-bg" x="30" y="100" width="555" height="430" rx="8"/>
+<rect class="panel-header" x="30" y="100" width="555" height="34" rx="8"/>
+<rect class="panel-header" x="30" y="127" width="555" height="7"/>
   <text class="text-muted" x="50" y="121" font-family="'JetBrains Mono', monospace" font-size="13"
-        dominant-baseline="middle">demo.html</text>
-
-  <!-- anchor-name annotation -->
-  <rect class="badge-accent ui-border" x="195" y="148" width="200" height="26" rx="4" stroke-width="0.5"/>
+dominant-baseline="middle">demo.html</text>
+<rect class="badge-accent ui-border" x="195" y="148" width="200" height="26" rx="4" stroke-width="0.5"/>
   <text class="text-accent" x="295" y="166" font-family="'JetBrains Mono', monospace" font-size="13"
-        text-anchor="middle" dominant-baseline="middle">anchor-name: --btn</text>
-
-  <!-- Trigger button -->
-  <rect class="log-bg accent-stroke" x="185" y="186" width="220" height="52" rx="6" stroke-width="2"/>
+text-anchor="middle" dominant-baseline="middle">anchor-name: --btn</text>
+<rect class="log-bg accent-stroke" x="185" y="186" width="220" height="52" rx="6" stroke-width="2"/>
   <text class="text-dark" x="295" y="222" font-family="'JetBrains Mono', monospace" font-size="20"
-        font-weight="700" text-anchor="middle" dominant-baseline="middle">Trigger</text>
-
-  <!-- Connector -->
-  <line class="accent-stroke" x1="295" y1="238" x2="295" y2="278" stroke-width="2"
-        stroke-dasharray="6 4" opacity="0.7"/>
-  <polygon class="accent-amber" points="295,286 287,276 303,276" opacity="0.8"/>
-
-  <!-- Tooltip -->
-  <rect class="log-bg accent-stroke" x="185" y="290" width="220" height="44" rx="4" stroke-width="2"/>
+font-weight="700" text-anchor="middle" dominant-baseline="middle">Trigger</text>
+<line class="accent-stroke" x1="295" y1="238" x2="295" y2="278" stroke-width="2"
+stroke-dasharray="6 4" opacity="0.7"/>
+<polygon class="accent-amber" points="295,286 287,276 303,276" opacity="0.8"/>
+<rect class="log-bg accent-stroke" x="185" y="290" width="220" height="44" rx="4" stroke-width="2"/>
   <text class="text-dark" x="295" y="322" font-family="'JetBrains Mono', monospace" font-size="16"
-        text-anchor="middle" dominant-baseline="middle">Tooltip label</text>
-
-  <!-- position-area annotation -->
-  <rect class="badge-bg ui-border" x="195" y="346" width="200" height="26" rx="4" stroke-width="0.5"/>
+text-anchor="middle" dominant-baseline="middle">Tooltip label</text>
+<rect class="badge-bg ui-border" x="195" y="346" width="200" height="26" rx="4" stroke-width="0.5"/>
   <text class="text-muted" x="295" y="364" font-family="'JetBrains Mono', monospace" font-size="13"
-        text-anchor="middle" dominant-baseline="middle">position-area: bottom center</text>
-
-  <!-- 3×3 position-area grid -->
-  <rect x="228" y="384" width="135" height="135" fill="none" class="grid-line" rx="2"/>
-  <line class="grid-line" x1="273" y1="384" x2="273" y2="519" stroke-width="1" opacity="0.5"/>
-  <line class="grid-line" x1="318" y1="384" x2="318" y2="519" stroke-width="1" opacity="0.5"/>
-  <line class="grid-line" x1="228" y1="429" x2="363" y2="429" stroke-width="1" opacity="0.5"/>
-  <line class="grid-line" x1="228" y1="474" x2="363" y2="474" stroke-width="1" opacity="0.5"/>
-
-  <!-- Column headers -->
+text-anchor="middle" dominant-baseline="middle">position-area: bottom center</text>
+<rect x="228" y="384" width="135" height="135" fill="none" class="grid-line" rx="2"/>
+<line class="grid-line" x1="273" y1="384" x2="273" y2="519" stroke-width="1" opacity="0.5"/>
+<line class="grid-line" x1="318" y1="384" x2="318" y2="519" stroke-width="1" opacity="0.5"/>
+<line class="grid-line" x1="228" y1="429" x2="363" y2="429" stroke-width="1" opacity="0.5"/>
+<line class="grid-line" x1="228" y1="474" x2="363" y2="474" stroke-width="1" opacity="0.5"/>
   <text class="text-muted" x="250" y="406" font-family="'JetBrains Mono', monospace" font-size="10"
-        text-anchor="middle" dominant-baseline="middle">top</text>
+text-anchor="middle" dominant-baseline="middle">top</text>
   <text class="text-muted" x="295" y="406" font-family="'JetBrains Mono', monospace" font-size="10"
-        text-anchor="middle" dominant-baseline="middle">cen</text>
+text-anchor="middle" dominant-baseline="middle">cen</text>
   <text class="text-muted" x="340" y="406" font-family="'JetBrains Mono', monospace" font-size="10"
-        text-anchor="middle" dominant-baseline="middle">bot</text>
-
-  <!-- Row labels -->
+text-anchor="middle" dominant-baseline="middle">bot</text>
   <text class="text-muted" x="218" y="406" font-family="'JetBrains Mono', monospace" font-size="10"
-        text-anchor="end" dominant-baseline="middle">col:</text>
+text-anchor="end" dominant-baseline="middle">col:</text>
   <text class="text-muted" x="218" y="451" font-family="'JetBrains Mono', monospace" font-size="10"
-        text-anchor="end" dominant-baseline="middle">row:</text>
-
+text-anchor="end" dominant-baseline="middle">row:</text>
   <text class="text-muted" x="250" y="451" font-family="'JetBrains Mono', monospace" font-size="10"
-        text-anchor="middle" dominant-baseline="middle">L</text>
+text-anchor="middle" dominant-baseline="middle">L</text>
   <text class="text-muted" x="340" y="451" font-family="'JetBrains Mono', monospace" font-size="10"
-        text-anchor="middle" dominant-baseline="middle">R</text>
-
-  <!-- Center cell highlight -->
-  <rect class="badge-accent" x="273" y="429" width="45" height="45" rx="2"/>
+text-anchor="middle" dominant-baseline="middle">R</text>
+<rect class="badge-accent" x="273" y="429" width="45" height="45" rx="2"/>
   <text class="text-accent" x="295" y="451" font-family="'JetBrains Mono', monospace" font-size="14"
-        text-anchor="middle" dominant-baseline="middle" font-weight="700">✓</text>
-
-  <!-- Grid label -->
+text-anchor="middle" dominant-baseline="middle" font-weight="700">✓</text>
   <text class="text-muted" x="295" y="524" font-family="'JetBrains Mono', monospace" font-size="11"
-        text-anchor="middle">position-area 3×3 grid</text>
-
-  <!-- ══ RIGHT PANEL (y=100 → y=530, 430px) ══ -->
-  <rect class="panel-bg" x="615" y="100" width="555" height="430" rx="8"/>
-
-  <rect class="panel-header" x="615" y="100" width="555" height="34" rx="8"/>
-  <rect class="panel-header" x="615" y="127" width="555" height="7"/>
+text-anchor="middle">position-area 3×3 grid</text>
+<rect class="panel-bg" x="615" y="100" width="555" height="430" rx="8"/>
+<rect class="panel-header" x="615" y="100" width="555" height="34" rx="8"/>
+<rect class="panel-header" x="615" y="127" width="555" height="7"/>
   <text class="text-muted" x="635" y="121" font-family="'JetBrains Mono', monospace" font-size="13"
-        dominant-baseline="middle">style.css</text>
-
-  <!-- Code lines -->
-  <g font-family="'JetBrains Mono', monospace" font-size="14">
-    <text class="text-muted" x="635" y="150">1  <tspan class="text-accent">.trigger</tspan> {</text>
-    <text class="text-muted" x="635" y="178">2    <tspan class="text-accent">anchor-name</tspan>: <tspan class="text-dark">--btn</tspan>;</text>
-    <text class="text-muted" x="635" y="206">3  }</text>
-    <text class="text-muted" x="635" y="234">4  <tspan class="text-accent">.tooltip</tspan> {</text>
-    <text class="text-muted" x="635" y="262">5    <tspan class="text-accent">position</tspan>: <tspan class="text-dark">fixed</tspan>;</text>
-    <text class="text-muted" x="635" y="290">6    <tspan class="text-accent">position-anchor</tspan>: <tspan class="text-dark">--btn</tspan>;</text>
-    <text class="text-muted" x="635" y="318">7    <tspan class="text-accent">position-area</tspan>: <tspan class="text-dark">bottom center</tspan>;</text>
-    <text class="text-muted" x="635" y="346">8    <tspan class="text-accent">position-try-fallbacks</tspan>:</text>
-    <text class="text-muted" x="635" y="374">9      <tspan class="text-dark">flip-block</tspan>;</text>
-    <text class="text-muted" x="635" y="402">10 }</text>
-  </g>
-
-  <!-- Line 7 highlight -->
-  <rect class="accent-amber" x="615" y="307" width="4" height="28" rx="2"/>
+dominant-baseline="middle">style.css</text>
+<g font-family="'JetBrains Mono', monospace" font-size="14">
+<text class="text-muted" x="635" y="150">1 <tspan class="text-accent">.trigger</tspan> {</text>
+<text class="text-muted" x="635" y="178">2 <tspan class="text-accent">anchor-name</tspan>: <tspan class="text-dark">--btn</tspan>;</text>
+<text class="text-muted" x="635" y="206">3 }</text>
+<text class="text-muted" x="635" y="234">4 <tspan class="text-accent">.tooltip</tspan> {</text>
+<text class="text-muted" x="635" y="262">5 <tspan class="text-accent">position</tspan>: <tspan class="text-dark">fixed</tspan>;</text>
+<text class="text-muted" x="635" y="290">6 <tspan class="text-accent">position-anchor</tspan>: <tspan class="text-dark">--btn</tspan>;</text>
+<text class="text-muted" x="635" y="318">7 <tspan class="text-accent">position-area</tspan>: <tspan class="text-dark">bottom center</tspan>;</text>
+<text class="text-muted" x="635" y="346">8 <tspan class="text-accent">position-try-fallbacks</tspan>:</text>
+<text class="text-muted" x="635" y="374">9 <tspan class="text-dark">flip-block</tspan>;</text>
+<text class="text-muted" x="635" y="402">10 }</text>
+</g>
+<rect class="accent-amber" x="615" y="307" width="4" height="28" rx="2"/>
   <text class="text-success" x="890" y="334" font-family="'JetBrains Mono', monospace" font-size="13"
-        dominant-baseline="middle">← 3×3 shorthand</text>
-
-  <!-- Divider -->
-  <line class="ui-border" x1="635" y1="418" x2="1155" y2="418" stroke-width="1"/>
-
-  <!-- Auto-flip section -->
+dominant-baseline="middle">← 3×3 shorthand</text>
+<line class="ui-border" x1="635" y1="418" x2="1155" y2="418" stroke-width="1"/>
   <text class="text-muted" x="635" y="442" font-family="'JetBrains Mono', monospace" font-size="13"
-        >/* Auto-flip on viewport overflow */</text>
+>/* Auto-flip on viewport overflow */</text>
   <text class="text-code" x="635" y="468" font-family="'JetBrains Mono', monospace" font-size="14"
-        >12 <tspan class="text-success">├── flip-block</tspan> <tspan class="text-muted">: top ↔ bottom</tspan></text>
+>12 <tspan class="text-success">├── flip-block</tspan> <tspan class="text-muted">: top ↔ bottom</tspan></text>
   <text class="text-code" x="635" y="494" font-family="'JetBrains Mono', monospace" font-size="14"
-        >13 <tspan class="text-success">├── flip-inline</tspan> <tspan class="text-muted">: left ↔ right</tspan></text>
+>13 <tspan class="text-success">├── flip-inline</tspan> <tspan class="text-muted">: left ↔ right</tspan></text>
   <text class="text-code" x="635" y="520" font-family="'JetBrains Mono', monospace" font-size="14"
-        >14 <tspan class="text-success">└── flip-block flip-inline</tspan> <tspan class="text-muted">: both</tspan></text>
-
-  <!-- ══ HINT ZONE (y=530–560) ══ -->
-  <rect class="code-hint-line" x="50" y="534" width="1100" height="1"/>
+>14 <tspan class="text-success">└── flip-block flip-inline</tspan> <tspan class="text-muted">: both</tspan></text>
+<rect class="code-hint-line" x="50" y="534" width="1100" height="1"/>
   <text class="text-hint" x="600" y="552" font-family="'JetBrains Mono', monospace" font-size="14"
-        text-anchor="middle">4 CSS properties · 0 JavaScript · replaces 12KB Floating UI</text>
-
-  <!-- ══ STATUS BAR (y=560, 30px) ══ -->
-  <rect class="statusbar-bg" x="0" y="560" width="1200" height="30"/>
-  <line class="statusbar-line" x1="0" y1="560" x2="1200" y2="560" stroke-width="1"/>
-
-  <rect class="statusbar-badge" x="30" y="566" width="80" height="18" rx="3"/>
+text-anchor="middle">4 CSS properties · 0 JavaScript · replaces 12KB Floating UI</text>
+<rect class="statusbar-bg" x="0" y="560" width="1200" height="30"/>
+<line class="statusbar-line" x1="0" y1="560" x2="1200" y2="560" stroke-width="1"/>
+<rect class="statusbar-badge" x="30" y="566" width="80" height="18" rx="3"/>
   <text class="statusbar-badge-text" x="70" y="579" font-family="'JetBrains Mono', monospace"
-        font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
-
+font-size="11" font-weight="800" text-anchor="middle">NORMAL</text>
   <text class="statusbar-text" x="1170" y="579" font-family="'JetBrains Mono', monospace"
-        font-size="11" font-weight="600" text-anchor="end">Baseline 2026 · style.css  14L</text>
+font-size="11" font-weight="600" text-anchor="end">Baseline 2026 · style.css 14L</text>
 </svg>

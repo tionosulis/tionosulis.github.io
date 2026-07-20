@@ -1,87 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
-  <defs>
-    <linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2A4053"/>
-      <stop offset="100%" stop-color="#243846"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Split background: light / dark -->
-  <rect x="0" y="0" width="1200" height="675" fill="#ffffff"/>
-  <rect x="600" y="0" width="600" height="675" fill="#161616"/>
-  <line x1="600" y1="0" x2="600" y2="675" stroke="#424242" stroke-width="1" opacity="0.3"/>
-
-  <!-- Center card -->
-  <rect x="60" y="100" width="1080" height="475" rx="12" fill="url(#cardBg)"/>
-  <rect x="60" y="100" width="1080" height="475" rx="12" fill="none" stroke="#3D536A" stroke-width="1.5"/>
-
-  <!-- Corner accents -->
-  <path d="M 60 130 L 60 112 L 72 100" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
-  <path d="M 1140 100 L 1128 100 L 1140 112" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
-  <path d="M 60 575 L 60 557 L 72 545" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
-  <path d="M 1140 575 L 1128 575 L 1140 563" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
-
-  <!-- Pill dots (right edge) -->
-  <circle cx="1130" cy="337" r="3" fill="#3D536A"/>
-  <circle cx="1130" cy="350" r="3" fill="#3D536A"/>
-  <circle cx="1130" cy="363" r="3" fill="#3D536A"/>
-
-  <!-- Title -->
-  <text x="600" y="210" text-anchor="middle" fill="#C8D8E8" font-family="JetBrains Mono,monospace" font-size="38" font-weight="700">One Palette, Two Modes</text>
-  <text x="600" y="245" text-anchor="middle" fill="#7A9AB0" font-family="JetBrains Mono,monospace" font-size="18">Building a hero image color system for light &amp; dark mode</text>
-
-  <!-- Light mode side -->
-  <text x="300" y="295" text-anchor="middle" fill="#6A8AA8" font-family="JetBrains Mono,monospace" font-size="14" font-weight="700">LIGHT</text>
-  <text x="300" y="315" text-anchor="middle" fill="#6A8AA8" font-family="JetBrains Mono,monospace" font-size="12">#ffffff background</text>
-
-  <!-- Dark mode side -->
-  <text x="900" y="295" text-anchor="middle" fill="#6A8AA8" font-family="JetBrains Mono,monospace" font-size="14" font-weight="700">DARK</text>
-  <text x="900" y="315" text-anchor="middle" fill="#6A8AA8" font-family="JetBrains Mono,monospace" font-size="12">#161616 background</text>
-
-  <!-- Arrow: card → light -->
-  <line x1="330" y1="340" x2="200" y2="340" stroke="#4A8AE0" stroke-width="2" opacity="0.6"/>
-  <polygon points="210,335 200,340 210,345" fill="#4A8AE0" opacity="0.6"/>
-
-  <!-- Arrow: card → dark -->
-  <line x1="860" y1="340" x2="990" y2="340" stroke="#4A8AE0" stroke-width="2" opacity="0.6"/>
-  <polygon points="990,335 1000,340 990,345" fill="#4A8AE0" opacity="0.6"/>
-
-  <!-- Palette swatches -->
-  <g transform="translate(200, 380)">
-    <!-- Background -->
-    <rect x="0" y="0" width="200" height="40" rx="4" fill="#2A4053"/>
-    <text x="10" y="26" fill="#C8D8E8" font-family="JetBrains Mono,monospace" font-size="12">Background #2A4053</text>
-
-    <!-- Card fill -->
-    <rect x="0" y="48" width="200" height="40" rx="4" fill="#1A2634"/>
-    <text x="10" y="74" fill="#A0B8D0" font-family="JetBrains Mono,monospace" font-size="12">Card fill #1A2634</text>
-
-    <!-- Text -->
-    <rect x="0" y="96" width="200" height="40" rx="4" fill="#A0B8D0"/>
-    <text x="10" y="122" fill="#1A2634" font-family="JetBrains Mono,monospace" font-size="12">Primary text #A0B8D0</text>
-
-    <!-- Accent -->
-    <rect x="0" y="144" width="200" height="40" rx="4" fill="#F5A623"/>
-    <text x="10" y="170" fill="#1A2634" font-family="JetBrains Mono,monospace" font-size="12">Accent (info) #F5A623</text>
-  </g>
-
-  <!-- Divider in palette area -->
-  <line x1="440" y1="380" x2="440" y2="530" stroke="#3D536A" stroke-width="1" opacity="0.5"/>
-
-  <g transform="translate(500, 380)">
-    <rect x="0" y="0" width="200" height="40" rx="4" fill="#4A8AE0"/>
-    <text x="10" y="26" fill="#ffffff" font-family="JetBrains Mono,monospace" font-size="12">Accent (warning) #4A8AE0</text>
-
-    <rect x="0" y="48" width="200" height="40" rx="4" fill="#E06050"/>
-    <text x="10" y="74" fill="#ffffff" font-family="JetBrains Mono,monospace" font-size="12">Accent (error) #E06050</text>
-
-    <rect x="0" y="96" width="200" height="40" rx="4" fill="#10D9A8"/>
-    <text x="10" y="122" fill="#1A2634" font-family="JetBrains Mono,monospace" font-size="12">Accent (success) #10D9A8</text>
-
-    <rect x="0" y="144" width="200" height="40" rx="4" fill="#3D536A"/>
-    <text x="10" y="170" fill="#C8D8E8" font-family="JetBrains Mono,monospace" font-size="12">Border #3D536A</text>
-  </g>
-
-  <!-- Outer border -->
-  <rect width="1200" height="675" fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.4"/>
+<defs>
+<linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#2A4053"/>
+<stop offset="100%" stop-color="#243846"/>
+</linearGradient>
+</defs>
+<rect x="0" y="0" width="1200" height="675" fill="#ffffff"/>
+<rect x="600" y="0" width="600" height="675" fill="#161616"/>
+<line x1="600" y1="0" x2="600" y2="675" stroke="#424242" stroke-width="1" opacity="0.3"/>
+<rect x="60" y="100" width="1080" height="475" rx="12" fill="url(#cardBg)"/>
+<rect x="60" y="100" width="1080" height="475" rx="12" fill="none" stroke="#3D536A" stroke-width="1.5"/>
+<path d="M 60 130 L 60 112 L 72 100" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
+<path d="M 1140 100 L 1128 100 L 1140 112" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
+<path d="M 60 575 L 60 557 L 72 545" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
+<path d="M 1140 575 L 1128 575 L 1140 563" fill="none" stroke="#3D536A" stroke-width="1.5" opacity="0.5"/>
+<circle cx="1130" cy="337" r="3" fill="#3D536A"/>
+<circle cx="1130" cy="350" r="3" fill="#3D536A"/>
+<circle cx="1130" cy="363" r="3" fill="#3D536A"/>
+<text x="600" y="210" text-anchor="middle" fill="#C8D8E8" font-family="JetBrains Mono,monospace" font-size="38" font-weight="700">One Palette, Two Modes</text>
+<text x="600" y="245" text-anchor="middle" fill="#7A9AB0" font-family="JetBrains Mono,monospace" font-size="18">Building a hero image color system for light &amp; dark mode</text>
+<text x="300" y="295" text-anchor="middle" fill="#6A8AA8" font-family="JetBrains Mono,monospace" font-size="14" font-weight="700">LIGHT</text>
+<text x="300" y="315" text-anchor="middle" fill="#6A8AA8" font-family="JetBrains Mono,monospace" font-size="12">#ffffff background</text>
+<text x="900" y="295" text-anchor="middle" fill="#6A8AA8" font-family="JetBrains Mono,monospace" font-size="14" font-weight="700">DARK</text>
+<text x="900" y="315" text-anchor="middle" fill="#6A8AA8" font-family="JetBrains Mono,monospace" font-size="12">#161616 background</text>
+<line x1="330" y1="340" x2="200" y2="340" stroke="#4A8AE0" stroke-width="2" opacity="0.6"/>
+<polygon points="210,335 200,340 210,345" fill="#4A8AE0" opacity="0.6"/>
+<line x1="860" y1="340" x2="990" y2="340" stroke="#4A8AE0" stroke-width="2" opacity="0.6"/>
+<polygon points="990,335 1000,340 990,345" fill="#4A8AE0" opacity="0.6"/>
+<g transform="translate(200, 380)">
+<rect x="0" y="0" width="200" height="40" rx="4" fill="#2A4053"/>
+<text x="10" y="26" fill="#C8D8E8" font-family="JetBrains Mono,monospace" font-size="12">Background #2A4053</text>
+<rect x="0" y="48" width="200" height="40" rx="4" fill="#1A2634"/>
+<text x="10" y="74" fill="#A0B8D0" font-family="JetBrains Mono,monospace" font-size="12">Card fill #1A2634</text>
+<rect x="0" y="96" width="200" height="40" rx="4" fill="#A0B8D0"/>
+<text x="10" y="122" fill="#1A2634" font-family="JetBrains Mono,monospace" font-size="12">Primary text #A0B8D0</text>
+<rect x="0" y="144" width="200" height="40" rx="4" fill="#F5A623"/>
+<text x="10" y="170" fill="#1A2634" font-family="JetBrains Mono,monospace" font-size="12">Accent (info) #F5A623</text>
+</g>
+<line x1="440" y1="380" x2="440" y2="530" stroke="#3D536A" stroke-width="1" opacity="0.5"/>
+<g transform="translate(500, 380)">
+<rect x="0" y="0" width="200" height="40" rx="4" fill="#4A8AE0"/>
+<text x="10" y="26" fill="#ffffff" font-family="JetBrains Mono,monospace" font-size="12">Accent (warning) #4A8AE0</text>
+<rect x="0" y="48" width="200" height="40" rx="4" fill="#E06050"/>
+<text x="10" y="74" fill="#ffffff" font-family="JetBrains Mono,monospace" font-size="12">Accent (error) #E06050</text>
+<rect x="0" y="96" width="200" height="40" rx="4" fill="#10D9A8"/>
+<text x="10" y="122" fill="#1A2634" font-family="JetBrains Mono,monospace" font-size="12">Accent (success) #10D9A8</text>
+<rect x="0" y="144" width="200" height="40" rx="4" fill="#3D536A"/>
+<text x="10" y="170" fill="#C8D8E8" font-family="JetBrains Mono,monospace" font-size="12">Border #3D536A</text>
+</g>
+<rect width="1200" height="675" fill="none" stroke="#B45309" stroke-width="1" stroke-opacity="0.4"/>
 </svg>
