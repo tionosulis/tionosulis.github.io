@@ -3,7 +3,7 @@ title: "CSS Cascade Layers: From Specificity Wars to @layer Architecture"
 seoTitle: "CSS @layer: From Specificity Wars to Cascade Control"
 description: "How @layer eliminated !important hacks and duplicate selectors in a real production stylesheet — with zero visual regression."
 date: 2026-07-19
-draft: true
+draft: false
 tags: [css, architecture, refactoring, walkthrough]
 pageHasCode: true
 image: /assets/img/og/css-cascade-layers.png
