@@ -3,13 +3,17 @@ title: "Git Interactive Rebase: Cleaning Up Your Commit Mess Before Push"
 seoTitle: "Git Interactive Rebase: Clean Up Commit History Before Push"
 description: "Squash, reword, reorder — interactive rebase turns your WIP dump into a commit history that reviewers (and future you) will thank you for."
 date: 2026-07-15
-draft: true
+draft: false
 image: /assets/img/og/git-interactive-rebase.png
 tags: [git, workflow, productivity, dev-tools]
 pageHasCode: true
 ---
 
 ${toc}
+
+![Git interactive rebase workflow transforming multiple messy WIP commits into one clean feature commit.](/assets/img/git-interactive-rebase.svg)
+
+*Local commit history cleanup: Condensing debugging diary noise into a single logical change before push.*
 
 ## The Mess
 
