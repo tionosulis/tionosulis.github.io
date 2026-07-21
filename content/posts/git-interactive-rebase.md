@@ -9,11 +9,11 @@ tags: [git, workflow, productivity, dev-tools]
 pageHasCode: true
 ---
 
-${toc}
-
 ![Git interactive rebase workflow transforming multiple messy WIP commits into one clean feature commit.](/assets/img/git-interactive-rebase.svg)
 
 *Local commit history cleanup: Condensing debugging diary noise into a single logical change before push.*
+
+${toc}
 
 ## The Mess
 
@@ -162,6 +162,8 @@ git push --force-with-lease
 git config --global push.default current
 git config --global alias.pushf "push --force-with-lease"
 ```
+
+The `! [rejected] (non-fast-forward)` error can also appear for a different reason — a shallow clone with `--depth 1` that truncated the commit history. If you see this error without having rebased, the cause might be missing upstream context. See [Git Shallow Clone Headache](/posts/git-shallow-clone/) for that scenario.
 
 ## Real-World Rebase Conflicts
 
