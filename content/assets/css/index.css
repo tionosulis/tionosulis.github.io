@@ -82,14 +82,14 @@ html.no-transition *::before, html.no-transition *::after {
     --text-secondary: #938F99;
     --text-tertiary: #625B71;
     --border: #49454F;
-    --accent: #FFB55F;
+    --accent: #FBBF24;
     --accent-hover: #FCD34D;
-    --selection: rgba(255, 181, 95, 0.25);
+    --selection: rgba(251, 191, 36, 0.25);
     --syntax-bg: #1D1B20;
     --error: #F2B8B5;
     --statusbar-bg: #25232A;
     --statusbar-text: #CAC4D0;
-    --statusbar-mode: #FFB55F;
+      --statusbar-mode: #FBBF24;
 
     --img-glow:  0 1px 4px color-mix(in srgb, var(--accent) 5%, transparent),
                  0 0 14px color-mix(in srgb, var(--accent) 2%, transparent);
@@ -104,14 +104,14 @@ html.no-transition *::before, html.no-transition *::after {
       --text-secondary: #938F99;
       --text-tertiary: #625B71;
       --border: #49454F;
-      --accent: #FFB55F;
+      --accent: #FBBF24;
       --accent-hover: #FCD34D;
-      --selection: rgba(255, 181, 95, 0.25);
+      --selection: rgba(251, 191, 36, 0.25);
       --syntax-bg: #1D1B20;
       --error: #F2B8B5;
       --statusbar-bg: #25232A;
       --statusbar-text: #CAC4D0;
-      --statusbar-mode: #FFB55F;
+    --statusbar-mode: #FBBF24;
 
       --img-glow:  0 1px 4px color-mix(in srgb, var(--accent) 5%, transparent),
                    0 0 14px color-mix(in srgb, var(--accent) 2%, transparent);
@@ -141,6 +141,7 @@ html.no-transition *::before, html.no-transition *::after {
     text-underline-offset: 2px;
     transition: color 0.15s ease;
     &:hover { color: var(--accent-hover); }
+    &:visited { color: color-mix(in srgb, var(--accent) 80%, var(--bg)); }
   }
 
   img { max-width: 100%; height: auto; border-radius: var(--radius); }

@@ -167,6 +167,8 @@ export default async function (eleventyConfig) {
 
 
 
+  eleventyConfig.addGlobalData("runMode", () => process.env.ELEVENTY_RUN_MODE || "build");
+
   eleventyConfig.addGlobalData("lastCommitDate", () => {
     try {
       const date = execSync("git log -1 --format=%cI").toString().trim();

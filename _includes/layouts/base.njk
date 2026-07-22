@@ -65,7 +65,7 @@
       {% endif %}
     </main>
   </div>
-  <script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js").catch(e=>console.warn("SW:",e))</script>
+  {% if runMode != "serve" %}<script>navigator.serviceWorker&&navigator.serviceWorker.register("/sw.js").catch(e=>console.warn("SW:",e))</script>{% endif %}
   <script>document.querySelectorAll(".copy-btn").forEach(b=>{b.addEventListener("click",async()=>{let c=b.parentElement.querySelector("code");if(!c)return;try{await navigator.clipboard.writeText(c.textContent),b.innerHTML=decodeURIComponent(b.dataset.check),b.classList.add("copied"),setTimeout(()=>{b.classList.remove("copied"),b.innerHTML=decodeURIComponent(b.dataset.copy)},2e3)}catch(e){}})});</script>
 </body>
 </html>
