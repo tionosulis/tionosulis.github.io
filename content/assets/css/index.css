@@ -6,6 +6,11 @@
   font-style: normal;
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 @layer reset, base, shiki, components, utilities;
 
 *, *::before, *::after { transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
@@ -126,11 +131,6 @@ html.no-transition *::before, html.no-transition *::after {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
   }
 
   ::selection { background: var(--selection); color: var(--text); }
@@ -466,7 +466,6 @@ html.no-transition *::before, html.no-transition *::after {
     display: flex;
     align-items: center;
     gap: 0;
-    &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   }
 
   .theme-toggle-posts {
@@ -482,7 +481,6 @@ html.no-transition *::before, html.no-transition *::after {
     display: flex;
     align-items: center;
     gap: 0;
-    &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   }
 
   .toggle-bracket {

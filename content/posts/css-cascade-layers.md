@@ -173,7 +173,7 @@ Now `.posts-page .cursor` and `.cursor` inside `.post-exit` don't interact. The 
 
 ## What Stays Outside Layers
 
-Not everything moved into a layer. Three categories stayed unlayered:
+Not everything moved into a layer. Four categories stayed unlayered:
 
 **1. Global animations:**
 
@@ -196,7 +196,18 @@ Not everything moved into a layer. Three categories stayed unlayered:
 
 This must win over every component's transitions unconditionally. Unlayered styles beat layered styles by default — exactly what we need for accessibility overrides.
 
-**3. Desktop and print media queries:**
+**3. Global focus indicators:**
+
+```css
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+```
+
+Browser UA focus styles are unlayered — if this rule sits inside a layer, the browser's default blue ring wins. Keep it unlayered to guarantee your accent color appears on keyboard focus.
+
+**4. Desktop and print media queries:**
 
 ```css
 @media (min-width: 768px) { ... }

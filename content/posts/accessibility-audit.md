@@ -9,6 +9,10 @@ tags: [accessibility, howto, workflow, web-standards]
 pageHasCode: false
 ---
 
+![Accessibility audit sketch comparing a fake Lighthouse 100 score with a real keyboard and screen reader test.](/assets/img/accessibility-audit.svg)
+
+*Beyond automated scores: Finding hidden WCAG failures through manual keyboard navigation and screen reader audits.*
+
 ## The Lighthouse Trap
 
 When I wrote about [chasing a perfect Lighthouse score](/posts/chasing-100/), I hit Performance 100, Accessibility 100, Best Practices 100, and SEO 100. The contrast fixes, the CLS reductions, the aria-label additions — that's what got me there.
