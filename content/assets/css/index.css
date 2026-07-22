@@ -75,21 +75,21 @@ html.no-transition *::before, html.no-transition *::after {
   }
 
   [data-theme="dark"] {
-    --bg: #161616;
-    --bg-secondary: #262626;
-    --text: #d6d6da;
-    --text-body: #b6bac4;
-    --text-secondary: #9ba3b1;
-    --text-tertiary: #6e7685;
-    --border: #505050;
-    --accent: #FBBF24;
+    --bg: #141218;
+    --bg-secondary: #211F26;
+    --text: #E6E1E5;
+    --text-body: #CAC4D0;
+    --text-secondary: #938F99;
+    --text-tertiary: #625B71;
+    --border: #49454F;
+    --accent: #FFB55F;
     --accent-hover: #FCD34D;
-    --selection: rgba(251, 191, 36, 0.2);
-    --syntax-bg: #262626;
-    --error: #EF4444;
-    --statusbar-bg: #1E1E1E;
-    --statusbar-text: #9ba3b1;
-    --statusbar-mode: #E0A868;
+    --selection: rgba(255, 181, 95, 0.25);
+    --syntax-bg: #1D1B20;
+    --error: #F2B8B5;
+    --statusbar-bg: #25232A;
+    --statusbar-text: #CAC4D0;
+    --statusbar-mode: #FFB55F;
 
     --img-glow:  0 1px 4px color-mix(in srgb, var(--accent) 5%, transparent),
                  0 0 14px color-mix(in srgb, var(--accent) 2%, transparent);
@@ -97,21 +97,21 @@ html.no-transition *::before, html.no-transition *::after {
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-      --bg: #161616;
-      --bg-secondary: #262626;
-      --text: #d6d6da;
-      --text-body: #b6bac4;
-      --text-secondary: #9ba3b1;
-      --text-tertiary: #6e7685;
-      --border: #505050;
-      --accent: #FBBF24;
+      --bg: #141218;
+      --bg-secondary: #211F26;
+      --text: #E6E1E5;
+      --text-body: #CAC4D0;
+      --text-secondary: #938F99;
+      --text-tertiary: #625B71;
+      --border: #49454F;
+      --accent: #FFB55F;
       --accent-hover: #FCD34D;
-      --selection: rgba(251, 191, 36, 0.2);
-      --syntax-bg: #262626;
-      --error: #EF4444;
-      --statusbar-bg: #1E1E1E;
-      --statusbar-text: #9ba3b1;
-      --statusbar-mode: #E0A868;
+      --selection: rgba(255, 181, 95, 0.25);
+      --syntax-bg: #1D1B20;
+      --error: #F2B8B5;
+      --statusbar-bg: #25232A;
+      --statusbar-text: #CAC4D0;
+      --statusbar-mode: #FFB55F;
 
       --img-glow:  0 1px 4px color-mix(in srgb, var(--accent) 5%, transparent),
                    0 0 14px color-mix(in srgb, var(--accent) 2%, transparent);
