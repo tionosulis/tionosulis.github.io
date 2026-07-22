@@ -11,7 +11,7 @@ pageHasCode: false
 
 ## The Lighthouse Trap
 
-Last year I [chased a perfect Lighthouse score](/posts/chasing-100/). Performance 100. Accessibility 100. Best Practices 100. SEO 100. I wrote about the contrast fixes, the CLS reductions, the aria-label additions that got me there.
+When I wrote about [chasing a perfect Lighthouse score](/posts/chasing-100/), I hit Performance 100, Accessibility 100, Best Practices 100, and SEO 100. The contrast fixes, the CLS reductions, the aria-label additions — that's what got me there.
 
 Then I disconnected my mouse and tried to navigate my own site.
 
