@@ -128,6 +128,11 @@ html.no-transition *::before, html.no-transition *::after {
     text-rendering: optimizeLegibility;
   }
 
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
   ::selection { background: var(--selection); color: var(--text); }
 
   a {

@@ -15,7 +15,7 @@ When I wrote about [chasing a perfect Lighthouse score](/posts/chasing-100/), I 
 
 Then I disconnected my mouse and tried to navigate my own site.
 
-The theme toggle — the one with the `aria-label="Toggle theme"` that scored perfectly in Lighthouse — was buried in a tab order that required 14 Tab presses to reach. The skip link existed in the HTML but was visually hidden with `opacity: 0` and never received focus. The code block copy buttons worked perfectly with a mouse, but Enter and Space did nothing.
+The theme toggle — the one with the `aria-label="Toggle theme"` that scored perfectly in Lighthouse — was buried in a tab order that required 14 Tab presses to reach. The skip link existed in the HTML but was visually hidden with `opacity: 0` and never received focus. The code block copy buttons were invisible until I hovered — I couldn't tell they existed, let alone press them.
 
 Lighthouse said 100. My keyboard said otherwise.
 
