@@ -4,7 +4,7 @@ seoTitle: "CSS @layer: From Specificity Wars to Cascade Control"
 description: "How @layer eliminated !important hacks and duplicate selectors in a real production stylesheet — with zero visual regression."
 date: 2026-07-19
 draft: false
-tags: [css, architecture, refactoring, walkthrough]
+tags: [css, architecture, walkthrough]
 pageHasCode: true
 image: /assets/img/og/css-cascade-layers.png
 image_alt: "CSS cascade layers priority stack — @layer architecture diagram"

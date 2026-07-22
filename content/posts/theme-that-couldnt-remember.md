@@ -7,7 +7,7 @@ draft: false
 tags:
   - javascript
   - performance
-  - troubleshooting
+  - debugging
   - css
   - pwa
   - bfcache

@@ -5,7 +5,7 @@ description: "@scope hit Baseline 2026. Scoped styles without build tools, verbo
 date: 2026-07-17
 draft: false
 pinned: false
-tags: [css, architecture, refactoring, performance, standards, walkthrough]
+tags: [css, architecture, performance, standards, walkthrough]
 pageHasCode: true
 image: /assets/img/og/css-scope.png
 image_alt: "@scope dashed boundary wrapping a card component on dark background, with amber scoped selectors and blue donut exclusion zone."

@@ -8,7 +8,7 @@ tags:
   - performance
   - typography
   - css
-  - troubleshooting
+  - debugging
   - meta
 pageHasCode: true
 image: /assets/img/og/foit-you-couldnt-see.png

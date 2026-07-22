@@ -5,7 +5,7 @@ description: When your mobile Git clone saves bandwidth but costs you an hour de
 date: 2026-06-11
 draft: false
 image: /assets/img/og/git-shallow-clone.png
-tags: [git, troubleshooting, mobile, dev-tools]
+tags: [git, debugging, mobile, dev-tools]
 pageHasCode: true
 ---
 

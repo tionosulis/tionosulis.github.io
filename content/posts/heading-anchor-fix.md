@@ -6,7 +6,7 @@ date: 2026-07-04
 draft: false
 tags:
   - css
-  - troubleshooting
+  - debugging
   - layout
   - howto
 image: /assets/img/og/heading-anchor-fix.png
