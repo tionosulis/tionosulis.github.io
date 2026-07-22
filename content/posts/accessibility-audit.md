@@ -3,7 +3,7 @@ title: "Accessibility Audit: A Practical Checklist Beyond Lighthouse Scores"
 seoTitle: "Accessibility Audit Checklist: Beyond Lighthouse 100"
 description: "Automated tools catch 30–40% of accessibility issues. The rest requires a keyboard, a screen reader, and this checklist."
 date: 2026-07-21
-draft: true
+draft: false
 image: /assets/img/og/accessibility-audit.png
 tags: [accessibility, howto, workflow, web-standards]
 pageHasCode: false
