@@ -52,6 +52,7 @@
   {% if metadata.twitterHandle and page.url != '/' %}<meta name="twitter:creator" content="{{ metadata.twitterHandle }}">{% endif %}
   {% if ignore %}<meta name="robots" content="noindex">{% endif %}
   <script>var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t);document.documentElement.style.colorScheme=t</script>
+  {% if runMode == "serve" %}<script>navigator.serviceWorker?.getRegistrations?.().then(r=>r.forEach(s=>s.unregister()))</script>{% endif %}
   <style>{% include "content/assets/css/index.css" %}</style>
 </head>
 <body>

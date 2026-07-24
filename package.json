@@ -6,8 +6,8 @@
   "scripts": {
     "build": "eleventy",
     "watch": "eleventy --watch",
-    "serve": "eleventy --serve",
-    "start": "eleventy --serve",
+    "serve": "eleventy --serve --incremental",
+    "start": "eleventy --serve --incremental",
     "debug": "DEBUG=Eleventy* eleventy",
     "og:convert": "node scripts/og-convert.mjs"
   },

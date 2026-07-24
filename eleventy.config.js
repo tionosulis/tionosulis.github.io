@@ -165,6 +165,10 @@ export default async function (eleventyConfig) {
     return "";
   });
 
+  eleventyConfig.setServerOptions({
+    watchThrottle: 100,
+  });
+
 
 
   eleventyConfig.addGlobalData("runMode", () => process.env.ELEVENTY_RUN_MODE || "build");

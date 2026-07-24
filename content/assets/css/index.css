@@ -131,6 +131,7 @@ html.no-transition *::before, html.no-transition *::after {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 15%, transparent);
   }
 
   ::selection { background: var(--selection); color: var(--text); }
@@ -140,8 +141,10 @@ html.no-transition *::before, html.no-transition *::after {
     text-decoration: underline;
     text-underline-offset: 2px;
     transition: color 0.15s ease;
-    &:hover { color: var(--accent-hover); }
+    -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 15%, transparent);
+
     &:visited { color: color-mix(in srgb, var(--accent) 80%, var(--bg)); }
+    &:hover { color: var(--accent-hover); }
   }
 
   img { max-width: 100%; height: auto; border-radius: var(--radius); }
