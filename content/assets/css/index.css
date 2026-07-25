@@ -143,8 +143,12 @@ html.no-transition *::before, html.no-transition *::after {
     transition: color 0.15s ease;
     -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 15%, transparent);
 
-    &:visited { color: color-mix(in srgb, var(--accent) 80%, var(--bg)); }
-    &:hover { color: var(--accent-hover); }
+    &:hover,
+    &:active,
+    &:focus {
+      color: color-mix(in srgb, var(--accent) 75%, transparent);
+      text-decoration: none;
+    }
   }
 
   img { max-width: 100%; height: auto; border-radius: var(--radius); }
