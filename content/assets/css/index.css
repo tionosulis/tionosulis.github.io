@@ -375,7 +375,7 @@ html.no-transition *::before, html.no-transition *::after {
   .layout {
     max-width: 810px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 0;
   }
 
   .topbar {
@@ -384,8 +384,12 @@ html.no-transition *::before, html.no-transition *::after {
     justify-content: space-between;
     gap: 1rem;
     margin-bottom: 2.618rem;
+    padding-top: 2rem;
     padding-bottom: 2rem;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
   }
   .topbar::after {
     content: '';
@@ -632,7 +636,12 @@ html.no-transition *::before, html.no-transition *::after {
     font-family: "JetBrains Mono", monospace;
   }
   .posts-page .posts-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
     margin-bottom: 2.5rem;
+    padding-top: 2rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgba(100, 116, 139, 0.15);
   }
@@ -1207,12 +1216,17 @@ html.no-transition *::before, html.no-transition *::after {
   body { padding: 0 3rem; }
 
   .layout {
-    padding: 3rem 0;
+    padding: 0;
   }
 
   .topbar {
     margin-bottom: 3.236rem;
+    padding-top: 3rem;
     padding-bottom: 2rem;
+  }
+
+  .posts-page .posts-header {
+    padding-top: 3rem;
   }
 }
 
