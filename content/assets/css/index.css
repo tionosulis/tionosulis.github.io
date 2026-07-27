@@ -297,7 +297,7 @@ html.no-transition *::before, html.no-transition *::after {
       cursor: pointer;
       opacity: 0;
       transition: opacity 0.2s ease, background 0.2s ease;
-      color: var(--text-tertiary);
+      color: var(--text);
       &:hover { background: var(--border); color: var(--text); }
     }
     &:hover .copy-btn { opacity: 1; }
@@ -636,22 +636,23 @@ html.no-transition *::before, html.no-transition *::after {
     font-family: "JetBrains Mono", monospace;
   }
   .posts-page .posts-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: var(--bg);
     margin-bottom: 2.5rem;
-    padding-top: 2rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgba(100, 116, 139, 0.15);
   }
   .posts-page .breadcrumb {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.7rem;
     color: var(--text-secondary);
-    margin-bottom: 1.2rem;
+    padding-top: 2rem;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
     letter-spacing: 0.03em;
   }
   .posts-page .breadcrumb a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; text-decoration-color: var(--accent); }
@@ -1225,7 +1226,7 @@ html.no-transition *::before, html.no-transition *::after {
     padding-bottom: 2rem;
   }
 
-  .posts-page .posts-header {
+  .posts-page .breadcrumb {
     padding-top: 3rem;
   }
 }
