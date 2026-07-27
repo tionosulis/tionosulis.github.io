@@ -297,7 +297,7 @@ html.no-transition *::before, html.no-transition *::after {
       cursor: pointer;
       opacity: 0;
       transition: opacity 0.2s ease, background 0.2s ease;
-      color: var(--text);
+      color: var(--text-secondary);
       &:hover { background: var(--border); color: var(--text); }
     }
     &:hover .copy-btn { opacity: 1; }
