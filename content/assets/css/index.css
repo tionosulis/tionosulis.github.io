@@ -399,8 +399,8 @@ html.no-transition *::before, html.no-transition *::after {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #C07070;
-    box-shadow: 14px 0 0 #C0A868, 28px 0 0 #68B088;
+    background: #CA8080;
+    box-shadow: 14px 0 0 #CAB272, 28px 0 0 #72C298;
     transform: translateY(calc(50% - 1px));
   }
   .topbar::after {
