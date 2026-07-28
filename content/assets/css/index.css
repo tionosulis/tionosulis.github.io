@@ -391,6 +391,18 @@ html.no-transition *::before, html.no-transition *::after {
     z-index: 10;
     background: var(--bg);
   }
+  .topbar::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #C07070;
+    box-shadow: 14px 0 0 #C0A868, 28px 0 0 #68B088;
+    transform: translateY(calc(50% - 1px));
+  }
   .topbar::after {
     content: '';
     position: absolute;
