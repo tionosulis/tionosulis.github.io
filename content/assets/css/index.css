@@ -853,7 +853,7 @@ html.no-transition *::before, html.no-transition *::after {
   .article-page .breadcrumb {
     font-size: 0.7rem;
     color: var(--text-secondary);
-    margin-bottom: 1.2rem;
+    margin-top: 0.75rem;
   }
   .article-page .breadcrumb .prompt-char {
     color: var(--accent);
