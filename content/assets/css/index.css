@@ -118,7 +118,7 @@ html.no-transition *::before, html.no-transition *::after {
     }
   }
 
-  html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
+  html { scroll-behavior: smooth; scroll-padding-top: 8rem; }
 
   body {
     margin: 0;
