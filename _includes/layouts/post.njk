@@ -4,6 +4,23 @@ layout: layouts/base.njk
 <div class="article-page">
 <article>
   <header class="post-header">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ title | escape }}",
+  "url": "{{ metadata.url }}{{ page.url }}",
+  "datePublished": "{{ page.date | isoDateTime }}",
+  "dateModified": "{% if updates.length %}{{ updates[0].date | isoDateTime }}{% else %}{{ page.date | isoDateTime }}{% endif %}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ metadata.author.name }}",
+    "url": "{{ metadata.author.url }}"
+  }{% if description %},
+  "description": "{{ description | escape }}"{% endif %},
+  "image": "{{ metadata.url }}{{ image or metadata.image or '/assets/img/og/home.png' }}"
+}
+</script>
     <h1>{{ title }}</h1>
     <div class="post-meta">
       <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate("dd LLLL yyyy") }}</time>{% if updates.length %}{% for update in updates %} · <time datetime="{{ update.date | htmlDateString }}">{% if loop.first %}updated {% endif %}{{ update.date | readableDate("dd LLLL yyyy") }}</time>{% endfor %}{% endif %}
