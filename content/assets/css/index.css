@@ -75,21 +75,21 @@ html.no-transition *::before, html.no-transition *::after {
   }
 
   [data-theme="dark"] {
-    --bg: #141218;
-    --bg-secondary: #211F26;
-    --text: #E6E1E5;
-    --text-body: #CAC4D0;
-    --text-secondary: #938F99;
-    --text-tertiary: #625B71;
-    --border: #49454F;
+    --bg: #1A1A1A;
+    --bg-secondary: #222222;
+    --text: #E0E0E0;
+    --text-body: #CCCCCC;
+    --text-secondary: #999999;
+    --text-tertiary: #777777;
+    --border: #333333;
     --accent: #FBBF24;
     --accent-hover: #FCD34D;
     --selection: rgba(251, 191, 36, 0.25);
-    --syntax-bg: #1D1B20;
+    --syntax-bg: #222222;
     --error: #F2B8B5;
-    --statusbar-bg: #25232A;
+    --statusbar-bg: #2A2A2A;
     --statusbar-text: #CAC4D0;
-      --statusbar-mode: #FBBF24;
+    --statusbar-mode: #FBBF24;
 
     --img-glow:  0 1px 4px color-mix(in srgb, var(--accent) 5%, transparent),
                  0 0 14px color-mix(in srgb, var(--accent) 2%, transparent);
@@ -97,21 +97,21 @@ html.no-transition *::before, html.no-transition *::after {
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-      --bg: #141218;
-      --bg-secondary: #211F26;
-      --text: #E6E1E5;
-      --text-body: #CAC4D0;
-      --text-secondary: #938F99;
-      --text-tertiary: #625B71;
-      --border: #49454F;
+      --bg: #1A1A1A;
+      --bg-secondary: #222222;
+      --text: #E0E0E0;
+      --text-body: #CCCCCC;
+      --text-secondary: #999999;
+      --text-tertiary: #777777;
+      --border: #333333;
       --accent: #FBBF24;
       --accent-hover: #FCD34D;
       --selection: rgba(251, 191, 36, 0.25);
-      --syntax-bg: #1D1B20;
+      --syntax-bg: #222222;
       --error: #F2B8B5;
-      --statusbar-bg: #25232A;
+      --statusbar-bg: #2A2A2A;
       --statusbar-text: #CAC4D0;
-    --statusbar-mode: #FBBF24;
+      --statusbar-mode: #FBBF24;
 
       --img-glow:  0 1px 4px color-mix(in srgb, var(--accent) 5%, transparent),
                    0 0 14px color-mix(in srgb, var(--accent) 2%, transparent);
@@ -256,7 +256,7 @@ html.no-transition *::before, html.no-transition *::after {
     background-color: var(--syntax-bg) !important;
   }
   [data-theme="dark"] .shiki {
-    background-color: #1A1A1A !important;
+    background-color: #222222 !important;
   }
   [data-theme="dark"] .shiki span:not(.status-mode):not(.status-info) {
     color: var(--shiki-dark) !important;
@@ -264,7 +264,7 @@ html.no-transition *::before, html.no-transition *::after {
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) .shiki {
-      background-color: #1A1A1A !important;
+      background-color: #222222 !important;
     }
     :root:not([data-theme]) .shiki span:not(.status-mode):not(.status-info) {
       color: var(--shiki-dark) !important;
