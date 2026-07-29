@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fade-In Reveal — CSS Scroll-Driven Animations</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #fbbf2420;
+    color: #fbbf24;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid #fbbf2440;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+    color: #fbbf24;
+    font-weight: 600;
+  }
+
+  .intro {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .code-block {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    overflow-x: auto;
+  }
+
+  .code-block .kw { color: #f97583; }
+  .code-block .fn { color: #b392f0; }
+  .code-block .pr { color: #79b8ff; }
+  .code-block .vl { color: #ffab70; }
+
+  .card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    opacity: 1;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+    color: #fbbf24;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    color: #bbb;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .card .step {
+    display: inline-block;
+    background: #333;
+    color: #999;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    margin-bottom: 0.5rem;
+  }
+
+  .card:nth-child(1) {
+    animation: fade-in-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+
+  .card:nth-child(2) {
+    animation: fade-in-up linear both;
+    animation-timeline: view();
+    animation-range: entry 10% entry 50%;
+  }
+
+  .card:nth-child(3) {
+    animation: fade-in-up linear both;
+    animation-timeline: view();
+    animation-range: entry 20% entry 60%;
+  }
+
+  .card:nth-child(4) {
+    animation: fade-in-up linear both;
+    animation-timeline: view();
+    animation-range: entry 30% entry 70%;
+  }
+
+  .card:nth-child(5) {
+    animation: fade-in-up linear both;
+    animation-timeline: view();
+    animation-range: entry 40% entry 80%;
+  }
+
+  .card:nth-child(6) {
+    animation: fade-in-up linear both;
+    animation-timeline: view();
+    animation-range: entry 50% entry 90%;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fallback-note {
+    border-left: 3px solid #fbbf24;
+    padding: 0.75rem 1rem;
+    margin: 2rem 0;
+    background: #fbbf2408;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.85rem;
+    color: #aaa;
+    display: none;
+  }
+
+  @supports not (animation-timeline: view()) {
+    .fallback-note { display: block; }
+    .card { animation: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card { animation: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  p.lead-text {
+    color: #ccc;
+    margin-bottom: 2rem;
+  }
+
+  .spacer-note {
+    text-align: center;
+    color: #555;
+    font-size: 0.75rem;
+    margin: 0 0 0.5rem;
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="badge">view() · cascade reveal</div>
+  <h1>Fade-In Reveal Sequence</h1>
+  <p class="intro">Six cards, each with a staggered <code>animation-range</code>. Scroll to see them enter one by one.</p>
+
+  <div class="code-block">
+    <span class="kw">.card:nth-child(1)</span> {<br/>
+    &nbsp;&nbsp;<span class="pr">animation-timeline</span>: <span class="fn">view</span>();<br/>
+    &nbsp;&nbsp;<span class="pr">animation-range</span>: entry <span class="vl">0%</span> entry <span class="vl">40%</span>;<br/>
+    }<br/>
+    <span class="kw">.card:nth-child(2)</span> {<br/>
+    &nbsp;&nbsp;<span class="pr">animation-timeline</span>: <span class="fn">view</span>();<br/>
+    &nbsp;&nbsp;<span class="pr">animation-range</span>: entry <span class="vl">10%</span> entry <span class="vl">50%</span>;<br/>
+    }<br/>
+    ...
+  </div>
+
+  <div class="fallback-note">
+    ⚡ Your browser does not support <code>animation-timeline: view()</code>.
+    Cards appear fully visible without animation. Try Chrome 115+, Firefox 126+ (with flag), or Safari 18.2+.
+  </div>
+
+  <p class="lead-text">Each card starts its animation at a slightly different scroll position. Card 1 begins fading in immediately as it enters the viewport. Card 6 waits until it is halfway visible before starting. The overlap creates a cascading effect — the previous card is still animating when the next one begins.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="step">Step 1</div>
+      <h2>animation-range: entry 0% entry 40%</h2>
+      <p>This card starts animating as soon as it enters the viewport and finishes when 40% is visible. It is the first in the sequence — it completes before Card 2 has even started.</p>
+    </div>
+
+    <div class="card">
+      <div class="step">Step 2</div>
+      <h2>animation-range: entry 10% entry 50%</h2>
+      <p>Card 2 starts 10% later than Card 1. The 10% overlap means both cards are animating simultaneously for a brief moment, creating a wave-like cascade.</p>
+    </div>
+
+    <div class="card">
+      <div class="step">Step 3</div>
+      <h2>animation-range: entry 20% entry 60%</h2>
+      <p>By the time Card 3 begins, Card 1 has finished and Card 2 is midway. The cascade creates a visual rhythm that guides the eye downward.</p>
+    </div>
+
+    <div class="card">
+      <div class="step">Step 4</div>
+      <h2>animation-range: entry 30% entry 70%</h2>
+      <p>Each card maintains a 10% offset from the previous one. The result is a smooth, evenly-paced reveal that feels natural rather than mechanical.</p>
+    </div>
+
+    <div class="card">
+      <div class="step">Step 5</div>
+      <h2>animation-range: entry 40% entry 80%</h2>
+      <p>Linear easing keeps the animation consistent. No cubic-bezier curves needed — the scroll speed already provides natural acceleration and deceleration.</p>
+    </div>
+
+    <div class="card">
+      <div class="step">Step 6</div>
+      <h2>animation-range: entry 50% entry 90%</h2>
+      <p>The final card starts when it is halfway into the viewport and finishes just before it is fully visible. By then, the reader has already scrolled to the next section.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Demo for <em>CSS Scroll-Driven Animations: What They Actually Replace in Production</em> &mdash; zero JavaScript.</p>
+  </footer>
+</div>
+
+</body>
+</html>

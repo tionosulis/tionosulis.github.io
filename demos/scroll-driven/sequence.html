@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animation Sequencing — CSS Scroll-Driven Animations</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #fbbf2420;
+    color: #fbbf24;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid #fbbf2440;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+    color: #fbbf24;
+    font-weight: 600;
+  }
+
+  .intro {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .code-block {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    overflow-x: auto;
+  }
+
+  .code-block .kw { color: #f97583; }
+  .code-block .fn { color: #b392f0; }
+  .code-block .pr { color: #79b8ff; }
+  .code-block .vl { color: #ffab70; }
+
+  .project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .project {
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    opacity: 1;
+  }
+
+  .project-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .project-content h2 {
+    font-size: 1.05rem;
+    color: #fbbf24;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+  }
+
+  .project-content .status {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    margin-bottom: 0.4rem;
+  }
+
+  .project-content p {
+    font-size: 0.85rem;
+    color: #bbb;
+    line-height: 1.6;
+  }
+
+  .project-content .meta {
+    font-size: 0.75rem;
+    color: #777;
+    margin-top: 0.4rem;
+  }
+
+  .project:nth-child(1) { border-left: 3px solid #10b981; }
+  .project:nth-child(2) { border-left: 3px solid #3b82f6; }
+  .project:nth-child(3) { border-left: 3px solid #f59e0b; }
+  .project:nth-child(4) { border-left: 3px solid #ef4444; }
+
+  .project:nth-child(1) .project-icon { background: #10b981; }
+  .project:nth-child(2) .project-icon { background: #3b82f6; }
+  .project:nth-child(3) .project-icon { background: #f59e0b; }
+  .project:nth-child(4) .project-icon { background: #ef4444; }
+
+  .project:nth-child(1) .status { background: #10b98120; color: #10b981; }
+  .project:nth-child(2) .status { background: #3b82f620; color: #3b82f6; }
+  .project:nth-child(3) .status { background: #f59e0b20; color: #f59e0b; }
+  .project:nth-child(4) .status { background: #ef444420; color: #ef4444; }
+
+  .project:nth-child(1) {
+    animation: slide-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 25%;
+  }
+
+  .project:nth-child(2) {
+    animation: slide-in linear both;
+    animation-timeline: view();
+    animation-range: entry 5% entry 30%;
+  }
+
+  .project:nth-child(3) {
+    animation: slide-in linear both;
+    animation-timeline: view();
+    animation-range: entry 10% entry 35%;
+  }
+
+  .project:nth-child(4) {
+    animation: slide-in linear both;
+    animation-timeline: view();
+    animation-range: entry 15% entry 40%;
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-1.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .zones {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #222;
+    border-radius: 8px;
+    font-size: 0.8rem;
+  }
+
+  .zones-title {
+    color: #fbbf24;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .zone-bar {
+    display: flex;
+    height: 24px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+  }
+
+  .zone-segment {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .zone-legend {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .zone-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    color: #999;
+  }
+
+  .zone-legend-item span {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+  }
+
+  .fallback-note {
+    border-left: 3px solid #fbbf24;
+    padding: 0.75rem 1rem;
+    margin: 2rem 0;
+    background: #fbbf2408;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.85rem;
+    color: #aaa;
+    display: none;
+  }
+
+  @supports not (animation-timeline: view()) {
+    .fallback-note { display: block; }
+    .project { animation: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project { animation: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="badge">view() · sequencing</div>
+  <h1>Animation Sequencing</h1>
+  <p class="intro">Four items with overlapping animation ranges. Each item starts before the previous one finishes.</p>
+
+  <div class="code-block">
+    <span class="kw">.item:nth-child(1)</span> { <span class="pr">animation-range</span>: entry <span class="vl">0%</span> entry <span class="vl">25%</span>; }<br/>
+    <span class="kw">.item:nth-child(2)</span> { <span class="pr">animation-range</span>: entry <span class="vl">5%</span> entry <span class="vl">30%</span>; }<br/>
+    <span class="kw">.item:nth-child(3)</span> { <span class="pr">animation-range</span>: entry <span class="vl">10%</span> entry <span class="vl">35%</span>; }<br/>
+    <span class="kw">.item:nth-child(4)</span> { <span class="pr">animation-range</span>: entry <span class="vl">15%</span> entry <span class="vl">40%</span>; }
+  </div>
+
+  <div class="zones">
+    <div class="zones-title">Animation Range Overlap</div>
+    <div class="zone-bar">
+      <div class="zone-segment" style="background:#10b981;">Item 1</div>
+      <div class="zone-segment" style="background:#3b82f6;">Item 2</div>
+      <div class="zone-segment" style="background:#f59e0b;">Item 3</div>
+      <div class="zone-segment" style="background:#ef4444;">Item 4</div>
+    </div>
+    <div class="zone-legend">
+      <div class="zone-legend-item"><span style="background:#10b981;"></span> 0% → 25%</div>
+      <div class="zone-legend-item"><span style="background:#3b82f6;"></span> 5% → 30%</div>
+      <div class="zone-legend-item"><span style="background:#f59e0b;"></span> 10% → 35%</div>
+      <div class="zone-legend-item"><span style="background:#ef4444;"></span> 15% → 40%</div>
+    </div>
+  </div>
+
+  <div class="fallback-note">
+    ⚡ Sequencing requires <code>animation-timeline: view()</code>.
+    Your browser does not support it yet. Try Chrome 115+, Firefox 126+ (with flag), or Safari 18.2+.
+  </div>
+
+  <div class="project-grid">
+    <div class="project">
+      <div class="project-icon">A</div>
+      <div class="project-content">
+        <div class="status">● Active</div>
+        <h2>Design System Migration</h2>
+        <p>Migrating 47 components from legacy CSS to @scope and @layer architecture. Zero visual regressions across 12 products.</p>
+        <div class="meta">Started Jun 2026 · 4 engineers</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-icon">B</div>
+      <div class="project-content">
+        <div class="status">● In Progress</div>
+        <h2>Performance Budget Audit</h2>
+        <p>Baseline LCP at 3.2s, target 1.8s. Audit covers font loading, image optimization, and third-party script deferral.</p>
+        <div class="meta">Started Jul 2026 · 2 engineers</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-icon">C</div>
+      <div class="project-content">
+        <div class="status">● Review</div>
+        <h2>Accessibility Compliance</h2>
+        <p>WCAG 2.2 AA audit across 23 critical user journeys. Keyboard navigation and screen reader testing in progress.</p>
+        <div class="meta">Started Jul 2026 · 1 engineer</div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-icon">D</div>
+      <div class="project-content">
+        <div class="status">● Planning</div>
+        <h2>Documentation Overhaul</h2>
+        <p>Reorganizing 200+ pages into task-oriented sections. New contribution workflow and automated screenshot pipeline.</p>
+        <div class="meta">Starting Aug 2026 · 2 writers</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Demo for <em>CSS Scroll-Driven Animations: What They Actually Replace in Production</em> &mdash; zero JavaScript.</p>
+  </footer>
+</div>
+
+</body>
+</html>

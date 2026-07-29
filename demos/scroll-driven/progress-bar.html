@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading Progress Bar — CSS Scroll-Driven Animations</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    transform-origin: left center;
+    animation: progress linear;
+    animation-timeline: scroll(root);
+    z-index: 100;
+    box-shadow: 0 0 8px #fbbf2466;
+  }
+
+  @keyframes progress {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: #fbbf24;
+    font-weight: 600;
+  }
+
+  .subtitle {
+    color: #999;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #fbbf2420;
+    color: #fbbf24;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid #fbbf2440;
+    margin-bottom: 2rem;
+  }
+
+  .code-block {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    overflow-x: auto;
+  }
+
+  .code-block .kw { color: #f97583; }
+  .code-block .fn { color: #b392f0; }
+  .code-block .pr { color: #79b8ff; }
+  .code-block .vl { color: #ffab70; }
+
+  h2 {
+    color: #e0e0e0;
+    font-size: 1.3rem;
+    margin: 2.5rem 0 1rem;
+    font-weight: 600;
+  }
+
+  h2::before {
+    content: '## ';
+    color: #fbbf24;
+    opacity: 0.5;
+  }
+
+  p { margin-bottom: 1.2rem; color: #ccc; }
+
+  .fallback-note {
+    border-left: 3px solid #fbbf24;
+    padding: 0.75rem 1rem;
+    margin: 2rem 0;
+    background: #fbbf2408;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.85rem;
+    color: #aaa;
+    display: none;
+  }
+
+  @supports not (animation-timeline: scroll()) {
+    .fallback-note { display: block; }
+    .progress-bar { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .progress-bar { display: none; }
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar"></div>
+
+<div class="container">
+  <div class="badge">scroll(root) · progress bar</div>
+  <h1>Reading Progress Bar</h1>
+  <p class="subtitle">Scroll down. The amber bar at the top fills as you go.</p>
+
+  <div class="code-block">
+    <span class="kw">.progress-bar</span> {<br/>
+    &nbsp;&nbsp;<span class="pr">animation</span>: progress <span class="vl">linear</span>;<br/>
+    &nbsp;&nbsp;<span class="pr">animation-timeline</span>: <span class="fn">scroll</span>(root);<br/>
+    &nbsp;&nbsp;<span class="pr">transform-origin</span>: <span class="vl">left center</span>;<br/>
+    }<br/><br/>
+    <span class="kw">@keyframes</span> <span class="fn">progress</span> {<br/>
+    &nbsp;&nbsp;<span class="kw">from</span> { <span class="pr">transform</span>: <span class="fn">scaleX</span>(<span class="vl">0</span>); }<br/>
+    &nbsp;&nbsp;<span class="kw">to</span>&nbsp;&nbsp; { <span class="pr">transform</span>: <span class="fn">scaleX</span>(<span class="vl">1</span>); }<br/>
+    }
+  </div>
+
+  <div class="fallback-note">
+    ⚡ Your browser does not support <code>animation-timeline: scroll()</code>.
+    Try Chrome 115+, Firefox 126+ (with flag), or Safari 18.2+.
+  </div>
+
+  <h2>The Problem</h2>
+  <p>Long-form content tells you how much you have read — but only if you know where the bottom is. Scrolling to estimate remaining length is an unconscious mental calculation that every reader performs, and every reader gets wrong.</p>
+
+  <p>A reading progress bar eliminates that estimation by mapping scroll position to visual fill. The bar starts empty at the top of the page and reaches full width at the bottom. The feedback is instant, visual, and requires zero cognitive effort to interpret.</p>
+
+  <h2>Before Scroll-Driven Animations</h2>
+  <p>Before animation-timeline, a reading progress bar required a scroll event listener, a getBoundingClientRect call on every frame, and a manual update of the bar's width or transform. The JavaScript version runs on the main thread, competes with rendering for frame budget, and triggers layout thrashing on every scroll event.</p>
+
+  <p>The CSS version runs on the compositor thread with zero JavaScript execution. The bar updates at the compositor's refresh rate, independent of main-thread load. On a mid-range mobile device, the difference between a scroll-listener progress bar and a CSS scroll-driven one is the difference between jank and smooth scrolling.</p>
+
+  <h2>When Not to Use It</h2>
+  <p>A reading progress bar is a decorative enhancement. If the bar is invisible, the reader can still read the content. This is why the progressive enhancement pattern matters: default to no animation, layer the bar on top only when the browser supports it and the user has not requested reduced motion.</p>
+
+  <p>Do not use a reading progress bar on pages shorter than one viewport height — there is nothing to track. Do not use it on pages where scroll position is programmatically controlled (carousels, single-page apps with virtual scrolling).</p>
+
+  <h2>Implementation Notes</h2>
+  <p>The bar uses <code>transform: scaleX()</code> with <code>transform-origin: left center</code> to fill from left to right. Using transform instead of width keeps the animation on the compositor thread. Width changes trigger layout; transform changes do not.</p>
+
+  <p>The <code>scroll(root)</code> value tracks the document's scroll position. For containers other than the root, pass a selector or use <code>scroll(nearest)</code> for the closest scrollable ancestor.</p>
+
+  <p>Position is <code>fixed</code> so the bar stays visible at the top of the viewport regardless of scroll state. The z-index ensures it renders above page content.</p>
+
+  <h2>Variations</h2>
+  <p>Instead of a flat bar, you can use a gradient, a dashed pattern, or a two-tone indicator that changes color at 50%. The animation keyframes remain the same — only the visual styling differs. For a bar that fills right-to-left (for RTL layouts), use <code>transform-origin: right center</code>.</p>
+
+  <p>For a bar that sits inside the page rather than fixed to the viewport, use <code>position: sticky</code> instead of <code>position: fixed</code>. The animation timeline remains unchanged.</p>
+
+  <h2>Accessibility</h2>
+  <p>The bar is decorative. It does not convey information essential to understanding the content. The <code>prefers-reduced-motion: reduce</code> media query hides it entirely — users who do not want motion effects see a clean, bar-free interface.</p>
+
+  <p>No ARIA attributes are needed. The bar is a visual affordance, not a functional element. Screen readers ignore it.</p>
+
+  <footer>
+    <p>Demo for <em>CSS Scroll-Driven Animations: What They Actually Replace in Production</em> &mdash; zero JavaScript.</p>
+  </footer>
+</div>
+
+</body>
+</html>
