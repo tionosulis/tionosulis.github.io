@@ -404,7 +404,7 @@ html.no-transition *::before, html.no-transition *::after {
     right: 0;
     height: 1rem;
     background:
-      linear-gradient(to right, transparent 89px, var(--border) 89px)
+      linear-gradient(to right, transparent 60px, var(--border) 60px)
         0 0 / 100% 1px no-repeat,
       var(--bg);
   }
@@ -419,8 +419,8 @@ html.no-transition *::before, html.no-transition *::after {
     body:has(.home-terminal) .topbar::after {
       background:
         linear-gradient(to right,
-          transparent max(calc(50% - 309px), 89px),
-          var(--border) max(calc(50% - 309px), 89px))
+          transparent max(calc(50% - 309px), 60px),
+          var(--border) max(calc(50% - 309px), 60px))
           0 0 / 100% 1px no-repeat,
         var(--bg);
     }
