@@ -3,7 +3,7 @@ title: "CSS Anchor Positioning: Drop Floating UI for Pure CSS"
 description: "Anchor Positioning hit Baseline 2026. Replace getBoundingClientRect and Floating UI with four lines of CSS — tooltips, dropdowns, popovers with zero JavaScript."
 date: 2026-07-15
 draft: false
-pinned: true
+pinned: false
 tags: [css, performance, standards, walkthrough]
 pageHasCode: true
 image: /assets/img/og/css-anchor-positioning.png

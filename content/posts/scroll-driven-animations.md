@@ -3,9 +3,12 @@ title: "CSS Scroll-Driven Animations: What They Actually Replace in Production"
 seoTitle: "Scroll-Driven Animations: Production Decision Guide"
 description: "animation-timeline, scroll(), view() — now at ~82% global support. A decision framework for when CSS wins, when JS still wins, and the progressive enhancement pattern that keeps your site working in every browser."
 date: 2026-07-23
-draft: true
+draft: false
+pinned: true
 tags: [css, standards, performance]
 pageHasCode: true
+image: /assets/img/og/scroll-driven-animations.png
+image_alt: "Performance sketch comparing heavy JavaScript scroll listeners with native CSS scroll and view timelines."
 ---
 
 `$ man scroll-driven-animations`
@@ -30,6 +33,12 @@ Now:
 CSS Scroll-Driven Animations — the `animation-timeline`, `scroll()`, and `view()` API — let you tie animation progress to scroll position instead of wall-clock time. A card fades in when it enters the viewport. A parallax background shifts at a different rate. All without JavaScript, all on the compositor thread.
 
 But this is not a tutorial. Tutorials are everywhere. This is a **decision framework**: what this API actually replaces in production, what it cannot replace, and the progressive enhancement pattern that keeps your site working when support is partial.
+
+![Performance sketch comparing heavy JavaScript scroll listeners with native CSS scroll and view timelines.](/assets/img/scroll-driven-animations.svg)
+
+*Shifting visual scroll effects from main-thread JavaScript to declarative, compositor-driven CSS animation timelines.*
+
+This pattern — replace a JavaScript library with a declarative CSS API, gain compositor-thread performance, accept a progressive enhancement fallback — is the same trajectory [CSS Anchor Positioning](/posts/css-anchor-positioning/) follows. That post covered replacing Floating UI with `anchor()` and `position-area`. This one covers replacing scroll listeners and IntersectionObservers with `scroll()` and `view()`.
 
 ${toc}
 
@@ -209,7 +218,7 @@ The most common scroll animation pattern. Previously IntersectionObserver + clas
 }
 ```
 
-**Verdict: ✅ Replace.** The CSS version runs on the compositor, costs zero JS bundle bytes, and respects reduced motion preferences natively. The IntersectionObserver version fires main-thread callbacks for every intersection change.
+**Verdict: ✅ Replace.** The CSS version runs on the compositor, costs zero JS bundle bytes, and respects reduced motion preferences natively. The IntersectionObserver version fires main-thread callbacks for every intersection change — a pattern I covered in depth for [scroll-aware navigation](/posts/scroll-aware-toc-intersection-observer/). With `view()`, no observer setup, no class toggle, no cleanup.
 
 Try it: [Fade-in reveal demo](/demos/scroll-driven/reveal.html)
 
@@ -498,6 +507,8 @@ If you maintain an existing codebase using IntersectionObserver or scroll listen
 5. **Remove IntersectionObserver code** — only after confirming that all visual effects are gated by `@supports` and the default state is correct.
 
 Do not migrate patterns that need direction detection, infinite scroll, or programmatic control. Those remain JavaScript concerns.
+
+Alongside [CSS Anchor Positioning](/posts/css-anchor-positioning/) (replacing Floating UI) and [Cross-Document View Transitions](/posts/cross-document-view-transitions/) (replacing SPA routers), Scroll-Driven Animations completes a trilogy of CSS APIs that shift work from JavaScript to the compositor thread. Each follows the same pattern: author the fallback first, layer the enhancement on top, respect user preferences.
 
 ## The Bottom Line
 
