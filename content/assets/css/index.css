@@ -17,8 +17,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none; }
-  ::view-transition-old(topbar),
-  ::view-transition-new(topbar) { animation: none; }
   ::view-transition-old(root),
   ::view-transition-new(root) { animation-duration: 0.01ms; }
 }
@@ -29,13 +27,6 @@ html.no-transition *::before, html.no-transition *::after {
 }
 
 @view-transition { navigation: auto; }
-
-::view-transition-old(topbar) {
-  animation: none;
-}
-::view-transition-new(topbar) {
-  animation: none;
-}
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -392,6 +383,7 @@ html.no-transition *::before, html.no-transition *::after {
     letter-spacing: 0.02em;
     white-space: nowrap;
   }
+  .layout { max-width: 810px; margin: 0 auto; padding: 0; }
   .topbar {
     display: flex;
     align-items: center;
@@ -404,7 +396,6 @@ html.no-transition *::before, html.no-transition *::after {
     top: 0;
     z-index: 10;
     background-color: var(--bg);
-    view-transition-name: topbar;
   }
   .topbar::after {
     content: '';
@@ -1267,10 +1258,6 @@ html.no-transition *::before, html.no-transition *::after {
 
 @media (min-width: 768px) {
   body { padding: 0 3rem; }
-
-  .layout {
-    padding: 0;
-  }
 
   .topbar {
     margin-bottom: 3.236rem;
