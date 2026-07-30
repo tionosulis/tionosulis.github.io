@@ -17,6 +17,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none; }
+  ::view-transition-old(topbar),
+  ::view-transition-new(topbar) { animation-duration: 0.01ms; }
   ::view-transition-old(root),
   ::view-transition-new(root) { animation-duration: 0.01ms; }
 }
@@ -28,9 +30,14 @@ html.no-transition *::before, html.no-transition *::after {
 
 @view-transition { navigation: auto; }
 
+::view-transition-old(topbar),
+::view-transition-new(topbar) {
+  animation-duration: 0s;
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 250ms;
+  animation-duration: 180ms;
   animation-timing-function: ease;
 }
 
@@ -395,6 +402,7 @@ html.no-transition *::before, html.no-transition *::after {
     top: 0;
     z-index: 10;
     background-color: var(--bg);
+    view-transition-name: topbar;
   }
   .topbar::after {
     content: '';
@@ -534,12 +542,12 @@ html.no-transition *::before, html.no-transition *::after {
   .toggle-bracket {
     color: var(--accent);
     opacity: 0.85;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.15s ease;
   }
   .theme-toggle:hover .toggle-bracket,
   .theme-toggle-posts:hover .toggle-bracket { opacity: 1; }
 
-  .toggle-label { min-width: 6ch; }
+  .toggle-label { transition: color 0.15s ease; }
   .theme-toggle:hover .toggle-label,
   .theme-toggle-posts:hover .toggle-label { color: var(--accent); }
 
