@@ -19,6 +19,8 @@
   *, *::before, *::after { transition: none; }
   ::view-transition-old(root),
   ::view-transition-new(root) { animation-duration: 0.01ms; }
+  ::view-transition-old(topbar),
+  ::view-transition-new(topbar) { animation-duration: 0.01ms; }
 }
 
 html.no-transition, html.no-transition *,
@@ -26,7 +28,12 @@ html.no-transition *::before, html.no-transition *::after {
   transition: none !important;
 }
 
-@view-transition { navigation: auto; }
+@view-transition { navigation: none; }
+
+::view-transition-old(topbar),
+::view-transition-new(topbar) {
+  animation-duration: 0.01ms;
+}
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -396,6 +403,7 @@ html.no-transition *::before, html.no-transition *::after {
     top: 0;
     z-index: 10;
     background-color: var(--bg);
+    view-transition-name: topbar;
   }
   .topbar::after {
     content: '';
