@@ -18,7 +18,7 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none; }
   ::view-transition-old(topbar),
-  ::view-transition-new(topbar) { animation-duration: 0.01ms; }
+  ::view-transition-new(topbar) { animation: none; }
   ::view-transition-old(root),
   ::view-transition-new(root) { animation-duration: 0.01ms; }
 }
@@ -30,9 +30,11 @@ html.no-transition *::before, html.no-transition *::after {
 
 @view-transition { navigation: auto; }
 
-::view-transition-old(topbar),
+::view-transition-old(topbar) {
+  animation: none;
+}
 ::view-transition-new(topbar) {
-  animation-duration: 0s;
+  animation: none;
 }
 
 ::view-transition-old(root),
