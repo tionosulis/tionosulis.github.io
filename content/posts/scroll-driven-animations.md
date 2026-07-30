@@ -13,6 +13,12 @@ image_alt: "Performance sketch comparing heavy JavaScript scroll listeners with 
 
 `$ man scroll-driven-animations`
 
+![Performance sketch comparing heavy JavaScript scroll listeners with native CSS scroll and view timelines.](/assets/img/scroll-driven-animations.svg)
+
+*Shifting visual scroll effects from main-thread JavaScript to declarative, compositor-driven CSS animation timelines.*
+
+This pattern — replace a JavaScript library with a declarative CSS API, gain compositor-thread performance, accept a progressive enhancement fallback — is the same trajectory [CSS Anchor Positioning](/posts/css-anchor-positioning/) follows. That post covered replacing Floating UI with `anchor()` and `position-area`. This one covers replacing scroll listeners and IntersectionObservers with `scroll()` and `view()`.
+
 Until last year, a progress bar that fills as you scroll meant 50 lines of JavaScript — a scroll event listener, `getBoundingClientRect` calls, `requestAnimationFrame` throttling, and a prayer that it does not jank on mobile.
 
 Now:
@@ -33,12 +39,6 @@ Now:
 CSS Scroll-Driven Animations — the `animation-timeline`, `scroll()`, and `view()` API — let you tie animation progress to scroll position instead of wall-clock time. A card fades in when it enters the viewport. A parallax background shifts at a different rate. All without JavaScript, all on the compositor thread.
 
 But this is not a tutorial. Tutorials are everywhere. This is a **decision framework**: what this API actually replaces in production, what it cannot replace, and the progressive enhancement pattern that keeps your site working when support is partial.
-
-![Performance sketch comparing heavy JavaScript scroll listeners with native CSS scroll and view timelines.](/assets/img/scroll-driven-animations.svg)
-
-*Shifting visual scroll effects from main-thread JavaScript to declarative, compositor-driven CSS animation timelines.*
-
-This pattern — replace a JavaScript library with a declarative CSS API, gain compositor-thread performance, accept a progressive enhancement fallback — is the same trajectory [CSS Anchor Positioning](/posts/css-anchor-positioning/) follows. That post covered replacing Floating UI with `anchor()` and `position-area`. This one covers replacing scroll listeners and IntersectionObservers with `scroll()` and `view()`.
 
 ${toc}
 
