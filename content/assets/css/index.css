@@ -13,7 +13,7 @@
 
 @layer reset, base, shiki, components, utilities;
 
-*, *::before, *::after { transition: color 0.2s ease-out, background-color 0.2s ease-out, border-top-color 0.2s ease-out, border-right-color 0.2s ease-out, border-bottom-color 0.2s ease-out, border-left-color 0.2s ease-out, box-shadow 0.2s ease-out; }
+*, *::before, *::after { transition: color 0.2s ease, background-color 0.2s ease, border-top-color 0.2s ease, border-right-color 0.2s ease, border-bottom-color 0.2s ease, border-left-color 0.2s ease, box-shadow 0.2s ease; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none; }
