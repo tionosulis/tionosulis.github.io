@@ -31,7 +31,7 @@ html.no-transition *::before, html.no-transition *::after {
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 250ms;
-  animation-timing-function: ease-out;
+  animation-timing-function: ease;
 }
 
 @keyframes cursor-blink {
