@@ -13,7 +13,7 @@
 
 @layer reset, base, shiki, components, utilities;
 
-*, *::before, *::after { transition: color 0.2s ease, background-color 0.2s ease, border-top-color 0.2s ease, border-right-color 0.2s ease, border-bottom-color 0.2s ease, border-left-color 0.2s ease, box-shadow 0.2s ease; }
+*, *::before, *::after { transition: color 0.2s ease-out, background-color 0.2s ease-out, border-top-color 0.2s ease-out, border-right-color 0.2s ease-out, border-bottom-color 0.2s ease-out, border-left-color 0.2s ease-out, box-shadow 0.2s ease-out; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none; }
@@ -30,8 +30,8 @@ html.no-transition *::before, html.no-transition *::after {
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 180ms;
-  animation-timing-function: ease;
+  animation-duration: 250ms;
+  animation-timing-function: ease-out;
 }
 
 @keyframes cursor-blink {
@@ -404,7 +404,7 @@ html.no-transition *::before, html.no-transition *::after {
     right: 0;
     height: 1rem;
     background:
-      linear-gradient(to right, transparent 60px, var(--border) 60px)
+      linear-gradient(to right, transparent 91px, var(--border) 91px)
         0 0 / 100% 1px no-repeat,
       var(--bg);
   }
@@ -419,8 +419,8 @@ html.no-transition *::before, html.no-transition *::after {
     body:has(.home-terminal) .topbar::after {
       background:
         linear-gradient(to right,
-          transparent max(calc(50% - 309px), 60px),
-          var(--border) max(calc(50% - 309px), 60px))
+          transparent max(calc(50% - 309px), 91px),
+          var(--border) max(calc(50% - 309px), 91px))
           0 0 / 100% 1px no-repeat,
         var(--bg);
     }
