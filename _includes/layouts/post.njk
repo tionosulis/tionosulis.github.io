@@ -30,14 +30,14 @@ layout: layouts/base.njk
       {% endfor %}
       {% endif %}
     </div>
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <span class="prompt-char">$</span> <span class="cmd">cat</span> <a href="/">~</a>/<a href="/posts/">posts</a>/<span class="current">{{ page.fileSlug }}.md</span>
-    </nav>
   </header>
   {% if _notice %}
   {% include "partials/notice.njk" %}
   {% endif %}
   <div class="post-divider" aria-hidden="true"></div>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <span class="prompt-char">$</span> <span class="cmd">cat</span> <a href="/">~</a>/<a href="/posts/">posts</a>/<span class="current">{{ page.fileSlug }}.md</span>
+  </nav>
   {{ content | safe }}
   <hr>
   <p class="post-exit" aria-hidden="true">

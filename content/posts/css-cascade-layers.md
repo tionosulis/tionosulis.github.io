@@ -10,11 +10,11 @@ image: /assets/img/og/css-cascade-layers.png
 image_alt: "CSS cascade layers priority stack — @layer architecture diagram"
 ---
 
-`$ man css-cascade-layers`
-
 ![CSS cascade layers priority stack — @layer architecture diagram](../assets/img/css-cascade-layers.svg)
 
 *Layer order beats specificity. One declaration line — the entire cascade under control.*
+
+`$ man css-cascade-layers`
 
 ${toc}
 

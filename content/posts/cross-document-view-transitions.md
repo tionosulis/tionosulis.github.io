@@ -11,11 +11,11 @@ image: /assets/img/og/cross-document-view-transitions.png
 image_alt: "Sketched diagram showing three states of a cross-document view transition — Page A on the left, a ghosted mid-transition overlay in the center, and Page B on the right with amber highlights."
 ---
 
-`$ man view-transitions`
-
 ![Three states of a view transition — Page A left, ghosted mid-transition overlay center, Page B right with amber highlights.](../assets/img/cross-document-view-transitions.svg)
 
 *Page A fades out, Page B fades in — the browser handles the rest with pure CSS.*
+
+`$ man view-transitions`
 
 Every static site shares the same friction point: the moment between clicking a link and seeing the next page. A white flash. A layout shift. That split-second disorientation that makes multi-page apps feel sluggish compared to SPAs.
 

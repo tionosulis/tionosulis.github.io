@@ -10,11 +10,11 @@ image: /assets/img/og/css-anchor-positioning.png
 image_alt: "Button labeled anchor-name: --btn with a tooltip tethered below on a dark background, showing CSS anchor positioning with amber highlights and position-area grid overlay."
 ---
 
-`$ man anchor-positioning`
-
 ![CSS anchor positioning diagram: button anchor-name, tooltip tethered below, position-area grid overlay, amber on dark.](../assets/img/css-anchor-positioning.svg)
 
 *Trigger button tethered to a tooltip via CSS anchor positioning — browser handles placement.*
+
+`$ man anchor-positioning`
 
 Every frontend developer has written this bug at least once: a tooltip that breaks on scroll, a dropdown that clips at the viewport edge, a popover that detaches from its trigger after resize.
 

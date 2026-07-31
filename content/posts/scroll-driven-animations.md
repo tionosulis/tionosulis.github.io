@@ -11,11 +11,11 @@ image: /assets/img/og/scroll-driven-animations.png
 image_alt: "Performance sketch comparing heavy JavaScript scroll listeners with native CSS scroll and view timelines."
 ---
 
-`$ man scroll-driven-animations`
-
 ![Performance sketch comparing heavy JavaScript scroll listeners with native CSS scroll and view timelines.](/assets/img/scroll-driven-animations.svg)
 
 *Shifting visual scroll effects from main-thread JavaScript to declarative, compositor-driven CSS animation timelines.*
+
+`$ man scroll-driven-animations`
 
 Until last year, a progress bar that fills as you scroll meant 50 lines of JavaScript — a scroll event listener, `getBoundingClientRect` calls, `requestAnimationFrame` throttling, and a prayer that it does not jank on mobile.
 

@@ -11,11 +11,11 @@ image: /assets/img/og/css-scope.png
 image_alt: "@scope dashed boundary wrapping a card component on dark background, with amber scoped selectors and blue donut exclusion zone."
 ---
 
-`$ man css-scope`
-
 ![@scope diagram: card with dashed scope boundary, scoped selectors in amber, donut exclusion in blue outline.](../assets/img/css-scope.svg)
 
 *@scope boundary keeps card selectors contained; donut scoping excludes the footer.*
+
+`$ man css-scope`
 
 Every CSS codebase eventually hits the same wall: **the global namespace**.
 
