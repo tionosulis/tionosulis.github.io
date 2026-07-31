@@ -7,6 +7,7 @@
     <span class="toggle-label">--dark</span>
     <span class="toggle-bracket">]</span>
   </button>
+  <div class="topbar-gap" aria-hidden="true"></div>
 </header>
 <script>
 function toggleTheme(){var e=document.documentElement.getAttribute("data-theme"),t=e==="dark"?"light":"dark",l=document.querySelectorAll(".theme-toggle,.theme-toggle-posts");document.documentElement.setAttribute("data-theme",t),localStorage.setItem("theme",t),l.forEach(function(n){n.querySelector('.toggle-label').textContent=t==="dark"?"--light":"--dark"})}

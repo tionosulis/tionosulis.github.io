@@ -400,6 +400,14 @@ html.no-transition *::before, html.no-transition *::after {
     background-color: var(--bg);
     view-transition-name: topbar;
   }
+  .topbar-gap {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background-color: var(--bg);
+  }
   .topbar::after {
     content: '';
     position: absolute;
