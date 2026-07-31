@@ -173,7 +173,6 @@ html.no-transition *::before, html.no-transition *::after {
   }
 
   pre {
-    background-color: var(--syntax-bg);
     border-width: 1px;
     border-style: solid;
     border-color: var(--border);
@@ -270,17 +269,11 @@ html.no-transition *::before, html.no-transition *::after {
     font-variant-ligatures: none;
     background-color: var(--syntax-bg) !important;
   }
-  [data-theme="dark"] .shiki {
-    background-color: #222222 !important;
-  }
   [data-theme="dark"] .shiki span:not(.status-mode):not(.status-info) {
     color: var(--shiki-dark) !important;
   }
 
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) .shiki {
-      background-color: #222222 !important;
-    }
     :root:not([data-theme]) .shiki span:not(.status-mode):not(.status-info) {
       color: var(--shiki-dark) !important;
     }
@@ -361,6 +354,8 @@ html.no-transition *::before, html.no-transition *::after {
     margin-top: 2.25rem;
     font-size: 0.9rem;
     position: relative;
+    background-color: var(--bg);
+    isolation: isolate;
     p { display: none; }
     ul { list-style: none; padding: 0; margin: 0; }
     li {
@@ -409,29 +404,18 @@ html.no-transition *::before, html.no-transition *::after {
     content: '';
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 91px;
     right: 0;
-    height: 1rem;
-    background:
-      linear-gradient(to right, transparent 91px, var(--border) 91px)
-        0 0 / 100% 1px no-repeat,
-      var(--bg);
+    height: 1px;
+    background-color: var(--border);
   }
   body:has(.layout--posts) .topbar::after {
-    background:
-      linear-gradient(to right, var(--border), var(--border))
-        0 0 / 100% 1px no-repeat,
-      var(--bg);
+    left: 0;
   }
   @media (min-width: 834px) {
     body:has(.article-page) .topbar::after,
     body:has(.home-terminal) .topbar::after {
-      background:
-        linear-gradient(to right,
-          transparent max(calc(50% - 309px), 91px),
-          var(--border) max(calc(50% - 309px), 91px))
-          0 0 / 100% 1px no-repeat,
-        var(--bg);
+      left: max(calc(50% - 309px), 91px);
     }
   }
   .topbar::before {
@@ -563,6 +547,8 @@ html.no-transition *::before, html.no-transition *::after {
     border-style: solid;
     border-color: var(--border);
     box-shadow: var(--img-glow);
+    background-color: var(--bg);
+    transition: box-shadow 0.2s ease !important;
   }
 
   article p:has(img) { margin-top: 1.5rem; }
@@ -943,6 +929,8 @@ html.no-transition *::before, html.no-transition *::after {
     padding: 0.75rem 1rem 0.75rem 1.25rem;
     margin-bottom: 2rem;
     font-size: 0.75rem;
+    background-color: var(--bg);
+    isolation: isolate;
     color: var(--text-secondary);
     line-height: 1.8;
     position: relative;
