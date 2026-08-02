@@ -776,6 +776,6 @@
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#B31D28;--shiki-dark:#FDAEB7&quot;&gt;-     decoding: &quot;async&quot;,&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#22863A;--shiki-dark:#85E89D&quot;&gt;+     decoding: &quot;auto&quot;,&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#24292E;--shiki-dark:#E1E4E8&quot;&gt;    },&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#24292E;--shiki-dark:#E1E4E8&quot;&gt;});&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/span&gt;&lt;span class=&quot;code-statusbar&quot;&gt;&lt;span class=&quot;status-mode&quot;&gt;NORMAL&lt;/span&gt;&lt;span class=&quot;status-info&quot;&gt;diff │ 11L&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;p&gt;The most impactful bug fix I’ll make this year was deleting eight words. The second most impactful was adding two lines.&lt;/p&gt;</content>
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#24292E;--shiki-dark:#E1E4E8&quot;&gt;});&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/span&gt;&lt;span class=&quot;code-statusbar&quot;&gt;&lt;span class=&quot;status-mode&quot;&gt;NORMAL&lt;/span&gt;&lt;span class=&quot;status-info&quot;&gt;diff │ 11L&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;p&gt;The smallest diff in this whole saga mattered most: eight characters deleted, two lines added.&lt;/p&gt;</content>
   </entry>
 </feed>
