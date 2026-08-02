@@ -3,7 +3,7 @@ title: "Dark Mode Done Right: Zero Flicker, CSS Architecture, and the Devil in t
 seoTitle: "Dark Mode Done Right: Zero Flicker, CSS Architecture"
 description: "Zero-flicker dark mode with inline script, CSS custom properties, and localStorage persistence. A production implementation with action-based bracket labels."
 date: 2026-06-13
-updated: 2026-07-19
+updated: 2026-08-02
 draft: false
 image: /assets/img/og/dark-mode-done-right.png
 image_alt: "Three pillars of dark mode: Zero Flicker (inline script icon), CSS Architecture (custom properties diagram), and The Devil in the Details (action-based bracket labels)"
@@ -41,7 +41,6 @@ The fix is brutally simple: run your theme logic in a `<script>` tag in `<head>`
         ? "dark" : "light";
     }
     document.documentElement.setAttribute("data-theme", t);
-    document.documentElement.style.colorScheme = t;
   </script>
   <link rel="stylesheet" href="/styles.css">
 </head>
@@ -53,31 +52,31 @@ Here's the sequence of events:
 2. Hits the `<script>` tag — runs it synchronously
 3. Reads `localStorage`, falls back to `prefers-color-scheme`
 4. Sets `data-theme` on `<html>`
-5. Sets `style.colorScheme` on `<html>` — tells the browser which native UI to render (scrollbars, form controls, selection colors)
-6. Browser continues parsing, eventually hits `<link rel="stylesheet">`
-7. CSS loads and evaluates with the correct `[data-theme]` value
+5. Browser continues parsing, eventually hits `<link rel="stylesheet">`
+6. CSS loads and evaluates with the correct `[data-theme]` value — `color-scheme` included, so native UI (scrollbars, form controls, selection colors) matches from the first paint
 
 The script runs before any CSS applies. There's no repaint, no flicker, no flash of wrong theme.
 
-That's it. Sixteen lines, minified to under 200 bytes. No framework, no JavaScript library, no runtime dependency after page load.
+That's it. A single inline script, minified to about 170 bytes. No framework, no JavaScript library, no runtime dependency after page load.
 
 ## CSS Variable Architecture
 
-With the toggle attribute in place, the stylesheet defines two sets of custom properties at `:root`. The `color-scheme` declaration is critical — it tells the browser this page supports both schemes, so native elements (scrollbars, form controls, selection highlights) use the correct palette:
+With the toggle attribute in place, the stylesheet defines two sets of custom properties at `:root`. The `color-scheme` declaration on each block is critical — it tells the browser which native scheme is active, so native elements (scrollbars, form controls, selection highlights) follow the theme:
 
 ```css
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --bg: #f8f5f0;
   --text: #1b1e23;
-  --accent: #2563eb;
+  --accent: #B45309;
   /* ... more variables */
 }
 
 [data-theme="dark"] {
-  --bg: #0a0a0b;
-  --text: #d6d6da;
-  --accent: #60a5fa;
+  color-scheme: dark;
+  --bg: #1A1A1A;
+  --text: #E0E0E0;
+  --accent: #FBBF24;
   /* ... more variables */
 }
 ```
@@ -116,7 +115,7 @@ This gives users the best of both worlds. The site automatically matches their O
 
 ### Toggle Implementation
 
-The toggle button reads the current `data-theme` attribute and inverts it, updating the UI label and native color scheme:
+The toggle button reads the current `data-theme` attribute, inverts it, saves the choice, and updates the UI labels. The native color scheme follows from CSS automatically:
 
 ```javascript
 function toggleTheme() {
@@ -130,17 +129,14 @@ function toggleTheme() {
     el.querySelector(".toggle-label").textContent =
       next === "dark" ? "--light" : "--dark";
   });
-  setTimeout(function() {
-    html.style.colorScheme = next;
-  }, 200);
 }
 ```
 
-Beyond the attribute swap and `localStorage` save, two things happen:
+Beyond the attribute swap and `localStorage` save, one thing happens:
 
 1. **Label update** — every toggle button on the page updates its text to show the *action* the user just took. When switching to dark mode, the label shows `[--light]` (click to switch to light). This is the action-based label pattern (detailed below).
 
-2. **Delayed `colorScheme`** — the native UI scheme changes 200ms after the color transition starts, so scrollbars and form controls snap in sync when the CSS transition finishes.
+That's the entire toggle — there's no `colorScheme` juggling. An earlier version of this function also set `html.style.colorScheme` with a 200ms delay, trying to sync native UI with the CSS transition. That timer was a workaround that had to guess when the transition ended. The current version drops it entirely: `color-scheme` now lives in CSS, so the browser swaps scrollbars and form controls the moment the `data-theme` attribute changes. Details in Native UI Sync below.
 
 ## Action-Based Labels
 
@@ -175,19 +171,23 @@ This runs before the user has ever interacted with the toggle, ensuring the init
 
 The `color-scheme` CSS property controls how the browser renders native UI elements — scrollbar thumbs, form control highlights, text selection backgrounds, and the `@media (prefers-color-scheme)` value that `<input>` and `<textarea>` elements read internally.
 
-The `:root` declaration sets up support for both modes:
+The current stylesheet declares a scheme per theme state:
 
 ```css
-:root { color-scheme: light dark; }
+:root {
+  color-scheme: light;
+  /* ... variables ... */
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  /* ... variables ... */
+}
 ```
 
-But declaring support isn't enough — you need to tell the browser *which one is active*. The inline script in `<head>` handles initial load:
+No JavaScript required. When the toggle (or OS listener) swaps `data-theme`, the CSS cascade applies the matching `color-scheme` in the same pass — native UI follows the attribute the moment it changes.
 
-```javascript
-document.documentElement.style.colorScheme = t;
-```
-
-For the toggle, there's a deliberate 200ms delay:
+This wasn't always the case. The original implementation set `colorScheme` from JavaScript — on load in the inline script, and on toggle with a **200ms delay**:
 
 ```javascript
 setTimeout(function() {
@@ -195,7 +195,34 @@ setTimeout(function() {
 }, 200);
 ```
 
-Why 200ms? The CSS transition on all elements is `0.2s ease`. If `colorScheme` changed at the same moment, native UI elements would snap to the new scheme instantly while page colors are still transitioning. The delay synchronizes the two — the native UI swaps exactly when the color transition finishes, making the entire theme change feel unified.
+The delay existed because the page has a global `0.2s ease` transition on colors. If `colorScheme` changed at the same instant, native UI would snap while page colors were still transitioning — a visible half-second of desync. The timer approximated when the transition ended.
+
+Moving `color-scheme` into CSS was a simplification *and* a fix: no timing guess, no extra property for JavaScript to manage, one less thing that can drift. The native UI rides the same cascade as everything else.
+
+## Toggle-Time Flicker (the Quiet Kind)
+
+The zero-flicker trick handles the initial load, and the bfcache guard (below) handles navigation. But there's a third kind of flicker — one that happens *while* the theme transition itself is running.
+
+Every element with a border or glow reads `var(--border)` or `var(--img-glow)` during the transition. If that element has no background of its own, whatever sits behind it — usually the page `--bg` — shows through the changing border, and the element visibly flashes against the old theme.
+
+On this blog, three elements were the worst offenders: the table of contents, the notice banner, and hero images (whose amber glow uses `color-mix` against the accent). The fix:
+
+```css
+img {
+  background-color: var(--bg);
+  transition: box-shadow 0.2s ease !important;
+}
+
+.toc,
+.notice {
+  background-color: var(--bg);
+  isolation: isolate;
+}
+```
+
+An explicit `background-color: var(--bg)` makes each element carry its own theme-aware surface instead of letting the page background show through the border mid-transition. `isolation: isolate` contains the glow's blend context. The hero additionally pins `box-shadow` to the same 0.2s easing as everything else so the glow doesn't snap.
+
+It's invisible when it works — which is exactly the point. Mostly. One honest caveat: on Chrome for Android the TOC can still flash its border white mid-transition — the per-item left rails more than the box. The hero and notice are fully fixed; the TOC is a rendering quirk I haven't pinned down, and I haven't confirmed it in other browsers. It's cosmetic — nothing shifts — and it's tracked for a deeper dive.
 
 ## OS Preference Listener
 
@@ -212,11 +239,10 @@ window.matchMedia("(prefers-color-scheme:dark)")
       el.querySelector(".toggle-label").textContent =
         t === "dark" ? "--light" : "--dark";
     });
-    document.documentElement.style.colorScheme = t;
   });
 ```
 
-Unlike the toggle handler, the `colorScheme` update here is **immediate** — there's no ongoing CSS transition to synchronize with, so the native UI swaps at the same moment as the colors.
+No `colorScheme` handling needed here either — the declaration lives in CSS, so the native UI follows the `data-theme` attribute automatically.
 
 Important behavior note: once the user manually toggles, `localStorage` has a value. On subsequent page loads, the init script reads `localStorage` first, so the OS setting is no longer authoritative. The only way to reset to system preference is to clear `localStorage`.
 
@@ -304,12 +330,14 @@ A CSS-only approach is fine for a landing page. For a blog where users spend min
 
 ## Lessons Learned
 
-- **Inline scripts are fast.** 190 bytes. Less than a single HTTP request. The performance impact is literally unmeasurable on modern hardware.
+- **Inline scripts are fast.** 170 bytes. Less than a single HTTP request. The performance impact is literally unmeasurable on modern hardware.
 - **`localStorage` before `matchMedia`.** The saved preference always wins. System preference is the default, not the dictator.
 - **`@media` fallback is non-negotiable.** Script blockers exist. Private browsing exists. Airplane mode exists. The CSS fallback handles them all silently.
 - **Label actions, not states.** The bracket label `[--dark]`/`[--light]` removes the cognitive step of mapping an icon to an action. It tells the user what will happen, not what is.
 - **Accessibility is continuous.** Even with a "correct" dark mode, token colors in syntax highlighting can fail contrast checks. Measure everything.
 
 The entire dark mode system on this blog — inline script, CSS variables, persistence, toggle, bracket labels, Shiki integration, OS listener, bfcache guard, WCAG overrides — is about 80 lines of code total. For a feature that touches every page view, that's a reasonable tradeoff.
+
+This system keeps evolving — the warm-neutral palette, the CSS-driven `color-scheme`, and the toggle-time flicker guard above all landed as part of the ongoing redesign chronicled in [$ cat ~/redesign-log](/posts/redesign-log-terminal-theme/). The architecture stays; the details keep getting simpler to run.
 
 [What does your dark mode implementation handle? I'd love to hear about it.]({{ metadata.url }}/about/)

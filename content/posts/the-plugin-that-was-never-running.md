@@ -321,4 +321,4 @@ eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 });
 ```
 
-The most impactful bug fix I'll make this year was deleting eight words. The second most impactful was adding two lines.
+The smallest diff in this whole saga mattered most: eight characters deleted, two lines added.

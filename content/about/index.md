@@ -3,8 +3,8 @@ layout: layouts/page.njk
 title: ./sulistiono
 seoTitle: "About Sulistiono — Front-End Developer"
 description: >-
-  Sulistiono — web developer and blogger. Vanilla CSS, static sites, writes about
-  frontend. Ships mainly from a phone via SSH and sheer stubbornness.
+  Sulistiono — web developer and blogger writing about vanilla CSS and
+  static sites. Builds, breaks, and fixes things out of sheer stubbornness.
 image: /assets/img/og/about.png
 image_alt: "Dark dotted background; $ whoami with name and social handles on left, >_S amber ASCII logo box with tagline on right"
 ---
