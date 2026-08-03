@@ -14,7 +14,7 @@ image_alt: "CSS cascade layers priority stack — @layer architecture diagram"
 
 *Layer order beats specificity. One declaration line — the entire cascade under control.*
 
-`$ man css-cascade-layers`
+<code class="man-chip">man css-cascade-layers</code>
 
 ${toc}
 

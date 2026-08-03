@@ -15,7 +15,7 @@ image_alt: "@scope dashed boundary wrapping a card component on dark background,
 
 *@scope boundary keeps card selectors contained; donut scoping excludes the footer.*
 
-`$ man css-scope`
+<code class="man-chip">man css-scope</code>
 
 Every CSS codebase eventually hits the same wall: **the global namespace**.
 

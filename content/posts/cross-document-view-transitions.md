@@ -15,7 +15,7 @@ image_alt: "Sketched diagram showing three states of a cross-document view trans
 
 *Page A fades out, Page B fades in — the browser handles the rest with pure CSS.*
 
-`$ man view-transitions`
+<code class="man-chip">man view-transitions</code>
 
 Every static site shares the same friction point: the moment between clicking a link and seeing the next page. A white flash. A layout shift. That split-second disorientation that makes multi-page apps feel sluggish compared to SPAs.
 
