@@ -21,9 +21,17 @@ layout: layouts/base.njk
   "image": "{{ metadata.url }}{{ image or metadata.image or '/assets/img/og/home.png' }}"
 }
 </script>
+    {% set s = page.inputPath | fileStats %}
     <h1>{{ title }}</h1>
-    <div class="post-meta">
-      <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate("dd LLLL yyyy") }}</time>{% if updates.length %}{% for update in updates %} · <time datetime="{{ update.date | htmlDateString }}">{% if loop.first %}updated {% endif %}{{ update.date | readableDate("dd LLLL yyyy") }}</time>{% endfor %}{% endif %}
+    <div class="post-meta ls-meta">
+      <span class="ls-perm" aria-hidden="true">{{ s.perm }}</span>
+      <span class="ls-links" aria-hidden="true">1</span>
+      <span class="ls-owner">{{ s.owner }}</span>
+      <span class="ls-size">{{ s.size }}</span>
+      <time class="ls-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate("dd LLL yyyy") }}</time>
+      {% if updates.length %}<span class="ls-updated">· upd. <time datetime="{{ updates[0].date | htmlDateString }}">{{ updates[0].date | readableDate("dd LLL yyyy") }}</time></span>{% endif %}
+    </div>
+    <div class="post-meta ls-tags">
       {% if tags %}
       {% for tag in tags | filterTagList %}
       <a href="/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a>
@@ -40,6 +48,13 @@ layout: layouts/base.njk
   </nav>
   {{ content | safe }}
   <hr>
+  <div class="vim-status" aria-hidden="true">
+    <span class="vim-mode">NORMAL</span>
+    <span class="vim-file">"{{ page.fileSlug }}.md"</span>
+    <span class="vim-stats">{{ s.lines }}L {{ s.chars }}</span>
+    <span class="vim-enc">utf-8</span>
+    <span class="vim-read">~{{ s.readMin }} min read</span>
+  </div>
   <p class="post-exit" aria-hidden="true">
     <span class="prompt-char">$</span> <span class="cmd">cd</span> ..
   </p>

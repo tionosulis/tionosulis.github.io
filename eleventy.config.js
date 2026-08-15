@@ -11,7 +11,7 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { DateTime } from "luxon";
 import { minify } from "html-minifier-terser";
 import { transform as lightning } from "lightningcss";
-import { readFileSync } from "fs";
+import { readFileSync, statSync } from "fs";
 import { execSync } from "child_process";
 import path from "node:path";
 import { glob } from "tinyglobby";
@@ -165,6 +165,58 @@ export default async function (eleventyConfig) {
     return "";
   });
 
+  eleventyConfig.addFilter("cwdFromUrl", (url) => {
+    if (!url || url === "/") return "~/";
+    if (url.startsWith("/about/")) return "~/about/";
+    if (url.startsWith("/posts/")) return "~/posts/";
+    if (url === "/404.html") return "~/404.html";
+    return "~" + url;
+  });
+
+  const fileStatsCache = new Map();
+
+  function humanSize(bytes) {
+    if (!Number.isFinite(bytes) || bytes < 0) return "";
+    if (bytes < 1000) return `${bytes}B`;
+    const units = ["K", "M", "G", "T"];
+    let n = bytes;
+    let i = -1;
+    while (n >= 1000 && i < units.length - 1) { n /= 1000; i += 1; }
+    return `${n.toFixed(1).replace(/\.0$/, "")}${units[i]}`;
+  }
+
+  eleventyConfig.addFilter("fileStats", (inputPath) => {
+    if (!inputPath) {
+      return { size: "", perm: "", owner: "", words: 0, readMin: 0, lines: 0, chars: "" };
+    }
+    if (fileStatsCache.has(inputPath)) return fileStatsCache.get(inputPath);
+    const fallback = { size: "", perm: "", owner: "", words: 0, readMin: 0, lines: 0, chars: "" };
+    try {
+      const bytes = statSync(inputPath).size;
+      const { data, content } = matter(readFileSync(inputPath, "utf8"));
+      const body = content.replace(/```[\s\S]*?```/g, " ").replace(/`[^`]+`/g, " ");
+      const words = body.split(/\s+/).filter(Boolean).length;
+      let owner = "r";
+      if (data.updated || (Array.isArray(data.updates) && data.updates.length)) owner += "w";
+      if (data.pinned) owner += "x";
+      const stats = {
+        size: humanSize(bytes),
+        bytes,
+        perm: `-${owner.padEnd(3, "-")}r--r--`,
+        owner: "tionosulis",
+        words,
+        readMin: Math.max(1, Math.round(words / 200)),
+        lines: content.split("\n").length,
+        chars: humanSize(Buffer.byteLength(content)),
+      };
+      fileStatsCache.set(inputPath, stats);
+      return stats;
+    } catch {
+      fileStatsCache.set(inputPath, fallback);
+      return fallback;
+    }
+  });
+
   eleventyConfig.setServerOptions({
     watchThrottle: 100,
   });
@@ -200,6 +252,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   eleventyConfig.on("eleventy.before", async ({ dir }) => {
+    fileStatsCache.clear();
     const files = await glob(`${dir.input}/posts/**/*.md`);
     for (const file of files) {
       const { data } = matter(readFileSync(file, "utf8"));

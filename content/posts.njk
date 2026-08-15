@@ -40,6 +40,7 @@ title: Posts
         {% set currentYear = postYear %}
       {% endif %}
       <li class="post-item{% if post.data.pinned %} pinned{% endif %}">
+        {% set ps = post.inputPath | fileStats %}
         <div class="line-sep"></div>
         <div class="post-content">
           <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
@@ -51,6 +52,7 @@ title: Posts
           </div>
           {% endif %}
         </div>
+        <span class="post-size">{{ ps.size }}</span>
         <span class="post-date">{{ post.date | getDate("yyyy-MM-dd") }}</span>
       </li>
     {% endfor %}

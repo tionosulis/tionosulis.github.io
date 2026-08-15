@@ -1,7 +1,9 @@
 <header class="topbar">
+  <span class="traffic-lights" aria-hidden="true"></span>
   <a href="/" class="site-logo-link" aria-label="Home">
     <span class="logo-prompt">&gt;_</span><span class="logo-initial">S</span>
   </a>
+  <span class="topbar-uri" aria-hidden="true">{{ page.url | cwdFromUrl }}</span>
   <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
     <span class="toggle-bracket">[</span>
     <span class="toggle-label">--dark</span>

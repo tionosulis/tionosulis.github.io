@@ -401,16 +401,23 @@ html.no-transition *::before, html.no-transition *::after {
   .topbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 1rem;
+    min-height: 3.2rem;
     margin-bottom: 2.618rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     position: sticky;
-    top: 0;
+    top: 0.5rem;
     z-index: 10;
     background-color: var(--bg);
     view-transition-name: topbar;
+  }
+  .topbar::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    background-color: var(--bg);
   }
   .topbar-gap {
     position: absolute;
@@ -423,36 +430,23 @@ html.no-transition *::before, html.no-transition *::after {
   .topbar::after {
     content: '';
     position: absolute;
-    top: calc(100% - 0.8rem);
-    left: 91px;
+    top: 100%;
+    left: 0;
     right: 0;
     height: 1px;
     background-color: var(--border);
   }
-  body:has(.layout--posts) .topbar::after {
-    left: 0;
-  }
-  @media (min-width: 834px) {
-    body:has(.article-page) .topbar::after,
-    body:has(.home-terminal) .topbar::after {
-      left: max(calc(50% - 309px), 91px);
-    }
-  }
-  .topbar::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  .traffic-lights {
+    flex: none;
     width: 8px;
     height: 8px;
+    margin-right: 28px;
     border-radius: 50%;
     background: #FF605C;
     box-shadow: 14px 0 0 #FFBD44, 28px 0 0 #00CA4E;
   }
   .site-logo-link {
-    position: relative;
-    padding: 0.363rem 0.587rem;
-
+    flex: none;
     font-family: "JetBrains Mono", monospace;
     font-size: 0.95rem;
     font-weight: 700;
@@ -464,54 +458,24 @@ html.no-transition *::before, html.no-transition *::after {
     align-items: center;
     gap: 0;
   }
-
   .site-logo-link:hover { color: var(--text); }
-
-  .site-logo-link .logo-prompt {
-    color: var(--accent);
-  }
-
+  .site-logo-link .logo-prompt { color: var(--accent); transition: text-shadow 0.2s; }
   .site-logo-link .logo-initial { color: inherit; }
-
-  .site-logo-link::before,
-  .site-logo-link::after {
-    position: absolute;
-    left: 0;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.587rem;
-    font-weight: 700;
-    letter-spacing: -0.05em;
-    line-height: 1;
-    color: var(--accent);
-    opacity: 0.65;
-    pointer-events: none;
-    transition: opacity 0.2s, color 0.2s;
-  }
-
-  .site-logo-link::before {
-    content: '┏━━━━━┓';
-    top: -0.95rem;
-  }
-
-  .site-logo-link::after {
-    content: '┗━━━━━┛';
-    bottom: -0.95rem;
-  }
-
-  .site-logo-link:hover::before,
-  .site-logo-link:hover::after {
-    opacity: 1;
-    color: var(--accent-hover);
-  }
-
-  .site-logo-link .logo-prompt {
-    transition: text-shadow 0.2s;
-  }
-
   .site-logo-link:hover .logo-prompt {
     text-shadow:
       0 0 10px currentColor,
       0 0 22px currentColor;
+  }
+  .topbar-uri {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
   }
 
   .theme-toggle {
@@ -597,6 +561,29 @@ html.no-transition *::before, html.no-transition *::after {
     align-items: center;
     gap: 0.75rem;
     flex-wrap: wrap;
+  }
+
+  .post-meta.ls-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.65rem;
+    row-gap: 0.15rem;
+    white-space: nowrap;
+    font-size: 0.8rem;
+  }
+  .ls-perm { color: var(--text-tertiary); }
+  .ls-links { color: var(--text-tertiary); }
+  .ls-owner { color: var(--text-secondary); }
+  .ls-size { color: var(--text-secondary); }
+  .ls-date { color: var(--text-secondary); }
+  .ls-updated { color: var(--text-tertiary); font-size: 0.78rem; }
+  .post-meta.ls-tags { margin-top: 0.4rem; }
+
+  @media (max-width: 480px) {
+    .traffic-lights { display: none; }
+    .topbar { gap: 0.75rem; }
+    .ls-links { display: none; }
   }
 
   .post-tag {
@@ -782,7 +769,7 @@ html.no-transition *::before, html.no-transition *::after {
   .posts-page .post-item {
     counter-increment: post-counter;
     display: grid;
-    grid-template-columns: 2rem 1px 1fr auto;
+    grid-template-columns: 2rem 1px 1fr auto auto;
     gap: 0 0.9rem;
     align-items: center;
     padding: 0.55rem 0.5rem;
@@ -868,6 +855,12 @@ html.no-transition *::before, html.no-transition *::after {
     white-space: nowrap;
     letter-spacing: 0.02em;
   }
+  .posts-page .post-size {
+    font-size: 0.65rem;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
   .posts-page .page-footer {
     margin-top: 3.5rem;
     padding-top: 1.25rem;
@@ -889,7 +882,8 @@ html.no-transition *::before, html.no-transition *::after {
 
   @media (max-width: 480px) {
     .posts-page .post-item { grid-template-columns: 1.8rem 1px 1fr; }
-    .posts-page .post-date { display: none; }
+    .posts-page .post-date,
+    .posts-page .post-size { display: none; }
   }
 
   .article-page .breadcrumb {
@@ -935,6 +929,30 @@ html.no-transition *::before, html.no-transition *::after {
     user-select: none;
   }
   .post-exit .cmd { color: var(--accent); }
+
+  .vim-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.25rem;
+    flex-wrap: wrap;
+    margin: 2rem 0 1rem;
+    padding: 0.3rem 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    background-color: var(--statusbar-bg);
+    color: var(--statusbar-text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    user-select: none;
+  }
+  .vim-mode {
+    color: var(--statusbar-mode);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .vim-file { color: var(--statusbar-text); font-weight: 500; }
+  .vim-stats, .vim-enc, .vim-read { color: var(--statusbar-text); opacity: 0.85; }
 
   @scope (.post-exit) {
     .cursor {
@@ -1280,8 +1298,6 @@ html.no-transition *::before, html.no-transition *::after {
 
   .topbar {
     margin-bottom: 3.236rem;
-    padding-top: 3rem;
-    padding-bottom: 2rem;
   }
 
   .posts-page .breadcrumb {
