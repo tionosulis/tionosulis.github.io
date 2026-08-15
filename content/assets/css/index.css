@@ -572,12 +572,12 @@ html.no-transition *::before, html.no-transition *::after {
     white-space: nowrap;
     font-size: 0.8rem;
   }
-  .ls-perm { color: var(--text-tertiary); }
-  .ls-links { color: var(--text-tertiary); }
+  .ls-perm { color: var(--text-secondary); }
+  .ls-links { color: var(--text-secondary); }
   .ls-owner { color: var(--text-secondary); }
   .ls-size { color: var(--text-secondary); }
   .ls-date { color: var(--text-secondary); }
-  .ls-updated { color: var(--text-tertiary); font-size: 0.78rem; }
+  .ls-updated { color: var(--text-secondary); font-size: 0.78rem; }
   .post-meta.ls-tags { margin-top: 0.4rem; }
 
   @media (max-width: 480px) {
@@ -857,7 +857,7 @@ html.no-transition *::before, html.no-transition *::after {
   }
   .posts-page .post-size {
     font-size: 0.65rem;
-    color: var(--text-tertiary);
+    color: var(--text-secondary);
     white-space: nowrap;
     letter-spacing: 0.02em;
   }
