@@ -127,7 +127,7 @@ html.no-transition *::before, html.no-transition *::after {
     }
   }
 
-  html { scroll-behavior: smooth; scroll-padding-top: 8rem; background-color: var(--bg); }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(0.5rem + 3.2rem + 1rem + 0.3rem); background-color: var(--bg); }
 
   body {
     margin: 0;
